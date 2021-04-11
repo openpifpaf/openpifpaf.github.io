@@ -383,7 +383,7 @@ the command line interface.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OpenPifPaf version 0.12.7+3.g6db7972
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OpenPifPaf version 0.12.7+4.g3f1a120
 PyTorch version 1.7.1+cpu
 </pre></div>
 </div>
@@ -394,7 +394,7 @@ PyTorch version 1.7.1+cpu
 <p>Image credit: “<a class="reference external" href="https://www.flickr.com/photos/fotologic/6038911779/in/photostream/">Learning to surf</a>” by fotologic which is licensed under <a class="reference external" href="https://creativecommons.org/licenses/by/2.0/">CC-BY-2.0</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">image_response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/vita-epfl/openpifpaf/main/docs/coco/000000081988.jpg&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">image_response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/openpifpaf/openpifpaf/main/docs/coco/000000081988.jpg&#39;</span><span class="p">)</span>
 <span class="n">pil_im</span> <span class="o">=</span> <span class="n">PIL</span><span class="o">.</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">image_response</span><span class="o">.</span><span class="n">content</span><span class="p">))</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s1">&#39;RGB&#39;</span><span class="p">)</span>
 <span class="n">im</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">pil_im</span><span class="p">)</span>
 
