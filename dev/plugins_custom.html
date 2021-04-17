@@ -1,0 +1,703 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Dataset &#8212; OpenPifPaf Guide DEV</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.37f24b989f4638ff9c27c22dc7559d4f.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystyle.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.png"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Car Keypoints" href="plugins_apollocar3d.html" />
+    <link rel="prev" title="FAQ" href="faq.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">OpenPifPaf Guide DEV</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Getting Started
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="predict_cli.html">
+   Prediction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="examples.html">
+   Examples
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Chapters
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="predict_api.html">
+   Prediction API
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="models.html">
+   Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="datasets.html">
+   Datasets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="train.html">
+   Training
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cli_help.html">
+   Command Line
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plugins_overview.html">
+   Plugins
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="faq.html">
+   FAQ
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Custom Dataset
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plugins_apollocar3d.html">
+   Car Keypoints
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plugins_crowdpose.html">
+   CrowdPose
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorial_opencv.html">
+   OpenCV
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plugins_cifar10.html">
+   Cifar10
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="moduledocs.html">
+   Modules
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Development
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="dev.html">
+   Contribute
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="performance.html">
+   Performance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/openpifpaf/openpifpaf">
+   GitHub
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  This is the dev version of the Guide. Here is the <a href="https://openpifpaf.github.io">stable version</a>.
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/plugins_custom.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/openpifpaf/openpifpaf"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/openpifpaf/openpifpaf/dev?urlpath=tree/guide/plugins_custom.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> On this page
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   Overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plugin-structure">
+   Plugin structure
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-module">
+     1. Data Module
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plugin-registration">
+     2. Plugin Registration
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#constants">
+     3. Constants
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-loading">
+     4. Data Loading
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#annotations-format">
+     5. Annotations format
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#training">
+   Training
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#evaluation">
+   Evaluation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prediction">
+   Prediction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#final-remarks">
+   Final remarks
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="custom-dataset">
+<h1>Custom Dataset<a class="headerlink" href="#custom-dataset" title="Permalink to this headline">¶</a></h1>
+ <div style="text-align: right"> by <a href="https://scholar.google.com/citations?user=f-4YHeMAAAAJ&hl=en">Lorenzo Bertoni</a>  13/04/2021 </div>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>In this section of the guide, we will see how to train and evaluate OpenPifPaf on a custom dataset. OpenPifPaf is based on the concept of <strong><a class="reference external" href="https://cs.uwaterloo.ca/~m2nagapp/courses/CS446/1195/Arch_Design_Activity/PlugIn.pdf">Plugin architecture pattern</a></strong>, and the overall system is composed of a core component and auxiliary plug-in modules. To train a model on a custom dataset, you don’t need to change the core system, only to create a small plugin for it.
+This tutorial will go through the steps required to create a new plugin for a custom dataset.</p>
+<p>Let’s go through the steps of implementing a 2D pose estimator for vehicles, as a case study. If you are interested in how this specific plugin works, please check its <a class="reference internal" href="plugins_apollocar3d.html"><span class="doc">guide section</span></a>. We suggest to create and debug your own plugin copying a pre-existing plugin, changing its name, and adapting its files to your needs.
+Below, a description of the structure of the plugin to give you some intuition of what you will need to change.</p>
+</div>
+<div class="section" id="plugin-structure">
+<h2>Plugin structure<a class="headerlink" href="#plugin-structure" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="data-module">
+<h3>1. Data Module<a class="headerlink" href="#data-module" title="Permalink to this headline">¶</a></h3>
+<p>This module handles the interface of your custom dataset with the core system and it is the main component of the plugin. For the <a class="reference external" href="http://apolloscape.auto/car_instance.html">ApolloCar3D Dataset</a>, we created a module called <em>apollo_kp.py</em> containing the class <a class="reference external" href="https://github.com/vita-epfl/openpifpaf/blob/main/openpifpaf/plugins/apollocar3d/apollocar3d/apollo_kp.py">ApolloKp</a> which inherits from the <a class="reference external" href="https://github.com/vita-epfl/openpifpaf/blob/main/openpifpaf/datasets/module.py">DataModule</a> class.</p>
+<p>The base class to inherit from has the following structure:</p>
+<dl class="py class">
+<dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">openpifpaf.datasets.</span></code><code class="sig-name descname"><span class="pre">DataModule</span></code></dt>
+<dd><p>Base class to extend OpenPifPaf with custom data.</p>
+<p>This class gives you all the handles to train OpenPifPaf on a new dataset.
+Create a new class that inherits from this to handle a new datasets.</p>
+<ol class="arabic simple">
+<li><p>Define the PifPaf heads you would like to train.     For example,     CIF (Composite Intensity Fields) to detect keypoints, and     CAF (Composite Association Fields) to associate joints</p></li>
+<li><p>Add class variables, such as annotations, training/validation image paths.</p></li>
+</ol>
+<dl class="py method">
+<dt>
+<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">cli</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parser</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">argparse.ArgumentParser</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Command line interface (CLI) to extend argument parser for your custom dataset.</p>
+<p>Make sure to use unique CLI arguments for your dataset.
+For clarity, we suggest to start every CLI argument with the name of your new dataset,
+i.e. --&lt;dataset_name&gt;-train-annotations.</p>
+<p>All PifPaf commands will still work.
+E.g. to load a model, there is no need to implement the command --checkpoint</p>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">configure</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">argparse.Namespace</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Take the parsed argument parser output and configure class variables.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname"><span class="pre">metrics</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">openpifpaf.metric.base.Base</span><span class="p"><span class="pre">]</span></span></dt>
+<dd><p>Define a list of metrics to be used for eval.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname"><span class="pre">train_loader</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">torch.utils.data.dataloader.DataLoader</span></dt>
+<dd><p>Loader of the training dataset.</p>
+<p>A Coco Data loader is already available, or a custom one can be created and called here.
+To modify preprocessing steps of your images (for example scaling image during training):</p>
+<ol class="arabic simple">
+<li><p>chain them using torchvision.transforms.Compose(transforms)</p></li>
+<li><p>pass them to the preprocessing argument of the dataloader</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname"><span class="pre">val_loader</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">torch.utils.data.dataloader.DataLoader</span></dt>
+<dd><p>Loader of the validation dataset.</p>
+<p>The augmentation and preprocessing should be the same as for train_loader.
+The only difference is the set of data. This allows to inspect the
+train/val curves for overfitting.</p>
+<p>As in the train_loader, the annotations should be encoded fields
+so that the loss function can be computed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname"><span class="pre">eval_loader</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">torch.utils.data.dataloader.DataLoader</span></dt>
+<dd><p>Loader of the evaluation dataset.</p>
+<p>For local runs, it is common that the validation dataset is also the
+evaluation dataset. This is then changed to test datasets (without
+ground truth) to produce predictions for submissions to a competition
+server that holds the private ground truth.</p>
+<p>This loader shouldn’t have any data augmentation. The images should be
+as close as possible to the real application.
+The annotations should be the ground truth annotations similarly to
+what the output of the decoder is expected to be.</p>
+</dd></dl>
+
+</dd></dl>
+
+<p>Now that you have a general view of the structure of a data module, we suggest you to refer to the implementation of the <a class="reference external" href="https://github.com/vita-epfl/openpifpaf/blob/main/openpifpaf/plugins/apollocar3d/apollocar3d/apollo_kp.py">ApolloKp</a> class. You can get started by copying and modifying this class according to your needs.</p>
+</div>
+<div class="section" id="plugin-registration">
+<h3>2. Plugin Registration<a class="headerlink" href="#plugin-registration" title="Permalink to this headline">¶</a></h3>
+<p>For the core system to recognize the new plugin you need to create a <a class="reference external" href="https://github.com/vita-epfl/openpifpaf/blob/main/openpifpaf/plugins/apollocar3d/apollocar3d/__init__.py">__init__.py</a> file specifying:</p>
+<ol class="simple">
+<li><p><strong>Name Convention</strong>: include all the plugins file into a folder named <strong>openpifpaf_&lt;plugin_name&gt;</strong>. Only folders, which names start with openpifpaf_ are recognized</p></li>
+<li><p><strong>Registration</strong>: Inside the folder, create an <em>init.py</em> file and add to the list of existing plugins the datamodule that we have just created (<strong>ApolloKp</strong>). In this case, the name <strong>apollo</strong> represents the name of the dataset.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">register</span><span class="p">():</span>
+    <span class="n">openpifpaf</span><span class="o">.</span><span class="n">DATAMODULES</span><span class="p">[</span><span class="s1">&#39;apollo&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ApolloKp</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="constants">
+<h3>3. Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h3>
+<p>Create a module <em>constants.py</em> containing all the constants needed to define the 2D keypoints of vehicles. The most important are:</p>
+<ul class="simple">
+<li><p><strong>Names</strong> of the keypoints, as a list of strings. In our plugin this is called CAR_KEYPOINTS</p></li>
+<li><p><strong>Skeleton</strong>: the connections between the keypooints, as a list of lists of two elements indicating the indeces of the starting and ending connections. In our plugin this is called CAR_SKELETON</p></li>
+<li><p><strong>Sigmas</strong>: the size of the area to compute the object keypoint similarity (OKS), if you wish to use average precision (AP) as a metric.</p></li>
+<li><p><strong>Score weights</strong>:the weights to compute the overall score of an object (e.g. car or person). When computing the overall score the highest weights will be assigned to the most confident joints.</p></li>
+<li><p><strong>Categories</strong> of the keypoints. In this case, the only category is car.</p></li>
+<li><p><strong>Standard pose</strong> of the keypoints, to visualize the connections between the keypoints and as an argument for the head network.</p></li>
+<li><p><strong>Horizontal flip</strong> equivalents, if you use horizontal flipping as augmentation technique, you will need to define the corresponding left and right and keypoints as a dictionary. E.g. left_ear –&gt; right_ear.  In our plugin this is called HFLIP</p></li>
+</ul>
+<p>In addition to the constants, the module contains two functions to draw the skeleton and save it as an image. The functions are only for debugging and can usually be used as they are, only changing the arguments with the new constants. For additional information, refer to the file <a class="reference external" href="https://github.com/openpifpaf/openpifpaf/blob/main/openpifpaf/plugins/apollocar3d/apollocar3d/constants.py">constants.py</a>.</p>
+</div>
+<div class="section" id="data-loading">
+<h3>4. Data Loading<a class="headerlink" href="#data-loading" title="Permalink to this headline">¶</a></h3>
+<p>If  you are using COCO-style annotations, there is no need to create a datalader to load images and annotations. A default <a class="reference external" href="https://github.com/openpifpaf/openpifpaf/blob/main/openpifpaf/plugins/coco/dataset.py">CocoLoader</a> is already available to be called inside the data module <a class="reference external" href="https://github.com/openpifpaf/openpifpaf/blob/main/openpifpaf/plugins/apollocar3d/apollocar3d/apollo_kp.py">ApolloKp</a></p>
+<p>If you wish to load different annotations, you can either write your own dataloader, or you can transform your annotations to COCO style .json files. In this plugin, we first convert ApolloCar3D annotations into COCO style .json files and then load them as standard annotations.</p>
+</div>
+<div class="section" id="annotations-format">
+<h3>5. Annotations format<a class="headerlink" href="#annotations-format" title="Permalink to this headline">¶</a></h3>
+<p>This step transforms custom annotations, in this case from ApolloCar3D, into COCO-style annotations. Below we describe how to populate a json file using COCO-style format. For the full working example, check the module <a class="reference external" href="https://github.com/vita-epfl/openpifpaf/blob/main/openpifpaf/plugins/apollocar3d/apollocar3d/apollo_to_coco.py">apollo_to_coco.py</a> inside the plugin.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">initiate_json</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Initiate json file: one for training phase and another one for validation.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">json_file</span><span class="p">[</span><span class="s2">&quot;info&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://github.com/openpifpaf/openpifpaf&quot;</span><span class="p">,</span>
+                                  <span class="n">date_created</span><span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%a</span><span class="s2">, </span><span class="si">%d</span><span class="s2"> %b %Y %H:%M:%S +0000&quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">localtime</span><span class="p">()),</span>
+                                  <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Conversion of ApolloCar3D dataset into MS-COCO format&quot;</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">json_file</span><span class="p">[</span><span class="s2">&quot;categories&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nb">dict</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>  <span class="c1"># Category name</span>
+                                         <span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>  <span class="c1"># Id of category</span>
+                                         <span class="n">skeleton</span><span class="o">=</span><span class="p">[],</span>  <span class="c1"># Skeleton connections (check constants.py)</span>
+                                         <span class="n">supercategory</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>  <span class="c1"># Same as category if no supercategory</span>
+                                         <span class="n">keypoints</span><span class="o">=</span><span class="p">[])]</span>  <span class="c1"># Keypoint names</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">json_file</span><span class="p">[</span><span class="s2">&quot;images&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># Empty for initialization</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">json_file</span><span class="p">[</span><span class="s2">&quot;annotations&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># Empty for initialization</span>
+
+
+<span class="k">def</span> <span class="nf">process_image</span><span class="p">(</span><span class="n">json_file</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Update image field in json file</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># ------------------</span>
+    <span class="c1"># Add here your code</span>
+    <span class="c1"># -------------------</span>
+    <span class="n">json_file</span><span class="p">[</span><span class="s2">&quot;images&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+        <span class="s1">&#39;coco_url&#39;</span><span class="p">:</span> <span class="s2">&quot;unknown&quot;</span><span class="p">,</span>
+        <span class="s1">&#39;file_name&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>  <span class="c1"># Image name</span>
+        <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>  <span class="c1"># Image id</span>
+        <span class="s1">&#39;license&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>  <span class="c1"># License type</span>
+        <span class="s1">&#39;date_captured&#39;</span><span class="p">:</span> <span class="s2">&quot;unknown&quot;</span><span class="p">,</span>  
+        <span class="s1">&#39;width&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>  <span class="c1"># Image width (pixels)</span>
+        <span class="s1">&#39;height&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">})</span>  <span class="c1"># Image height (pixels)</span>
+
+
+<span class="k">def</span> <span class="nf">process_annotation</span><span class="p">(</span><span class="n">json_file</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Process and include in the json file a single annotation (instance) from a given image</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># ------------------</span>
+    <span class="c1"># Add here your code</span>
+    <span class="c1"># -------------------</span>
+    <span class="n">json_file</span><span class="p">[</span><span class="s2">&quot;annotations&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+        <span class="s1">&#39;image_id&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>  <span class="c1"># Image id</span>
+        <span class="s1">&#39;category_id&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>  <span class="c1"># Id of the category (like car or person)</span>
+        <span class="s1">&#39;iscrowd&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>  <span class="c1"># 1 to mask crowd regions, 0 if the annotation is not a crowd annotation</span>
+        <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>  <span class="c1"># Id of the annotations</span>
+        <span class="s1">&#39;area&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>  <span class="c1"># Bounding box area of the annotation (width*height)</span>
+        <span class="s1">&#39;bbox&#39;</span><span class="p">:</span> <span class="p">[],</span>  <span class="c1"># Bounding box  coordinates (x0, y0, width, heigth), where x0, y0 are the left corner</span>
+        <span class="s1">&#39;num_keypoints&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>  <span class="c1"># number of keypoints</span>
+        <span class="s1">&#39;keypoints&#39;</span><span class="p">:</span> <span class="p">[],</span>  <span class="c1"># Flattened list of keypoints [x, y, visibility, x, y, visibility, .. ]</span>
+        <span class="s1">&#39;segmentation&#39;</span><span class="p">:</span> <span class="p">[]})</span>  <span class="c1"># To add a segmentation of the annotation, empty otherwise</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="training">
+<h2>Training<a class="headerlink" href="#training" title="Permalink to this headline">¶</a></h2>
+<p>We have seen all the elements needed to create your own plugin on a custom dataset. To train the dataset, all OpenPifPaf commands are still valid. There are only two differences:</p>
+<ol class="simple">
+<li><p>Specify the dataset name in the training command. In this case, we have called our dataset <em>apollo</em> during the registration phase, therefore we will have <code class="docutils literal notranslate"><span class="pre">--dataset=apollo</span></code>.</p></li>
+<li><p>Include the commands we have created in the data module for this specific dataset, for example <code class="docutils literal notranslate"><span class="pre">--apollo-square-edge</span></code> to define the size of the training crops.</p></li>
+</ol>
+<p>A training command may look like this:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3 -m openpifpaf.train --dataset apollo <span class="se">\</span>
+--apollo-square-edge<span class="o">=</span><span class="m">769</span> <span class="se">\</span>
+--basenet<span class="o">=</span>shufflenetv2k16 --lr<span class="o">=</span><span class="m">0</span>.00002 --momentum<span class="o">=</span><span class="m">0</span>.95  --b-scale<span class="o">=</span><span class="m">5</span>.0 <span class="se">\</span>
+--epochs<span class="o">=</span><span class="m">300</span> --lr-decay <span class="m">160</span> <span class="m">260</span> --lr-decay-epochs<span class="o">=</span><span class="m">10</span>  --weight-decay<span class="o">=</span>1e-5 <span class="se">\</span>
+--weight-decay<span class="o">=</span>1e-5  --val-interval <span class="m">10</span> --loader-workers <span class="m">16</span> --apollo-upsample <span class="m">2</span> <span class="se">\</span>
+--apollo-bmin <span class="m">2</span> --batch-size <span class="m">8</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="evaluation">
+<h2>Evaluation<a class="headerlink" href="#evaluation" title="Permalink to this headline">¶</a></h2>
+<p>Evaluation on the COCO metric is supported by pifpaf and a simple evaluation command may look like this:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3 -m openpifpaf.eval --dataset<span class="o">=</span>apollo --checkpoint &lt;path of the model&gt;
+</pre></div>
+</div>
+<p>To evaluate on custom metrics, we would need to define a new metric and add it in the list of metrics, inside the data module. In our case, we have a a DataModule class called <strong>ApolloKp</strong>, and its function <em><strong>metrics</strong></em> returns the list of metrics to run. Each metric is defined as a class that inherits from openpifpaf.metric.base.Base</p>
+<p>For more information, please check how we implemented a simple metric for the ApolloCar3D dataset called MeanPixelError, that calculate mean pixel error and detection rate for a given image.</p>
+</div>
+<div class="section" id="prediction">
+<h2>Prediction<a class="headerlink" href="#prediction" title="Permalink to this headline">¶</a></h2>
+<p>To run your model trained on a different dataset, you simply need to run the standard OpenPifPaf command specifying your model. A prediction command looks like this:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3 -m openpifpaf.predict --checkpoint &lt;model path&gt;
+</pre></div>
+</div>
+<p>All the command line options are still valid, check them with:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3 -m openpifpaf.predict --help
+</pre></div>
+</div>
+</div>
+<div class="section" id="final-remarks">
+<h2>Final remarks<a class="headerlink" href="#final-remarks" title="Permalink to this headline">¶</a></h2>
+<p>We hope you’ll find this guide useful to create your own plugin. For more information check the guide section for the <a class="reference internal" href="plugins_apollocar3d.html"><span class="doc">ApolloCar3D plugin</span></a>.</p>
+<p>Please keep us posted on issues you encounter (using the issue section on GitHub) and especially on your successes! We will be more than happy to add your plugin to the list of OpenPifPaf <a class="reference external" href="https://openpifpaf.github.io/openpifpaf/dev/intro.html#related-projects">related projects</a>.</p>
+<p>Finally, if you find OpenPifPaf useful for your research, we would be happy if you cite us!</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@article</span><span class="p">{</span><span class="n">kreiss2021openpifpaf</span><span class="p">,</span>
+  <span class="n">title</span> <span class="o">=</span> <span class="p">{{</span><span class="n">OpenPifPaf</span><span class="p">:</span> <span class="n">Composite</span> <span class="n">Fields</span> <span class="k">for</span> <span class="n">Semantic</span> <span class="n">Keypoint</span> <span class="n">Detection</span> <span class="ow">and</span> <span class="n">Spatio</span><span class="o">-</span><span class="n">Temporal</span> <span class="n">Association</span><span class="p">}},</span>
+  <span class="n">author</span> <span class="o">=</span> <span class="p">{</span><span class="n">Sven</span> <span class="n">Kreiss</span> <span class="ow">and</span> <span class="n">Lorenzo</span> <span class="n">Bertoni</span> <span class="ow">and</span> <span class="n">Alexandre</span> <span class="n">Alahi</span><span class="p">},</span>
+  <span class="n">journal</span> <span class="o">=</span> <span class="p">{</span><span class="n">arXiv</span> <span class="n">preprint</span> <span class="n">arXiv</span><span class="p">:</span><span class="mf">2103.02440</span><span class="p">},</span>
+  <span class="n">month</span> <span class="o">=</span> <span class="p">{</span><span class="n">March</span><span class="p">},</span>
+  <span class="n">year</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2021</span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nd">@InProceedings</span><span class="p">{</span><span class="n">kreiss2019pifpaf</span><span class="p">,</span>
+  <span class="n">author</span> <span class="o">=</span> <span class="p">{</span><span class="n">Kreiss</span><span class="p">,</span> <span class="n">Sven</span> <span class="ow">and</span> <span class="n">Bertoni</span><span class="p">,</span> <span class="n">Lorenzo</span> <span class="ow">and</span> <span class="n">Alahi</span><span class="p">,</span> <span class="n">Alexandre</span><span class="p">},</span>
+  <span class="n">title</span> <span class="o">=</span> <span class="p">{{</span><span class="n">PifPaf</span><span class="p">:</span> <span class="n">Composite</span> <span class="n">Fields</span> <span class="k">for</span> <span class="n">Human</span> <span class="n">Pose</span> <span class="n">Estimation</span><span class="p">}},</span>
+  <span class="n">booktitle</span> <span class="o">=</span> <span class="p">{</span><span class="n">The</span> <span class="n">IEEE</span> <span class="n">Conference</span> <span class="n">on</span> <span class="n">Computer</span> <span class="n">Vision</span> <span class="ow">and</span> <span class="n">Pattern</span> <span class="n">Recognition</span> <span class="p">(</span><span class="n">CVPR</span><span class="p">)},</span>
+  <span class="n">month</span> <span class="o">=</span> <span class="p">{</span><span class="n">June</span><span class="p">},</span>
+  <span class="n">year</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2019</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="faq.html" title="previous page">FAQ</a>
+    <a class='right-next' id="next-link" href="plugins_apollocar3d.html" title="next page">Car Keypoints</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By <a href="https://www.svenkreiss.com">Sven Kreiss</a> and <a href="https://github.com/openpifpaf/openpifpaf/graphs/contributors">contributors</a>.<br/>
+        
+            &copy; Copyright 2020-2021.<br/>
+          <div class="extra_footer">
+            <div>Powered by <a href="https://jupyterbook.org/">Jupyter Book</a>.</div>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
