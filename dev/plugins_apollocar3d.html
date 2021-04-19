@@ -393,7 +393,7 @@
 </pre></div>
 </div>
 <p>(in case CUDA 9 as driver:
-<code class="docutils literal notranslate"> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">torch==1.7.0+cu92</span> <span class="pre">torchvision==0.8.1+cu92</span> <span class="pre">-f</span> <span class="pre">https://download.pytorch.org/whl/torch_stable.html</span></code>)</p>
+<code class="docutils literal notranslate"> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">torch==1.7.1+cu92</span> <span class="pre">torchvision==0.8.2+cu92</span> <span class="pre">-f</span> <span class="pre">https://download.pytorch.org/whl/torch_stable.html</span></code>)</p>
 </div>
 <div class="section" id="predict">
 <h2>Predict<a class="headerlink" href="#predict" title="Permalink to this headline">¶</a></h2>
@@ -19733,189 +19733,6 @@ AAAAHWRhdGEAAAABAAAAAExhdmY1OC40NS4xMDA=
   Your browser does not support the video tag.
 </video></div></div>
 </div>
-<p>Associations of the car skeleton with 24 keypoints:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">j1</span><span class="p">,</span> <span class="n">j2</span> <span class="ow">in</span> <span class="n">constants</span><span class="o">.</span><span class="n">CAR_SKELETON_24</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">constants</span><span class="o">.</span><span class="n">CAR_KEYPOINTS_24</span><span class="p">[</span><span class="n">j1</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">constants</span><span class="o">.</span><span class="n">CAR_KEYPOINTS_24</span><span class="p">[</span><span class="n">j2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>front_up_right - central_up_right
-front_up_right - front_up_left
-front_up_right - front_light_right
-front_up_left - front_light_left
-front_up_left - central_up_left
-front_light_right - front_light_left
-front_light_right - front_low_right
-front_light_left - front_low_left
-front_low_right - front_low_left
-front_low_left - front_wheel_left
-front_wheel_left - rear_wheel_left
-central_up_left - rear_corner_left
-rear_wheel_left - rear_corner_left
-rear_corner_left - rear_light_left
-rear_corner_right - rear_light_right
-mirror_edge_left - central_up_left
-mirror_edge_left - front_wheel_left
-mirror_edge_left - rear_wheel_left
-front_wheel_left - front_light_left
-mirror_edge_left - front_light_left
-mirror_edge_left - front_up_left
-rear_up_left - rear_up_right
-rear_up_left - rear_light_left
-rear_up_left - central_up_left
-rear_light_left - rear_light_right
-rear_light_left - rear_low_left
-rear_up_right - rear_light_right
-rear_up_right - central_up_right
-rear_light_right - rear_low_right
-rear_low_left - rear_low_right
-rear_plate_left - rear_plate_right
-rear_plate_left - rear_light_left
-rear_plate_left - rear_low_left
-rear_plate_left - rear_wheel_left
-rear_plate_right - rear_low_right
-rear_plate_right - rear_light_right
-rear_plate_right - rear_wheel_right
-rear_low_right - rear_wheel_right
-rear_low_left - rear_wheel_left
-rear_corner_right - rear_wheel_right
-rear_corner_right - central_up_right
-rear_wheel_right - front_wheel_right
-front_wheel_right - front_low_right
-central_up_right - mirror_edge_right
-mirror_edge_right - rear_wheel_right
-mirror_edge_right - front_up_right
-front_wheel_right - front_light_right
-mirror_edge_right - front_light_right
-mirror_edge_right - front_wheel_right
-</pre></div>
-</div>
-</div>
-</div>
-<p>And with 66 Keypoints:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">j1</span><span class="p">,</span> <span class="n">j2</span> <span class="ow">in</span> <span class="n">constants</span><span class="o">.</span><span class="n">CAR_SKELETON_66</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">constants</span><span class="o">.</span><span class="n">CAR_KEYPOINTS_66</span><span class="p">[</span><span class="n">j1</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">constants</span><span class="o">.</span><span class="n">CAR_KEYPOINTS_66</span><span class="p">[</span><span class="n">j2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>top_left_c_front_lplate - bottom_left_c_front_lplate
-top_left_c_front_lplate - bottom_left_c_left_front_car_light
-bottom_left_c_front_lplate - bottom_right_c_left_front_fog_light
-top_left_c_left_front_car_light - bottom_left_c_left_front_car_light
-top_left_c_left_front_car_light - top_right_c_left_front_car_light
-top_right_c_left_front_car_light - bottom_right_c_left_front_car_light
-bottom_right_c_left_front_car_light - bottom_left_c_left_front_car_light
-bottom_right_c_left_front_car_light - top_right_c_left_front_fog_light
-top_right_c_left_front_fog_light - bottom_right_c_left_front_fog_light
-bottom_right_c_left_front_fog_light - front_section_left_front_wheel
-front_section_left_front_wheel - center_left_front_wheel
-top_right_c_left_front_fog_light - center_left_front_wheel
-top_right_c_left_front_car_light - top_left_c_left_front_door
-top_left_c_left_front_door - top_right_c_front_glass
-top_right_c_front_glass - top_right_c_left_front_door
-center_left_front_wheel - bottom_left_c_left_front_door
-front_section_left_front_wheel - bottom_left_c_left_front_door
-top_left_c_left_front_door - bottom_left_c_left_front_door
-top_right_c_left_front_door - middle_c_left_front_door
-top_right_c_left_front_door - top_left_c_rear_glass
-top_left_c_left_front_door - middle_c_left_front_door
-bottom_left_c_left_front_door - bottom_right_c_left_front_door
-middle_c_left_front_door - bottom_right_c_left_front_door
-top_left_c_left_front_door - front_c_car_handle_left_front_door
-front_c_car_handle_left_front_door - rear_c_car_handle_left_front_door
-rear_c_car_handle_left_front_door - middle_c_left_front_door
-rear_c_car_handle_left_front_door - bottom_right_c_left_front_door
-top_left_c_rear_glass - top_right_c_left_rear_door
-middle_c_left_front_door - top_right_c_left_rear_door
-middle_c_left_front_door - front_c_car_handle_left_rear_door
-front_c_car_handle_left_rear_door - rear_c_car_handle_left_rear_door
-rear_c_car_handle_left_rear_door - top_right_c_left_rear_door
-bottom_right_c_left_front_door - bottom_right_c_left_rear_door
-bottom_right_c_left_rear_door - center_left_rear_wheel
-bottom_right_c_left_rear_door - rear_c_car_handle_left_rear_door
-center_left_rear_wheel - rear_section_left_rear_wheel
-top_right_c_left_rear_door - rear_section_left_rear_wheel
-top_right_c_left_rear_door - top_left_c_left_rear_car_light
-rear_section_left_rear_wheel - Left_c_rear_bumper
-top_left_c_left_rear_car_light - bottom_left_c_left_rear_car_light
-bottom_left_c_left_rear_car_light - Left_c_rear_bumper
-top_left_c_left_rear_car_light - top_right_c_left_rear_car_light
-top_right_c_left_rear_car_light - bottom_right_c_left_rear_car_light
-bottom_left_c_left_rear_car_light - bottom_right_c_left_rear_car_light
-bottom_right_c_left_rear_car_light - bottom_left_c_trunk
-top_right_c_left_rear_car_light - top_left_c_rear_lplate
-bottom_left_c_trunk - bottom_left_c_rear_lplate
-top_left_c_rear_lplate - bottom_left_c_rear_lplate
-Left_c_rear_bumper - bottom_left_c_rear_lplate
-top_right_c_front_lplate - bottom_right_c_front_lplate
-top_right_c_front_lplate - bottom_right_c_right_front_car_light
-bottom_right_c_front_lplate - bottom_left_c_right_fog_light
-top_right_c_right_front_car_light - bottom_right_c_right_front_car_light
-top_right_c_right_front_car_light - top_left_c_right_front_car_light
-top_left_c_right_front_car_light - bottom_left_c_right_front_car_light
-bottom_left_c_right_front_car_light - bottom_right_c_right_front_car_light
-bottom_left_c_right_front_car_light - top_left_c_right_fog_light
-top_left_c_right_fog_light - bottom_left_c_right_fog_light
-bottom_left_c_right_fog_light - front_section_right_front_wheel
-front_section_right_front_wheel - center_right_front_wheel
-top_left_c_right_fog_light - center_right_front_wheel
-top_left_c_right_front_car_light - top_right_c_right_front_car_door
-top_right_c_right_front_car_door - top_left_c_front_glass
-top_left_c_front_glass - top_left_c_right_front_car_door
-center_right_front_wheel - bottom_right_c_right_front_car_door
-front_section_right_front_wheel - bottom_right_c_right_front_car_door
-top_right_c_right_front_car_door - bottom_right_c_right_front_car_door
-top_left_c_right_front_car_door - middle_c_right_front_car_door
-top_left_c_right_front_car_door - top_right_c_rear_glass
-top_right_c_right_front_car_door - middle_c_right_front_car_door
-bottom_right_c_right_front_car_door - bottom_left_c_right_front_car_door
-middle_c_right_front_car_door - bottom_left_c_right_front_car_door
-top_right_c_right_front_car_door - front_c_car_handle_right_front_car_door
-front_c_car_handle_right_front_car_door - rear_c_car_handle_right_front_car_door
-rear_c_car_handle_right_front_car_door - middle_c_right_front_car_door
-rear_c_car_handle_right_front_car_door - bottom_left_c_right_front_car_door
-top_right_c_rear_glass - top_left_c_right_rear_car_door
-middle_c_right_front_car_door - top_left_c_right_rear_car_door
-middle_c_right_front_car_door - front_c_car_handle_right_rear_car_door
-front_c_car_handle_right_rear_car_door - rear_c_car_handle_right_rear_car_door
-rear_c_car_handle_right_rear_car_door - top_left_c_right_rear_car_door
-bottom_left_c_right_front_car_door - bottom_left_c_right_rear_car_door
-bottom_left_c_right_rear_car_door - center_right_rear_wheel
-bottom_left_c_right_rear_car_door - rear_c_car_handle_right_rear_car_door
-center_right_rear_wheel - rear_section_right_rear_wheel
-top_left_c_right_rear_car_door - rear_section_right_rear_wheel
-top_left_c_right_rear_car_door - top_right_c_right_rear_car_light
-rear_section_right_rear_wheel - Right_c_rear_bumper
-top_right_c_right_rear_car_light - bottom_right_c_right_rear_car_light
-bottom_right_c_right_rear_car_light - Right_c_rear_bumper
-top_right_c_right_rear_car_light - top_left_c_right_rear_car_light
-top_left_c_right_rear_car_light - bottom_left_c_right_rear_car_light
-bottom_right_c_right_rear_car_light - bottom_left_c_right_rear_car_light
-bottom_left_c_right_rear_car_light - bottom_right_c_trunk
-top_left_c_right_rear_car_light - top_right_c_rear_lplate
-bottom_right_c_trunk - bottom_right_c_rear_lplate
-top_right_c_rear_lplate - bottom_right_c_rear_lplate
-Right_c_rear_bumper - bottom_right_c_rear_lplate
-Left_c_rear_bumper - Right_c_rear_bumper
-top_left_c_rear_lplate - top_right_c_rear_lplate
-bottom_left_c_rear_lplate - bottom_right_c_rear_lplate
-top_left_c_rear_glass - top_right_c_rear_glass
-top_left_c_right_front_car_door - top_right_c_left_front_door
-top_right_c_right_front_car_door - top_left_c_left_front_door
-top_left_c_front_lplate - top_right_c_front_lplate
-bottom_right_c_front_lplate - bottom_left_c_front_lplate
-top_left_c_left_front_car_light - top_right_c_right_front_car_light
-top_left_c_front_glass - top_right_c_front_glass
-</pre></div>
-</div>
-</div>
-</div>
 </div>
 <div class="section" id="dataset-conversion">
 <h3>Dataset conversion<a class="headerlink" href="#dataset-conversion" title="Permalink to this headline">¶</a></h3>
@@ -19985,8 +19802,8 @@ Square-edge 769 (AP 76.1%)</p>
 </div>
 <div class="section" id="everything-else">
 <h2>Everything else<a class="headerlink" href="#everything-else" title="Permalink to this headline">¶</a></h2>
-<p>All pifpaf options and commands still stand, read more in the
-<a class="reference external" href="https://openpifpaf.github.io/openpifpaf/intro.html">OpenPifPaf guide</a>. If you are interested in training your own dataset, read the section on a <a class="reference external" href="https://openpifpaf.github.io/openpifpaf/plugins_custom.html">Custom Plugin</a>.</p>
+<p>All pifpaf options and commands still stand, check them in the other sections of the guide.
+If you are interested in training your own dataset, read the section on a <a class="reference internal" href="plugins_custom.html"><span class="doc">custom dataset</span></a>.</p>
 </div>
 </div>
 
