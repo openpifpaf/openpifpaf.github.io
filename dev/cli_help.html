@@ -472,6 +472,14 @@ ShuffleNetv2:
   --shufflenetv2-no-pretrain
                         use randomly initialized models (default: True)
 
+SqueezeNet:
+  --squeezenet-no-pretrain
+                        use randomly initialized models (default: True)
+
+MobileNetV2:
+  --mobilenetv2-no-pretrain
+                        use randomly initialized models (default: True)
+
 shufflenetv2k:
   --shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE
                         stride of the optional 2nd input convolution (default:
@@ -487,14 +495,6 @@ shufflenetv2k:
   --shufflenetv2k-instance-norm
   --shufflenetv2k-group-norm
   --shufflenetv2k-leaky-relu
-
-SqueezeNet:
-  --squeezenet-no-pretrain
-                        use randomly initialized models (default: True)
-
-MobileNetV2:
-  --mobilenetv2-no-pretrain
-                        use randomly initialized models (default: True)
 
 ResNet:
   --resnet-no-pretrain  use randomly initialized models (default: True)
@@ -892,6 +892,18 @@ ResNet:
                         create a network without the last block (default:
                         False)
 
+ShuffleNetv2:
+  --shufflenetv2-no-pretrain
+                        use randomly initialized models (default: True)
+
+MobileNetV2:
+  --mobilenetv2-no-pretrain
+                        use randomly initialized models (default: True)
+
+SqueezeNet:
+  --squeezenet-no-pretrain
+                        use randomly initialized models (default: True)
+
 shufflenetv2k:
   --shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE
                         stride of the optional 2nd input convolution (default:
@@ -907,18 +919,6 @@ shufflenetv2k:
   --shufflenetv2k-instance-norm
   --shufflenetv2k-group-norm
   --shufflenetv2k-leaky-relu
-
-MobileNetV2:
-  --mobilenetv2-no-pretrain
-                        use randomly initialized models (default: True)
-
-SqueezeNet:
-  --squeezenet-no-pretrain
-                        use randomly initialized models (default: True)
-
-ShuffleNetv2:
-  --shufflenetv2-no-pretrain
-                        use randomly initialized models (default: True)
 
 CompositeField3:
   --cf3-dropout CF3_DROPOUT
@@ -964,6 +964,9 @@ Composite Loss:
   --regression-loss {smoothl1,l1,laplace}
                         type of regression loss (default: laplace)
 
+Bce Loss:
+  --r-smooth R_SMOOTH   r_{smooth} for SmoothL1 regressions (default: 0.0)
+
 Scale Loss:
   --b-scale B_SCALE     Laplace width b for scale loss (default: 1.0)
   --scale-log
@@ -973,9 +976,6 @@ Scale Loss:
 Laplace Loss:
   --laplace-soft-clamp LAPLACE_SOFT_CLAMP
                         soft clamp for Laplace (default: 5.0)
-
-Bce Loss:
-  --r-smooth R_SMOOTH   r_{smooth} for SmoothL1 regressions (default: 0.0)
 
 Bce Loss:
   --background-weight BACKGROUND_WEIGHT
@@ -1674,6 +1674,7 @@ python3 -m openpifpaf.export_onnx --help
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>usage: python3 -m openpifpaf.export_onnx [-h] [--version]
                                          [--squeezenet-no-pretrain]
+                                         [--shufflenetv2-no-pretrain]
                                          [--shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE]
                                          [--shufflenetv2k-input-conv2-outchannels SHUFFLENETV2K_INPUT_CONV2_OUTCHANNELS]
                                          [--shufflenetv2k-stage4-dilation SHUFFLENETV2K_STAGE4_DILATION]
@@ -1682,7 +1683,6 @@ python3 -m openpifpaf.export_onnx --help
                                          [--shufflenetv2k-instance-norm | --shufflenetv2k-group-norm]
                                          [--shufflenetv2k-leaky-relu]
                                          [--mobilenetv2-no-pretrain]
-                                         [--shufflenetv2-no-pretrain]
                                          [--resnet-no-pretrain]
                                          [--resnet-pool0-stride RESNET_POOL0_STRIDE]
                                          [--resnet-input-conv-stride RESNET_INPUT_CONV_STRIDE]
@@ -1725,6 +1725,10 @@ SqueezeNet:
   --squeezenet-no-pretrain
                         use randomly initialized models (default: True)
 
+ShuffleNetv2:
+  --shufflenetv2-no-pretrain
+                        use randomly initialized models (default: True)
+
 shufflenetv2k:
   --shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE
                         stride of the optional 2nd input convolution (default:
@@ -1743,10 +1747,6 @@ shufflenetv2k:
 
 MobileNetV2:
   --mobilenetv2-no-pretrain
-                        use randomly initialized models (default: True)
-
-ShuffleNetv2:
-  --shufflenetv2-no-pretrain
                         use randomly initialized models (default: True)
 
 ResNet:
@@ -1806,7 +1806,6 @@ python3 -m openpifpaf.export_coreml --help
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>usage: python3 -m openpifpaf.export_coreml [-h] [--version]
                                            [--squeezenet-no-pretrain]
-                                           [--shufflenetv2-no-pretrain]
                                            [--shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE]
                                            [--shufflenetv2k-input-conv2-outchannels SHUFFLENETV2K_INPUT_CONV2_OUTCHANNELS]
                                            [--shufflenetv2k-stage4-dilation SHUFFLENETV2K_STAGE4_DILATION]
@@ -1815,6 +1814,7 @@ python3 -m openpifpaf.export_coreml --help
                                            [--shufflenetv2k-instance-norm | --shufflenetv2k-group-norm]
                                            [--shufflenetv2k-leaky-relu]
                                            [--mobilenetv2-no-pretrain]
+                                           [--shufflenetv2-no-pretrain]
                                            [--resnet-no-pretrain]
                                            [--resnet-pool0-stride RESNET_POOL0_STRIDE]
                                            [--resnet-input-conv-stride RESNET_INPUT_CONV_STRIDE]
@@ -1847,10 +1847,6 @@ SqueezeNet:
   --squeezenet-no-pretrain
                         use randomly initialized models (default: True)
 
-ShuffleNetv2:
-  --shufflenetv2-no-pretrain
-                        use randomly initialized models (default: True)
-
 shufflenetv2k:
   --shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE
                         stride of the optional 2nd input convolution (default:
@@ -1869,6 +1865,10 @@ shufflenetv2k:
 
 MobileNetV2:
   --mobilenetv2-no-pretrain
+                        use randomly initialized models (default: True)
+
+ShuffleNetv2:
+  --shufflenetv2-no-pretrain
                         use randomly initialized models (default: True)
 
 ResNet:
