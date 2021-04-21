@@ -160,6 +160,16 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
+  <a class="reference internal" href="plugins_custom.html">
+   Custom Dataset
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plugins_apollocar3d.html">
+   Car Keypoints
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="plugins_crowdpose.html">
    CrowdPose
   </a>
@@ -449,11 +459,13 @@ into the class constructor:</p>
 <dl class="py class">
 <dt id="openpifpaf.datasets.DataModule">
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">openpifpaf.datasets.</span></code><code class="sig-name descname"><span class="pre">DataModule</span></code><a class="headerlink" href="#openpifpaf.datasets.DataModule" title="Permalink to this definition">¶</a></dt>
-<dd><p>Interface for custom data.</p>
-<p>This module handles datasets and is the class that you need to inherit
-from for your custom dataset. This class gives you all the handles so that
-you can train with a new <cite>–dataset=mydataset</cite>. The particular configuration
-of keypoints and skeleton is specified in the <cite>headmeta</cite> instances.</p>
+<dd><p>Base class to extend OpenPifPaf with custom data.</p>
+<p>This class gives you all the handles to train OpenPifPaf on a new dataset.
+Create a new class that inherits from this to handle a new datasets.</p>
+<ol class="arabic simple">
+<li><p>Define the PifPaf heads you would like to train.     For example,     CIF (Composite Intensity Fields) to detect keypoints, and     CAF (Composite Association Fields) to associate joints</p></li>
+<li><p>Add class variables, such as annotations, training/validation image paths.</p></li>
+</ol>
 <dl class="py attribute">
 <dt id="openpifpaf.datasets.DataModule.batch_size">
 <code class="sig-name descname"><span class="pre">batch_size</span></code><em class="property"> <span class="pre">=</span> <span class="pre">1</span></em><a class="headerlink" href="#openpifpaf.datasets.DataModule.batch_size" title="Permalink to this definition">¶</a></dt>
@@ -475,7 +487,12 @@ name and dataset to entries in the checkpoint and overwritten here.</p>
 <dl class="py method">
 <dt id="openpifpaf.datasets.DataModule.cli">
 <em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">cli</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parser</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">argparse.ArgumentParser</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.datasets.DataModule.cli" title="Permalink to this definition">¶</a></dt>
-<dd><p>Command line interface (CLI) to extend argument parser.</p>
+<dd><p>Command line interface (CLI) to extend argument parser for your custom dataset.</p>
+<p>Make sure to use unique CLI arguments for your dataset.
+For clarity, we suggest to start every CLI argument with the name of your new dataset,
+i.e. --&lt;dataset_name&gt;-train-annotations.</p>
+<p>All PifPaf commands will still work.
+E.g. to load a model, there is no need to implement the command --checkpoint</p>
 </dd></dl>
 
 <dl class="py method">
@@ -494,6 +511,12 @@ name and dataset to entries in the checkpoint and overwritten here.</p>
 <dt id="openpifpaf.datasets.DataModule.train_loader">
 <code class="sig-name descname"><span class="pre">train_loader</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">torch.utils.data.dataloader.DataLoader</span><a class="headerlink" href="#openpifpaf.datasets.DataModule.train_loader" title="Permalink to this definition">¶</a></dt>
 <dd><p>Loader of the training dataset.</p>
+<p>A Coco Data loader is already available, or a custom one can be created and called here.
+To modify preprocessing steps of your images (for example scaling image during training):</p>
+<ol class="arabic simple">
+<li><p>chain them using torchvision.transforms.Compose(transforms)</p></li>
+<li><p>pass them to the preprocessing argument of the dataloader</p></li>
+</ol>
 </dd></dl>
 
 <dl class="py method">
@@ -789,7 +812,7 @@ overwrite the global default for that instance.</p>
 <dd><p>Random cropping.</p>
 <dl class="py method">
 <dt id="openpifpaf.transforms.Crop.area_of_interest">
-<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">area_of_interest</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">anns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">valid_area</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_length</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.transforms.Crop.area_of_interest" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">area_of_interest</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">anns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">valid_area</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.transforms.Crop.area_of_interest" title="Permalink to this definition">¶</a></dt>
 <dd><p>area that contains annotations with keypoints</p>
 </dd></dl>
 

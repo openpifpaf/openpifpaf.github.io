@@ -57,7 +57,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="OpenCV" href="tutorial_opencv.html" />
-    <link rel="prev" title="FAQ" href="faq.html" />
+    <link rel="prev" title="Car Keypoints" href="plugins_apollocar3d.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -159,6 +159,16 @@
  </span>
 </p>
 <ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="plugins_custom.html">
+   Custom Dataset
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plugins_apollocar3d.html">
+   Car Keypoints
+  </a>
+ </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    CrowdPose
@@ -352,7 +362,7 @@ Let’s start with the setup for this notebook and register all available OpenPi
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;openpifpaf.plugins.apollocar3d&#39;, &#39;openpifpaf.plugins.cifar10&#39;, &#39;openpifpaf.plugins.coco&#39;, &#39;openpifpaf.plugins.crowdpose&#39;])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;openpifpaf.plugins.apollocar3d&#39;, &#39;openpifpaf.plugins.cifar10&#39;, &#39;openpifpaf.plugins.coco&#39;, &#39;openpifpaf.plugins.crowdpose&#39;, &#39;openpifpaf.plugins.openpifpaf_wholebody&#39;])
 </pre></div>
 </div>
 </div>
@@ -431,7 +441,7 @@ python -m openpifpaf.predict coco/000000081988.jpg --checkpoint=resnet50-crowdpo
 </div>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:neural network device: cpu (CUDA available: False, count: 0)
-INFO:openpifpaf.decoder.cifcaf:5 annotations: [13, 12, 9, 8, 10]
+INFO:openpifpaf.decoder.cifcaf:5 annotations: [13, 12, 8, 7, 10]
 INFO:__main__:batch 0: coco/000000081988.jpg
 </pre></div>
 </div>
@@ -491,7 +501,7 @@ with <code class="docutils literal notranslate"><span class="pre">--dataset=crow
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="faq.html" title="previous page">FAQ</a>
+    <a class='left-prev' id="prev-link" href="plugins_apollocar3d.html" title="previous page">Car Keypoints</a>
     <a class='right-next' id="next-link" href="tutorial_opencv.html" title="next page">OpenCV</a>
 
         </div>
