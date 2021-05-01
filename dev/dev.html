@@ -421,16 +421,7 @@ pytest --nbval-lax --current-env *.ipynb
 <p>OpenPifPaf has few core requirements so that you can run it efficiently on servers without graphical interface.
 Sometimes, you just want to install all possible dependencies. Those are provided as “extra” requirements.
 Use the following <code class="docutils literal notranslate"><span class="pre">pip3</span></code> command to install all extras.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
-<span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span> <span class="o">&gt;=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">):</span>
-    <span class="kn">import</span> <span class="nn">importlib.metadata</span>
-    <span class="n">extras</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">metadata</span><span class="p">(</span><span class="s1">&#39;openpifpaf&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">get_all</span><span class="p">(</span><span class="s1">&#39;Provides-Extra&#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;pip3 install &quot;openpifpaf[</span><span class="si">{</span><span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">extras</span><span class="p">)</span><span class="si">}</span><span class="s1">]&quot;&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pip3 install &quot;openpifpaf[coreml,dev,onnx,test,train]&quot;
 </pre></div>
@@ -630,7 +621,7 @@ python -m openpifpaf.predict --version
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OpenPifPaf 0.12.9+13.gc2596e4
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OpenPifPaf 0.12.9+14.g01ac89f
 </pre></div>
 </div>
 </div>
