@@ -339,18 +339,6 @@
   <a class="reference internal nav-link" href="#preprocess-dataset">
    Preprocess Dataset
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#keypoints-choice">
-     Keypoints choice
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#dataset-conversion">
-     Dataset conversion
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#train">
@@ -397,7 +385,10 @@
 </div>
 <div class="section" id="predict">
 <h2>Predict<a class="headerlink" href="#predict" title="Permalink to this headline">¶</a></h2>
-<p>Prediction runs as standard openpifpaf predict command, but using the pretrained model on vehicles. The flag “–checkpoint shufflenetv2k16-apollo-24” will cause that our 24 kp version of the Shufflenet 16 (AP 76.1%) will be automatically downloaded. As an example, run the command:</p>
+<p>Prediction runs as standard openpifpaf predict command, but using the pretrained
+model on vehicles. The flag “–checkpoint shufflenetv2k16-apollo-24” will cause
+that our 24 keypoint version of the Shufflenet 16 (AP 76.1%) will be automatically
+downloaded. As an example, run the command:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python -m openpifpaf.predict <span class="se">\</span>
 &lt;image path&gt; <span class="se">\</span>
 --checkpoint shufflenetv2k16-apollo-24 -o <span class="se">\</span>
@@ -405,25 +396,13 @@
 --line-width <span class="m">3</span> --font-size <span class="m">0</span> --white-overlay <span class="m">0</span>.6 
 </pre></div>
 </div>
-</div>
-<div class="section" id="preprocess-dataset">
-<h2>Preprocess Dataset<a class="headerlink" href="#preprocess-dataset" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="keypoints-choice">
-<h3>Keypoints choice<a class="headerlink" href="#keypoints-choice" title="Permalink to this headline">¶</a></h3>
-<p>The preprocessing step converts the annotations into the standard COCO format. It creates a version with all 66 keypoints and also creates a sparsified version with 24 keypoints.</p>
+<p>The car poses with 66 and 24 keypoints can be visualized with:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">openpifpaf.plugins.apollocar3d.apollocar3d</span> <span class="kn">import</span> <span class="n">constants</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>The car pose can be visualized with:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rot_p90_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">openpifpaf.plugins.apollocar3d</span> <span class="kn">import</span> <span class="n">constants</span>
+
 <span class="k">with</span> <span class="n">openpifpaf</span><span class="o">.</span><span class="n">show</span><span class="o">.</span><span class="n">Canvas</span><span class="o">.</span><span class="n">blank</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="mi">75</span><span class="p">,</span> <span class="n">nomargin</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">ax</span><span class="p">:</span>
-    <span class="n">video_66</span> <span class="o">=</span> <span class="n">constants</span><span class="o">.</span><span class="n">plot3d_red</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">constants</span><span class="o">.</span><span class="n">CAR_POSE_66</span> <span class="o">@</span> <span class="n">rot_p90_x</span><span class="p">,</span> <span class="n">constants</span><span class="o">.</span><span class="n">CAR_SKELETON_66</span><span class="p">)</span><span class="o">.</span><span class="n">to_html5_video</span><span class="p">()</span>
+    <span class="n">video_66</span> <span class="o">=</span> <span class="n">constants</span><span class="o">.</span><span class="n">plot3d_red</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">constants</span><span class="o">.</span><span class="n">CAR_POSE_66</span><span class="p">,</span> <span class="n">constants</span><span class="o">.</span><span class="n">CAR_SKELETON_66</span><span class="p">)</span><span class="o">.</span><span class="n">to_html5_video</span><span class="p">()</span>
 <span class="n">IPython</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span><span class="n">video_66</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -10427,7 +10406,7 @@ AAAAAAAAAC1pbHN0AAAAJal0b28AAAAdZGF0YQAAAAEAAAAATGF2ZjU4Ljc2LjEwMA==
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">openpifpaf</span><span class="o">.</span><span class="n">show</span><span class="o">.</span><span class="n">Canvas</span><span class="o">.</span><span class="n">blank</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="mi">75</span><span class="p">,</span> <span class="n">nomargin</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">ax</span><span class="p">:</span>
-    <span class="n">video_24</span> <span class="o">=</span> <span class="n">constants</span><span class="o">.</span><span class="n">plot3d_red</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">constants</span><span class="o">.</span><span class="n">CAR_POSE_24</span> <span class="o">@</span> <span class="n">rot_p90_x</span><span class="p">,</span> <span class="n">constants</span><span class="o">.</span><span class="n">CAR_SKELETON_24</span><span class="p">)</span><span class="o">.</span><span class="n">to_html5_video</span><span class="p">()</span>
+    <span class="n">video_24</span> <span class="o">=</span> <span class="n">constants</span><span class="o">.</span><span class="n">plot3d_red</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">constants</span><span class="o">.</span><span class="n">CAR_POSE_24</span><span class="p">,</span> <span class="n">constants</span><span class="o">.</span><span class="n">CAR_SKELETON_24</span><span class="p">)</span><span class="o">.</span><span class="n">to_html5_video</span><span class="p">()</span>
 <span class="n">IPython</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span><span class="n">video_24</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -19734,27 +19713,33 @@ AAAAHWRhdGEAAAABAAAAAExhdmY1OC43Ni4xMDA=
 </video></div></div>
 </div>
 </div>
-<div class="section" id="dataset-conversion">
-<h3>Dataset conversion<a class="headerlink" href="#dataset-conversion" title="Permalink to this headline">¶</a></h3>
-<p>To convert the original ApolloCar3D annotations into coco format:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mkdir data outputs apollo-coco, apollo-coco/images apollo-coco/annotations
+<div class="section" id="preprocess-dataset">
+<h2>Preprocess Dataset<a class="headerlink" href="#preprocess-dataset" title="Permalink to this headline">¶</a></h2>
+<p>The preprocessing step converts the annotations into the standard COCO format.
+It creates a version with all 66 keypoints and also creates a sparsified version
+with 24 keypoints (shown above).
+To get started, download the challenge train file which contains the train and
+validation split:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mkdir data-apollocar3d
+<span class="nb">cd</span> data-apollocar3d
+<span class="c1"># wget https://ad-apolloscape.cdn.bcebos.com/3d_car_instance_sample.tar.gz</span>
+tar -xvf 3d-car-understanding-train.tar.gz
+rm 3d-car-understanding-train.tar.gz
+<span class="nb">cd</span> ..
 </pre></div>
 </div>
-<p>then, download and soft link to <a class="reference external" href="http://apolloscape.auto/car_instance.html">ApolloCar3D Dataset</a> into <code class="docutils literal notranslate"><span class="pre">data</span></code></p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip install pandas
-pip install opencv-python<span class="o">==</span><span class="m">4</span>.1.2.30
+<p>Then convert to COCO format:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip install opencv-python
+python -m openpifpaf.plugins.apollocar3d.apollocar3d.apollo_to_coco --split_images
 </pre></div>
 </div>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python -m openpifpaf_apollocar3d.apollo_to_coco
-</pre></div>
-</div>
-<p>This script will create annotations with 24kps and 66kps simultaneously. The argument <code class="docutils literal notranslate"><span class="pre">--split_images</span></code> copies the original images in the new folders according to the train val split, slowing down the process. No need to use it multiple times.</p>
-</div>
+<p>This script will create annotations with 24 keypoints and 66 keypoints simultaneously.
+The argument <code class="docutils literal notranslate"><span class="pre">--split_images</span></code> copies the original images in the new folders according
+to the train val split, slowing down the process. No need to use it multiple times.</p>
 </div>
 <div class="section" id="train">
 <h2>Train<a class="headerlink" href="#train" title="Permalink to this headline">¶</a></h2>
-<p>The default is training with 66kps
-Square-edge 769 (AP 76.1%)</p>
+<p>The default is training with 66 keypoints:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3 -m openpifpaf.train --dataset apollo <span class="se">\</span>
 --basenet<span class="o">=</span>shufflenetv2k16 --apollo-square-edge<span class="o">=</span><span class="m">769</span> <span class="se">\</span>
 --lr<span class="o">=</span><span class="m">0</span>.00002 --momentum<span class="o">=</span><span class="m">0</span>.95  --b-scale<span class="o">=</span><span class="m">5</span>.0 <span class="se">\</span>
@@ -19763,46 +19748,36 @@ Square-edge 769 (AP 76.1%)</p>
 --apollo-bmin <span class="m">2</span> --batch-size <span class="m">8</span>
 </pre></div>
 </div>
-<p>For smaller memory GPUs: square-edge 513</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3 -m openpifpaf.train --dataset apollo <span class="se">\</span>
---basenet<span class="o">=</span>shufflenetv2k16w --apollo-square-edge<span class="o">=</span><span class="m">513</span> <span class="se">\</span>
---lr<span class="o">=</span><span class="m">0</span>.00001 --momentum<span class="o">=</span><span class="m">0</span>.98 --b-scale<span class="o">=</span><span class="m">20</span>.0  --epochs<span class="o">=</span><span class="m">200</span> <span class="se">\</span>
---lr-decay <span class="m">130</span> <span class="m">140</span> --lr-decay-epochs<span class="o">=</span><span class="m">10</span>  --weight-decay<span class="o">=</span>1e-5  --loader-workers <span class="m">16</span> <span class="se">\</span>
-  --val-interval <span class="m">10</span> --batch-size <span class="m">8</span> --apollo-upsample <span class="m">2</span> --apollo-bmin <span class="m">5</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3 -m torch.distributed.launch --nproc_per_node<span class="o">=</span><span class="m">2</span> <span class="se">\</span>
+  -m openpifpaf.train --ddp <span class="se">\</span>
+  --lr<span class="o">=</span><span class="m">0</span>.0003 --momentum<span class="o">=</span><span class="m">0</span>.95 --b-scale<span class="o">=</span><span class="m">10</span>.0 --clip-grad-value<span class="o">=</span><span class="m">10</span>.0 <span class="se">\</span>
+  --epochs<span class="o">=</span><span class="m">450</span> --lr-decay <span class="m">430</span> <span class="m">440</span> --lr-decay-epochs<span class="o">=</span><span class="m">10</span> <span class="se">\</span>
+  --batch-size<span class="o">=</span><span class="m">8</span> --loader-workers<span class="o">=</span><span class="m">16</span> <span class="se">\</span>
+  --weight-decay<span class="o">=</span>1e-5 <span class="se">\</span>
+  --dataset<span class="o">=</span>apollo --apollo-upsample<span class="o">=</span><span class="m">2</span> --apollo-bmin<span class="o">=</span><span class="m">2</span> --apollo-square-edge<span class="o">=</span><span class="m">769</span> <span class="se">\</span>
+  --checkpoint<span class="o">=</span>shufflenetv2k16 --lr-warm-up-start-epoch<span class="o">=</span><span class="m">250</span>
 </pre></div>
 </div>
-<p>To train with 24kps you need to use the following command</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3 -m openpifpaf.train --dataset apollo <span class="se">\</span>
---basenet<span class="o">=</span>shufflenetv2k16 --apollo-square-edge<span class="o">=</span><span class="m">769</span> <span class="se">\</span>
---lr<span class="o">=</span><span class="m">0</span>.00002 --momentum<span class="o">=</span><span class="m">0</span>.95  --b-scale<span class="o">=</span><span class="m">5</span>.0 <span class="se">\</span>
---epochs<span class="o">=</span><span class="m">300</span> --lr-decay <span class="m">160</span> <span class="m">260</span> --lr-decay-epochs<span class="o">=</span><span class="m">10</span>  --weight-decay<span class="o">=</span>1e-5 <span class="se">\</span>
---weight-decay<span class="o">=</span>1e-5  --val-interval <span class="m">10</span> --loader-workers <span class="m">16</span> --apollo-upsample <span class="m">2</span> <span class="se">\</span>
---apollo-bmin <span class="m">2</span> --batch-size <span class="m">8</span> --apollo-use-24-kps --apollo-val-annotations <span class="se">\</span>
-&lt;PathToThe/apollo_keypoints_24_train.json&gt;
-</pre></div>
-</div>
+<p>For smaller memory GPUs use <code class="docutils literal notranslate"><span class="pre">--square-edge=513</span></code>.
+To train with 24kps, you need to use the <code class="docutils literal notranslate"><span class="pre">--apollo-use-24-kps</span></code> flag.</p>
 </div>
 <div class="section" id="evaluation">
 <h2>Evaluation<a class="headerlink" href="#evaluation" title="Permalink to this headline">¶</a></h2>
-<p>With 66 kps, replace shufflenetv2k16-apollo-66 with a path to your own checkpoint, if you want to evaluate on your own model:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nv">CUDA_VISIBLE_DEVICES</span><span class="o">=</span><span class="m">0</span>,1 python3 -m openpifpaf.eval --dataset<span class="o">=</span>apollo <span class="se">\</span>
+<p>To evaluate the pretrained model, use:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nv">CUDA_VISIBLE_DEVICES</span><span class="o">=</span><span class="m">0</span> python3 -m openpifpaf.eval <span class="se">\</span>
+--dataset<span class="o">=</span>apollo --loader-workers<span class="o">=</span><span class="m">8</span> <span class="se">\</span>
 --checkpoint shufflenetv2k16-apollo-66 <span class="se">\</span>
---force-complete-pose --seed-threshold<span class="o">=</span><span class="m">0</span>.01 --instance-threshold<span class="o">=</span><span class="m">0</span>.01 <span class="se">\</span>
---apollo-eval-long-edge <span class="m">0</span>
+--force-complete-pose --seed-threshold<span class="o">=</span><span class="m">0</span>.2 <span class="se">\</span>
+--apollo-eval-long-edge<span class="o">=</span><span class="m">0</span>
 </pre></div>
 </div>
-<p>With 24 kps, replace shufflenetv2k16-apollo-24 with a path to your own checkpoint, if you want to evaluate on your own model. Note that also in evaluation flag you need to make sure to set the cli flag for using 24kps only:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CUDA_VISIBLE_DEVICES</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span> <span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">openpifpaf</span><span class="o">.</span><span class="n">eval</span> <span class="o">--</span><span class="n">dataset</span><span class="o">=</span><span class="n">apollo</span> \
-<span class="o">--</span><span class="n">checkpoint</span> <span class="o">&lt;</span><span class="n">PathToYourCheckpoint</span><span class="o">&gt;</span> \
-<span class="o">--</span><span class="n">force</span><span class="o">-</span><span class="n">complete</span><span class="o">-</span><span class="n">pose</span> <span class="o">--</span><span class="n">seed</span><span class="o">-</span><span class="n">threshold</span><span class="o">=</span><span class="mf">0.01</span> <span class="o">--</span><span class="n">instance</span><span class="o">-</span><span class="n">threshold</span><span class="o">=</span><span class="mf">0.01</span> \
-<span class="o">--</span><span class="n">apollo</span><span class="o">-</span><span class="nb">eval</span><span class="o">-</span><span class="n">long</span><span class="o">-</span><span class="n">edge</span> <span class="mi">0</span> <span class="o">--</span><span class="n">apollo</span><span class="o">-</span><span class="n">use</span><span class="o">-</span><span class="mi">24</span><span class="o">-</span><span class="n">kps</span> <span class="o">--</span><span class="n">apollo</span><span class="o">-</span><span class="n">val</span><span class="o">-</span><span class="n">annotations</span> \
-<span class="o">&lt;</span><span class="n">PathToThe</span><span class="o">/</span><span class="n">apollo_keypoints_24_train</span><span class="o">.</span><span class="n">json</span><span class="o">&gt;</span>
-</pre></div>
-</div>
+<p>To evaluate your own model, provide a path to your checkpoint with
+the <code class="docutils literal notranslate"><span class="pre">--checkpoint</span></code> argument. To evaluate an Apollo checkpoint with 24 keypoints,
+provide the <code class="docutils literal notranslate"><span class="pre">--apollo-use-24-kps</span></code> flag.</p>
 </div>
 <div class="section" id="everything-else">
 <h2>Everything else<a class="headerlink" href="#everything-else" title="Permalink to this headline">¶</a></h2>
-<p>All pifpaf options and commands still stand, check them in the other sections of the guide.
+<p>All PifPaf options and commands still stand, check them in the other sections of the guide.
 If you are interested in training your own dataset, read the section on a <a class="reference internal" href="plugins_custom.html"><span class="doc">custom dataset</span></a>.</p>
 </div>
 </div>
