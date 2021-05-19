@@ -165,6 +165,16 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="plugins_animalpose.html">
+   Animal Keypoints
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plugins_wholebody.html">
+   WholeBody
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="plugins_apollocar3d.html">
    Car Keypoints
   </a>
@@ -337,13 +347,13 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#download-mpii-data">
-   Download MPII data
+  <a class="reference internal nav-link" href="#download-mpii-data-draft">
+   Download MPII data [draft]
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#download-nightowls-data">
-   Download NightOwls data
+  <a class="reference internal nav-link" href="#download-nightowls-data-draft">
+   Download NightOwls data [draft]
   </a>
  </li>
 </ul>
@@ -360,16 +370,21 @@
                 
   <div class="section" id="datasets">
 <h1>Datasets<a class="headerlink" href="#datasets" title="Permalink to this headline">¶</a></h1>
-<p>This section describes how to install common datasets used for training new
-models and for computing evaluation scores for entire datasets. In general,
-these datasets are large and require a computer with a good GPU to train and
+<p>This section focuses on the COCO keypoint dataset which was the original
+dataset that OpenPifPaf started with. In general,
+training datasets are large and require a computer with a good GPU to train and
 evaluate in reasonable times. Additional datasets are availble as plugins
-(for example <a class="reference internal" href="plugins_crowdpose.html"><span class="doc">CrowdPose</span></a>).</p>
+(for example <a class="reference internal" href="plugins_crowdpose.html"><span class="doc">CrowdPose</span></a>, <a class="reference internal" href="plugins_wholebody.html"><span class="doc">WholeBody</span></a>,
+<a class="reference internal" href="plugins_apollocar3d.html"><span class="doc">Car Keypoints</span></a> and <a class="reference internal" href="plugins_animalpose.html"><span class="doc">Animal Keypoints</span></a>).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>These datasets are not required to do pose predictions on your own images.
 Even for training, you are unlikely to need all the datasets for your use case.</p>
 </div>
+<p>OpenPifPaf is extendible with plugins and it has been our focus to make
+it particularly easy to extend it with custom datasets that are formatted
+in the COCO format. Please see the tutorial on <a class="reference internal" href="plugins_custom.html"><span class="doc">custom datasets</span></a>
+for a step-by-step walkthrough.</p>
 <div class="section" id="download-coco-data">
 <h2>Download COCO data<a class="headerlink" href="#download-coco-data" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="http://cocodataset.org/">COCO</a> is a great datasets containing many types of annotations, including bounding boxes, 2D poses, etc.</p>
@@ -488,8 +503,8 @@ unzip test2017.zip
 </div>
 </div>
 </div>
-<div class="section" id="download-mpii-data">
-<h2>Download MPII data<a class="headerlink" href="#download-mpii-data" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="download-mpii-data-draft">
+<h2>Download MPII data [draft]<a class="headerlink" href="#download-mpii-data-draft" title="Permalink to this headline">¶</a></h2>
 <p>This MPII data is currently not used anywhere.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mkdir data-mpii
 <span class="nb">cd</span> data-mpii
@@ -498,8 +513,8 @@ wget https://datasets.d2.mpi-inf.mpg.de/andriluka14cvpr/mpii_human_pose_v1_u12_2
 </pre></div>
 </div>
 </div>
-<div class="section" id="download-nightowls-data">
-<h2>Download NightOwls data<a class="headerlink" href="#download-nightowls-data" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="download-nightowls-data-draft">
+<h2>Download NightOwls data [draft]<a class="headerlink" href="#download-nightowls-data-draft" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mkdir data-nightowls
 <span class="nb">cd</span> data-nightowls
 wget http://www.robots.ox.ac.uk/<span class="se">\~</span>vgg/data/nightowls/python/nightowls_validation.json

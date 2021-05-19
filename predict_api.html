@@ -167,6 +167,16 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="plugins_animalpose.html">
+   Animal Keypoints
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plugins_wholebody.html">
+   WholeBody
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="plugins_apollocar3d.html">
    Car Keypoints
   </a>
@@ -329,23 +339,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#load-a-trained-neural-network">
-   Load a Trained Neural Network
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#preprocessing-dataset">
-   Preprocessing, Dataset
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dataloader-visualizer">
-   Dataloader, Visualizer
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#prediction">
-   Prediction
+  <a class="reference internal nav-link" href="#use-the-predictor-api">
+   Use the Predictor API
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -380,16 +375,13 @@ the command line interface.</p>
 <span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">torch</span>
 
-<span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s1">&#39;cpu&#39;</span><span class="p">)</span>
-<span class="c1"># device = torch.device(&#39;cuda&#39;)  # if cuda is available</span>
-
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;OpenPifPaf version&#39;</span><span class="p">,</span> <span class="n">openpifpaf</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;PyTorch version&#39;</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OpenPifPaf version 0.12.9
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OpenPifPaf version 0.12.10
 PyTorch version 1.7.1+cpu
 </pre></div>
 </div>
@@ -414,64 +406,42 @@ PyTorch version 1.7.1+cpu
 </div>
 </div>
 </div>
-<div class="section" id="load-a-trained-neural-network">
-<h2>Load a Trained Neural Network<a class="headerlink" href="#load-a-trained-neural-network" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="use-the-predictor-api">
+<h2>Use the Predictor API<a class="headerlink" href="#use-the-predictor-api" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net_cpu</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">openpifpaf</span><span class="o">.</span><span class="n">network</span><span class="o">.</span><span class="n">Factory</span><span class="p">(</span><span class="n">checkpoint</span><span class="o">=</span><span class="s1">&#39;shufflenetv2k16&#39;</span><span class="p">,</span> <span class="n">download_progress</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">factory</span><span class="p">()</span>
-<span class="n">net</span> <span class="o">=</span> <span class="n">net_cpu</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
-<span class="n">decoder</span> <span class="o">=</span> <span class="n">openpifpaf</span><span class="o">.</span><span class="n">decoder</span><span class="o">.</span><span class="n">factory</span><span class="p">([</span><span class="n">hn</span><span class="o">.</span><span class="n">meta</span> <span class="k">for</span> <span class="n">hn</span> <span class="ow">in</span> <span class="n">net_cpu</span><span class="o">.</span><span class="n">head_nets</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">predictor</span> <span class="o">=</span> <span class="n">openpifpaf</span><span class="o">.</span><span class="n">Predictor</span><span class="p">(</span><span class="n">checkpoint</span><span class="o">=</span><span class="s1">&#39;shufflenetv2k16&#39;</span><span class="p">)</span>
+<span class="n">predictions</span><span class="p">,</span> <span class="n">gt_anns</span><span class="p">,</span> <span class="n">image_meta</span> <span class="o">=</span> <span class="n">predictor</span><span class="o">.</span><span class="n">pil_image</span><span class="p">(</span><span class="n">pil_im</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="preprocessing-dataset">
-<h2>Preprocessing, Dataset<a class="headerlink" href="#preprocessing-dataset" title="Permalink to this headline">¶</a></h2>
-<p>Specify the image preprocossing. Beyond the default transforms, we also use <code class="docutils literal notranslate"><span class="pre">CenterPadTight(16)</span></code> which adds padding to the image such that both the height and width are multiples of 16 plus 1. With this padding, the feature map covers the entire image. Without it, there would be a gap on the right and bottom of the image that the feature map does not cover.</p>
+<p>We can immediately visualize the predicted annotations (<code class="docutils literal notranslate"><span class="pre">predictions</span></code>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">preprocess</span> <span class="o">=</span> <span class="n">openpifpaf</span><span class="o">.</span><span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span>
-    <span class="n">openpifpaf</span><span class="o">.</span><span class="n">transforms</span><span class="o">.</span><span class="n">NormalizeAnnotations</span><span class="p">(),</span>
-    <span class="n">openpifpaf</span><span class="o">.</span><span class="n">transforms</span><span class="o">.</span><span class="n">CenterPadTight</span><span class="p">(</span><span class="mi">16</span><span class="p">),</span>
-    <span class="n">openpifpaf</span><span class="o">.</span><span class="n">transforms</span><span class="o">.</span><span class="n">EVAL_TRANSFORM</span><span class="p">,</span>
-<span class="p">])</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">openpifpaf</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">PilImageList</span><span class="p">([</span><span class="n">pil_im</span><span class="p">],</span> <span class="n">preprocess</span><span class="o">=</span><span class="n">preprocess</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="dataloader-visualizer">
-<h2>Dataloader, Visualizer<a class="headerlink" href="#dataloader-visualizer" title="Permalink to this headline">¶</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">loader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
-    <span class="n">data</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">pin_memory</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
-    <span class="n">collate_fn</span><span class="o">=</span><span class="n">openpifpaf</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">collate_images_anns_meta</span><span class="p">)</span>
-
-<span class="n">annotation_painter</span> <span class="o">=</span> <span class="n">openpifpaf</span><span class="o">.</span><span class="n">show</span><span class="o">.</span><span class="n">AnnotationPainter</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="prediction">
-<h2>Prediction<a class="headerlink" href="#prediction" title="Permalink to this headline">¶</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">images_batch</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">__</span> <span class="ow">in</span> <span class="n">loader</span><span class="p">:</span>
-    <span class="n">predictions</span> <span class="o">=</span> <span class="n">decoder</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="n">images_batch</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="k">with</span> <span class="n">openpifpaf</span><span class="o">.</span><span class="n">show</span><span class="o">.</span><span class="n">image_canvas</span><span class="p">(</span><span class="n">im</span><span class="p">)</span> <span class="k">as</span> <span class="n">ax</span><span class="p">:</span>
-        <span class="n">annotation_painter</span><span class="o">.</span><span class="n">annotations</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">predictions</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">annotation_painter</span> <span class="o">=</span> <span class="n">openpifpaf</span><span class="o">.</span><span class="n">show</span><span class="o">.</span><span class="n">AnnotationPainter</span><span class="p">()</span>
+<span class="k">with</span> <span class="n">openpifpaf</span><span class="o">.</span><span class="n">show</span><span class="o">.</span><span class="n">image_canvas</span><span class="p">(</span><span class="n">im</span><span class="p">)</span> <span class="k">as</span> <span class="n">ax</span><span class="p">:</span>
+    <span class="n">annotation_painter</span><span class="o">.</span><span class="n">annotations</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">predictions</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/predict_api_12_0.png" src="_images/predict_api_12_0.png" />
+<img alt="_images/predict_api_8_0.png" src="_images/predict_api_8_0.png" />
 </div>
 </div>
 <p>Each prediction in the <code class="docutils literal notranslate"><span class="pre">predictions</span></code> list above is of type <code class="docutils literal notranslate"><span class="pre">Annotation</span></code>. You can access the joint coordinates in the <code class="docutils literal notranslate"><span class="pre">data</span></code> attribute. It is a numpy array that contains the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> coordinates and the confidence for every joint:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">predictions</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;openpifpaf.annotation.Annotation at 0x7fef9ec056a0&gt;
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">predictions</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
@@ -479,23 +449,61 @@ PyTorch version 1.7.1+cpu
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 81.07275   , 319.71887   ,   0.83763874],
-       [ 84.9302    , 316.125     ,   0.9231269 ],
-       [ 79.387     , 315.10068   ,   0.540898  ],
-       [ 99.46165   , 312.10602   ,   0.8882548 ],
-       [  0.        ,   0.        ,   0.        ],
-       [122.55096   , 319.90347   ,   0.850084  ],
-       [ 77.224075  , 325.06744   ,   0.8215059 ],
-       [145.52835   , 351.64584   ,   0.8308645 ],
-       [ 57.89241   , 354.26956   ,   0.78118944],
-       [125.43358   , 358.20248   ,   0.7399533 ],
-       [ 51.80527   , 384.07654   ,   0.8132886 ],
-       [121.69155   , 364.29153   ,   0.7633853 ],
-       [ 95.93747   , 366.63538   ,   0.7673378 ],
-       [149.63115   , 362.0364    ,   0.72344226],
-       [ 73.4484    , 370.0785    ,   0.68635195],
-       [104.37251   , 383.8152    ,   0.4630653 ],
-       [  0.        ,   0.        ,   0.        ]], dtype=float32)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 81.07269   , 316.7191    ,   0.83760077],
+       [ 84.930435  , 313.12497   ,   0.92310274],
+       [ 79.38671   , 312.10074   ,   0.54092383],
+       [ 99.461494  , 309.10587   ,   0.8882189 ],
+       [  0.        ,  -3.        ,   0.        ],
+       [122.55101   , 316.9041    ,   0.8500336 ],
+       [ 77.22328   , 322.0674    ,   0.821457  ],
+       [145.52803   , 348.64584   ,   0.8308074 ],
+       [ 57.89263   , 351.26923   ,   0.7811278 ],
+       [125.43434   , 355.20215   ,   0.7398876 ],
+       [ 51.805344  , 381.0768    ,   0.81319046],
+       [121.692406  , 361.29285   ,   0.7632364 ],
+       [ 95.937965  , 363.6355    ,   0.767259  ],
+       [149.63075   , 359.03595   ,   0.7233175 ],
+       [ 73.44805   , 367.07867   ,   0.6862443 ],
+       [104.370705  , 380.8169    ,   0.46303338],
+       [  0.        ,  -3.        ,   0.        ]], dtype=float32)
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">Predictor</span></code> class can also be created with <code class="docutils literal notranslate"><span class="pre">json_data=True</span></code> and then it will
+return JSON serializable dicts and list instead of <code class="docutils literal notranslate"><span class="pre">Annotation</span></code> objects.</p>
+<p>The other items that are returned are ground truth annotations (<code class="docutils literal notranslate"><span class="pre">gt_anns</span></code>) which
+are not provided for this image and meta information about the image (<code class="docutils literal notranslate"><span class="pre">image_meta</span></code>)
+which is useful to understand the transformations that were applied before
+passing the image through the neural network. Usually, you don’t need <code class="docutils literal notranslate"><span class="pre">image_meta</span></code>
+as the inverse transform has already been applied to ground truth and predictions
+in the <code class="docutils literal notranslate"><span class="pre">Predictor</span></code> class:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gt_anns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">image_meta</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;dataset_index&#39;: 0,
+ &#39;offset&#39;: array([ 0., -3.]),
+ &#39;scale&#39;: array([1., 1.]),
+ &#39;rotation&#39;: {&#39;angle&#39;: 0.0, &#39;width&#39;: None, &#39;height&#39;: None},
+ &#39;valid_area&#39;: array([  0.,   3., 639., 426.]),
+ &#39;hflip&#39;: False,
+ &#39;width_height&#39;: array([640, 427])}
 </pre></div>
 </div>
 </div>
@@ -510,9 +518,7 @@ Then, the index for every field to visualize must be specified. In the example b
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">openpifpaf</span><span class="o">.</span><span class="n">visualizer</span><span class="o">.</span><span class="n">Base</span><span class="o">.</span><span class="n">set_all_indices</span><span class="p">([</span><span class="s1">&#39;cif,caf:5:confidence&#39;</span><span class="p">])</span>
-
-<span class="k">for</span> <span class="n">images_batch</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">__</span> <span class="ow">in</span> <span class="n">loader</span><span class="p">:</span>
-    <span class="n">predictions</span> <span class="o">=</span> <span class="n">decoder</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="n">images_batch</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">predictor</span><span class="o">.</span><span class="n">pil_image</span><span class="p">(</span><span class="n">pil_im</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -524,9 +530,7 @@ Then, the index for every field to visualize must be specified. In the example b
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">openpifpaf</span><span class="o">.</span><span class="n">visualizer</span><span class="o">.</span><span class="n">Base</span><span class="o">.</span><span class="n">set_all_indices</span><span class="p">([</span><span class="s1">&#39;cif,caf:5:regression&#39;</span><span class="p">])</span>
-
-<span class="k">for</span> <span class="n">images_batch</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">__</span> <span class="ow">in</span> <span class="n">loader</span><span class="p">:</span>
-    <span class="n">predictions</span> <span class="o">=</span> <span class="n">decoder</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="n">images_batch</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">predictor</span><span class="o">.</span><span class="n">pil_image</span><span class="p">(</span><span class="n">pil_im</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -540,9 +544,7 @@ This is also the basis for the seeds. Both are shown below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">openpifpaf</span><span class="o">.</span><span class="n">visualizer</span><span class="o">.</span><span class="n">Base</span><span class="o">.</span><span class="n">set_all_indices</span><span class="p">([</span><span class="s1">&#39;cif:5:hr&#39;</span><span class="p">,</span> <span class="s1">&#39;seeds&#39;</span><span class="p">])</span>
-
-<span class="k">for</span> <span class="n">images_batch</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">__</span> <span class="ow">in</span> <span class="n">loader</span><span class="p">:</span>
-    <span class="n">predictions</span> <span class="o">=</span> <span class="n">decoder</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="n">images_batch</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">predictor</span><span class="o">.</span><span class="n">pil_image</span><span class="p">(</span><span class="n">pil_im</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -555,70 +557,12 @@ This is also the basis for the seeds. Both are shown below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">openpifpaf</span><span class="o">.</span><span class="n">visualizer</span><span class="o">.</span><span class="n">Base</span><span class="o">.</span><span class="n">set_all_indices</span><span class="p">([</span><span class="s1">&#39;occupancy:5&#39;</span><span class="p">])</span>
-
-<span class="k">for</span> <span class="n">images_batch</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">__</span> <span class="ow">in</span> <span class="n">loader</span><span class="p">:</span>
-    <span class="n">predictions</span> <span class="o">=</span> <span class="n">decoder</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="n">images_batch</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">predictor</span><span class="o">.</span><span class="n">pil_image</span><span class="p">(</span><span class="n">pil_im</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">0</span><span class="n">a0fcb7d0956</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> 
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">for</span> <span class="n">images_batch</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">__</span> <span class="ow">in</span> <span class="n">loader</span><span class="p">:</span>
-<span class="ne">----&gt; </span><span class="mi">4</span>     <span class="n">predictions</span> <span class="o">=</span> <span class="n">decoder</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="n">images_batch</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.10/x64/lib/python3.7/site-packages/openpifpaf/decoder/decoder.py</span> in <span class="ni">batch</span><span class="nt">(self, model, image_batch, device, gt_anns_batch)</span>
-<span class="g g-Whitespace">    </span><span class="mi">126</span>         <span class="n">start_decoder</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">127</span>         <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">worker_pool</span><span class="o">.</span><span class="n">starmap</span><span class="p">(</span>
-<span class="ne">--&gt; </span><span class="mi">128</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_mappable_annotations</span><span class="p">,</span> <span class="nb">zip</span><span class="p">(</span><span class="n">fields_batch</span><span class="p">,</span> <span class="n">image_batch</span><span class="p">,</span> <span class="n">gt_anns_batch</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">129</span>         <span class="bp">self</span><span class="o">.</span><span class="n">last_decoder_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_decoder</span>
-<span class="g g-Whitespace">    </span><span class="mi">130</span> 
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.10/x64/lib/python3.7/site-packages/openpifpaf/decoder/decoder.py</span> in <span class="ni">starmap</span><span class="nt">(f, iterable)</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span>     <span class="nd">@staticmethod</span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span>     <span class="k">def</span> <span class="nf">starmap</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">iterable</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">19</span>         <span class="k">return</span> <span class="p">[</span><span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">iterable</span><span class="p">]</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span> 
-<span class="g g-Whitespace">     </span><span class="mi">21</span> 
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.10/x64/lib/python3.7/site-packages/openpifpaf/decoder/decoder.py</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span>     <span class="nd">@staticmethod</span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span>     <span class="k">def</span> <span class="nf">starmap</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">iterable</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">19</span>         <span class="k">return</span> <span class="p">[</span><span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">iterable</span><span class="p">]</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span> 
-<span class="g g-Whitespace">     </span><span class="mi">21</span> 
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.10/x64/lib/python3.7/site-packages/openpifpaf/decoder/decoder.py</span> in <span class="ni">_mappable_annotations</span><span class="nt">(self, fields, debug_image, gt_anns)</span>
-<span class="g g-Whitespace">    </span><span class="mi">138</span>             <span class="n">visualizer</span><span class="o">.</span><span class="n">Base</span><span class="o">.</span><span class="n">ground_truth</span><span class="p">(</span><span class="n">gt_anns</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">139</span> 
-<span class="ne">--&gt; </span><span class="mi">140</span>         <span class="k">return</span> <span class="bp">self</span><span class="p">(</span><span class="n">fields</span><span class="p">)</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.10/x64/lib/python3.7/site-packages/openpifpaf/decoder/multi.py</span> in <span class="ni">__call__</span><span class="nt">(self, all_fields)</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span>                 <span class="k">continue</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span>             <span class="n">LOG</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;task </span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">task_i</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">22</span>             <span class="n">out</span> <span class="o">+=</span> <span class="n">decoder</span><span class="p">(</span><span class="n">all_fields</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">23</span> 
-<span class="g g-Whitespace">     </span><span class="mi">24</span>         <span class="k">return</span> <span class="n">out</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.10/x64/lib/python3.7/site-packages/openpifpaf/decoder/cifcaf.py</span> in <span class="ni">__call__</span><span class="nt">(self, fields, initial_annotations)</span>
-<span class="g g-Whitespace">    </span><span class="mi">247</span>             <span class="n">mark_occupied</span><span class="p">(</span><span class="n">ann</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">248</span> 
-<span class="ne">--&gt; </span><span class="mi">249</span>         <span class="bp">self</span><span class="o">.</span><span class="n">occupancy_visualizer</span><span class="o">.</span><span class="n">predicted</span><span class="p">(</span><span class="n">occupied</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">250</span> 
-<span class="g g-Whitespace">    </span><span class="mi">251</span>         <span class="n">LOG</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;annotations </span><span class="si">%d</span><span class="s1">, </span><span class="si">%.3f</span><span class="s1">s&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">annotations</span><span class="p">),</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.10/x64/lib/python3.7/site-packages/openpifpaf/visualizer/occupancy.py</span> in <span class="ni">predicted</span><span class="nt">(self, occupancy)</span>
-<span class="g g-Whitespace">     </span><span class="mi">26</span>             <span class="c1"># pylint: disable=unsubscriptable-object</span>
-<span class="g g-Whitespace">     </span><span class="mi">27</span>             <span class="n">factor</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">occupancy</span><span class="o">.</span><span class="n">reduction</span>
-<span class="ne">---&gt; </span><span class="mi">28</span>             <span class="n">reduced_image</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">ndimage</span><span class="o">.</span><span class="n">zoom</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_processed_image</span><span class="p">,</span> <span class="p">(</span><span class="n">factor</span><span class="p">,</span> <span class="n">factor</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">order</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">29</span> 
-<span class="g g-Whitespace">     </span><span class="mi">30</span>             <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">image_canvas</span><span class="p">(</span><span class="n">reduced_image</span><span class="p">)</span> <span class="k">as</span> <span class="n">ax</span><span class="p">:</span>
-
-<span class="ne">AttributeError</span>: &#39;NoneType&#39; object has no attribute &#39;ndimage&#39;
-</pre></div>
-</div>
+<img alt="_images/predict_api_21_0.png" src="_images/predict_api_21_0.png" />
 </div>
 </div>
 </div>

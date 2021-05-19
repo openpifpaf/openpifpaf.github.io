@@ -165,6 +165,16 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="plugins_animalpose.html">
+   Animal Keypoints
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plugins_wholebody.html">
+   WholeBody
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="plugins_apollocar3d.html">
    Car Keypoints
   </a>
@@ -406,18 +416,13 @@ optional arguments:
                         specify the output path or directory (default: None)
   --batch-size BATCH_SIZE
                         processing batch size (default: 1)
-  --long-edge LONG_EDGE
-                        rescale the long side of the image (aspect ratio
-                        maintained) (default: None)
   --loader-workers LOADER_WORKERS
                         number of workers for data loading (default: None)
-  --precise-rescaling   use more exact image rescaling (requires scipy)
-                        (default: True)
   --disable-cuda        disable CUDA (default: False)
 
 decoder configuration:
   --decoder DECODER [DECODER ...]
-                        Decoders to be considered: [&#39;cifcaf&#39;, &#39;cifdet&#39;].
+                        Decoders to be considered: [&#39;cifdet&#39;, &#39;cifcaf&#39;].
                         (default: None)
   --seed-threshold SEED_THRESHOLD
                         minimum threshold for seeds (default: 0.5)
@@ -464,10 +469,6 @@ logger:
   --debug               print debug messages (default: False)
   --log-stats           enable stats logging (default: False)
 
-MobileNetV2:
-  --mobilenetv2-no-pretrain
-                        use randomly initialized models (default: True)
-
 shufflenetv2k:
   --shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE
                         stride of the optional 2nd input convolution (default:
@@ -507,6 +508,14 @@ SqueezeNet:
   --squeezenet-no-pretrain
                         use randomly initialized models (default: True)
 
+MobileNetV3:
+  --mobilenetv3-no-pretrain
+                        use randomly initialized models (default: True)
+
+MobileNetV2:
+  --mobilenetv2-no-pretrain
+                        use randomly initialized models (default: True)
+
 CompositeField3:
   --cf3-dropout CF3_DROPOUT
                         [experimental] zeroing probability of feature in head
@@ -517,13 +526,21 @@ network configuration:
   --checkpoint CHECKPOINT
                         Path to a local checkpoint. Or provide one of the
                         following to download a pretrained model:
-                        &quot;mobilenetv2&quot;, &quot;resnet50&quot;, &quot;shufflenetv2k16&quot;,
-                        &quot;shufflenetv2k16-withdense&quot;, &quot;shufflenetv2k30&quot;,
-                        &quot;shufflenetv2k16-apollo-24&quot;,
-                        &quot;shufflenetv2k16-apollo-66&quot;, &quot;resnet50-crowdpose&quot;,
-                        &quot;shufflenetv2k16-wholebody&quot;,
-                        &quot;shufflenetv2k30-wholebody&quot; (default: None)
-  --basenet BASENET     base network, e.g. resnet50 (default: None)
+                        [&#39;shufflenetv2k30-animalpose&#39;,
+                        &#39;shufflenetv2k16-apollo-24&#39;,
+                        &#39;shufflenetv2k16-apollo-66&#39;, &#39;mobilenetv2&#39;,
+                        &#39;resnet50&#39;, &#39;shufflenetv2k16&#39;,
+                        &#39;shufflenetv2k16-withdense&#39;, &#39;shufflenetv2k30&#39;,
+                        &#39;resnet50-crowdpose&#39;, &#39;shufflenetv2k16-wholebody&#39;,
+                        &#39;shufflenetv2k30-wholebody&#39;] (default: None)
+  --basenet BASENET     base network, one of [&#39;mobilenetv2&#39;,
+                        &#39;mobilenetv3large&#39;, &#39;mobilenetv3small&#39;, &#39;resnet18&#39;,
+                        &#39;resnet50&#39;, &#39;resnet101&#39;, &#39;resnet152&#39;, &#39;resnext50&#39;,
+                        &#39;resnext101&#39;, &#39;shufflenetv2x1&#39;, &#39;shufflenetv2x2&#39;,
+                        &#39;shufflenetv2k16&#39;, &#39;shufflenetv2k20&#39;,
+                        &#39;shufflenetv2kx5&#39;, &#39;shufflenetv2k30&#39;,
+                        &#39;shufflenetv2k44&#39;, &#39;squeezenet&#39;, &#39;cifar10net&#39;]
+                        (default: None)
   --cross-talk CROSS_TALK
                         [experimental] (default: 0.0)
   --no-download-progress
@@ -532,6 +549,13 @@ network configuration:
                         consolidation strategy for a checkpoint&#39;s head
                         networks and the heads specified by the datamodule
                         (default: filter_and_extend)
+
+Predictor:
+  --long-edge LONG_EDGE
+                        rescale the long side of the image (aspect ratio
+                        maintained) (default: None)
+  --precise-rescaling   use more exact image rescaling (requires scipy)
+                        (default: True)
 
 show:
   --save-all [SAVE_ALL]
@@ -638,10 +662,16 @@ optional arguments:
                         video output file or &quot;virtualcam&quot; (default: None)
   --json-output [JSON_OUTPUT]
                         json output file (default: None)
-  --long-edge LONG_EDGE
-                        long edge of input images (default: None)
   --separate-debug-ax
   --disable-cuda        disable CUDA (default: False)
+
+SqueezeNet:
+  --squeezenet-no-pretrain
+                        use randomly initialized models (default: True)
+
+MobileNetV3:
+  --mobilenetv3-no-pretrain
+                        use randomly initialized models (default: True)
 
 MobileNetV2:
   --mobilenetv2-no-pretrain
@@ -682,10 +712,6 @@ ResNet:
                         create a network without the last block (default:
                         False)
 
-SqueezeNet:
-  --squeezenet-no-pretrain
-                        use randomly initialized models (default: True)
-
 CompositeField3:
   --cf3-dropout CF3_DROPOUT
                         [experimental] zeroing probability of feature in head
@@ -696,13 +722,21 @@ network configuration:
   --checkpoint CHECKPOINT
                         Path to a local checkpoint. Or provide one of the
                         following to download a pretrained model:
-                        &quot;mobilenetv2&quot;, &quot;resnet50&quot;, &quot;shufflenetv2k16&quot;,
-                        &quot;shufflenetv2k16-withdense&quot;, &quot;shufflenetv2k30&quot;,
-                        &quot;shufflenetv2k16-apollo-24&quot;,
-                        &quot;shufflenetv2k16-apollo-66&quot;, &quot;resnet50-crowdpose&quot;,
-                        &quot;shufflenetv2k16-wholebody&quot;,
-                        &quot;shufflenetv2k30-wholebody&quot; (default: None)
-  --basenet BASENET     base network, e.g. resnet50 (default: None)
+                        [&#39;shufflenetv2k30-animalpose&#39;,
+                        &#39;shufflenetv2k16-apollo-24&#39;,
+                        &#39;shufflenetv2k16-apollo-66&#39;, &#39;mobilenetv2&#39;,
+                        &#39;resnet50&#39;, &#39;shufflenetv2k16&#39;,
+                        &#39;shufflenetv2k16-withdense&#39;, &#39;shufflenetv2k30&#39;,
+                        &#39;resnet50-crowdpose&#39;, &#39;shufflenetv2k16-wholebody&#39;,
+                        &#39;shufflenetv2k30-wholebody&#39;] (default: None)
+  --basenet BASENET     base network, one of [&#39;mobilenetv2&#39;,
+                        &#39;mobilenetv3large&#39;, &#39;mobilenetv3small&#39;, &#39;resnet18&#39;,
+                        &#39;resnet50&#39;, &#39;resnet101&#39;, &#39;resnet152&#39;, &#39;resnext50&#39;,
+                        &#39;resnext101&#39;, &#39;shufflenetv2x1&#39;, &#39;shufflenetv2x2&#39;,
+                        &#39;shufflenetv2k16&#39;, &#39;shufflenetv2k20&#39;,
+                        &#39;shufflenetv2kx5&#39;, &#39;shufflenetv2k30&#39;,
+                        &#39;shufflenetv2k44&#39;, &#39;squeezenet&#39;, &#39;cifar10net&#39;]
+                        (default: None)
   --cross-talk CROSS_TALK
                         [experimental] (default: 0.0)
   --no-download-progress
@@ -714,7 +748,7 @@ network configuration:
 
 decoder configuration:
   --decoder DECODER [DECODER ...]
-                        Decoders to be considered: [&#39;cifdet&#39;, &#39;cifcaf&#39;].
+                        Decoders to be considered: [&#39;cifcaf&#39;, &#39;cifdet&#39;].
                         (default: None)
   --seed-threshold SEED_THRESHOLD
                         minimum threshold for seeds (default: 0.5)
@@ -760,6 +794,13 @@ logger:
   -q, --quiet           only show warning messages or above (default: False)
   --debug               print debug messages (default: False)
   --log-stats           enable stats logging (default: False)
+
+Predictor:
+  --long-edge LONG_EDGE
+                        rescale the long side of the image (aspect ratio
+                        maintained) (default: None)
+  --precise-rescaling   use more exact image rescaling (requires scipy)
+                        (default: True)
 
 show:
   --save-all [SAVE_ALL]
@@ -873,20 +914,13 @@ logger:
   --debug               print debug messages (default: False)
   --log-stats           enable stats logging (default: False)
 
-ResNet:
-  --resnet-no-pretrain  use randomly initialized models (default: True)
-  --resnet-pool0-stride RESNET_POOL0_STRIDE
-                        stride of zero removes the pooling op (default: 0)
-  --resnet-input-conv-stride RESNET_INPUT_CONV_STRIDE
-                        stride of the input convolution (default: 2)
-  --resnet-input-conv2-stride RESNET_INPUT_CONV2_STRIDE
-                        stride of the optional 2nd input convolution (default:
-                        0)
-  --resnet-block5-dilation RESNET_BLOCK5_DILATION
-                        use dilated convs in block5 (default: 1)
-  --resnet-remove-last-block
-                        create a network without the last block (default:
-                        False)
+SqueezeNet:
+  --squeezenet-no-pretrain
+                        use randomly initialized models (default: True)
+
+MobileNetV3:
+  --mobilenetv3-no-pretrain
+                        use randomly initialized models (default: True)
 
 shufflenetv2k:
   --shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE
@@ -908,13 +942,24 @@ MobileNetV2:
   --mobilenetv2-no-pretrain
                         use randomly initialized models (default: True)
 
-SqueezeNet:
-  --squeezenet-no-pretrain
-                        use randomly initialized models (default: True)
-
 ShuffleNetv2:
   --shufflenetv2-no-pretrain
                         use randomly initialized models (default: True)
+
+ResNet:
+  --resnet-no-pretrain  use randomly initialized models (default: True)
+  --resnet-pool0-stride RESNET_POOL0_STRIDE
+                        stride of zero removes the pooling op (default: 0)
+  --resnet-input-conv-stride RESNET_INPUT_CONV_STRIDE
+                        stride of the input convolution (default: 2)
+  --resnet-input-conv2-stride RESNET_INPUT_CONV2_STRIDE
+                        stride of the optional 2nd input convolution (default:
+                        0)
+  --resnet-block5-dilation RESNET_BLOCK5_DILATION
+                        use dilated convs in block5 (default: 1)
+  --resnet-remove-last-block
+                        create a network without the last block (default:
+                        False)
 
 CompositeField3:
   --cf3-dropout CF3_DROPOUT
@@ -926,13 +971,21 @@ network configuration:
   --checkpoint CHECKPOINT
                         Path to a local checkpoint. Or provide one of the
                         following to download a pretrained model:
-                        &quot;mobilenetv2&quot;, &quot;resnet50&quot;, &quot;shufflenetv2k16&quot;,
-                        &quot;shufflenetv2k16-withdense&quot;, &quot;shufflenetv2k30&quot;,
-                        &quot;shufflenetv2k16-apollo-24&quot;,
-                        &quot;shufflenetv2k16-apollo-66&quot;, &quot;resnet50-crowdpose&quot;,
-                        &quot;shufflenetv2k16-wholebody&quot;,
-                        &quot;shufflenetv2k30-wholebody&quot; (default: None)
-  --basenet BASENET     base network, e.g. resnet50 (default: None)
+                        [&#39;shufflenetv2k30-animalpose&#39;,
+                        &#39;shufflenetv2k16-apollo-24&#39;,
+                        &#39;shufflenetv2k16-apollo-66&#39;, &#39;mobilenetv2&#39;,
+                        &#39;resnet50&#39;, &#39;shufflenetv2k16&#39;,
+                        &#39;shufflenetv2k16-withdense&#39;, &#39;shufflenetv2k30&#39;,
+                        &#39;resnet50-crowdpose&#39;, &#39;shufflenetv2k16-wholebody&#39;,
+                        &#39;shufflenetv2k30-wholebody&#39;] (default: None)
+  --basenet BASENET     base network, one of [&#39;mobilenetv2&#39;,
+                        &#39;mobilenetv3large&#39;, &#39;mobilenetv3small&#39;, &#39;resnet18&#39;,
+                        &#39;resnet50&#39;, &#39;resnet101&#39;, &#39;resnet152&#39;, &#39;resnext50&#39;,
+                        &#39;resnext101&#39;, &#39;shufflenetv2x1&#39;, &#39;shufflenetv2x2&#39;,
+                        &#39;shufflenetv2k16&#39;, &#39;shufflenetv2k20&#39;,
+                        &#39;shufflenetv2kx5&#39;, &#39;shufflenetv2k30&#39;,
+                        &#39;shufflenetv2k44&#39;, &#39;squeezenet&#39;, &#39;cifar10net&#39;]
+                        (default: None)
   --cross-talk CROSS_TALK
                         [experimental] (default: 0.0)
   --no-download-progress
@@ -959,12 +1012,9 @@ Composite Loss:
   --loss-prescale LOSS_PRESCALE
   --regression-loss {smoothl1,l1,laplace}
                         type of regression loss (default: laplace)
-
-Scale Loss:
-  --b-scale B_SCALE     Laplace width b for scale loss (default: 1.0)
-  --scale-log
-  --scale-soft-clamp SCALE_SOFT_CLAMP
-                        soft clamp for scale (default: 5.0)
+  --bce-total-soft-clamp BCE_TOTAL_SOFT_CLAMP
+                        per feature clamp value applied to the total (default:
+                        None)
 
 Laplace Loss:
   --laplace-soft-clamp LAPLACE_SOFT_CLAMP
@@ -972,6 +1022,12 @@ Laplace Loss:
 
 Bce Loss:
   --r-smooth R_SMOOTH   r_{smooth} for SmoothL1 regressions (default: 0.0)
+
+Scale Loss:
+  --b-scale B_SCALE     Laplace width b for scale loss (default: 1.0)
+  --scale-log
+  --scale-soft-clamp SCALE_SOFT_CLAMP
+                        soft clamp for scale (default: 5.0)
 
 Bce Loss:
   --background-weight BACKGROUND_WEIGHT
@@ -985,7 +1041,9 @@ Bce Loss:
   --no-focal-clamp
   --bce-min BCE_MIN     gradient clipped below (default: 0.0)
   --bce-soft-clamp BCE_SOFT_CLAMP
-                        soft clamp for BCE (default: 5.0)
+                        soft clamp for BCE (default: None)
+  --bce-background-clamp BCE_BACKGROUND_CLAMP
+                        background clamp for BCE (default: -15.0)
 
 trainer:
   --epochs EPOCHS       number of epochs to train (default: None)
@@ -1065,6 +1123,38 @@ generic data module parameters:
   --dataset-weights DATASET_WEIGHTS [DATASET_WEIGHTS ...]
                         n-1 weights for the datasets (default: None)
 
+data module Animal:
+  --animal-train-annotations ANIMAL_TRAIN_ANNOTATIONS
+  --animal-val-annotations ANIMAL_VAL_ANNOTATIONS
+  --animal-train-image-dir ANIMAL_TRAIN_IMAGE_DIR
+  --animal-val-image-dir ANIMAL_VAL_IMAGE_DIR
+  --animal-square-edge ANIMAL_SQUARE_EDGE
+                        square edge of input images (default: 513)
+  --animal-extended-scale
+                        augment with an extended scale range (default: False)
+  --animal-orientation-invariant ANIMAL_ORIENTATION_INVARIANT
+                        augment with random orientations (default: 0.0)
+  --animal-blur ANIMAL_BLUR
+                        augment with blur (default: 0.0)
+  --animal-no-augmentation
+                        do not apply data augmentation (default: True)
+  --animal-rescale-images ANIMAL_RESCALE_IMAGES
+                        overall rescale factor for images (default: 1.0)
+  --animal-upsample ANIMAL_UPSAMPLE
+                        head upsample stride (default: 1)
+  --animal-min-kp-anns ANIMAL_MIN_KP_ANNS
+                        filter images with fewer keypoint annotations
+                        (default: 1)
+  --animal-bmin ANIMAL_BMIN
+                        b minimum in pixels (default: 1)
+  --animal-eval-test2017
+  --animal-eval-testdev2017
+  --animal-no-eval-annotation-filter
+  --animal-eval-long-edge ANIMAL_EVAL_LONG_EDGE
+                        set to zero to deactivate rescaling (default: 0)
+  --animal-eval-extended-scale
+  --animal-eval-orientation-invariant ANIMAL_EVAL_ORIENTATION_INVARIANT
+
 data module Apollo:
   --apollo-train-annotations APOLLO_TRAIN_ANNOTATIONS
   --apollo-val-annotations APOLLO_VAL_ANNOTATIONS
@@ -1128,9 +1218,16 @@ data module CocoDet:
 
 data module CocoKp:
   --cocokp-train-annotations COCOKP_TRAIN_ANNOTATIONS
+                        train annotations (default: data-
+                        mscoco/annotations/person_keypoints_train2017.json)
   --cocokp-val-annotations COCOKP_VAL_ANNOTATIONS
+                        val annotations (default: data-
+                        mscoco/annotations/person_keypoints_val2017.json)
   --cocokp-train-image-dir COCOKP_TRAIN_IMAGE_DIR
+                        train image dir (default: data-
+                        mscoco/images/train2017/)
   --cocokp-val-image-dir COCOKP_VAL_IMAGE_DIR
+                        val image dir (default: data-mscoco/images/val2017/)
   --cocokp-square-edge COCOKP_SQUARE_EDGE
                         square edge of input images (default: 385)
   --cocokp-with-dense   train with dense connections (default: False)
@@ -1184,35 +1281,42 @@ data module CrowdPose:
   --crowdpose-eval-orientation-invariant CROWDPOSE_EVAL_ORIENTATION_INVARIANT
   --crowdpose-index {easy,medium,hard}
 
-data module wholebodykp:
-  --wholebodykp-train-annotations WHOLEBODYKP_TRAIN_ANNOTATIONS
-  --wholebodykp-val-annotations WHOLEBODYKP_VAL_ANNOTATIONS
-  --wholebodykp-train-image-dir WHOLEBODYKP_TRAIN_IMAGE_DIR
-  --wholebodykp-val-image-dir WHOLEBODYKP_VAL_IMAGE_DIR
-  --wholebodykp-square-edge WHOLEBODYKP_SQUARE_EDGE
+data module wholebody:
+  --wholebody-train-annotations WHOLEBODY_TRAIN_ANNOTATIONS
+                        train annotations (default: data-mscoco/annotations/pe
+                        rson_keypoints_train2017_wholebody_pifpaf_style.json)
+  --wholebody-val-annotations WHOLEBODY_VAL_ANNOTATIONS
+                        val annotations (default: data-
+                        mscoco/annotations/coco_wholebody_val_v1.0.json)
+  --wholebody-train-image-dir WHOLEBODY_TRAIN_IMAGE_DIR
+                        train image dir (default: data-
+                        mscoco/images/train2017/)
+  --wholebody-val-image-dir WHOLEBODY_VAL_IMAGE_DIR
+                        val image dir (default: data-mscoco/images/val2017)
+  --wholebody-square-edge WHOLEBODY_SQUARE_EDGE
                         square edge of input images (default: 385)
-  --wholebodykp-extended-scale
+  --wholebody-extended-scale
                         augment with an extended scale range (default: False)
-  --wholebodykp-orientation-invariant WHOLEBODYKP_ORIENTATION_INVARIANT
+  --wholebody-orientation-invariant WHOLEBODY_ORIENTATION_INVARIANT
                         augment with random orientations (default: 0.0)
-  --wholebodykp-blur WHOLEBODYKP_BLUR
+  --wholebody-blur WHOLEBODY_BLUR
                         augment with blur (default: 0.0)
-  --wholebodykp-no-augmentation
+  --wholebody-no-augmentation
                         do not apply data augmentation (default: True)
-  --wholebodykp-rescale-images WHOLEBODYKP_RESCALE_IMAGES
+  --wholebody-rescale-images WHOLEBODY_RESCALE_IMAGES
                         overall rescale factor for images (default: 1.0)
-  --wholebodykp-upsample WHOLEBODYKP_UPSAMPLE
+  --wholebody-upsample WHOLEBODY_UPSAMPLE
                         head upsample stride (default: 1)
-  --wholebodykp-min-kp-anns WHOLEBODYKP_MIN_KP_ANNS
+  --wholebody-min-kp-anns WHOLEBODY_MIN_KP_ANNS
                         filter images with fewer keypoint annotations
                         (default: 1)
-  --wholebodykp-bmin WHOLEBODYKP_BMIN
+  --wholebody-bmin WHOLEBODY_BMIN
                         bmin (default: 1.0)
-  --wholebodykp-apply-local-centrality-weights
+  --wholebody-apply-local-centrality-weights
                         Weigh the CIF and CAF head during training. (default:
                         False)
-  --wholebodykp-eval-test2017
-  --wholebodykp-eval-testdev2017
+  --wholebody-eval-test2017
+  --wholebody-eval-testdev2017
   --wholebody-no-eval-annotation-filter
   --wholebody-eval-long-edge WHOLEBODY_EVAL_LONG_EDGE
                         set to zero to deactivate rescaling (default: 641)
@@ -1321,6 +1425,38 @@ generic data module parameters:
   --dataset-weights DATASET_WEIGHTS [DATASET_WEIGHTS ...]
                         n-1 weights for the datasets (default: None)
 
+data module Animal:
+  --animal-train-annotations ANIMAL_TRAIN_ANNOTATIONS
+  --animal-val-annotations ANIMAL_VAL_ANNOTATIONS
+  --animal-train-image-dir ANIMAL_TRAIN_IMAGE_DIR
+  --animal-val-image-dir ANIMAL_VAL_IMAGE_DIR
+  --animal-square-edge ANIMAL_SQUARE_EDGE
+                        square edge of input images (default: 513)
+  --animal-extended-scale
+                        augment with an extended scale range (default: False)
+  --animal-orientation-invariant ANIMAL_ORIENTATION_INVARIANT
+                        augment with random orientations (default: 0.0)
+  --animal-blur ANIMAL_BLUR
+                        augment with blur (default: 0.0)
+  --animal-no-augmentation
+                        do not apply data augmentation (default: True)
+  --animal-rescale-images ANIMAL_RESCALE_IMAGES
+                        overall rescale factor for images (default: 1.0)
+  --animal-upsample ANIMAL_UPSAMPLE
+                        head upsample stride (default: 1)
+  --animal-min-kp-anns ANIMAL_MIN_KP_ANNS
+                        filter images with fewer keypoint annotations
+                        (default: 1)
+  --animal-bmin ANIMAL_BMIN
+                        b minimum in pixels (default: 1)
+  --animal-eval-test2017
+  --animal-eval-testdev2017
+  --animal-no-eval-annotation-filter
+  --animal-eval-long-edge ANIMAL_EVAL_LONG_EDGE
+                        set to zero to deactivate rescaling (default: 0)
+  --animal-eval-extended-scale
+  --animal-eval-orientation-invariant ANIMAL_EVAL_ORIENTATION_INVARIANT
+
 data module Apollo:
   --apollo-train-annotations APOLLO_TRAIN_ANNOTATIONS
   --apollo-val-annotations APOLLO_VAL_ANNOTATIONS
@@ -1384,9 +1520,16 @@ data module CocoDet:
 
 data module CocoKp:
   --cocokp-train-annotations COCOKP_TRAIN_ANNOTATIONS
+                        train annotations (default: data-
+                        mscoco/annotations/person_keypoints_train2017.json)
   --cocokp-val-annotations COCOKP_VAL_ANNOTATIONS
+                        val annotations (default: data-
+                        mscoco/annotations/person_keypoints_val2017.json)
   --cocokp-train-image-dir COCOKP_TRAIN_IMAGE_DIR
+                        train image dir (default: data-
+                        mscoco/images/train2017/)
   --cocokp-val-image-dir COCOKP_VAL_IMAGE_DIR
+                        val image dir (default: data-mscoco/images/val2017/)
   --cocokp-square-edge COCOKP_SQUARE_EDGE
                         square edge of input images (default: 385)
   --cocokp-with-dense   train with dense connections (default: False)
@@ -1440,35 +1583,42 @@ data module CrowdPose:
   --crowdpose-eval-orientation-invariant CROWDPOSE_EVAL_ORIENTATION_INVARIANT
   --crowdpose-index {easy,medium,hard}
 
-data module wholebodykp:
-  --wholebodykp-train-annotations WHOLEBODYKP_TRAIN_ANNOTATIONS
-  --wholebodykp-val-annotations WHOLEBODYKP_VAL_ANNOTATIONS
-  --wholebodykp-train-image-dir WHOLEBODYKP_TRAIN_IMAGE_DIR
-  --wholebodykp-val-image-dir WHOLEBODYKP_VAL_IMAGE_DIR
-  --wholebodykp-square-edge WHOLEBODYKP_SQUARE_EDGE
+data module wholebody:
+  --wholebody-train-annotations WHOLEBODY_TRAIN_ANNOTATIONS
+                        train annotations (default: data-mscoco/annotations/pe
+                        rson_keypoints_train2017_wholebody_pifpaf_style.json)
+  --wholebody-val-annotations WHOLEBODY_VAL_ANNOTATIONS
+                        val annotations (default: data-
+                        mscoco/annotations/coco_wholebody_val_v1.0.json)
+  --wholebody-train-image-dir WHOLEBODY_TRAIN_IMAGE_DIR
+                        train image dir (default: data-
+                        mscoco/images/train2017/)
+  --wholebody-val-image-dir WHOLEBODY_VAL_IMAGE_DIR
+                        val image dir (default: data-mscoco/images/val2017)
+  --wholebody-square-edge WHOLEBODY_SQUARE_EDGE
                         square edge of input images (default: 385)
-  --wholebodykp-extended-scale
+  --wholebody-extended-scale
                         augment with an extended scale range (default: False)
-  --wholebodykp-orientation-invariant WHOLEBODYKP_ORIENTATION_INVARIANT
+  --wholebody-orientation-invariant WHOLEBODY_ORIENTATION_INVARIANT
                         augment with random orientations (default: 0.0)
-  --wholebodykp-blur WHOLEBODYKP_BLUR
+  --wholebody-blur WHOLEBODY_BLUR
                         augment with blur (default: 0.0)
-  --wholebodykp-no-augmentation
+  --wholebody-no-augmentation
                         do not apply data augmentation (default: True)
-  --wholebodykp-rescale-images WHOLEBODYKP_RESCALE_IMAGES
+  --wholebody-rescale-images WHOLEBODY_RESCALE_IMAGES
                         overall rescale factor for images (default: 1.0)
-  --wholebodykp-upsample WHOLEBODYKP_UPSAMPLE
+  --wholebody-upsample WHOLEBODY_UPSAMPLE
                         head upsample stride (default: 1)
-  --wholebodykp-min-kp-anns WHOLEBODYKP_MIN_KP_ANNS
+  --wholebody-min-kp-anns WHOLEBODY_MIN_KP_ANNS
                         filter images with fewer keypoint annotations
                         (default: 1)
-  --wholebodykp-bmin WHOLEBODYKP_BMIN
+  --wholebody-bmin WHOLEBODY_BMIN
                         bmin (default: 1.0)
-  --wholebodykp-apply-local-centrality-weights
+  --wholebody-apply-local-centrality-weights
                         Weigh the CIF and CAF head during training. (default:
                         False)
-  --wholebodykp-eval-test2017
-  --wholebodykp-eval-testdev2017
+  --wholebody-eval-test2017
+  --wholebody-eval-testdev2017
   --wholebody-no-eval-annotation-filter
   --wholebody-eval-long-edge WHOLEBODY_EVAL_LONG_EDGE
                         set to zero to deactivate rescaling (default: 641)
@@ -1477,7 +1627,7 @@ data module wholebodykp:
 
 decoder configuration:
   --decoder DECODER [DECODER ...]
-                        Decoders to be considered: [&#39;cifdet&#39;, &#39;cifcaf&#39;].
+                        Decoders to be considered: [&#39;cifcaf&#39;, &#39;cifdet&#39;].
                         (default: None)
   --seed-threshold SEED_THRESHOLD
                         minimum threshold for seeds (default: 0.5)
@@ -1524,8 +1674,12 @@ logger:
   --debug               print debug messages (default: False)
   --log-stats           enable stats logging (default: False)
 
-MobileNetV2:
-  --mobilenetv2-no-pretrain
+SqueezeNet:
+  --squeezenet-no-pretrain
+                        use randomly initialized models (default: True)
+
+MobileNetV3:
+  --mobilenetv3-no-pretrain
                         use randomly initialized models (default: True)
 
 shufflenetv2k:
@@ -1543,6 +1697,10 @@ shufflenetv2k:
   --shufflenetv2k-instance-norm
   --shufflenetv2k-group-norm
   --shufflenetv2k-leaky-relu
+
+MobileNetV2:
+  --mobilenetv2-no-pretrain
+                        use randomly initialized models (default: True)
 
 ShuffleNetv2:
   --shufflenetv2-no-pretrain
@@ -1563,10 +1721,6 @@ ResNet:
                         create a network without the last block (default:
                         False)
 
-SqueezeNet:
-  --squeezenet-no-pretrain
-                        use randomly initialized models (default: True)
-
 CompositeField3:
   --cf3-dropout CF3_DROPOUT
                         [experimental] zeroing probability of feature in head
@@ -1577,13 +1731,21 @@ network configuration:
   --checkpoint CHECKPOINT
                         Path to a local checkpoint. Or provide one of the
                         following to download a pretrained model:
-                        &quot;mobilenetv2&quot;, &quot;resnet50&quot;, &quot;shufflenetv2k16&quot;,
-                        &quot;shufflenetv2k16-withdense&quot;, &quot;shufflenetv2k30&quot;,
-                        &quot;shufflenetv2k16-apollo-24&quot;,
-                        &quot;shufflenetv2k16-apollo-66&quot;, &quot;resnet50-crowdpose&quot;,
-                        &quot;shufflenetv2k16-wholebody&quot;,
-                        &quot;shufflenetv2k30-wholebody&quot; (default: None)
-  --basenet BASENET     base network, e.g. resnet50 (default: None)
+                        [&#39;shufflenetv2k30-animalpose&#39;,
+                        &#39;shufflenetv2k16-apollo-24&#39;,
+                        &#39;shufflenetv2k16-apollo-66&#39;, &#39;mobilenetv2&#39;,
+                        &#39;resnet50&#39;, &#39;shufflenetv2k16&#39;,
+                        &#39;shufflenetv2k16-withdense&#39;, &#39;shufflenetv2k30&#39;,
+                        &#39;resnet50-crowdpose&#39;, &#39;shufflenetv2k16-wholebody&#39;,
+                        &#39;shufflenetv2k30-wholebody&#39;] (default: None)
+  --basenet BASENET     base network, one of [&#39;mobilenetv2&#39;,
+                        &#39;mobilenetv3large&#39;, &#39;mobilenetv3small&#39;, &#39;resnet18&#39;,
+                        &#39;resnet50&#39;, &#39;resnet101&#39;, &#39;resnet152&#39;, &#39;resnext50&#39;,
+                        &#39;resnext101&#39;, &#39;shufflenetv2x1&#39;, &#39;shufflenetv2x2&#39;,
+                        &#39;shufflenetv2k16&#39;, &#39;shufflenetv2k20&#39;,
+                        &#39;shufflenetv2kx5&#39;, &#39;shufflenetv2k30&#39;,
+                        &#39;shufflenetv2k44&#39;, &#39;squeezenet&#39;, &#39;cifar10net&#39;]
+                        (default: None)
   --cross-talk CROSS_TALK
                         [experimental] (default: 0.0)
   --no-download-progress
@@ -1592,6 +1754,13 @@ network configuration:
                         consolidation strategy for a checkpoint&#39;s head
                         networks and the heads specified by the datamodule
                         (default: filter_and_extend)
+
+Predictor:
+  --long-edge LONG_EDGE
+                        rescale the long side of the image (aspect ratio
+                        maintained) (default: None)
+  --precise-rescaling   use more exact image rescaling (requires scipy)
+                        (default: True)
 
 show:
   --save-all [SAVE_ALL]
@@ -1669,9 +1838,16 @@ python3 -m openpifpaf.export_onnx --help
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>usage: python3 -m openpifpaf.export_onnx [-h] [--version]
-                                         [--squeezenet-no-pretrain]
-                                         [--mobilenetv2-no-pretrain]
                                          [--shufflenetv2-no-pretrain]
+                                         [--mobilenetv2-no-pretrain]
+                                         [--resnet-no-pretrain]
+                                         [--resnet-pool0-stride RESNET_POOL0_STRIDE]
+                                         [--resnet-input-conv-stride RESNET_INPUT_CONV_STRIDE]
+                                         [--resnet-input-conv2-stride RESNET_INPUT_CONV2_STRIDE]
+                                         [--resnet-block5-dilation RESNET_BLOCK5_DILATION]
+                                         [--resnet-remove-last-block]
+                                         [--squeezenet-no-pretrain]
+                                         [--mobilenetv3-no-pretrain]
                                          [--shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE]
                                          [--shufflenetv2k-input-conv2-outchannels SHUFFLENETV2K_INPUT_CONV2_OUTCHANNELS]
                                          [--shufflenetv2k-stage4-dilation SHUFFLENETV2K_STAGE4_DILATION]
@@ -1679,12 +1855,6 @@ python3 -m openpifpaf.export_onnx --help
                                          [--shufflenetv2k-conv5-as-stage]
                                          [--shufflenetv2k-instance-norm | --shufflenetv2k-group-norm]
                                          [--shufflenetv2k-leaky-relu]
-                                         [--resnet-no-pretrain]
-                                         [--resnet-pool0-stride RESNET_POOL0_STRIDE]
-                                         [--resnet-input-conv-stride RESNET_INPUT_CONV_STRIDE]
-                                         [--resnet-input-conv2-stride RESNET_INPUT_CONV2_STRIDE]
-                                         [--resnet-block5-dilation RESNET_BLOCK5_DILATION]
-                                         [--resnet-remove-last-block]
                                          [--cf3-dropout CF3_DROPOUT]
                                          [--cf3-no-inplace-ops]
                                          [--checkpoint CHECKPOINT]
@@ -1713,16 +1883,35 @@ optional arguments:
   --input-width INPUT_WIDTH
   --input-height INPUT_HEIGHT
 
-SqueezeNet:
-  --squeezenet-no-pretrain
+ShuffleNetv2:
+  --shufflenetv2-no-pretrain
                         use randomly initialized models (default: True)
 
 MobileNetV2:
   --mobilenetv2-no-pretrain
                         use randomly initialized models (default: True)
 
-ShuffleNetv2:
-  --shufflenetv2-no-pretrain
+ResNet:
+  --resnet-no-pretrain  use randomly initialized models (default: True)
+  --resnet-pool0-stride RESNET_POOL0_STRIDE
+                        stride of zero removes the pooling op (default: 0)
+  --resnet-input-conv-stride RESNET_INPUT_CONV_STRIDE
+                        stride of the input convolution (default: 2)
+  --resnet-input-conv2-stride RESNET_INPUT_CONV2_STRIDE
+                        stride of the optional 2nd input convolution (default:
+                        0)
+  --resnet-block5-dilation RESNET_BLOCK5_DILATION
+                        use dilated convs in block5 (default: 1)
+  --resnet-remove-last-block
+                        create a network without the last block (default:
+                        False)
+
+SqueezeNet:
+  --squeezenet-no-pretrain
+                        use randomly initialized models (default: True)
+
+MobileNetV3:
+  --mobilenetv3-no-pretrain
                         use randomly initialized models (default: True)
 
 shufflenetv2k:
@@ -1741,21 +1930,6 @@ shufflenetv2k:
   --shufflenetv2k-group-norm
   --shufflenetv2k-leaky-relu
 
-ResNet:
-  --resnet-no-pretrain  use randomly initialized models (default: True)
-  --resnet-pool0-stride RESNET_POOL0_STRIDE
-                        stride of zero removes the pooling op (default: 0)
-  --resnet-input-conv-stride RESNET_INPUT_CONV_STRIDE
-                        stride of the input convolution (default: 2)
-  --resnet-input-conv2-stride RESNET_INPUT_CONV2_STRIDE
-                        stride of the optional 2nd input convolution (default:
-                        0)
-  --resnet-block5-dilation RESNET_BLOCK5_DILATION
-                        use dilated convs in block5 (default: 1)
-  --resnet-remove-last-block
-                        create a network without the last block (default:
-                        False)
-
 CompositeField3:
   --cf3-dropout CF3_DROPOUT
                         [experimental] zeroing probability of feature in head
@@ -1766,13 +1940,21 @@ network configuration:
   --checkpoint CHECKPOINT
                         Path to a local checkpoint. Or provide one of the
                         following to download a pretrained model:
-                        &quot;mobilenetv2&quot;, &quot;resnet50&quot;, &quot;shufflenetv2k16&quot;,
-                        &quot;shufflenetv2k16-withdense&quot;, &quot;shufflenetv2k30&quot;,
-                        &quot;shufflenetv2k16-apollo-24&quot;,
-                        &quot;shufflenetv2k16-apollo-66&quot;, &quot;resnet50-crowdpose&quot;,
-                        &quot;shufflenetv2k16-wholebody&quot;,
-                        &quot;shufflenetv2k30-wholebody&quot; (default: None)
-  --basenet BASENET     base network, e.g. resnet50 (default: None)
+                        [&#39;shufflenetv2k30-animalpose&#39;,
+                        &#39;shufflenetv2k16-apollo-24&#39;,
+                        &#39;shufflenetv2k16-apollo-66&#39;, &#39;mobilenetv2&#39;,
+                        &#39;resnet50&#39;, &#39;shufflenetv2k16&#39;,
+                        &#39;shufflenetv2k16-withdense&#39;, &#39;shufflenetv2k30&#39;,
+                        &#39;resnet50-crowdpose&#39;, &#39;shufflenetv2k16-wholebody&#39;,
+                        &#39;shufflenetv2k30-wholebody&#39;] (default: None)
+  --basenet BASENET     base network, one of [&#39;mobilenetv2&#39;,
+                        &#39;mobilenetv3large&#39;, &#39;mobilenetv3small&#39;, &#39;resnet18&#39;,
+                        &#39;resnet50&#39;, &#39;resnet101&#39;, &#39;resnet152&#39;, &#39;resnext50&#39;,
+                        &#39;resnext101&#39;, &#39;shufflenetv2x1&#39;, &#39;shufflenetv2x2&#39;,
+                        &#39;shufflenetv2k16&#39;, &#39;shufflenetv2k20&#39;,
+                        &#39;shufflenetv2kx5&#39;, &#39;shufflenetv2k30&#39;,
+                        &#39;shufflenetv2k44&#39;, &#39;squeezenet&#39;, &#39;cifar10net&#39;]
+                        (default: None)
   --cross-talk CROSS_TALK
                         [experimental] (default: 0.0)
   --no-download-progress
@@ -1797,15 +1979,8 @@ python3 -m openpifpaf.export_coreml --help
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>usage: python3 -m openpifpaf.export_coreml [-h] [--version]
-                                           [--shufflenetv2-no-pretrain]
                                            [--mobilenetv2-no-pretrain]
-                                           [--shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE]
-                                           [--shufflenetv2k-input-conv2-outchannels SHUFFLENETV2K_INPUT_CONV2_OUTCHANNELS]
-                                           [--shufflenetv2k-stage4-dilation SHUFFLENETV2K_STAGE4_DILATION]
-                                           [--shufflenetv2k-kernel SHUFFLENETV2K_KERNEL]
-                                           [--shufflenetv2k-conv5-as-stage]
-                                           [--shufflenetv2k-instance-norm | --shufflenetv2k-group-norm]
-                                           [--shufflenetv2k-leaky-relu]
+                                           [--shufflenetv2-no-pretrain]
                                            [--resnet-no-pretrain]
                                            [--resnet-pool0-stride RESNET_POOL0_STRIDE]
                                            [--resnet-input-conv-stride RESNET_INPUT_CONV_STRIDE]
@@ -1813,6 +1988,14 @@ python3 -m openpifpaf.export_coreml --help
                                            [--resnet-block5-dilation RESNET_BLOCK5_DILATION]
                                            [--resnet-remove-last-block]
                                            [--squeezenet-no-pretrain]
+                                           [--mobilenetv3-no-pretrain]
+                                           [--shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE]
+                                           [--shufflenetv2k-input-conv2-outchannels SHUFFLENETV2K_INPUT_CONV2_OUTCHANNELS]
+                                           [--shufflenetv2k-stage4-dilation SHUFFLENETV2K_STAGE4_DILATION]
+                                           [--shufflenetv2k-kernel SHUFFLENETV2K_KERNEL]
+                                           [--shufflenetv2k-conv5-as-stage]
+                                           [--shufflenetv2k-instance-norm | --shufflenetv2k-group-norm]
+                                           [--shufflenetv2k-leaky-relu]
                                            [--cf3-dropout CF3_DROPOUT]
                                            [--cf3-no-inplace-ops]
                                            [--checkpoint CHECKPOINT]
@@ -1835,29 +2018,13 @@ optional arguments:
   --input-height INPUT_HEIGHT
   --minimum-deployment-target {iOS13,iOS14}
 
-ShuffleNetv2:
-  --shufflenetv2-no-pretrain
-                        use randomly initialized models (default: True)
-
 MobileNetV2:
   --mobilenetv2-no-pretrain
                         use randomly initialized models (default: True)
 
-shufflenetv2k:
-  --shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE
-                        stride of the optional 2nd input convolution (default:
-                        0)
-  --shufflenetv2k-input-conv2-outchannels SHUFFLENETV2K_INPUT_CONV2_OUTCHANNELS
-                        out channels of the optional 2nd input convolution
-                        (default: None)
-  --shufflenetv2k-stage4-dilation SHUFFLENETV2K_STAGE4_DILATION
-                        dilation factor of stage 4 (default: 1)
-  --shufflenetv2k-kernel SHUFFLENETV2K_KERNEL
-                        kernel width (default: 5)
-  --shufflenetv2k-conv5-as-stage
-  --shufflenetv2k-instance-norm
-  --shufflenetv2k-group-norm
-  --shufflenetv2k-leaky-relu
+ShuffleNetv2:
+  --shufflenetv2-no-pretrain
+                        use randomly initialized models (default: True)
 
 ResNet:
   --resnet-no-pretrain  use randomly initialized models (default: True)
@@ -1878,6 +2045,26 @@ SqueezeNet:
   --squeezenet-no-pretrain
                         use randomly initialized models (default: True)
 
+MobileNetV3:
+  --mobilenetv3-no-pretrain
+                        use randomly initialized models (default: True)
+
+shufflenetv2k:
+  --shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE
+                        stride of the optional 2nd input convolution (default:
+                        0)
+  --shufflenetv2k-input-conv2-outchannels SHUFFLENETV2K_INPUT_CONV2_OUTCHANNELS
+                        out channels of the optional 2nd input convolution
+                        (default: None)
+  --shufflenetv2k-stage4-dilation SHUFFLENETV2K_STAGE4_DILATION
+                        dilation factor of stage 4 (default: 1)
+  --shufflenetv2k-kernel SHUFFLENETV2K_KERNEL
+                        kernel width (default: 5)
+  --shufflenetv2k-conv5-as-stage
+  --shufflenetv2k-instance-norm
+  --shufflenetv2k-group-norm
+  --shufflenetv2k-leaky-relu
+
 CompositeField3:
   --cf3-dropout CF3_DROPOUT
                         [experimental] zeroing probability of feature in head
@@ -1888,13 +2075,21 @@ network configuration:
   --checkpoint CHECKPOINT
                         Path to a local checkpoint. Or provide one of the
                         following to download a pretrained model:
-                        &quot;mobilenetv2&quot;, &quot;resnet50&quot;, &quot;shufflenetv2k16&quot;,
-                        &quot;shufflenetv2k16-withdense&quot;, &quot;shufflenetv2k30&quot;,
-                        &quot;shufflenetv2k16-apollo-24&quot;,
-                        &quot;shufflenetv2k16-apollo-66&quot;, &quot;resnet50-crowdpose&quot;,
-                        &quot;shufflenetv2k16-wholebody&quot;,
-                        &quot;shufflenetv2k30-wholebody&quot; (default: None)
-  --basenet BASENET     base network, e.g. resnet50 (default: None)
+                        [&#39;shufflenetv2k30-animalpose&#39;,
+                        &#39;shufflenetv2k16-apollo-24&#39;,
+                        &#39;shufflenetv2k16-apollo-66&#39;, &#39;mobilenetv2&#39;,
+                        &#39;resnet50&#39;, &#39;shufflenetv2k16&#39;,
+                        &#39;shufflenetv2k16-withdense&#39;, &#39;shufflenetv2k30&#39;,
+                        &#39;resnet50-crowdpose&#39;, &#39;shufflenetv2k16-wholebody&#39;,
+                        &#39;shufflenetv2k30-wholebody&#39;] (default: None)
+  --basenet BASENET     base network, one of [&#39;mobilenetv2&#39;,
+                        &#39;mobilenetv3large&#39;, &#39;mobilenetv3small&#39;, &#39;resnet18&#39;,
+                        &#39;resnet50&#39;, &#39;resnet101&#39;, &#39;resnet152&#39;, &#39;resnext50&#39;,
+                        &#39;resnext101&#39;, &#39;shufflenetv2x1&#39;, &#39;shufflenetv2x2&#39;,
+                        &#39;shufflenetv2k16&#39;, &#39;shufflenetv2k20&#39;,
+                        &#39;shufflenetv2kx5&#39;, &#39;shufflenetv2k30&#39;,
+                        &#39;shufflenetv2k44&#39;, &#39;squeezenet&#39;, &#39;cifar10net&#39;]
+                        (default: None)
   --cross-talk CROSS_TALK
                         [experimental] (default: 0.0)
   --no-download-progress
@@ -1980,6 +2175,11 @@ optional arguments:
                         output prefix (default is log_file + .) (default:
                         None)
   --show-mtl-sigmas
+
+logger:
+  -q, --quiet           only show warning messages or above (default: False)
+  --debug               print debug messages (default: False)
+  --log-stats           enable stats logging (default: False)
 
 show:
   --save-all [SAVE_ALL]
