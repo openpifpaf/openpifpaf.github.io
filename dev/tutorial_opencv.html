@@ -391,39 +391,21 @@ just pass in a single image.</p>
 </div>
 <div class="section" id="prediction">
 <h2>Prediction<a class="headerlink" href="#prediction" title="Permalink to this headline">¶</a></h2>
-<p>Now that we have the image, we can instantiate an OpenPifPaf network and decoder.</p>
+<p>Now that we have the image, we can use the <code class="docutils literal notranslate"><span class="pre">openpifpaf.Predictor</span></code> and then
+visualize its predicted annotations with an <code class="docutils literal notranslate"><span class="pre">AnnotationPainter</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net_cpu</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">openpifpaf</span><span class="o">.</span><span class="n">network</span><span class="o">.</span><span class="n">Factory</span><span class="p">(</span><span class="n">checkpoint</span><span class="o">=</span><span class="s1">&#39;shufflenetv2k16&#39;</span><span class="p">,</span> <span class="n">download_progress</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">factory</span><span class="p">()</span>
-<span class="n">decoder</span> <span class="o">=</span> <span class="n">openpifpaf</span><span class="o">.</span><span class="n">decoder</span><span class="o">.</span><span class="n">factory</span><span class="p">([</span><span class="n">hn</span><span class="o">.</span><span class="n">meta</span> <span class="k">for</span> <span class="n">hn</span> <span class="ow">in</span> <span class="n">net_cpu</span><span class="o">.</span><span class="n">head_nets</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Before we can process the image, we need to put it in a dataset that will
-take care of normalizing the color space and converting the image to a PyTorch
-tensor that can be processed by a neural network.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">openpifpaf</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">NumpyImageList</span><span class="p">([</span><span class="n">image</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Finally, we can loop over the images in the dataset, run <code class="docutils literal notranslate"><span class="pre">decoder.batch()</span></code> to
-obtain human pose predictions for one image and then visualize the predictions:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">annotation_painter</span> <span class="o">=</span> <span class="n">openpifpaf</span><span class="o">.</span><span class="n">show</span><span class="o">.</span><span class="n">AnnotationPainter</span><span class="p">()</span>
-<span class="k">for</span> <span class="n">image_tensor</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">meta</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
-    <span class="n">predictions</span> <span class="o">=</span> <span class="n">decoder</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">net_cpu</span><span class="p">,</span> <span class="n">image_tensor</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="k">with</span> <span class="n">openpifpaf</span><span class="o">.</span><span class="n">show</span><span class="o">.</span><span class="n">Canvas</span><span class="o">.</span><span class="n">image</span><span class="p">(</span><span class="n">image</span><span class="p">)</span> <span class="k">as</span> <span class="n">ax</span><span class="p">:</span>
-        <span class="n">annotation_painter</span><span class="o">.</span><span class="n">annotations</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">predictions</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">predictor</span> <span class="o">=</span> <span class="n">openpifpaf</span><span class="o">.</span><span class="n">Predictor</span><span class="p">(</span><span class="n">checkpoint</span><span class="o">=</span><span class="s1">&#39;shufflenetv2k16&#39;</span><span class="p">)</span>
+<span class="n">predictions</span><span class="p">,</span> <span class="n">gt_anns</span><span class="p">,</span> <span class="n">meta</span> <span class="o">=</span> <span class="n">predictor</span><span class="o">.</span><span class="n">numpy_image</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+
+<span class="n">annotation_painter</span> <span class="o">=</span> <span class="n">openpifpaf</span><span class="o">.</span><span class="n">show</span><span class="o">.</span><span class="n">AnnotationPainter</span><span class="p">()</span>
+<span class="k">with</span> <span class="n">openpifpaf</span><span class="o">.</span><span class="n">show</span><span class="o">.</span><span class="n">Canvas</span><span class="o">.</span><span class="n">image</span><span class="p">(</span><span class="n">image</span><span class="p">)</span> <span class="k">as</span> <span class="n">ax</span><span class="p">:</span>
+    <span class="n">annotation_painter</span><span class="o">.</span><span class="n">annotations</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">predictions</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/tutorial_opencv_10_0.png" src="_images/tutorial_opencv_10_0.png" />
+<img alt="_images/tutorial_opencv_6_0.png" src="_images/tutorial_opencv_6_0.png" />
 </div>
 </div>
 <p>This example is intentionally left to be quite basic. If you are interested
