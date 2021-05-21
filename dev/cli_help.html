@@ -1701,10 +1701,6 @@ SqueezeNet:
   --squeezenet-no-pretrain
                         use randomly initialized models (default: True)
 
-MobileNetV2:
-  --mobilenetv2-no-pretrain
-                        use randomly initialized models (default: True)
-
 shufflenetv2k:
   --shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE
                         stride of the optional 2nd input convolution (default:
@@ -1720,6 +1716,10 @@ shufflenetv2k:
   --shufflenetv2k-instance-norm
   --shufflenetv2k-group-norm
   --shufflenetv2k-leaky-relu
+
+MobileNetV2:
+  --mobilenetv2-no-pretrain
+                        use randomly initialized models (default: True)
 
 MobileNetV3:
   --mobilenetv3-no-pretrain
@@ -1842,6 +1842,13 @@ python3 -m openpifpaf.export_onnx --help
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>usage: python3 -m openpifpaf.export_onnx [-h] [--version]
+                                         [--shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE]
+                                         [--shufflenetv2k-input-conv2-outchannels SHUFFLENETV2K_INPUT_CONV2_OUTCHANNELS]
+                                         [--shufflenetv2k-stage4-dilation SHUFFLENETV2K_STAGE4_DILATION]
+                                         [--shufflenetv2k-kernel SHUFFLENETV2K_KERNEL]
+                                         [--shufflenetv2k-conv5-as-stage]
+                                         [--shufflenetv2k-instance-norm | --shufflenetv2k-group-norm]
+                                         [--shufflenetv2k-leaky-relu]
                                          [--shufflenetv2-no-pretrain]
                                          [--resnet-no-pretrain]
                                          [--resnet-pool0-stride RESNET_POOL0_STRIDE]
@@ -1852,13 +1859,6 @@ python3 -m openpifpaf.export_onnx --help
                                          [--squeezenet-no-pretrain]
                                          [--mobilenetv3-no-pretrain]
                                          [--mobilenetv2-no-pretrain]
-                                         [--shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE]
-                                         [--shufflenetv2k-input-conv2-outchannels SHUFFLENETV2K_INPUT_CONV2_OUTCHANNELS]
-                                         [--shufflenetv2k-stage4-dilation SHUFFLENETV2K_STAGE4_DILATION]
-                                         [--shufflenetv2k-kernel SHUFFLENETV2K_KERNEL]
-                                         [--shufflenetv2k-conv5-as-stage]
-                                         [--shufflenetv2k-instance-norm | --shufflenetv2k-group-norm]
-                                         [--shufflenetv2k-leaky-relu]
                                          [--cf3-dropout CF3_DROPOUT]
                                          [--cf3-no-inplace-ops]
                                          [--checkpoint CHECKPOINT]
@@ -1886,6 +1886,22 @@ optional arguments:
   --check
   --input-width INPUT_WIDTH
   --input-height INPUT_HEIGHT
+
+shufflenetv2k:
+  --shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE
+                        stride of the optional 2nd input convolution (default:
+                        0)
+  --shufflenetv2k-input-conv2-outchannels SHUFFLENETV2K_INPUT_CONV2_OUTCHANNELS
+                        out channels of the optional 2nd input convolution
+                        (default: None)
+  --shufflenetv2k-stage4-dilation SHUFFLENETV2K_STAGE4_DILATION
+                        dilation factor of stage 4 (default: 1)
+  --shufflenetv2k-kernel SHUFFLENETV2K_KERNEL
+                        kernel width (default: 5)
+  --shufflenetv2k-conv5-as-stage
+  --shufflenetv2k-instance-norm
+  --shufflenetv2k-group-norm
+  --shufflenetv2k-leaky-relu
 
 ShuffleNetv2:
   --shufflenetv2-no-pretrain
@@ -1917,22 +1933,6 @@ MobileNetV3:
 MobileNetV2:
   --mobilenetv2-no-pretrain
                         use randomly initialized models (default: True)
-
-shufflenetv2k:
-  --shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE
-                        stride of the optional 2nd input convolution (default:
-                        0)
-  --shufflenetv2k-input-conv2-outchannels SHUFFLENETV2K_INPUT_CONV2_OUTCHANNELS
-                        out channels of the optional 2nd input convolution
-                        (default: None)
-  --shufflenetv2k-stage4-dilation SHUFFLENETV2K_STAGE4_DILATION
-                        dilation factor of stage 4 (default: 1)
-  --shufflenetv2k-kernel SHUFFLENETV2K_KERNEL
-                        kernel width (default: 5)
-  --shufflenetv2k-conv5-as-stage
-  --shufflenetv2k-instance-norm
-  --shufflenetv2k-group-norm
-  --shufflenetv2k-leaky-relu
 
 CompositeField3:
   --cf3-dropout CF3_DROPOUT
