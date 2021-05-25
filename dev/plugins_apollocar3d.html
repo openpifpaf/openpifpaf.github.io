@@ -396,16 +396,16 @@
 <div class="section" id="predict">
 <h2>Predict<a class="headerlink" href="#predict" title="Permalink to this headline">¶</a></h2>
 <p>Prediction runs as standard openpifpaf predict command, but using the pretrained
-model on vehicles. The flag “–checkpoint shufflenetv2k16-apollo-24” will cause
+model on vehicles. The flag <code class="docutils literal notranslate"><span class="pre">--checkpoint=shufflenetv2k16-apollo-24</span></code> will cause
 that our 24 keypoint version of the Shufflenet 16 (AP 76.1%) will be automatically
 downloaded. As an example, we have tried on an image of the streets of Saint Peterbourg:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
 python -m openpifpaf.predict images/peterbourg.jpg \
- --checkpoint shufflenetv2k16-apollo-24 -o images \
+  --checkpoint=shufflenetv2k16-apollo-24 -o images \
   --instance-threshold 0.05 --seed-threshold 0.05 \
-  --line-width 4 --font-size 0 --show-file-extension=jpeg
+  --line-width 4 --font-size 0
 </pre></div>
 </div>
 </div>
