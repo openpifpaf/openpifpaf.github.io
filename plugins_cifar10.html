@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cifar10 &#8212; OpenPifPaf Guide</title>
     
-  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -19,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.37f24b989f4638ff9c27c22dc7559d4f.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -35,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -45,7 +42,7 @@
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -58,14 +55,14 @@
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Modules" href="moduledocs.html" />
     <link rel="prev" title="OpenCV" href="tutorial_opencv.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -74,32 +71,32 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="index.html">
-  
-  <img src="_static/logo.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">OpenPifPaf Guide</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">OpenPifPaf Guide</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="intro.html">
    Introduction
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Getting Started
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="predict_cli.html">
    Prediction
@@ -111,12 +108,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Chapters
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="predict_api.html">
    Prediction API
@@ -153,12 +150,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Tutorials
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="plugins_custom.html">
    Custom Dataset
@@ -195,12 +192,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Reference
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="moduledocs.html">
    Modules
@@ -212,12 +209,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Development
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="dev.html">
    Contribute
@@ -231,12 +228,11 @@
  <li class="toctree-l1">
   <a class="reference external" href="https://github.com/openpifpaf/openpifpaf">
    GitHub
-   <i class="fas fa-external-link-alt">
-   </i>
   </a>
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 </div>
@@ -290,17 +286,15 @@
             href="https://github.com/openpifpaf/openpifpaf"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
-        
+        <a class="issues-button"
+            href="https://github.com/openpifpaf/openpifpaf/issues/new?title=Issue%20on%20page%20%2Fplugins_cifar10.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
     </div>
 </div>
 
-
             <!-- Full screen (wrap in <a> to have style consistency -->
-            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                    title="Fullscreen mode"><i
-                        class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
 
@@ -326,11 +320,11 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> On this page
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> On this page
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#training">
    Training
@@ -353,8 +347,7 @@
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
         </div>
     </div>
 </div>
@@ -451,25 +444,25 @@ python -m openpifpaf.train --dataset=cifar10 --basenet=cifar10net --epochs=1 --l
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:neural network device: cpu (CUDA available: False, count: 0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:neural network device: cpu (CUDA available: False, count: 0)
 INFO:openpifpaf.network.basenetworks:cifar10net: stride = 16, output features = 128
 INFO:openpifpaf.network.losses.multi_head:multihead loss: [&#39;cifar10.cifdet.c&#39;, &#39;cifar10.cifdet.vec1&#39;, &#39;cifar10.cifdet.vec2&#39;], [1.0, 1.0, 1.0]
-INFO:openpifpaf.logger:{&#39;type&#39;: &#39;process&#39;, &#39;argv&#39;: [&#39;/opt/hostedtoolcache/Python/3.8.10/x64/lib/python3.8/site-packages/openpifpaf/train.py&#39;, &#39;--dataset=cifar10&#39;, &#39;--basenet=cifar10net&#39;, &#39;--epochs=1&#39;, &#39;--log-interval=500&#39;, &#39;--lr-warm-up-epochs=0.1&#39;, &#39;--lr=3e-3&#39;, &#39;--batch-size=16&#39;, &#39;--loader-workers=2&#39;, &#39;--output=cifar10_tutorial.pkl&#39;], &#39;args&#39;: {&#39;output&#39;: &#39;cifar10_tutorial.pkl&#39;, &#39;disable_cuda&#39;: False, &#39;ddp&#39;: False, &#39;local_rank&#39;: None, &#39;sync_batchnorm&#39;: True, &#39;quiet&#39;: False, &#39;debug&#39;: False, &#39;log_stats&#39;: False, &#39;shufflenetv2k_input_conv2_stride&#39;: 0, &#39;shufflenetv2k_input_conv2_outchannels&#39;: None, &#39;shufflenetv2k_stage4_dilation&#39;: 1, &#39;shufflenetv2k_kernel&#39;: 5, &#39;shufflenetv2k_conv5_as_stage&#39;: False, &#39;shufflenetv2k_instance_norm&#39;: False, &#39;shufflenetv2k_group_norm&#39;: False, &#39;shufflenetv2k_leaky_relu&#39;: False, &#39;mobilenetv2_pretrained&#39;: True, &#39;shufflenetv2_pretrained&#39;: True, &#39;resnet_pretrained&#39;: True, &#39;resnet_pool0_stride&#39;: 0, &#39;resnet_input_conv_stride&#39;: 2, &#39;resnet_input_conv2_stride&#39;: 0, &#39;resnet_block5_dilation&#39;: 1, &#39;resnet_remove_last_block&#39;: False, &#39;squeezenet_pretrained&#39;: True, &#39;mobilenetv3_pretrained&#39;: True, &#39;cf3_dropout&#39;: 0.0, &#39;cf3_inplace_ops&#39;: True, &#39;checkpoint&#39;: None, &#39;basenet&#39;: &#39;cifar10net&#39;, &#39;cross_talk&#39;: 0.0, &#39;download_progress&#39;: True, &#39;head_consolidation&#39;: &#39;filter_and_extend&#39;, &#39;lambdas&#39;: None, &#39;component_lambdas&#39;: None, &#39;auto_tune_mtl&#39;: False, &#39;auto_tune_mtl_variance&#39;: False, &#39;task_sparsity_weight&#39;: 0.0, &#39;loss_prescale&#39;: 1.0, &#39;regression_loss&#39;: &#39;laplace&#39;, &#39;bce_total_soft_clamp&#39;: None, &#39;r_smooth&#39;: 0.0, &#39;b_scale&#39;: 1.0, &#39;scale_log&#39;: False, &#39;scale_soft_clamp&#39;: 5.0, &#39;laplace_soft_clamp&#39;: 5.0, &#39;background_weight&#39;: 1.0, &#39;focal_alpha&#39;: 0.5, &#39;focal_gamma&#39;: 1.0, &#39;focal_detach&#39;: False, &#39;focal_clamp&#39;: True, &#39;bce_min&#39;: 0.0, &#39;bce_soft_clamp&#39;: None, &#39;bce_background_clamp&#39;: -15.0, &#39;epochs&#39;: 1, &#39;train_batches&#39;: None, &#39;val_batches&#39;: None, &#39;clip_grad_norm&#39;: 0.0, &#39;clip_grad_value&#39;: 0.0, &#39;log_interval&#39;: 500, &#39;val_interval&#39;: 1, &#39;stride_apply&#39;: 1, &#39;fix_batch_norm&#39;: False, &#39;ema&#39;: 0.01, &#39;profile&#39;: None, &#39;cif_side_length&#39;: 4, &#39;caf_min_size&#39;: 3, &#39;caf_fixed_size&#39;: False, &#39;caf_aspect_ratio&#39;: 0.0, &#39;encoder_suppress_selfhidden&#39;: True, &#39;momentum&#39;: 0.9, &#39;beta2&#39;: 0.999, &#39;adam_eps&#39;: 1e-06, &#39;nesterov&#39;: True, &#39;weight_decay&#39;: 0.0, &#39;adam&#39;: False, &#39;amsgrad&#39;: False, &#39;lr&#39;: 0.003, &#39;lr_decay&#39;: [], &#39;lr_decay_factor&#39;: 0.1, &#39;lr_decay_epochs&#39;: 1.0, &#39;lr_warm_up_start_epoch&#39;: 0, &#39;lr_warm_up_epochs&#39;: 0.1, &#39;lr_warm_up_factor&#39;: 0.001, &#39;lr_warm_restarts&#39;: [], &#39;lr_warm_restart_duration&#39;: 0.5, &#39;dataset&#39;: &#39;cifar10&#39;, &#39;loader_workers&#39;: 2, &#39;batch_size&#39;: 16, &#39;dataset_weights&#39;: None, &#39;animal_train_annotations&#39;: &#39;data-animalpose/annotations/animal_keypoints_20_train.json&#39;, &#39;animal_val_annotations&#39;: &#39;data-animalpose/annotations/animal_keypoints_20_val.json&#39;, &#39;animal_train_image_dir&#39;: &#39;data-animalpose/images/train/&#39;, &#39;animal_val_image_dir&#39;: &#39;data-animalpose/images/val/&#39;, &#39;animal_square_edge&#39;: 513, &#39;animal_extended_scale&#39;: False, &#39;animal_orientation_invariant&#39;: 0.0, &#39;animal_blur&#39;: 0.0, &#39;animal_augmentation&#39;: True, &#39;animal_rescale_images&#39;: 1.0, &#39;animal_upsample&#39;: 1, &#39;animal_min_kp_anns&#39;: 1, &#39;animal_bmin&#39;: 1, &#39;animal_eval_test2017&#39;: False, &#39;animal_eval_testdev2017&#39;: False, &#39;animal_eval_annotation_filter&#39;: True, &#39;animal_eval_long_edge&#39;: 0, &#39;animal_eval_extended_scale&#39;: False, &#39;animal_eval_orientation_invariant&#39;: 0.0, &#39;apollo_train_annotations&#39;: &#39;data-apollocar3d/annotations/apollo_keypoints_66_train.json&#39;, &#39;apollo_val_annotations&#39;: &#39;data-apollocar3d/annotations/apollo_keypoints_66_val.json&#39;, &#39;apollo_train_image_dir&#39;: &#39;data-apollocar3d/images/train/&#39;, &#39;apollo_val_image_dir&#39;: &#39;data-apollocar3d/images/val/&#39;, &#39;apollo_square_edge&#39;: 513, &#39;apollo_extended_scale&#39;: False, &#39;apollo_orientation_invariant&#39;: 0.0, &#39;apollo_blur&#39;: 0.0, &#39;apollo_augmentation&#39;: True, &#39;apollo_rescale_images&#39;: 1.0, &#39;apollo_upsample&#39;: 1, &#39;apollo_min_kp_anns&#39;: 1, &#39;apollo_bmin&#39;: 1, &#39;apollo_apply_local_centrality&#39;: False, &#39;apollo_eval_annotation_filter&#39;: True, &#39;apollo_eval_long_edge&#39;: 0, &#39;apollo_eval_extended_scale&#39;: False, &#39;apollo_eval_orientation_invariant&#39;: 0.0, &#39;apollo_use_24_kps&#39;: False, &#39;cifar10_root_dir&#39;: &#39;data-cifar10/&#39;, &#39;cifar10_download&#39;: False, &#39;cocodet_train_annotations&#39;: &#39;data-mscoco/annotations/instances_train2017.json&#39;, &#39;cocodet_val_annotations&#39;: &#39;data-mscoco/annotations/instances_val2017.json&#39;, &#39;cocodet_train_image_dir&#39;: &#39;data-mscoco/images/train2017/&#39;, &#39;cocodet_val_image_dir&#39;: &#39;data-mscoco/images/val2017/&#39;, &#39;cocodet_square_edge&#39;: 513, &#39;cocodet_extended_scale&#39;: False, &#39;cocodet_orientation_invariant&#39;: 0.0, &#39;cocodet_blur&#39;: 0.0, &#39;cocodet_augmentation&#39;: True, &#39;cocodet_rescale_images&#39;: 1.0, &#39;cocodet_upsample&#39;: 1, &#39;cocokp_train_annotations&#39;: &#39;data-mscoco/annotations/person_keypoints_train2017.json&#39;, &#39;cocokp_val_annotations&#39;: &#39;data-mscoco/annotations/person_keypoints_val2017.json&#39;, &#39;cocokp_train_image_dir&#39;: &#39;data-mscoco/images/train2017/&#39;, &#39;cocokp_val_image_dir&#39;: &#39;data-mscoco/images/val2017/&#39;, &#39;cocokp_square_edge&#39;: 385, &#39;cocokp_with_dense&#39;: False, &#39;cocokp_extended_scale&#39;: False, &#39;cocokp_orientation_invariant&#39;: 0.0, &#39;cocokp_blur&#39;: 0.0, &#39;cocokp_augmentation&#39;: True, &#39;cocokp_rescale_images&#39;: 1.0, &#39;cocokp_upsample&#39;: 1, &#39;cocokp_min_kp_anns&#39;: 1, &#39;cocokp_bmin&#39;: 0.1, &#39;cocokp_eval_test2017&#39;: False, &#39;cocokp_eval_testdev2017&#39;: False, &#39;coco_eval_annotation_filter&#39;: True, &#39;coco_eval_long_edge&#39;: 641, &#39;coco_eval_extended_scale&#39;: False, &#39;coco_eval_orientation_invariant&#39;: 0.0, &#39;crowdpose_train_annotations&#39;: &#39;data-crowdpose/json/crowdpose_train.json&#39;, &#39;crowdpose_val_annotations&#39;: &#39;data-crowdpose/json/crowdpose_val.json&#39;, &#39;crowdpose_image_dir&#39;: &#39;data-crowdpose/images/&#39;, &#39;crowdpose_square_edge&#39;: 385, &#39;crowdpose_extended_scale&#39;: False, &#39;crowdpose_orientation_invariant&#39;: 0.0, &#39;crowdpose_augmentation&#39;: True, &#39;crowdpose_rescale_images&#39;: 1.0, &#39;crowdpose_upsample&#39;: 1, &#39;crowdpose_min_kp_anns&#39;: 1, &#39;crowdpose_eval_test&#39;: False, &#39;crowdpose_eval_long_edge&#39;: 641, &#39;crowdpose_eval_extended_scale&#39;: False, &#39;crowdpose_eval_orientation_invariant&#39;: 0.0, &#39;crowdpose_index&#39;: None, &#39;wholebody_train_annotations&#39;: &#39;data-mscoco/annotations/person_keypoints_train2017_wholebody_pifpaf_style.json&#39;, &#39;wholebody_val_annotations&#39;: &#39;data-mscoco/annotations/coco_wholebody_val_v1.0.json&#39;, &#39;wholebody_train_image_dir&#39;: &#39;data-mscoco/images/train2017/&#39;, &#39;wholebody_val_image_dir&#39;: &#39;data-mscoco/images/val2017&#39;, &#39;wholebody_square_edge&#39;: 385, &#39;wholebody_extended_scale&#39;: False, &#39;wholebody_orientation_invariant&#39;: 0.0, &#39;wholebody_blur&#39;: 0.0, &#39;wholebody_augmentation&#39;: True, &#39;wholebody_rescale_images&#39;: 1.0, &#39;wholebody_upsample&#39;: 1, &#39;wholebody_min_kp_anns&#39;: 1, &#39;wholebody_bmin&#39;: 1.0, &#39;wholebody_apply_local_centrality&#39;: False, &#39;wholebody_eval_test2017&#39;: False, &#39;wholebody_eval_testdev2017&#39;: False, &#39;wholebody_eval_annotation_filter&#39;: True, &#39;wholebody_eval_long_edge&#39;: 641, &#39;wholebody_eval_extended_scale&#39;: False, &#39;wholebody_eval_orientation_invariant&#39;: 0.0, &#39;save_all&#39;: None, &#39;show&#39;: False, &#39;image_width&#39;: None, &#39;image_height&#39;: None, &#39;image_dpi_factor&#39;: 1.0, &#39;image_min_dpi&#39;: 50.0, &#39;show_file_extension&#39;: &#39;png&#39;, &#39;textbox_alpha&#39;: 0.5, &#39;text_color&#39;: &#39;white&#39;, &#39;font_size&#39;: 8, &#39;monocolor_connections&#39;: False, &#39;line_width&#39;: None, &#39;skeleton_solid_threshold&#39;: 0.5, &#39;show_box&#39;: False, &#39;white_overlay&#39;: False, &#39;show_joint_scales&#39;: False, &#39;show_joint_confidences&#39;: False, &#39;show_decoding_order&#39;: False, &#39;show_frontier_order&#39;: False, &#39;show_only_decoded_connections&#39;: False, &#39;video_fps&#39;: 10, &#39;video_dpi&#39;: 100, &#39;debug_indices&#39;: [], &#39;device&#39;: device(type=&#39;cpu&#39;), &#39;pin_memory&#39;: False}, &#39;version&#39;: &#39;0.12.10&#39;, &#39;plugin_versions&#39;: {}, &#39;hostname&#39;: &#39;fv-az132-908&#39;}
+INFO:openpifpaf.logger:{&#39;type&#39;: &#39;process&#39;, &#39;argv&#39;: [&#39;/opt/hostedtoolcache/Python/3.8.10/x64/lib/python3.8/site-packages/openpifpaf/train.py&#39;, &#39;--dataset=cifar10&#39;, &#39;--basenet=cifar10net&#39;, &#39;--epochs=1&#39;, &#39;--log-interval=500&#39;, &#39;--lr-warm-up-epochs=0.1&#39;, &#39;--lr=3e-3&#39;, &#39;--batch-size=16&#39;, &#39;--loader-workers=2&#39;, &#39;--output=cifar10_tutorial.pkl&#39;], &#39;args&#39;: {&#39;output&#39;: &#39;cifar10_tutorial.pkl&#39;, &#39;disable_cuda&#39;: False, &#39;ddp&#39;: False, &#39;local_rank&#39;: None, &#39;sync_batchnorm&#39;: True, &#39;quiet&#39;: False, &#39;debug&#39;: False, &#39;log_stats&#39;: False, &#39;squeezenet_pretrained&#39;: True, &#39;mobilenetv3_pretrained&#39;: True, &#39;shufflenetv2k_input_conv2_stride&#39;: 0, &#39;shufflenetv2k_input_conv2_outchannels&#39;: None, &#39;shufflenetv2k_stage4_dilation&#39;: 1, &#39;shufflenetv2k_kernel&#39;: 5, &#39;shufflenetv2k_conv5_as_stage&#39;: False, &#39;shufflenetv2k_instance_norm&#39;: False, &#39;shufflenetv2k_group_norm&#39;: False, &#39;shufflenetv2k_leaky_relu&#39;: False, &#39;mobilenetv2_pretrained&#39;: True, &#39;shufflenetv2_pretrained&#39;: True, &#39;resnet_pretrained&#39;: True, &#39;resnet_pool0_stride&#39;: 0, &#39;resnet_input_conv_stride&#39;: 2, &#39;resnet_input_conv2_stride&#39;: 0, &#39;resnet_block5_dilation&#39;: 1, &#39;resnet_remove_last_block&#39;: False, &#39;cf3_dropout&#39;: 0.0, &#39;cf3_inplace_ops&#39;: True, &#39;checkpoint&#39;: None, &#39;basenet&#39;: &#39;cifar10net&#39;, &#39;cross_talk&#39;: 0.0, &#39;download_progress&#39;: True, &#39;head_consolidation&#39;: &#39;filter_and_extend&#39;, &#39;lambdas&#39;: None, &#39;component_lambdas&#39;: None, &#39;auto_tune_mtl&#39;: False, &#39;auto_tune_mtl_variance&#39;: False, &#39;task_sparsity_weight&#39;: 0.0, &#39;loss_prescale&#39;: 1.0, &#39;regression_loss&#39;: &#39;laplace&#39;, &#39;bce_total_soft_clamp&#39;: None, &#39;background_weight&#39;: 1.0, &#39;focal_alpha&#39;: 0.5, &#39;focal_gamma&#39;: 1.0, &#39;focal_detach&#39;: False, &#39;focal_clamp&#39;: True, &#39;bce_min&#39;: 0.0, &#39;bce_soft_clamp&#39;: 5.0, &#39;bce_background_clamp&#39;: -15.0, &#39;r_smooth&#39;: 0.0, &#39;b_scale&#39;: 1.0, &#39;scale_log&#39;: False, &#39;scale_soft_clamp&#39;: 5.0, &#39;laplace_soft_clamp&#39;: 5.0, &#39;epochs&#39;: 1, &#39;train_batches&#39;: None, &#39;val_batches&#39;: None, &#39;clip_grad_norm&#39;: 0.0, &#39;clip_grad_value&#39;: 0.0, &#39;log_interval&#39;: 500, &#39;val_interval&#39;: 1, &#39;stride_apply&#39;: 1, &#39;fix_batch_norm&#39;: False, &#39;ema&#39;: 0.01, &#39;profile&#39;: None, &#39;cif_side_length&#39;: 4, &#39;caf_min_size&#39;: 3, &#39;caf_fixed_size&#39;: False, &#39;caf_aspect_ratio&#39;: 0.0, &#39;encoder_suppress_selfhidden&#39;: True, &#39;momentum&#39;: 0.9, &#39;beta2&#39;: 0.999, &#39;adam_eps&#39;: 1e-06, &#39;nesterov&#39;: True, &#39;weight_decay&#39;: 0.0, &#39;adam&#39;: False, &#39;amsgrad&#39;: False, &#39;lr&#39;: 0.003, &#39;lr_decay&#39;: [], &#39;lr_decay_factor&#39;: 0.1, &#39;lr_decay_epochs&#39;: 1.0, &#39;lr_warm_up_start_epoch&#39;: 0, &#39;lr_warm_up_epochs&#39;: 0.1, &#39;lr_warm_up_factor&#39;: 0.001, &#39;lr_warm_restarts&#39;: [], &#39;lr_warm_restart_duration&#39;: 0.5, &#39;dataset&#39;: &#39;cifar10&#39;, &#39;loader_workers&#39;: 2, &#39;batch_size&#39;: 16, &#39;dataset_weights&#39;: None, &#39;animal_train_annotations&#39;: &#39;data-animalpose/annotations/animal_keypoints_20_train.json&#39;, &#39;animal_val_annotations&#39;: &#39;data-animalpose/annotations/animal_keypoints_20_val.json&#39;, &#39;animal_train_image_dir&#39;: &#39;data-animalpose/images/train/&#39;, &#39;animal_val_image_dir&#39;: &#39;data-animalpose/images/val/&#39;, &#39;animal_square_edge&#39;: 513, &#39;animal_extended_scale&#39;: False, &#39;animal_orientation_invariant&#39;: 0.0, &#39;animal_blur&#39;: 0.0, &#39;animal_augmentation&#39;: True, &#39;animal_rescale_images&#39;: 1.0, &#39;animal_upsample&#39;: 1, &#39;animal_min_kp_anns&#39;: 1, &#39;animal_bmin&#39;: 1, &#39;animal_eval_test2017&#39;: False, &#39;animal_eval_testdev2017&#39;: False, &#39;animal_eval_annotation_filter&#39;: True, &#39;animal_eval_long_edge&#39;: 0, &#39;animal_eval_extended_scale&#39;: False, &#39;animal_eval_orientation_invariant&#39;: 0.0, &#39;apollo_train_annotations&#39;: &#39;data-apollocar3d/annotations/apollo_keypoints_66_train.json&#39;, &#39;apollo_val_annotations&#39;: &#39;data-apollocar3d/annotations/apollo_keypoints_66_val.json&#39;, &#39;apollo_train_image_dir&#39;: &#39;data-apollocar3d/images/train/&#39;, &#39;apollo_val_image_dir&#39;: &#39;data-apollocar3d/images/val/&#39;, &#39;apollo_square_edge&#39;: 513, &#39;apollo_extended_scale&#39;: False, &#39;apollo_orientation_invariant&#39;: 0.0, &#39;apollo_blur&#39;: 0.0, &#39;apollo_augmentation&#39;: True, &#39;apollo_rescale_images&#39;: 1.0, &#39;apollo_upsample&#39;: 1, &#39;apollo_min_kp_anns&#39;: 1, &#39;apollo_bmin&#39;: 1, &#39;apollo_apply_local_centrality&#39;: False, &#39;apollo_eval_annotation_filter&#39;: True, &#39;apollo_eval_long_edge&#39;: 0, &#39;apollo_eval_extended_scale&#39;: False, &#39;apollo_eval_orientation_invariant&#39;: 0.0, &#39;apollo_use_24_kps&#39;: False, &#39;cifar10_root_dir&#39;: &#39;data-cifar10/&#39;, &#39;cifar10_download&#39;: False, &#39;cocodet_train_annotations&#39;: &#39;data-mscoco/annotations/instances_train2017.json&#39;, &#39;cocodet_val_annotations&#39;: &#39;data-mscoco/annotations/instances_val2017.json&#39;, &#39;cocodet_train_image_dir&#39;: &#39;data-mscoco/images/train2017/&#39;, &#39;cocodet_val_image_dir&#39;: &#39;data-mscoco/images/val2017/&#39;, &#39;cocodet_square_edge&#39;: 513, &#39;cocodet_extended_scale&#39;: False, &#39;cocodet_orientation_invariant&#39;: 0.0, &#39;cocodet_blur&#39;: 0.0, &#39;cocodet_augmentation&#39;: True, &#39;cocodet_rescale_images&#39;: 1.0, &#39;cocodet_upsample&#39;: 1, &#39;cocokp_train_annotations&#39;: &#39;data-mscoco/annotations/person_keypoints_train2017.json&#39;, &#39;cocokp_val_annotations&#39;: &#39;data-mscoco/annotations/person_keypoints_val2017.json&#39;, &#39;cocokp_train_image_dir&#39;: &#39;data-mscoco/images/train2017/&#39;, &#39;cocokp_val_image_dir&#39;: &#39;data-mscoco/images/val2017/&#39;, &#39;cocokp_square_edge&#39;: 385, &#39;cocokp_with_dense&#39;: False, &#39;cocokp_extended_scale&#39;: False, &#39;cocokp_orientation_invariant&#39;: 0.0, &#39;cocokp_blur&#39;: 0.0, &#39;cocokp_augmentation&#39;: True, &#39;cocokp_rescale_images&#39;: 1.0, &#39;cocokp_upsample&#39;: 1, &#39;cocokp_min_kp_anns&#39;: 1, &#39;cocokp_bmin&#39;: 0.1, &#39;cocokp_eval_test2017&#39;: False, &#39;cocokp_eval_testdev2017&#39;: False, &#39;coco_eval_annotation_filter&#39;: True, &#39;coco_eval_long_edge&#39;: 641, &#39;coco_eval_extended_scale&#39;: False, &#39;coco_eval_orientation_invariant&#39;: 0.0, &#39;crowdpose_train_annotations&#39;: &#39;data-crowdpose/json/crowdpose_train.json&#39;, &#39;crowdpose_val_annotations&#39;: &#39;data-crowdpose/json/crowdpose_val.json&#39;, &#39;crowdpose_image_dir&#39;: &#39;data-crowdpose/images/&#39;, &#39;crowdpose_square_edge&#39;: 385, &#39;crowdpose_extended_scale&#39;: False, &#39;crowdpose_orientation_invariant&#39;: 0.0, &#39;crowdpose_augmentation&#39;: True, &#39;crowdpose_rescale_images&#39;: 1.0, &#39;crowdpose_upsample&#39;: 1, &#39;crowdpose_min_kp_anns&#39;: 1, &#39;crowdpose_eval_test&#39;: False, &#39;crowdpose_eval_long_edge&#39;: 641, &#39;crowdpose_eval_extended_scale&#39;: False, &#39;crowdpose_eval_orientation_invariant&#39;: 0.0, &#39;crowdpose_index&#39;: None, &#39;wholebody_train_annotations&#39;: &#39;data-mscoco/annotations/person_keypoints_train2017_wholebody_pifpaf_style.json&#39;, &#39;wholebody_val_annotations&#39;: &#39;data-mscoco/annotations/coco_wholebody_val_v1.0.json&#39;, &#39;wholebody_train_image_dir&#39;: &#39;data-mscoco/images/train2017/&#39;, &#39;wholebody_val_image_dir&#39;: &#39;data-mscoco/images/val2017&#39;, &#39;wholebody_square_edge&#39;: 385, &#39;wholebody_extended_scale&#39;: False, &#39;wholebody_orientation_invariant&#39;: 0.0, &#39;wholebody_blur&#39;: 0.0, &#39;wholebody_augmentation&#39;: True, &#39;wholebody_rescale_images&#39;: 1.0, &#39;wholebody_upsample&#39;: 1, &#39;wholebody_min_kp_anns&#39;: 1, &#39;wholebody_bmin&#39;: 1.0, &#39;wholebody_apply_local_centrality&#39;: False, &#39;wholebody_eval_test2017&#39;: False, &#39;wholebody_eval_testdev2017&#39;: False, &#39;wholebody_eval_annotation_filter&#39;: True, &#39;wholebody_eval_long_edge&#39;: 641, &#39;wholebody_eval_extended_scale&#39;: False, &#39;wholebody_eval_orientation_invariant&#39;: 0.0, &#39;save_all&#39;: None, &#39;show&#39;: False, &#39;image_width&#39;: None, &#39;image_height&#39;: None, &#39;image_dpi_factor&#39;: 2.0, &#39;image_min_dpi&#39;: 50.0, &#39;show_file_extension&#39;: &#39;jpeg&#39;, &#39;textbox_alpha&#39;: 0.5, &#39;text_color&#39;: &#39;white&#39;, &#39;font_size&#39;: 8, &#39;monocolor_connections&#39;: False, &#39;line_width&#39;: None, &#39;skeleton_solid_threshold&#39;: 0.5, &#39;show_box&#39;: False, &#39;white_overlay&#39;: False, &#39;show_joint_scales&#39;: False, &#39;show_joint_confidences&#39;: False, &#39;show_decoding_order&#39;: False, &#39;show_frontier_order&#39;: False, &#39;show_only_decoded_connections&#39;: False, &#39;video_fps&#39;: 10, &#39;video_dpi&#39;: 100, &#39;debug_indices&#39;: [], &#39;device&#39;: device(type=&#39;cpu&#39;), &#39;pin_memory&#39;: False}, &#39;version&#39;: &#39;0.12.11&#39;, &#39;plugin_versions&#39;: {}, &#39;hostname&#39;: &#39;fv-az269-446&#39;}
 INFO:openpifpaf.optimize:SGD optimizer
 INFO:openpifpaf.optimize:training batches per epoch = 3125
 INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;config&#39;, &#39;field_names&#39;: [&#39;cifar10.cifdet.c&#39;, &#39;cifar10.cifdet.vec1&#39;, &#39;cifar10.cifdet.vec2&#39;]}
 INFO:openpifpaf.network.trainer:model written: cifar10_tutorial.pkl.epoch000
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 0, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.047, &#39;data_time&#39;: 0.079, &#39;lr&#39;: 3e-06, &#39;loss&#39;: 44.837, &#39;head_losses&#39;: [15.737, 11.518, 17.582]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 500, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.03, &#39;data_time&#39;: 0.005, &#39;lr&#39;: 0.003, &#39;loss&#39;: 17.251, &#39;head_losses&#39;: [7.642, 4.806, 4.804]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 1000, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.04, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.003, &#39;loss&#39;: 17.109, &#39;head_losses&#39;: [7.523, 4.795, 4.791]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 1500, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.034, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.003, &#39;loss&#39;: 16.149, &#39;head_losses&#39;: [6.557, 4.801, 4.791]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 2000, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.028, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.003, &#39;loss&#39;: 16.607, &#39;head_losses&#39;: [7.016, 4.801, 4.79]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 2500, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.039, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.003, &#39;loss&#39;: 16.037, &#39;head_losses&#39;: [6.459, 4.791, 4.786]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 3000, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.036, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.003, &#39;loss&#39;: 15.451, &#39;head_losses&#39;: [5.873, 4.792, 4.786]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 0, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.058, &#39;data_time&#39;: 0.107, &#39;lr&#39;: 3e-06, &#39;loss&#39;: 41.896, &#39;head_losses&#39;: [15.355, 9.773, 16.768]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 500, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.036, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.003, &#39;loss&#39;: -9.103, &#39;head_losses&#39;: [7.714, -5.17, -11.646]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 1000, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.036, &#39;data_time&#39;: 0.008, &#39;lr&#39;: 0.003, &#39;loss&#39;: -17.808, &#39;head_losses&#39;: [7.542, -10.419, -14.931]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 1500, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.039, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.003, &#39;loss&#39;: -20.852, &#39;head_losses&#39;: [7.479, -12.979, -15.352]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 2000, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.031, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.003, &#39;loss&#39;: -20.217, &#39;head_losses&#39;: [7.514, -12.314, -15.418]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 2500, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.046, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.003, &#39;loss&#39;: -18.228, &#39;head_losses&#39;: [7.494, -10.829, -14.893]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 3000, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.031, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.003, &#39;loss&#39;: -21.449, &#39;head_losses&#39;: [7.467, -13.429, -15.487]}
 INFO:openpifpaf.network.trainer:applying ema
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train-epoch&#39;, &#39;epoch&#39;: 1, &#39;loss&#39;: 18.44134, &#39;head_losses&#39;: [7.31284, 5.37907, 5.74943], &#39;time&#39;: 113.2, &#39;n_clipped_grad&#39;: 0, &#39;max_norm&#39;: 0.0}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train-epoch&#39;, &#39;epoch&#39;: 1, &#39;loss&#39;: -13.38644, &#39;head_losses&#39;: [8.04797, -9.72481, -11.70959], &#39;time&#39;: 109.2, &#39;n_clipped_grad&#39;: 0, &#39;max_norm&#39;: 0.0}
 INFO:openpifpaf.network.trainer:model written: cifar10_tutorial.pkl.epoch001
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;val-epoch&#39;, &#39;epoch&#39;: 1, &#39;loss&#39;: 15.61888, &#39;head_losses&#39;: [6.04483, 4.79026, 4.78379], &#39;time&#39;: 15.4}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;val-epoch&#39;, &#39;epoch&#39;: 1, &#39;loss&#39;: -22.94839, &#39;head_losses&#39;: [7.52766, -14.98319, -15.49287], &#39;time&#39;: 12.8}
 </pre></div>
 </div>
 </div>
@@ -504,7 +497,7 @@ INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;val-epoch&#39;, &#39;epoch
 <img alt="_images/plugins_cifar10_12_6.png" src="_images/plugins_cifar10_12_6.png" />
 <img alt="_images/plugins_cifar10_12_7.png" src="_images/plugins_cifar10_12_7.png" />
 <img alt="_images/plugins_cifar10_12_8.png" src="_images/plugins_cifar10_12_8.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cifar10_tutorial.pkl.log: {&#39;message&#39;: None, &#39;levelname&#39;: &#39;INFO&#39;, &#39;name&#39;: &#39;openpifpaf.network.trainer&#39;, &#39;asctime&#39;: &#39;2021-05-19 15:57:00,773&#39;, &#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 3000, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.036, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.003, &#39;loss&#39;: 15.451, &#39;head_losses&#39;: [5.873, 4.792, 4.786]}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cifar10_tutorial.pkl.log: {&#39;message&#39;: None, &#39;levelname&#39;: &#39;INFO&#39;, &#39;name&#39;: &#39;openpifpaf.network.trainer&#39;, &#39;asctime&#39;: &#39;2021-06-11 20:25:01,236&#39;, &#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 3000, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.031, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.003, &#39;loss&#39;: -21.449, &#39;head_losses&#39;: [7.467, -13.429, -15.487]}
 </pre></div>
 </div>
 </div>
@@ -521,16 +514,16 @@ python -m openpifpaf.predict --checkpoint cifar10_tutorial.pkl.epoch001 images/c
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:neural network device: cpu (CUDA available: False, count: 0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:neural network device: cpu (CUDA available: False, count: 0)
 WARNING:openpifpaf.decoder.cifcaf:consistency: decreasing keypoint threshold to seed threshold of 0.100000
 INFO:openpifpaf.predictor:neural network device: cpu (CUDA available: False, count: 0)
-INFO:openpifpaf.decoder.cifdet:annotations 1, decoder = 0.002s
+INFO:openpifpaf.decoder.cifdet:annotations 0, decoder = 0.002s
 INFO:openpifpaf.predictor:batch 0: images/cifar10_airplane4.png
-INFO:openpifpaf.decoder.cifdet:annotations 1, decoder = 0.002s
+INFO:openpifpaf.decoder.cifdet:annotations 0, decoder = 0.001s
 INFO:openpifpaf.predictor:batch 1: images/cifar10_automobile10.png
-INFO:openpifpaf.decoder.cifdet:annotations 1, decoder = 0.001s
+INFO:openpifpaf.decoder.cifdet:annotations 0, decoder = 0.001s
 INFO:openpifpaf.predictor:batch 2: images/cifar10_ship7.png
-INFO:openpifpaf.decoder.cifdet:annotations 1, decoder = 0.001s
+INFO:openpifpaf.decoder.cifdet:annotations 0, decoder = 0.001s
 INFO:openpifpaf.predictor:batch 3: images/cifar10_truck8.png
 </pre></div>
 </div>
@@ -544,7 +537,7 @@ cat cifar10_*.json
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&quot;category_id&quot;: 1, &quot;category&quot;: &quot;plane&quot;, &quot;score&quot;: 0.235, &quot;bbox&quot;: [5.23, 4.71, 21.35, 21.03]}][{&quot;category_id&quot;: 2, &quot;category&quot;: &quot;car&quot;, &quot;score&quot;: 0.247, &quot;bbox&quot;: [5.05, 5.16, 21.42, 21.4]}][{&quot;category_id&quot;: 9, &quot;category&quot;: &quot;ship&quot;, &quot;score&quot;: 0.207, &quot;bbox&quot;: [5.43, 4.47, 20.75, 21.31]}][{&quot;category_id&quot;: 10, &quot;category&quot;: &quot;truck&quot;, &quot;score&quot;: 0.236, &quot;bbox&quot;: [5.56, 6.04, 19.64, 20.86]}]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[][][][]
 </pre></div>
 </div>
 </div>
@@ -577,19 +570,19 @@ cat cifar10_*.json
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/plugins_cifar10_17_0.png" src="_images/plugins_cifar10_17_0.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;plane 23%&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;car 14%&#39;]
 </pre></div>
 </div>
 <img alt="_images/plugins_cifar10_17_2.png" src="_images/plugins_cifar10_17_2.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;car 25%&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;car 14%&#39;]
 </pre></div>
 </div>
 <img alt="_images/plugins_cifar10_17_4.png" src="_images/plugins_cifar10_17_4.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;ship 21%&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;car 14%&#39;]
 </pre></div>
 </div>
 <img alt="_images/plugins_cifar10_17_6.png" src="_images/plugins_cifar10_17_6.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;truck 24%&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;car 14%&#39;]
 </pre></div>
 </div>
 </div>
@@ -607,15 +600,13 @@ python -m openpifpaf.eval --checkpoint cifar10_tutorial.pkl.epoch001 --dataset=c
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[INFO] Register count_convNd() for &lt;class &#39;torch.nn.modules.conv.Conv2d&#39;&gt;.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:openpifpaf.decoder.cifcaf:consistency: decreasing keypoint threshold to seed threshold of 0.100000
+[INFO] Register count_convNd() for &lt;class &#39;torch.nn.modules.conv.Conv2d&#39;&gt;.
 [WARN] Cannot find rule for &lt;class &#39;openpifpaf.plugins.cifar10.basenet.Cifar10Net&#39;&gt;. Treat it as zero Macs and zero Params.
 [WARN] Cannot find rule for &lt;class &#39;torch.nn.modules.dropout.Dropout2d&#39;&gt;. Treat it as zero Macs and zero Params.
 [WARN] Cannot find rule for &lt;class &#39;openpifpaf.network.heads.CompositeField3&#39;&gt;. Treat it as zero Macs and zero Params.
 [WARN] Cannot find rule for &lt;class &#39;torch.nn.modules.container.ModuleList&#39;&gt;. Treat it as zero Macs and zero Params.
 [WARN] Cannot find rule for &lt;class &#39;openpifpaf.network.nets.Shell&#39;&gt;. Treat it as zero Macs and zero Params.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:openpifpaf.decoder.cifcaf:consistency: decreasing keypoint threshold to seed threshold of 0.100000
 </pre></div>
 </div>
 </div>
@@ -643,17 +634,17 @@ python -m json.tool cifar10_tutorial.pkl.epoch001.eval-cifar10.stats.json
         &quot;truck&quot;
     ],
     &quot;stats&quot;: [
-        0.4345,
-        0.47,
-        0.616,
-        0.246,
-        0.409,
-        0.171,
-        0.192,
-        0.582,
-        0.485,
-        0.635,
-        0.539
+        0.1,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
     ],
     &quot;args&quot;: [
         &quot;/opt/hostedtoolcache/Python/3.8.10/x64/lib/python3.8/site-packages/openpifpaf/eval.py&quot;,
@@ -664,9 +655,9 @@ python -m json.tool cifar10_tutorial.pkl.epoch001.eval-cifar10.stats.json
         &quot;--instance-threshold=0.1&quot;,
         &quot;--quiet&quot;
     ],
-    &quot;version&quot;: &quot;0.12.10&quot;,
+    &quot;version&quot;: &quot;0.12.11&quot;,
     &quot;dataset&quot;: &quot;cifar10&quot;,
-    &quot;total_time&quot;: 49.11091308700003,
+    &quot;total_time&quot;: 55.13629456799998,
     &quot;checkpoint&quot;: &quot;cifar10_tutorial.pkl.epoch001&quot;,
     &quot;count_ops&quot;: [
         427119430.0,
@@ -674,8 +665,8 @@ python -m json.tool cifar10_tutorial.pkl.epoch001.eval-cifar10.stats.json
     ],
     &quot;file_size&quot;: 440521,
     &quot;n_images&quot;: 10000,
-    &quot;decoder_time&quot;: 16.462443679000614,
-    &quot;nn_time&quot;: 21.349532626000666
+    &quot;decoder_time&quot;: 20.768967510005666,
+    &quot;nn_time&quot;: 18.41898967499668
 }
 </pre></div>
 </div>
@@ -725,7 +716,7 @@ python -m json.tool cifar10_tutorial.pkl.epoch001.eval-cifar10.stats.json
         
             &copy; Copyright 2020-2021.<br/>
           <div class="extra_footer">
-            <div>Powered by <a href="https://jupyterbook.org/">Jupyter Book</a>.</div>
+            <p>Powered by <a href="https://jupyterbook.org/">Jupyter Book</a>.</p>
 
           </div>
       </p>
@@ -736,11 +727,9 @@ python -m json.tool cifar10_tutorial.pkl.epoch001.eval-cifar10.stats.json
 
       </div>
     </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    
-  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
-
-
-    
+  
   </body>
 </html>

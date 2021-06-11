@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contribute &#8212; OpenPifPaf Guide</title>
     
-  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -19,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.37f24b989f4638ff9c27c22dc7559d4f.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -35,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -45,7 +42,7 @@
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -58,14 +55,14 @@
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Performance" href="performance.html" />
     <link rel="prev" title="Bibliography" href="bibliography.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -74,32 +71,32 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="index.html">
-  
-  <img src="_static/logo.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">OpenPifPaf Guide</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">OpenPifPaf Guide</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="intro.html">
    Introduction
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Getting Started
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="predict_cli.html">
    Prediction
@@ -111,12 +108,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Chapters
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="predict_api.html">
    Prediction API
@@ -153,12 +150,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Tutorials
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="plugins_custom.html">
    Custom Dataset
@@ -195,12 +192,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Reference
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="moduledocs.html">
    Modules
@@ -212,12 +209,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Development
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Contribute
@@ -231,12 +228,11 @@
  <li class="toctree-l1">
   <a class="reference external" href="https://github.com/openpifpaf/openpifpaf">
    GitHub
-   <i class="fas fa-external-link-alt">
-   </i>
   </a>
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 </div>
@@ -290,17 +286,15 @@
             href="https://github.com/openpifpaf/openpifpaf"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
-        
+        <a class="issues-button"
+            href="https://github.com/openpifpaf/openpifpaf/issues/new?title=Issue%20on%20page%20%2Fdev.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
     </div>
 </div>
 
-
             <!-- Full screen (wrap in <a> to have style consistency -->
-            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                    title="Fullscreen mode"><i
-                        class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
 
@@ -326,11 +320,11 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> On this page
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> On this page
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#modify-code">
    Modify Code
@@ -363,8 +357,7 @@
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
         </div>
     </div>
 </div>
@@ -380,7 +373,7 @@ E-mail a signed copy of the
 <a class="reference external" href="https://github.com/openpifpaf/openpifpaf/blob/main/docs/CLAI.txt">CLAI</a>
 (and if applicable the
 <a class="reference external" href="https://github.com/openpifpaf/openpifpaf/blob/main/docs/CLAC.txt">CLAC</a>)
-as PDF file to research&#64;svenkreiss.com.</p>
+as PDF file to <a class="reference external" href="mailto:research&#37;&#52;&#48;svenkreiss&#46;com">research<span>&#64;</span>svenkreiss<span>&#46;</span>com</a>.</p>
 <div class="section" id="modify-code">
 <span id="id1"></span><h2>Modify Code<a class="headerlink" href="#modify-code" title="Permalink to this headline">¶</a></h2>
 <p>For development of the openpifpaf source code itself, you need to clone this repository and then:</p>
@@ -480,10 +473,10 @@ backcall==0.2.0
 beautifulsoup4==4.9.3
 bleach==3.3.0
 boto==2.49.0
-certifi==2020.12.5
+certifi==2021.5.30
 cffi==1.14.5
 chardet==4.0.0
-click==8.0.0
+click==7.1.2
 colorama==0.4.4
 coverage==5.5
 cycler==0.10.0
@@ -493,29 +486,31 @@ defusedxml==0.7.1
 docutils==0.16
 entrypoints==0.3
 flameprof==0.4
+flatbuffers==2.0
 future==0.18.2
 gitdb==4.0.7
 GitPython==3.1.17
 idna==2.10
 imagesize==1.2.0
-importlib-metadata==4.0.1
+importlib-metadata==4.5.0
+importlib-resources==5.1.4
 iniconfig==1.1.1
 ipykernel==5.5.5
-ipython==7.23.1
+ipython==7.24.1
 ipython-genutils==0.2.0
 ipywidgets==7.6.3
 isort==5.8.0
 jedi==0.18.0
 Jinja2==3.0.1
 jsonschema==3.2.0
-jupyter-book==0.10.2
+jupyter-book==0.11.1
 jupyter-cache==0.4.2
 jupyter-client==6.1.12
 jupyter-core==4.7.1
-jupyter-server==1.7.0
-jupyter-server-mathjax==0.2.2
+jupyter-server==1.8.0
+jupyter-server-mathjax==0.2.3
 jupyter-sphinx==0.3.2
-jupyterbook-latex==0.2.0
+jupyterbook-latex==0.3.1
 jupyterlab-widgets==1.0.0
 jupytext==1.10.3
 kiwisolver==1.3.1
@@ -533,19 +528,18 @@ myst-nb==0.12.3
 myst-parser==0.13.7
 nbclient==0.5.3
 nbconvert==5.6.1
-nbdime==3.0.0
+nbdime==3.1.0
 nbformat==5.1.3
 nbstripout==0.4.0
 nbval==0.9.6
 nest-asyncio==1.5.1
-nested-lookup==0.2.22
 notebook==6.4.0
 numpy==1.20.3
 onnx==1.9.0
-onnx-simplifier==0.3.5
+onnx-simplifier==0.3.6
 onnxoptimizer==0.2.6
-onnxruntime==1.7.0
-opencv-python==4.5.2.52
+onnxruntime==1.8.0
+opencv-python==4.5.2.54
 openpifpaf @ file:///home/runner/work/openpifpaf/openpifpaf
 packaging==20.9
 pandocfilters==1.4.3
@@ -554,18 +548,18 @@ pexpect==4.8.0
 pickleshare==0.7.5
 Pillow==8.2.0
 pluggy==0.13.1
-prometheus-client==0.10.1
+prometheus-client==0.11.0
 prompt-toolkit==3.0.18
-protobuf==3.17.0
+protobuf==3.17.3
 ptyprocess==0.7.0
 py==1.10.0
 pybtex==0.24.0
 pybtex-docutils==1.0.0
 pycodestyle==2.7.0
 pycparser==2.20
-pydata-sphinx-theme==0.4.3
+pydata-sphinx-theme==0.6.3
 Pygments==2.9.0
-pylint==2.8.2
+pylint==2.8.3
 pyparsing==2.4.7
 pyrsistent==0.17.3
 pysparkling==0.6.1
@@ -574,7 +568,7 @@ python-dateutil==2.8.1
 python-json-logger==2.0.1
 pytz==2021.1
 PyYAML==5.4.1
-pyzmq==22.0.3
+pyzmq==22.1.0
 requests==2.25.1
 scipy==1.6.3
 Send2Trash==1.5.0
@@ -584,21 +578,22 @@ sniffio==1.2.0
 snowballstemmer==2.1.0
 soupsieve==2.2.1
 Sphinx==3.5.4
-sphinx-book-theme @ https://github.com/svenkreiss/sphinx-book-theme/archive/onthispage.zip
+sphinx-book-theme==0.1.0
 sphinx-comments==0.0.3
-sphinx-copybutton==0.3.1
+sphinx-copybutton==0.3.2
+sphinx-external-toc==0.2.0
 sphinx-panels==0.5.2
 sphinx-thebe==0.0.8
 sphinx-togglebutton==0.2.3
 sphinxcontrib-applehelp==1.0.2
-sphinxcontrib-bibtex==2.1.4
+sphinxcontrib-bibtex==2.2.1
 sphinxcontrib-devhelp==1.0.2
-sphinxcontrib-htmlhelp==1.0.3
+sphinxcontrib-htmlhelp==2.0.0
 sphinxcontrib-jsmath==1.0.1
 sphinxcontrib-qthelp==1.0.3
-sphinxcontrib-serializinghtml==1.1.4
+sphinxcontrib-serializinghtml==1.1.5
 SQLAlchemy==1.3.24
-terminado==0.10.0
+terminado==0.10.1
 testpath==0.5.0
 thop==0.0.31.post2005241907
 toml==0.10.2
@@ -608,10 +603,10 @@ tornado==6.1
 traitlets==5.0.5
 typing-extensions==3.10.0.0
 uc-micro-py==1.0.1
-urllib3==1.26.4
+urllib3==1.26.5
 wcwidth==0.2.5
 webencodings==0.5.1
-websocket-client==1.0.0
+websocket-client==1.1.0
 widgetsnbextension==3.5.1
 wrapt==1.12.1
 zipp==3.4.1
@@ -627,7 +622,7 @@ python -m openpifpaf.predict --version
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OpenPifPaf 0.12.10
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OpenPifPaf 0.12.11
 </pre></div>
 </div>
 </div>
@@ -675,7 +670,7 @@ python -m openpifpaf.predict --version
         
             &copy; Copyright 2020-2021.<br/>
           <div class="extra_footer">
-            <div>Powered by <a href="https://jupyterbook.org/">Jupyter Book</a>.</div>
+            <p>Powered by <a href="https://jupyterbook.org/">Jupyter Book</a>.</p>
 
           </div>
       </p>
@@ -686,11 +681,9 @@ python -m openpifpaf.predict --version
 
       </div>
     </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    
-  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
-
-
-    
+  
   </body>
 </html>

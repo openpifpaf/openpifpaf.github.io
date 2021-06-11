@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Prediction &#8212; OpenPifPaf Guide</title>
     
-  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -19,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.37f24b989f4638ff9c27c22dc7559d4f.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -35,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -45,7 +42,7 @@
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -60,14 +57,14 @@
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Examples" href="examples.html" />
     <link rel="prev" title="Introduction" href="intro.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -76,32 +73,32 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="index.html">
-  
-  <img src="_static/logo.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">OpenPifPaf Guide</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">OpenPifPaf Guide</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="intro.html">
    Introduction
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Getting Started
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Prediction
@@ -113,12 +110,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Chapters
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="predict_api.html">
    Prediction API
@@ -155,12 +152,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Tutorials
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="plugins_custom.html">
    Custom Dataset
@@ -197,12 +194,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Reference
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="moduledocs.html">
    Modules
@@ -214,12 +211,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Development
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="dev.html">
    Contribute
@@ -233,12 +230,11 @@
  <li class="toctree-l1">
   <a class="reference external" href="https://github.com/openpifpaf/openpifpaf">
    GitHub
-   <i class="fas fa-external-link-alt">
-   </i>
   </a>
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 </div>
@@ -292,17 +288,15 @@
             href="https://github.com/openpifpaf/openpifpaf"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
-        
+        <a class="issues-button"
+            href="https://github.com/openpifpaf/openpifpaf/issues/new?title=Issue%20on%20page%20%2Fpredict_cli.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
     </div>
 </div>
 
-
             <!-- Full screen (wrap in <a> to have style consistency -->
-            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                    title="Fullscreen mode"><i
-                        class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
 
@@ -328,11 +322,11 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> On this page
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> On this page
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#images">
    Images
@@ -350,8 +344,7 @@
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
         </div>
     </div>
 </div>
@@ -375,12 +368,12 @@ a short introduction to OpenPifPaf predictions on videos with
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
-python -m openpifpaf.predict coco/000000081988.jpg --image-output --json-output --image-min-dpi=200 --show-file-extension=jpeg
+python -m openpifpaf.predict coco/000000081988.jpg --image-output --json-output
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:neural network device: cpu (CUDA available: False, count: 0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:neural network device: cpu (CUDA available: False, count: 0)
 INFO:openpifpaf.predictor:neural network device: cpu (CUDA available: False, count: 0)
 INFO:openpifpaf.decoder.cifcaf:5 annotations: [15, 15, 13, 14, 14]
 INFO:openpifpaf.predictor:batch 0: coco/000000081988.jpg
@@ -772,12 +765,12 @@ show the structure of the neural network and timing information in the decoder.<
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
-python -m openpifpaf.predict coco/000000081988.jpg --image-output --json-output --debug --image-min-dpi=200 --show-file-extension=jpeg
+python -m openpifpaf.predict coco/000000081988.jpg --image-output --json-output --debug
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:neural network device: cpu (CUDA available: False, count: 0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:neural network device: cpu (CUDA available: False, count: 0)
 DEBUG:openpifpaf.show.painters:color connections = False, lw = 6, marker = 3
 DEBUG:openpifpaf.network.factory:Shell(
   (base_net): ShuffleNetV2K(
@@ -1038,17 +1031,17 @@ INFO:openpifpaf.predictor:neural network device: cpu (CUDA available: False, cou
 DEBUG:openpifpaf.transforms.pad:valid area before pad: [  0.   0. 639. 426.], image size = (640, 427)
 DEBUG:openpifpaf.transforms.pad:pad with (0, 3, 1, 3)
 DEBUG:openpifpaf.transforms.pad:valid area after pad: [  0.   3. 639. 426.], image size = (641, 433)
-DEBUG:openpifpaf.decoder.decoder:nn processing time: 0.862s
-DEBUG:openpifpaf.decoder.decoder:parallel execution with worker &lt;openpifpaf.decoder.decoder.DummyPool object at 0x7f18eef7ed90&gt;
+DEBUG:openpifpaf.decoder.decoder:nn processing time: 0.873s
+DEBUG:openpifpaf.decoder.decoder:parallel execution with worker &lt;openpifpaf.decoder.decoder.DummyPool object at 0x7f437457bcd0&gt;
 DEBUG:openpifpaf.decoder.multi:task 0
 DEBUG:openpifpaf.decoder.cifcaf:initial annotations = 0
-DEBUG:openpifpaf.decoder.utils.cif_hr:target_intensities 0.007s
+DEBUG:openpifpaf.decoder.utils.cif_hr:target_intensities 0.006s
 DEBUG:openpifpaf.decoder.utils.cif_seeds:seeds 812, 0.002s (C++ 0.000s)
 DEBUG:openpifpaf.decoder.utils.caf_scored:scored caf (1139, 1069) in 0.004s
 DEBUG:openpifpaf.decoder.cifcaf:annotations 5, 0.019s
 DEBUG:openpifpaf.decoder.utils.nms:nms = 0.001s
 INFO:openpifpaf.decoder.cifcaf:5 annotations: [15, 15, 13, 14, 14]
-DEBUG:openpifpaf.decoder.decoder:time: nn = 0.862s, dec = 0.024s
+DEBUG:openpifpaf.decoder.decoder:time: nn = 0.874s, dec = 0.023s
 INFO:openpifpaf.predictor:batch 0: coco/000000081988.jpg
 DEBUG:__main__:json output = coco/000000081988.jpg.predictions.json
 DEBUG:__main__:image output = coco/000000081988.jpg.predictions.jpeg
@@ -1103,7 +1096,7 @@ some further <a class="reference internal" href="predict_api.html#predict-fields
         
             &copy; Copyright 2020-2021.<br/>
           <div class="extra_footer">
-            <div>Powered by <a href="https://jupyterbook.org/">Jupyter Book</a>.</div>
+            <p>Powered by <a href="https://jupyterbook.org/">Jupyter Book</a>.</p>
 
           </div>
       </p>
@@ -1114,11 +1107,9 @@ some further <a class="reference internal" href="predict_api.html#predict-fields
 
       </div>
     </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    
-  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
-
-
-    
+  
   </body>
 </html>

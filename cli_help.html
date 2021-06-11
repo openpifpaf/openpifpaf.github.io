@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Command Line &#8212; OpenPifPaf Guide</title>
     
-  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -19,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.37f24b989f4638ff9c27c22dc7559d4f.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -35,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -45,7 +42,7 @@
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -58,14 +55,14 @@
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Plugins" href="plugins_overview.html" />
     <link rel="prev" title="Training" href="train.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -74,32 +71,32 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="index.html">
-  
-  <img src="_static/logo.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">OpenPifPaf Guide</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">OpenPifPaf Guide</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="intro.html">
    Introduction
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Getting Started
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="predict_cli.html">
    Prediction
@@ -111,12 +108,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Chapters
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="predict_api.html">
    Prediction API
@@ -153,12 +150,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Tutorials
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="plugins_custom.html">
    Custom Dataset
@@ -195,12 +192,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Reference
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="moduledocs.html">
    Modules
@@ -212,12 +209,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Development
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="dev.html">
    Contribute
@@ -231,12 +228,11 @@
  <li class="toctree-l1">
   <a class="reference external" href="https://github.com/openpifpaf/openpifpaf">
    GitHub
-   <i class="fas fa-external-link-alt">
-   </i>
   </a>
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 </div>
@@ -290,17 +286,15 @@
             href="https://github.com/openpifpaf/openpifpaf"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
-        
+        <a class="issues-button"
+            href="https://github.com/openpifpaf/openpifpaf/issues/new?title=Issue%20on%20page%20%2Fcli_help.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
     </div>
 </div>
 
-
             <!-- Full screen (wrap in <a> to have style consistency -->
-            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                    title="Fullscreen mode"><i
-                        class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
 
@@ -326,11 +320,11 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> On this page
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> On this page
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#predict">
    predict
@@ -373,8 +367,7 @@
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
         </div>
     </div>
 </div>
@@ -422,7 +415,7 @@ optional arguments:
 
 decoder configuration:
   --decoder DECODER [DECODER ...]
-                        Decoders to be considered: [&#39;cifdet&#39;, &#39;cifcaf&#39;].
+                        Decoders to be considered: [&#39;cifcaf&#39;, &#39;cifdet&#39;].
                         (default: None)
   --seed-threshold SEED_THRESHOLD
                         minimum threshold for seeds (default: 0.5)
@@ -469,6 +462,14 @@ logger:
   --debug               print debug messages (default: False)
   --log-stats           enable stats logging (default: False)
 
+MobileNetV3:
+  --mobilenetv3-no-pretrain
+                        use randomly initialized models (default: True)
+
+MobileNetV2:
+  --mobilenetv2-no-pretrain
+                        use randomly initialized models (default: True)
+
 shufflenetv2k:
   --shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE
                         stride of the optional 2nd input convolution (default:
@@ -508,14 +509,6 @@ SqueezeNet:
   --squeezenet-no-pretrain
                         use randomly initialized models (default: True)
 
-MobileNetV3:
-  --mobilenetv3-no-pretrain
-                        use randomly initialized models (default: True)
-
-MobileNetV2:
-  --mobilenetv2-no-pretrain
-                        use randomly initialized models (default: True)
-
 CompositeField3:
   --cf3-dropout CF3_DROPOUT
                         [experimental] zeroing probability of feature in head
@@ -529,9 +522,10 @@ network configuration:
                         [&#39;shufflenetv2k30-animalpose&#39;,
                         &#39;shufflenetv2k16-apollo-24&#39;,
                         &#39;shufflenetv2k16-apollo-66&#39;, &#39;mobilenetv2&#39;,
-                        &#39;resnet50&#39;, &#39;shufflenetv2k16&#39;,
+                        &#39;mobilenetv3large&#39;, &#39;resnet50&#39;, &#39;shufflenetv2k16&#39;,
                         &#39;shufflenetv2k16-withdense&#39;, &#39;shufflenetv2k30&#39;,
-                        &#39;resnet50-crowdpose&#39;, &#39;shufflenetv2k16-wholebody&#39;,
+                        &#39;resnet18-cocodet&#39;, &#39;resnet50-crowdpose&#39;,
+                        &#39;shufflenetv2k16-wholebody&#39;,
                         &#39;shufflenetv2k30-wholebody&#39;] (default: None)
   --basenet BASENET     base network, one of [&#39;mobilenetv2&#39;,
                         &#39;mobilenetv3large&#39;, &#39;mobilenetv3small&#39;, &#39;resnet18&#39;,
@@ -570,11 +564,11 @@ show:
                         None)
   --image-dpi-factor IMAGE_DPI_FACTOR
                         increase dpi of output image by this factor (default:
-                        1.0)
+                        2.0)
   --image-min-dpi IMAGE_MIN_DPI
                         minimum dpi of image output (default: 50.0)
   --show-file-extension SHOW_FILE_EXTENSION
-                        default file extension (default: png)
+                        default file extension (default: jpeg)
   --textbox-alpha TEXTBOX_ALPHA
                         transparency of annotation text box (default: 0.5)
   --text-color TEXT_COLOR
@@ -665,18 +659,6 @@ optional arguments:
   --separate-debug-ax
   --disable-cuda        disable CUDA (default: False)
 
-SqueezeNet:
-  --squeezenet-no-pretrain
-                        use randomly initialized models (default: True)
-
-MobileNetV3:
-  --mobilenetv3-no-pretrain
-                        use randomly initialized models (default: True)
-
-MobileNetV2:
-  --mobilenetv2-no-pretrain
-                        use randomly initialized models (default: True)
-
 shufflenetv2k:
   --shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE
                         stride of the optional 2nd input convolution (default:
@@ -692,6 +674,10 @@ shufflenetv2k:
   --shufflenetv2k-instance-norm
   --shufflenetv2k-group-norm
   --shufflenetv2k-leaky-relu
+
+MobileNetV2:
+  --mobilenetv2-no-pretrain
+                        use randomly initialized models (default: True)
 
 ShuffleNetv2:
   --shufflenetv2-no-pretrain
@@ -712,6 +698,14 @@ ResNet:
                         create a network without the last block (default:
                         False)
 
+SqueezeNet:
+  --squeezenet-no-pretrain
+                        use randomly initialized models (default: True)
+
+MobileNetV3:
+  --mobilenetv3-no-pretrain
+                        use randomly initialized models (default: True)
+
 CompositeField3:
   --cf3-dropout CF3_DROPOUT
                         [experimental] zeroing probability of feature in head
@@ -725,9 +719,10 @@ network configuration:
                         [&#39;shufflenetv2k30-animalpose&#39;,
                         &#39;shufflenetv2k16-apollo-24&#39;,
                         &#39;shufflenetv2k16-apollo-66&#39;, &#39;mobilenetv2&#39;,
-                        &#39;resnet50&#39;, &#39;shufflenetv2k16&#39;,
+                        &#39;mobilenetv3large&#39;, &#39;resnet50&#39;, &#39;shufflenetv2k16&#39;,
                         &#39;shufflenetv2k16-withdense&#39;, &#39;shufflenetv2k30&#39;,
-                        &#39;resnet50-crowdpose&#39;, &#39;shufflenetv2k16-wholebody&#39;,
+                        &#39;resnet18-cocodet&#39;, &#39;resnet50-crowdpose&#39;,
+                        &#39;shufflenetv2k16-wholebody&#39;,
                         &#39;shufflenetv2k30-wholebody&#39;] (default: None)
   --basenet BASENET     base network, one of [&#39;mobilenetv2&#39;,
                         &#39;mobilenetv3large&#39;, &#39;mobilenetv3small&#39;, &#39;resnet18&#39;,
@@ -815,11 +810,11 @@ show:
                         None)
   --image-dpi-factor IMAGE_DPI_FACTOR
                         increase dpi of output image by this factor (default:
-                        1.0)
+                        2.0)
   --image-min-dpi IMAGE_MIN_DPI
                         minimum dpi of image output (default: 50.0)
   --show-file-extension SHOW_FILE_EXTENSION
-                        default file extension (default: png)
+                        default file extension (default: jpeg)
   --textbox-alpha TEXTBOX_ALPHA
                         transparency of annotation text box (default: 0.5)
   --text-color TEXT_COLOR
@@ -914,34 +909,6 @@ logger:
   --debug               print debug messages (default: False)
   --log-stats           enable stats logging (default: False)
 
-SqueezeNet:
-  --squeezenet-no-pretrain
-                        use randomly initialized models (default: True)
-
-MobileNetV3:
-  --mobilenetv3-no-pretrain
-                        use randomly initialized models (default: True)
-
-shufflenetv2k:
-  --shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE
-                        stride of the optional 2nd input convolution (default:
-                        0)
-  --shufflenetv2k-input-conv2-outchannels SHUFFLENETV2K_INPUT_CONV2_OUTCHANNELS
-                        out channels of the optional 2nd input convolution
-                        (default: None)
-  --shufflenetv2k-stage4-dilation SHUFFLENETV2K_STAGE4_DILATION
-                        dilation factor of stage 4 (default: 1)
-  --shufflenetv2k-kernel SHUFFLENETV2K_KERNEL
-                        kernel width (default: 5)
-  --shufflenetv2k-conv5-as-stage
-  --shufflenetv2k-instance-norm
-  --shufflenetv2k-group-norm
-  --shufflenetv2k-leaky-relu
-
-MobileNetV2:
-  --mobilenetv2-no-pretrain
-                        use randomly initialized models (default: True)
-
 ShuffleNetv2:
   --shufflenetv2-no-pretrain
                         use randomly initialized models (default: True)
@@ -961,6 +928,34 @@ ResNet:
                         create a network without the last block (default:
                         False)
 
+SqueezeNet:
+  --squeezenet-no-pretrain
+                        use randomly initialized models (default: True)
+
+shufflenetv2k:
+  --shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE
+                        stride of the optional 2nd input convolution (default:
+                        0)
+  --shufflenetv2k-input-conv2-outchannels SHUFFLENETV2K_INPUT_CONV2_OUTCHANNELS
+                        out channels of the optional 2nd input convolution
+                        (default: None)
+  --shufflenetv2k-stage4-dilation SHUFFLENETV2K_STAGE4_DILATION
+                        dilation factor of stage 4 (default: 1)
+  --shufflenetv2k-kernel SHUFFLENETV2K_KERNEL
+                        kernel width (default: 5)
+  --shufflenetv2k-conv5-as-stage
+  --shufflenetv2k-instance-norm
+  --shufflenetv2k-group-norm
+  --shufflenetv2k-leaky-relu
+
+MobileNetV3:
+  --mobilenetv3-no-pretrain
+                        use randomly initialized models (default: True)
+
+MobileNetV2:
+  --mobilenetv2-no-pretrain
+                        use randomly initialized models (default: True)
+
 CompositeField3:
   --cf3-dropout CF3_DROPOUT
                         [experimental] zeroing probability of feature in head
@@ -974,9 +969,10 @@ network configuration:
                         [&#39;shufflenetv2k30-animalpose&#39;,
                         &#39;shufflenetv2k16-apollo-24&#39;,
                         &#39;shufflenetv2k16-apollo-66&#39;, &#39;mobilenetv2&#39;,
-                        &#39;resnet50&#39;, &#39;shufflenetv2k16&#39;,
+                        &#39;mobilenetv3large&#39;, &#39;resnet50&#39;, &#39;shufflenetv2k16&#39;,
                         &#39;shufflenetv2k16-withdense&#39;, &#39;shufflenetv2k30&#39;,
-                        &#39;resnet50-crowdpose&#39;, &#39;shufflenetv2k16-wholebody&#39;,
+                        &#39;resnet18-cocodet&#39;, &#39;resnet50-crowdpose&#39;,
+                        &#39;shufflenetv2k16-wholebody&#39;,
                         &#39;shufflenetv2k30-wholebody&#39;] (default: None)
   --basenet BASENET     base network, one of [&#39;mobilenetv2&#39;,
                         &#39;mobilenetv3large&#39;, &#39;mobilenetv3small&#39;, &#39;resnet18&#39;,
@@ -1041,7 +1037,7 @@ Bce Loss:
   --no-focal-clamp
   --bce-min BCE_MIN     gradient clipped below (default: 0.0)
   --bce-soft-clamp BCE_SOFT_CLAMP
-                        soft clamp for BCE (default: None)
+                        soft clamp for BCE (default: 5.0)
   --bce-background-clamp BCE_BACKGROUND_CLAMP
                         background clamp for BCE (default: -15.0)
 
@@ -1336,11 +1332,11 @@ show:
                         None)
   --image-dpi-factor IMAGE_DPI_FACTOR
                         increase dpi of output image by this factor (default:
-                        1.0)
+                        2.0)
   --image-min-dpi IMAGE_MIN_DPI
                         minimum dpi of image output (default: 50.0)
   --show-file-extension SHOW_FILE_EXTENSION
-                        default file extension (default: png)
+                        default file extension (default: jpeg)
   --textbox-alpha TEXTBOX_ALPHA
                         transparency of annotation text box (default: 0.5)
   --text-color TEXT_COLOR
@@ -1627,7 +1623,7 @@ data module wholebody:
 
 decoder configuration:
   --decoder DECODER [DECODER ...]
-                        Decoders to be considered: [&#39;cifcaf&#39;, &#39;cifdet&#39;].
+                        Decoders to be considered: [&#39;cifdet&#39;, &#39;cifcaf&#39;].
                         (default: None)
   --seed-threshold SEED_THRESHOLD
                         minimum threshold for seeds (default: 0.5)
@@ -1674,6 +1670,25 @@ logger:
   --debug               print debug messages (default: False)
   --log-stats           enable stats logging (default: False)
 
+ResNet:
+  --resnet-no-pretrain  use randomly initialized models (default: True)
+  --resnet-pool0-stride RESNET_POOL0_STRIDE
+                        stride of zero removes the pooling op (default: 0)
+  --resnet-input-conv-stride RESNET_INPUT_CONV_STRIDE
+                        stride of the input convolution (default: 2)
+  --resnet-input-conv2-stride RESNET_INPUT_CONV2_STRIDE
+                        stride of the optional 2nd input convolution (default:
+                        0)
+  --resnet-block5-dilation RESNET_BLOCK5_DILATION
+                        use dilated convs in block5 (default: 1)
+  --resnet-remove-last-block
+                        create a network without the last block (default:
+                        False)
+
+MobileNetV2:
+  --mobilenetv2-no-pretrain
+                        use randomly initialized models (default: True)
+
 SqueezeNet:
   --squeezenet-no-pretrain
                         use randomly initialized models (default: True)
@@ -1698,28 +1713,9 @@ shufflenetv2k:
   --shufflenetv2k-group-norm
   --shufflenetv2k-leaky-relu
 
-MobileNetV2:
-  --mobilenetv2-no-pretrain
-                        use randomly initialized models (default: True)
-
 ShuffleNetv2:
   --shufflenetv2-no-pretrain
                         use randomly initialized models (default: True)
-
-ResNet:
-  --resnet-no-pretrain  use randomly initialized models (default: True)
-  --resnet-pool0-stride RESNET_POOL0_STRIDE
-                        stride of zero removes the pooling op (default: 0)
-  --resnet-input-conv-stride RESNET_INPUT_CONV_STRIDE
-                        stride of the input convolution (default: 2)
-  --resnet-input-conv2-stride RESNET_INPUT_CONV2_STRIDE
-                        stride of the optional 2nd input convolution (default:
-                        0)
-  --resnet-block5-dilation RESNET_BLOCK5_DILATION
-                        use dilated convs in block5 (default: 1)
-  --resnet-remove-last-block
-                        create a network without the last block (default:
-                        False)
 
 CompositeField3:
   --cf3-dropout CF3_DROPOUT
@@ -1734,9 +1730,10 @@ network configuration:
                         [&#39;shufflenetv2k30-animalpose&#39;,
                         &#39;shufflenetv2k16-apollo-24&#39;,
                         &#39;shufflenetv2k16-apollo-66&#39;, &#39;mobilenetv2&#39;,
-                        &#39;resnet50&#39;, &#39;shufflenetv2k16&#39;,
+                        &#39;mobilenetv3large&#39;, &#39;resnet50&#39;, &#39;shufflenetv2k16&#39;,
                         &#39;shufflenetv2k16-withdense&#39;, &#39;shufflenetv2k30&#39;,
-                        &#39;resnet50-crowdpose&#39;, &#39;shufflenetv2k16-wholebody&#39;,
+                        &#39;resnet18-cocodet&#39;, &#39;resnet50-crowdpose&#39;,
+                        &#39;shufflenetv2k16-wholebody&#39;,
                         &#39;shufflenetv2k30-wholebody&#39;] (default: None)
   --basenet BASENET     base network, one of [&#39;mobilenetv2&#39;,
                         &#39;mobilenetv3large&#39;, &#39;mobilenetv3small&#39;, &#39;resnet18&#39;,
@@ -1775,11 +1772,11 @@ show:
                         None)
   --image-dpi-factor IMAGE_DPI_FACTOR
                         increase dpi of output image by this factor (default:
-                        1.0)
+                        2.0)
   --image-min-dpi IMAGE_MIN_DPI
                         minimum dpi of image output (default: 50.0)
   --show-file-extension SHOW_FILE_EXTENSION
-                        default file extension (default: png)
+                        default file extension (default: jpeg)
   --textbox-alpha TEXTBOX_ALPHA
                         transparency of annotation text box (default: 0.5)
   --text-color TEXT_COLOR
@@ -1838,8 +1835,15 @@ python3 -m openpifpaf.export_onnx --help
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>usage: python3 -m openpifpaf.export_onnx [-h] [--version]
-                                         [--shufflenetv2-no-pretrain]
+                                         [--shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE]
+                                         [--shufflenetv2k-input-conv2-outchannels SHUFFLENETV2K_INPUT_CONV2_OUTCHANNELS]
+                                         [--shufflenetv2k-stage4-dilation SHUFFLENETV2K_STAGE4_DILATION]
+                                         [--shufflenetv2k-kernel SHUFFLENETV2K_KERNEL]
+                                         [--shufflenetv2k-conv5-as-stage]
+                                         [--shufflenetv2k-instance-norm | --shufflenetv2k-group-norm]
+                                         [--shufflenetv2k-leaky-relu]
                                          [--mobilenetv2-no-pretrain]
+                                         [--shufflenetv2-no-pretrain]
                                          [--resnet-no-pretrain]
                                          [--resnet-pool0-stride RESNET_POOL0_STRIDE]
                                          [--resnet-input-conv-stride RESNET_INPUT_CONV_STRIDE]
@@ -1848,13 +1852,6 @@ python3 -m openpifpaf.export_onnx --help
                                          [--resnet-remove-last-block]
                                          [--squeezenet-no-pretrain]
                                          [--mobilenetv3-no-pretrain]
-                                         [--shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE]
-                                         [--shufflenetv2k-input-conv2-outchannels SHUFFLENETV2K_INPUT_CONV2_OUTCHANNELS]
-                                         [--shufflenetv2k-stage4-dilation SHUFFLENETV2K_STAGE4_DILATION]
-                                         [--shufflenetv2k-kernel SHUFFLENETV2K_KERNEL]
-                                         [--shufflenetv2k-conv5-as-stage]
-                                         [--shufflenetv2k-instance-norm | --shufflenetv2k-group-norm]
-                                         [--shufflenetv2k-leaky-relu]
                                          [--cf3-dropout CF3_DROPOUT]
                                          [--cf3-no-inplace-ops]
                                          [--checkpoint CHECKPOINT]
@@ -1883,12 +1880,28 @@ optional arguments:
   --input-width INPUT_WIDTH
   --input-height INPUT_HEIGHT
 
-ShuffleNetv2:
-  --shufflenetv2-no-pretrain
-                        use randomly initialized models (default: True)
+shufflenetv2k:
+  --shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE
+                        stride of the optional 2nd input convolution (default:
+                        0)
+  --shufflenetv2k-input-conv2-outchannels SHUFFLENETV2K_INPUT_CONV2_OUTCHANNELS
+                        out channels of the optional 2nd input convolution
+                        (default: None)
+  --shufflenetv2k-stage4-dilation SHUFFLENETV2K_STAGE4_DILATION
+                        dilation factor of stage 4 (default: 1)
+  --shufflenetv2k-kernel SHUFFLENETV2K_KERNEL
+                        kernel width (default: 5)
+  --shufflenetv2k-conv5-as-stage
+  --shufflenetv2k-instance-norm
+  --shufflenetv2k-group-norm
+  --shufflenetv2k-leaky-relu
 
 MobileNetV2:
   --mobilenetv2-no-pretrain
+                        use randomly initialized models (default: True)
+
+ShuffleNetv2:
+  --shufflenetv2-no-pretrain
                         use randomly initialized models (default: True)
 
 ResNet:
@@ -1914,22 +1927,6 @@ MobileNetV3:
   --mobilenetv3-no-pretrain
                         use randomly initialized models (default: True)
 
-shufflenetv2k:
-  --shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE
-                        stride of the optional 2nd input convolution (default:
-                        0)
-  --shufflenetv2k-input-conv2-outchannels SHUFFLENETV2K_INPUT_CONV2_OUTCHANNELS
-                        out channels of the optional 2nd input convolution
-                        (default: None)
-  --shufflenetv2k-stage4-dilation SHUFFLENETV2K_STAGE4_DILATION
-                        dilation factor of stage 4 (default: 1)
-  --shufflenetv2k-kernel SHUFFLENETV2K_KERNEL
-                        kernel width (default: 5)
-  --shufflenetv2k-conv5-as-stage
-  --shufflenetv2k-instance-norm
-  --shufflenetv2k-group-norm
-  --shufflenetv2k-leaky-relu
-
 CompositeField3:
   --cf3-dropout CF3_DROPOUT
                         [experimental] zeroing probability of feature in head
@@ -1943,9 +1940,10 @@ network configuration:
                         [&#39;shufflenetv2k30-animalpose&#39;,
                         &#39;shufflenetv2k16-apollo-24&#39;,
                         &#39;shufflenetv2k16-apollo-66&#39;, &#39;mobilenetv2&#39;,
-                        &#39;resnet50&#39;, &#39;shufflenetv2k16&#39;,
+                        &#39;mobilenetv3large&#39;, &#39;resnet50&#39;, &#39;shufflenetv2k16&#39;,
                         &#39;shufflenetv2k16-withdense&#39;, &#39;shufflenetv2k30&#39;,
-                        &#39;resnet50-crowdpose&#39;, &#39;shufflenetv2k16-wholebody&#39;,
+                        &#39;resnet18-cocodet&#39;, &#39;resnet50-crowdpose&#39;,
+                        &#39;shufflenetv2k16-wholebody&#39;,
                         &#39;shufflenetv2k30-wholebody&#39;] (default: None)
   --basenet BASENET     base network, one of [&#39;mobilenetv2&#39;,
                         &#39;mobilenetv3large&#39;, &#39;mobilenetv3small&#39;, &#39;resnet18&#39;,
@@ -1979,6 +1977,13 @@ python3 -m openpifpaf.export_coreml --help
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>usage: python3 -m openpifpaf.export_coreml [-h] [--version]
+                                           [--shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE]
+                                           [--shufflenetv2k-input-conv2-outchannels SHUFFLENETV2K_INPUT_CONV2_OUTCHANNELS]
+                                           [--shufflenetv2k-stage4-dilation SHUFFLENETV2K_STAGE4_DILATION]
+                                           [--shufflenetv2k-kernel SHUFFLENETV2K_KERNEL]
+                                           [--shufflenetv2k-conv5-as-stage]
+                                           [--shufflenetv2k-instance-norm | --shufflenetv2k-group-norm]
+                                           [--shufflenetv2k-leaky-relu]
                                            [--mobilenetv2-no-pretrain]
                                            [--shufflenetv2-no-pretrain]
                                            [--resnet-no-pretrain]
@@ -1989,13 +1994,6 @@ python3 -m openpifpaf.export_coreml --help
                                            [--resnet-remove-last-block]
                                            [--squeezenet-no-pretrain]
                                            [--mobilenetv3-no-pretrain]
-                                           [--shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE]
-                                           [--shufflenetv2k-input-conv2-outchannels SHUFFLENETV2K_INPUT_CONV2_OUTCHANNELS]
-                                           [--shufflenetv2k-stage4-dilation SHUFFLENETV2K_STAGE4_DILATION]
-                                           [--shufflenetv2k-kernel SHUFFLENETV2K_KERNEL]
-                                           [--shufflenetv2k-conv5-as-stage]
-                                           [--shufflenetv2k-instance-norm | --shufflenetv2k-group-norm]
-                                           [--shufflenetv2k-leaky-relu]
                                            [--cf3-dropout CF3_DROPOUT]
                                            [--cf3-no-inplace-ops]
                                            [--checkpoint CHECKPOINT]
@@ -2017,6 +2015,22 @@ optional arguments:
   --input-width INPUT_WIDTH
   --input-height INPUT_HEIGHT
   --minimum-deployment-target {iOS13,iOS14}
+
+shufflenetv2k:
+  --shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE
+                        stride of the optional 2nd input convolution (default:
+                        0)
+  --shufflenetv2k-input-conv2-outchannels SHUFFLENETV2K_INPUT_CONV2_OUTCHANNELS
+                        out channels of the optional 2nd input convolution
+                        (default: None)
+  --shufflenetv2k-stage4-dilation SHUFFLENETV2K_STAGE4_DILATION
+                        dilation factor of stage 4 (default: 1)
+  --shufflenetv2k-kernel SHUFFLENETV2K_KERNEL
+                        kernel width (default: 5)
+  --shufflenetv2k-conv5-as-stage
+  --shufflenetv2k-instance-norm
+  --shufflenetv2k-group-norm
+  --shufflenetv2k-leaky-relu
 
 MobileNetV2:
   --mobilenetv2-no-pretrain
@@ -2049,22 +2063,6 @@ MobileNetV3:
   --mobilenetv3-no-pretrain
                         use randomly initialized models (default: True)
 
-shufflenetv2k:
-  --shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE
-                        stride of the optional 2nd input convolution (default:
-                        0)
-  --shufflenetv2k-input-conv2-outchannels SHUFFLENETV2K_INPUT_CONV2_OUTCHANNELS
-                        out channels of the optional 2nd input convolution
-                        (default: None)
-  --shufflenetv2k-stage4-dilation SHUFFLENETV2K_STAGE4_DILATION
-                        dilation factor of stage 4 (default: 1)
-  --shufflenetv2k-kernel SHUFFLENETV2K_KERNEL
-                        kernel width (default: 5)
-  --shufflenetv2k-conv5-as-stage
-  --shufflenetv2k-instance-norm
-  --shufflenetv2k-group-norm
-  --shufflenetv2k-leaky-relu
-
 CompositeField3:
   --cf3-dropout CF3_DROPOUT
                         [experimental] zeroing probability of feature in head
@@ -2078,9 +2076,10 @@ network configuration:
                         [&#39;shufflenetv2k30-animalpose&#39;,
                         &#39;shufflenetv2k16-apollo-24&#39;,
                         &#39;shufflenetv2k16-apollo-66&#39;, &#39;mobilenetv2&#39;,
-                        &#39;resnet50&#39;, &#39;shufflenetv2k16&#39;,
+                        &#39;mobilenetv3large&#39;, &#39;resnet50&#39;, &#39;shufflenetv2k16&#39;,
                         &#39;shufflenetv2k16-withdense&#39;, &#39;shufflenetv2k30&#39;,
-                        &#39;resnet50-crowdpose&#39;, &#39;shufflenetv2k16-wholebody&#39;,
+                        &#39;resnet18-cocodet&#39;, &#39;resnet50-crowdpose&#39;,
+                        &#39;shufflenetv2k16-wholebody&#39;,
                         &#39;shufflenetv2k30-wholebody&#39;] (default: None)
   --basenet BASENET     base network, one of [&#39;mobilenetv2&#39;,
                         &#39;mobilenetv3large&#39;, &#39;mobilenetv3small&#39;, &#39;resnet18&#39;,
@@ -2194,11 +2193,11 @@ show:
                         None)
   --image-dpi-factor IMAGE_DPI_FACTOR
                         increase dpi of output image by this factor (default:
-                        1.0)
+                        2.0)
   --image-min-dpi IMAGE_MIN_DPI
                         minimum dpi of image output (default: 50.0)
   --show-file-extension SHOW_FILE_EXTENSION
-                        default file extension (default: png)
+                        default file extension (default: jpeg)
   --textbox-alpha TEXTBOX_ALPHA
                         transparency of annotation text box (default: 0.5)
   --text-color TEXT_COLOR
@@ -2277,7 +2276,7 @@ show:
         
             &copy; Copyright 2020-2021.<br/>
           <div class="extra_footer">
-            <div>Powered by <a href="https://jupyterbook.org/">Jupyter Book</a>.</div>
+            <p>Powered by <a href="https://jupyterbook.org/">Jupyter Book</a>.</p>
 
           </div>
       </p>
@@ -2288,11 +2287,9 @@ show:
 
       </div>
     </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    
-  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
-
-
-    
+  
   </body>
 </html>
