@@ -389,23 +389,24 @@ in the COCO format. Please see the tutorial on <a class="reference internal" hre
 for a step-by-step walkthrough.</p>
 <div class="section" id="download-coco-data">
 <h2>Download COCO data<a class="headerlink" href="#download-coco-data" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="http://cocodataset.org/">COCO</a> is a great datasets containing many types of annotations, including bounding boxes, 2D poses, etc.</p>
+<p><a class="reference external" href="http://cocodataset.org/">COCO</a> is a great datasets containing many types of annotations, including bounding boxes, 2D poses, etc.
+You can also copy this code block into a code cell in Jupyter or Google Colab with the prefix <code class="docutils literal notranslate"><span class="pre">%%bash</span></code>.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mkdir data-mscoco
 <span class="nb">cd</span> data-mscoco
 
-wget http://images.cocodataset.org/annotations/annotations_trainval2017.zip
-wget http://images.cocodataset.org/annotations/image_info_test2017.zip
-unzip annotations_trainval2017.zip
-unzip image_info_test2017.zip
+wget -q -nc http://images.cocodataset.org/annotations/annotations_trainval2017.zip
+wget -q -nc http://images.cocodataset.org/annotations/image_info_test2017.zip
+unzip -q -n annotations_trainval2017.zip
+unzip -q -n image_info_test2017.zip
 
 mkdir images
 <span class="nb">cd</span> images
-wget http://images.cocodataset.org/zips/val2017.zip
-wget http://images.cocodataset.org/zips/train2017.zip
-wget http://images.cocodataset.org/zips/test2017.zip
-unzip val2017.zip
-unzip train2017.zip
-unzip test2017.zip
+wget -q -nc http://images.cocodataset.org/zips/val2017.zip
+wget -q -nc http://images.cocodataset.org/zips/train2017.zip
+wget -q -nc http://images.cocodataset.org/zips/test2017.zip
+unzip -q -n val2017.zip
+unzip -q -n train2017.zip
+unzip -q -n test2017.zip
 </pre></div>
 </div>
 </div>
