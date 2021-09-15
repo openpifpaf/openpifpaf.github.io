@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CrowdPose &#8212; OpenPifPaf Guide</title>
+    <title>NuScenes 2D detection &#8212; OpenPifPaf Guide</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -53,8 +53,8 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="NuScenes 2D detection" href="plugins_nuscenes.html" />
-    <link rel="prev" title="Car Keypoints" href="plugins_apollocar3d.html" />
+    <link rel="next" title="OpenCV" href="tutorial_opencv.html" />
+    <link rel="prev" title="CrowdPose" href="plugins_crowdpose.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -176,13 +176,13 @@
    Car Keypoints
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="plugins_crowdpose.html">
    CrowdPose
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="plugins_nuscenes.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    NuScenes 2D detection
   </a>
  </li>
@@ -272,7 +272,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/plugins_crowdpose.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/plugins_nuscenes.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -292,7 +292,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/openpifpaf/openpifpaf/issues/new?title=Issue%20on%20page%20%2Fplugins_crowdpose.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/openpifpaf/openpifpaf/issues/new?title=Issue%20on%20page%20%2Fplugins_nuscenes.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -308,7 +308,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/openpifpaf/openpifpaf/stable?urlpath=tree/guide/plugins_crowdpose.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/openpifpaf/openpifpaf/stable?urlpath=tree/guide/plugins_nuscenes.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -331,18 +331,23 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#inspect">
-   Inspect
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#prediction">
    Prediction
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dataset">
-   Dataset
+  <a class="reference internal nav-link" href="#data-download-and-preprocessing">
+   Data download and preprocessing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#train">
+   Train
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#evaluation">
+   Evaluation
   </a>
  </li>
 </ul>
@@ -356,132 +361,58 @@
         
               <div>
                 
-  <div class="section" id="crowdpose">
-<h1>CrowdPose<a class="headerlink" href="#crowdpose" title="Permalink to this headline">¶</a></h1>
-<p>More info on the CrowdPose dataset: <a class="reference external" href="https://arxiv.org/abs/1812.00324">arxiv.org/abs/1812.00324</a>, <a class="reference external" href="https://github.com/Jeff-sjtu/CrowdPose">github.com/Jeff-sjtu/CrowdPose</a>.</p>
-<p>This page gives a quick introduction to OpenPifPaf’s CrowdPose plugin that is part of <code class="docutils literal notranslate"><span class="pre">openpifpaf.plugins</span></code>.
-The plugin adds a <code class="docutils literal notranslate"><span class="pre">DataModule</span></code>. CrowdPose annotations are COCO-compatible, so this datamodule only has to configure the existing COCO dataset class.
-This plugin is quite small and might serve as a template for your custom plugin for other COCO-compatible datasets.
-Let’s start with the setup for this notebook and register all available OpenPifPaf plugins:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">openpifpaf</span><span class="o">.</span><span class="n">plugin</span><span class="o">.</span><span class="n">REGISTERED</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;openpifpaf.plugins.animalpose&#39;, &#39;openpifpaf.plugins.apollocar3d&#39;, &#39;openpifpaf.plugins.cifar10&#39;, &#39;openpifpaf.plugins.coco&#39;, &#39;openpifpaf.plugins.crowdpose&#39;, &#39;openpifpaf.plugins.nuscenes&#39;, &#39;openpifpaf.plugins.wholebody&#39;])
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="inspect">
-<h2>Inspect<a class="headerlink" href="#inspect" title="Permalink to this headline">¶</a></h2>
-<p>Next, we configure and instantiate the datamodule and look at the configured head metas:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">datamodule</span> <span class="o">=</span> <span class="n">openpifpaf</span><span class="o">.</span><span class="n">plugins</span><span class="o">.</span><span class="n">crowdpose</span><span class="o">.</span><span class="n">CrowdPose</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">datamodule</span><span class="o">.</span><span class="n">head_metas</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Cif(name=&#39;cif&#39;, dataset=&#39;crowdpose&#39;, head_index=None, base_stride=None, upsample_stride=1, keypoints=[&#39;left_shoulder&#39;, &#39;right_shoulder&#39;, &#39;left_elbow&#39;, &#39;right_elbow&#39;, &#39;left_wrist&#39;, &#39;right_wrist&#39;, &#39;left_hip&#39;, &#39;right_hip&#39;, &#39;left_knee&#39;, &#39;right_knee&#39;, &#39;left_ankle&#39;, &#39;right_ankle&#39;, &#39;head&#39;, &#39;neck&#39;], sigmas=[0.079, 0.079, 0.072, 0.072, 0.062, 0.062, 0.107, 0.107, 0.087, 0.087, 0.089, 0.089, 0.079, 0.079], pose=array([[-1.4 ,  8.  ,  2.  ],
-       [ 1.4 ,  8.  ,  2.  ],
-       [-1.75,  6.  ,  2.  ],
-       [ 1.75,  6.2 ,  2.  ],
-       [-1.75,  4.  ,  2.  ],
-       [ 1.75,  4.2 ,  2.  ],
-       [-1.26,  4.  ,  2.  ],
-       [ 1.26,  4.  ,  2.  ],
-       [-1.4 ,  2.  ,  2.  ],
-       [ 1.4 ,  2.1 ,  2.  ],
-       [-1.4 ,  0.  ,  2.  ],
-       [ 1.4 ,  0.1 ,  2.  ],
-       [ 0.  , 10.3 ,  2.  ],
-       [ 0.  ,  9.3 ,  2.  ]]), draw_skeleton=[[13, 14], [14, 1], [14, 2], [1, 2], [7, 8], [1, 3], [3, 5], [2, 4], [4, 6], [1, 7], [2, 8], [7, 9], [9, 11], [8, 10], [10, 12]], score_weights=None, decoder_seed_mask=None, training_weights=None), Caf(name=&#39;caf&#39;, dataset=&#39;crowdpose&#39;, head_index=None, base_stride=None, upsample_stride=1, keypoints=[&#39;left_shoulder&#39;, &#39;right_shoulder&#39;, &#39;left_elbow&#39;, &#39;right_elbow&#39;, &#39;left_wrist&#39;, &#39;right_wrist&#39;, &#39;left_hip&#39;, &#39;right_hip&#39;, &#39;left_knee&#39;, &#39;right_knee&#39;, &#39;left_ankle&#39;, &#39;right_ankle&#39;, &#39;head&#39;, &#39;neck&#39;], sigmas=[0.079, 0.079, 0.072, 0.072, 0.062, 0.062, 0.107, 0.107, 0.087, 0.087, 0.089, 0.089, 0.079, 0.079], skeleton=[[13, 14], [14, 1], [14, 2], [1, 2], [7, 8], [1, 3], [3, 5], [2, 4], [4, 6], [1, 7], [2, 8], [7, 9], [9, 11], [8, 10], [10, 12]], pose=array([[-1.4 ,  8.  ,  2.  ],
-       [ 1.4 ,  8.  ,  2.  ],
-       [-1.75,  6.  ,  2.  ],
-       [ 1.75,  6.2 ,  2.  ],
-       [-1.75,  4.  ,  2.  ],
-       [ 1.75,  4.2 ,  2.  ],
-       [-1.26,  4.  ,  2.  ],
-       [ 1.26,  4.  ,  2.  ],
-       [-1.4 ,  2.  ,  2.  ],
-       [ 1.4 ,  2.1 ,  2.  ],
-       [-1.4 ,  0.  ,  2.  ],
-       [ 1.4 ,  0.1 ,  2.  ],
-       [ 0.  , 10.3 ,  2.  ],
-       [ 0.  ,  9.3 ,  2.  ]]), sparse_skeleton=None, dense_to_sparse_radius=2.0, only_in_field_of_view=False, decoder_confidence_scales=None, training_weights=None)]
-</pre></div>
-</div>
-</div>
-</div>
-<p>We see here that CrowdPose has CIF and CAF heads.</p>
-<p>Next, we want to visualize the pose:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># first make an annotation</span>
-<span class="n">ann</span> <span class="o">=</span> <span class="n">openpifpaf</span><span class="o">.</span><span class="n">Annotation</span><span class="o">.</span><span class="n">from_cif_meta</span><span class="p">(</span><span class="n">datamodule</span><span class="o">.</span><span class="n">head_metas</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-
-<span class="c1"># visualize the annotation</span>
-<span class="n">openpifpaf</span><span class="o">.</span><span class="n">show</span><span class="o">.</span><span class="n">KeypointPainter</span><span class="o">.</span><span class="n">show_joint_scales</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="n">keypoint_painter</span> <span class="o">=</span> <span class="n">openpifpaf</span><span class="o">.</span><span class="n">show</span><span class="o">.</span><span class="n">KeypointPainter</span><span class="p">()</span>
-<span class="k">with</span> <span class="n">openpifpaf</span><span class="o">.</span><span class="n">show</span><span class="o">.</span><span class="n">Canvas</span><span class="o">.</span><span class="n">annotation</span><span class="p">(</span><span class="n">ann</span><span class="p">)</span> <span class="k">as</span> <span class="n">ax</span><span class="p">:</span>
-    <span class="n">keypoint_painter</span><span class="o">.</span><span class="n">annotation</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">ann</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/plugins_crowdpose_6_0.png" src="_images/plugins_crowdpose_6_0.png" />
-</div>
-</div>
-</div>
-<div class="section" id="prediction">
+  <div class="section" id="nuscenes-2d-detection">
+<h1>NuScenes 2D detection<a class="headerlink" href="#nuscenes-2d-detection" title="Permalink to this headline">¶</a></h1>
+<div style="text-align: right"> by <a href="https://www.linkedin.com/in/duncan-zauss/">Duncan Zauss</a>, 10/08/2021</div> <br />
+This is an extension to OpenPifPaf to make 2D detections with the objects from the NuScenes dataset.<div class="section" id="prediction">
 <h2>Prediction<a class="headerlink" href="#prediction" title="Permalink to this headline">¶</a></h2>
-<p>We use the pretrained model <code class="docutils literal notranslate"><span class="pre">resnet50-crowdpose</span></code>:</p>
+<p>We provide a pretrained checkpoint to predict the objects from NuScenes. The required checkpoint will be automatically downloaded if you provide “–checkpoint=shufflenetv2k16-nuscenes” as a CLI argument. Below an example prediction is shown.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
-python -m openpifpaf.predict coco/000000081988.jpg --checkpoint=resnet50-crowdpose --image-output coco/000000081988.jpg.predictions-crowdpose.jpeg --image-min-dpi=200
+python -m openpifpaf.predict nuscenes/n013-2018-08-28-10-41-15+0800__CAM_FRONT__1535424448912407.jpg \
+    --checkpoint=shufflenetv2k16-nuscenes --image-output
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:neural network device: cpu (CUDA available: False, count: 0)
 INFO:openpifpaf.predictor:neural network device: cpu (CUDA available: False, count: 0)
-INFO:openpifpaf.decoder.cifcaf:5 annotations: [13, 12, 8, 7, 10]
-INFO:openpifpaf.predictor:batch 0: coco/000000081988.jpg
+INFO:openpifpaf.decoder.cifdet:annotations 2, decoder = 0.005s
+INFO:openpifpaf.predictor:batch 0: nuscenes/n013-2018-08-28-10-41-15+0800__CAM_FRONT__1535424448912407.jpg
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">IPython</span>
-<span class="n">IPython</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">Image</span><span class="p">(</span><span class="s1">&#39;coco/000000081988.jpg.predictions-crowdpose.jpeg&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">IPython</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">Image</span><span class="p">(</span><span class="s1">&#39;nuscenes/n013-2018-08-28-10-41-15+0800__CAM_FRONT__1535424448912407.jpg.predictions.jpeg&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/plugins_crowdpose_9_0.jpg" src="_images/plugins_crowdpose_9_0.jpg" />
+<img alt="_images/plugins_nuscenes_4_0.jpg" src="_images/plugins_nuscenes_4_0.jpg" />
 </div>
 </div>
-<p>Image credit: “<a class="reference external" href="https://www.flickr.com/photos/fotologic/6038911779/in/photostream/">Learning to surf</a>” by fotologic which is licensed under [CC-BY-2.0].</p>
 </div>
-<div class="section" id="dataset">
-<h2>Dataset<a class="headerlink" href="#dataset" title="Permalink to this headline">¶</a></h2>
-<p>For training and evaluation, you need to download the dataset.</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mkdir data-crowdpose
-<span class="nb">cd</span> data-crowdpose
-<span class="c1"># download links here: https://github.com/Jeff-sjtu/CrowdPose</span>
-unzip annotations.zip
-unzip images.zip
+<div class="section" id="data-download-and-preprocessing">
+<h2>Data download and preprocessing<a class="headerlink" href="#data-download-and-preprocessing" title="Permalink to this headline">¶</a></h2>
+<p>If you wish to train or evaluate a model, you will need create a NuScenes account and then download the NuScenes dataset from <a class="reference external" href="https://www.nuscenes.org/download">this link</a>. Only the metadata and the sample images are required, there is no need to download the Sweep images (unannotated previous and following frames).
+Subsequently, you need to process the image annotations to MS COCO style annotations with <a class="reference external" href="https://github.com/open-mmlab/mmdetection3d/blob/master/tools/data_converter/nuimage_converter.py">this script</a>.</p>
+</div>
+<div class="section" id="train">
+<h2>Train<a class="headerlink" href="#train" title="Permalink to this headline">¶</a></h2>
+<p>Our model was trained with the following command:<br/></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">openpifpaf</span><span class="o">.</span><span class="n">train</span> <span class="o">--</span><span class="n">dataset</span><span class="o">=</span><span class="n">nuscenes</span> <span class="o">--</span><span class="n">lr</span><span class="o">=</span><span class="mf">0.0001</span> <span class="o">--</span><span class="n">momentum</span><span class="o">=</span><span class="mf">0.95</span> <span class="o">--</span><span class="n">b</span><span class="o">-</span><span class="n">scale</span><span class="o">=</span><span class="mf">10.0</span> <span class="o">--</span><span class="n">clip</span><span class="o">-</span><span class="n">grad</span><span class="o">-</span><span class="n">value</span><span class="o">=</span><span class="mi">10</span> <span class="o">--</span><span class="n">epochs</span><span class="o">=</span><span class="mi">150</span> <span class="o">--</span><span class="n">lr</span><span class="o">-</span><span class="n">decay</span> <span class="mi">120</span> <span class="mi">140</span> <span class="o">--</span><span class="n">lr</span><span class="o">-</span><span class="n">decay</span><span class="o">-</span><span class="n">epochs</span><span class="o">=</span><span class="mi">10</span> <span class="o">--</span><span class="n">batch</span><span class="o">-</span><span class="n">size</span><span class="o">=</span><span class="mi">32</span> <span class="o">--</span><span class="n">weight</span><span class="o">-</span><span class="n">decay</span><span class="o">=</span><span class="mf">1e-5</span> <span class="o">--</span><span class="n">nuscenes</span><span class="o">-</span><span class="n">upsample</span><span class="o">=</span><span class="mi">2</span> <span class="o">--</span><span class="n">nuscenes</span><span class="o">-</span><span class="n">extended</span><span class="o">-</span><span class="n">scale</span> <span class="o">--</span><span class="n">nuscenes</span><span class="o">-</span><span class="n">orientation</span><span class="o">-</span><span class="n">invariant</span><span class="o">=</span><span class="mf">0.1</span> <span class="o">--</span><span class="n">basenet</span><span class="o">=</span><span class="n">shufflenetv2k16</span>
 </pre></div>
 </div>
-<p>Now you can use the standard <a class="reference internal" href="cli_help.html#cli-help-train"><span class="std std-ref">openpifpaf.train</span></a> and
-<a class="reference internal" href="cli_help.html#cli-help-eval"><span class="std std-ref">openpifpaf.eval</span></a> commands as documented in <a class="reference internal" href="train.html"><span class="doc">Training</span></a>
-with <code class="docutils literal notranslate"><span class="pre">--dataset=crowdpose</span></code>.</p>
+</div>
+<div class="section" id="evaluation">
+<h2>Evaluation<a class="headerlink" href="#evaluation" title="Permalink to this headline">¶</a></h2>
+<p>To evaluate your network you can use the following command:<br/></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">openpifpaf</span><span class="o">.</span><span class="n">eval</span> <span class="o">--</span><span class="n">seed</span><span class="o">-</span><span class="n">threshold</span><span class="o">=</span><span class="mf">0.3</span> <span class="o">--</span><span class="n">instance</span><span class="o">-</span><span class="n">threshold</span><span class="o">=</span><span class="mf">0.3</span> <span class="o">--</span><span class="n">dataset</span><span class="o">=</span><span class="n">nuscenes</span> <span class="o">--</span><span class="n">checkpoint</span><span class="o">=</span><span class="n">shufflenetv2k16</span><span class="o">-</span><span class="n">nuscenes</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -515,19 +446,19 @@ with <code class="docutils literal notranslate"><span class="pre">--dataset=crow
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="plugins_apollocar3d.html" title="previous page">
+        <a class="left-prev" href="plugins_crowdpose.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Car Keypoints</p>
+                <p class="prevnext-title">CrowdPose</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="plugins_nuscenes.html" title="next page">
+        <a class="right-next" href="tutorial_opencv.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">NuScenes 2D detection</p>
+                <p class="prevnext-title">OpenCV</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

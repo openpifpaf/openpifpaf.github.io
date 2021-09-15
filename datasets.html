@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -43,7 +43,7 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
@@ -82,7 +82,7 @@
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
@@ -179,6 +179,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="plugins_crowdpose.html">
    CrowdPose
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plugins_nuscenes.html">
+   NuScenes 2D detection
   </a>
  </li>
  <li class="toctree-l1">
@@ -323,7 +328,7 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> On this page
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#download-coco-data">
@@ -380,23 +385,24 @@ in the COCO format. Please see the tutorial on <a class="reference internal" hre
 for a step-by-step walkthrough.</p>
 <div class="section" id="download-coco-data">
 <h2>Download COCO data<a class="headerlink" href="#download-coco-data" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="http://cocodataset.org/">COCO</a> is a great datasets containing many types of annotations, including bounding boxes, 2D poses, etc.</p>
+<p><a class="reference external" href="http://cocodataset.org/">COCO</a> is a great datasets containing many types of annotations, including bounding boxes, 2D poses, etc.
+You can also copy this code block into a code cell in Jupyter or Google Colab with the prefix <code class="docutils literal notranslate"><span class="pre">%%bash</span></code>.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mkdir data-mscoco
 <span class="nb">cd</span> data-mscoco
 
-wget http://images.cocodataset.org/annotations/annotations_trainval2017.zip
-wget http://images.cocodataset.org/annotations/image_info_test2017.zip
-unzip annotations_trainval2017.zip
-unzip image_info_test2017.zip
+wget -q -nc http://images.cocodataset.org/annotations/annotations_trainval2017.zip
+wget -q -nc http://images.cocodataset.org/annotations/image_info_test2017.zip
+unzip -q -n annotations_trainval2017.zip
+unzip -q -n image_info_test2017.zip
 
 mkdir images
 <span class="nb">cd</span> images
-wget http://images.cocodataset.org/zips/val2017.zip
-wget http://images.cocodataset.org/zips/train2017.zip
-wget http://images.cocodataset.org/zips/test2017.zip
-unzip val2017.zip
-unzip train2017.zip
-unzip test2017.zip
+wget -q -nc http://images.cocodataset.org/zips/val2017.zip
+wget -q -nc http://images.cocodataset.org/zips/train2017.zip
+wget -q -nc http://images.cocodataset.org/zips/test2017.zip
+unzip -q -n val2017.zip
+unzip -q -n train2017.zip
+unzip -q -n test2017.zip
 </pre></div>
 </div>
 </div>
@@ -541,12 +547,32 @@ unzip nightowls_validation.zip
               </div>
               
         
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="models.html" title="previous page">Models</a>
-    <a class='right-next' id="next-link" href="train.html" title="next page">Training</a>
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="models.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Models</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="train.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Training</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
         
         </div>
     </div>
