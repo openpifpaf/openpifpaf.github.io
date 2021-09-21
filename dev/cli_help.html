@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -73,6 +73,10 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
       <img src="_static/logo.png" class="logo" alt="logo">
       
       
@@ -117,6 +121,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="predict_api.html">
    Prediction API
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="compute.html">
+   Compute
   </a>
  </li>
  <li class="toctree-l1">
@@ -420,24 +429,37 @@ optional arguments:
 
 decoder configuration:
   --decoder DECODER [DECODER ...]
-                        Decoders to be considered: [&#39;cifcaf&#39;, &#39;cifdet&#39;].
-                        (default: None)
+                        Decoders to be considered: [&#39;cifcafdense&#39;, &#39;cifcaf&#39;,
+                        &#39;trackingpose&#39;, &#39;cifdet&#39;, &#39;posesimilarity&#39;]. (default:
+                        None)
   --seed-threshold SEED_THRESHOLD
-                        minimum threshold for seeds (default: 0.5)
+                        minimum threshold for seeds (default: 0.2)
   --instance-threshold INSTANCE_THRESHOLD
                         filter instances by score (default is 0.0 with
                         --force-complete-pose and 0.15 otherwise) (default:
                         None)
   --decoder-workers DECODER_WORKERS
                         number of workers for pose decoding (default: None)
-  --caf-seeds           [experimental] (default: False)
   --profile-decoder [PROFILE_DECODER]
                         specify out .prof file or nothing for default file
                         name (default: None)
 
 CifCaf decoders:
-  --cif-th CIF_TH       cif threshold (default: 0.1)
-  --caf-th CAF_TH       caf threshold (default: 0.2)
+  --cif-th CIF_TH       cif threshold (default: 0.3)
+  --caf-th CAF_TH       caf threshold (default: 0.3)
+
+Decoder for tracking:
+  --tr-single-pose-threshold TR_SINGLE_POSE_THRESHOLD
+                        Single-pose threshold for tracking. (default: 0.3)
+  --tr-multi-pose-threshold TR_MULTI_POSE_THRESHOLD
+                        multi-pose threshold for tracking. (default: 0.2)
+  --tr-multi-pose-n TR_MULTI_POSE_N
+                        multi-pose n for tracking. (default: 3)
+  --tr-minimum-threshold TR_MINIMUM_THRESHOLD
+                        minimum-pose threshold for tracking. (default: 0.1)
+
+CifCafDense decoder:
+  --dense-connections [DENSE_CONNECTIONS]
 
 CifCaf decoder:
   --force-complete-pose
@@ -456,29 +478,26 @@ CifCaf decoder:
   --connection-method {max,blend}
                         connection method to use, max is faster (default:
                         blend)
-  --dense-connections [DENSE_CONNECTIONS]
+  --cifcaf-block-joints
+                        block joints (default: False)
   --no-reverse-match
   --ablation-cifseeds-nms
   --ablation-cifseeds-no-rescore
   --ablation-caf-no-rescore
   --ablation-independent-kp
 
+trackingpose decoder:
+  --trackingpose-track-recovery
+  --trackingpose-single-seed
+
+PoseSimilarity:
+  --posesimilarity-distance {crafted,euclidean,euclidean4,oks}
+  --posesimilarity-oks-inflate POSESIMILARITY_OKS_INFLATE
+
 logger:
   -q, --quiet           only show warning messages or above (default: False)
   --debug               print debug messages (default: False)
   --log-stats           enable stats logging (default: False)
-
-MobileNetV2:
-  --mobilenetv2-no-pretrain
-                        use randomly initialized models (default: True)
-
-MobileNetV3:
-  --mobilenetv3-no-pretrain
-                        use randomly initialized models (default: True)
-
-ShuffleNetv2:
-  --shufflenetv2-no-pretrain
-                        use randomly initialized models (default: True)
 
 shufflenetv2k:
   --shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE
@@ -496,6 +515,18 @@ shufflenetv2k:
   --shufflenetv2k-group-norm
   --shufflenetv2k-leaky-relu
 
+ShuffleNetv2:
+  --shufflenetv2-no-pretrain
+                        use randomly initialized models (default: True)
+
+MobileNetV2:
+  --mobilenetv2-no-pretrain
+                        use randomly initialized models (default: True)
+
+MobileNetV3:
+  --mobilenetv3-no-pretrain
+                        use randomly initialized models (default: True)
+
 ResNet:
   --resnet-no-pretrain  use randomly initialized models (default: True)
   --resnet-pool0-stride RESNET_POOL0_STRIDE
@@ -510,14 +541,6 @@ ResNet:
   --resnet-remove-last-block
                         create a network without the last block (default:
                         False)
-
-XCiT:
-  --xcit-out-channels XCIT_OUT_CHANNELS
-                        number of output channels for optional projection
-                        layer (None for no projection layer) (default: None)
-  --xcit-out-maxpool    adds max-pooling to backbone output feature map
-                        (default: False)
-  --xcit-no-pretrain    use randomly initialized models (default: True)
 
 SwinTransformer:
   --swin-drop-path-rate SWIN_DROP_PATH_RATE
@@ -536,15 +559,23 @@ SwinTransformer:
                         resolution) and 4 (lowest resolution) (default: 3)
   --swin-no-pretrain    use randomly initialized models (default: True)
 
+XCiT:
+  --xcit-out-channels XCIT_OUT_CHANNELS
+                        number of output channels for optional projection
+                        layer (None for no projection layer) (default: None)
+  --xcit-out-maxpool    adds max-pooling to backbone output feature map
+                        (default: False)
+  --xcit-no-pretrain    use randomly initialized models (default: True)
+
 SqueezeNet:
   --squeezenet-no-pretrain
                         use randomly initialized models (default: True)
 
-CompositeField3:
-  --cf3-dropout CF3_DROPOUT
+CompositeField4:
+  --cf4-dropout CF4_DROPOUT
                         [experimental] zeroing probability of feature in head
                         input (default: 0.0)
-  --cf3-no-inplace-ops  alternative graph without inplace ops (default: True)
+  --cf4-no-inplace-ops  alternative graph without inplace ops (default: True)
 
 network configuration:
   --checkpoint CHECKPOINT
@@ -554,12 +585,13 @@ network configuration:
                         &#39;shufflenetv2k16-apollo-24&#39;,
                         &#39;shufflenetv2k16-apollo-66&#39;,
                         &#39;shufflenetv2k30-apollo-66&#39;, &#39;mobilenetv2&#39;,
-                        &#39;mobilenetv3large&#39;, &#39;resnet50&#39;, &#39;shufflenetv2k16&#39;,
-                        &#39;shufflenetv2k16-withdense&#39;, &#39;shufflenetv2k30&#39;,
-                        &#39;swin_s&#39;, &#39;swin_b&#39;, &#39;swin_t_input_upsample&#39;,
+                        &#39;mobilenetv3small&#39;, &#39;mobilenetv3large&#39;, &#39;resnet50&#39;,
+                        &#39;shufflenetv2k16&#39;, &#39;shufflenetv2k16-withdense&#39;,
+                        &#39;shufflenetv2k30&#39;, &#39;swin_s&#39;, &#39;swin_b&#39;,
+                        &#39;swin_t_input_upsample&#39;, &#39;mobilenetv3small-cocodet&#39;,
                         &#39;resnet18-cocodet&#39;, &#39;resnet50-crowdpose&#39;,
-                        &#39;shufflenetv2k16-nuscenes&#39;,
-                        &#39;shufflenetv2k16-wholebody&#39;,
+                        &#39;shufflenetv2k16-nuscenes&#39;, &#39;tshufflenetv2k16&#39;,
+                        &#39;tshufflenetv2k30&#39;, &#39;shufflenetv2k16-wholebody&#39;,
                         &#39;shufflenetv2k30-wholebody&#39;] (default: None)
   --basenet BASENET     base network, one of [&#39;mobilenetv2&#39;,
                         &#39;mobilenetv3large&#39;, &#39;mobilenetv3small&#39;, &#39;resnet18&#39;,
@@ -579,7 +611,8 @@ network configuration:
                         &#39;xcit_large_24_p8&#39;, &#39;effnetv2_s&#39;, &#39;effnetv2_m&#39;,
                         &#39;effnetv2_l&#39;, &#39;effnetv2_xl&#39;, &#39;effnetv2_s16_s&#39;,
                         &#39;effnetv2_s16_m&#39;, &#39;effnetv2_s16_l&#39;, &#39;effnetv2_s16_xl&#39;,
-                        &#39;botnet&#39;, &#39;cifar10net&#39;] (default: None)
+                        &#39;botnet&#39;, &#39;tshufflenetv2k16&#39;, &#39;tshufflenetv2k30&#39;,
+                        &#39;tresnet50&#39;, &#39;cifar10net&#39;] (default: None)
   --cross-talk CROSS_TALK
                         [experimental] (default: 0.0)
   --no-download-progress
@@ -708,8 +741,8 @@ optional arguments:
   --separate-debug-ax
   --disable-cuda        disable CUDA (default: False)
 
-SqueezeNet:
-  --squeezenet-no-pretrain
+ShuffleNetv2:
+  --shufflenetv2-no-pretrain
                         use randomly initialized models (default: True)
 
 MobileNetV2:
@@ -736,10 +769,6 @@ shufflenetv2k:
   --shufflenetv2k-group-norm
   --shufflenetv2k-leaky-relu
 
-ShuffleNetv2:
-  --shufflenetv2-no-pretrain
-                        use randomly initialized models (default: True)
-
 ResNet:
   --resnet-no-pretrain  use randomly initialized models (default: True)
   --resnet-pool0-stride RESNET_POOL0_STRIDE
@@ -754,14 +783,6 @@ ResNet:
   --resnet-remove-last-block
                         create a network without the last block (default:
                         False)
-
-XCiT:
-  --xcit-out-channels XCIT_OUT_CHANNELS
-                        number of output channels for optional projection
-                        layer (None for no projection layer) (default: None)
-  --xcit-out-maxpool    adds max-pooling to backbone output feature map
-                        (default: False)
-  --xcit-no-pretrain    use randomly initialized models (default: True)
 
 SwinTransformer:
   --swin-drop-path-rate SWIN_DROP_PATH_RATE
@@ -780,11 +801,23 @@ SwinTransformer:
                         resolution) and 4 (lowest resolution) (default: 3)
   --swin-no-pretrain    use randomly initialized models (default: True)
 
-CompositeField3:
-  --cf3-dropout CF3_DROPOUT
+XCiT:
+  --xcit-out-channels XCIT_OUT_CHANNELS
+                        number of output channels for optional projection
+                        layer (None for no projection layer) (default: None)
+  --xcit-out-maxpool    adds max-pooling to backbone output feature map
+                        (default: False)
+  --xcit-no-pretrain    use randomly initialized models (default: True)
+
+SqueezeNet:
+  --squeezenet-no-pretrain
+                        use randomly initialized models (default: True)
+
+CompositeField4:
+  --cf4-dropout CF4_DROPOUT
                         [experimental] zeroing probability of feature in head
                         input (default: 0.0)
-  --cf3-no-inplace-ops  alternative graph without inplace ops (default: True)
+  --cf4-no-inplace-ops  alternative graph without inplace ops (default: True)
 
 network configuration:
   --checkpoint CHECKPOINT
@@ -794,12 +827,13 @@ network configuration:
                         &#39;shufflenetv2k16-apollo-24&#39;,
                         &#39;shufflenetv2k16-apollo-66&#39;,
                         &#39;shufflenetv2k30-apollo-66&#39;, &#39;mobilenetv2&#39;,
-                        &#39;mobilenetv3large&#39;, &#39;resnet50&#39;, &#39;shufflenetv2k16&#39;,
-                        &#39;shufflenetv2k16-withdense&#39;, &#39;shufflenetv2k30&#39;,
-                        &#39;swin_s&#39;, &#39;swin_b&#39;, &#39;swin_t_input_upsample&#39;,
+                        &#39;mobilenetv3small&#39;, &#39;mobilenetv3large&#39;, &#39;resnet50&#39;,
+                        &#39;shufflenetv2k16&#39;, &#39;shufflenetv2k16-withdense&#39;,
+                        &#39;shufflenetv2k30&#39;, &#39;swin_s&#39;, &#39;swin_b&#39;,
+                        &#39;swin_t_input_upsample&#39;, &#39;mobilenetv3small-cocodet&#39;,
                         &#39;resnet18-cocodet&#39;, &#39;resnet50-crowdpose&#39;,
-                        &#39;shufflenetv2k16-nuscenes&#39;,
-                        &#39;shufflenetv2k16-wholebody&#39;,
+                        &#39;shufflenetv2k16-nuscenes&#39;, &#39;tshufflenetv2k16&#39;,
+                        &#39;tshufflenetv2k30&#39;, &#39;shufflenetv2k16-wholebody&#39;,
                         &#39;shufflenetv2k30-wholebody&#39;] (default: None)
   --basenet BASENET     base network, one of [&#39;mobilenetv2&#39;,
                         &#39;mobilenetv3large&#39;, &#39;mobilenetv3small&#39;, &#39;resnet18&#39;,
@@ -819,7 +853,8 @@ network configuration:
                         &#39;xcit_large_24_p8&#39;, &#39;effnetv2_s&#39;, &#39;effnetv2_m&#39;,
                         &#39;effnetv2_l&#39;, &#39;effnetv2_xl&#39;, &#39;effnetv2_s16_s&#39;,
                         &#39;effnetv2_s16_m&#39;, &#39;effnetv2_s16_l&#39;, &#39;effnetv2_s16_xl&#39;,
-                        &#39;botnet&#39;, &#39;cifar10net&#39;] (default: None)
+                        &#39;botnet&#39;, &#39;tshufflenetv2k16&#39;, &#39;tshufflenetv2k30&#39;,
+                        &#39;tresnet50&#39;, &#39;cifar10net&#39;] (default: None)
   --cross-talk CROSS_TALK
                         [experimental] (default: 0.0)
   --no-download-progress
@@ -831,24 +866,37 @@ network configuration:
 
 decoder configuration:
   --decoder DECODER [DECODER ...]
-                        Decoders to be considered: [&#39;cifcaf&#39;, &#39;cifdet&#39;].
-                        (default: None)
+                        Decoders to be considered: [&#39;cifcafdense&#39;, &#39;cifcaf&#39;,
+                        &#39;trackingpose&#39;, &#39;cifdet&#39;, &#39;posesimilarity&#39;]. (default:
+                        None)
   --seed-threshold SEED_THRESHOLD
-                        minimum threshold for seeds (default: 0.5)
+                        minimum threshold for seeds (default: 0.2)
   --instance-threshold INSTANCE_THRESHOLD
                         filter instances by score (default is 0.0 with
                         --force-complete-pose and 0.15 otherwise) (default:
                         None)
   --decoder-workers DECODER_WORKERS
                         number of workers for pose decoding (default: None)
-  --caf-seeds           [experimental] (default: False)
   --profile-decoder [PROFILE_DECODER]
                         specify out .prof file or nothing for default file
                         name (default: None)
 
 CifCaf decoders:
-  --cif-th CIF_TH       cif threshold (default: 0.1)
-  --caf-th CAF_TH       caf threshold (default: 0.2)
+  --cif-th CIF_TH       cif threshold (default: 0.3)
+  --caf-th CAF_TH       caf threshold (default: 0.3)
+
+Decoder for tracking:
+  --tr-single-pose-threshold TR_SINGLE_POSE_THRESHOLD
+                        Single-pose threshold for tracking. (default: 0.3)
+  --tr-multi-pose-threshold TR_MULTI_POSE_THRESHOLD
+                        multi-pose threshold for tracking. (default: 0.2)
+  --tr-multi-pose-n TR_MULTI_POSE_N
+                        multi-pose n for tracking. (default: 3)
+  --tr-minimum-threshold TR_MINIMUM_THRESHOLD
+                        minimum-pose threshold for tracking. (default: 0.1)
+
+CifCafDense decoder:
+  --dense-connections [DENSE_CONNECTIONS]
 
 CifCaf decoder:
   --force-complete-pose
@@ -867,12 +915,21 @@ CifCaf decoder:
   --connection-method {max,blend}
                         connection method to use, max is faster (default:
                         blend)
-  --dense-connections [DENSE_CONNECTIONS]
+  --cifcaf-block-joints
+                        block joints (default: False)
   --no-reverse-match
   --ablation-cifseeds-nms
   --ablation-cifseeds-no-rescore
   --ablation-caf-no-rescore
   --ablation-independent-kp
+
+trackingpose decoder:
+  --trackingpose-track-recovery
+  --trackingpose-single-seed
+
+PoseSimilarity:
+  --posesimilarity-distance {crafted,euclidean,euclidean4,oks}
+  --posesimilarity-oks-inflate POSESIMILARITY_OKS_INFLATE
 
 logger:
   -q, --quiet           only show warning messages or above (default: False)
@@ -1002,14 +1059,6 @@ logger:
   --debug               print debug messages (default: False)
   --log-stats           enable stats logging (default: False)
 
-XCiT:
-  --xcit-out-channels XCIT_OUT_CHANNELS
-                        number of output channels for optional projection
-                        layer (None for no projection layer) (default: None)
-  --xcit-out-maxpool    adds max-pooling to backbone output feature map
-                        (default: False)
-  --xcit-no-pretrain    use randomly initialized models (default: True)
-
 SwinTransformer:
   --swin-drop-path-rate SWIN_DROP_PATH_RATE
                         drop path (stochastic depth) rate (default: 0.2)
@@ -1027,12 +1076,28 @@ SwinTransformer:
                         resolution) and 4 (lowest resolution) (default: 3)
   --swin-no-pretrain    use randomly initialized models (default: True)
 
+XCiT:
+  --xcit-out-channels XCIT_OUT_CHANNELS
+                        number of output channels for optional projection
+                        layer (None for no projection layer) (default: None)
+  --xcit-out-maxpool    adds max-pooling to backbone output feature map
+                        (default: False)
+  --xcit-no-pretrain    use randomly initialized models (default: True)
+
 SqueezeNet:
   --squeezenet-no-pretrain
                         use randomly initialized models (default: True)
 
+MobileNetV2:
+  --mobilenetv2-no-pretrain
+                        use randomly initialized models (default: True)
+
 MobileNetV3:
   --mobilenetv3-no-pretrain
+                        use randomly initialized models (default: True)
+
+ShuffleNetv2:
+  --shufflenetv2-no-pretrain
                         use randomly initialized models (default: True)
 
 shufflenetv2k:
@@ -1051,14 +1116,6 @@ shufflenetv2k:
   --shufflenetv2k-group-norm
   --shufflenetv2k-leaky-relu
 
-ShuffleNetv2:
-  --shufflenetv2-no-pretrain
-                        use randomly initialized models (default: True)
-
-MobileNetV2:
-  --mobilenetv2-no-pretrain
-                        use randomly initialized models (default: True)
-
 ResNet:
   --resnet-no-pretrain  use randomly initialized models (default: True)
   --resnet-pool0-stride RESNET_POOL0_STRIDE
@@ -1074,11 +1131,11 @@ ResNet:
                         create a network without the last block (default:
                         False)
 
-CompositeField3:
-  --cf3-dropout CF3_DROPOUT
+CompositeField4:
+  --cf4-dropout CF4_DROPOUT
                         [experimental] zeroing probability of feature in head
                         input (default: 0.0)
-  --cf3-no-inplace-ops  alternative graph without inplace ops (default: True)
+  --cf4-no-inplace-ops  alternative graph without inplace ops (default: True)
 
 network configuration:
   --checkpoint CHECKPOINT
@@ -1088,12 +1145,13 @@ network configuration:
                         &#39;shufflenetv2k16-apollo-24&#39;,
                         &#39;shufflenetv2k16-apollo-66&#39;,
                         &#39;shufflenetv2k30-apollo-66&#39;, &#39;mobilenetv2&#39;,
-                        &#39;mobilenetv3large&#39;, &#39;resnet50&#39;, &#39;shufflenetv2k16&#39;,
-                        &#39;shufflenetv2k16-withdense&#39;, &#39;shufflenetv2k30&#39;,
-                        &#39;swin_s&#39;, &#39;swin_b&#39;, &#39;swin_t_input_upsample&#39;,
+                        &#39;mobilenetv3small&#39;, &#39;mobilenetv3large&#39;, &#39;resnet50&#39;,
+                        &#39;shufflenetv2k16&#39;, &#39;shufflenetv2k16-withdense&#39;,
+                        &#39;shufflenetv2k30&#39;, &#39;swin_s&#39;, &#39;swin_b&#39;,
+                        &#39;swin_t_input_upsample&#39;, &#39;mobilenetv3small-cocodet&#39;,
                         &#39;resnet18-cocodet&#39;, &#39;resnet50-crowdpose&#39;,
-                        &#39;shufflenetv2k16-nuscenes&#39;,
-                        &#39;shufflenetv2k16-wholebody&#39;,
+                        &#39;shufflenetv2k16-nuscenes&#39;, &#39;tshufflenetv2k16&#39;,
+                        &#39;tshufflenetv2k30&#39;, &#39;shufflenetv2k16-wholebody&#39;,
                         &#39;shufflenetv2k30-wholebody&#39;] (default: None)
   --basenet BASENET     base network, one of [&#39;mobilenetv2&#39;,
                         &#39;mobilenetv3large&#39;, &#39;mobilenetv3small&#39;, &#39;resnet18&#39;,
@@ -1113,7 +1171,8 @@ network configuration:
                         &#39;xcit_large_24_p8&#39;, &#39;effnetv2_s&#39;, &#39;effnetv2_m&#39;,
                         &#39;effnetv2_l&#39;, &#39;effnetv2_xl&#39;, &#39;effnetv2_s16_s&#39;,
                         &#39;effnetv2_s16_m&#39;, &#39;effnetv2_s16_l&#39;, &#39;effnetv2_s16_xl&#39;,
-                        &#39;botnet&#39;, &#39;cifar10net&#39;] (default: None)
+                        &#39;botnet&#39;, &#39;tshufflenetv2k16&#39;, &#39;tshufflenetv2k30&#39;,
+                        &#39;tresnet50&#39;, &#39;cifar10net&#39;] (default: None)
   --cross-talk CROSS_TALK
                         [experimental] (default: 0.0)
   --no-download-progress
@@ -1136,13 +1195,17 @@ losses:
   --task-sparsity-weight TASK_SPARSITY_WEIGHT
                         [experimental] (default: 0.0)
 
-Composite Loss:
+Composite Loss by Components:
   --loss-prescale LOSS_PRESCALE
   --regression-loss {smoothl1,l1,laplace}
                         type of regression loss (default: laplace)
   --bce-total-soft-clamp BCE_TOTAL_SOFT_CLAMP
                         per feature clamp value applied to the total (default:
                         None)
+
+Composite Loss:
+  --soft-clamp SOFT_CLAMP
+                        soft clamp (default: 5.0)
 
 Laplace Loss:
   --laplace-soft-clamp LAPLACE_SOFT_CLAMP
@@ -1208,6 +1271,10 @@ encoders:
                         CAF width relative to its length (default: 0.0)
   --encoder-no-suppress-selfhidden
                         [experimental] (default: True)
+  --encoder-suppress-invisible
+                        [experimental] (default: False)
+  --encoder-suppress-collision
+                        [experimental] (default: False)
 
 optimizer:
   --momentum MOMENTUM   SGD momentum, beta1 in Adam (default: 0.9)
@@ -1429,6 +1496,57 @@ data module NuScenes:
   --nuscenes-upsample NUSCENES_UPSAMPLE
                         head upsample stride (default: 1)
 
+data module Posetrack2018:
+  --posetrack2018-train-annotations POSETRACK2018_TRAIN_ANNOTATIONS
+                        train annotations (default: data-
+                        posetrack2018/annotations/train/*.json)
+  --posetrack2018-val-annotations POSETRACK2018_VAL_ANNOTATIONS
+                        val annotations (default: data-
+                        posetrack2018/annotations/val/*.json)
+  --posetrack2018-eval-annotations POSETRACK2018_EVAL_ANNOTATIONS
+                        eval annotations (default: data-
+                        posetrack2018/annotations/val/*.json)
+  --posetrack2018-data-root POSETRACK2018_DATA_ROOT
+                        data root (default: data-posetrack2018)
+
+data module Posetrack:
+  --posetrack-square-edge POSETRACK_SQUARE_EDGE
+                        square edge of input images (default: 385)
+  --posetrack-with-dense
+                        train with dense connections (default: False)
+  --posetrack-no-augmentation
+                        do not apply data augmentation (default: True)
+  --posetrack-rescale-images POSETRACK_RESCALE_IMAGES
+                        overall rescale factor for images (default: 1.0)
+  --posetrack-upsample POSETRACK_UPSAMPLE
+                        head upsample stride (default: 1)
+  --posetrack-min-kp-anns POSETRACK_MIN_KP_ANNS
+                        filter images with fewer keypoint annotations
+                        (default: 1)
+  --posetrack-bmin POSETRACK_BMIN
+  --posetrack-sample-pairing POSETRACK_SAMPLE_PAIRING
+                        blend two samples together (default: 0.0)
+  --posetrack-image-augmentations POSETRACK_IMAGE_AUGMENTATIONS
+                        autocontrast, equalize, invert, solarize (default:
+                        0.0)
+  --posetrack-max-shift POSETRACK_MAX_SHIFT
+                        max shift (default: 30.0)
+  --posetrack-eval-long-edge POSETRACK_EVAL_LONG_EDGE
+  --posetrack-eval-extended-scale
+  --posetrack-eval-orientation-invariant POSETRACK_EVAL_ORIENTATION_INVARIANT
+  --posetrack-ablation-without-tcaf
+
+data module Posetrack2017:
+  --posetrack2017-eval-annotations POSETRACK2017_EVAL_ANNOTATIONS
+                        eval annotations (default: data-
+                        posetrack2017/annotations/val/*.json)
+  --posetrack2017-data-root POSETRACK2017_DATA_ROOT
+                        data root (default: data-posetrack2017)
+
+data module CocoKpSt:
+  --cocokpst-max-shift COCOKPST_MAX_SHIFT
+                        max shift (default: 30.0)
+
 data module wholebody:
   --wholebody-train-annotations WHOLEBODY_TRAIN_ANNOTATIONS
                         train annotations (default: data-mscoco/annotations/pe
@@ -1568,6 +1686,7 @@ optional arguments:
                         show the final image with ground truth annotations
                         (default: False)
   --n-images N_IMAGES
+  --loader-warmup LOADER_WARMUP
 
 generic data module parameters:
   --dataset DATASET
@@ -1756,6 +1875,57 @@ data module NuScenes:
   --nuscenes-upsample NUSCENES_UPSAMPLE
                         head upsample stride (default: 1)
 
+data module Posetrack2018:
+  --posetrack2018-train-annotations POSETRACK2018_TRAIN_ANNOTATIONS
+                        train annotations (default: data-
+                        posetrack2018/annotations/train/*.json)
+  --posetrack2018-val-annotations POSETRACK2018_VAL_ANNOTATIONS
+                        val annotations (default: data-
+                        posetrack2018/annotations/val/*.json)
+  --posetrack2018-eval-annotations POSETRACK2018_EVAL_ANNOTATIONS
+                        eval annotations (default: data-
+                        posetrack2018/annotations/val/*.json)
+  --posetrack2018-data-root POSETRACK2018_DATA_ROOT
+                        data root (default: data-posetrack2018)
+
+data module Posetrack:
+  --posetrack-square-edge POSETRACK_SQUARE_EDGE
+                        square edge of input images (default: 385)
+  --posetrack-with-dense
+                        train with dense connections (default: False)
+  --posetrack-no-augmentation
+                        do not apply data augmentation (default: True)
+  --posetrack-rescale-images POSETRACK_RESCALE_IMAGES
+                        overall rescale factor for images (default: 1.0)
+  --posetrack-upsample POSETRACK_UPSAMPLE
+                        head upsample stride (default: 1)
+  --posetrack-min-kp-anns POSETRACK_MIN_KP_ANNS
+                        filter images with fewer keypoint annotations
+                        (default: 1)
+  --posetrack-bmin POSETRACK_BMIN
+  --posetrack-sample-pairing POSETRACK_SAMPLE_PAIRING
+                        blend two samples together (default: 0.0)
+  --posetrack-image-augmentations POSETRACK_IMAGE_AUGMENTATIONS
+                        autocontrast, equalize, invert, solarize (default:
+                        0.0)
+  --posetrack-max-shift POSETRACK_MAX_SHIFT
+                        max shift (default: 30.0)
+  --posetrack-eval-long-edge POSETRACK_EVAL_LONG_EDGE
+  --posetrack-eval-extended-scale
+  --posetrack-eval-orientation-invariant POSETRACK_EVAL_ORIENTATION_INVARIANT
+  --posetrack-ablation-without-tcaf
+
+data module Posetrack2017:
+  --posetrack2017-eval-annotations POSETRACK2017_EVAL_ANNOTATIONS
+                        eval annotations (default: data-
+                        posetrack2017/annotations/val/*.json)
+  --posetrack2017-data-root POSETRACK2017_DATA_ROOT
+                        data root (default: data-posetrack2017)
+
+data module CocoKpSt:
+  --cocokpst-max-shift COCOKPST_MAX_SHIFT
+                        max shift (default: 30.0)
+
 data module wholebody:
   --wholebody-train-annotations WHOLEBODY_TRAIN_ANNOTATIONS
                         train annotations (default: data-mscoco/annotations/pe
@@ -1800,24 +1970,37 @@ data module wholebody:
 
 decoder configuration:
   --decoder DECODER [DECODER ...]
-                        Decoders to be considered: [&#39;cifdet&#39;, &#39;cifcaf&#39;].
-                        (default: None)
+                        Decoders to be considered: [&#39;cifcafdense&#39;, &#39;cifcaf&#39;,
+                        &#39;trackingpose&#39;, &#39;cifdet&#39;, &#39;posesimilarity&#39;]. (default:
+                        None)
   --seed-threshold SEED_THRESHOLD
-                        minimum threshold for seeds (default: 0.5)
+                        minimum threshold for seeds (default: 0.2)
   --instance-threshold INSTANCE_THRESHOLD
                         filter instances by score (default is 0.0 with
                         --force-complete-pose and 0.15 otherwise) (default:
                         None)
   --decoder-workers DECODER_WORKERS
                         number of workers for pose decoding (default: None)
-  --caf-seeds           [experimental] (default: False)
   --profile-decoder [PROFILE_DECODER]
                         specify out .prof file or nothing for default file
                         name (default: None)
 
 CifCaf decoders:
-  --cif-th CIF_TH       cif threshold (default: 0.1)
-  --caf-th CAF_TH       caf threshold (default: 0.2)
+  --cif-th CIF_TH       cif threshold (default: 0.3)
+  --caf-th CAF_TH       caf threshold (default: 0.3)
+
+Decoder for tracking:
+  --tr-single-pose-threshold TR_SINGLE_POSE_THRESHOLD
+                        Single-pose threshold for tracking. (default: 0.3)
+  --tr-multi-pose-threshold TR_MULTI_POSE_THRESHOLD
+                        multi-pose threshold for tracking. (default: 0.2)
+  --tr-multi-pose-n TR_MULTI_POSE_N
+                        multi-pose n for tracking. (default: 3)
+  --tr-minimum-threshold TR_MINIMUM_THRESHOLD
+                        minimum-pose threshold for tracking. (default: 0.1)
+
+CifCafDense decoder:
+  --dense-connections [DENSE_CONNECTIONS]
 
 CifCaf decoder:
   --force-complete-pose
@@ -1836,45 +2019,37 @@ CifCaf decoder:
   --connection-method {max,blend}
                         connection method to use, max is faster (default:
                         blend)
-  --dense-connections [DENSE_CONNECTIONS]
+  --cifcaf-block-joints
+                        block joints (default: False)
   --no-reverse-match
   --ablation-cifseeds-nms
   --ablation-cifseeds-no-rescore
   --ablation-caf-no-rescore
   --ablation-independent-kp
 
+trackingpose decoder:
+  --trackingpose-track-recovery
+  --trackingpose-single-seed
+
+PoseSimilarity:
+  --posesimilarity-distance {crafted,euclidean,euclidean4,oks}
+  --posesimilarity-oks-inflate POSESIMILARITY_OKS_INFLATE
+
 logger:
   -q, --quiet           only show warning messages or above (default: False)
   --debug               print debug messages (default: False)
   --log-stats           enable stats logging (default: False)
 
-XCiT:
-  --xcit-out-channels XCIT_OUT_CHANNELS
-                        number of output channels for optional projection
-                        layer (None for no projection layer) (default: None)
-  --xcit-out-maxpool    adds max-pooling to backbone output feature map
-                        (default: False)
-  --xcit-no-pretrain    use randomly initialized models (default: True)
+ShuffleNetv2:
+  --shufflenetv2-no-pretrain
+                        use randomly initialized models (default: True)
 
-SwinTransformer:
-  --swin-drop-path-rate SWIN_DROP_PATH_RATE
-                        drop path (stochastic depth) rate (default: 0.2)
-  --swin-input-upsample
-                        scales input image by a factor of 2 for higher res
-                        feature maps (default: False)
-  --swin-use-fpn        adds a FPN after the Swin network to obtain higher res
-                        feature maps (default: False)
-  --swin-fpn-out-channels SWIN_FPN_OUT_CHANNELS
-                        output channels of the FPN (None to use the default
-                        number of channels of the Swin network) (default:
-                        None)
-  --swin-fpn-level SWIN_FPN_LEVEL
-                        FPN pyramid level, must be between 1 (highest
-                        resolution) and 4 (lowest resolution) (default: 3)
-  --swin-no-pretrain    use randomly initialized models (default: True)
+MobileNetV2:
+  --mobilenetv2-no-pretrain
+                        use randomly initialized models (default: True)
 
-SqueezeNet:
-  --squeezenet-no-pretrain
+MobileNetV3:
+  --mobilenetv3-no-pretrain
                         use randomly initialized models (default: True)
 
 shufflenetv2k:
@@ -1893,14 +2068,6 @@ shufflenetv2k:
   --shufflenetv2k-group-norm
   --shufflenetv2k-leaky-relu
 
-ShuffleNetv2:
-  --shufflenetv2-no-pretrain
-                        use randomly initialized models (default: True)
-
-MobileNetV2:
-  --mobilenetv2-no-pretrain
-                        use randomly initialized models (default: True)
-
 ResNet:
   --resnet-no-pretrain  use randomly initialized models (default: True)
   --resnet-pool0-stride RESNET_POOL0_STRIDE
@@ -1916,15 +2083,40 @@ ResNet:
                         create a network without the last block (default:
                         False)
 
-MobileNetV3:
-  --mobilenetv3-no-pretrain
+SwinTransformer:
+  --swin-drop-path-rate SWIN_DROP_PATH_RATE
+                        drop path (stochastic depth) rate (default: 0.2)
+  --swin-input-upsample
+                        scales input image by a factor of 2 for higher res
+                        feature maps (default: False)
+  --swin-use-fpn        adds a FPN after the Swin network to obtain higher res
+                        feature maps (default: False)
+  --swin-fpn-out-channels SWIN_FPN_OUT_CHANNELS
+                        output channels of the FPN (None to use the default
+                        number of channels of the Swin network) (default:
+                        None)
+  --swin-fpn-level SWIN_FPN_LEVEL
+                        FPN pyramid level, must be between 1 (highest
+                        resolution) and 4 (lowest resolution) (default: 3)
+  --swin-no-pretrain    use randomly initialized models (default: True)
+
+XCiT:
+  --xcit-out-channels XCIT_OUT_CHANNELS
+                        number of output channels for optional projection
+                        layer (None for no projection layer) (default: None)
+  --xcit-out-maxpool    adds max-pooling to backbone output feature map
+                        (default: False)
+  --xcit-no-pretrain    use randomly initialized models (default: True)
+
+SqueezeNet:
+  --squeezenet-no-pretrain
                         use randomly initialized models (default: True)
 
-CompositeField3:
-  --cf3-dropout CF3_DROPOUT
+CompositeField4:
+  --cf4-dropout CF4_DROPOUT
                         [experimental] zeroing probability of feature in head
                         input (default: 0.0)
-  --cf3-no-inplace-ops  alternative graph without inplace ops (default: True)
+  --cf4-no-inplace-ops  alternative graph without inplace ops (default: True)
 
 network configuration:
   --checkpoint CHECKPOINT
@@ -1934,12 +2126,13 @@ network configuration:
                         &#39;shufflenetv2k16-apollo-24&#39;,
                         &#39;shufflenetv2k16-apollo-66&#39;,
                         &#39;shufflenetv2k30-apollo-66&#39;, &#39;mobilenetv2&#39;,
-                        &#39;mobilenetv3large&#39;, &#39;resnet50&#39;, &#39;shufflenetv2k16&#39;,
-                        &#39;shufflenetv2k16-withdense&#39;, &#39;shufflenetv2k30&#39;,
-                        &#39;swin_s&#39;, &#39;swin_b&#39;, &#39;swin_t_input_upsample&#39;,
+                        &#39;mobilenetv3small&#39;, &#39;mobilenetv3large&#39;, &#39;resnet50&#39;,
+                        &#39;shufflenetv2k16&#39;, &#39;shufflenetv2k16-withdense&#39;,
+                        &#39;shufflenetv2k30&#39;, &#39;swin_s&#39;, &#39;swin_b&#39;,
+                        &#39;swin_t_input_upsample&#39;, &#39;mobilenetv3small-cocodet&#39;,
                         &#39;resnet18-cocodet&#39;, &#39;resnet50-crowdpose&#39;,
-                        &#39;shufflenetv2k16-nuscenes&#39;,
-                        &#39;shufflenetv2k16-wholebody&#39;,
+                        &#39;shufflenetv2k16-nuscenes&#39;, &#39;tshufflenetv2k16&#39;,
+                        &#39;tshufflenetv2k30&#39;, &#39;shufflenetv2k16-wholebody&#39;,
                         &#39;shufflenetv2k30-wholebody&#39;] (default: None)
   --basenet BASENET     base network, one of [&#39;mobilenetv2&#39;,
                         &#39;mobilenetv3large&#39;, &#39;mobilenetv3small&#39;, &#39;resnet18&#39;,
@@ -1959,7 +2152,8 @@ network configuration:
                         &#39;xcit_large_24_p8&#39;, &#39;effnetv2_s&#39;, &#39;effnetv2_m&#39;,
                         &#39;effnetv2_l&#39;, &#39;effnetv2_xl&#39;, &#39;effnetv2_s16_s&#39;,
                         &#39;effnetv2_s16_m&#39;, &#39;effnetv2_s16_l&#39;, &#39;effnetv2_s16_xl&#39;,
-                        &#39;botnet&#39;, &#39;cifar10net&#39;] (default: None)
+                        &#39;botnet&#39;, &#39;tshufflenetv2k16&#39;, &#39;tshufflenetv2k30&#39;,
+                        &#39;tresnet50&#39;, &#39;cifar10net&#39;] (default: None)
   --cross-talk CROSS_TALK
                         [experimental] (default: 0.0)
   --no-download-progress
@@ -2053,8 +2247,6 @@ python3 -m openpifpaf.export_onnx --help
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>usage: python3 -m openpifpaf.export_onnx [-h] [--version]
                                          [--squeezenet-no-pretrain]
-                                         [--shufflenetv2-no-pretrain]
-                                         [--mobilenetv3-no-pretrain]
                                          [--shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE]
                                          [--shufflenetv2k-input-conv2-outchannels SHUFFLENETV2K_INPUT_CONV2_OUTCHANNELS]
                                          [--shufflenetv2k-stage4-dilation SHUFFLENETV2K_STAGE4_DILATION]
@@ -2062,24 +2254,26 @@ python3 -m openpifpaf.export_onnx --help
                                          [--shufflenetv2k-conv5-as-stage]
                                          [--shufflenetv2k-instance-norm | --shufflenetv2k-group-norm]
                                          [--shufflenetv2k-leaky-relu]
+                                         [--shufflenetv2-no-pretrain]
                                          [--mobilenetv2-no-pretrain]
+                                         [--mobilenetv3-no-pretrain]
                                          [--resnet-no-pretrain]
                                          [--resnet-pool0-stride RESNET_POOL0_STRIDE]
                                          [--resnet-input-conv-stride RESNET_INPUT_CONV_STRIDE]
                                          [--resnet-input-conv2-stride RESNET_INPUT_CONV2_STRIDE]
                                          [--resnet-block5-dilation RESNET_BLOCK5_DILATION]
                                          [--resnet-remove-last-block]
-                                         [--xcit-out-channels XCIT_OUT_CHANNELS]
-                                         [--xcit-out-maxpool]
-                                         [--xcit-no-pretrain]
                                          [--swin-drop-path-rate SWIN_DROP_PATH_RATE]
                                          [--swin-input-upsample]
                                          [--swin-use-fpn]
                                          [--swin-fpn-out-channels SWIN_FPN_OUT_CHANNELS]
                                          [--swin-fpn-level SWIN_FPN_LEVEL]
                                          [--swin-no-pretrain]
-                                         [--cf3-dropout CF3_DROPOUT]
-                                         [--cf3-no-inplace-ops]
+                                         [--xcit-out-channels XCIT_OUT_CHANNELS]
+                                         [--xcit-out-maxpool]
+                                         [--xcit-no-pretrain]
+                                         [--cf4-dropout CF4_DROPOUT]
+                                         [--cf4-no-inplace-ops]
                                          [--checkpoint CHECKPOINT]
                                          [--basenet BASENET]
                                          [--cross-talk CROSS_TALK]
@@ -2110,14 +2304,6 @@ SqueezeNet:
   --squeezenet-no-pretrain
                         use randomly initialized models (default: True)
 
-ShuffleNetv2:
-  --shufflenetv2-no-pretrain
-                        use randomly initialized models (default: True)
-
-MobileNetV3:
-  --mobilenetv3-no-pretrain
-                        use randomly initialized models (default: True)
-
 shufflenetv2k:
   --shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE
                         stride of the optional 2nd input convolution (default:
@@ -2134,8 +2320,16 @@ shufflenetv2k:
   --shufflenetv2k-group-norm
   --shufflenetv2k-leaky-relu
 
+ShuffleNetv2:
+  --shufflenetv2-no-pretrain
+                        use randomly initialized models (default: True)
+
 MobileNetV2:
   --mobilenetv2-no-pretrain
+                        use randomly initialized models (default: True)
+
+MobileNetV3:
+  --mobilenetv3-no-pretrain
                         use randomly initialized models (default: True)
 
 ResNet:
@@ -2152,14 +2346,6 @@ ResNet:
   --resnet-remove-last-block
                         create a network without the last block (default:
                         False)
-
-XCiT:
-  --xcit-out-channels XCIT_OUT_CHANNELS
-                        number of output channels for optional projection
-                        layer (None for no projection layer) (default: None)
-  --xcit-out-maxpool    adds max-pooling to backbone output feature map
-                        (default: False)
-  --xcit-no-pretrain    use randomly initialized models (default: True)
 
 SwinTransformer:
   --swin-drop-path-rate SWIN_DROP_PATH_RATE
@@ -2178,11 +2364,19 @@ SwinTransformer:
                         resolution) and 4 (lowest resolution) (default: 3)
   --swin-no-pretrain    use randomly initialized models (default: True)
 
-CompositeField3:
-  --cf3-dropout CF3_DROPOUT
+XCiT:
+  --xcit-out-channels XCIT_OUT_CHANNELS
+                        number of output channels for optional projection
+                        layer (None for no projection layer) (default: None)
+  --xcit-out-maxpool    adds max-pooling to backbone output feature map
+                        (default: False)
+  --xcit-no-pretrain    use randomly initialized models (default: True)
+
+CompositeField4:
+  --cf4-dropout CF4_DROPOUT
                         [experimental] zeroing probability of feature in head
                         input (default: 0.0)
-  --cf3-no-inplace-ops  alternative graph without inplace ops (default: True)
+  --cf4-no-inplace-ops  alternative graph without inplace ops (default: True)
 
 network configuration:
   --checkpoint CHECKPOINT
@@ -2192,12 +2386,13 @@ network configuration:
                         &#39;shufflenetv2k16-apollo-24&#39;,
                         &#39;shufflenetv2k16-apollo-66&#39;,
                         &#39;shufflenetv2k30-apollo-66&#39;, &#39;mobilenetv2&#39;,
-                        &#39;mobilenetv3large&#39;, &#39;resnet50&#39;, &#39;shufflenetv2k16&#39;,
-                        &#39;shufflenetv2k16-withdense&#39;, &#39;shufflenetv2k30&#39;,
-                        &#39;swin_s&#39;, &#39;swin_b&#39;, &#39;swin_t_input_upsample&#39;,
+                        &#39;mobilenetv3small&#39;, &#39;mobilenetv3large&#39;, &#39;resnet50&#39;,
+                        &#39;shufflenetv2k16&#39;, &#39;shufflenetv2k16-withdense&#39;,
+                        &#39;shufflenetv2k30&#39;, &#39;swin_s&#39;, &#39;swin_b&#39;,
+                        &#39;swin_t_input_upsample&#39;, &#39;mobilenetv3small-cocodet&#39;,
                         &#39;resnet18-cocodet&#39;, &#39;resnet50-crowdpose&#39;,
-                        &#39;shufflenetv2k16-nuscenes&#39;,
-                        &#39;shufflenetv2k16-wholebody&#39;,
+                        &#39;shufflenetv2k16-nuscenes&#39;, &#39;tshufflenetv2k16&#39;,
+                        &#39;tshufflenetv2k30&#39;, &#39;shufflenetv2k16-wholebody&#39;,
                         &#39;shufflenetv2k30-wholebody&#39;] (default: None)
   --basenet BASENET     base network, one of [&#39;mobilenetv2&#39;,
                         &#39;mobilenetv3large&#39;, &#39;mobilenetv3small&#39;, &#39;resnet18&#39;,
@@ -2217,7 +2412,8 @@ network configuration:
                         &#39;xcit_large_24_p8&#39;, &#39;effnetv2_s&#39;, &#39;effnetv2_m&#39;,
                         &#39;effnetv2_l&#39;, &#39;effnetv2_xl&#39;, &#39;effnetv2_s16_s&#39;,
                         &#39;effnetv2_s16_m&#39;, &#39;effnetv2_s16_l&#39;, &#39;effnetv2_s16_xl&#39;,
-                        &#39;botnet&#39;, &#39;cifar10net&#39;] (default: None)
+                        &#39;botnet&#39;, &#39;tshufflenetv2k16&#39;, &#39;tshufflenetv2k30&#39;,
+                        &#39;tresnet50&#39;, &#39;cifar10net&#39;] (default: None)
   --cross-talk CROSS_TALK
                         [experimental] (default: 0.0)
   --no-download-progress
@@ -2242,9 +2438,6 @@ python3 -m openpifpaf.export_coreml --help
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>usage: python3 -m openpifpaf.export_coreml [-h] [--version]
-                                           [--squeezenet-no-pretrain]
-                                           [--shufflenetv2-no-pretrain]
-                                           [--mobilenetv3-no-pretrain]
                                            [--shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE]
                                            [--shufflenetv2k-input-conv2-outchannels SHUFFLENETV2K_INPUT_CONV2_OUTCHANNELS]
                                            [--shufflenetv2k-stage4-dilation SHUFFLENETV2K_STAGE4_DILATION]
@@ -2252,24 +2445,27 @@ python3 -m openpifpaf.export_coreml --help
                                            [--shufflenetv2k-conv5-as-stage]
                                            [--shufflenetv2k-instance-norm | --shufflenetv2k-group-norm]
                                            [--shufflenetv2k-leaky-relu]
+                                           [--shufflenetv2-no-pretrain]
                                            [--mobilenetv2-no-pretrain]
+                                           [--mobilenetv3-no-pretrain]
                                            [--resnet-no-pretrain]
                                            [--resnet-pool0-stride RESNET_POOL0_STRIDE]
                                            [--resnet-input-conv-stride RESNET_INPUT_CONV_STRIDE]
                                            [--resnet-input-conv2-stride RESNET_INPUT_CONV2_STRIDE]
                                            [--resnet-block5-dilation RESNET_BLOCK5_DILATION]
                                            [--resnet-remove-last-block]
-                                           [--xcit-out-channels XCIT_OUT_CHANNELS]
-                                           [--xcit-out-maxpool]
-                                           [--xcit-no-pretrain]
                                            [--swin-drop-path-rate SWIN_DROP_PATH_RATE]
                                            [--swin-input-upsample]
                                            [--swin-use-fpn]
                                            [--swin-fpn-out-channels SWIN_FPN_OUT_CHANNELS]
                                            [--swin-fpn-level SWIN_FPN_LEVEL]
                                            [--swin-no-pretrain]
-                                           [--cf3-dropout CF3_DROPOUT]
-                                           [--cf3-no-inplace-ops]
+                                           [--xcit-out-channels XCIT_OUT_CHANNELS]
+                                           [--xcit-out-maxpool]
+                                           [--xcit-no-pretrain]
+                                           [--squeezenet-no-pretrain]
+                                           [--cf4-dropout CF4_DROPOUT]
+                                           [--cf4-no-inplace-ops]
                                            [--checkpoint CHECKPOINT]
                                            [--basenet BASENET]
                                            [--cross-talk CROSS_TALK]
@@ -2290,18 +2486,6 @@ optional arguments:
   --input-height INPUT_HEIGHT
   --minimum-deployment-target {iOS13,iOS14}
 
-SqueezeNet:
-  --squeezenet-no-pretrain
-                        use randomly initialized models (default: True)
-
-ShuffleNetv2:
-  --shufflenetv2-no-pretrain
-                        use randomly initialized models (default: True)
-
-MobileNetV3:
-  --mobilenetv3-no-pretrain
-                        use randomly initialized models (default: True)
-
 shufflenetv2k:
   --shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE
                         stride of the optional 2nd input convolution (default:
@@ -2318,8 +2502,16 @@ shufflenetv2k:
   --shufflenetv2k-group-norm
   --shufflenetv2k-leaky-relu
 
+ShuffleNetv2:
+  --shufflenetv2-no-pretrain
+                        use randomly initialized models (default: True)
+
 MobileNetV2:
   --mobilenetv2-no-pretrain
+                        use randomly initialized models (default: True)
+
+MobileNetV3:
+  --mobilenetv3-no-pretrain
                         use randomly initialized models (default: True)
 
 ResNet:
@@ -2336,14 +2528,6 @@ ResNet:
   --resnet-remove-last-block
                         create a network without the last block (default:
                         False)
-
-XCiT:
-  --xcit-out-channels XCIT_OUT_CHANNELS
-                        number of output channels for optional projection
-                        layer (None for no projection layer) (default: None)
-  --xcit-out-maxpool    adds max-pooling to backbone output feature map
-                        (default: False)
-  --xcit-no-pretrain    use randomly initialized models (default: True)
 
 SwinTransformer:
   --swin-drop-path-rate SWIN_DROP_PATH_RATE
@@ -2362,11 +2546,23 @@ SwinTransformer:
                         resolution) and 4 (lowest resolution) (default: 3)
   --swin-no-pretrain    use randomly initialized models (default: True)
 
-CompositeField3:
-  --cf3-dropout CF3_DROPOUT
+XCiT:
+  --xcit-out-channels XCIT_OUT_CHANNELS
+                        number of output channels for optional projection
+                        layer (None for no projection layer) (default: None)
+  --xcit-out-maxpool    adds max-pooling to backbone output feature map
+                        (default: False)
+  --xcit-no-pretrain    use randomly initialized models (default: True)
+
+SqueezeNet:
+  --squeezenet-no-pretrain
+                        use randomly initialized models (default: True)
+
+CompositeField4:
+  --cf4-dropout CF4_DROPOUT
                         [experimental] zeroing probability of feature in head
                         input (default: 0.0)
-  --cf3-no-inplace-ops  alternative graph without inplace ops (default: True)
+  --cf4-no-inplace-ops  alternative graph without inplace ops (default: True)
 
 network configuration:
   --checkpoint CHECKPOINT
@@ -2376,12 +2572,13 @@ network configuration:
                         &#39;shufflenetv2k16-apollo-24&#39;,
                         &#39;shufflenetv2k16-apollo-66&#39;,
                         &#39;shufflenetv2k30-apollo-66&#39;, &#39;mobilenetv2&#39;,
-                        &#39;mobilenetv3large&#39;, &#39;resnet50&#39;, &#39;shufflenetv2k16&#39;,
-                        &#39;shufflenetv2k16-withdense&#39;, &#39;shufflenetv2k30&#39;,
-                        &#39;swin_s&#39;, &#39;swin_b&#39;, &#39;swin_t_input_upsample&#39;,
+                        &#39;mobilenetv3small&#39;, &#39;mobilenetv3large&#39;, &#39;resnet50&#39;,
+                        &#39;shufflenetv2k16&#39;, &#39;shufflenetv2k16-withdense&#39;,
+                        &#39;shufflenetv2k30&#39;, &#39;swin_s&#39;, &#39;swin_b&#39;,
+                        &#39;swin_t_input_upsample&#39;, &#39;mobilenetv3small-cocodet&#39;,
                         &#39;resnet18-cocodet&#39;, &#39;resnet50-crowdpose&#39;,
-                        &#39;shufflenetv2k16-nuscenes&#39;,
-                        &#39;shufflenetv2k16-wholebody&#39;,
+                        &#39;shufflenetv2k16-nuscenes&#39;, &#39;tshufflenetv2k16&#39;,
+                        &#39;tshufflenetv2k30&#39;, &#39;shufflenetv2k16-wholebody&#39;,
                         &#39;shufflenetv2k30-wholebody&#39;] (default: None)
   --basenet BASENET     base network, one of [&#39;mobilenetv2&#39;,
                         &#39;mobilenetv3large&#39;, &#39;mobilenetv3small&#39;, &#39;resnet18&#39;,
@@ -2401,7 +2598,8 @@ network configuration:
                         &#39;xcit_large_24_p8&#39;, &#39;effnetv2_s&#39;, &#39;effnetv2_m&#39;,
                         &#39;effnetv2_l&#39;, &#39;effnetv2_xl&#39;, &#39;effnetv2_s16_s&#39;,
                         &#39;effnetv2_s16_m&#39;, &#39;effnetv2_s16_l&#39;, &#39;effnetv2_s16_xl&#39;,
-                        &#39;botnet&#39;, &#39;cifar10net&#39;] (default: None)
+                        &#39;botnet&#39;, &#39;tshufflenetv2k16&#39;, &#39;tshufflenetv2k30&#39;,
+                        &#39;tresnet50&#39;, &#39;cifar10net&#39;] (default: None)
   --cross-talk CROSS_TALK
                         [experimental] (default: 0.0)
   --no-download-progress
@@ -2601,7 +2799,7 @@ show:
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         

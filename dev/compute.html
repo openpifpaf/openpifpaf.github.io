@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contribute &#8212; OpenPifPaf Guide DEV</title>
+    <title>Compute &#8212; OpenPifPaf Guide DEV</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -53,8 +53,8 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Performance" href="performance.html" />
-    <link rel="prev" title="Bibliography" href="bibliography.html" />
+    <link rel="next" title="Models" href="models.html" />
+    <link rel="prev" title="Prediction API" href="predict_api.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -117,14 +117,14 @@
   Chapters
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="predict_api.html">
    Prediction API
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="compute.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Compute
   </a>
  </li>
@@ -228,9 +228,9 @@
   Development
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="dev.html">
    Contribute
   </a>
  </li>
@@ -285,7 +285,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/dev.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/compute.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -305,7 +305,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/openpifpaf/openpifpaf/issues/new?title=Issue%20on%20page%20%2Fdev.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/openpifpaf/openpifpaf/issues/new?title=Issue%20on%20page%20%2Fcompute.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -321,7 +321,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/openpifpaf/openpifpaf/main?urlpath=tree/guide/dev.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/openpifpaf/openpifpaf/main?urlpath=tree/guide/compute.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -344,33 +344,23 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#modify-code">
-   Modify Code
+  <a class="reference internal nav-link" href="#ssh">
+   SSH
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#things-to-contribute">
-   Things to Contribute
+  <a class="reference internal nav-link" href="#google-colab">
+   Google Colab
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#missing-dependencies">
-   Missing Dependencies
+  <a class="reference internal nav-link" href="#google-cloud">
+   Google Cloud
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#your-project-and-openpifpaf">
-   Your Project and OpenPifPaf
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#build-guide">
-   Build Guide
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#build-environment">
-   Build Environment
+  <a class="reference internal nav-link" href="#hpc">
+   HPC
   </a>
  </li>
 </ul>
@@ -384,269 +374,40 @@
         
               <div>
                 
-  <div class="section" id="contribute">
-<h1>Contribute<a class="headerlink" href="#contribute" title="Permalink to this headline">¶</a></h1>
-<p>Before we can accept contributions, you need to become a CLAed contributor.
-E-mail a signed copy of the
-<a class="reference external" href="https://github.com/openpifpaf/openpifpaf/blob/main/docs/CLAI.txt">CLAI</a>
-(and if applicable the
-<a class="reference external" href="https://github.com/openpifpaf/openpifpaf/blob/main/docs/CLAC.txt">CLAC</a>)
-as PDF file to <a class="reference external" href="mailto:research&#37;&#52;&#48;svenkreiss&#46;com">research<span>&#64;</span>svenkreiss<span>&#46;</span>com</a>.</p>
-<div class="section" id="modify-code">
-<span id="id1"></span><h2>Modify Code<a class="headerlink" href="#modify-code" title="Permalink to this headline">¶</a></h2>
-<p>For development of the openpifpaf source code itself, you need to clone this repository and then:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip3 install --editable <span class="s1">&#39;.[dev,train,test]&#39;</span>
-</pre></div>
+  <div class="section" id="compute">
+<h1>Compute<a class="headerlink" href="#compute" title="Permalink to this headline">¶</a></h1>
+<p>We aim to support local, ssh, cloud and HPC environments.</p>
+<div class="section" id="ssh">
+<h2>SSH<a class="headerlink" href="#ssh" title="Permalink to this headline">¶</a></h2>
+<p>Use <code class="docutils literal notranslate"><span class="pre">tmux</span></code> for long-running sessions.</p>
 </div>
-<p>The last command installs the Python package in the current directory
-(signified by the dot) with the optional dependencies needed for training and
-testing. If you modify C code, run this last command again which
-recompiles the static code.</p>
-<p>Develop your features in separate feature branches.
-Create a pull request with your suggested changes. Make sure your code passes
-<code class="docutils literal notranslate"><span class="pre">pytest</span></code>, <code class="docutils literal notranslate"><span class="pre">pylint</span></code> and <code class="docutils literal notranslate"><span class="pre">pycodestyle</span></code> checks:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pylint openpifpaf
-pycodestyle openpifpaf
-pytest
-
-<span class="nb">cd</span> guide
-python download_data.py
-pytest --nbval-lax --current-env *.ipynb
-</pre></div>
+<div class="section" id="google-colab">
+<h2>Google Colab<a class="headerlink" href="#google-colab" title="Permalink to this headline">¶</a></h2>
+<p>Not very performant, but enough to run benchmarks.
+For an example, see this
+<a class="reference external" href="https://colab.research.google.com/drive/1UofTjuRE6eM_ZdkLMLJD4Jh5VCarOH6E?usp=sharing">eval_coco notebook</a>
+that runs a full COCO keypoint benchmark.</p>
 </div>
-</div>
-<div class="section" id="things-to-contribute">
-<h2>Things to Contribute<a class="headerlink" href="#things-to-contribute" title="Permalink to this headline">¶</a></h2>
-<p>This is a research project and changing fast. Contributions can be in many areas:</p>
-<ul class="simple">
-<li><p>Add a new dataset?</p></li>
-<li><p>Add a new base network?</p></li>
-<li><p>Try a different loss?</p></li>
-<li><p>Try a better multi-task strategy?</p></li>
-<li><p>Try a different head architecture?</p></li>
-<li><p>Add a new task?</p></li>
-<li><p>Run on new hardware (mobile phones, embedded devices, …)?</p></li>
-<li><p>Improve training schedule/procedure?</p></li>
-<li><p>Use it to build an app?</p></li>
-<li><p>Improve documentation (!!)</p></li>
-<li><p>…</p></li>
-</ul>
-</div>
-<div class="section" id="missing-dependencies">
-<h2>Missing Dependencies<a class="headerlink" href="#missing-dependencies" title="Permalink to this headline">¶</a></h2>
-<p>OpenPifPaf has few core requirements so that you can run it efficiently on servers without graphical interface.
-Sometimes, you just want to install all possible dependencies. Those are provided as “extra” requirements.
-Use the following <code class="docutils literal notranslate"><span class="pre">pip3</span></code> command to install all extras.</p>
-<div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pip3 install &quot;openpifpaf[backbones,coreml,dev,onnx,test,train]&quot;
+<div class="section" id="google-cloud">
+<h2>Google Cloud<a class="headerlink" href="#google-cloud" title="Permalink to this headline">¶</a></h2>
+<p>This gives you a V100 GPU to benchmark OpenPifPaf. You can ssh into
+the box directly and use <code class="docutils literal notranslate"><span class="pre">tmux</span></code>. Not all regions/zones support
+<a class="reference external" href="https://cloud.google.com/compute/docs/gpus/gpu-regions-zones">recent GPUs</a>.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>gcloud compute instances create instance-2 <span class="se">\</span>
+  --zone<span class="o">=</span>europe-west4-a <span class="se">\</span>
+  --image-family<span class="o">=</span>pytorch-latest-gpu <span class="se">\</span>
+  --image-project<span class="o">=</span>deeplearning-platform-release <span class="se">\</span>
+  --machine-type<span class="o">=</span>n1-standard-4 <span class="se">\</span>
+  --maintenance-policy<span class="o">=</span>TERMINATE <span class="se">\</span>
+  --accelerator<span class="o">=</span><span class="s2">&quot;type=nvidia-tesla-v100,count=1&quot;</span> <span class="se">\</span>
+  --metadata<span class="o">=</span><span class="s2">&quot;install-nvidia-driver=True&quot;</span> <span class="se">\</span>
+  --preemptible
 </pre></div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="your-project-and-openpifpaf">
-<h2>Your Project and OpenPifPaf<a class="headerlink" href="#your-project-and-openpifpaf" title="Permalink to this headline">¶</a></h2>
-<p>Let us know about your open source projects. We would like to feature them in our “related projects” section.</p>
-<p>The simplest way to integrate with OpenPifPaf is to write a plugin. If some functionality is not possible through our plugin architecture, open an issue to discuss and if necessary send us a pull request that enables the missing feature you need.</p>
-<p>If you do need to make a copy of OpenPifPaf, you must respect our license.</p>
-</div>
-<div class="section" id="build-guide">
-<h2>Build Guide<a class="headerlink" href="#build-guide" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip install jupyter-book
-<span class="nb">cd</span> guide
-jb build .
-</pre></div>
-</div>
-<p>If you encounter issues with the kernel spec in a notebook, open the notebook
-with a text editor and find <code class="docutils literal notranslate"><span class="pre">metadata.kernelspec.name</span></code> and set it to <code class="docutils literal notranslate"><span class="pre">python3</span></code>.</p>
-<p>Alternatively, you can patch your local package yourself. Open
-<code class="docutils literal notranslate"><span class="pre">venv/lib/python3.9/site-packages/jupyter_cache/executors/utils.py</span></code>
-in your editor and add <code class="docutils literal notranslate"><span class="pre">kernel_name='python3'</span></code> to the arguments of <code class="docutils literal notranslate"><span class="pre">nbexecute()</span></code>
-<a class="reference external" href="https://github.com/executablebooks/jupyter-cache/blob/1431ed72961fabc2f09a13553b0aa45f4c8a7c23/jupyter_cache/executors/utils.py#L56">here</a>.</p>
-<p>Alternatively, for continuous integration, the <code class="docutils literal notranslate"><span class="pre">kernel_name</span></code> is replace in the json of the
-Jupyter Notebook before executing jupyter-book
-<a class="reference external" href="https://github.com/openpifpaf/openpifpaf/blob/6db797205cd082bf7a80e967372957e56c9835fb/.github/workflows/deploy-guide.yml#L47">here</a>.
-Only use this operation on a discardable copy as <code class="docutils literal notranslate"><span class="pre">jq</span></code> changes all formatting.</p>
-</div>
-<div class="section" id="build-environment">
-<h2>Build Environment<a class="headerlink" href="#build-environment" title="Permalink to this headline">¶</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
-pip freeze
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>alabaster==0.7.12
-anyio==3.3.1
-argon2-cffi==21.1.0
-astroid==2.6.6
-attrs==20.3.0
-Babel==2.9.1
-backcall==0.2.0
-beautifulsoup4==4.10.0
-bleach==4.1.0
-boto==2.49.0
-certifi==2021.5.30
-cffi==1.14.6
-charset-normalizer==2.0.6
-click==7.1.2
-colorama==0.4.4
-coverage==5.5
-cpplint==1.5.5
-cycler==0.10.0
-debugpy==1.4.3
-decorator==5.1.0
-defusedxml==0.7.1
-docutils==0.16
-entrypoints==0.3
-flameprof==0.4
-flatbuffers==2.0
-future==0.18.2
-gitdb==4.0.7
-GitPython==3.1.24
-greenlet==1.1.1
-idna==3.2
-imagesize==1.2.0
-importlib-metadata==4.8.1
-importlib-resources==5.2.2
-iniconfig==1.1.1
-ipykernel==6.4.1
-ipython==7.27.0
-ipython-genutils==0.2.0
-ipywidgets==7.6.5
-isort==5.9.3
-jedi==0.18.0
-Jinja2==3.0.1
-jsonschema==3.2.0
-jupyter-book==0.11.3
-jupyter-cache==0.4.3
-jupyter-client==7.0.3
-jupyter-core==4.8.1
-jupyter-server==1.11.0
-jupyter-server-mathjax==0.2.3
-jupyter-sphinx==0.3.2
-jupyterlab-widgets==1.0.2
-jupytext==1.10.3
-kiwisolver==1.3.2
-latexcodec==2.0.1
-lazy-object-proxy==1.6.0
-linkify-it-py==1.0.1
-markdown-it-py==0.6.2
-MarkupSafe==2.0.1
-matplotlib==3.4.3
-matplotlib-inline==0.1.3
-mccabe==0.6.1
-mdit-py-plugins==0.2.6
-mistune==0.8.4
-myst-nb==0.12.3
-myst-parser==0.13.7
-nbclient==0.5.4
-nbconvert==5.6.1
-nbdime==3.1.0
-nbformat==5.1.3
-nbstripout==0.5.0
-nbval==0.9.6
-nest-asyncio==1.5.1
-notebook==6.4.4
-numpy==1.21.2
-onnx==1.10.1
-onnx-simplifier==0.3.6
-onnxoptimizer==0.2.6
-onnxruntime==1.8.1
-opencv-python==4.5.3.56
-openpifpaf @ file:///home/runner/work/openpifpaf/openpifpaf
-packaging==21.0
-pandocfilters==1.5.0
-parso==0.8.2
-pexpect==4.8.0
-pickleshare==0.7.5
-Pillow==8.3.2
-pluggy==1.0.0
-prometheus-client==0.11.0
-prompt-toolkit==3.0.20
-protobuf==3.18.0
-ptyprocess==0.7.0
-py==1.10.0
-pybtex==0.24.0
-pybtex-docutils==1.0.1
-pycodestyle==2.7.0
-pycparser==2.20
-pydata-sphinx-theme==0.6.3
-Pygments==2.10.0
-pylint==2.9.3
-pyparsing==2.4.7
-pyrsistent==0.18.0
-pysparkling==0.6.1
-pytest==6.2.5
-python-dateutil==2.8.2
-python-json-logger==2.0.2
-pytz==2021.1
-PyYAML==5.4.1
-pyzmq==22.3.0
-requests==2.26.0
-requests-unixsocket==0.2.0
-scipy==1.7.1
-Send2Trash==1.8.0
-six==1.16.0
-smmap==4.0.0
-sniffio==1.2.0
-snowballstemmer==2.1.0
-soupsieve==2.2.1
-Sphinx==3.5.4
-sphinx-book-theme==0.1.4
-sphinx-comments==0.0.3
-sphinx-copybutton==0.4.0
-sphinx-external-toc==0.2.3
-sphinx-jupyterbook-latex==0.4.2
-sphinx-multitoc-numbering==0.1.3
-sphinx-panels==0.5.2
-sphinx-thebe==0.0.10
-sphinx-togglebutton==0.2.3
-sphinxcontrib-applehelp==1.0.2
-sphinxcontrib-bibtex==2.2.1
-sphinxcontrib-devhelp==1.0.2
-sphinxcontrib-htmlhelp==2.0.0
-sphinxcontrib-jsmath==1.0.1
-sphinxcontrib-qthelp==1.0.3
-sphinxcontrib-serializinghtml==1.1.5
-SQLAlchemy==1.4.23
-terminado==0.12.1
-testpath==0.5.0
-thop==0.0.31.post2005241907
-toml==0.10.2
-torch==1.9.1
-torchvision==0.10.1
-tornado==6.1
-traitlets==5.1.0
-typing-extensions==3.10.0.2
-uc-micro-py==1.0.1
-urllib3==1.26.6
-wcwidth==0.2.5
-webencodings==0.5.1
-websocket-client==1.2.1
-widgetsnbextension==3.5.1
-wrapt==1.12.1
-zipp==3.5.0
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
-python -m openpifpaf.predict --version
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OpenPifPaf 0.12.14+94.g14b41b6
-</pre></div>
-</div>
-</div>
-</div>
+<div class="section" id="hpc">
+<h2>HPC<a class="headerlink" href="#hpc" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference internal" href="train.html"><span class="doc">Training</span></a> document.</p>
 </div>
 </div>
 
@@ -680,19 +441,19 @@ python -m openpifpaf.predict --version
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="bibliography.html" title="previous page">
+        <a class="left-prev" href="predict_api.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Bibliography</p>
+                <p class="prevnext-title">Prediction API</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="performance.html" title="next page">
+        <a class="right-next" href="models.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Performance</p>
+                <p class="prevnext-title">Models</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

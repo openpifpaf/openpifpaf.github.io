@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -73,6 +73,10 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
       <img src="_static/logo.png" class="logo" alt="logo">
       
       
@@ -117,6 +121,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="predict_api.html">
    Prediction API
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="compute.html">
+   Compute
   </a>
  </li>
  <li class="toctree-l1">
@@ -382,8 +391,10 @@ python -m openpifpaf.predict nuscenes/n013-2018-08-28-10-41-15+0800__CAM_FRONT__
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:neural network device: cpu (CUDA available: False, count: 0)
 INFO:openpifpaf.predictor:neural network device: cpu (CUDA available: False, count: 0)
-INFO:openpifpaf.decoder.cifdet:annotations 2, decoder = 0.015s
+INFO:openpifpaf.decoder.cifdet:annotations 3, decoder = 24.0ms
 INFO:openpifpaf.predictor:batch 0: nuscenes/n013-2018-08-28-10-41-15+0800__CAM_FRONT__1535424448912407.jpg
+/tmp/pip-req-build-ijdq9loq/openpifpaf/csrc/src/cif_hr.cpp:102: UserInfo: resizing cifhr buffer
+/tmp/pip-req-build-ijdq9loq/openpifpaf/csrc/src/occupancy.cpp:53: UserInfo: resizing occupancy buffer
 </pre></div>
 </div>
 </div>
@@ -472,7 +483,7 @@ Subsequently, you need to process the image annotations to MS COCO style annotat
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         

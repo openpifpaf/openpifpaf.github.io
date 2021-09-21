@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -55,7 +55,7 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Models" href="models.html" />
+    <link rel="next" title="Compute" href="compute.html" />
     <link rel="prev" title="Examples" href="examples.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -74,6 +74,10 @@
     
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
       
       <img src="_static/logo.png" class="logo" alt="logo">
       
@@ -119,6 +123,11 @@
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Prediction API
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="compute.html">
+   Compute
   </a>
  </li>
  <li class="toctree-l1">
@@ -383,8 +392,8 @@ the command line interface.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OpenPifPaf version 0.12.13+22.g9f6c2e6
-PyTorch version 1.7.1+cpu
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OpenPifPaf version 0.12.14+94.g14b41b6
+PyTorch version 1.9.1+cu102
 </pre></div>
 </div>
 </div>
@@ -439,7 +448,7 @@ PyTorch version 1.7.1+cpu
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;openpifpaf.annotation.Annotation at 0x7f92259e4ac0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;openpifpaf.annotation.Annotation at 0x7f8d7424ee20&gt;
 </pre></div>
 </div>
 </div>
@@ -451,23 +460,23 @@ PyTorch version 1.7.1+cpu
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 81.07269   , 316.7191    ,   0.83760077],
-       [ 84.930435  , 313.12497   ,   0.92310274],
-       [ 79.38671   , 312.10074   ,   0.54092383],
-       [ 99.461494  , 309.10587   ,   0.8882189 ],
-       [  0.        ,  -3.        ,   0.        ],
-       [122.55101   , 316.9041    ,   0.8500336 ],
-       [ 77.22328   , 322.0674    ,   0.821457  ],
-       [145.52803   , 348.64584   ,   0.8308074 ],
-       [ 57.89263   , 351.26923   ,   0.7811278 ],
-       [125.43434   , 355.20215   ,   0.7398876 ],
-       [ 51.805344  , 381.0768    ,   0.81319046],
-       [121.692406  , 361.29285   ,   0.7632364 ],
-       [ 95.937965  , 363.6355    ,   0.767259  ],
-       [149.63075   , 359.03595   ,   0.7233175 ],
-       [ 73.44805   , 367.07867   ,   0.6862443 ],
-       [104.370705  , 380.8169    ,   0.46303338],
-       [  0.        ,  -3.        ,   0.        ]], dtype=float32)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 3.6017877e+02,  2.9964966e+02,  9.9882096e-01],
+       [ 3.6403540e+02,  2.9479474e+02,  9.5608485e-01],
+       [ 3.5507379e+02,  2.9503967e+02,  9.7657114e-01],
+       [ 3.6957547e+02,  2.9712772e+02,  8.2811117e-01],
+       [ 3.4776541e+02,  2.9803625e+02,  9.4151706e-01],
+       [ 3.8178815e+02,  3.1739850e+02,  9.3542933e-01],
+       [ 3.4123141e+02,  3.2181039e+02,  9.5376027e-01],
+       [ 3.8760931e+02,  3.4162192e+02,  6.1718756e-01],
+       [ 3.3507941e+02,  3.5091321e+02,  9.6102792e-01],
+       [ 3.7334412e+02,  3.5688287e+02,  4.3560398e-01],
+       [ 3.3581900e+02,  3.6386728e+02,  8.9591610e-01],
+       [ 3.7379736e+02,  3.6283124e+02,  8.5838813e-01],
+       [ 3.5045969e+02,  3.6485587e+02,  9.5851332e-01],
+       [ 3.8885773e+02,  3.6172177e+02,  6.5838057e-01],
+       [ 3.2807556e+02,  3.7470059e+02,  6.8845856e-01],
+       [ 3.3847372e+02,  3.8157913e+02,  3.4106129e-01],
+       [ 0.0000000e+00, -3.0000000e+00,  0.0000000e+00]], dtype=float32)
 </pre></div>
 </div>
 </div>
@@ -552,7 +561,6 @@ This is also the basis for the seeds. Both are shown below.</p>
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/predict_api_19_0.png" src="_images/predict_api_19_0.png" />
-<img alt="_images/predict_api_19_1.png" src="_images/predict_api_19_1.png" />
 </div>
 </div>
 <p>Starting from a seed, the poses are constructed. At every joint position, an occupancy map marks whether a previous pose was already constructed here. This reduces the number of poses that are constructed from multiple seeds for the same person. The final occupancy map is below:</p>
@@ -562,9 +570,6 @@ This is also the basis for the seeds. Both are shown below.</p>
 <span class="n">_</span> <span class="o">=</span> <span class="n">predictor</span><span class="o">.</span><span class="n">pil_image</span><span class="p">(</span><span class="n">pil_im</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/predict_api_21_0.png" src="_images/predict_api_21_0.png" />
 </div>
 </div>
 </div>
@@ -609,10 +614,10 @@ This is also the basis for the seeds. Both are shown below.</p>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="models.html" title="next page">
+        <a class="right-next" href="compute.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Models</p>
+                <p class="prevnext-title">Compute</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
@@ -622,7 +627,7 @@ This is also the basis for the seeds. Both are shown below.</p>
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
