@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -56,7 +56,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Datasets" href="datasets.html" />
-    <link rel="prev" title="Prediction API" href="predict_api.html" />
+    <link rel="prev" title="Compute" href="compute.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -74,6 +74,10 @@
     
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
       
       <img src="_static/logo.png" class="logo" alt="logo">
       
@@ -119,6 +123,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="predict_api.html">
    Prediction API
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="compute.html">
+   Compute
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -422,6 +431,9 @@
  &#39;effnetv2_s16_l&#39;,
  &#39;effnetv2_s16_xl&#39;,
  &#39;botnet&#39;,
+ &#39;tshufflenetv2k16&#39;,
+ &#39;tshufflenetv2k30&#39;,
+ &#39;tresnet50&#39;,
  &#39;cifar10net&#39;]
 </pre></div>
 </div>
@@ -443,6 +455,7 @@
  &#39;shufflenetv2k16-apollo-66&#39;,
  &#39;shufflenetv2k30-apollo-66&#39;,
  &#39;mobilenetv2&#39;,
+ &#39;mobilenetv3small&#39;,
  &#39;mobilenetv3large&#39;,
  &#39;resnet50&#39;,
  &#39;shufflenetv2k16&#39;,
@@ -451,9 +464,12 @@
  &#39;swin_s&#39;,
  &#39;swin_b&#39;,
  &#39;swin_t_input_upsample&#39;,
+ &#39;mobilenetv3small-cocodet&#39;,
  &#39;resnet18-cocodet&#39;,
  &#39;resnet50-crowdpose&#39;,
  &#39;shufflenetv2k16-nuscenes&#39;,
+ &#39;tshufflenetv2k16&#39;,
+ &#39;tshufflenetv2k30&#39;,
  &#39;shufflenetv2k16-wholebody&#39;,
  &#39;shufflenetv2k30-wholebody&#39;]
 </pre></div>
@@ -562,11 +578,11 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="predict_api.html" title="previous page">
+        <a class="left-prev" href="compute.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Prediction API</p>
+                <p class="prevnext-title">Compute</p>
             </div>
         </a>
     </div>
@@ -584,7 +600,7 @@
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         

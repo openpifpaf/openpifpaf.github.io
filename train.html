@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -75,6 +75,10 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
       <img src="_static/logo.png" class="logo" alt="logo">
       
       
@@ -119,6 +123,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="predict_api.html">
    Prediction API
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="compute.html">
+   Compute
   </a>
  </li>
  <li class="toctree-l1">
@@ -333,6 +342,11 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#composite-loss-function">
+   Composite Loss Function
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#training-crop-size">
    Training Crop Size
   </a>
@@ -413,6 +427,97 @@ For training, you will need a dataset. See <a class="reference internal" href="d
 A quick way to get started is with the training commands of the pre-trained models.
 The exact training command that was used for a model is in the first
 line of the training log file. Below are a few examples for various backbones.</p>
+<div class="section" id="composite-loss-function">
+<h2>Composite Loss Function<a class="headerlink" href="#composite-loss-function" title="Permalink to this headline">¶</a></h2>
+<p>OpenPifPaf uses an off-the-shelf backbone like a ResNet and then adds the smallest
+possible (approx) head networks on top: a single 1x1 convolution.
+The outputs of the head networks are the composite fields. At each location,
+the composite head produces a confidence together with some location and attribute
+information.</p>
+<p>In our first paper <span id="id1">[<a class="reference internal" href="bibliography.html#id2">KBA19</a>]</span>, we show how to learn these composite
+fields with a binary cross entropy for the confidence, a Laplace loss for regression
+and a plain L1 regression loss for scale. The Laplace loss has been valuable
+for OpenPifPaf as it proved to be better than any other of the regression losses
+for us. One interpretation is from its original motivation as a better objective
+for a probabilistic problem of location prediction:</p>
+<div class="math notranslate nohighlight">
+\[
+    L_\textrm{Laplace} = \frac{1}{\hat{b}}|\hat{x} - x|^1_2 + \log \hat{b}
+\]</div>
+<p>That is the main motivation
+why I used this loss and defended its continued use. Over time, I also came to
+appreciate an empirical interpretation: an adversarial trade-off between
+the two terms in the sum that evolves as the network learns. During the initial
+phase of training, predictions <span class="math notranslate nohighlight">\(\hat{x}\)</span> are poor and the network better predicts
+large <span class="math notranslate nohighlight">\(\hat{b}\)</span> to reduce the first term at the cost of a logarithmic penalty
+from the second term. As the network learns to predict better, it starts to predict
+smaller values of <span class="math notranslate nohighlight">\(\hat{b}\)</span> to reduce the logarithmic penalty while not incuring
+too large costs anymore because its predictions for <span class="math notranslate nohighlight">\(\hat{x}\)</span> are good.
+This mechanism also has consequences as the network continues to train and starts
+overfitting. Other regression losses just overfit gently more and more. The
+Laplace loss, however, will really try to profit from its overfitted knowledge
+and become very agressive and reduce <span class="math notranslate nohighlight">\(\hat{b}\)</span>. As explained in our paper,
+we add an extra constant <span class="math notranslate nohighlight">\(b_\textrm{min}\)</span> that prevents aggressive regression
+losses below fractions of pixels.</p>
+<p><strong>Aside on negative losses</strong>: A loss function is something that is minimized.
+A valid loss is, for example, the L1 loss <span class="math notranslate nohighlight">\(|\hat{x} - x|\)</span> but equally valid is
+the loss <span class="math notranslate nohighlight">\(|\hat{x} - x| - 5000\)</span>. These losses would lead to the exact same
+trained networks as they produce exactly the same gradients. Most loss functions
+are not negative because their final operation is a square or an absolute value
+as in the case
+of L1 or L2 loss but it is not a generic property of loss functions. The Laplace
+loss above can become negative infinity when <span class="math notranslate nohighlight">\(\hat{b} \to 0\)</span> and is still a
+valid objective to minimize.</p>
+<p><strong>New in v0.13</strong>: To produce truely composite objects, I would like the
+adversarial trade-off to be shared across confidence and regression: the
+predicted <span class="math notranslate nohighlight">\(\hat{b}\)</span> should only become smaller as both confidence and regression
+become better. We don’t have to learn a fantastic regression when the confidence
+predictions are poor. We saw signs of the problem when we started to train
+composite fields for detection: confidence predictions were almost random
+while regressions started to manifest. The solution is to implement the
+adversarial mechanism discussed above for the Laplace regression to both
+confidence and regression tasks and to share the predicted <span class="math notranslate nohighlight">\(\hat{b}\)</span>.</p>
+<p>While the exact form of the Laplace loss came from a probabilistic interpretation
+that lead naturally to the adversarial mechanism, this step is not as obvious
+for confidence predictions and there are multiple options (including one
+suggested in the paper by Kendall et al on the Laplace loss). Here, I chose to
+to map the Focal loss to a Gaussian loss by gradient matching and then applying
+the probabilistic interpretation in that mapped space leading to the adversarial
+terms. The gradient of the Focal loss FL w.r.t. <span class="math notranslate nohighlight">\(\hat{x}\)</span> for positive samples
+<span class="math notranslate nohighlight">\(x=1\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \frac{\partial}{\partial \hat{x}}\textrm{FL}(\hat{x}, x=1)
+    &amp;= - \frac{\partial}{\partial \hat{x}} (1 - p(\hat{x}))^\gamma \ln p(\hat{x}) \\
+    &amp;= - \overline{p}(\hat{x}) \left[ 
+        \overline{p}(\hat{x})^\gamma - \gamma \overline{p}(\hat{x})^{\gamma - 1} p(\hat{x}) \ln p(\hat{x})
+    \right]
+\end{split}\]</div>
+<p>where the part in square brackets is due to the Focal loss modification of BCE.
+I have used the standard <span class="math notranslate nohighlight">\(p(\hat{x}) \equiv 1 / (1+e^{-\hat{x}})\)</span> and
+<span class="math notranslate nohighlight">\(\overline{p}(\hat{x}) \equiv 1 / (1+e^{\hat{x}})\)</span>
+which gives the helpful identities <span class="math notranslate nohighlight">\(1-p(\hat{x}) = \overline{p}(\hat{x})\)</span> and
+<span class="math notranslate nohighlight">\(\partial \ln p(\hat{x}) / \partial \hat{x} = \overline{p}(\hat{x})\)</span>.
+The second step is to match this gradient to the gradient of an L2 loss. This
+matching provides the fictituous target point <span class="math notranslate nohighlight">\(t_2\)</span> for the L2 regression:</p>
+<div class="math notranslate nohighlight">
+\[
+    t_2 = \hat{x} + \overline{p}(\hat{x}) \left[ 
+        \overline{p}(\hat{x})^\gamma - \gamma \overline{p}(\hat{x})^{\gamma - 1} p(\hat{x}) \ln p(\hat{x})
+    \right]
+\]</div>
+<p>This target point depends on the prediction <span class="math notranslate nohighlight">\(\hat{x}\)</span> but it is still a target as
+far as the L2 loss is concerned, i.e. the gradients on <span class="math notranslate nohighlight">\(\hat{x}\)</span> are detached and,
+therefore, there are no gradients back-propagating through <span class="math notranslate nohighlight">\(t_2\)</span>.</p>
+<p>Finally, as we have cast classification to an exactly matched regression
+problem, we are in a position to apply Gaussian uncertainties on this
+L2 regression loss. There is, of course, no good interpretation for what
+this uncertainty represents in the space before the mapping.
+We use a single predicted <span class="math notranslate nohighlight">\(\hat{b}\)</span> for both the confidence and regression
+uncertainties and in that way achieved our goal: only when we have both
+good confidence and good regression predictions will our network reduce its
+predictions of <span class="math notranslate nohighlight">\(\hat{b}\)</span>.</p>
+</div>
 <div class="section" id="training-crop-size">
 <h2>Training Crop Size<a class="headerlink" href="#training-crop-size" title="Permalink to this headline">¶</a></h2>
 <p>Training and evaluation image sizes are <em>unrelated</em> in fully convolutional architectures like OpenPifPaf. <em>Instance size distribution</em> between training and evaluation needs to be preserved. The size of the image that surrounds the instance to detect has little impact: for humans of height 100px, it does not matter whether that is inside a <span class="math notranslate nohighlight">\(640\times480\)</span> image or inside a 4k or 8k image. Therefore, you can keep the size of your training crops (selected with <code class="docutils literal notranslate"><span class="pre">--square-edge</span></code>) quite small even when evaluating on large images. The default is <code class="docutils literal notranslate"><span class="pre">--square-edge=385</span></code> for <code class="docutils literal notranslate"><span class="pre">cocokp</span></code> and that is reasonable when most of the humans are not larger than 300px during evaluation.
@@ -468,8 +573,8 @@ Here is the corresponding predict command for the <a class="reference external" 
 We found that for stable training, the learning rate <span class="math notranslate nohighlight">\(\lambda\)</span>,
 the <code class="docutils literal notranslate"><span class="pre">clip-grad-value</span></code> <span class="math notranslate nohighlight">\(c\)</span> and the <span class="math notranslate nohighlight">\(\epsilon\)</span> from the denominator of the
 BatchNorm should obey:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1165b087-a464-450d-b8fe-8ca575ff8c54">
-<span class="eqno">(1)<a class="headerlink" href="#equation-1165b087-a464-450d-b8fe-8ca575ff8c54" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1681c7ae-47d6-4b48-a23a-137e1609b65f">
+<span class="eqno">(1)<a class="headerlink" href="#equation-1681c7ae-47d6-4b48-a23a-137e1609b65f" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \lambda \cdot c &amp;\leq \sqrt{\epsilon}
 \end{align}\]</div>
 <p>where the default <span class="math notranslate nohighlight">\(\epsilon\)</span> is <span class="math notranslate nohighlight">\(10^{-4}\)</span> (different from the PyTorch default).
@@ -488,7 +593,7 @@ That makes their training characteristics different from ShuffleNet (i.e. they l
 </div>
 <div class="section" id="logs">
 <h2>Logs<a class="headerlink" href="#logs" title="Permalink to this headline">¶</a></h2>
-<p>For reference, check out the log files of the pretrained models. Models with their log files are shared as release “Assets” in the separate <a class="reference external" href="https://github.com/vita-epfl/openpifpaf-torchhub">openpifpaf-torchhub</a> repository: click on “releases” and expand “Assets” on the latest release.</p>
+<p>For reference, check out the log files of the pretrained models. Models with their log files are shared as release “Assets” in the separate <a class="reference external" href="https://github.com/openpifpaf/torchhub">openpifpaf/torchhub</a> repository: click on “releases” and expand “Assets” on the latest release.</p>
 <p>To visualize log files with <a class="reference internal" href="cli_help.html#cli-help-logs"><span class="std std-ref">openpifpaf.logs</span></a>:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3 -m openpifpaf.logs <span class="se">\</span>
   outputs/resnet50block5-pif-paf-edge401-190424-122009.pkl.log <span class="se">\</span>
@@ -678,7 +783,7 @@ srun --gpu-bind<span class="o">=</span>closest singularity <span class="nb">exec
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         

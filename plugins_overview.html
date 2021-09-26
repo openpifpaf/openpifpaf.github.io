@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -73,6 +73,10 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
       <img src="_static/logo.png" class="logo" alt="logo">
       
       
@@ -117,6 +121,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="predict_api.html">
    Prediction API
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="compute.html">
+   Compute
   </a>
  </li>
  <li class="toctree-l1">
@@ -388,6 +397,9 @@
  &#39;cocokp&#39;: openpifpaf.plugins.coco.cocokp.CocoKp,
  &#39;crowdpose&#39;: openpifpaf.plugins.crowdpose.module.CrowdPose,
  &#39;nuscenes&#39;: openpifpaf.plugins.nuscenes.nuscenes.NuScenes,
+ &#39;posetrack2018&#39;: openpifpaf.plugins.posetrack.posetrack2018.Posetrack2018,
+ &#39;posetrack2017&#39;: openpifpaf.plugins.posetrack.posetrack2017.Posetrack2017,
+ &#39;cocokpst&#39;: openpifpaf.plugins.posetrack.cocokpst.CocoKpSt,
  &#39;wholebody&#39;: openpifpaf.plugins.wholebody.wholebody.Wholebody}
 </pre></div>
 </div>
@@ -400,7 +412,11 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{openpifpaf.decoder.cifcaf.CifCaf, openpifpaf.decoder.cifdet.CifDet}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{openpifpaf.decoder.cifcaf.CifCaf,
+ openpifpaf.decoder.cifcaf.CifCafDense,
+ openpifpaf.decoder.cifdet.CifDet,
+ openpifpaf.decoder.pose_similarity.PoseSimilarity,
+ openpifpaf.decoder.tracking_pose.TrackingPose}
 </pre></div>
 </div>
 </div>
@@ -421,6 +437,7 @@
  openpifpaf.network.basenetworks.SqueezeNet,
  openpifpaf.network.basenetworks.SwinTransformer,
  openpifpaf.network.basenetworks.XCiT,
+ openpifpaf.network.tracking_base.TrackingBase,
  openpifpaf.plugins.cifar10.basenet.Cifar10Net}
 </pre></div>
 </div>
@@ -479,6 +496,9 @@
  &#39;effnetv2_s16_l&#39;: &lt;function openpifpaf.network.factory.&lt;lambda&gt;()&gt;,
  &#39;effnetv2_s16_xl&#39;: &lt;function openpifpaf.network.factory.&lt;lambda&gt;()&gt;,
  &#39;botnet&#39;: &lt;function openpifpaf.network.factory.&lt;lambda&gt;()&gt;,
+ &#39;tshufflenetv2k16&#39;: &lt;function openpifpaf.network.factory.&lt;lambda&gt;()&gt;,
+ &#39;tshufflenetv2k30&#39;: &lt;function openpifpaf.network.factory.&lt;lambda&gt;()&gt;,
+ &#39;tresnet50&#39;: &lt;function openpifpaf.network.factory.&lt;lambda&gt;()&gt;,
  &#39;cifar10net&#39;: &lt;function openpifpaf.plugins.cifar10.register.&lt;locals&gt;.&lt;lambda&gt;()&gt;}
 </pre></div>
 </div>
@@ -491,9 +511,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{openpifpaf.headmeta.Cif: openpifpaf.network.heads.CompositeField3,
- openpifpaf.headmeta.Caf: openpifpaf.network.heads.CompositeField3,
- openpifpaf.headmeta.CifDet: openpifpaf.network.heads.CompositeField3}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{openpifpaf.headmeta.Cif: openpifpaf.network.heads.CompositeField4,
+ openpifpaf.headmeta.Caf: openpifpaf.network.heads.CompositeField4,
+ openpifpaf.headmeta.CifDet: openpifpaf.network.heads.CompositeField4,
+ openpifpaf.headmeta.TSingleImageCif: openpifpaf.network.tracking_heads.TBaseSingleImage,
+ openpifpaf.headmeta.TSingleImageCaf: openpifpaf.network.tracking_heads.TBaseSingleImage,
+ openpifpaf.headmeta.Tcaf: openpifpaf.network.tracking_heads.Tcaf}
 </pre></div>
 </div>
 </div>
@@ -505,9 +528,13 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{openpifpaf.headmeta.Cif: openpifpaf.network.losses.composite.CompositeLoss,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;a&#39;: openpifpaf.network.losses.composite.CompositeLossByComponent,
+ openpifpaf.headmeta.Cif: openpifpaf.network.losses.composite.CompositeLoss,
  openpifpaf.headmeta.Caf: openpifpaf.network.losses.composite.CompositeLoss,
- openpifpaf.headmeta.CifDet: openpifpaf.network.losses.composite.CompositeLoss}
+ openpifpaf.headmeta.CifDet: openpifpaf.network.losses.composite.CompositeLoss,
+ openpifpaf.headmeta.TSingleImageCif: openpifpaf.network.losses.composite.CompositeLoss,
+ openpifpaf.headmeta.TSingleImageCaf: openpifpaf.network.losses.composite.CompositeLoss,
+ openpifpaf.headmeta.Tcaf: openpifpaf.network.losses.composite.CompositeLoss}
 </pre></div>
 </div>
 </div>
@@ -519,7 +546,9 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>set()
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&lt;function openpifpaf.network.model_migration.fix_feature_cache(model)&gt;,
+ &lt;function openpifpaf.network.model_migration.subscribe_cache_reset(model)&gt;,
+ &lt;function openpifpaf.network.model_migration.tcaf_shared_preprocessing(model)&gt;}
 </pre></div>
 </div>
 </div>
@@ -536,23 +565,27 @@
  &#39;shufflenetv2k16-apollo-66&#39;: &#39;http://github.com/DuncanZauss/openpifpaf_assets/releases/download/v0.1.0/sk16_apollo_66kp.pkl&#39;,
  &#39;shufflenetv2k30-apollo-66&#39;: &#39;http://github.com/DuncanZauss/openpifpaf_assets/releases/download/v0.1.0/sk30_apollo_66kp.pkl&#39;,
  &#39;mobilenetv2&#39;: &#39;http://github.com/vita-epfl/openpifpaf-torchhub/releases/download/v0.12a5/mobilenetv2-201112-193315-cocokp-1728a9f5.pkl&#39;,
- &#39;mobilenetv3large&#39;: &#39;http://github.com/vita-epfl/openpifpaf-torchhub/releases/download/v0.12.9/mobilenetv3large-210426-191110-cocokp-o10s-8d9bfba6.pkl&#39;,
- &#39;resnet18&#39;: &lt;object at 0x7f940ede7470&gt;,
- &#39;resnet50&#39;: &#39;http://github.com/vita-epfl/openpifpaf-torchhub/releases/download/v0.12.2/resnet50-210224-202010-cocokp-o10s-d020d7f1.pkl&#39;,
- &#39;resnet101&#39;: &lt;object at 0x7f940ede7470&gt;,
- &#39;resnet152&#39;: &lt;object at 0x7f940ede7470&gt;,
- &#39;shufflenetv2x1&#39;: &lt;object at 0x7f940ede7470&gt;,
- &#39;shufflenetv2x2&#39;: &lt;object at 0x7f940ede7470&gt;,
- &#39;shufflenetv2k16&#39;: &#39;http://github.com/vita-epfl/openpifpaf-torchhub/releases/download/v0.12.6/shufflenetv2k16-210404-110105-cocokp-o10s-f90ed364.pkl&#39;,
+ &#39;mobilenetv3small&#39;: &#39;http://github.com/openpifpaf/torchhub/releases/download/v0.13/mobilenetv3small-210822-213409-cocokp-slurm726252-edge513-o10s-803b24ae.pkl&#39;,
+ &#39;mobilenetv3large&#39;: &#39;http://github.com/openpifpaf/torchhub/releases/download/v0.13/mobilenetv3large-210820-184901-cocokp-slurm725985-edge513-o10s-6c76cbfb.pkl&#39;,
+ &#39;resnet18&#39;: &lt;object at 0x7f9dcc41c700&gt;,
+ &#39;resnet50&#39;: &#39;http://github.com/openpifpaf/torchhub/releases/download/v0.13/resnet50-210830-150728-cocokp-slurm728641-edge513-o10s-ecd30da4.pkl&#39;,
+ &#39;resnet101&#39;: &lt;object at 0x7f9dcc41c700&gt;,
+ &#39;resnet152&#39;: &lt;object at 0x7f9dcc41c700&gt;,
+ &#39;shufflenetv2x1&#39;: &lt;object at 0x7f9dcc41c700&gt;,
+ &#39;shufflenetv2x2&#39;: &lt;object at 0x7f9dcc41c700&gt;,
+ &#39;shufflenetv2k16&#39;: &#39;http://github.com/openpifpaf/torchhub/releases/download/v0.13/shufflenetv2k16-210820-232500-cocokp-slurm726069-edge513-o10s-7189450a.pkl&#39;,
  &#39;shufflenetv2k16-withdense&#39;: &#39;http://github.com/vita-epfl/openpifpaf-torchhub/releases/download/v0.12b4/shufflenetv2k16-210221-131426-cocokp-o10s-627d901e.pkl&#39;,
- &#39;shufflenetv2k30&#39;: &#39;http://github.com/vita-epfl/openpifpaf-torchhub/releases/download/v0.12.6/shufflenetv2k30-210409-024202-cocokp-o10s-f4fb0807.pkl&#39;,
- &#39;shufflenetv2k44&#39;: &lt;object at 0x7f940ede7470&gt;,
+ &#39;shufflenetv2k30&#39;: &#39;http://github.com/openpifpaf/torchhub/releases/download/v0.13/shufflenetv2k30-210821-003923-cocokp-slurm726072-edge513-o10s-5fe1c400.pkl&#39;,
+ &#39;shufflenetv2k44&#39;: &lt;object at 0x7f9dcc41c700&gt;,
  &#39;swin_s&#39;: &#39;http://github.com/dmizr/openpifpaf/releases/download/v0.12.14/swin_s_fpn_lvl_3_lr_5e-5_resumed-d286d41a.pkl&#39;,
  &#39;swin_b&#39;: &#39;http://github.com/dmizr/openpifpaf/releases/download/v0.12.14/swin_b_fpn_lvl_3_lr_5e-5_resumed-fa951ce0.pkl&#39;,
  &#39;swin_t_input_upsample&#39;: &#39;http://github.com/dmizr/openpifpaf/releases/download/v0.12.14/swin_t_input_upsample_no_fpn_lr_5e-5_resumed-e0681112.pkl&#39;,
+ &#39;mobilenetv3small-cocodet&#39;: &#39;http://github.com/openpifpaf/torchhub/releases/download/v0.13/mobilenetv3small-210822-215020-cocodet-slurm726253-5f2c894f.pkl&#39;,
  &#39;resnet18-cocodet&#39;: &#39;http://github.com/openpifpaf/torchhub/releases/download/v0.12.10/resnet18-210526-031303-cocodet-slurm610002-1faf5801.pkl&#39;,
  &#39;resnet50-crowdpose&#39;: &#39;http://github.com/vita-epfl/openpifpaf-torchhub/releases/download/v0.12a7/resnet50-201005-100758-crowdpose-d978a89f.pkl&#39;,
  &#39;shufflenetv2k16-nuscenes&#39;: &#39;http://github.com/DuncanZauss/openpifpaf_assets/releases/download/v0.1.0/nuscenes_sk16.pkl.epoch150&#39;,
+ &#39;tshufflenetv2k16&#39;: &#39;http://github.com/vita-epfl/openpifpaf-torchhub/releases/download/v0.12.2/tshufflenetv2k16-210228-220045-posetrack2018-cocokpst-o10-856584da.pkl&#39;,
+ &#39;tshufflenetv2k30&#39;: &#39;http://github.com/openpifpaf/torchhub/releases/download/v0.12.10/tshufflenetv2k30-210628-075118-posetrack2018-cocokpst-slurm668247-o25-3d734bb8.pkl&#39;,
  &#39;shufflenetv2k16-wholebody&#39;: &#39;http://github.com/DuncanZauss/openpifpaf_assets/releases/download/v0.1.0/sk16_wholebody.pkl&#39;,
  &#39;shufflenetv2k30-wholebody&#39;: &#39;http://github.com/DuncanZauss/openpifpaf_assets/releases/download/v0.1.0/sk30_wholebody.pkl&#39;}
 </pre></div>
@@ -629,7 +662,7 @@
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
