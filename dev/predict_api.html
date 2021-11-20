@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Prediction API &#8212; OpenPifPaf Guide DEV</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet" />
-  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -32,21 +32,21 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -58,7 +58,10 @@
     <link rel="next" title="Compute" href="compute.html" />
     <link rel="prev" title="Examples" href="examples.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -97,7 +100,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Getting Started
  </span>
@@ -114,7 +117,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Chapters
  </span>
@@ -161,7 +164,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Tutorials
  </span>
@@ -208,7 +211,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Reference
  </span>
@@ -225,7 +228,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Development
  </span>
@@ -371,7 +374,7 @@
         
               <div>
                 
-  <div class="section" id="prediction-api">
+  <div class="tex2jax_ignore mathjax_ignore section" id="prediction-api">
 <h1>Prediction API<a class="headerlink" href="#prediction-api" title="Permalink to this headline">¶</a></h1>
 <p>This page documents how you can use OpenPifPaf from your own Python code.
 It focuses on single-image prediction.
@@ -392,8 +395,8 @@ the command line interface.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OpenPifPaf version 0.12.14+95.g6eeffc8
-PyTorch version 1.9.1+cu102
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OpenPifPaf version 0.13.0+1.g35548e1
+PyTorch version 1.10.0+cu102
 </pre></div>
 </div>
 </div>
@@ -448,7 +451,7 @@ PyTorch version 1.9.1+cu102
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;openpifpaf.annotation.Annotation at 0x7fe7f775e1f0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;openpifpaf.annotation.Annotation at 0x7f5557dbc520&gt;
 </pre></div>
 </div>
 </div>
@@ -461,21 +464,21 @@ PyTorch version 1.9.1+cu102
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 3.6017877e+02,  2.9964966e+02,  9.9882096e-01],
-       [ 3.6403540e+02,  2.9479474e+02,  9.5608467e-01],
+       [ 3.6403540e+02,  2.9479474e+02,  9.5608485e-01],
        [ 3.5507379e+02,  2.9503967e+02,  9.7657114e-01],
-       [ 3.6957547e+02,  2.9712772e+02,  8.2811123e-01],
-       [ 3.4776538e+02,  2.9803622e+02,  9.4151694e-01],
-       [ 3.8178818e+02,  3.1739856e+02,  9.3542892e-01],
-       [ 3.4123145e+02,  3.2181036e+02,  9.5376027e-01],
-       [ 3.8760934e+02,  3.4162192e+02,  6.1718613e-01],
-       [ 3.3507935e+02,  3.5091321e+02,  9.6102774e-01],
-       [ 3.7334406e+02,  3.5688284e+02,  4.3560207e-01],
-       [ 3.3581903e+02,  3.6386728e+02,  8.9591748e-01],
-       [ 3.7379736e+02,  3.6283124e+02,  8.5838747e-01],
-       [ 3.5045972e+02,  3.6485587e+02,  9.5851308e-01],
-       [ 3.8885773e+02,  3.6172180e+02,  6.5838033e-01],
-       [ 3.2807556e+02,  3.7470062e+02,  6.8845850e-01],
-       [ 3.3847372e+02,  3.8157913e+02,  3.4106156e-01],
+       [ 3.6957547e+02,  2.9712772e+02,  8.2811117e-01],
+       [ 3.4776541e+02,  2.9803625e+02,  9.4151706e-01],
+       [ 3.8178815e+02,  3.1739850e+02,  9.3542933e-01],
+       [ 3.4123141e+02,  3.2181039e+02,  9.5376027e-01],
+       [ 3.8760931e+02,  3.4162192e+02,  6.1718756e-01],
+       [ 3.3507941e+02,  3.5091321e+02,  9.6102792e-01],
+       [ 3.7334412e+02,  3.5688287e+02,  4.3560398e-01],
+       [ 3.3581900e+02,  3.6386728e+02,  8.9591610e-01],
+       [ 3.7379736e+02,  3.6283124e+02,  8.5838813e-01],
+       [ 3.5045969e+02,  3.6485587e+02,  9.5851332e-01],
+       [ 3.8885773e+02,  3.6172177e+02,  6.5838057e-01],
+       [ 3.2807556e+02,  3.7470059e+02,  6.8845856e-01],
+       [ 3.3847372e+02,  3.8157913e+02,  3.4106129e-01],
        [ 0.0000000e+00, -3.0000000e+00,  0.0000000e+00]], dtype=float32)
 </pre></div>
 </div>
@@ -598,31 +601,22 @@ This is also the basis for the seeds. Both are shown below.</p>
               </div>
               
         
-            
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="examples.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Examples</p>
-            </div>
-        </a>
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="examples.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Examples</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="compute.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Compute</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="compute.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Compute</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
         
         </div>
@@ -647,8 +641,7 @@ This is also the basis for the seeds. Both are shown below.</p>
       </div>
     </div>
   
-  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>
