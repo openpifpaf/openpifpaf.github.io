@@ -476,6 +476,117 @@ into the class constructor:</p>
 
 </dd></dl>
 
+<dl class="py class">
+<dt class="sig sig-object py" id="openpifpaf.Predictor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">openpifpaf.</span></span><span class="sig-name descname"><span class="pre">Predictor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">checkpoint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">head_metas</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">json_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visualize_image</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visualize_processed_image</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.Predictor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convenience class to predict from various inputs with a common configuration.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="openpifpaf.Predictor.batch_size">
+<span class="sig-name descname"><span class="pre">batch_size</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#openpifpaf.Predictor.batch_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>batch size</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="openpifpaf.Predictor.device">
+<span class="sig-name descname"><span class="pre">device</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">device(type='cpu')</span></em><a class="headerlink" href="#openpifpaf.Predictor.device" title="Permalink to this definition">¶</a></dt>
+<dd><p>device</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="openpifpaf.Predictor.fast_rescaling">
+<span class="sig-name descname"><span class="pre">fast_rescaling</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#openpifpaf.Predictor.fast_rescaling" title="Permalink to this definition">¶</a></dt>
+<dd><p>fast rescaling</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="openpifpaf.Predictor.loader_workers">
+<span class="sig-name descname"><span class="pre">loader_workers</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#openpifpaf.Predictor.loader_workers" title="Permalink to this definition">¶</a></dt>
+<dd><p>loader workers</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="openpifpaf.Predictor.long_edge">
+<span class="sig-name descname"><span class="pre">long_edge</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#openpifpaf.Predictor.long_edge" title="Permalink to this definition">¶</a></dt>
+<dd><p>long edge</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="openpifpaf.Predictor.cli">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cli</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parser</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">argparse.ArgumentParser</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_loader_workers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.Predictor.cli" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add command line arguments.</p>
+<p>When using this class together with datasets (e.g. in eval),
+skip the cli arguments for batch size and loader workers as those
+will be provided via the datasets module.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="openpifpaf.Predictor.configure">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">configure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">argparse.Namespace</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.Predictor.configure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configure from command line parser.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="openpifpaf.Predictor.dataset">
+<span class="sig-name descname"><span class="pre">dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.Predictor.dataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predict from a dataset.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="openpifpaf.Predictor.enumerated_dataloader">
+<span class="sig-name descname"><span class="pre">enumerated_dataloader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">enumerated_dataloader</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.Predictor.enumerated_dataloader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predict from an enumerated dataloader.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="openpifpaf.Predictor.dataloader">
+<span class="sig-name descname"><span class="pre">dataloader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataloader</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.Predictor.dataloader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predict from a dataloader.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="openpifpaf.Predictor.image">
+<span class="sig-name descname"><span class="pre">image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.Predictor.image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predict from an image file name.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="openpifpaf.Predictor.images">
+<span class="sig-name descname"><span class="pre">images</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_names</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.Predictor.images" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predict from image file names.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="openpifpaf.Predictor.pil_image">
+<span class="sig-name descname"><span class="pre">pil_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.Predictor.pil_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predict from a Pillow image.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="openpifpaf.Predictor.pil_images">
+<span class="sig-name descname"><span class="pre">pil_images</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pil_images</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.Predictor.pil_images" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predict from Pillow images.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="openpifpaf.Predictor.numpy_image">
+<span class="sig-name descname"><span class="pre">numpy_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.Predictor.numpy_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predict from a numpy image.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="openpifpaf.Predictor.numpy_images">
+<span class="sig-name descname"><span class="pre">numpy_images</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">numpy_images</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.Predictor.numpy_images" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predict from numpy images.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="openpifpaf.Predictor.image_file">
+<span class="sig-name descname"><span class="pre">image_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_pointer</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.Predictor.image_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predict from an opened image file pointer.</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 <div class="section" id="module-openpifpaf.datasets">
 <span id="openpifpaf-datasets"></span><span id="api-datasets"></span><h2>openpifpaf.datasets<a class="headerlink" href="#module-openpifpaf.datasets" title="Permalink to this headline">¶</a></h2>
