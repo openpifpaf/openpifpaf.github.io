@@ -473,7 +473,25 @@ python -c &quot;import torch; print(torch.cuda.is_available())&quot;
 <div class="section" id="video-output-error-with-openpifpaf-video-command">
 <h2>Video output error with openpifpaf.video command<a class="headerlink" href="#video-output-error-with-openpifpaf-video-command" title="Permalink to this headline">¶</a></h2>
 <p>Sometimes your system’s ffmpeg codecs are not set up. Check that you can run
-<code class="docutils literal notranslate"><span class="pre">ffmpeg</span> <span class="pre">-codecs</span></code> and that you have an <code class="docutils literal notranslate"><span class="pre">h264</span></code> encoder installed.</p>
+<code class="docutils literal notranslate"><span class="pre">ffmpeg</span> <span class="pre">-codecs</span></code> and that you have an <code class="docutils literal notranslate"><span class="pre">h264</span></code> encoder installed. In addition,
+the below code is a minimal matplotlib example to write a video output
+that should run without errors on your system:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.animation</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">writer</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">animation</span><span class="o">.</span><span class="n">writers</span><span class="p">[</span><span class="s1">&#39;ffmpeg&#39;</span><span class="p">](</span><span class="n">fps</span><span class="o">=</span><span class="mf">10.0</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">writer</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="s1">&#39;test_animation_output.mp4&#39;</span><span class="p">)</span>
+<span class="n">writer</span><span class="o">.</span><span class="n">grab_frame</span><span class="p">()</span>
+<span class="n">writer</span><span class="o">.</span><span class="n">finish</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/faq_11_0.png" src="_images/faq_11_0.png" />
+</div>
+</div>
 </div>
 <div class="section" id="further-resources">
 <h2>Further resources<a class="headerlink" href="#further-resources" title="Permalink to this headline">¶</a></h2>
