@@ -376,6 +376,21 @@
    Python.h or gcc is missing
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ssl-error">
+   SSL error
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-output-error-with-openpifpaf-video-command">
+   Video output error with openpifpaf.video command
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#further-resources">
+   Further resources
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -450,6 +465,28 @@ python -c &quot;import torch; print(torch.cuda.is_available())&quot;
 <h2>Python.h or gcc is missing<a class="headerlink" href="#python-h-or-gcc-is-missing" title="Permalink to this headline">¶</a></h2>
 <p>On most systems, you should be able to use a binary wheel (a pre-built binary compilation) so that you don’t need to install from source.</p>
 <p>Source installation might fail with an exception complaining about a missing <code class="docutils literal notranslate"><span class="pre">Python.h</span></code> file or missing <code class="docutils literal notranslate"><span class="pre">gcc</span></code>. This means that you need the development files for Python itself and a C compiler. On Ubuntu systems, you can get this with <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">python3-dev</span></code>. For more operating systems, there is a good <a class="reference external" href="https://stackoverflow.com/questions/21530577/fatal-error-python-h-no-such-file-or-directory">StackOverflow post</a> on the topic.</p>
+</div>
+<div class="section" id="ssl-error">
+<h2>SSL error<a class="headerlink" href="#ssl-error" title="Permalink to this headline">¶</a></h2>
+<p>Your Python environment might not be able to do web requests. You can download a checkpoint yourself in the browser and run all examples with <code class="docutils literal notranslate"><span class="pre">--checkpoint</span> <span class="pre">&lt;pathtoyourcheckpoint&gt;</span></code> command line argument.</p>
+</div>
+<div class="section" id="video-output-error-with-openpifpaf-video-command">
+<h2>Video output error with openpifpaf.video command<a class="headerlink" href="#video-output-error-with-openpifpaf-video-command" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes your system’s ffmpeg codecs are not set up. Check that you can run
+<code class="docutils literal notranslate"><span class="pre">ffmpeg</span> <span class="pre">-codecs</span></code> and that you have an <code class="docutils literal notranslate"><span class="pre">h264</span></code> encoder installed.</p>
+</div>
+<div class="section" id="further-resources">
+<h2>Further resources<a class="headerlink" href="#further-resources" title="Permalink to this headline">¶</a></h2>
+<p>If nothing helped, check out the system configuration that is printed in
+the <a class="reference internal" href="dev.html#build-environment"><span class="std std-ref">dev/Build Environment</span></a> section. Run those
+commands on your system and compare the outputs to see whether there are any
+significant differences.</p>
+<p>We also have many
+<a class="reference external" href="https://github.com/openpifpaf/openpifpaf/issues?q=is%3Aissue+is%3Aclosed">closed issues</a>
+that you can search on GitHub and that
+might contain the answer you are looking for. Also feel free to open a new
+issue and provide as much information as possible about your problem and
+the environment you are running in.</p>
 </div>
 </div>
 
