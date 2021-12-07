@@ -765,18 +765,6 @@ SqueezeNet:
   --squeezenet-no-pretrain
                         use randomly initialized models (default: True)
 
-MobileNetV2:
-  --mobilenetv2-no-pretrain
-                        use randomly initialized models (default: True)
-
-MobileNetV3:
-  --mobilenetv3-no-pretrain
-                        use randomly initialized models (default: True)
-
-ShuffleNetv2:
-  --shufflenetv2-no-pretrain
-                        use randomly initialized models (default: True)
-
 shufflenetv2k:
   --shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE
                         stride of the optional 2nd input convolution (default:
@@ -792,6 +780,18 @@ shufflenetv2k:
   --shufflenetv2k-instance-norm
   --shufflenetv2k-group-norm
   --shufflenetv2k-leaky-relu
+
+ShuffleNetv2:
+  --shufflenetv2-no-pretrain
+                        use randomly initialized models (default: True)
+
+MobileNetV2:
+  --mobilenetv2-no-pretrain
+                        use randomly initialized models (default: True)
+
+MobileNetV3:
+  --mobilenetv3-no-pretrain
+                        use randomly initialized models (default: True)
 
 ResNet:
   --resnet-no-pretrain  use randomly initialized models (default: True)
@@ -869,9 +869,9 @@ network configuration:
 
 decoder configuration:
   --decoder DECODER [DECODER ...]
-                        Decoders to be considered: [&#39;cifcafdense&#39;,
-                        &#39;trackingpose&#39;, &#39;cifcaf&#39;, &#39;posesimilarity&#39;, &#39;cifdet&#39;].
-                        (default: None)
+                        Decoders to be considered: [&#39;cifcafdense&#39;, &#39;cifcaf&#39;,
+                        &#39;cifdet&#39;, &#39;trackingpose&#39;, &#39;posesimilarity&#39;]. (default:
+                        None)
   --seed-threshold SEED_THRESHOLD
                         minimum threshold for seeds (default: 0.2)
   --instance-threshold INSTANCE_THRESHOLD
@@ -901,10 +901,6 @@ Decoder for tracking:
 CifCafDense decoder:
   --dense-connections [DENSE_CONNECTIONS]
 
-trackingpose decoder:
-  --trackingpose-track-recovery
-  --trackingpose-single-seed
-
 CifCaf decoder:
   --force-complete-pose
   --force-complete-caf-th FORCE_COMPLETE_CAF_TH
@@ -929,6 +925,10 @@ CifCaf decoder:
   --ablation-cifseeds-no-rescore
   --ablation-caf-no-rescore
   --ablation-independent-kp
+
+trackingpose decoder:
+  --trackingpose-track-recovery
+  --trackingpose-single-seed
 
 PoseSimilarity:
   --posesimilarity-distance {crafted,euclidean,euclidean4,oks}
@@ -1062,25 +1062,12 @@ logger:
   --debug               print debug messages (default: False)
   --log-stats           enable stats logging (default: False)
 
-SwinTransformer:
-  --swin-drop-path-rate SWIN_DROP_PATH_RATE
-                        drop path (stochastic depth) rate (default: 0.2)
-  --swin-input-upsample
-                        scales input image by a factor of 2 for higher res
-                        feature maps (default: False)
-  --swin-use-fpn        adds a FPN after the Swin network to obtain higher res
-                        feature maps (default: False)
-  --swin-fpn-out-channels SWIN_FPN_OUT_CHANNELS
-                        output channels of the FPN (None to use the default
-                        number of channels of the Swin network) (default:
-                        None)
-  --swin-fpn-level SWIN_FPN_LEVEL
-                        FPN pyramid level, must be between 1 (highest
-                        resolution) and 4 (lowest resolution) (default: 3)
-  --swin-no-pretrain    use randomly initialized models (default: True)
+MobileNetV2:
+  --mobilenetv2-no-pretrain
+                        use randomly initialized models (default: True)
 
-SqueezeNet:
-  --squeezenet-no-pretrain
+MobileNetV3:
+  --mobilenetv3-no-pretrain
                         use randomly initialized models (default: True)
 
 shufflenetv2k:
@@ -1101,14 +1088,6 @@ shufflenetv2k:
 
 ShuffleNetv2:
   --shufflenetv2-no-pretrain
-                        use randomly initialized models (default: True)
-
-MobileNetV2:
-  --mobilenetv2-no-pretrain
-                        use randomly initialized models (default: True)
-
-MobileNetV3:
-  --mobilenetv3-no-pretrain
                         use randomly initialized models (default: True)
 
 ResNet:
@@ -1133,6 +1112,27 @@ XCiT:
   --xcit-out-maxpool    adds max-pooling to backbone output feature map
                         (default: False)
   --xcit-no-pretrain    use randomly initialized models (default: True)
+
+SwinTransformer:
+  --swin-drop-path-rate SWIN_DROP_PATH_RATE
+                        drop path (stochastic depth) rate (default: 0.2)
+  --swin-input-upsample
+                        scales input image by a factor of 2 for higher res
+                        feature maps (default: False)
+  --swin-use-fpn        adds a FPN after the Swin network to obtain higher res
+                        feature maps (default: False)
+  --swin-fpn-out-channels SWIN_FPN_OUT_CHANNELS
+                        output channels of the FPN (None to use the default
+                        number of channels of the Swin network) (default:
+                        None)
+  --swin-fpn-level SWIN_FPN_LEVEL
+                        FPN pyramid level, must be between 1 (highest
+                        resolution) and 4 (lowest resolution) (default: 3)
+  --swin-no-pretrain    use randomly initialized models (default: True)
+
+SqueezeNet:
+  --squeezenet-no-pretrain
+                        use randomly initialized models (default: True)
 
 CompositeField4:
   --cf4-dropout CF4_DROPOUT
@@ -1973,9 +1973,9 @@ data module wholebody:
 
 decoder configuration:
   --decoder DECODER [DECODER ...]
-                        Decoders to be considered: [&#39;trackingpose&#39;,
-                        &#39;cifcafdense&#39;, &#39;posesimilarity&#39;, &#39;cifcaf&#39;, &#39;cifdet&#39;].
-                        (default: None)
+                        Decoders to be considered: [&#39;cifcafdense&#39;, &#39;cifcaf&#39;,
+                        &#39;cifdet&#39;, &#39;trackingpose&#39;, &#39;posesimilarity&#39;]. (default:
+                        None)
   --seed-threshold SEED_THRESHOLD
                         minimum threshold for seeds (default: 0.2)
   --instance-threshold INSTANCE_THRESHOLD
@@ -2002,16 +2002,8 @@ Decoder for tracking:
   --tr-minimum-threshold TR_MINIMUM_THRESHOLD
                         minimum-pose threshold for tracking. (default: 0.1)
 
-trackingpose decoder:
-  --trackingpose-track-recovery
-  --trackingpose-single-seed
-
 CifCafDense decoder:
   --dense-connections [DENSE_CONNECTIONS]
-
-PoseSimilarity:
-  --posesimilarity-distance {crafted,euclidean,euclidean4,oks}
-  --posesimilarity-oks-inflate POSESIMILARITY_OKS_INFLATE
 
 CifCaf decoder:
   --force-complete-pose
@@ -2038,10 +2030,43 @@ CifCaf decoder:
   --ablation-caf-no-rescore
   --ablation-independent-kp
 
+trackingpose decoder:
+  --trackingpose-track-recovery
+  --trackingpose-single-seed
+
+PoseSimilarity:
+  --posesimilarity-distance {crafted,euclidean,euclidean4,oks}
+  --posesimilarity-oks-inflate POSESIMILARITY_OKS_INFLATE
+
 logger:
   -q, --quiet           only show warning messages or above (default: False)
   --debug               print debug messages (default: False)
   --log-stats           enable stats logging (default: False)
+
+SwinTransformer:
+  --swin-drop-path-rate SWIN_DROP_PATH_RATE
+                        drop path (stochastic depth) rate (default: 0.2)
+  --swin-input-upsample
+                        scales input image by a factor of 2 for higher res
+                        feature maps (default: False)
+  --swin-use-fpn        adds a FPN after the Swin network to obtain higher res
+                        feature maps (default: False)
+  --swin-fpn-out-channels SWIN_FPN_OUT_CHANNELS
+                        output channels of the FPN (None to use the default
+                        number of channels of the Swin network) (default:
+                        None)
+  --swin-fpn-level SWIN_FPN_LEVEL
+                        FPN pyramid level, must be between 1 (highest
+                        resolution) and 4 (lowest resolution) (default: 3)
+  --swin-no-pretrain    use randomly initialized models (default: True)
+
+SqueezeNet:
+  --squeezenet-no-pretrain
+                        use randomly initialized models (default: True)
+
+ShuffleNetv2:
+  --shufflenetv2-no-pretrain
+                        use randomly initialized models (default: True)
 
 MobileNetV2:
   --mobilenetv2-no-pretrain
@@ -2067,10 +2092,6 @@ shufflenetv2k:
   --shufflenetv2k-group-norm
   --shufflenetv2k-leaky-relu
 
-ShuffleNetv2:
-  --shufflenetv2-no-pretrain
-                        use randomly initialized models (default: True)
-
 ResNet:
   --resnet-no-pretrain  use randomly initialized models (default: True)
   --resnet-pool0-stride RESNET_POOL0_STRIDE
@@ -2093,27 +2114,6 @@ XCiT:
   --xcit-out-maxpool    adds max-pooling to backbone output feature map
                         (default: False)
   --xcit-no-pretrain    use randomly initialized models (default: True)
-
-SwinTransformer:
-  --swin-drop-path-rate SWIN_DROP_PATH_RATE
-                        drop path (stochastic depth) rate (default: 0.2)
-  --swin-input-upsample
-                        scales input image by a factor of 2 for higher res
-                        feature maps (default: False)
-  --swin-use-fpn        adds a FPN after the Swin network to obtain higher res
-                        feature maps (default: False)
-  --swin-fpn-out-channels SWIN_FPN_OUT_CHANNELS
-                        output channels of the FPN (None to use the default
-                        number of channels of the Swin network) (default:
-                        None)
-  --swin-fpn-level SWIN_FPN_LEVEL
-                        FPN pyramid level, must be between 1 (highest
-                        resolution) and 4 (lowest resolution) (default: 3)
-  --swin-no-pretrain    use randomly initialized models (default: True)
-
-SqueezeNet:
-  --squeezenet-no-pretrain
-                        use randomly initialized models (default: True)
 
 CompositeField4:
   --cf4-dropout CF4_DROPOUT
@@ -2441,6 +2441,9 @@ python3 -m openpifpaf.export_coreml --help
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>usage: python3 -m openpifpaf.export_coreml [-h] [--version]
+                                           [--xcit-out-channels XCIT_OUT_CHANNELS]
+                                           [--xcit-out-maxpool]
+                                           [--xcit-no-pretrain]
                                            [--swin-drop-path-rate SWIN_DROP_PATH_RATE]
                                            [--swin-input-upsample]
                                            [--swin-use-fpn]
@@ -2449,8 +2452,6 @@ python3 -m openpifpaf.export_coreml --help
                                            [--swin-no-pretrain]
                                            [--squeezenet-no-pretrain]
                                            [--shufflenetv2-no-pretrain]
-                                           [--mobilenetv2-no-pretrain]
-                                           [--mobilenetv3-no-pretrain]
                                            [--shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE]
                                            [--shufflenetv2k-input-conv2-outchannels SHUFFLENETV2K_INPUT_CONV2_OUTCHANNELS]
                                            [--shufflenetv2k-stage4-dilation SHUFFLENETV2K_STAGE4_DILATION]
@@ -2458,15 +2459,14 @@ python3 -m openpifpaf.export_coreml --help
                                            [--shufflenetv2k-conv5-as-stage]
                                            [--shufflenetv2k-instance-norm | --shufflenetv2k-group-norm]
                                            [--shufflenetv2k-leaky-relu]
+                                           [--mobilenetv2-no-pretrain]
+                                           [--mobilenetv3-no-pretrain]
                                            [--resnet-no-pretrain]
                                            [--resnet-pool0-stride RESNET_POOL0_STRIDE]
                                            [--resnet-input-conv-stride RESNET_INPUT_CONV_STRIDE]
                                            [--resnet-input-conv2-stride RESNET_INPUT_CONV2_STRIDE]
                                            [--resnet-block5-dilation RESNET_BLOCK5_DILATION]
                                            [--resnet-remove-last-block]
-                                           [--xcit-out-channels XCIT_OUT_CHANNELS]
-                                           [--xcit-out-maxpool]
-                                           [--xcit-no-pretrain]
                                            [--cf4-dropout CF4_DROPOUT]
                                            [--cf4-no-inplace-ops]
                                            [--checkpoint CHECKPOINT]
@@ -2488,6 +2488,14 @@ optional arguments:
   --input-width INPUT_WIDTH
   --input-height INPUT_HEIGHT
   --minimum-deployment-target {iOS13,iOS14}
+
+XCiT:
+  --xcit-out-channels XCIT_OUT_CHANNELS
+                        number of output channels for optional projection
+                        layer (None for no projection layer) (default: None)
+  --xcit-out-maxpool    adds max-pooling to backbone output feature map
+                        (default: False)
+  --xcit-no-pretrain    use randomly initialized models (default: True)
 
 SwinTransformer:
   --swin-drop-path-rate SWIN_DROP_PATH_RATE
@@ -2514,14 +2522,6 @@ ShuffleNetv2:
   --shufflenetv2-no-pretrain
                         use randomly initialized models (default: True)
 
-MobileNetV2:
-  --mobilenetv2-no-pretrain
-                        use randomly initialized models (default: True)
-
-MobileNetV3:
-  --mobilenetv3-no-pretrain
-                        use randomly initialized models (default: True)
-
 shufflenetv2k:
   --shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE
                         stride of the optional 2nd input convolution (default:
@@ -2538,6 +2538,14 @@ shufflenetv2k:
   --shufflenetv2k-group-norm
   --shufflenetv2k-leaky-relu
 
+MobileNetV2:
+  --mobilenetv2-no-pretrain
+                        use randomly initialized models (default: True)
+
+MobileNetV3:
+  --mobilenetv3-no-pretrain
+                        use randomly initialized models (default: True)
+
 ResNet:
   --resnet-no-pretrain  use randomly initialized models (default: True)
   --resnet-pool0-stride RESNET_POOL0_STRIDE
@@ -2552,14 +2560,6 @@ ResNet:
   --resnet-remove-last-block
                         create a network without the last block (default:
                         False)
-
-XCiT:
-  --xcit-out-channels XCIT_OUT_CHANNELS
-                        number of output channels for optional projection
-                        layer (None for no projection layer) (default: None)
-  --xcit-out-maxpool    adds max-pooling to backbone output feature map
-                        (default: False)
-  --xcit-no-pretrain    use randomly initialized models (default: True)
 
 CompositeField4:
   --cf4-dropout CF4_DROPOUT
