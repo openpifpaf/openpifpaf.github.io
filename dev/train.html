@@ -580,8 +580,8 @@ Here is the corresponding predict command for the <a class="reference external" 
 We found that for stable training, the learning rate <span class="math notranslate nohighlight">\(\lambda\)</span>,
 the <code class="docutils literal notranslate"><span class="pre">clip-grad-value</span></code> <span class="math notranslate nohighlight">\(c\)</span> and the <span class="math notranslate nohighlight">\(\epsilon\)</span> from the denominator of the
 BatchNorm should obey:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8d0b382f-6204-44fd-a1ff-c2a9bc661401">
-<span class="eqno">(1)<a class="headerlink" href="#equation-8d0b382f-6204-44fd-a1ff-c2a9bc661401" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1bc5a6ed-75e6-48fb-8099-6d087d9468cc">
+<span class="eqno">(1)<a class="headerlink" href="#equation-1bc5a6ed-75e6-48fb-8099-6d087d9468cc" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \lambda \cdot c &amp;\leq \sqrt{\epsilon}
 \end{align}\]</div>
 <p>where the default <span class="math notranslate nohighlight">\(\epsilon\)</span> is <span class="math notranslate nohighlight">\(10^{-4}\)</span> (different from the PyTorch default).
