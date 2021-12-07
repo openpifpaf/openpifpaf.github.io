@@ -371,6 +371,11 @@
    Using only a subset of keypoints
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#links">
+   Links
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -480,6 +485,10 @@ To train you first need to download the wholebody into your MS COCO dataset fold
 <li><p>In the <a class="reference external" href="https://github.com/openpifpaf/openpifpaf/blob/main/openpifpaf/plugins/wholebody/constants.py">constants.py</a> file comment out all the parts of the skeleton, pose, HFLIP, SIGMA and keypoint names that you do not need. All these constants are already split up in the body parts. The numbering of the joints may now be different (e.g. when you discard the face kpts, but keep the hand kpts), so you need to adjust the numbers in the skeleton definitions to be consisten with the new numbering of the joints.</p></li>
 <li><p>That’s it! You can train the model with a subset of keypoints.</p></li>
 </ul>
+</div>
+<div class="section" id="links">
+<h2>Links<a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://huggingface.co/spaces/akhaliq/Keypoint_Communities">HuggingFace Demo</a>, <a class="reference external" href="https://paperswithcode.com/paper/keypoint-communities">PapersWithCode</a>.</p>
 </div>
 </div>
 

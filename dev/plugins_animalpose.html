@@ -347,11 +347,6 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#setup">
-   Setup
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#predict">
    Predict
   </a>
@@ -395,13 +390,6 @@
 <div><p><strong>OpenPifPaf: Composite Fields for Semantic Keypoint Detection and Spatio-Temporal Association</strong><br />
 <em><a class="reference external" href="https://www.svenkreiss.com">Sven Kreiss</a>, <a class="reference external" href="https://scholar.google.com/citations?user=f-4YHeMAAAAJ&amp;hl=en">Lorenzo Bertoni</a>, <a class="reference external" href="https://scholar.google.com/citations?user=UIhXQ64AAAAJ&amp;hl=en">Alexandre Alahi</a></em>, 2021.</p>
 </div></blockquote>
-<div class="section" id="setup">
-<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip3 install openpifpaf
-</pre></div>
-</div>
-<p>(in case using CUDA 9 specify: <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">torch==1.7.1+cu92</span> <span class="pre">torchvision==0.8.2+cu92</span> <span class="pre">-f</span> <span class="pre">https://download.pytorch.org/whl/torch_stable.html</span></code>)</p>
-</div>
 <div class="section" id="predict">
 <h2>Predict<a class="headerlink" href="#predict" title="Permalink to this headline">¶</a></h2>
 <p>Prediction runs as standard openpifpaf predict command; the only difference is the pretrained model.
