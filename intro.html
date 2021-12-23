@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Introduction &#8212; OpenPifPaf Guide</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet" />
-  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -32,19 +32,19 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -55,7 +55,10 @@
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Prediction" href="predict_cli.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -94,7 +97,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Getting Started
  </span>
@@ -111,7 +114,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Chapters
  </span>
@@ -158,7 +161,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Tutorials
  </span>
@@ -205,7 +208,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Reference
  </span>
@@ -222,7 +225,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Development
  </span>
@@ -367,7 +370,7 @@
         
               <div>
                 
-  <div class="section" id="introduction">
+  <div class="tex2jax_ignore mathjax_ignore section" id="introduction">
 <span id="id1"></span><h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
 <p>Continuously tested on Linux, MacOS and Windows:
 <a class="reference external" href="https://github.com/openpifpaf/openpifpaf/actions?query=workflow%3ATests"><img alt="Tests" src="https://github.com/openpifpaf/openpifpaf/workflows/Tests/badge.svg?branch=main" /></a>
@@ -417,9 +420,8 @@ Created with
 </div>
 <div class="section" id="install">
 <h2>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h2>
-<p>Python 3 is required. Python 2 is not supported.
-Do not clone this repository
-and make sure there is no folder named <code class="docutils literal notranslate"><span class="pre">openpifpaf</span></code> in your current directory.</p>
+<p>Do not clone this repository.
+Make sure there is no folder named <code class="docutils literal notranslate"><span class="pre">openpifpaf</span></code> in your current directory.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip3 install openpifpaf
 </pre></div>
 </div>
@@ -429,6 +431,8 @@ To modify OpenPifPaf itself, please follow <a class="reference internal" href="d
 <a class="reference external" href="https://github.com/openpifpaf/openpifpafwebdemo">openpifpafwebdemo</a> project.
 Alternatively, <a class="reference internal" href="cli_help.html#cli-help-video"><span class="std std-ref">python3 -m openpifpaf.video</span></a> (requires OpenCV)
 provides a live demo as well.</p>
+<p><em>Only on MacOS (Dec 2021)</em>: There seems to be an issue with Torch 1.10. Please try
+to stick with Torch 1.9 for now.</p>
 </div>
 <div class="section" id="pre-trained-models">
 <h2>Pre-trained Models<a class="headerlink" href="#pre-trained-models" title="Permalink to this headline">¶</a></h2>
@@ -515,6 +519,7 @@ using the command line option <code class="docutils literal notranslate"><span c
 <div class="section" id="related-projects">
 <h2>Related Projects<a class="headerlink" href="#related-projects" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
+<li><p><a class="reference internal" href="plugins_wholebody.html"><span class="doc">Keypoint Communities</span></a>: plugin for wholebody human poses, <a class="reference external" href="https://huggingface.co/spaces/akhaliq/Keypoint_Communities">HuggingFace Demo</a>, <a class="reference external" href="https://paperswithcode.com/paper/keypoint-communities">PapersWithCode</a>.</p></li>
 <li><p><a class="reference external" href="https://neuralet.com/article/pose-estimation-on-nvidia-jetson-platforms-using-openpifpaf/">neuralet</a>: TensorRT execution, including Docker images for NVidia Jetson.</p></li>
 <li><p><a class="reference external" href="https://towardsdatascience.com/fall-detection-using-pose-estimation-a8f7fd77081d">fall detection using pose estimation</a>: illustrated with many example video clips.</p></li>
 <li><p><a class="reference external" href="https://medium.com/&#64;_samkitjain/physio-pose-a-virtual-physiotherapy-assistant-7d1c17db3159">physio pose</a>: “A virtual physiotherapy assistant”.</p></li>
@@ -536,16 +541,22 @@ at the top and selecting a cloud provider like <em>Binder</em>.
 The code on the page is all the code required to reproduce that particular page.</p>
 </div>
 <div class="section" id="citation">
-<h2>Citation<a class="headerlink" href="#citation" title="Permalink to this headline">¶</a></h2>
+<span id="id2"></span><h2>Citation<a class="headerlink" href="#citation" title="Permalink to this headline">¶</a></h2>
+<p>Reference <span id="id3">[<a class="reference internal" href="bibliography.html#id3">KBA21</a>]</span>,
+<a class="reference external" href="https://arxiv.org/abs/2103.02440">arxiv.org/abs/2103.02440</a></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@article</span><span class="p">{</span><span class="n">kreiss2021openpifpaf</span><span class="p">,</span>
   <span class="n">title</span> <span class="o">=</span> <span class="p">{{</span><span class="n">OpenPifPaf</span><span class="p">:</span> <span class="n">Composite</span> <span class="n">Fields</span> <span class="k">for</span> <span class="n">Semantic</span> <span class="n">Keypoint</span> <span class="n">Detection</span> <span class="ow">and</span> <span class="n">Spatio</span><span class="o">-</span><span class="n">Temporal</span> <span class="n">Association</span><span class="p">}},</span>
   <span class="n">author</span> <span class="o">=</span> <span class="p">{</span><span class="n">Sven</span> <span class="n">Kreiss</span> <span class="ow">and</span> <span class="n">Lorenzo</span> <span class="n">Bertoni</span> <span class="ow">and</span> <span class="n">Alexandre</span> <span class="n">Alahi</span><span class="p">},</span>
-  <span class="n">journal</span> <span class="o">=</span> <span class="p">{</span><span class="n">arXiv</span> <span class="n">preprint</span> <span class="n">arXiv</span><span class="p">:</span><span class="mf">2103.02440</span><span class="p">},</span>
+  <span class="n">journal</span> <span class="o">=</span> <span class="p">{</span><span class="n">IEEE</span> <span class="n">Transactions</span> <span class="n">on</span> <span class="n">Intelligent</span> <span class="n">Transportation</span> <span class="n">Systems</span><span class="p">},</span>
+  <span class="n">pages</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="o">-</span><span class="mi">14</span><span class="p">},</span>
   <span class="n">month</span> <span class="o">=</span> <span class="p">{</span><span class="n">March</span><span class="p">},</span>
   <span class="n">year</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2021</span><span class="p">}</span>
 <span class="p">}</span>
-
-<span class="nd">@InProceedings</span><span class="p">{</span><span class="n">kreiss2019pifpaf</span><span class="p">,</span>
+</pre></div>
+</div>
+<p>Reference <span id="id4">[<a class="reference internal" href="bibliography.html#id2">KBA19</a>]</span>,
+<a class="reference external" href="https://arxiv.org/abs/1903.06593">arxiv.org/abs/1903.06593</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@InProceedings</span><span class="p">{</span><span class="n">kreiss2019pifpaf</span><span class="p">,</span>
   <span class="n">author</span> <span class="o">=</span> <span class="p">{</span><span class="n">Kreiss</span><span class="p">,</span> <span class="n">Sven</span> <span class="ow">and</span> <span class="n">Bertoni</span><span class="p">,</span> <span class="n">Lorenzo</span> <span class="ow">and</span> <span class="n">Alahi</span><span class="p">,</span> <span class="n">Alexandre</span><span class="p">},</span>
   <span class="n">title</span> <span class="o">=</span> <span class="p">{{</span><span class="n">PifPaf</span><span class="p">:</span> <span class="n">Composite</span> <span class="n">Fields</span> <span class="k">for</span> <span class="n">Human</span> <span class="n">Pose</span> <span class="n">Estimation</span><span class="p">}},</span>
   <span class="n">booktitle</span> <span class="o">=</span> <span class="p">{</span><span class="n">The</span> <span class="n">IEEE</span> <span class="n">Conference</span> <span class="n">on</span> <span class="n">Computer</span> <span class="n">Vision</span> <span class="ow">and</span> <span class="n">Pattern</span> <span class="n">Recognition</span> <span class="p">(</span><span class="n">CVPR</span><span class="p">)},</span>
@@ -554,7 +565,6 @@ The code on the page is all the code required to reproduce that particular page.
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>References: <span id="id2">[<a class="reference internal" href="bibliography.html#id3">KBA21</a>, <a class="reference internal" href="bibliography.html#id2">KBA19</a>]</span></p>
 </div>
 <div class="section" id="commercial-license">
 <h2>Commercial License<a class="headerlink" href="#commercial-license" title="Permalink to this headline">¶</a></h2>
@@ -596,22 +606,15 @@ Office (<a class="reference external" href="https://tto.epfl.ch/">https://tto.ep
               </div>
               
         
-            
-
-
-
-<div class='prev-next-bottom'>
-    
-     <div id="next">
-        <a class="right-next" href="predict_cli.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Prediction</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='right-next' id="next-link" href="predict_cli.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Prediction</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
         
         </div>
@@ -636,8 +639,7 @@ Office (<a class="reference external" href="https://tto.epfl.ch/">https://tto.ep
       </div>
     </div>
   
-  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

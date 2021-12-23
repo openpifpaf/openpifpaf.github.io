@@ -57,9 +57,8 @@ More demos:
 
 ## Install
 
-Python 3 is required. Python 2 is not supported.
-Do not clone this repository
-and make sure there is no folder named `openpifpaf` in your current directory.
+Do not clone this repository.
+Make sure there is no folder named `openpifpaf` in your current directory.
 
 ```sh
 pip3 install openpifpaf
@@ -72,6 +71,9 @@ For a live demo, we recommend to try the
 [openpifpafwebdemo](https://github.com/openpifpaf/openpifpafwebdemo) project.
 Alternatively, {ref}`python3 -m openpifpaf.video <cli-help-video>` (requires OpenCV)
 provides a live demo as well.
+
+_Only on MacOS (Dec 2021)_: There seems to be an issue with Torch 1.10. Please try
+to stick with Torch 1.9 for now.
 
 
 ## Pre-trained Models
@@ -103,6 +105,7 @@ using the command line option `--checkpoint checkpointasintableabove`.
 
 ## Related Projects
 
+* {doc}`Keypoint Communities <plugins_wholebody>`: plugin for wholebody human poses, [HuggingFace Demo](https://huggingface.co/spaces/akhaliq/Keypoint_Communities), [PapersWithCode](https://paperswithcode.com/paper/keypoint-communities).
 * [neuralet](https://neuralet.com/article/pose-estimation-on-nvidia-jetson-platforms-using-openpifpaf/): TensorRT execution, including Docker images for NVidia Jetson.
 * [fall detection using pose estimation](https://towardsdatascience.com/fall-detection-using-pose-estimation-a8f7fd77081d): illustrated with many example video clips.
 * [physio pose](https://medium.com/@_samkitjain/physio-pose-a-virtual-physiotherapy-assistant-7d1c17db3159): "A virtual physiotherapy assistant".
@@ -125,17 +128,25 @@ at the top and selecting a cloud provider like _Binder_.
 The code on the page is all the code required to reproduce that particular page.
 
 
+(citation)=
 ## Citation
 
+Reference {cite}`kreiss2021openpifpaf`,
+[arxiv.org/abs/2103.02440](https://arxiv.org/abs/2103.02440)
 ```
 @article{kreiss2021openpifpaf,
   title = {{OpenPifPaf: Composite Fields for Semantic Keypoint Detection and Spatio-Temporal Association}},
   author = {Sven Kreiss and Lorenzo Bertoni and Alexandre Alahi},
-  journal = {arXiv preprint arXiv:2103.02440},
+  journal = {IEEE Transactions on Intelligent Transportation Systems},
+  pages = {1-14},
   month = {March},
   year = {2021}
 }
+```
 
+Reference {cite}`kreiss2019pifpaf`,
+[arxiv.org/abs/1903.06593](https://arxiv.org/abs/1903.06593)
+```
 @InProceedings{kreiss2019pifpaf,
   author = {Kreiss, Sven and Bertoni, Lorenzo and Alahi, Alexandre},
   title = {{PifPaf: Composite Fields for Human Pose Estimation}},
@@ -144,7 +155,6 @@ The code on the page is all the code required to reproduce that particular page.
   year = {2019}
 }
 ```
-References: {cite}`kreiss2021openpifpaf, kreiss2019pifpaf`
 
 [CC-BY-2.0]: https://creativecommons.org/licenses/by/2.0/
 

@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FAQ &#8212; OpenPifPaf Guide</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet" />
-  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -32,19 +32,19 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -56,7 +56,10 @@
     <link rel="next" title="Custom Dataset" href="plugins_custom.html" />
     <link rel="prev" title="Plugins" href="plugins_overview.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -95,7 +98,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Getting Started
  </span>
@@ -112,7 +115,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Chapters
  </span>
@@ -159,7 +162,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Tutorials
  </span>
@@ -206,7 +209,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Reference
  </span>
@@ -223,7 +226,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Development
  </span>
@@ -369,6 +372,21 @@
    Python.h or gcc is missing
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ssl-error">
+   SSL error
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-output-error-with-openpifpaf-video-command">
+   Video output error with openpifpaf.video command
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#further-resources">
+   Further resources
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -380,7 +398,7 @@
         
               <div>
                 
-  <div class="section" id="faq">
+  <div class="tex2jax_ignore mathjax_ignore section" id="faq">
 <h1>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h1>
 <p>Frequently Asked Questions (FAQ).</p>
 <div class="section" id="no-plot-appears">
@@ -444,6 +462,46 @@ python -c &quot;import torch; print(torch.cuda.is_available())&quot;
 <p>On most systems, you should be able to use a binary wheel (a pre-built binary compilation) so that you don’t need to install from source.</p>
 <p>Source installation might fail with an exception complaining about a missing <code class="docutils literal notranslate"><span class="pre">Python.h</span></code> file or missing <code class="docutils literal notranslate"><span class="pre">gcc</span></code>. This means that you need the development files for Python itself and a C compiler. On Ubuntu systems, you can get this with <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">python3-dev</span></code>. For more operating systems, there is a good <a class="reference external" href="https://stackoverflow.com/questions/21530577/fatal-error-python-h-no-such-file-or-directory">StackOverflow post</a> on the topic.</p>
 </div>
+<div class="section" id="ssl-error">
+<h2>SSL error<a class="headerlink" href="#ssl-error" title="Permalink to this headline">¶</a></h2>
+<p>Your Python environment might not be able to do web requests. You can download a checkpoint yourself in the browser and run all examples with <code class="docutils literal notranslate"><span class="pre">--checkpoint</span> <span class="pre">&lt;pathtoyourcheckpoint&gt;</span></code> command line argument.</p>
+</div>
+<div class="section" id="video-output-error-with-openpifpaf-video-command">
+<h2>Video output error with openpifpaf.video command<a class="headerlink" href="#video-output-error-with-openpifpaf-video-command" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes your system’s ffmpeg codecs are not set up. Check that you can run
+<code class="docutils literal notranslate"><span class="pre">ffmpeg</span> <span class="pre">-codecs</span></code> and that you have an <code class="docutils literal notranslate"><span class="pre">h264</span></code> encoder installed. In addition,
+the below code is a minimal matplotlib example to write a video output
+that should run without errors on your system:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.animation</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">writer</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">animation</span><span class="o">.</span><span class="n">writers</span><span class="p">[</span><span class="s1">&#39;ffmpeg&#39;</span><span class="p">](</span><span class="n">fps</span><span class="o">=</span><span class="mf">10.0</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">writer</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="s1">&#39;test_animation_output.mp4&#39;</span><span class="p">)</span>
+<span class="n">writer</span><span class="o">.</span><span class="n">grab_frame</span><span class="p">()</span>
+<span class="n">writer</span><span class="o">.</span><span class="n">finish</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/faq_11_0.png" src="_images/faq_11_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="further-resources">
+<h2>Further resources<a class="headerlink" href="#further-resources" title="Permalink to this headline">¶</a></h2>
+<p>If nothing helped, check out the system configuration that is printed in
+the <a class="reference internal" href="dev.html#build-environment"><span class="std std-ref">dev/Build Environment</span></a> section. Run those
+commands on your system and compare the outputs to see whether there are any
+significant differences.</p>
+<p>We also have many
+<a class="reference external" href="https://github.com/openpifpaf/openpifpaf/issues?q=is%3Aissue+is%3Aclosed">closed issues</a>
+that you can search on GitHub and that
+might contain the answer you are looking for. Also feel free to open a new
+issue and provide as much information as possible about your problem and
+the environment you are running in.</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -469,31 +527,22 @@ python -c &quot;import torch; print(torch.cuda.is_available())&quot;
               </div>
               
         
-            
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="plugins_overview.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Plugins</p>
-            </div>
-        </a>
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="plugins_overview.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Plugins</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="plugins_custom.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Custom Dataset</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="plugins_custom.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Custom Dataset</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
         
         </div>
@@ -518,8 +567,7 @@ python -c &quot;import torch; print(torch.cuda.is_available())&quot;
       </div>
     </div>
   
-  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

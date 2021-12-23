@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Command Line &#8212; OpenPifPaf Guide</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet" />
-  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -32,19 +32,19 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -56,7 +56,10 @@
     <link rel="next" title="Plugins" href="plugins_overview.html" />
     <link rel="prev" title="Training" href="train.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -95,7 +98,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Getting Started
  </span>
@@ -112,7 +115,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Chapters
  </span>
@@ -159,7 +162,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Tutorials
  </span>
@@ -206,7 +209,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Reference
  </span>
@@ -223,7 +226,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Development
  </span>
@@ -390,7 +393,7 @@
         
               <div>
                 
-  <div class="section" id="command-line">
+  <div class="tex2jax_ignore mathjax_ignore section" id="command-line">
 <h1>Command Line<a class="headerlink" href="#command-line" title="Permalink to this headline">¶</a></h1>
 <p>This is a reference for all the <code class="docutils literal notranslate"><span class="pre">--help</span></code> message from all of OpenPifPaf’s command line interfaces (CLIs).</p>
 <div class="section" id="predict">
@@ -426,7 +429,7 @@ optional arguments:
 decoder configuration:
   --decoder DECODER [DECODER ...]
                         Decoders to be considered: [&#39;trackingpose&#39;,
-                        &#39;posesimilarity&#39;, &#39;cifcafdense&#39;, &#39;cifcaf&#39;, &#39;cifdet&#39;].
+                        &#39;cifcafdense&#39;, &#39;posesimilarity&#39;, &#39;cifcaf&#39;, &#39;cifdet&#39;].
                         (default: None)
   --seed-threshold SEED_THRESHOLD
                         minimum threshold for seeds (default: 0.2)
@@ -458,12 +461,12 @@ trackingpose decoder:
   --trackingpose-track-recovery
   --trackingpose-single-seed
 
+CifCafDense decoder:
+  --dense-connections [DENSE_CONNECTIONS]
+
 PoseSimilarity:
   --posesimilarity-distance {crafted,euclidean,euclidean4,oks}
   --posesimilarity-oks-inflate POSESIMILARITY_OKS_INFLATE
-
-CifCafDense decoder:
-  --dense-connections [DENSE_CONNECTIONS]
 
 CifCaf decoder:
   --force-complete-pose
@@ -495,34 +498,6 @@ logger:
   --debug               print debug messages (default: False)
   --log-stats           enable stats logging (default: False)
 
-MobileNetV2:
-  --mobilenetv2-no-pretrain
-                        use randomly initialized models (default: True)
-
-MobileNetV3:
-  --mobilenetv3-no-pretrain
-                        use randomly initialized models (default: True)
-
-ShuffleNetv2:
-  --shufflenetv2-no-pretrain
-                        use randomly initialized models (default: True)
-
-shufflenetv2k:
-  --shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE
-                        stride of the optional 2nd input convolution (default:
-                        0)
-  --shufflenetv2k-input-conv2-outchannels SHUFFLENETV2K_INPUT_CONV2_OUTCHANNELS
-                        out channels of the optional 2nd input convolution
-                        (default: None)
-  --shufflenetv2k-stage4-dilation SHUFFLENETV2K_STAGE4_DILATION
-                        dilation factor of stage 4 (default: 1)
-  --shufflenetv2k-kernel SHUFFLENETV2K_KERNEL
-                        kernel width (default: 5)
-  --shufflenetv2k-conv5-as-stage
-  --shufflenetv2k-instance-norm
-  --shufflenetv2k-group-norm
-  --shufflenetv2k-leaky-relu
-
 ResNet:
   --resnet-no-pretrain  use randomly initialized models (default: True)
   --resnet-pool0-stride RESNET_POOL0_STRIDE
@@ -537,6 +512,10 @@ ResNet:
   --resnet-remove-last-block
                         create a network without the last block (default:
                         False)
+
+MobileNetV2:
+  --mobilenetv2-no-pretrain
+                        use randomly initialized models (default: True)
 
 SwinTransformer:
   --swin-drop-path-rate SWIN_DROP_PATH_RATE
@@ -565,6 +544,30 @@ XCiT:
 
 SqueezeNet:
   --squeezenet-no-pretrain
+                        use randomly initialized models (default: True)
+
+ShuffleNetv2:
+  --shufflenetv2-no-pretrain
+                        use randomly initialized models (default: True)
+
+shufflenetv2k:
+  --shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE
+                        stride of the optional 2nd input convolution (default:
+                        0)
+  --shufflenetv2k-input-conv2-outchannels SHUFFLENETV2K_INPUT_CONV2_OUTCHANNELS
+                        out channels of the optional 2nd input convolution
+                        (default: None)
+  --shufflenetv2k-stage4-dilation SHUFFLENETV2K_STAGE4_DILATION
+                        dilation factor of stage 4 (default: 1)
+  --shufflenetv2k-kernel SHUFFLENETV2K_KERNEL
+                        kernel width (default: 5)
+  --shufflenetv2k-conv5-as-stage
+  --shufflenetv2k-instance-norm
+  --shufflenetv2k-group-norm
+  --shufflenetv2k-leaky-relu
+
+MobileNetV3:
+  --mobilenetv3-no-pretrain
                         use randomly initialized models (default: True)
 
 CompositeField4:
@@ -737,17 +740,52 @@ optional arguments:
   --separate-debug-ax
   --disable-cuda        disable CUDA (default: False)
 
+SqueezeNet:
+  --squeezenet-no-pretrain
+                        use randomly initialized models (default: True)
+
+shufflenetv2k:
+  --shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE
+                        stride of the optional 2nd input convolution (default:
+                        0)
+  --shufflenetv2k-input-conv2-outchannels SHUFFLENETV2K_INPUT_CONV2_OUTCHANNELS
+                        out channels of the optional 2nd input convolution
+                        (default: None)
+  --shufflenetv2k-stage4-dilation SHUFFLENETV2K_STAGE4_DILATION
+                        dilation factor of stage 4 (default: 1)
+  --shufflenetv2k-kernel SHUFFLENETV2K_KERNEL
+                        kernel width (default: 5)
+  --shufflenetv2k-conv5-as-stage
+  --shufflenetv2k-instance-norm
+  --shufflenetv2k-group-norm
+  --shufflenetv2k-leaky-relu
+
+MobileNetV2:
+  --mobilenetv2-no-pretrain
+                        use randomly initialized models (default: True)
+
+MobileNetV3:
+  --mobilenetv3-no-pretrain
+                        use randomly initialized models (default: True)
+
 ShuffleNetv2:
   --shufflenetv2-no-pretrain
                         use randomly initialized models (default: True)
 
-XCiT:
-  --xcit-out-channels XCIT_OUT_CHANNELS
-                        number of output channels for optional projection
-                        layer (None for no projection layer) (default: None)
-  --xcit-out-maxpool    adds max-pooling to backbone output feature map
-                        (default: False)
-  --xcit-no-pretrain    use randomly initialized models (default: True)
+ResNet:
+  --resnet-no-pretrain  use randomly initialized models (default: True)
+  --resnet-pool0-stride RESNET_POOL0_STRIDE
+                        stride of zero removes the pooling op (default: 0)
+  --resnet-input-conv-stride RESNET_INPUT_CONV_STRIDE
+                        stride of the input convolution (default: 2)
+  --resnet-input-conv2-stride RESNET_INPUT_CONV2_STRIDE
+                        stride of the optional 2nd input convolution (default:
+                        0)
+  --resnet-block5-dilation RESNET_BLOCK5_DILATION
+                        use dilated convs in block5 (default: 1)
+  --resnet-remove-last-block
+                        create a network without the last block (default:
+                        False)
 
 SwinTransformer:
   --swin-drop-path-rate SWIN_DROP_PATH_RATE
@@ -766,48 +804,13 @@ SwinTransformer:
                         resolution) and 4 (lowest resolution) (default: 3)
   --swin-no-pretrain    use randomly initialized models (default: True)
 
-shufflenetv2k:
-  --shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE
-                        stride of the optional 2nd input convolution (default:
-                        0)
-  --shufflenetv2k-input-conv2-outchannels SHUFFLENETV2K_INPUT_CONV2_OUTCHANNELS
-                        out channels of the optional 2nd input convolution
-                        (default: None)
-  --shufflenetv2k-stage4-dilation SHUFFLENETV2K_STAGE4_DILATION
-                        dilation factor of stage 4 (default: 1)
-  --shufflenetv2k-kernel SHUFFLENETV2K_KERNEL
-                        kernel width (default: 5)
-  --shufflenetv2k-conv5-as-stage
-  --shufflenetv2k-instance-norm
-  --shufflenetv2k-group-norm
-  --shufflenetv2k-leaky-relu
-
-SqueezeNet:
-  --squeezenet-no-pretrain
-                        use randomly initialized models (default: True)
-
-MobileNetV2:
-  --mobilenetv2-no-pretrain
-                        use randomly initialized models (default: True)
-
-MobileNetV3:
-  --mobilenetv3-no-pretrain
-                        use randomly initialized models (default: True)
-
-ResNet:
-  --resnet-no-pretrain  use randomly initialized models (default: True)
-  --resnet-pool0-stride RESNET_POOL0_STRIDE
-                        stride of zero removes the pooling op (default: 0)
-  --resnet-input-conv-stride RESNET_INPUT_CONV_STRIDE
-                        stride of the input convolution (default: 2)
-  --resnet-input-conv2-stride RESNET_INPUT_CONV2_STRIDE
-                        stride of the optional 2nd input convolution (default:
-                        0)
-  --resnet-block5-dilation RESNET_BLOCK5_DILATION
-                        use dilated convs in block5 (default: 1)
-  --resnet-remove-last-block
-                        create a network without the last block (default:
-                        False)
+XCiT:
+  --xcit-out-channels XCIT_OUT_CHANNELS
+                        number of output channels for optional projection
+                        layer (None for no projection layer) (default: None)
+  --xcit-out-maxpool    adds max-pooling to backbone output feature map
+                        (default: False)
+  --xcit-no-pretrain    use randomly initialized models (default: True)
 
 CompositeField4:
   --cf4-dropout CF4_DROPOUT
@@ -862,8 +865,8 @@ network configuration:
 
 decoder configuration:
   --decoder DECODER [DECODER ...]
-                        Decoders to be considered: [&#39;posesimilarity&#39;,
-                        &#39;cifcafdense&#39;, &#39;cifcaf&#39;, &#39;cifdet&#39;, &#39;trackingpose&#39;].
+                        Decoders to be considered: [&#39;trackingpose&#39;,
+                        &#39;cifcafdense&#39;, &#39;posesimilarity&#39;, &#39;cifcaf&#39;, &#39;cifdet&#39;].
                         (default: None)
   --seed-threshold SEED_THRESHOLD
                         minimum threshold for seeds (default: 0.2)
@@ -891,12 +894,16 @@ Decoder for tracking:
   --tr-minimum-threshold TR_MINIMUM_THRESHOLD
                         minimum-pose threshold for tracking. (default: 0.1)
 
-PoseSimilarity:
-  --posesimilarity-distance {crafted,euclidean,euclidean4,oks}
-  --posesimilarity-oks-inflate POSESIMILARITY_OKS_INFLATE
+trackingpose decoder:
+  --trackingpose-track-recovery
+  --trackingpose-single-seed
 
 CifCafDense decoder:
   --dense-connections [DENSE_CONNECTIONS]
+
+PoseSimilarity:
+  --posesimilarity-distance {crafted,euclidean,euclidean4,oks}
+  --posesimilarity-oks-inflate POSESIMILARITY_OKS_INFLATE
 
 CifCaf decoder:
   --force-complete-pose
@@ -922,10 +929,6 @@ CifCaf decoder:
   --ablation-cifseeds-no-rescore
   --ablation-caf-no-rescore
   --ablation-independent-kp
-
-trackingpose decoder:
-  --trackingpose-track-recovery
-  --trackingpose-single-seed
 
 logger:
   -q, --quiet           only show warning messages or above (default: False)
@@ -1055,6 +1058,14 @@ logger:
   --debug               print debug messages (default: False)
   --log-stats           enable stats logging (default: False)
 
+SqueezeNet:
+  --squeezenet-no-pretrain
+                        use randomly initialized models (default: True)
+
+ShuffleNetv2:
+  --shufflenetv2-no-pretrain
+                        use randomly initialized models (default: True)
+
 shufflenetv2k:
   --shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE
                         stride of the optional 2nd input convolution (default:
@@ -1071,9 +1082,28 @@ shufflenetv2k:
   --shufflenetv2k-group-norm
   --shufflenetv2k-leaky-relu
 
-ShuffleNetv2:
-  --shufflenetv2-no-pretrain
+MobileNetV2:
+  --mobilenetv2-no-pretrain
                         use randomly initialized models (default: True)
+
+MobileNetV3:
+  --mobilenetv3-no-pretrain
+                        use randomly initialized models (default: True)
+
+ResNet:
+  --resnet-no-pretrain  use randomly initialized models (default: True)
+  --resnet-pool0-stride RESNET_POOL0_STRIDE
+                        stride of zero removes the pooling op (default: 0)
+  --resnet-input-conv-stride RESNET_INPUT_CONV_STRIDE
+                        stride of the input convolution (default: 2)
+  --resnet-input-conv2-stride RESNET_INPUT_CONV2_STRIDE
+                        stride of the optional 2nd input convolution (default:
+                        0)
+  --resnet-block5-dilation RESNET_BLOCK5_DILATION
+                        use dilated convs in block5 (default: 1)
+  --resnet-remove-last-block
+                        create a network without the last block (default:
+                        False)
 
 XCiT:
   --xcit-out-channels XCIT_OUT_CHANNELS
@@ -1099,33 +1129,6 @@ SwinTransformer:
                         FPN pyramid level, must be between 1 (highest
                         resolution) and 4 (lowest resolution) (default: 3)
   --swin-no-pretrain    use randomly initialized models (default: True)
-
-SqueezeNet:
-  --squeezenet-no-pretrain
-                        use randomly initialized models (default: True)
-
-MobileNetV2:
-  --mobilenetv2-no-pretrain
-                        use randomly initialized models (default: True)
-
-MobileNetV3:
-  --mobilenetv3-no-pretrain
-                        use randomly initialized models (default: True)
-
-ResNet:
-  --resnet-no-pretrain  use randomly initialized models (default: True)
-  --resnet-pool0-stride RESNET_POOL0_STRIDE
-                        stride of zero removes the pooling op (default: 0)
-  --resnet-input-conv-stride RESNET_INPUT_CONV_STRIDE
-                        stride of the input convolution (default: 2)
-  --resnet-input-conv2-stride RESNET_INPUT_CONV2_STRIDE
-                        stride of the optional 2nd input convolution (default:
-                        0)
-  --resnet-block5-dilation RESNET_BLOCK5_DILATION
-                        use dilated convs in block5 (default: 1)
-  --resnet-remove-last-block
-                        create a network without the last block (default:
-                        False)
 
 CompositeField4:
   --cf4-dropout CF4_DROPOUT
@@ -1191,10 +1194,6 @@ losses:
   --task-sparsity-weight TASK_SPARSITY_WEIGHT
                         [experimental] (default: 0.0)
 
-Composite Loss:
-  --soft-clamp SOFT_CLAMP
-                        soft clamp (default: 5.0)
-
 Composite Loss by Components:
   --loss-prescale LOSS_PRESCALE
   --regression-loss {smoothl1,l1,laplace}
@@ -1203,14 +1202,9 @@ Composite Loss by Components:
                         per feature clamp value applied to the total (default:
                         None)
 
-Bce Loss:
-  --r-smooth R_SMOOTH   r_{smooth} for SmoothL1 regressions (default: 0.0)
-
-Scale Loss:
-  --b-scale B_SCALE     Laplace width b for scale loss (default: 1.0)
-  --scale-log
-  --scale-soft-clamp SCALE_SOFT_CLAMP
-                        soft clamp for scale (default: 5.0)
+Composite Loss:
+  --soft-clamp SOFT_CLAMP
+                        soft clamp (default: 5.0)
 
 Bce Loss:
   --background-weight BACKGROUND_WEIGHT
@@ -1231,6 +1225,15 @@ Bce Loss:
 Laplace Loss:
   --laplace-soft-clamp LAPLACE_SOFT_CLAMP
                         soft clamp for Laplace (default: 5.0)
+
+Bce Loss:
+  --r-smooth R_SMOOTH   r_{smooth} for SmoothL1 regressions (default: 0.0)
+
+Scale Loss:
+  --b-scale B_SCALE     Laplace width b for scale loss (default: 1.0)
+  --scale-log
+  --scale-soft-clamp SCALE_SOFT_CLAMP
+                        soft clamp for scale (default: 5.0)
 
 trainer:
   --epochs EPOCHS       number of epochs to train (default: None)
@@ -1966,8 +1969,8 @@ data module wholebody:
 
 decoder configuration:
   --decoder DECODER [DECODER ...]
-                        Decoders to be considered: [&#39;posesimilarity&#39;,
-                        &#39;cifcafdense&#39;, &#39;cifcaf&#39;, &#39;cifdet&#39;, &#39;trackingpose&#39;].
+                        Decoders to be considered: [&#39;cifcafdense&#39;,
+                        &#39;trackingpose&#39;, &#39;cifcaf&#39;, &#39;posesimilarity&#39;, &#39;cifdet&#39;].
                         (default: None)
   --seed-threshold SEED_THRESHOLD
                         minimum threshold for seeds (default: 0.2)
@@ -1995,12 +1998,12 @@ Decoder for tracking:
   --tr-minimum-threshold TR_MINIMUM_THRESHOLD
                         minimum-pose threshold for tracking. (default: 0.1)
 
-PoseSimilarity:
-  --posesimilarity-distance {crafted,euclidean,euclidean4,oks}
-  --posesimilarity-oks-inflate POSESIMILARITY_OKS_INFLATE
-
 CifCafDense decoder:
   --dense-connections [DENSE_CONNECTIONS]
+
+trackingpose decoder:
+  --trackingpose-track-recovery
+  --trackingpose-single-seed
 
 CifCaf decoder:
   --force-complete-pose
@@ -2027,54 +2030,21 @@ CifCaf decoder:
   --ablation-caf-no-rescore
   --ablation-independent-kp
 
-trackingpose decoder:
-  --trackingpose-track-recovery
-  --trackingpose-single-seed
+PoseSimilarity:
+  --posesimilarity-distance {crafted,euclidean,euclidean4,oks}
+  --posesimilarity-oks-inflate POSESIMILARITY_OKS_INFLATE
 
 logger:
   -q, --quiet           only show warning messages or above (default: False)
   --debug               print debug messages (default: False)
   --log-stats           enable stats logging (default: False)
 
-XCiT:
-  --xcit-out-channels XCIT_OUT_CHANNELS
-                        number of output channels for optional projection
-                        layer (None for no projection layer) (default: None)
-  --xcit-out-maxpool    adds max-pooling to backbone output feature map
-                        (default: False)
-  --xcit-no-pretrain    use randomly initialized models (default: True)
-
-SwinTransformer:
-  --swin-drop-path-rate SWIN_DROP_PATH_RATE
-                        drop path (stochastic depth) rate (default: 0.2)
-  --swin-input-upsample
-                        scales input image by a factor of 2 for higher res
-                        feature maps (default: False)
-  --swin-use-fpn        adds a FPN after the Swin network to obtain higher res
-                        feature maps (default: False)
-  --swin-fpn-out-channels SWIN_FPN_OUT_CHANNELS
-                        output channels of the FPN (None to use the default
-                        number of channels of the Swin network) (default:
-                        None)
-  --swin-fpn-level SWIN_FPN_LEVEL
-                        FPN pyramid level, must be between 1 (highest
-                        resolution) and 4 (lowest resolution) (default: 3)
-  --swin-no-pretrain    use randomly initialized models (default: True)
-
-ShuffleNetv2:
-  --shufflenetv2-no-pretrain
-                        use randomly initialized models (default: True)
-
 SqueezeNet:
   --squeezenet-no-pretrain
                         use randomly initialized models (default: True)
 
-MobileNetV2:
-  --mobilenetv2-no-pretrain
-                        use randomly initialized models (default: True)
-
-MobileNetV3:
-  --mobilenetv3-no-pretrain
+ShuffleNetv2:
+  --shufflenetv2-no-pretrain
                         use randomly initialized models (default: True)
 
 shufflenetv2k:
@@ -2093,6 +2063,22 @@ shufflenetv2k:
   --shufflenetv2k-group-norm
   --shufflenetv2k-leaky-relu
 
+MobileNetV2:
+  --mobilenetv2-no-pretrain
+                        use randomly initialized models (default: True)
+
+MobileNetV3:
+  --mobilenetv3-no-pretrain
+                        use randomly initialized models (default: True)
+
+XCiT:
+  --xcit-out-channels XCIT_OUT_CHANNELS
+                        number of output channels for optional projection
+                        layer (None for no projection layer) (default: None)
+  --xcit-out-maxpool    adds max-pooling to backbone output feature map
+                        (default: False)
+  --xcit-no-pretrain    use randomly initialized models (default: True)
+
 ResNet:
   --resnet-no-pretrain  use randomly initialized models (default: True)
   --resnet-pool0-stride RESNET_POOL0_STRIDE
@@ -2107,6 +2093,23 @@ ResNet:
   --resnet-remove-last-block
                         create a network without the last block (default:
                         False)
+
+SwinTransformer:
+  --swin-drop-path-rate SWIN_DROP_PATH_RATE
+                        drop path (stochastic depth) rate (default: 0.2)
+  --swin-input-upsample
+                        scales input image by a factor of 2 for higher res
+                        feature maps (default: False)
+  --swin-use-fpn        adds a FPN after the Swin network to obtain higher res
+                        feature maps (default: False)
+  --swin-fpn-out-channels SWIN_FPN_OUT_CHANNELS
+                        output channels of the FPN (None to use the default
+                        number of channels of the Swin network) (default:
+                        None)
+  --swin-fpn-level SWIN_FPN_LEVEL
+                        FPN pyramid level, must be between 1 (highest
+                        resolution) and 4 (lowest resolution) (default: 3)
+  --swin-no-pretrain    use randomly initialized models (default: True)
 
 CompositeField4:
   --cf4-dropout CF4_DROPOUT
@@ -2242,17 +2245,6 @@ python3 -m openpifpaf.export_onnx --help
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>usage: python3 -m openpifpaf.export_onnx [-h] [--version]
-                                         [--squeezenet-no-pretrain]
-                                         [--shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE]
-                                         [--shufflenetv2k-input-conv2-outchannels SHUFFLENETV2K_INPUT_CONV2_OUTCHANNELS]
-                                         [--shufflenetv2k-stage4-dilation SHUFFLENETV2K_STAGE4_DILATION]
-                                         [--shufflenetv2k-kernel SHUFFLENETV2K_KERNEL]
-                                         [--shufflenetv2k-conv5-as-stage]
-                                         [--shufflenetv2k-instance-norm | --shufflenetv2k-group-norm]
-                                         [--shufflenetv2k-leaky-relu]
-                                         [--mobilenetv2-no-pretrain]
-                                         [--mobilenetv3-no-pretrain]
-                                         [--shufflenetv2-no-pretrain]
                                          [--resnet-no-pretrain]
                                          [--resnet-pool0-stride RESNET_POOL0_STRIDE]
                                          [--resnet-input-conv-stride RESNET_INPUT_CONV_STRIDE]
@@ -2268,6 +2260,17 @@ python3 -m openpifpaf.export_onnx --help
                                          [--swin-fpn-out-channels SWIN_FPN_OUT_CHANNELS]
                                          [--swin-fpn-level SWIN_FPN_LEVEL]
                                          [--swin-no-pretrain]
+                                         [--shufflenetv2-no-pretrain]
+                                         [--squeezenet-no-pretrain]
+                                         [--mobilenetv2-no-pretrain]
+                                         [--mobilenetv3-no-pretrain]
+                                         [--shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE]
+                                         [--shufflenetv2k-input-conv2-outchannels SHUFFLENETV2K_INPUT_CONV2_OUTCHANNELS]
+                                         [--shufflenetv2k-stage4-dilation SHUFFLENETV2K_STAGE4_DILATION]
+                                         [--shufflenetv2k-kernel SHUFFLENETV2K_KERNEL]
+                                         [--shufflenetv2k-conv5-as-stage]
+                                         [--shufflenetv2k-instance-norm | --shufflenetv2k-group-norm]
+                                         [--shufflenetv2k-leaky-relu]
                                          [--cf4-dropout CF4_DROPOUT]
                                          [--cf4-no-inplace-ops]
                                          [--checkpoint CHECKPOINT]
@@ -2295,38 +2298,6 @@ optional arguments:
   --check
   --input-width INPUT_WIDTH
   --input-height INPUT_HEIGHT
-
-SqueezeNet:
-  --squeezenet-no-pretrain
-                        use randomly initialized models (default: True)
-
-shufflenetv2k:
-  --shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE
-                        stride of the optional 2nd input convolution (default:
-                        0)
-  --shufflenetv2k-input-conv2-outchannels SHUFFLENETV2K_INPUT_CONV2_OUTCHANNELS
-                        out channels of the optional 2nd input convolution
-                        (default: None)
-  --shufflenetv2k-stage4-dilation SHUFFLENETV2K_STAGE4_DILATION
-                        dilation factor of stage 4 (default: 1)
-  --shufflenetv2k-kernel SHUFFLENETV2K_KERNEL
-                        kernel width (default: 5)
-  --shufflenetv2k-conv5-as-stage
-  --shufflenetv2k-instance-norm
-  --shufflenetv2k-group-norm
-  --shufflenetv2k-leaky-relu
-
-MobileNetV2:
-  --mobilenetv2-no-pretrain
-                        use randomly initialized models (default: True)
-
-MobileNetV3:
-  --mobilenetv3-no-pretrain
-                        use randomly initialized models (default: True)
-
-ShuffleNetv2:
-  --shufflenetv2-no-pretrain
-                        use randomly initialized models (default: True)
 
 ResNet:
   --resnet-no-pretrain  use randomly initialized models (default: True)
@@ -2367,6 +2338,38 @@ SwinTransformer:
                         FPN pyramid level, must be between 1 (highest
                         resolution) and 4 (lowest resolution) (default: 3)
   --swin-no-pretrain    use randomly initialized models (default: True)
+
+ShuffleNetv2:
+  --shufflenetv2-no-pretrain
+                        use randomly initialized models (default: True)
+
+SqueezeNet:
+  --squeezenet-no-pretrain
+                        use randomly initialized models (default: True)
+
+MobileNetV2:
+  --mobilenetv2-no-pretrain
+                        use randomly initialized models (default: True)
+
+MobileNetV3:
+  --mobilenetv3-no-pretrain
+                        use randomly initialized models (default: True)
+
+shufflenetv2k:
+  --shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE
+                        stride of the optional 2nd input convolution (default:
+                        0)
+  --shufflenetv2k-input-conv2-outchannels SHUFFLENETV2K_INPUT_CONV2_OUTCHANNELS
+                        out channels of the optional 2nd input convolution
+                        (default: None)
+  --shufflenetv2k-stage4-dilation SHUFFLENETV2K_STAGE4_DILATION
+                        dilation factor of stage 4 (default: 1)
+  --shufflenetv2k-kernel SHUFFLENETV2K_KERNEL
+                        kernel width (default: 5)
+  --shufflenetv2k-conv5-as-stage
+  --shufflenetv2k-instance-norm
+  --shufflenetv2k-group-norm
+  --shufflenetv2k-leaky-relu
 
 CompositeField4:
   --cf4-dropout CF4_DROPOUT
@@ -2434,6 +2437,16 @@ python3 -m openpifpaf.export_coreml --help
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>usage: python3 -m openpifpaf.export_coreml [-h] [--version]
+                                           [--mobilenetv2-no-pretrain]
+                                           [--mobilenetv3-no-pretrain]
+                                           [--shufflenetv2-no-pretrain]
+                                           [--shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE]
+                                           [--shufflenetv2k-input-conv2-outchannels SHUFFLENETV2K_INPUT_CONV2_OUTCHANNELS]
+                                           [--shufflenetv2k-stage4-dilation SHUFFLENETV2K_STAGE4_DILATION]
+                                           [--shufflenetv2k-kernel SHUFFLENETV2K_KERNEL]
+                                           [--shufflenetv2k-conv5-as-stage]
+                                           [--shufflenetv2k-instance-norm | --shufflenetv2k-group-norm]
+                                           [--shufflenetv2k-leaky-relu]
                                            [--resnet-no-pretrain]
                                            [--resnet-pool0-stride RESNET_POOL0_STRIDE]
                                            [--resnet-input-conv-stride RESNET_INPUT_CONV_STRIDE]
@@ -2449,17 +2462,7 @@ python3 -m openpifpaf.export_coreml --help
                                            [--xcit-out-channels XCIT_OUT_CHANNELS]
                                            [--xcit-out-maxpool]
                                            [--xcit-no-pretrain]
-                                           [--shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE]
-                                           [--shufflenetv2k-input-conv2-outchannels SHUFFLENETV2K_INPUT_CONV2_OUTCHANNELS]
-                                           [--shufflenetv2k-stage4-dilation SHUFFLENETV2K_STAGE4_DILATION]
-                                           [--shufflenetv2k-kernel SHUFFLENETV2K_KERNEL]
-                                           [--shufflenetv2k-conv5-as-stage]
-                                           [--shufflenetv2k-instance-norm | --shufflenetv2k-group-norm]
-                                           [--shufflenetv2k-leaky-relu]
-                                           [--mobilenetv2-no-pretrain]
                                            [--squeezenet-no-pretrain]
-                                           [--shufflenetv2-no-pretrain]
-                                           [--mobilenetv3-no-pretrain]
                                            [--cf4-dropout CF4_DROPOUT]
                                            [--cf4-no-inplace-ops]
                                            [--checkpoint CHECKPOINT]
@@ -2481,6 +2484,34 @@ optional arguments:
   --input-width INPUT_WIDTH
   --input-height INPUT_HEIGHT
   --minimum-deployment-target {iOS13,iOS14}
+
+MobileNetV2:
+  --mobilenetv2-no-pretrain
+                        use randomly initialized models (default: True)
+
+MobileNetV3:
+  --mobilenetv3-no-pretrain
+                        use randomly initialized models (default: True)
+
+ShuffleNetv2:
+  --shufflenetv2-no-pretrain
+                        use randomly initialized models (default: True)
+
+shufflenetv2k:
+  --shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE
+                        stride of the optional 2nd input convolution (default:
+                        0)
+  --shufflenetv2k-input-conv2-outchannels SHUFFLENETV2K_INPUT_CONV2_OUTCHANNELS
+                        out channels of the optional 2nd input convolution
+                        (default: None)
+  --shufflenetv2k-stage4-dilation SHUFFLENETV2K_STAGE4_DILATION
+                        dilation factor of stage 4 (default: 1)
+  --shufflenetv2k-kernel SHUFFLENETV2K_KERNEL
+                        kernel width (default: 5)
+  --shufflenetv2k-conv5-as-stage
+  --shufflenetv2k-instance-norm
+  --shufflenetv2k-group-norm
+  --shufflenetv2k-leaky-relu
 
 ResNet:
   --resnet-no-pretrain  use randomly initialized models (default: True)
@@ -2522,36 +2553,8 @@ XCiT:
                         (default: False)
   --xcit-no-pretrain    use randomly initialized models (default: True)
 
-shufflenetv2k:
-  --shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE
-                        stride of the optional 2nd input convolution (default:
-                        0)
-  --shufflenetv2k-input-conv2-outchannels SHUFFLENETV2K_INPUT_CONV2_OUTCHANNELS
-                        out channels of the optional 2nd input convolution
-                        (default: None)
-  --shufflenetv2k-stage4-dilation SHUFFLENETV2K_STAGE4_DILATION
-                        dilation factor of stage 4 (default: 1)
-  --shufflenetv2k-kernel SHUFFLENETV2K_KERNEL
-                        kernel width (default: 5)
-  --shufflenetv2k-conv5-as-stage
-  --shufflenetv2k-instance-norm
-  --shufflenetv2k-group-norm
-  --shufflenetv2k-leaky-relu
-
-MobileNetV2:
-  --mobilenetv2-no-pretrain
-                        use randomly initialized models (default: True)
-
 SqueezeNet:
   --squeezenet-no-pretrain
-                        use randomly initialized models (default: True)
-
-ShuffleNetv2:
-  --shufflenetv2-no-pretrain
-                        use randomly initialized models (default: True)
-
-MobileNetV3:
-  --mobilenetv3-no-pretrain
                         use randomly initialized models (default: True)
 
 CompositeField4:
@@ -2766,31 +2769,22 @@ show:
               </div>
               
         
-            
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="train.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Training</p>
-            </div>
-        </a>
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="train.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Training</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="plugins_overview.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Plugins</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="plugins_overview.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Plugins</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
         
         </div>
@@ -2815,8 +2809,7 @@ show:
       </div>
     </div>
   
-  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

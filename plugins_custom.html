@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Custom Dataset &#8212; OpenPifPaf Guide</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet" />
-  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -32,19 +32,19 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -56,7 +56,10 @@
     <link rel="next" title="Animal Keypoints" href="plugins_animalpose.html" />
     <link rel="prev" title="FAQ" href="faq.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -95,7 +98,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Getting Started
  </span>
@@ -112,7 +115,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Chapters
  </span>
@@ -159,7 +162,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Tutorials
  </span>
@@ -206,7 +209,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Reference
  </span>
@@ -223,7 +226,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Development
  </span>
@@ -407,7 +410,7 @@
         
               <div>
                 
-  <div class="section" id="custom-dataset">
+  <div class="tex2jax_ignore mathjax_ignore section" id="custom-dataset">
 <h1>Custom Dataset<a class="headerlink" href="#custom-dataset" title="Permalink to this headline">¶</a></h1>
  <div style="text-align: right"> by <a href="https://scholar.google.com/citations?user=f-4YHeMAAAAJ&hl=en">Lorenzo Bertoni</a>  13/04/2021 </div>
 <div class="section" id="overview">
@@ -424,8 +427,8 @@ Below, a description of the structure of the plugin to give you some intuition o
 <p>This module handles the interface of your custom dataset with the core system and it is the main component of the plugin. For the <a class="reference external" href="http://apolloscape.auto/car_instance.html">ApolloCar3D Dataset</a>, we created a module called <em>apollo_kp.py</em> containing the class <a class="reference external" href="https://github.com/openpifpaf/openpifpaf/blob/main/openpifpaf/plugins/apollocar3d/apollo_kp.py">ApolloKp</a> which inherits from the <a class="reference external" href="https://github.com/openpifpaf/openpifpaf/blob/main/openpifpaf/datasets/module.py">DataModule</a> class.</p>
 <p>The base class to inherit from has the following structure:</p>
 <dl class="py class">
-<dt>
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">openpifpaf.datasets.</span></code><code class="sig-name descname"><span class="pre">DataModule</span></code></dt>
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">openpifpaf.datasets.</span></span><span class="sig-name descname"><span class="pre">DataModule</span></span></dt>
 <dd><p>Base class to extend OpenPifPaf with custom data.</p>
 <p>This class gives you all the handles to train OpenPifPaf on a new dataset.
 Create a new class that inherits from this to handle a new datasets.</p>
@@ -434,8 +437,8 @@ Create a new class that inherits from this to handle a new datasets.</p>
 <li><p>Add class variables, such as annotations, training/validation image paths.</p></li>
 </ol>
 <dl class="py method">
-<dt>
-<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">cli</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parser</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">argparse.ArgumentParser</span></span></em><span class="sig-paren">)</span></dt>
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cli</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parser</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">argparse.ArgumentParser</span></span></em><span class="sig-paren">)</span></dt>
 <dd><p>Command line interface (CLI) to extend argument parser for your custom dataset.</p>
 <p>Make sure to use unique CLI arguments for your dataset.
 For clarity, we suggest to start every CLI argument with the name of your new dataset,
@@ -445,20 +448,20 @@ E.g. to load a model, there is no need to implement the command --checkpoint</p>
 </dd></dl>
 
 <dl class="py method">
-<dt>
-<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">configure</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">argparse.Namespace</span></span></em><span class="sig-paren">)</span></dt>
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">configure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">argparse.Namespace</span></span></em><span class="sig-paren">)</span></dt>
 <dd><p>Take the parsed argument parser output and configure class variables.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt>
-<code class="sig-name descname"><span class="pre">metrics</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">openpifpaf.metric.base.Base</span><span class="p"><span class="pre">]</span></span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">metrics</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="moduledocs.html#openpifpaf.metric.Base" title="openpifpaf.metric.base.Base"><span class="pre">openpifpaf.metric.base.Base</span></a><span class="p"><span class="pre">]</span></span></span></span></dt>
 <dd><p>Define a list of metrics to be used for eval.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt>
-<code class="sig-name descname"><span class="pre">train_loader</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">torch.utils.data.dataloader.DataLoader</span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">train_loader</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">torch.utils.data.dataloader.DataLoader</span></span></span></dt>
 <dd><p>Loader of the training dataset.</p>
 <p>A Coco Data loader is already available, or a custom one can be created and called here.
 To modify preprocessing steps of your images (for example scaling image during training):</p>
@@ -469,8 +472,8 @@ To modify preprocessing steps of your images (for example scaling image during t
 </dd></dl>
 
 <dl class="py method">
-<dt>
-<code class="sig-name descname"><span class="pre">val_loader</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">torch.utils.data.dataloader.DataLoader</span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">val_loader</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">torch.utils.data.dataloader.DataLoader</span></span></span></dt>
 <dd><p>Loader of the validation dataset.</p>
 <p>The augmentation and preprocessing should be the same as for train_loader.
 The only difference is the set of data. This allows to inspect the
@@ -480,8 +483,8 @@ so that the loss function can be computed.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt>
-<code class="sig-name descname"><span class="pre">eval_loader</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">torch.utils.data.dataloader.DataLoader</span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">eval_loader</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">torch.utils.data.dataloader.DataLoader</span></span></span></dt>
 <dd><p>Loader of the evaluation dataset.</p>
 <p>For local runs, it is common that the validation dataset is also the
 evaluation dataset. This is then changed to test datasets (without
@@ -634,24 +637,7 @@ what the output of the decoder is expected to be.</p>
 <h2>Final remarks<a class="headerlink" href="#final-remarks" title="Permalink to this headline">¶</a></h2>
 <p>We hope you’ll find this guide useful to create your own plugin. For more information check the guide section for the <a class="reference internal" href="plugins_apollocar3d.html"><span class="doc">ApolloCar3D plugin</span></a>.</p>
 <p>Please keep us posted on issues you encounter (using the issue section on GitHub) and especially on your successes! We will be more than happy to add your plugin to the list of OpenPifPaf <a class="reference external" href="https://openpifpaf.github.io/intro.html#related-projects">related projects</a>.</p>
-<p>Finally, if you find OpenPifPaf useful for your research, we would be happy if you cite us!</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@article</span><span class="p">{</span><span class="n">kreiss2021openpifpaf</span><span class="p">,</span>
-  <span class="n">title</span> <span class="o">=</span> <span class="p">{{</span><span class="n">OpenPifPaf</span><span class="p">:</span> <span class="n">Composite</span> <span class="n">Fields</span> <span class="k">for</span> <span class="n">Semantic</span> <span class="n">Keypoint</span> <span class="n">Detection</span> <span class="ow">and</span> <span class="n">Spatio</span><span class="o">-</span><span class="n">Temporal</span> <span class="n">Association</span><span class="p">}},</span>
-  <span class="n">author</span> <span class="o">=</span> <span class="p">{</span><span class="n">Sven</span> <span class="n">Kreiss</span> <span class="ow">and</span> <span class="n">Lorenzo</span> <span class="n">Bertoni</span> <span class="ow">and</span> <span class="n">Alexandre</span> <span class="n">Alahi</span><span class="p">},</span>
-  <span class="n">journal</span> <span class="o">=</span> <span class="p">{</span><span class="n">arXiv</span> <span class="n">preprint</span> <span class="n">arXiv</span><span class="p">:</span><span class="mf">2103.02440</span><span class="p">},</span>
-  <span class="n">month</span> <span class="o">=</span> <span class="p">{</span><span class="n">March</span><span class="p">},</span>
-  <span class="n">year</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2021</span><span class="p">}</span>
-<span class="p">}</span>
-
-<span class="nd">@InProceedings</span><span class="p">{</span><span class="n">kreiss2019pifpaf</span><span class="p">,</span>
-  <span class="n">author</span> <span class="o">=</span> <span class="p">{</span><span class="n">Kreiss</span><span class="p">,</span> <span class="n">Sven</span> <span class="ow">and</span> <span class="n">Bertoni</span><span class="p">,</span> <span class="n">Lorenzo</span> <span class="ow">and</span> <span class="n">Alahi</span><span class="p">,</span> <span class="n">Alexandre</span><span class="p">},</span>
-  <span class="n">title</span> <span class="o">=</span> <span class="p">{{</span><span class="n">PifPaf</span><span class="p">:</span> <span class="n">Composite</span> <span class="n">Fields</span> <span class="k">for</span> <span class="n">Human</span> <span class="n">Pose</span> <span class="n">Estimation</span><span class="p">}},</span>
-  <span class="n">booktitle</span> <span class="o">=</span> <span class="p">{</span><span class="n">The</span> <span class="n">IEEE</span> <span class="n">Conference</span> <span class="n">on</span> <span class="n">Computer</span> <span class="n">Vision</span> <span class="ow">and</span> <span class="n">Pattern</span> <span class="n">Recognition</span> <span class="p">(</span><span class="n">CVPR</span><span class="p">)},</span>
-  <span class="n">month</span> <span class="o">=</span> <span class="p">{</span><span class="n">June</span><span class="p">},</span>
-  <span class="n">year</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2019</span><span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
+<p>Finally, if you find OpenPifPaf useful for your research, we would be happy if you <a class="reference internal" href="intro.html#citation"><span class="std std-ref">cite us</span></a>!</p>
 </div>
 </div>
 
@@ -678,31 +664,22 @@ what the output of the decoder is expected to be.</p>
               </div>
               
         
-            
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="faq.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">FAQ</p>
-            </div>
-        </a>
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="faq.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">FAQ</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="plugins_animalpose.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Animal Keypoints</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="plugins_animalpose.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Animal Keypoints</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
         
         </div>
@@ -727,8 +704,7 @@ what the output of the decoder is expected to be.</p>
       </div>
     </div>
   
-  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>
