@@ -38,13 +38,16 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -295,7 +298,7 @@
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -341,7 +344,7 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> On this page
@@ -371,7 +374,40 @@
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Prediction API</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> On this page </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#load-an-example-image">
+   Load an Example Image
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#use-the-predictor-api">
+   Use the Predictor API
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fields">
+   Fields
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="prediction-api">
@@ -395,7 +431,7 @@ the command line interface.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OpenPifPaf version 0.13.0+20.gfa80720
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OpenPifPaf version 0.13.1+1.g409f132
 PyTorch version 1.9.0+cpu
 </pre></div>
 </div>
@@ -451,7 +487,7 @@ PyTorch version 1.9.0+cpu
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;openpifpaf.annotation.Annotation at 0x7f8889fbfd00&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;openpifpaf.annotation.Annotation at 0x7f23175f8d30&gt;
 </pre></div>
 </div>
 </div>
@@ -464,21 +500,21 @@ PyTorch version 1.9.0+cpu
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 3.6017877e+02,  2.9964966e+02,  9.9882096e-01],
-       [ 3.6403540e+02,  2.9479474e+02,  9.5608467e-01],
-       [ 3.5507379e+02,  2.9503967e+02,  9.7657114e-01],
-       [ 3.6957547e+02,  2.9712772e+02,  8.2811123e-01],
-       [ 3.4776538e+02,  2.9803622e+02,  9.4151694e-01],
-       [ 3.8178818e+02,  3.1739856e+02,  9.3542892e-01],
-       [ 3.4123145e+02,  3.2181036e+02,  9.5376027e-01],
-       [ 3.8760934e+02,  3.4162192e+02,  6.1718613e-01],
-       [ 3.3507935e+02,  3.5091321e+02,  9.6102774e-01],
-       [ 3.7334406e+02,  3.5688284e+02,  4.3560207e-01],
-       [ 3.3581903e+02,  3.6386728e+02,  8.9591748e-01],
-       [ 3.7379736e+02,  3.6283124e+02,  8.5838747e-01],
-       [ 3.5045972e+02,  3.6485587e+02,  9.5851308e-01],
-       [ 3.8885773e+02,  3.6172180e+02,  6.5838033e-01],
-       [ 3.2807556e+02,  3.7470062e+02,  6.8845850e-01],
-       [ 3.3847372e+02,  3.8157913e+02,  3.4106156e-01],
+       [ 3.6403537e+02,  2.9479474e+02,  9.5608473e-01],
+       [ 3.5507379e+02,  2.9503970e+02,  9.7657114e-01],
+       [ 3.6957544e+02,  2.9712769e+02,  8.2811129e-01],
+       [ 3.4776544e+02,  2.9803622e+02,  9.4151646e-01],
+       [ 3.8178815e+02,  3.1739853e+02,  9.3542975e-01],
+       [ 3.4123145e+02,  3.2181036e+02,  9.5376050e-01],
+       [ 3.8760934e+02,  3.4162189e+02,  6.1718684e-01],
+       [ 3.3507935e+02,  3.5091327e+02,  9.6102822e-01],
+       [ 3.7334406e+02,  3.5688290e+02,  4.3559963e-01],
+       [ 3.3581897e+02,  3.6386734e+02,  8.9591628e-01],
+       [ 3.7379721e+02,  3.6283130e+02,  8.5838985e-01],
+       [ 3.5045963e+02,  3.6485587e+02,  9.5851350e-01],
+       [ 3.8885754e+02,  3.6172189e+02,  6.5838528e-01],
+       [ 3.2807568e+02,  3.7470078e+02,  6.8846005e-01],
+       [ 3.3847418e+02,  3.8157928e+02,  3.4105796e-01],
        [ 0.0000000e+00, -3.0000000e+00,  0.0000000e+00]], dtype=float32)
 </pre></div>
 </div>
@@ -600,8 +636,8 @@ This is also the basis for the seeds. Both are shown below.</p>
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
+            
+                <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="examples.html" title="previous page">
         <i class="fas fa-angle-left"></i>
@@ -618,23 +654,21 @@ This is also the basis for the seeds. Both are shown below.</p>
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By <a href="https://www.svenkreiss.com">Sven Kreiss</a> and <a href="https://github.com/openpifpaf/openpifpaf/graphs/contributors">contributors</a>.<br/>
-        
-            &copy; Copyright 2020-2021.<br/>
-          <div class="extra_footer">
-            <p>Powered by <a href="https://jupyterbook.org/">Jupyter Book</a>.</p>
+  <p>
+    
+      By <a href="https://www.svenkreiss.com">Sven Kreiss</a> and <a href="https://github.com/openpifpaf/openpifpaf/graphs/contributors">contributors</a>.<br/>
+    
+        &copy; Copyright 2020-2021.<br/>
+      <div class="extra_footer">
+        <p>Powered by <a href="https://jupyterbook.org/">Jupyter Book</a>.</p>
 
-          </div>
-      </p>
-    </div>
-  </footer>
+      </div>
+  </p>
+</footer>
 </main>
 
 

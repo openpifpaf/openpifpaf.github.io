@@ -38,11 +38,14 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -293,7 +296,7 @@
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -339,7 +342,7 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> On this page
@@ -364,7 +367,35 @@
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Plugins</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> On this page </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#discovery">
+   Discovery
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#registrations">
+   Registrations
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="plugins">
@@ -574,16 +605,16 @@
  &#39;mobilenetv2&#39;: &#39;http://github.com/vita-epfl/openpifpaf-torchhub/releases/download/v0.12a5/mobilenetv2-201112-193315-cocokp-1728a9f5.pkl&#39;,
  &#39;mobilenetv3small&#39;: &#39;http://github.com/openpifpaf/torchhub/releases/download/v0.13/mobilenetv3small-210822-213409-cocokp-slurm726252-edge513-o10s-803b24ae.pkl&#39;,
  &#39;mobilenetv3large&#39;: &#39;http://github.com/openpifpaf/torchhub/releases/download/v0.13/mobilenetv3large-210820-184901-cocokp-slurm725985-edge513-o10s-6c76cbfb.pkl&#39;,
- &#39;resnet18&#39;: &lt;object at 0x7fd4bc539550&gt;,
+ &#39;resnet18&#39;: &lt;object at 0x7fa56a9733c0&gt;,
  &#39;resnet50&#39;: &#39;http://github.com/openpifpaf/torchhub/releases/download/v0.13/resnet50-210830-150728-cocokp-slurm728641-edge513-o10s-ecd30da4.pkl&#39;,
- &#39;resnet101&#39;: &lt;object at 0x7fd4bc539550&gt;,
- &#39;resnet152&#39;: &lt;object at 0x7fd4bc539550&gt;,
- &#39;shufflenetv2x1&#39;: &lt;object at 0x7fd4bc539550&gt;,
- &#39;shufflenetv2x2&#39;: &lt;object at 0x7fd4bc539550&gt;,
+ &#39;resnet101&#39;: &lt;object at 0x7fa56a9733c0&gt;,
+ &#39;resnet152&#39;: &lt;object at 0x7fa56a9733c0&gt;,
+ &#39;shufflenetv2x1&#39;: &lt;object at 0x7fa56a9733c0&gt;,
+ &#39;shufflenetv2x2&#39;: &lt;object at 0x7fa56a9733c0&gt;,
  &#39;shufflenetv2k16&#39;: &#39;http://github.com/openpifpaf/torchhub/releases/download/v0.13/shufflenetv2k16-210820-232500-cocokp-slurm726069-edge513-o10s-7189450a.pkl&#39;,
  &#39;shufflenetv2k16-withdense&#39;: &#39;http://github.com/vita-epfl/openpifpaf-torchhub/releases/download/v0.12b4/shufflenetv2k16-210221-131426-cocokp-o10s-627d901e.pkl&#39;,
  &#39;shufflenetv2k30&#39;: &#39;http://github.com/openpifpaf/torchhub/releases/download/v0.13/shufflenetv2k30-210821-003923-cocokp-slurm726072-edge513-o10s-5fe1c400.pkl&#39;,
- &#39;shufflenetv2k44&#39;: &lt;object at 0x7fd4bc539550&gt;,
+ &#39;shufflenetv2k44&#39;: &lt;object at 0x7fa56a9733c0&gt;,
  &#39;swin_s&#39;: &#39;http://github.com/dmizr/openpifpaf/releases/download/v0.12.14/swin_s_fpn_lvl_3_lr_5e-5_resumed-d286d41a.pkl&#39;,
  &#39;swin_b&#39;: &#39;http://github.com/dmizr/openpifpaf/releases/download/v0.12.14/swin_b_fpn_lvl_3_lr_5e-5_resumed-fa951ce0.pkl&#39;,
  &#39;swin_t_input_upsample&#39;: &#39;http://github.com/dmizr/openpifpaf/releases/download/v0.12.14/swin_t_input_upsample_no_fpn_lr_5e-5_resumed-e0681112.pkl&#39;,
@@ -639,8 +670,8 @@
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
+            
+                <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="cli_help.html" title="previous page">
         <i class="fas fa-angle-left"></i>
@@ -657,23 +688,21 @@
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By <a href="https://www.svenkreiss.com">Sven Kreiss</a> and <a href="https://github.com/openpifpaf/openpifpaf/graphs/contributors">contributors</a>.<br/>
-        
-            &copy; Copyright 2020-2021.<br/>
-          <div class="extra_footer">
-            <p>Powered by <a href="https://jupyterbook.org/">Jupyter Book</a>.</p>
+  <p>
+    
+      By <a href="https://www.svenkreiss.com">Sven Kreiss</a> and <a href="https://github.com/openpifpaf/openpifpaf/graphs/contributors">contributors</a>.<br/>
+    
+        &copy; Copyright 2020-2021.<br/>
+      <div class="extra_footer">
+        <p>Powered by <a href="https://jupyterbook.org/">Jupyter Book</a>.</p>
 
-          </div>
-      </p>
-    </div>
-  </footer>
+      </div>
+  </p>
+</footer>
 </main>
 
 
