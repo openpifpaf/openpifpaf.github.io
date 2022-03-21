@@ -46,15 +46,14 @@
     <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -527,7 +526,7 @@ possible (approx) head networks on top: a single 1x1 convolution.
 The outputs of the head networks are the composite fields. At each location,
 the composite head produces a confidence together with some location and attribute
 information.</p>
-<p>In our first paper <span id="id1">[<a class="reference internal" href="bibliography.html#id2">KBA19</a>]</span>, we show how to learn these composite
+<p>In our first paper <span id="id1">[<a class="reference internal" href="bibliography.html#id2" title="Sven Kreiss, Lorenzo Bertoni, and Alexandre Alahi. PifPaf: Composite Fields for Human Pose Estimation. In The IEEE Conference on Computer Vision and Pattern Recognition (CVPR). June 2019.">KBA19</a>]</span>, we show how to learn these composite
 fields with a binary cross entropy for the confidence, a Laplace loss for regression
 and a plain L1 regression loss for scale. The Laplace loss has been valuable
 for OpenPifPaf as it proved to be better than any other of the regression losses
@@ -666,8 +665,8 @@ Here is the corresponding predict command for the <a class="reference external" 
 We found that for stable training, the learning rate <span class="math notranslate nohighlight">\(\lambda\)</span>,
 the <code class="docutils literal notranslate"><span class="pre">clip-grad-value</span></code> <span class="math notranslate nohighlight">\(c\)</span> and the <span class="math notranslate nohighlight">\(\epsilon\)</span> from the denominator of the
 BatchNorm should obey:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bcbf4b60-e4a9-4eb8-8635-80884c4fc417">
-<span class="eqno">(1)<a class="headerlink" href="#equation-bcbf4b60-e4a9-4eb8-8635-80884c4fc417" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0d428175-f7f3-42aa-b9c5-0ca08fd21205">
+<span class="eqno">(1)<a class="headerlink" href="#equation-0d428175-f7f3-42aa-b9c5-0ca08fd21205" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \lambda \cdot c &amp;\leq \sqrt{\epsilon}
 \end{align}\]</div>
 <p>where the default <span class="math notranslate nohighlight">\(\epsilon\)</span> is <span class="math notranslate nohighlight">\(10^{-4}\)</span> (different from the PyTorch default).

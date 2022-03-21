@@ -46,12 +46,11 @@
     <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
@@ -602,7 +601,7 @@ The code on the page is all the code required to reproduce that particular page.
 </div>
 <div class="section" id="citation">
 <span id="id2"></span><h2>Citation<a class="headerlink" href="#citation" title="Permalink to this headline">¶</a></h2>
-<p>Reference <span id="id3">[<a class="reference internal" href="bibliography.html#id3">KBA21</a>]</span>,
+<p>Reference <span id="id3">[<a class="reference internal" href="bibliography.html#id3" title="Sven Kreiss, Lorenzo Bertoni, and Alexandre Alahi. OpenPifPaf: Composite Fields for Semantic Keypoint Detection and Spatio-Temporal Association. arXiv preprint arXiv:2103.02440, March 2021.">KBA21</a>]</span>,
 <a class="reference external" href="https://arxiv.org/abs/2103.02440">arxiv.org/abs/2103.02440</a></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@article</span><span class="p">{</span><span class="n">kreiss2021openpifpaf</span><span class="p">,</span>
   <span class="n">title</span> <span class="o">=</span> <span class="p">{{</span><span class="n">OpenPifPaf</span><span class="p">:</span> <span class="n">Composite</span> <span class="n">Fields</span> <span class="k">for</span> <span class="n">Semantic</span> <span class="n">Keypoint</span> <span class="n">Detection</span> <span class="ow">and</span> <span class="n">Spatio</span><span class="o">-</span><span class="n">Temporal</span> <span class="n">Association</span><span class="p">}},</span>
@@ -614,7 +613,7 @@ The code on the page is all the code required to reproduce that particular page.
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Reference <span id="id4">[<a class="reference internal" href="bibliography.html#id2">KBA19</a>]</span>,
+<p>Reference <span id="id4">[<a class="reference internal" href="bibliography.html#id2" title="Sven Kreiss, Lorenzo Bertoni, and Alexandre Alahi. PifPaf: Composite Fields for Human Pose Estimation. In The IEEE Conference on Computer Vision and Pattern Recognition (CVPR). June 2019.">KBA19</a>]</span>,
 <a class="reference external" href="https://arxiv.org/abs/1903.06593">arxiv.org/abs/1903.06593</a></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@InProceedings</span><span class="p">{</span><span class="n">kreiss2019pifpaf</span><span class="p">,</span>
   <span class="n">author</span> <span class="o">=</span> <span class="p">{</span><span class="n">Kreiss</span><span class="p">,</span> <span class="n">Sven</span> <span class="ow">and</span> <span class="n">Bertoni</span><span class="p">,</span> <span class="n">Lorenzo</span> <span class="ow">and</span> <span class="n">Alahi</span><span class="p">,</span> <span class="n">Alexandre</span><span class="p">},</span>
