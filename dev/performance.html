@@ -312,7 +312,9 @@ const thebe_selector_output = ".output, .cell_output"
             href="https://github.com/openpifpaf/openpifpaf/issues/new?title=Issue%20on%20page%20%2Fperformance.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
+        <a class="edit-button" href="https://github.com/openpifpaf/openpifpaf/edit/main/guide/performance.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
 </div>
 
@@ -1234,16 +1236,16 @@ python -m openpifpaf.predict coco/000000081988.jpg --no-download-progress --debu
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.transforms.pad:valid area after pad: [  0.   3. 639. 426.], image size = (641, 433)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.decoder.decoder:nn processing time: 774.1ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.decoder.decoder:nn processing time: 675.7ms
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.decoder.decoder:parallel execution with worker &lt;openpifpaf.decoder.decoder.DummyPool object at 0x7fe097d7ebb0&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.decoder.decoder:parallel execution with worker &lt;openpifpaf.decoder.decoder.DummyPool object at 0x7fe469d92bb0&gt;
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.decoder.multi:task 0
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.decoder.cifcaf:cpp annotations = 5 (13.7ms)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.decoder.cifcaf:cpp annotations = 5 (12.2ms)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:openpifpaf.decoder.cifcaf:annotations 5: [16, 14, 13, 12, 12]
@@ -1252,7 +1254,7 @@ python -m openpifpaf.predict coco/000000081988.jpg --no-download-progress --debu
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:openpifpaf.profiler:writing profile file profile_decoder.prof
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         386 function calls in 0.015 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         386 function calls in 0.014 seconds
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -1267,10 +1269,10 @@ python -m openpifpaf.predict coco/000000081988.jpg --no-download-progress --debu
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        1    0.014    0.014    0.015    0.015 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224(__call__)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        1    0.012    0.012    0.014    0.014 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224(__call__)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        5    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/openpifpaf/annotation.py:17(__init__)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        5    0.001    0.000    0.001    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/openpifpaf/annotation.py:17(__init__)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       10    0.000    0.000    0.000    0.000 {built-in method numpy.asarray}
@@ -1288,22 +1290,22 @@ python -m openpifpaf.predict coco/000000081988.jpg --no-download-progress --debu
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/openpifpaf/visualizer/cif.py:47(predicted)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:276(&lt;listcomp&gt;)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/openpifpaf/visualizer/caf.py:47(predicted)
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       10    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/numpy/core/fromnumeric.py:69(_wrapreduction)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 {method &#39;unbind&#39; of &#39;torch._C._TensorBase&#39; objects}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:276(&lt;listcomp&gt;)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       10    0.000    0.000    0.000    0.000 {built-in method numpy.zeros}
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/logging/__init__.py:364(getMessage)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/openpifpaf/visualizer/caf.py:47(predicted)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 {method &#39;unbind&#39; of &#39;torch._C._TensorBase&#39; objects}
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       15    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/torch/_tensor.py:728(__array__)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       10    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/numpy/core/fromnumeric.py:2160(sum)
@@ -1312,19 +1314,16 @@ python -m openpifpaf.predict coco/000000081988.jpg --no-download-progress --debu
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/logging/__init__.py:1689(isEnabledFor)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       15    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/torch/_tensor.py:728(__array__)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/torch/_tensor.py:676(__len__)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/logging/__init__.py:1565(_log)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/logging/__init__.py:364(getMessage)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        5    0.000    0.000    0.000    0.000 {method &#39;tolist&#39; of &#39;numpy.ndarray&#39; objects}
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/logging/__init__.py:1514(findCaller)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/torch/_tensor.py:676(__len__)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        5    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/openpifpaf/visualizer/base.py:114(indices)
@@ -1336,16 +1335,25 @@ python -m openpifpaf.predict coco/000000081988.jpg --no-download-progress --debu
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       10    0.000    0.000    0.000    0.000 &lt;__array_function__ internals&gt;:177(sum)
 </pre></div>
 </div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/logging/__init__.py:1550(makeRecord)
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       10    0.000    0.000    0.000    0.000 {built-in method numpy.core._multiarray_umath.implement_array_function}
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/logging/__init__.py:1565(_log)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/logging/__init__.py:1073(emit)
 </pre></div>
 </div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/posixpath.py:140(basename)
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       24    0.000    0.000    0.000    0.000 {built-in method builtins.len}
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/posixpath.py:140(basename)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/logging/__init__.py:1645(callHandlers)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/torch/_tensor.py:688(__iter__)
@@ -1354,7 +1362,7 @@ python -m openpifpaf.predict coco/000000081988.jpg --no-download-progress --debu
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/logging/__init__.py:655(format)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/logging/__init__.py:1645(callHandlers)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/logging/__init__.py:1062(flush)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       10    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/numpy/core/fromnumeric.py:70(&lt;dictcomp&gt;)
@@ -1363,175 +1371,169 @@ python -m openpifpaf.predict coco/000000081988.jpg --no-download-progress --debu
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       19    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/logging/__init__.py:941(handle)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/logging/__init__.py:1062(flush)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/logging/__init__.py:1550(makeRecord)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/logging/__init__.py:1424(debug)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/posixpath.py:117(splitext)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        3    0.000    0.000    0.000    0.000 {built-in method torch._C._get_tracing_state}
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/logging/__init__.py:435(_format)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       15    0.000    0.000    0.000    0.000 {method &#39;astype&#39; of &#39;numpy.ndarray&#39; objects}
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/logging/__init__.py:160(&lt;lambda&gt;)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/logging/__init__.py:1424(debug)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        6    0.000    0.000    0.000    0.000 {method &#39;acquire&#39; of &#39;_thread.RLock&#39; objects}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/logging/__init__.py:941(handle)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/logging/__init__.py:218(_acquireLock)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/genericpath.py:121(_splitext)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       15    0.000    0.000    0.000    0.000 {method &#39;astype&#39; of &#39;numpy.ndarray&#39; objects}
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/logging/__init__.py:1591(handle)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/logging/__init__.py:918(format)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 {built-in method posix.getpid}
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/logging/__init__.py:427(usesTime)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/logging/__init__.py:1436(info)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        6    0.000    0.000    0.000    0.000 {method &#39;rfind&#39; of &#39;str&#39; objects}
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/openpifpaf/visualizer/cifhr.py:17(predicted)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        4    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/logging/__init__.py:898(acquire)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/logging/__init__.py:435(_format)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/logging/__init__.py:119(getLevelName)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        6    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/logging/__init__.py:160(&lt;lambda&gt;)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       16    0.000    0.000    0.000    0.000 {built-in method torch._C._has_torch_function_unary}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/genericpath.py:121(_splitext)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/posixpath.py:52(normcase)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        3    0.000    0.000    0.000    0.000 {built-in method torch._C._get_tracing_state}
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/threading.py:1306(current_thread)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/openpifpaf/visualizer/cif.py:54(_confidences)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/logging/__init__.py:1675(getEffectiveLevel)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/logging/__init__.py:227(_releaseLock)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/logging/__init__.py:1436(info)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/logging/__init__.py:633(usesTime)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        4    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/logging/__init__.py:796(filter)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        4    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/logging/__init__.py:898(acquire)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/threading.py:1031(name)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        6    0.000    0.000    0.000    0.000 {method &#39;acquire&#39; of &#39;_thread.RLock&#39; objects}
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        4    0.000    0.000    0.000    0.000 {method &#39;get&#39; of &#39;dict&#39; objects}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/openpifpaf/visualizer/cifhr.py:17(predicted)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/logging/__init__.py:639(formatMessage)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/logging/__init__.py:427(usesTime)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/openpifpaf/headmeta.py:21(stride)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/posixpath.py:52(normcase)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       10    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/numpy/core/fromnumeric.py:2155(_sum_dispatcher)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/logging/__init__.py:918(format)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/threading.py:1306(current_thread)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        6    0.000    0.000    0.000    0.000 {method &#39;rfind&#39; of &#39;str&#39; objects}
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 {built-in method posix.getpid}
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        6    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       10    0.000    0.000    0.000    0.000 {method &#39;items&#39; of &#39;dict&#39; objects}
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/openpifpaf/visualizer/cif.py:63(_regressions)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/logging/__init__.py:1675(getEffectiveLevel)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        4    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/logging/__init__.py:905(release)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       16    0.000    0.000    0.000    0.000 {built-in method torch._C._has_torch_function_unary}
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/openpifpaf/visualizer/cif.py:54(_confidences)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        4    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/logging/__init__.py:796(filter)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/logging/__init__.py:438(format)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        3    0.000    0.000    0.000    0.000 {method &#39;dim&#39; of &#39;torch._C._TensorBase&#39; objects}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/logging/__init__.py:227(_releaseLock)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 {method &#39;find&#39; of &#39;str&#39; objects}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        4    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/logging/__init__.py:905(release)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/logging/__init__.py:639(formatMessage)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        4    0.000    0.000    0.000    0.000 {method &#39;get&#39; of &#39;dict&#39; objects}
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       10    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/numpy/core/fromnumeric.py:2155(_sum_dispatcher)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/threading.py:1031(name)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        3    0.000    0.000    0.000    0.000 {method &#39;dim&#39; of &#39;torch._C._TensorBase&#39; objects}
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/posixpath.py:41(_get_sep)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        6    0.000    0.000    0.000    0.000 {built-in method posix.fspath}
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/openpifpaf/visualizer/caf.py:54(_confidences)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/openpifpaf/visualizer/caf.py:65(_regressions)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        6    0.000    0.000    0.000    0.000 {method &#39;release&#39; of &#39;_thread.RLock&#39; objects}
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 {built-in method sys._getframe}
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        5    0.000    0.000    0.000    0.000 {method &#39;append&#39; of &#39;list&#39; objects}
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 {built-in method time.perf_counter}
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        5    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/openpifpaf/visualizer/base.py:118(&lt;listcomp&gt;)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/openpifpaf/headmeta.py:21(stride)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/multiprocessing/process.py:37(current_process)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        4    0.000    0.000    0.000    0.000 {built-in method _thread.get_ident}
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/logging/__init__.py:1276(disable)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 {built-in method time.time}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/openpifpaf/visualizer/cif.py:63(_regressions)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 {method &#39;find&#39; of &#39;str&#39; objects}
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 {built-in method time.perf_counter}
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        6    0.000    0.000    0.000    0.000 {method &#39;release&#39; of &#39;_thread.RLock&#39; objects}
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/openpifpaf/visualizer/caf.py:65(_regressions)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/openpifpaf/visualizer/caf.py:54(_confidences)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 {built-in method sys._getframe}
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        6    0.000    0.000    0.000    0.000 {built-in method posix.fspath}
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 {method &#39;write&#39; of &#39;_io.TextIOWrapper&#39; objects}
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 {built-in method builtins.iter}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        5    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/openpifpaf/visualizer/base.py:118(&lt;listcomp&gt;)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/multiprocessing/process.py:189(name)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        5    0.000    0.000    0.000    0.000 {method &#39;append&#39; of &#39;list&#39; objects}
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 {built-in method builtins.iter}
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        4    0.000    0.000    0.000    0.000 {built-in method _thread.get_ident}
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        2    0.000    0.000    0.000    0.000 {built-in method time.time}
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        1    0.000    0.000    0.000    0.000 {method &#39;disable&#39; of &#39;_lsprof.Profiler&#39; objects}
@@ -1546,7 +1548,7 @@ python -m openpifpaf.predict coco/000000081988.jpg --no-download-progress --debu
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.decoder.decoder:time: nn = 776.0ms, dec = 17.0ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.decoder.decoder:time: nn = 676.0ms, dec = 16.7ms
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:openpifpaf.predictor:batch 0: coco/000000081988.jpg
@@ -1624,7 +1626,7 @@ python -m openpifpaf.predict coco/000000081988.jpg --no-download-progress --debu
     
       By <a href="https://www.svenkreiss.com">Sven Kreiss</a> and <a href="https://github.com/openpifpaf/openpifpaf/graphs/contributors">contributors</a>.<br/>
     
-        &copy; Copyright 2020-2021.<br/>
+        &copy; Copyright 2020-2022.<br/>
       <div class="extra_footer">
         <p>Powered by <a href="https://jupyterbook.org/">Jupyter Book</a>.</p>
 

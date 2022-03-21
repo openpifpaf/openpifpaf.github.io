@@ -315,7 +315,9 @@ const thebe_selector_output = ".output, .cell_output"
             href="https://github.com/openpifpaf/openpifpaf/issues/new?title=Issue%20on%20page%20%2Ftrain.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
+        <a class="edit-button" href="https://github.com/openpifpaf/openpifpaf/edit/main/guide/train.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
 </div>
 
@@ -665,8 +667,8 @@ Here is the corresponding predict command for the <a class="reference external" 
 We found that for stable training, the learning rate <span class="math notranslate nohighlight">\(\lambda\)</span>,
 the <code class="docutils literal notranslate"><span class="pre">clip-grad-value</span></code> <span class="math notranslate nohighlight">\(c\)</span> and the <span class="math notranslate nohighlight">\(\epsilon\)</span> from the denominator of the
 BatchNorm should obey:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ceb62fe0-156d-48b2-b2b2-3a94da030cbd">
-<span class="eqno">(1)<a class="headerlink" href="#equation-ceb62fe0-156d-48b2-b2b2-3a94da030cbd" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-8ea83f5e-5d16-4148-9a86-e6b2c6eebef0">
+<span class="eqno">(1)<a class="headerlink" href="#equation-8ea83f5e-5d16-4148-9a86-e6b2c6eebef0" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \lambda \cdot c &amp;\leq \sqrt{\epsilon}
 \end{align}\]</div>
 <p>where the default <span class="math notranslate nohighlight">\(\epsilon\)</span> is <span class="math notranslate nohighlight">\(10^{-4}\)</span> (different from the PyTorch default).
@@ -871,7 +873,7 @@ srun --gpu-bind<span class="o">=</span>closest singularity <span class="nb">exec
     
       By <a href="https://www.svenkreiss.com">Sven Kreiss</a> and <a href="https://github.com/openpifpaf/openpifpaf/graphs/contributors">contributors</a>.<br/>
     
-        &copy; Copyright 2020-2021.<br/>
+        &copy; Copyright 2020-2022.<br/>
       <div class="extra_footer">
         <p>Powered by <a href="https://jupyterbook.org/">Jupyter Book</a>.</p>
 
