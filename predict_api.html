@@ -38,20 +38,22 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -291,7 +293,7 @@
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -309,7 +311,9 @@
             href="https://github.com/openpifpaf/openpifpaf/issues/new?title=Issue%20on%20page%20%2Fpredict_api.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
+        <a class="edit-button" href="https://github.com/openpifpaf/openpifpaf/edit/stable/guide/predict_api.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
 </div>
 
@@ -337,7 +341,7 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> On this page
@@ -367,7 +371,40 @@
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Prediction API</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> On this page </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#load-an-example-image">
+   Load an Example Image
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#use-the-predictor-api">
+   Use the Predictor API
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fields">
+   Fields
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="prediction-api">
@@ -391,8 +428,8 @@ the command line interface.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OpenPifPaf version 0.13.1
-PyTorch version 1.9.0+cpu
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OpenPifPaf version 0.13.2
+PyTorch version 1.11.0+cpu
 </pre></div>
 </div>
 </div>
@@ -447,7 +484,7 @@ PyTorch version 1.9.0+cpu
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;openpifpaf.annotation.Annotation at 0x7f3e05728d30&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;openpifpaf.annotation.Annotation at 0x7fae6b871af0&gt;
 </pre></div>
 </div>
 </div>
@@ -460,21 +497,21 @@ PyTorch version 1.9.0+cpu
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 3.6017877e+02,  2.9964966e+02,  9.9882096e-01],
-       [ 3.6403540e+02,  2.9479474e+02,  9.5608485e-01],
-       [ 3.5507379e+02,  2.9503967e+02,  9.7657114e-01],
-       [ 3.6957547e+02,  2.9712772e+02,  8.2811117e-01],
-       [ 3.4776541e+02,  2.9803625e+02,  9.4151706e-01],
-       [ 3.8178815e+02,  3.1739850e+02,  9.3542933e-01],
-       [ 3.4123141e+02,  3.2181039e+02,  9.5376027e-01],
-       [ 3.8760931e+02,  3.4162192e+02,  6.1718756e-01],
-       [ 3.3507941e+02,  3.5091321e+02,  9.6102792e-01],
-       [ 3.7334412e+02,  3.5688287e+02,  4.3560398e-01],
-       [ 3.3581900e+02,  3.6386728e+02,  8.9591610e-01],
-       [ 3.7379736e+02,  3.6283124e+02,  8.5838813e-01],
-       [ 3.5045969e+02,  3.6485587e+02,  9.5851332e-01],
-       [ 3.8885773e+02,  3.6172177e+02,  6.5838057e-01],
-       [ 3.2807556e+02,  3.7470059e+02,  6.8845856e-01],
-       [ 3.3847372e+02,  3.8157913e+02,  3.4106129e-01],
+       [ 3.6403540e+02,  2.9479474e+02,  9.5608455e-01],
+       [ 3.5507379e+02,  2.9503967e+02,  9.7657120e-01],
+       [ 3.6957547e+02,  2.9712772e+02,  8.2811165e-01],
+       [ 3.4776541e+02,  2.9803625e+02,  9.4151717e-01],
+       [ 3.8178818e+02,  3.1739856e+02,  9.3542981e-01],
+       [ 3.4123145e+02,  3.2181036e+02,  9.5376039e-01],
+       [ 3.8760931e+02,  3.4162192e+02,  6.1718613e-01],
+       [ 3.3507935e+02,  3.5091327e+02,  9.6102816e-01],
+       [ 3.7334406e+02,  3.5688293e+02,  4.3560144e-01],
+       [ 3.3581900e+02,  3.6386734e+02,  8.9591652e-01],
+       [ 3.7379724e+02,  3.6283133e+02,  8.5838938e-01],
+       [ 3.5045963e+02,  3.6485583e+02,  9.5851326e-01],
+       [ 3.8885754e+02,  3.6172189e+02,  6.5838480e-01],
+       [ 3.2807571e+02,  3.7470078e+02,  6.8845987e-01],
+       [ 3.3847418e+02,  3.8157928e+02,  3.4105790e-01],
        [ 0.0000000e+00, -3.0000000e+00,  0.0000000e+00]], dtype=float32)
 </pre></div>
 </div>
@@ -596,8 +633,8 @@ This is also the basis for the seeds. Both are shown below.</p>
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
+            
+                <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="examples.html" title="previous page">
         <i class="fas fa-angle-left"></i>
@@ -614,23 +651,21 @@ This is also the basis for the seeds. Both are shown below.</p>
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By <a href="https://www.svenkreiss.com">Sven Kreiss</a> and <a href="https://github.com/openpifpaf/openpifpaf/graphs/contributors">contributors</a>.<br/>
-        
-            &copy; Copyright 2020-2021.<br/>
-          <div class="extra_footer">
-            <p>Powered by <a href="https://jupyterbook.org/">Jupyter Book</a>.</p>
+  <p>
+    
+      By <a href="https://www.svenkreiss.com">Sven Kreiss</a> and <a href="https://github.com/openpifpaf/openpifpaf/graphs/contributors">contributors</a>.<br/>
+    
+        &copy; Copyright 2020-2022.<br/>
+      <div class="extra_footer">
+        <p>Powered by <a href="https://jupyterbook.org/">Jupyter Book</a>.</p>
 
-          </div>
-      </p>
-    </div>
-  </footer>
+      </div>
+  </p>
+</footer>
 </main>
 
 
