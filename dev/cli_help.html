@@ -1820,7 +1820,7 @@ python3 -m openpifpaf.video --help
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        Decoders to be considered: [&#39;cifcafdense&#39;, &#39;cifcaf&#39;,
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        &#39;trackingpose&#39;, &#39;cifdet&#39;, &#39;posesimilarity&#39;]. (default:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        &#39;cifdet&#39;, &#39;trackingpose&#39;, &#39;posesimilarity&#39;]. (default:
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        None)
@@ -2376,42 +2376,6 @@ python3 -m openpifpaf.train --help
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MobileNetV2:
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  --mobilenetv2-no-pretrain
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        use randomly initialized models (default: True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MobileNetV3:
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  --mobilenetv3-no-pretrain
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        use randomly initialized models (default: True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ShuffleNetv2:
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  --shufflenetv2-no-pretrain
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        use randomly initialized models (default: True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>shufflenetv2k:
 </pre></div>
 </div>
@@ -2455,6 +2419,42 @@ python3 -m openpifpaf.train --help
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  --shufflenetv2k-leaky-relu
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ShuffleNetv2:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  --shufflenetv2-no-pretrain
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        use randomly initialized models (default: True)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MobileNetV2:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  --mobilenetv2-no-pretrain
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        use randomly initialized models (default: True)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MobileNetV3:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  --mobilenetv3-no-pretrain
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        use randomly initialized models (default: True)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -5065,13 +5065,13 @@ python3 -m openpifpaf.eval --help
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  --decoder DECODER [DECODER ...]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        Decoders to be considered: [&#39;cifcafdense&#39;,
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        Decoders to be considered: [&#39;cifcafdense&#39;, &#39;cifcaf&#39;,
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        &#39;trackingpose&#39;, &#39;cifcaf&#39;, &#39;cifdet&#39;, &#39;posesimilarity&#39;].
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        &#39;cifdet&#39;, &#39;trackingpose&#39;, &#39;posesimilarity&#39;]. (default:
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        (default: None)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        None)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  --seed-threshold SEED_THRESHOLD
@@ -5161,18 +5161,6 @@ python3 -m openpifpaf.eval --help
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>trackingpose decoder:
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  --trackingpose-track-recovery
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  --trackingpose-single-seed
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CifCaf decoder:
 </pre></div>
 </div>
@@ -5243,6 +5231,18 @@ python3 -m openpifpaf.eval --help
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  --ablation-independent-kp
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>trackingpose decoder:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  --trackingpose-track-recovery
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  --trackingpose-single-seed
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -6435,12 +6435,6 @@ python3 -m openpifpaf.export_coreml --help
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                           [--squeezenet-no-pretrain]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                           [--shufflenetv2-no-pretrain]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                           [--mobilenetv3-no-pretrain]
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                           [--shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE]
 </pre></div>
 </div>
@@ -6460,6 +6454,12 @@ python3 -m openpifpaf.export_coreml --help
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                           [--shufflenetv2k-leaky-relu]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                           [--mobilenetv3-no-pretrain]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                           [--shufflenetv2-no-pretrain]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                           [--mobilenetv2-no-pretrain]
@@ -6636,30 +6636,6 @@ python3 -m openpifpaf.export_coreml --help
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ShuffleNetv2:
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  --shufflenetv2-no-pretrain
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        use randomly initialized models (default: True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MobileNetV3:
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  --mobilenetv3-no-pretrain
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        use randomly initialized models (default: True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>shufflenetv2k:
 </pre></div>
 </div>
@@ -6703,6 +6679,30 @@ python3 -m openpifpaf.export_coreml --help
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  --shufflenetv2k-leaky-relu
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MobileNetV3:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  --mobilenetv3-no-pretrain
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        use randomly initialized models (default: True)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ShuffleNetv2:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  --shufflenetv2-no-pretrain
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        use randomly initialized models (default: True)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
