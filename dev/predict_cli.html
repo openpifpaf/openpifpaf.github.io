@@ -432,33 +432,15 @@ python -m openpifpaf.predict coco/000000081988.jpg --image-output --json-output
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:neural network device: cpu (CUDA available: False, count: 0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:openpifpaf.decoder.factory:No specific decoder requested. Using the first one from:
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  --decoder=cifcaf:0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  --decoder=posesimilarity:0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Use any of the above arguments to select one or multiple decoders and to suppress this message.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:openpifpaf.predictor:neural network device: cpu (CUDA available: False, count: 0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:openpifpaf.decoder.cifcaf:annotations 5: [16, 14, 13, 12, 12]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:openpifpaf.predictor:batch 0: coco/000000081988.jpg
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>src/openpifpaf/csrc/src/cif_hr.cpp:102: UserInfo: resizing cifhr buffer
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>src/openpifpaf/csrc/src/occupancy.cpp:53: UserInfo: resizing occupancy buffer
+INFO:openpifpaf.decoder.factory:No specific decoder requested. Using the first one from:
+  --decoder=cifcaf:0
+  --decoder=posesimilarity:0
+Use any of the above arguments to select one or multiple decoders and to suppress this message.
+INFO:openpifpaf.predictor:neural network device: cpu (CUDA available: False, count: 0)
+INFO:openpifpaf.decoder.cifcaf:annotations 5: [16, 14, 13, 12, 12]
+INFO:openpifpaf.predictor:batch 0: coco/000000081988.jpg
+src/openpifpaf/csrc/src/cif_hr.cpp:102: UserInfo: resizing cifhr buffer
+src/openpifpaf/csrc/src/occupancy.cpp:53: UserInfo: resizing occupancy buffer
 </pre></div>
 </div>
 </div>
@@ -497,954 +479,322 @@ python -m json.tool coco/000000081988.jpg.predictions.json
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    {
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        &quot;keypoints&quot;: [
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            360.18,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            299.65,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            1.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            364.04,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            294.79,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.96,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            355.07,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            295.04,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.98,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            369.58,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            297.13,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.83,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            347.77,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            298.04,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.94,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            381.79,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            317.4,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.94,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            341.23,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            321.81,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.95,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            387.61,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            341.62,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.62,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            335.08,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            350.91,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.96,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            373.34,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            356.88,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.44,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            335.82,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            363.87,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.9,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            373.8,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            362.83,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.86,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            350.46,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            364.86,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.96,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            388.86,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            361.72,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.66,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            328.08,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            374.7,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.69,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            338.47,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            381.58,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.34,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            -3.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        ],
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        &quot;bbox&quot;: [
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            321.09,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            292.01,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            74.9,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            96.17
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        ],
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        &quot;score&quot;: 0.821,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        &quot;category_id&quot;: 1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    },
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    {
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        &quot;keypoints&quot;: [
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            81.04,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            316.39,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.8,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            84.85,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            313.13,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.88,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            79.19,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            312.31,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.67,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            99.87,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            308.71,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.96,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            -3.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            121.95,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            317.08,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            1.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            78.87,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            322.75,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.98,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            145.26,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            347.63,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.99,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            59.34,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            349.75,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.96,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            125.94,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            353.11,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.96,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            52.33,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            381.5,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.97,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            121.69,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            359.37,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.97,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            95.56,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            363.15,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.97,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            152.58,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            360.37,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.91,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            72.03,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            367.25,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.88,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            -3.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            -3.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        ],
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        &quot;bbox&quot;: [
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            45.13,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            305.11,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            116.65,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            83.59
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        ],
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        &quot;score&quot;: 0.819,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        &quot;category_id&quot;: 1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    },
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    {
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        &quot;keypoints&quot;: [
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            -3.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            -3.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            -3.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            388.01,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            149.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            1.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            410.68,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            149.9,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.95,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            376.6,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            177.27,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.98,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            425.45,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            178.19,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.98,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            337.24,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            190.82,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.98,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            463.56,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            192.09,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.98,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            301.44,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            193.76,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.98,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            495.15,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            185.29,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.97,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            389.34,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            251.83,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.97,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            414.38,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            251.49,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.98,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            384.25,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            315.64,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.82,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            409.22,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            317.9,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.96,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            -3.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            405.56,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            367.51,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.66
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        ],
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        &quot;bbox&quot;: [
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            289.84,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            142.48,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            216.49,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            234.07
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        ],
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        &quot;score&quot;: 0.788,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        &quot;category_id&quot;: 1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    },
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    {
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        &quot;keypoints&quot;: [
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            239.69,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            318.88,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.48,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            -3.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            235.94,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            316.98,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.68,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            -3.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            222.3,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            314.72,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.84,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            241.28,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            320.26,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.93,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            201.98,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            316.96,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            1.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            241.98,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            351.26,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.83,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            197.04,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            349.91,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.78,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            240.17,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            378.14,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.77,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            195.31,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            375.14,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.67,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            222.78,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            339.59,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.61,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            199.07,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            340.1,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.58,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            222.55,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            374.28,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.42,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            -3.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            -3.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            -3.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        ],
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        &quot;bbox&quot;: [
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            190.44,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            312.1,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            56.65,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            70.61
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        ],
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        &quot;score&quot;: 0.614,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        &quot;category_id&quot;: 1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    },
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    {
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        &quot;keypoints&quot;: [
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            493.12,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            349.29,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.61,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            494.84,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            345.06,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.55,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            488.95,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            346.07,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.53,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            503.2,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            333.74,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.44,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            -3.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            522.08,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            331.19,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.76,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            492.33,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            334.51,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.55,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            549.21,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            351.31,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.65,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            -3.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            -3.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            -3.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            542.72,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            344.51,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.86,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            523.54,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            346.43,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            1.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            522.31,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            377.06,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.81,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            501.11,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            378.52,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.88,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            566.24,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            384.99,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.62,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            -3.0,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            0.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        ],
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        &quot;bbox&quot;: [
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            486.3,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            325.06,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            87.45,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            67.44
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        ],
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        &quot;score&quot;: 0.597,
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        &quot;category_id&quot;: 1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    }
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>]
+    {
+        &quot;keypoints&quot;: [
+            360.18,
+            299.65,
+            1.0,
+            364.04,
+            294.79,
+            0.96,
+            355.07,
+            295.04,
+            0.98,
+            369.58,
+            297.13,
+            0.83,
+            347.77,
+            298.04,
+            0.94,
+            381.79,
+            317.4,
+            0.94,
+            341.23,
+            321.81,
+            0.95,
+            387.61,
+            341.62,
+            0.62,
+            335.08,
+            350.91,
+            0.96,
+            373.34,
+            356.88,
+            0.44,
+            335.82,
+            363.87,
+            0.9,
+            373.8,
+            362.83,
+            0.86,
+            350.46,
+            364.86,
+            0.96,
+            388.86,
+            361.72,
+            0.66,
+            328.08,
+            374.7,
+            0.69,
+            338.47,
+            381.58,
+            0.34,
+            0.0,
+            -3.0,
+            0.0
+        ],
+        &quot;bbox&quot;: [
+            321.09,
+            292.01,
+            74.9,
+            96.17
+        ],
+        &quot;score&quot;: 0.821,
+        &quot;category_id&quot;: 1
+    },
+    {
+        &quot;keypoints&quot;: [
+            81.04,
+            316.39,
+            0.8,
+            84.85,
+            313.13,
+            0.88,
+            79.19,
+            312.31,
+            0.67,
+            99.87,
+            308.71,
+            0.96,
+            0.0,
+            -3.0,
+            0.0,
+            121.95,
+            317.08,
+            1.0,
+            78.87,
+            322.75,
+            0.98,
+            145.26,
+            347.63,
+            0.99,
+            59.34,
+            349.75,
+            0.96,
+            125.94,
+            353.11,
+            0.96,
+            52.33,
+            381.5,
+            0.97,
+            121.69,
+            359.37,
+            0.97,
+            95.56,
+            363.15,
+            0.97,
+            152.58,
+            360.37,
+            0.91,
+            72.03,
+            367.25,
+            0.88,
+            0.0,
+            -3.0,
+            0.0,
+            0.0,
+            -3.0,
+            0.0
+        ],
+        &quot;bbox&quot;: [
+            45.13,
+            305.11,
+            116.65,
+            83.59
+        ],
+        &quot;score&quot;: 0.819,
+        &quot;category_id&quot;: 1
+    },
+    {
+        &quot;keypoints&quot;: [
+            0.0,
+            -3.0,
+            0.0,
+            0.0,
+            -3.0,
+            0.0,
+            0.0,
+            -3.0,
+            0.0,
+            388.01,
+            149.0,
+            1.0,
+            410.68,
+            149.9,
+            0.95,
+            376.6,
+            177.27,
+            0.98,
+            425.45,
+            178.19,
+            0.98,
+            337.24,
+            190.82,
+            0.98,
+            463.56,
+            192.09,
+            0.98,
+            301.44,
+            193.76,
+            0.98,
+            495.15,
+            185.29,
+            0.97,
+            389.34,
+            251.83,
+            0.97,
+            414.38,
+            251.49,
+            0.98,
+            384.25,
+            315.64,
+            0.82,
+            409.22,
+            317.9,
+            0.96,
+            0.0,
+            -3.0,
+            0.0,
+            405.56,
+            367.51,
+            0.66
+        ],
+        &quot;bbox&quot;: [
+            289.84,
+            142.48,
+            216.49,
+            234.07
+        ],
+        &quot;score&quot;: 0.788,
+        &quot;category_id&quot;: 1
+    },
+    {
+        &quot;keypoints&quot;: [
+            239.69,
+            318.88,
+            0.48,
+            0.0,
+            -3.0,
+            0.0,
+            235.94,
+            316.98,
+            0.68,
+            0.0,
+            -3.0,
+            0.0,
+            222.3,
+            314.72,
+            0.84,
+            241.28,
+            320.26,
+            0.93,
+            201.98,
+            316.96,
+            1.0,
+            241.98,
+            351.26,
+            0.83,
+            197.04,
+            349.91,
+            0.78,
+            240.17,
+            378.14,
+            0.77,
+            195.31,
+            375.14,
+            0.67,
+            222.78,
+            339.59,
+            0.61,
+            199.07,
+            340.1,
+            0.58,
+            222.55,
+            374.28,
+            0.42,
+            0.0,
+            -3.0,
+            0.0,
+            0.0,
+            -3.0,
+            0.0,
+            0.0,
+            -3.0,
+            0.0
+        ],
+        &quot;bbox&quot;: [
+            190.44,
+            312.1,
+            56.65,
+            70.61
+        ],
+        &quot;score&quot;: 0.614,
+        &quot;category_id&quot;: 1
+    },
+    {
+        &quot;keypoints&quot;: [
+            493.12,
+            349.29,
+            0.61,
+            494.84,
+            345.06,
+            0.55,
+            488.95,
+            346.07,
+            0.53,
+            503.2,
+            333.74,
+            0.44,
+            0.0,
+            -3.0,
+            0.0,
+            522.08,
+            331.19,
+            0.76,
+            492.33,
+            334.51,
+            0.55,
+            549.21,
+            351.31,
+            0.65,
+            0.0,
+            -3.0,
+            0.0,
+            0.0,
+            -3.0,
+            0.0,
+            0.0,
+            -3.0,
+            0.0,
+            542.72,
+            344.51,
+            0.86,
+            523.54,
+            346.43,
+            1.0,
+            522.31,
+            377.06,
+            0.81,
+            501.11,
+            378.52,
+            0.88,
+            566.24,
+            384.99,
+            0.62,
+            0.0,
+            -3.0,
+            0.0
+        ],
+        &quot;bbox&quot;: [
+            486.3,
+            325.06,
+            87.45,
+            67.44
+        ],
+        &quot;score&quot;: 0.597,
+        &quot;category_id&quot;: 1
+    }
+]
 </pre></div>
 </div>
 </div>
@@ -1485,864 +835,292 @@ python -m openpifpaf.predict coco/000000081988.jpg --image-output --json-output 
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:neural network device: cpu (CUDA available: False, count: 0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.show.painters:color connections = False, lw = 6, marker = 3
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.network.factory:Shell(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  (base_net): ShuffleNetV2K(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    (input_block): Sequential(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      (0): Sequential(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        (0): Conv2d(3, 24, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        (1): BatchNorm2d(24, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        (2): ReLU(inplace=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      )
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    )
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    (stage2): Sequential(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      (0): InvertedResidualK(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        (branch1): Sequential(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (0): Conv2d(24, 24, kernel_size=(5, 5), stride=(2, 2), padding=(2, 2), groups=24, bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (1): BatchNorm2d(24, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (2): Conv2d(24, 174, kernel_size=(1, 1), stride=(1, 1), bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (3): BatchNorm2d(174, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (4): ReLU(inplace=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        )
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        (branch2): Sequential(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (0): Conv2d(24, 174, kernel_size=(1, 1), stride=(1, 1), bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (1): BatchNorm2d(174, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (2): ReLU(inplace=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (3): Conv2d(174, 174, kernel_size=(5, 5), stride=(2, 2), padding=(2, 2), groups=174, bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (4): BatchNorm2d(174, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (5): Conv2d(174, 174, kernel_size=(1, 1), stride=(1, 1), bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (6): BatchNorm2d(174, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (7): ReLU(inplace=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        )
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      )
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      (1): InvertedResidualK(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        (branch2): Sequential(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (0): Conv2d(174, 174, kernel_size=(1, 1), stride=(1, 1), bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (1): BatchNorm2d(174, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (2): ReLU(inplace=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (3): Conv2d(174, 174, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=174, bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (4): BatchNorm2d(174, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (5): Conv2d(174, 174, kernel_size=(1, 1), stride=(1, 1), bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (6): BatchNorm2d(174, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (7): ReLU(inplace=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        )
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      )
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      (2): InvertedResidualK(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        (branch2): Sequential(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (0): Conv2d(174, 174, kernel_size=(1, 1), stride=(1, 1), bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (1): BatchNorm2d(174, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (2): ReLU(inplace=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (3): Conv2d(174, 174, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=174, bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (4): BatchNorm2d(174, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (5): Conv2d(174, 174, kernel_size=(1, 1), stride=(1, 1), bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (6): BatchNorm2d(174, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (7): ReLU(inplace=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        )
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      )
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      (3): InvertedResidualK(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        (branch2): Sequential(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (0): Conv2d(174, 174, kernel_size=(1, 1), stride=(1, 1), bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (1): BatchNorm2d(174, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (2): ReLU(inplace=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (3): Conv2d(174, 174, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=174, bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (4): BatchNorm2d(174, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (5): Conv2d(174, 174, kernel_size=(1, 1), stride=(1, 1), bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (6): BatchNorm2d(174, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (7): ReLU(inplace=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        )
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      )
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    )
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    (stage3): Sequential(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      (0): InvertedResidualK(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        (branch1): Sequential(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (0): Conv2d(348, 348, kernel_size=(5, 5), stride=(2, 2), padding=(2, 2), groups=348, bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (1): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (2): Conv2d(348, 348, kernel_size=(1, 1), stride=(1, 1), bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (3): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (4): ReLU(inplace=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        )
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        (branch2): Sequential(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (0): Conv2d(348, 348, kernel_size=(1, 1), stride=(1, 1), bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (1): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (2): ReLU(inplace=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (3): Conv2d(348, 348, kernel_size=(5, 5), stride=(2, 2), padding=(2, 2), groups=348, bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (4): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (5): Conv2d(348, 348, kernel_size=(1, 1), stride=(1, 1), bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (6): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (7): ReLU(inplace=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        )
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      )
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      (1): InvertedResidualK(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        (branch2): Sequential(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (0): Conv2d(348, 348, kernel_size=(1, 1), stride=(1, 1), bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (1): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (2): ReLU(inplace=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (3): Conv2d(348, 348, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=348, bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (4): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (5): Conv2d(348, 348, kernel_size=(1, 1), stride=(1, 1), bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (6): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (7): ReLU(inplace=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        )
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      )
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      (2): InvertedResidualK(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        (branch2): Sequential(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (0): Conv2d(348, 348, kernel_size=(1, 1), stride=(1, 1), bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (1): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (2): ReLU(inplace=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (3): Conv2d(348, 348, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=348, bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (4): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (5): Conv2d(348, 348, kernel_size=(1, 1), stride=(1, 1), bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (6): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (7): ReLU(inplace=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        )
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      )
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      (3): InvertedResidualK(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        (branch2): Sequential(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (0): Conv2d(348, 348, kernel_size=(1, 1), stride=(1, 1), bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (1): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (2): ReLU(inplace=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (3): Conv2d(348, 348, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=348, bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (4): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (5): Conv2d(348, 348, kernel_size=(1, 1), stride=(1, 1), bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (6): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (7): ReLU(inplace=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        )
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      )
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      (4): InvertedResidualK(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        (branch2): Sequential(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (0): Conv2d(348, 348, kernel_size=(1, 1), stride=(1, 1), bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (1): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (2): ReLU(inplace=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (3): Conv2d(348, 348, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=348, bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (4): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (5): Conv2d(348, 348, kernel_size=(1, 1), stride=(1, 1), bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (6): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (7): ReLU(inplace=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        )
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      )
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      (5): InvertedResidualK(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        (branch2): Sequential(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (0): Conv2d(348, 348, kernel_size=(1, 1), stride=(1, 1), bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (1): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (2): ReLU(inplace=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (3): Conv2d(348, 348, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=348, bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (4): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (5): Conv2d(348, 348, kernel_size=(1, 1), stride=(1, 1), bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (6): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (7): ReLU(inplace=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        )
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      )
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      (6): InvertedResidualK(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        (branch2): Sequential(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (0): Conv2d(348, 348, kernel_size=(1, 1), stride=(1, 1), bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (1): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (2): ReLU(inplace=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (3): Conv2d(348, 348, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=348, bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (4): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (5): Conv2d(348, 348, kernel_size=(1, 1), stride=(1, 1), bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (6): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (7): ReLU(inplace=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        )
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      )
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      (7): InvertedResidualK(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        (branch2): Sequential(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (0): Conv2d(348, 348, kernel_size=(1, 1), stride=(1, 1), bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (1): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (2): ReLU(inplace=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (3): Conv2d(348, 348, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=348, bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (4): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (5): Conv2d(348, 348, kernel_size=(1, 1), stride=(1, 1), bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (6): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (7): ReLU(inplace=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        )
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      )
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    )
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    (stage4): Sequential(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      (0): InvertedResidualK(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        (branch1): Sequential(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (0): Conv2d(696, 696, kernel_size=(5, 5), stride=(2, 2), padding=(2, 2), groups=696, bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (1): BatchNorm2d(696, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (2): Conv2d(696, 696, kernel_size=(1, 1), stride=(1, 1), bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (3): BatchNorm2d(696, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (4): ReLU(inplace=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        )
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        (branch2): Sequential(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (0): Conv2d(696, 696, kernel_size=(1, 1), stride=(1, 1), bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (1): BatchNorm2d(696, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (2): ReLU(inplace=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (3): Conv2d(696, 696, kernel_size=(5, 5), stride=(2, 2), padding=(2, 2), groups=696, bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (4): BatchNorm2d(696, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (5): Conv2d(696, 696, kernel_size=(1, 1), stride=(1, 1), bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (6): BatchNorm2d(696, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (7): ReLU(inplace=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        )
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      )
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      (1): InvertedResidualK(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        (branch2): Sequential(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (0): Conv2d(696, 696, kernel_size=(1, 1), stride=(1, 1), bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (1): BatchNorm2d(696, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (2): ReLU(inplace=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (3): Conv2d(696, 696, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=696, bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (4): BatchNorm2d(696, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (5): Conv2d(696, 696, kernel_size=(1, 1), stride=(1, 1), bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (6): BatchNorm2d(696, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (7): ReLU(inplace=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        )
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      )
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      (2): InvertedResidualK(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        (branch2): Sequential(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (0): Conv2d(696, 696, kernel_size=(1, 1), stride=(1, 1), bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (1): BatchNorm2d(696, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (2): ReLU(inplace=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (3): Conv2d(696, 696, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=696, bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (4): BatchNorm2d(696, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (5): Conv2d(696, 696, kernel_size=(1, 1), stride=(1, 1), bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (6): BatchNorm2d(696, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (7): ReLU(inplace=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        )
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      )
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      (3): InvertedResidualK(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        (branch2): Sequential(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (0): Conv2d(696, 696, kernel_size=(1, 1), stride=(1, 1), bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (1): BatchNorm2d(696, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (2): ReLU(inplace=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (3): Conv2d(696, 696, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=696, bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (4): BatchNorm2d(696, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (5): Conv2d(696, 696, kernel_size=(1, 1), stride=(1, 1), bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (6): BatchNorm2d(696, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          (7): ReLU(inplace=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        )
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      )
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    )
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    (conv5): Sequential(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      (0): Conv2d(1392, 1392, kernel_size=(1, 1), stride=(1, 1), bias=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      (1): BatchNorm2d(1392, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      (2): ReLU(inplace=True)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    )
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  )
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  (head_nets): ModuleList(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    (0): CompositeField4(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      (dropout): Dropout2d(p=0.0, inplace=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      (conv): Conv2d(1392, 340, kernel_size=(1, 1), stride=(1, 1))
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      (upsample_op): PixelShuffle(upscale_factor=2)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    )
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    (1): CompositeField4(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      (dropout): Dropout2d(p=0.0, inplace=False)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      (conv): Conv2d(1392, 608, kernel_size=(1, 1), stride=(1, 1))
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      (upsample_op): PixelShuffle(upscale_factor=2)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    )
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  )
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.decoder.factory:head names = [&#39;cif&#39;, &#39;caf&#39;]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.signal:subscribe to eval_reset
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.decoder.pose_similarity:valid keypoints = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.visualizer.base:cif: indices = []
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.show.painters:color connections = True, lw = 2, marker = 6
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.show.painters:color connections = False, lw = 6, marker = 3
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.visualizer.base:cif: indices = []
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.visualizer.base:caf: indices = []
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.show.painters:color connections = True, lw = 2, marker = 6
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.show.painters:color connections = False, lw = 6, marker = 3
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.visualizer.base:cif: indices = []
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.show.painters:color connections = True, lw = 2, marker = 6
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.show.painters:color connections = False, lw = 6, marker = 3
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.visualizer.base:cif: indices = []
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.visualizer.base:caf: indices = []
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.show.painters:color connections = True, lw = 2, marker = 6
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.show.painters:color connections = False, lw = 6, marker = 3
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.decoder.factory:created 2 decoders
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:openpifpaf.decoder.factory:No specific decoder requested. Using the first one from:
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  --decoder=cifcaf:0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  --decoder=posesimilarity:0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Use any of the above arguments to select one or multiple decoders and to suppress this message.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:openpifpaf.predictor:neural network device: cpu (CUDA available: False, count: 0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.transforms.pad:valid area before pad: [  0.   0. 639. 426.], image size = (640, 427)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.transforms.pad:pad with (0, 3, 1, 3)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.transforms.pad:valid area after pad: [  0.   3. 639. 426.], image size = (641, 433)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.decoder.decoder:nn processing time: 921.3ms
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.decoder.decoder:parallel execution with worker &lt;openpifpaf.decoder.decoder.DummyPool object at 0x7fa9cbe77d00&gt;
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.decoder.multi:task 0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.decoder.cifcaf:cpp annotations = 5 (15.8ms)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:openpifpaf.decoder.cifcaf:annotations 5: [16, 14, 13, 12, 12]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.decoder.decoder:time: nn = 922.1ms, dec = 18.6ms
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:openpifpaf.predictor:batch 0: coco/000000081988.jpg
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:__main__:json output = coco/000000081988.jpg.predictions.json
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:__main__:image output = coco/000000081988.jpg.predictions.jpeg
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.show.canvas:writing image to coco/000000081988.jpg.predictions.jpeg
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>src/openpifpaf/csrc/src/cif_hr.cpp:102: UserInfo: resizing cifhr buffer
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>src/openpifpaf/csrc/src/occupancy.cpp:53: UserInfo: resizing occupancy buffer
+DEBUG:openpifpaf.show.painters:color connections = False, lw = 6, marker = 3
+DEBUG:openpifpaf.network.factory:Shell(
+  (base_net): ShuffleNetV2K(
+    (input_block): Sequential(
+      (0): Sequential(
+        (0): Conv2d(3, 24, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(24, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (2): ReLU(inplace=True)
+      )
+    )
+    (stage2): Sequential(
+      (0): InvertedResidualK(
+        (branch1): Sequential(
+          (0): Conv2d(24, 24, kernel_size=(5, 5), stride=(2, 2), padding=(2, 2), groups=24, bias=False)
+          (1): BatchNorm2d(24, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): Conv2d(24, 174, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (3): BatchNorm2d(174, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (4): ReLU(inplace=True)
+        )
+        (branch2): Sequential(
+          (0): Conv2d(24, 174, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(174, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): ReLU(inplace=True)
+          (3): Conv2d(174, 174, kernel_size=(5, 5), stride=(2, 2), padding=(2, 2), groups=174, bias=False)
+          (4): BatchNorm2d(174, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (5): Conv2d(174, 174, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (6): BatchNorm2d(174, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (7): ReLU(inplace=True)
+        )
+      )
+      (1): InvertedResidualK(
+        (branch2): Sequential(
+          (0): Conv2d(174, 174, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(174, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): ReLU(inplace=True)
+          (3): Conv2d(174, 174, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=174, bias=False)
+          (4): BatchNorm2d(174, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (5): Conv2d(174, 174, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (6): BatchNorm2d(174, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (7): ReLU(inplace=True)
+        )
+      )
+      (2): InvertedResidualK(
+        (branch2): Sequential(
+          (0): Conv2d(174, 174, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(174, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): ReLU(inplace=True)
+          (3): Conv2d(174, 174, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=174, bias=False)
+          (4): BatchNorm2d(174, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (5): Conv2d(174, 174, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (6): BatchNorm2d(174, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (7): ReLU(inplace=True)
+        )
+      )
+      (3): InvertedResidualK(
+        (branch2): Sequential(
+          (0): Conv2d(174, 174, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(174, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): ReLU(inplace=True)
+          (3): Conv2d(174, 174, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=174, bias=False)
+          (4): BatchNorm2d(174, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (5): Conv2d(174, 174, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (6): BatchNorm2d(174, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (7): ReLU(inplace=True)
+        )
+      )
+    )
+    (stage3): Sequential(
+      (0): InvertedResidualK(
+        (branch1): Sequential(
+          (0): Conv2d(348, 348, kernel_size=(5, 5), stride=(2, 2), padding=(2, 2), groups=348, bias=False)
+          (1): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): Conv2d(348, 348, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (3): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (4): ReLU(inplace=True)
+        )
+        (branch2): Sequential(
+          (0): Conv2d(348, 348, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): ReLU(inplace=True)
+          (3): Conv2d(348, 348, kernel_size=(5, 5), stride=(2, 2), padding=(2, 2), groups=348, bias=False)
+          (4): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (5): Conv2d(348, 348, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (6): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (7): ReLU(inplace=True)
+        )
+      )
+      (1): InvertedResidualK(
+        (branch2): Sequential(
+          (0): Conv2d(348, 348, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): ReLU(inplace=True)
+          (3): Conv2d(348, 348, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=348, bias=False)
+          (4): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (5): Conv2d(348, 348, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (6): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (7): ReLU(inplace=True)
+        )
+      )
+      (2): InvertedResidualK(
+        (branch2): Sequential(
+          (0): Conv2d(348, 348, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): ReLU(inplace=True)
+          (3): Conv2d(348, 348, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=348, bias=False)
+          (4): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (5): Conv2d(348, 348, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (6): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (7): ReLU(inplace=True)
+        )
+      )
+      (3): InvertedResidualK(
+        (branch2): Sequential(
+          (0): Conv2d(348, 348, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): ReLU(inplace=True)
+          (3): Conv2d(348, 348, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=348, bias=False)
+          (4): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (5): Conv2d(348, 348, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (6): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (7): ReLU(inplace=True)
+        )
+      )
+      (4): InvertedResidualK(
+        (branch2): Sequential(
+          (0): Conv2d(348, 348, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): ReLU(inplace=True)
+          (3): Conv2d(348, 348, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=348, bias=False)
+          (4): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (5): Conv2d(348, 348, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (6): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (7): ReLU(inplace=True)
+        )
+      )
+      (5): InvertedResidualK(
+        (branch2): Sequential(
+          (0): Conv2d(348, 348, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): ReLU(inplace=True)
+          (3): Conv2d(348, 348, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=348, bias=False)
+          (4): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (5): Conv2d(348, 348, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (6): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (7): ReLU(inplace=True)
+        )
+      )
+      (6): InvertedResidualK(
+        (branch2): Sequential(
+          (0): Conv2d(348, 348, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): ReLU(inplace=True)
+          (3): Conv2d(348, 348, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=348, bias=False)
+          (4): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (5): Conv2d(348, 348, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (6): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (7): ReLU(inplace=True)
+        )
+      )
+      (7): InvertedResidualK(
+        (branch2): Sequential(
+          (0): Conv2d(348, 348, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): ReLU(inplace=True)
+          (3): Conv2d(348, 348, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=348, bias=False)
+          (4): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (5): Conv2d(348, 348, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (6): BatchNorm2d(348, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (7): ReLU(inplace=True)
+        )
+      )
+    )
+    (stage4): Sequential(
+      (0): InvertedResidualK(
+        (branch1): Sequential(
+          (0): Conv2d(696, 696, kernel_size=(5, 5), stride=(2, 2), padding=(2, 2), groups=696, bias=False)
+          (1): BatchNorm2d(696, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): Conv2d(696, 696, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (3): BatchNorm2d(696, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (4): ReLU(inplace=True)
+        )
+        (branch2): Sequential(
+          (0): Conv2d(696, 696, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(696, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): ReLU(inplace=True)
+          (3): Conv2d(696, 696, kernel_size=(5, 5), stride=(2, 2), padding=(2, 2), groups=696, bias=False)
+          (4): BatchNorm2d(696, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (5): Conv2d(696, 696, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (6): BatchNorm2d(696, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (7): ReLU(inplace=True)
+        )
+      )
+      (1): InvertedResidualK(
+        (branch2): Sequential(
+          (0): Conv2d(696, 696, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(696, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): ReLU(inplace=True)
+          (3): Conv2d(696, 696, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=696, bias=False)
+          (4): BatchNorm2d(696, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (5): Conv2d(696, 696, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (6): BatchNorm2d(696, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (7): ReLU(inplace=True)
+        )
+      )
+      (2): InvertedResidualK(
+        (branch2): Sequential(
+          (0): Conv2d(696, 696, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(696, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): ReLU(inplace=True)
+          (3): Conv2d(696, 696, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=696, bias=False)
+          (4): BatchNorm2d(696, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (5): Conv2d(696, 696, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (6): BatchNorm2d(696, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (7): ReLU(inplace=True)
+        )
+      )
+      (3): InvertedResidualK(
+        (branch2): Sequential(
+          (0): Conv2d(696, 696, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(696, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): ReLU(inplace=True)
+          (3): Conv2d(696, 696, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=696, bias=False)
+          (4): BatchNorm2d(696, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (5): Conv2d(696, 696, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (6): BatchNorm2d(696, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (7): ReLU(inplace=True)
+        )
+      )
+    )
+    (conv5): Sequential(
+      (0): Conv2d(1392, 1392, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(1392, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+      (2): ReLU(inplace=True)
+    )
+  )
+  (head_nets): ModuleList(
+    (0): CompositeField4(
+      (dropout): Dropout2d(p=0.0, inplace=False)
+      (conv): Conv2d(1392, 340, kernel_size=(1, 1), stride=(1, 1))
+      (upsample_op): PixelShuffle(upscale_factor=2)
+    )
+    (1): CompositeField4(
+      (dropout): Dropout2d(p=0.0, inplace=False)
+      (conv): Conv2d(1392, 608, kernel_size=(1, 1), stride=(1, 1))
+      (upsample_op): PixelShuffle(upscale_factor=2)
+    )
+  )
+)
+DEBUG:openpifpaf.decoder.factory:head names = [&#39;cif&#39;, &#39;caf&#39;]
+DEBUG:openpifpaf.visualizer.base:cif: indices = []
+DEBUG:openpifpaf.show.painters:color connections = True, lw = 2, marker = 6
+DEBUG:openpifpaf.show.painters:color connections = False, lw = 6, marker = 3
+DEBUG:openpifpaf.visualizer.base:cif: indices = []
+DEBUG:openpifpaf.visualizer.base:caf: indices = []
+DEBUG:openpifpaf.show.painters:color connections = True, lw = 2, marker = 6
+DEBUG:openpifpaf.show.painters:color connections = False, lw = 6, marker = 3
+DEBUG:openpifpaf.signal:subscribe to eval_reset
+DEBUG:openpifpaf.decoder.pose_similarity:valid keypoints = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+DEBUG:openpifpaf.visualizer.base:cif: indices = []
+DEBUG:openpifpaf.show.painters:color connections = True, lw = 2, marker = 6
+DEBUG:openpifpaf.show.painters:color connections = False, lw = 6, marker = 3
+DEBUG:openpifpaf.visualizer.base:cif: indices = []
+DEBUG:openpifpaf.visualizer.base:caf: indices = []
+DEBUG:openpifpaf.show.painters:color connections = True, lw = 2, marker = 6
+DEBUG:openpifpaf.show.painters:color connections = False, lw = 6, marker = 3
+DEBUG:openpifpaf.decoder.factory:created 2 decoders
+INFO:openpifpaf.decoder.factory:No specific decoder requested. Using the first one from:
+  --decoder=cifcaf:0
+  --decoder=posesimilarity:0
+Use any of the above arguments to select one or multiple decoders and to suppress this message.
+INFO:openpifpaf.predictor:neural network device: cpu (CUDA available: False, count: 0)
+DEBUG:openpifpaf.transforms.pad:valid area before pad: [  0.   0. 639. 426.], image size = (640, 427)
+DEBUG:openpifpaf.transforms.pad:pad with (0, 3, 1, 3)
+DEBUG:openpifpaf.transforms.pad:valid area after pad: [  0.   3. 639. 426.], image size = (641, 433)
+DEBUG:openpifpaf.decoder.decoder:nn processing time: 831.5ms
+DEBUG:openpifpaf.decoder.decoder:parallel execution with worker &lt;openpifpaf.decoder.decoder.DummyPool object at 0x7ff78b2c5fa0&gt;
+DEBUG:openpifpaf.decoder.multi:task 0
+DEBUG:openpifpaf.decoder.cifcaf:cpp annotations = 5 (16.0ms)
+INFO:openpifpaf.decoder.cifcaf:annotations 5: [16, 14, 13, 12, 12]
+DEBUG:openpifpaf.decoder.decoder:time: nn = 831.9ms, dec = 17.6ms
+INFO:openpifpaf.predictor:batch 0: coco/000000081988.jpg
+DEBUG:__main__:json output = coco/000000081988.jpg.predictions.json
+DEBUG:__main__:image output = coco/000000081988.jpg.predictions.jpeg
+DEBUG:openpifpaf.show.canvas:writing image to coco/000000081988.jpg.predictions.jpeg
+src/openpifpaf/csrc/src/cif_hr.cpp:102: UserInfo: resizing cifhr buffer
+src/openpifpaf/csrc/src/occupancy.cpp:53: UserInfo: resizing occupancy buffer
 </pre></div>
 </div>
 </div>

@@ -455,36 +455,16 @@ python -m openpifpaf.predict images/peterbourg.jpg \
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:neural network device: cpu (CUDA available: False, count: 0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:openpifpaf.decoder.cifcaf:consistency: decreasing keypoint threshold to seed threshold of 0.050000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:openpifpaf.decoder.factory:No specific decoder requested. Using the first one from:
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  --decoder=cifcaf:0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  --decoder=posesimilarity:0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Use any of the above arguments to select one or multiple decoders and to suppress this message.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:openpifpaf.predictor:neural network device: cpu (CUDA available: False, count: 0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:openpifpaf.decoder.cifcaf:annotations 8: [13, 12, 10, 8, 7, 8, 6, 3]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:openpifpaf.predictor:batch 0: images/peterbourg.jpg
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>src/openpifpaf/csrc/src/cif_hr.cpp:102: UserInfo: resizing cifhr buffer
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>src/openpifpaf/csrc/src/occupancy.cpp:53: UserInfo: resizing occupancy buffer
+WARNING:openpifpaf.decoder.cifcaf:consistency: decreasing keypoint threshold to seed threshold of 0.050000
+INFO:openpifpaf.decoder.factory:No specific decoder requested. Using the first one from:
+  --decoder=cifcaf:0
+  --decoder=posesimilarity:0
+Use any of the above arguments to select one or multiple decoders and to suppress this message.
+INFO:openpifpaf.predictor:neural network device: cpu (CUDA available: False, count: 0)
+INFO:openpifpaf.decoder.cifcaf:annotations 8: [13, 12, 10, 8, 7, 8, 6, 3]
+INFO:openpifpaf.predictor:batch 0: images/peterbourg.jpg
+src/openpifpaf/csrc/src/cif_hr.cpp:102: UserInfo: resizing cifhr buffer
+src/openpifpaf/csrc/src/occupancy.cpp:53: UserInfo: resizing occupancy buffer
 </pre></div>
 </div>
 </div>

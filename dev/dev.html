@@ -513,16 +513,6 @@ Use the following <code class="docutils literal notranslate"><span class="pre">p
 jb build .
 </pre></div>
 </div>
-<p>If you encounter issues with the kernel spec in a notebook, open the notebook
-with a text editor and find <code class="docutils literal notranslate"><span class="pre">metadata.kernelspec.name</span></code> and set it to <code class="docutils literal notranslate"><span class="pre">python3</span></code>.</p>
-<p>Alternatively, you can patch your local package yourself. Open
-<code class="docutils literal notranslate"><span class="pre">venv/lib/python3.9/site-packages/jupyter_cache/executors/utils.py</span></code>
-in your editor and add <code class="docutils literal notranslate"><span class="pre">kernel_name='python3'</span></code> to the arguments of <code class="docutils literal notranslate"><span class="pre">nbexecute()</span></code>
-<a class="reference external" href="https://github.com/executablebooks/jupyter-cache/blob/1431ed72961fabc2f09a13553b0aa45f4c8a7c23/jupyter_cache/executors/utils.py#L56">here</a>.</p>
-<p>Alternatively, for continuous integration, the <code class="docutils literal notranslate"><span class="pre">kernel_name</span></code> is replace in the json of the
-Jupyter Notebook before executing jupyter-book
-<a class="reference external" href="https://github.com/openpifpaf/openpifpaf/blob/6db797205cd082bf7a80e967372957e56c9835fb/.github/workflows/deploy-guide.yml#L47">here</a>.
-Only use this operation on a discardable copy as <code class="docutils literal notranslate"><span class="pre">jq</span></code> changes all formatting.</p>
 </div>
 <div class="section" id="build-environment">
 <span id="id2"></span><h2>Build Environment<a class="headerlink" href="#build-environment" title="Permalink to this headline">¶</a></h2>
@@ -532,468 +522,12 @@ system and see what is different.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
-pip freeze
+python -m openpifpaf.predict --version
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>alabaster==0.7.12
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>anyio==3.6.1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>argon2-cffi==21.3.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>argon2-cffi-bindings==21.2.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>astroid==2.6.6
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>asttokens==2.0.5
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>attrs==21.4.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Babel==2.10.1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>backcall==0.2.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>beautifulsoup4==4.11.1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bleach==5.0.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>boto==2.49.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>certifi==2022.5.18.1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cffi==1.15.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>charset-normalizer==2.0.12
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>click==8.1.3
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>colorama==0.4.4
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>coverage==6.4
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cpplint==1.6.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cycler==0.11.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>debugpy==1.6.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>decorator==5.1.1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>defusedxml==0.7.1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>docutils==0.16
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>entrypoints==0.4
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>executing==0.8.3
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fastjsonschema==2.15.3
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>flameprof==0.4
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fonttools==4.33.3
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>future==0.18.2
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gitdb==4.0.9
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GitPython==3.1.27
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>greenlet==1.1.2
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>idna==3.3
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>imagesize==1.3.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>importlib-metadata==4.11.4
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>importlib-resources==5.7.1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iniconfig==1.1.1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ipykernel==6.13.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ipython==8.4.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ipython-genutils==0.2.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ipywidgets==7.7.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>isort==5.10.1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>jedi==0.18.1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jinja2==3.0.3
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>jsonschema==3.2.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>jupyter-book==0.12.3
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>jupyter-cache==0.4.3
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>jupyter-client==7.3.1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>jupyter-core==4.10.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>jupyter-server==1.17.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>jupyter-server-mathjax==0.2.5
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>jupyter-sphinx==0.3.2
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>jupyterlab-pygments==0.2.2
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>jupyterlab-widgets==1.1.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>kiwisolver==1.4.2
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>latexcodec==2.0.1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>lazy-object-proxy==1.7.1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>linkify-it-py==1.0.3
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>markdown-it-py==1.1.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MarkupSafe==2.1.1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>matplotlib==3.5.2
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>matplotlib-inline==0.1.3
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mccabe==0.6.1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mdit-py-plugins==0.2.8
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mistune==0.8.4
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>myst-nb==0.13.2
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>myst-parser==0.15.2
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nbclient==0.5.13
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nbconvert==6.5.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nbdime==3.1.1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nbformat==5.4.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nbstripout==0.5.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nbval==0.9.6
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nest-asyncio==1.5.5
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>notebook==6.4.11
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>numpy==1.22.4
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>opencv-python==4.5.5.64
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>openpifpaf @ file:///home/runner/work/openpifpaf/openpifpaf
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>packaging==21.3
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandocfilters==1.5.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>parso==0.8.3
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pexpect==4.8.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pickleshare==0.7.5
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pillow==9.1.1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pluggy==1.0.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>prometheus-client==0.14.1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>prompt-toolkit==3.0.29
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>psutil==5.9.1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ptyprocess==0.7.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pure-eval==0.2.2
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>py==1.11.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pybtex==0.24.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pybtex-docutils==1.0.2
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pycodestyle==2.8.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pycparser==2.21
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pydata-sphinx-theme==0.7.2
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pygments==2.12.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pylint==2.9.3
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pyparsing==3.0.9
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pyrsistent==0.18.1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pysparkling==0.6.1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pytest==7.1.2
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>python-dateutil==2.8.2
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>python-json-logger==2.0.2
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pytz==2022.1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PyYAML==6.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pyzmq==23.0.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>requests==2.27.1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>scipy==1.8.1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Send2Trash==1.8.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>six==1.16.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>smmap==5.0.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sniffio==1.2.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>snowballstemmer==2.2.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>soupsieve==2.3.2.post1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sphinx==4.5.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sphinx-book-theme==0.1.10
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sphinx-comments==0.0.3
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sphinx-copybutton==0.5.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sphinx-external-toc==0.2.4
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sphinx-jupyterbook-latex==0.4.6
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sphinx-multitoc-numbering==0.1.3
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sphinx-panels==0.6.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sphinx-thebe==0.1.2
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sphinx-togglebutton==0.3.1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sphinxcontrib-applehelp==1.0.2
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sphinxcontrib-bibtex==2.4.2
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sphinxcontrib-devhelp==1.0.2
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sphinxcontrib-htmlhelp==2.0.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sphinxcontrib-jsmath==1.0.1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sphinxcontrib-qthelp==1.0.3
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sphinxcontrib-serializinghtml==1.1.5
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SQLAlchemy==1.4.37
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stack-data==0.2.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>terminado==0.15.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>thop==0.0.31.post2005241907
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tinycss2==1.1.1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>toml==0.10.2
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tomli==2.0.1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>torch==1.11.0+cpu
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>torchvision==0.12.0+cpu
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tornado==6.1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>traitlets==5.2.2.post1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>typing_extensions==4.2.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>uc-micro-py==1.0.1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>urllib3==1.26.9
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>wcwidth==0.2.5
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>webencodings==0.5.1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>websocket-client==1.3.2
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>widgetsnbextension==3.6.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>wrapt==1.12.1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>zipp==3.8.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OpenPifPaf 0.13.4+2.gc7b05a2
 </pre></div>
 </div>
 </div>
@@ -1001,12 +535,160 @@ pip freeze
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
-python -m openpifpaf.predict --version
+pip freeze
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OpenPifPaf 0.13.3+5.gb24bc5c
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>alabaster==0.7.12
+anyio==3.6.1
+argon2-cffi==21.3.0
+argon2-cffi-bindings==21.2.0
+astroid==2.6.6
+attrs==21.4.0
+Babel==2.10.1
+backcall==0.2.0
+beautifulsoup4==4.11.1
+bleach==5.0.0
+boto==2.49.0
+certifi==2022.5.18.1
+cffi==1.15.0
+charset-normalizer==2.0.12
+click==8.1.3
+colorama==0.4.4
+coverage==6.4
+cpplint==1.6.0
+cycler==0.11.0
+debugpy==1.6.0
+decorator==5.1.1
+defusedxml==0.7.1
+docutils==0.16
+entrypoints==0.4
+fastjsonschema==2.15.3
+flameprof==0.4
+fonttools==4.33.3
+future==0.18.2
+gitdb==4.0.9
+GitPython==3.1.27
+greenlet==1.1.2
+idna==3.3
+imagesize==1.3.0
+importlib-metadata==4.11.4
+importlib-resources==5.7.1
+iniconfig==1.1.1
+ipykernel==6.13.0
+ipython==7.34.0
+ipython-genutils==0.2.0
+ipywidgets==7.7.0
+isort==5.10.1
+jedi==0.18.1
+Jinja2==3.0.3
+jsonschema==3.2.0
+jupyter-book==0.12.3
+jupyter-cache==0.4.3
+jupyter-client==7.3.1
+jupyter-core==4.10.0
+jupyter-server==1.17.0
+jupyter-server-mathjax==0.2.5
+jupyter-sphinx==0.3.2
+jupyterlab-pygments==0.2.2
+jupyterlab-widgets==1.1.0
+kiwisolver==1.4.2
+latexcodec==2.0.1
+lazy-object-proxy==1.7.1
+linkify-it-py==1.0.3
+markdown-it-py==1.1.0
+MarkupSafe==2.1.1
+matplotlib==3.5.2
+matplotlib-inline==0.1.3
+mccabe==0.6.1
+mdit-py-plugins==0.2.8
+mistune==0.8.4
+myst-nb==0.13.2
+myst-parser==0.15.2
+nbclient==0.5.13
+nbconvert==6.5.0
+nbdime==3.1.1
+nbformat==5.4.0
+nbstripout==0.5.0
+nbval==0.9.6
+nest-asyncio==1.5.5
+notebook==6.4.11
+numpy==1.22.4
+opencv-python==4.5.5.64
+openpifpaf @ file:///home/runner/work/openpifpaf/openpifpaf
+packaging==21.3
+pandocfilters==1.5.0
+parso==0.8.3
+pexpect==4.8.0
+pickleshare==0.7.5
+Pillow==9.1.1
+pluggy==1.0.0
+prometheus-client==0.14.1
+prompt-toolkit==3.0.29
+psutil==5.9.1
+ptyprocess==0.7.0
+py==1.11.0
+pybtex==0.24.0
+pybtex-docutils==1.0.2
+pycodestyle==2.8.0
+pycparser==2.21
+pydata-sphinx-theme==0.7.2
+Pygments==2.12.0
+pylint==2.9.3
+pyparsing==3.0.9
+pyrsistent==0.18.1
+pysparkling==0.6.1
+pytest==7.1.2
+python-dateutil==2.8.2
+python-json-logger==2.0.2
+pytz==2022.1
+PyYAML==6.0
+pyzmq==23.0.0
+requests==2.27.1
+scipy==1.8.1
+Send2Trash==1.8.0
+six==1.16.0
+smmap==5.0.0
+sniffio==1.2.0
+snowballstemmer==2.2.0
+soupsieve==2.3.2.post1
+Sphinx==4.5.0
+sphinx-book-theme==0.1.10
+sphinx-comments==0.0.3
+sphinx-copybutton==0.5.0
+sphinx-external-toc==0.2.4
+sphinx-jupyterbook-latex==0.4.6
+sphinx-multitoc-numbering==0.1.3
+sphinx-panels==0.6.0
+sphinx-thebe==0.1.2
+sphinx-togglebutton==0.3.1
+sphinxcontrib-applehelp==1.0.2
+sphinxcontrib-bibtex==2.4.2
+sphinxcontrib-devhelp==1.0.2
+sphinxcontrib-htmlhelp==2.0.0
+sphinxcontrib-jsmath==1.0.1
+sphinxcontrib-qthelp==1.0.3
+sphinxcontrib-serializinghtml==1.1.5
+SQLAlchemy==1.4.37
+terminado==0.15.0
+thop==0.0.31.post2005241907
+tinycss2==1.1.1
+toml==0.10.2
+tomli==2.0.1
+torch==1.11.0+cpu
+torchvision==0.12.0+cpu
+tornado==6.1
+traitlets==5.2.2.post1
+typing_extensions==4.2.0
+uc-micro-py==1.0.1
+urllib3==1.26.9
+wcwidth==0.2.5
+webencodings==0.5.1
+websocket-client==1.3.2
+widgetsnbextension==3.6.0
+wrapt==1.12.1
+zipp==3.8.0
 </pre></div>
 </div>
 </div>
