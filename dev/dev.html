@@ -4,11 +4,13 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Contribute &#8212; OpenPifPaf Guide DEV</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,21 +20,17 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystyle.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -40,12 +38,13 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -64,7 +63,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -73,9 +86,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -93,14 +107,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="intro.html">
-   Introduction
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Getting Started
  </span>
@@ -210,6 +225,11 @@ const thebe_selector_output = ".output, .cell_output"
    Cifar10
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plugins_extras.html">
+   Extras
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -252,104 +272,212 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  This is the dev version of the Guide. Here is the <a href="https://openpifpaf.github.io">stable version</a>.
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/dev.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/openpifpaf/openpifpaf"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/openpifpaf/openpifpaf/issues/new?title=Issue%20on%20page%20%2Fdev.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/openpifpaf/openpifpaf/edit/main/guide/dev.ipynb"><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/openpifpaf/openpifpaf/main?urlpath=tree/guide/dev.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> On this page
+            <div class="navbar_extra_footer">
+            This is the dev version of the Guide. Here is the <a href="https://openpifpaf.github.io">stable version</a>.
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/openpifpaf/openpifpaf/main?urlpath=tree/guide/dev.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/openpifpaf/openpifpaf"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/openpifpaf/openpifpaf/issues/new?title=Issue%20on%20page%20%2Fdev.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/openpifpaf/openpifpaf/edit/main/guide/dev.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/dev.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> On this page
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#modify-code">
    Modify Code
@@ -382,12 +510,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Contribute</h1>
@@ -436,19 +563,20 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="contribute">
-<h1>Contribute<a class="headerlink" href="#contribute" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="contribute">
+<h1>Contribute<a class="headerlink" href="#contribute" title="Permalink to this headline">#</a></h1>
 <p>Before we can accept contributions, you need to become a CLAed contributor.
 E-mail a signed copy of the
 <a class="reference external" href="https://github.com/openpifpaf/openpifpaf/blob/main/docs/CLAI.txt">CLAI</a>
 (and if applicable the
 <a class="reference external" href="https://github.com/openpifpaf/openpifpaf/blob/main/docs/CLAC.txt">CLAC</a>)
 as PDF file to <a class="reference external" href="mailto:research&#37;&#52;&#48;svenkreiss&#46;com">research<span>&#64;</span>svenkreiss<span>&#46;</span>com</a>.</p>
-<div class="section" id="modify-code">
-<span id="id1"></span><h2>Modify Code<a class="headerlink" href="#modify-code" title="Permalink to this headline">¶</a></h2>
+<section id="modify-code">
+<span id="id1"></span><h2>Modify Code<a class="headerlink" href="#modify-code" title="Permalink to this headline">#</a></h2>
 <p>For development of the openpifpaf source code itself, you need to clone this repository and then:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip3 install --editable <span class="s1">&#39;.[dev,train,test]&#39;</span>
 </pre></div>
@@ -469,9 +597,9 @@ python download_data.py
 pytest --nbval-lax --current-env *.ipynb
 </pre></div>
 </div>
-</div>
-<div class="section" id="things-to-contribute">
-<h2>Things to Contribute<a class="headerlink" href="#things-to-contribute" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="things-to-contribute">
+<h2>Things to Contribute<a class="headerlink" href="#things-to-contribute" title="Permalink to this headline">#</a></h2>
 <p>This is a research project and changing fast. Contributions can be in many areas:</p>
 <ul class="simple">
 <li><p>Add a new dataset?</p></li>
@@ -486,36 +614,36 @@ pytest --nbval-lax --current-env *.ipynb
 <li><p>Improve documentation (!!)</p></li>
 <li><p>…</p></li>
 </ul>
-</div>
-<div class="section" id="missing-dependencies">
-<h2>Missing Dependencies<a class="headerlink" href="#missing-dependencies" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="missing-dependencies">
+<h2>Missing Dependencies<a class="headerlink" href="#missing-dependencies" title="Permalink to this headline">#</a></h2>
 <p>OpenPifPaf has few core requirements so that you can run it efficiently on servers without graphical interface.
 Sometimes, you just want to install all possible dependencies. Those are provided as “extra” requirements.
 Use the following <code class="docutils literal notranslate"><span class="pre">pip3</span></code> command to install all extras.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pip3 install &quot;openpifpaf[backbones,coreml,dev,onnx,test,train]&quot;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pip3 install &quot;openpifpaf[coreml,dev,extras,onnx,test,train]&quot;
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="your-project-and-openpifpaf">
-<h2>Your Project and OpenPifPaf<a class="headerlink" href="#your-project-and-openpifpaf" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="your-project-and-openpifpaf">
+<h2>Your Project and OpenPifPaf<a class="headerlink" href="#your-project-and-openpifpaf" title="Permalink to this headline">#</a></h2>
 <p>Let us know about your open source projects. We would like to feature them in our “related projects” section.</p>
 <p>The simplest way to integrate with OpenPifPaf is to write a plugin. If some functionality is not possible through our plugin architecture, open an issue to discuss and if necessary send us a pull request that enables the missing feature you need.</p>
 <p>If you do need to make a copy of OpenPifPaf, you must respect our license.</p>
-</div>
-<div class="section" id="build-guide">
-<h2>Build Guide<a class="headerlink" href="#build-guide" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="build-guide">
+<h2>Build Guide<a class="headerlink" href="#build-guide" title="Permalink to this headline">#</a></h2>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip install jupyter-book
 <span class="nb">cd</span> guide
 jb build .
 </pre></div>
 </div>
-</div>
-<div class="section" id="build-environment">
-<span id="id2"></span><h2>Build Environment<a class="headerlink" href="#build-environment" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="build-environment">
+<span id="id2"></span><h2>Build Environment<a class="headerlink" href="#build-environment" title="Permalink to this headline">#</a></h2>
 <p>Below are information about the system that built this guide and all examples
 in it. To debug an issue, it can be helpful to run these commands on your
 system and see what is different.</p>
@@ -527,7 +655,7 @@ python -m openpifpaf.predict --version
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OpenPifPaf 0.13.4+2.gc7b05a2
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OpenPifPaf 0.13.4+4.g297b860
 </pre></div>
 </div>
 </div>
@@ -546,107 +674,110 @@ argon2-cffi==21.3.0
 argon2-cffi-bindings==21.2.0
 astroid==2.6.6
 attrs==21.4.0
-Babel==2.10.1
+Babel==2.10.3
 backcall==0.2.0
 beautifulsoup4==4.11.1
-bleach==5.0.0
+bleach==5.0.1
 boto==2.49.0
-certifi==2022.5.18.1
-cffi==1.15.0
-charset-normalizer==2.0.12
+certifi==2022.6.15
+cffi==1.15.1
+charset-normalizer==2.1.1
 click==8.1.3
-colorama==0.4.4
-coverage==6.4
-cpplint==1.6.0
+colorama==0.4.5
+coverage==6.4.4
+cpplint==1.6.1
 cycler==0.11.0
-debugpy==1.6.0
+debugpy==1.6.3
 decorator==5.1.1
 defusedxml==0.7.1
-docutils==0.16
+docutils==0.17.1
+einops==0.4.1
 entrypoints==0.4
-fastjsonschema==2.15.3
+fastjsonschema==2.16.1
 flameprof==0.4
-fonttools==4.33.3
+fonttools==4.37.1
 future==0.18.2
 gitdb==4.0.9
 GitPython==3.1.27
-greenlet==1.1.2
+greenlet==1.1.3
 idna==3.3
-imagesize==1.3.0
-importlib-metadata==4.11.4
-importlib-resources==5.7.1
+imagesize==1.4.1
+importlib-metadata==4.12.0
+importlib-resources==5.9.0
 iniconfig==1.1.1
-ipykernel==6.13.0
+ipykernel==6.15.2
 ipython==7.34.0
 ipython-genutils==0.2.0
-ipywidgets==7.7.0
+ipywidgets==7.7.2
 isort==5.10.1
 jedi==0.18.1
-Jinja2==3.0.3
+Jinja2==3.1.2
 jsonschema==3.2.0
-jupyter-book==0.12.3
+jupyter-book==0.13.1
 jupyter-cache==0.4.3
-jupyter-client==7.3.1
-jupyter-core==4.10.0
-jupyter-server==1.17.0
-jupyter-server-mathjax==0.2.5
+jupyter-core==4.11.1
+jupyter-server==1.18.1
+jupyter-server-mathjax==0.2.6
 jupyter-sphinx==0.3.2
+jupyter_client==7.3.5
 jupyterlab-pygments==0.2.2
-jupyterlab-widgets==1.1.0
-kiwisolver==1.4.2
+jupyterlab-widgets==1.1.1
+kiwisolver==1.4.4
 latexcodec==2.0.1
 lazy-object-proxy==1.7.1
 linkify-it-py==1.0.3
+lxml==4.9.1
 markdown-it-py==1.1.0
 MarkupSafe==2.1.1
-matplotlib==3.5.2
-matplotlib-inline==0.1.3
+matplotlib==3.5.3
+matplotlib-inline==0.1.6
 mccabe==0.6.1
 mdit-py-plugins==0.2.8
 mistune==0.8.4
 myst-nb==0.13.2
 myst-parser==0.15.2
 nbclient==0.5.13
-nbconvert==6.5.0
+nbconvert==6.5.3
 nbdime==3.1.1
 nbformat==5.4.0
-nbstripout==0.5.0
+nbstripout==0.6.0
 nbval==0.9.6
 nest-asyncio==1.5.5
-notebook==6.4.11
-numpy==1.22.4
-opencv-python==4.5.5.64
+notebook==6.4.12
+numpy==1.23.2
+opencv-python==4.6.0.66
 openpifpaf @ file:///home/runner/work/openpifpaf/openpifpaf
+openpifpaf-extras==0.0.3
 packaging==21.3
 pandocfilters==1.5.0
 parso==0.8.3
 pexpect==4.8.0
 pickleshare==0.7.5
-Pillow==9.1.1
+Pillow==9.2.0
 pluggy==1.0.0
 prometheus-client==0.14.1
-prompt-toolkit==3.0.29
+prompt-toolkit==3.0.30
 psutil==5.9.1
 ptyprocess==0.7.0
 py==1.11.0
 pybtex==0.24.0
 pybtex-docutils==1.0.2
-pycodestyle==2.8.0
+pycodestyle==2.9.1
 pycparser==2.21
-pydata-sphinx-theme==0.7.2
-Pygments==2.12.0
+pydata-sphinx-theme==0.8.1
+Pygments==2.13.0
 pylint==2.9.3
 pyparsing==3.0.9
 pyrsistent==0.18.1
 pysparkling==0.6.1
 pytest==7.1.2
 python-dateutil==2.8.2
-python-json-logger==2.0.2
-pytz==2022.1
+python-json-logger==2.0.4
+pytz==2022.2.1
 PyYAML==6.0
-pyzmq==23.0.0
-requests==2.27.1
-scipy==1.8.1
+pyzmq==23.2.1
+requests==2.28.1
+scipy==1.9.1
 Send2Trash==1.8.0
 six==1.16.0
 smmap==5.0.0
@@ -654,41 +785,42 @@ sniffio==1.2.0
 snowballstemmer==2.2.0
 soupsieve==2.3.2.post1
 Sphinx==4.5.0
-sphinx-book-theme==0.1.10
+sphinx-book-theme==0.3.3
 sphinx-comments==0.0.3
 sphinx-copybutton==0.5.0
 sphinx-external-toc==0.2.4
 sphinx-jupyterbook-latex==0.4.6
 sphinx-multitoc-numbering==0.1.3
-sphinx-panels==0.6.0
 sphinx-thebe==0.1.2
-sphinx-togglebutton==0.3.1
+sphinx-togglebutton==0.3.2
+sphinx_design==0.1.0
 sphinxcontrib-applehelp==1.0.2
-sphinxcontrib-bibtex==2.4.2
+sphinxcontrib-bibtex==2.5.0
 sphinxcontrib-devhelp==1.0.2
 sphinxcontrib-htmlhelp==2.0.0
 sphinxcontrib-jsmath==1.0.1
 sphinxcontrib-qthelp==1.0.3
 sphinxcontrib-serializinghtml==1.1.5
-SQLAlchemy==1.4.37
+SQLAlchemy==1.4.40
 terminado==0.15.0
-thop==0.0.31.post2005241907
+thop==0.1.1.post2207130030
+timm==0.4.12
 tinycss2==1.1.1
 toml==0.10.2
 tomli==2.0.1
 torch==1.11.0+cpu
 torchvision==0.12.0+cpu
-tornado==6.1
-traitlets==5.2.2.post1
-typing_extensions==4.2.0
+tornado==6.2
+traitlets==5.3.0
+typing_extensions==4.3.0
 uc-micro-py==1.0.1
-urllib3==1.26.9
+urllib3==1.26.12
 wcwidth==0.2.5
 webencodings==0.5.1
-websocket-client==1.3.2
-widgetsnbextension==3.6.0
+websocket-client==1.4.0
+widgetsnbextension==3.6.1
 wrapt==1.12.1
-zipp==3.8.0
+zipp==3.8.1
 </pre></div>
 </div>
 </div>
@@ -721,7 +853,9 @@ Codecs:
  ....L. = Lossy compression
  .....S = Lossless compression
  -------
- D.VI.S 012v                 Uncompressed 4:2:2 10-bit
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> D.VI.S 012v                 Uncompressed 4:2:2 10-bit
  D.V.L. 4xm                  4X Movie
  D.VI.S 8bps                 QuickTime 8BPS video
  .EVIL. a64_multi            Multicolor charset for Commodore 64 (encoders: a64multi )
@@ -1215,8 +1349,8 @@ Codecs:
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1240,9 +1374,11 @@ Codecs:
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="bibliography.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1258,28 +1394,32 @@ Codecs:
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
-    
-      By <a href="https://www.svenkreiss.com">Sven Kreiss</a> and <a href="https://github.com/openpifpaf/openpifpaf/graphs/contributors">contributors</a>.<br/>
-    
-        &copy; Copyright 2020-2022.<br/>
-      <div class="extra_footer">
-        <p>Powered by <a href="https://jupyterbook.org/">Jupyter Book</a>.</p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By <a href="https://www.svenkreiss.com">Sven Kreiss</a> and <a href="https://github.com/openpifpaf/openpifpaf/graphs/contributors">contributors</a>.<br/>
+  
+      &copy; Copyright 2020-2022.<br/>
+    <div class="extra_footer">
+      <p>Powered by <a href="https://jupyterbook.org/">Jupyter Book</a>.</p>
 
-      </div>
-  </p>
-</footer>
-</main>
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

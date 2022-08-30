@@ -4,11 +4,13 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Custom Dataset &#8212; OpenPifPaf Guide DEV</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,21 +20,17 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystyle.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -40,12 +38,13 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -64,7 +63,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -73,9 +86,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -93,14 +107,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="intro.html">
-   Introduction
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Getting Started
  </span>
@@ -210,6 +225,11 @@ const thebe_selector_output = ".output, .cell_output"
    Cifar10
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plugins_extras.html">
+   Extras
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -252,104 +272,212 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  This is the dev version of the Guide. Here is the <a href="https://openpifpaf.github.io">stable version</a>.
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/plugins_custom.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/openpifpaf/openpifpaf"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/openpifpaf/openpifpaf/issues/new?title=Issue%20on%20page%20%2Fplugins_custom.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/openpifpaf/openpifpaf/edit/main/guide/plugins_custom.ipynb"><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/openpifpaf/openpifpaf/main?urlpath=tree/guide/plugins_custom.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> On this page
+            <div class="navbar_extra_footer">
+            This is the dev version of the Guide. Here is the <a href="https://openpifpaf.github.io">stable version</a>.
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/openpifpaf/openpifpaf/main?urlpath=tree/guide/plugins_custom.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/openpifpaf/openpifpaf"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/openpifpaf/openpifpaf/issues/new?title=Issue%20on%20page%20%2Fplugins_custom.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/openpifpaf/openpifpaf/edit/main/guide/plugins_custom.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/plugins_custom.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> On this page
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#overview">
    Overview
@@ -409,12 +537,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Custom Dataset</h1>
@@ -490,23 +617,24 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="custom-dataset">
-<h1>Custom Dataset<a class="headerlink" href="#custom-dataset" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="custom-dataset">
+<h1>Custom Dataset<a class="headerlink" href="#custom-dataset" title="Permalink to this headline">#</a></h1>
  <div style="text-align: right"> by <a href="https://scholar.google.com/citations?user=f-4YHeMAAAAJ&hl=en">Lorenzo Bertoni</a>  13/04/2021 </div>
-<div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h2>
 <p>In this section of the guide, we will see how to train and evaluate OpenPifPaf on a custom dataset. OpenPifPaf is based on the concept of <strong><a class="reference external" href="https://cs.uwaterloo.ca/~m2nagapp/courses/CS446/1195/Arch_Design_Activity/PlugIn.pdf">Plugin architecture pattern</a></strong>, and the overall system is composed of a core component and auxiliary plug-in modules. To train a model on a custom dataset, you don’t need to change the core system, only to create a small plugin for it.
 This tutorial will go through the steps required to create a new plugin for a custom dataset.</p>
 <p>Let’s go through the steps of implementing a 2D pose estimator for vehicles, as a case study. If you are interested in how this specific plugin works, please check its <a class="reference internal" href="plugins_apollocar3d.html"><span class="doc">guide section</span></a>. We suggest to create and debug your own plugin copying a pre-existing plugin, changing its name, and adapting its files to your needs.
 Below, a description of the structure of the plugin to give you some intuition of what you will need to change.</p>
-</div>
-<div class="section" id="plugin-structure">
-<h2>Plugin structure<a class="headerlink" href="#plugin-structure" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="data-module">
-<h3>1. Data Module<a class="headerlink" href="#data-module" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="plugin-structure">
+<h2>Plugin structure<a class="headerlink" href="#plugin-structure" title="Permalink to this headline">#</a></h2>
+<section id="data-module">
+<h3>1. Data Module<a class="headerlink" href="#data-module" title="Permalink to this headline">#</a></h3>
 <p>This module handles the interface of your custom dataset with the core system and it is the main component of the plugin. For the <a class="reference external" href="http://apolloscape.auto/car_instance.html">ApolloCar3D Dataset</a>, we created a module called <em>apollo_kp.py</em> containing the class <a class="reference external" href="https://github.com/openpifpaf/openpifpaf/blob/main/openpifpaf/plugins/apollocar3d/apollo_kp.py">ApolloKp</a> which inherits from the <a class="reference external" href="https://github.com/openpifpaf/openpifpaf/blob/main/openpifpaf/datasets/module.py">DataModule</a> class.</p>
 <p>The base class to inherit from has the following structure:</p>
 <dl class="py class">
@@ -582,9 +710,9 @@ what the output of the decoder is expected to be.</p>
 </dd></dl>
 
 <p>Now that you have a general view of the structure of a data module, we suggest you to refer to the implementation of the <a class="reference external" href="https://github.com/openpifpaf/openpifpaf/blob/main/openpifpaf/plugins/apollocar3d/apollo_kp.py">ApolloKp</a> class. You can get started by copying and modifying this class according to your needs.</p>
-</div>
-<div class="section" id="plugin-registration">
-<h3>2. Plugin Registration<a class="headerlink" href="#plugin-registration" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="plugin-registration">
+<h3>2. Plugin Registration<a class="headerlink" href="#plugin-registration" title="Permalink to this headline">#</a></h3>
 <p>For the core system to recognize the new plugin you need to create a <a class="reference external" href="https://github.com/openpifpaf/openpifpaf/blob/main/openpifpaf/plugins/apollocar3d/__init__.py">__init__.py</a> file specifying:</p>
 <ol class="simple">
 <li><p><strong>Name Convention</strong>: include all the plugins file into a folder named <strong>openpifpaf_&lt;plugin_name&gt;</strong>. Only folders, which names start with openpifpaf_ are recognized</p></li>
@@ -598,9 +726,9 @@ what the output of the decoder is expected to be.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="constants">
-<h3>3. Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="constants">
+<h3>3. Constants<a class="headerlink" href="#constants" title="Permalink to this headline">#</a></h3>
 <p>Create a module <em><a class="reference external" href="http://constants.py">constants.py</a></em> containing all the constants needed to define the 2D keypoints of vehicles. The most important are:</p>
 <ul class="simple">
 <li><p><strong>Names</strong> of the keypoints, as a list of strings. In our plugin this is called CAR_KEYPOINTS</p></li>
@@ -612,14 +740,14 @@ what the output of the decoder is expected to be.</p>
 <li><p><strong>Horizontal flip</strong> equivalents, if you use horizontal flipping as augmentation technique, you will need to define the corresponding left and right and keypoints as a dictionary. E.g. left_ear –&gt; right_ear.  In our plugin this is called HFLIP</p></li>
 </ul>
 <p>In addition to the constants, the module contains two functions to draw the skeleton and save it as an image. The functions are only for debugging and can usually be used as they are, only changing the arguments with the new constants. For additional information, refer to the file <a class="reference external" href="https://github.com/openpifpaf/openpifpaf/blob/main/openpifpaf/plugins/apollocar3d/constants.py">constants.py</a>.</p>
-</div>
-<div class="section" id="data-loading">
-<h3>4. Data Loading<a class="headerlink" href="#data-loading" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="data-loading">
+<h3>4. Data Loading<a class="headerlink" href="#data-loading" title="Permalink to this headline">#</a></h3>
 <p>If  you are using COCO-style annotations, there is no need to create a datalader to load images and annotations. A default <a class="reference external" href="https://github.com/openpifpaf/openpifpaf/blob/main/openpifpaf/plugins/coco/dataset.py">CocoLoader</a> is already available to be called inside the data module <a class="reference external" href="https://github.com/openpifpaf/openpifpaf/blob/main/openpifpaf/plugins/apollocar3d/apollo_kp.py">ApolloKp</a></p>
 <p>If you wish to load different annotations, you can either write your own dataloader, or you can transform your annotations to COCO style .json files. In this plugin, we first convert ApolloCar3D annotations into COCO style .json files and then load them as standard annotations.</p>
-</div>
-<div class="section" id="annotations-format">
-<h3>5. Annotations format<a class="headerlink" href="#annotations-format" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="annotations-format">
+<h3>5. Annotations format<a class="headerlink" href="#annotations-format" title="Permalink to this headline">#</a></h3>
 <p>This step transforms custom annotations, in this case from ApolloCar3D, into COCO-style annotations. Below we describe how to populate a json file using COCO-style format. For the full working example, check the module <a class="reference external" href="https://github.com/openpifpaf/openpifpaf/blob/main/openpifpaf/plugins/apollocar3d/apollo_to_coco.py">apollo_to_coco.py</a> inside the plugin.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -677,10 +805,10 @@ what the output of the decoder is expected to be.</p>
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="training">
-<h2>Training<a class="headerlink" href="#training" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="training">
+<h2>Training<a class="headerlink" href="#training" title="Permalink to this headline">#</a></h2>
 <p>We have seen all the elements needed to create your own plugin on a custom dataset. To train the dataset, all OpenPifPaf commands are still valid. There are only two differences:</p>
 <ol class="simple">
 <li><p>Specify the dataset name in the training command. In this case, we have called our dataset <em>apollo</em> during the registration phase, therefore we will have <code class="docutils literal notranslate"><span class="pre">--dataset=apollo</span></code>.</p></li>
@@ -695,18 +823,18 @@ what the output of the decoder is expected to be.</p>
 --apollo-bmin <span class="m">2</span> --batch-size <span class="m">8</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="evaluation">
-<h2>Evaluation<a class="headerlink" href="#evaluation" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="evaluation">
+<h2>Evaluation<a class="headerlink" href="#evaluation" title="Permalink to this headline">#</a></h2>
 <p>Evaluation on the COCO metric is supported by pifpaf and a simple evaluation command may look like this:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3 -m openpifpaf.eval --dataset<span class="o">=</span>apollo --checkpoint &lt;path of the model&gt;
 </pre></div>
 </div>
 <p>To evaluate on custom metrics, we would need to define a new metric and add it in the list of metrics, inside the data module. In our case, we have a a DataModule class called <strong>ApolloKp</strong>, and its function <em><strong>metrics</strong></em> returns the list of metrics to run. Each metric is defined as a class that inherits from openpifpaf.metric.base.Base</p>
 <p>For more information, please check how we implemented a simple metric for the ApolloCar3D dataset called MeanPixelError, that calculate mean pixel error and detection rate for a given image.</p>
-</div>
-<div class="section" id="prediction">
-<h2>Prediction<a class="headerlink" href="#prediction" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="prediction">
+<h2>Prediction<a class="headerlink" href="#prediction" title="Permalink to this headline">#</a></h2>
 <p>To run your model trained on a different dataset, you simply need to run the standard OpenPifPaf command specifying your model. A prediction command looks like this:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3 -m openpifpaf.predict --checkpoint &lt;model path&gt;
 </pre></div>
@@ -715,14 +843,14 @@ what the output of the decoder is expected to be.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3 -m openpifpaf.predict --help
 </pre></div>
 </div>
-</div>
-<div class="section" id="final-remarks">
-<h2>Final remarks<a class="headerlink" href="#final-remarks" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="final-remarks">
+<h2>Final remarks<a class="headerlink" href="#final-remarks" title="Permalink to this headline">#</a></h2>
 <p>We hope you’ll find this guide useful to create your own plugin. For more information check the guide section for the <a class="reference internal" href="plugins_apollocar3d.html"><span class="doc">ApolloCar3D plugin</span></a>.</p>
 <p>Please keep us posted on issues you encounter (using the issue section on GitHub) and especially on your successes! We will be more than happy to add your plugin to the list of OpenPifPaf <a class="reference external" href="https://openpifpaf.github.io/intro.html#related-projects">related projects</a>.</p>
 <p>Finally, if you find OpenPifPaf useful for your research, we would be happy if you <a class="reference internal" href="intro.html#citation"><span class="std std-ref">cite us</span></a>!</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -746,9 +874,11 @@ what the output of the decoder is expected to be.</p>
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="faq.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -764,28 +894,32 @@ what the output of the decoder is expected to be.</p>
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
-    
-      By <a href="https://www.svenkreiss.com">Sven Kreiss</a> and <a href="https://github.com/openpifpaf/openpifpaf/graphs/contributors">contributors</a>.<br/>
-    
-        &copy; Copyright 2020-2022.<br/>
-      <div class="extra_footer">
-        <p>Powered by <a href="https://jupyterbook.org/">Jupyter Book</a>.</p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By <a href="https://www.svenkreiss.com">Sven Kreiss</a> and <a href="https://github.com/openpifpaf/openpifpaf/graphs/contributors">contributors</a>.<br/>
+  
+      &copy; Copyright 2020-2022.<br/>
+    <div class="extra_footer">
+      <p>Powered by <a href="https://jupyterbook.org/">Jupyter Book</a>.</p>
 
-      </div>
-  </p>
-</footer>
-</main>
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

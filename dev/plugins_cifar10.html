@@ -4,11 +4,13 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Cifar10 &#8212; OpenPifPaf Guide DEV</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,21 +20,17 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystyle.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -40,12 +38,13 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -55,7 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Modules" href="moduledocs.html" />
+    <link rel="next" title="Extras" href="plugins_extras.html" />
     <link rel="prev" title="OpenCV" href="tutorial_opencv.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
@@ -64,7 +63,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -73,9 +86,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -93,14 +107,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="intro.html">
-   Introduction
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Getting Started
  </span>
@@ -210,6 +225,11 @@ const thebe_selector_output = ".output, .cell_output"
    Cifar10
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plugins_extras.html">
+   Extras
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -252,104 +272,212 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  This is the dev version of the Guide. Here is the <a href="https://openpifpaf.github.io">stable version</a>.
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/plugins_cifar10.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/openpifpaf/openpifpaf"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/openpifpaf/openpifpaf/issues/new?title=Issue%20on%20page%20%2Fplugins_cifar10.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/openpifpaf/openpifpaf/edit/main/guide/plugins_cifar10.ipynb"><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/openpifpaf/openpifpaf/main?urlpath=tree/guide/plugins_cifar10.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> On this page
+            <div class="navbar_extra_footer">
+            This is the dev version of the Guide. Here is the <a href="https://openpifpaf.github.io">stable version</a>.
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/openpifpaf/openpifpaf/main?urlpath=tree/guide/plugins_cifar10.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/openpifpaf/openpifpaf"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/openpifpaf/openpifpaf/issues/new?title=Issue%20on%20page%20%2Fplugins_cifar10.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/openpifpaf/openpifpaf/edit/main/guide/plugins_cifar10.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/plugins_cifar10.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> On this page
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#training">
    Training
@@ -372,12 +500,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Cifar10</h1>
@@ -416,11 +543,12 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="cifar10">
-<h1>Cifar10<a class="headerlink" href="#cifar10" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="cifar10">
+<h1>Cifar10<a class="headerlink" href="#cifar10" title="Permalink to this headline">#</a></h1>
 <p>This page gives a quick introduction to OpenPifPaf’s Cifar10 plugin that is part of <code class="docutils literal notranslate"><span class="pre">openpifpaf.plugins</span></code>.
 It demonstrates the plugin architecture.
 There already is a nice dataset for CIFAR10 in <code class="docutils literal notranslate"><span class="pre">torchvision</span></code> and a related <a class="reference external" href="https://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html">PyTorch tutorial</a>.
@@ -433,7 +561,7 @@ Let’s start with them setup for this notebook and registering all available Op
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;openpifpaf.plugins.animalpose&#39;, &#39;openpifpaf.plugins.apollocar3d&#39;, &#39;openpifpaf.plugins.cifar10&#39;, &#39;openpifpaf.plugins.coco&#39;, &#39;openpifpaf.plugins.crowdpose&#39;, &#39;openpifpaf.plugins.nuscenes&#39;, &#39;openpifpaf.plugins.posetrack&#39;, &#39;openpifpaf.plugins.wholebody&#39;])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;openpifpaf.plugins.animalpose&#39;, &#39;openpifpaf.plugins.apollocar3d&#39;, &#39;openpifpaf.plugins.cifar10&#39;, &#39;openpifpaf.plugins.coco&#39;, &#39;openpifpaf.plugins.crowdpose&#39;, &#39;openpifpaf.plugins.nuscenes&#39;, &#39;openpifpaf.plugins.posetrack&#39;, &#39;openpifpaf.plugins.wholebody&#39;, &#39;openpifpaf_extras&#39;])
 </pre></div>
 </div>
 </div>
@@ -496,8 +624,8 @@ To create a network, we use the <code class="docutils literal notranslate"><span
 <img alt="_images/plugins_cifar10_8_0.png" src="_images/plugins_cifar10_8_0.png" />
 </div>
 </div>
-<div class="section" id="training">
-<h2>Training<a class="headerlink" href="#training" title="Permalink to this headline">¶</a></h2>
+<section id="training">
+<h2>Training<a class="headerlink" href="#training" title="Permalink to this headline">#</a></h2>
 <p>We train a very small network, <code class="docutils literal notranslate"><span class="pre">cifar10net</span></code>, for only one epoch. Afterwards, we will investigate its predictions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -514,221 +642,221 @@ python -m openpifpaf.train \
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:neural network device: cpu (CUDA available: False, count: 0)
 INFO:openpifpaf.network.basenetworks:cifar10net: stride = 16, output features = 128
 INFO:openpifpaf.network.losses.multi_head:multihead loss: [&#39;cifar10.cifdet.c&#39;, &#39;cifar10.cifdet.vec&#39;, &#39;cifar10.cifdet.scales&#39;], [1.0, 1.0, 1.0]
-INFO:openpifpaf.logger:{&#39;type&#39;: &#39;process&#39;, &#39;argv&#39;: [&#39;/opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/openpifpaf/train.py&#39;, &#39;--dataset=cifar10&#39;, &#39;--basenet=cifar10net&#39;, &#39;--log-interval=50&#39;, &#39;--epochs=3&#39;, &#39;--lr=0.0003&#39;, &#39;--momentum=0.95&#39;, &#39;--batch-size=16&#39;, &#39;--lr-warm-up-epochs=0.1&#39;, &#39;--lr-decay&#39;, &#39;2.0&#39;, &#39;2.5&#39;, &#39;--lr-decay-epochs=0.1&#39;, &#39;--loader-workers=2&#39;, &#39;--output=cifar10_tutorial.pkl&#39;], &#39;args&#39;: {&#39;output&#39;: &#39;cifar10_tutorial.pkl&#39;, &#39;disable_cuda&#39;: False, &#39;ddp&#39;: False, &#39;local_rank&#39;: None, &#39;sync_batchnorm&#39;: True, &#39;quiet&#39;: False, &#39;debug&#39;: False, &#39;log_stats&#39;: False, &#39;squeezenet_pretrained&#39;: True, &#39;shufflenetv2k_input_conv2_stride&#39;: 0, &#39;shufflenetv2k_input_conv2_outchannels&#39;: None, &#39;shufflenetv2k_stage4_dilation&#39;: 1, &#39;shufflenetv2k_kernel&#39;: 5, &#39;shufflenetv2k_conv5_as_stage&#39;: False, &#39;shufflenetv2k_instance_norm&#39;: False, &#39;shufflenetv2k_group_norm&#39;: False, &#39;shufflenetv2k_leaky_relu&#39;: False, &#39;shufflenetv2_pretrained&#39;: True, &#39;mobilenetv2_pretrained&#39;: True, &#39;mobilenetv3_pretrained&#39;: True, &#39;resnet_pretrained&#39;: True, &#39;resnet_pool0_stride&#39;: 0, &#39;resnet_input_conv_stride&#39;: 2, &#39;resnet_input_conv2_stride&#39;: 0, &#39;resnet_block5_dilation&#39;: 1, &#39;resnet_remove_last_block&#39;: False, &#39;xcit_out_channels&#39;: None, &#39;xcit_out_maxpool&#39;: False, &#39;xcit_pretrained&#39;: True, &#39;swin_drop_path_rate&#39;: 0.2, &#39;swin_input_upsample&#39;: False, &#39;swin_use_fpn&#39;: False, &#39;swin_fpn_out_channels&#39;: None, &#39;swin_fpn_level&#39;: 3, &#39;swin_pretrained&#39;: True, &#39;cf4_dropout&#39;: 0.0, &#39;cf4_inplace_ops&#39;: True, &#39;checkpoint&#39;: None, &#39;basenet&#39;: &#39;cifar10net&#39;, &#39;cross_talk&#39;: 0.0, &#39;download_progress&#39;: True, &#39;head_consolidation&#39;: &#39;filter_and_extend&#39;, &#39;lambdas&#39;: None, &#39;component_lambdas&#39;: None, &#39;auto_tune_mtl&#39;: False, &#39;auto_tune_mtl_variance&#39;: False, &#39;task_sparsity_weight&#39;: 0.0, &#39;loss_prescale&#39;: 1.0, &#39;regression_loss&#39;: &#39;laplace&#39;, &#39;bce_total_soft_clamp&#39;: None, &#39;soft_clamp&#39;: 5.0, &#39;background_weight&#39;: 1.0, &#39;focal_alpha&#39;: 0.5, &#39;focal_gamma&#39;: 1.0, &#39;focal_detach&#39;: False, &#39;focal_clamp&#39;: True, &#39;bce_min&#39;: 0.0, &#39;bce_soft_clamp&#39;: 5.0, &#39;bce_background_clamp&#39;: -15.0, &#39;laplace_soft_clamp&#39;: 5.0, &#39;r_smooth&#39;: 0.0, &#39;b_scale&#39;: 1.0, &#39;scale_log&#39;: False, &#39;scale_soft_clamp&#39;: 5.0, &#39;epochs&#39;: 3, &#39;train_batches&#39;: None, &#39;val_batches&#39;: None, &#39;clip_grad_norm&#39;: 0.0, &#39;clip_grad_value&#39;: 0.0, &#39;log_interval&#39;: 50, &#39;val_interval&#39;: 1, &#39;stride_apply&#39;: 1, &#39;fix_batch_norm&#39;: False, &#39;ema&#39;: 0.01, &#39;profile&#39;: None, &#39;cif_side_length&#39;: 4, &#39;caf_min_size&#39;: 3, &#39;caf_fixed_size&#39;: False, &#39;caf_aspect_ratio&#39;: 0.0, &#39;encoder_suppress_selfhidden&#39;: True, &#39;encoder_suppress_invisible&#39;: False, &#39;encoder_suppress_collision&#39;: False, &#39;momentum&#39;: 0.95, &#39;beta2&#39;: 0.999, &#39;adam_eps&#39;: 1e-06, &#39;nesterov&#39;: True, &#39;weight_decay&#39;: 0.0, &#39;adam&#39;: False, &#39;amsgrad&#39;: False, &#39;lr&#39;: 0.0003, &#39;lr_decay&#39;: [2.0, 2.5], &#39;lr_decay_factor&#39;: 0.1, &#39;lr_decay_epochs&#39;: 0.1, &#39;lr_warm_up_start_epoch&#39;: 0, &#39;lr_warm_up_epochs&#39;: 0.1, &#39;lr_warm_up_factor&#39;: 0.001, &#39;lr_warm_restarts&#39;: [], &#39;lr_warm_restart_duration&#39;: 0.5, &#39;dataset&#39;: &#39;cifar10&#39;, &#39;loader_workers&#39;: 2, &#39;batch_size&#39;: 16, &#39;dataset_weights&#39;: None, &#39;animal_train_annotations&#39;: &#39;data-animalpose/annotations/animal_keypoints_20_train.json&#39;, &#39;animal_val_annotations&#39;: &#39;data-animalpose/annotations/animal_keypoints_20_val.json&#39;, &#39;animal_train_image_dir&#39;: &#39;data-animalpose/images/train/&#39;, &#39;animal_val_image_dir&#39;: &#39;data-animalpose/images/val/&#39;, &#39;animal_square_edge&#39;: 513, &#39;animal_extended_scale&#39;: False, &#39;animal_orientation_invariant&#39;: 0.0, &#39;animal_blur&#39;: 0.0, &#39;animal_augmentation&#39;: True, &#39;animal_rescale_images&#39;: 1.0, &#39;animal_upsample&#39;: 1, &#39;animal_min_kp_anns&#39;: 1, &#39;animal_bmin&#39;: 1, &#39;animal_eval_test2017&#39;: False, &#39;animal_eval_testdev2017&#39;: False, &#39;animal_eval_annotation_filter&#39;: True, &#39;animal_eval_long_edge&#39;: 0, &#39;animal_eval_extended_scale&#39;: False, &#39;animal_eval_orientation_invariant&#39;: 0.0, &#39;apollo_train_annotations&#39;: &#39;data-apollocar3d/annotations/apollo_keypoints_66_train.json&#39;, &#39;apollo_val_annotations&#39;: &#39;data-apollocar3d/annotations/apollo_keypoints_66_val.json&#39;, &#39;apollo_train_image_dir&#39;: &#39;data-apollocar3d/images/train/&#39;, &#39;apollo_val_image_dir&#39;: &#39;data-apollocar3d/images/val/&#39;, &#39;apollo_square_edge&#39;: 513, &#39;apollo_extended_scale&#39;: False, &#39;apollo_orientation_invariant&#39;: 0.0, &#39;apollo_blur&#39;: 0.0, &#39;apollo_augmentation&#39;: True, &#39;apollo_rescale_images&#39;: 1.0, &#39;apollo_upsample&#39;: 1, &#39;apollo_min_kp_anns&#39;: 1, &#39;apollo_bmin&#39;: 1, &#39;apollo_apply_local_centrality&#39;: False, &#39;apollo_eval_annotation_filter&#39;: True, &#39;apollo_eval_long_edge&#39;: 0, &#39;apollo_eval_extended_scale&#39;: False, &#39;apollo_eval_orientation_invariant&#39;: 0.0, &#39;apollo_use_24_kps&#39;: False, &#39;cifar10_root_dir&#39;: &#39;data-cifar10/&#39;, &#39;cifar10_download&#39;: False, &#39;cocodet_train_annotations&#39;: &#39;data-mscoco/annotations/instances_train2017.json&#39;, &#39;cocodet_val_annotations&#39;: &#39;data-mscoco/annotations/instances_val2017.json&#39;, &#39;cocodet_train_image_dir&#39;: &#39;data-mscoco/images/train2017/&#39;, &#39;cocodet_val_image_dir&#39;: &#39;data-mscoco/images/val2017/&#39;, &#39;cocodet_square_edge&#39;: 513, &#39;cocodet_extended_scale&#39;: False, &#39;cocodet_orientation_invariant&#39;: 0.0, &#39;cocodet_blur&#39;: 0.0, &#39;cocodet_augmentation&#39;: True, &#39;cocodet_rescale_images&#39;: 1.0, &#39;cocodet_upsample&#39;: 1, &#39;cocokp_train_annotations&#39;: &#39;data-mscoco/annotations/person_keypoints_train2017.json&#39;, &#39;cocokp_val_annotations&#39;: &#39;data-mscoco/annotations/person_keypoints_val2017.json&#39;, &#39;cocokp_train_image_dir&#39;: &#39;data-mscoco/images/train2017/&#39;, &#39;cocokp_val_image_dir&#39;: &#39;data-mscoco/images/val2017/&#39;, &#39;cocokp_square_edge&#39;: 385, &#39;cocokp_with_dense&#39;: False, &#39;cocokp_extended_scale&#39;: False, &#39;cocokp_orientation_invariant&#39;: 0.0, &#39;cocokp_blur&#39;: 0.0, &#39;cocokp_augmentation&#39;: True, &#39;cocokp_rescale_images&#39;: 1.0, &#39;cocokp_upsample&#39;: 1, &#39;cocokp_min_kp_anns&#39;: 1, &#39;cocokp_bmin&#39;: 0.1, &#39;cocokp_eval_test2017&#39;: False, &#39;cocokp_eval_testdev2017&#39;: False, &#39;coco_eval_annotation_filter&#39;: True, &#39;coco_eval_long_edge&#39;: 641, &#39;coco_eval_extended_scale&#39;: False, &#39;coco_eval_orientation_invariant&#39;: 0.0, &#39;crowdpose_train_annotations&#39;: &#39;data-crowdpose/json/crowdpose_train.json&#39;, &#39;crowdpose_val_annotations&#39;: &#39;data-crowdpose/json/crowdpose_val.json&#39;, &#39;crowdpose_image_dir&#39;: &#39;data-crowdpose/images/&#39;, &#39;crowdpose_square_edge&#39;: 385, &#39;crowdpose_extended_scale&#39;: False, &#39;crowdpose_orientation_invariant&#39;: 0.0, &#39;crowdpose_augmentation&#39;: True, &#39;crowdpose_rescale_images&#39;: 1.0, &#39;crowdpose_upsample&#39;: 1, &#39;crowdpose_min_kp_anns&#39;: 1, &#39;crowdpose_eval_test&#39;: False, &#39;crowdpose_eval_long_edge&#39;: 641, &#39;crowdpose_eval_extended_scale&#39;: False, &#39;crowdpose_eval_orientation_invariant&#39;: 0.0, &#39;crowdpose_index&#39;: None, &#39;nuscenes_train_annotations&#39;: &#39;../../../NuScenes/mscoco_style_annotations/nuimages_v1.0-train.json&#39;, &#39;nuscenes_val_annotations&#39;: &#39;../../../NuScenes/mscoco_style_annotations/nuimages_v1.0-val.json&#39;, &#39;nuscenes_train_image_dir&#39;: &#39;../../../NuScenes/nuimages-v1.0-all-samples&#39;, &#39;nuscenes_val_image_dir&#39;: &#39;../../../NuScenes/nuimages-v1.0-all-samples&#39;, &#39;nuscenes_square_edge&#39;: 513, &#39;nuscenes_extended_scale&#39;: False, &#39;nuscenes_orientation_invariant&#39;: 0.0, &#39;nuscenes_blur&#39;: 0.0, &#39;nuscenes_augmentation&#39;: True, &#39;nuscenes_rescale_images&#39;: 1.0, &#39;nuscenes_upsample&#39;: 1, &#39;posetrack2018_train_annotations&#39;: &#39;data-posetrack2018/annotations/train/*.json&#39;, &#39;posetrack2018_val_annotations&#39;: &#39;data-posetrack2018/annotations/val/*.json&#39;, &#39;posetrack2018_eval_annotations&#39;: &#39;data-posetrack2018/annotations/val/*.json&#39;, &#39;posetrack2018_data_root&#39;: &#39;data-posetrack2018&#39;, &#39;posetrack_square_edge&#39;: 385, &#39;posetrack_with_dense&#39;: False, &#39;posetrack_augmentation&#39;: True, &#39;posetrack_rescale_images&#39;: 1.0, &#39;posetrack_upsample&#39;: 1, &#39;posetrack_min_kp_anns&#39;: 1, &#39;posetrack_bmin&#39;: 0.1, &#39;posetrack_sample_pairing&#39;: 0.0, &#39;posetrack_image_augmentations&#39;: 0.0, &#39;posetrack_max_shift&#39;: 30.0, &#39;posetrack_eval_long_edge&#39;: 801, &#39;posetrack_eval_extended_scale&#39;: False, &#39;posetrack_eval_orientation_invariant&#39;: 0.0, &#39;posetrack_ablation_without_tcaf&#39;: False, &#39;posetrack2017_eval_annotations&#39;: &#39;data-posetrack2017/annotations/val/*.json&#39;, &#39;posetrack2017_data_root&#39;: &#39;data-posetrack2017&#39;, &#39;cocokpst_max_shift&#39;: 30.0, &#39;wholebody_train_annotations&#39;: &#39;data-mscoco/annotations/person_keypoints_train2017_wholebody_pifpaf_style.json&#39;, &#39;wholebody_val_annotations&#39;: &#39;data-mscoco/annotations/coco_wholebody_val_v1.0.json&#39;, &#39;wholebody_train_image_dir&#39;: &#39;data-mscoco/images/train2017/&#39;, &#39;wholebody_val_image_dir&#39;: &#39;data-mscoco/images/val2017&#39;, &#39;wholebody_square_edge&#39;: 385, &#39;wholebody_extended_scale&#39;: False, &#39;wholebody_orientation_invariant&#39;: 0.0, &#39;wholebody_blur&#39;: 0.0, &#39;wholebody_augmentation&#39;: True, &#39;wholebody_rescale_images&#39;: 1.0, &#39;wholebody_upsample&#39;: 1, &#39;wholebody_min_kp_anns&#39;: 1, &#39;wholebody_bmin&#39;: 1.0, &#39;wholebody_apply_local_centrality&#39;: False, &#39;wholebody_eval_test2017&#39;: False, &#39;wholebody_eval_testdev2017&#39;: False, &#39;wholebody_eval_annotation_filter&#39;: True, &#39;wholebody_eval_long_edge&#39;: 641, &#39;wholebody_eval_extended_scale&#39;: False, &#39;wholebody_eval_orientation_invariant&#39;: 0.0, &#39;save_all&#39;: None, &#39;show&#39;: False, &#39;image_width&#39;: None, &#39;image_height&#39;: None, &#39;image_dpi_factor&#39;: 2.0, &#39;image_min_dpi&#39;: 50.0, &#39;show_file_extension&#39;: &#39;jpeg&#39;, &#39;textbox_alpha&#39;: 0.5, &#39;text_color&#39;: &#39;white&#39;, &#39;font_size&#39;: 8, &#39;monocolor_connections&#39;: False, &#39;line_width&#39;: None, &#39;skeleton_solid_threshold&#39;: 0.5, &#39;show_box&#39;: False, &#39;white_overlay&#39;: False, &#39;show_joint_scales&#39;: False, &#39;show_joint_confidences&#39;: False, &#39;show_decoding_order&#39;: False, &#39;show_frontier_order&#39;: False, &#39;show_only_decoded_connections&#39;: False, &#39;video_fps&#39;: 10, &#39;video_dpi&#39;: 100, &#39;debug_indices&#39;: [], &#39;device&#39;: device(type=&#39;cpu&#39;), &#39;pin_memory&#39;: False}, &#39;version&#39;: &#39;0.13.4+2.gc7b05a2&#39;, &#39;plugin_versions&#39;: {}, &#39;hostname&#39;: &#39;fv-az449-154&#39;}
+INFO:openpifpaf.logger:{&#39;type&#39;: &#39;process&#39;, &#39;argv&#39;: [&#39;/opt/hostedtoolcache/Python/3.8.13/x64/lib/python3.8/site-packages/openpifpaf/train.py&#39;, &#39;--dataset=cifar10&#39;, &#39;--basenet=cifar10net&#39;, &#39;--log-interval=50&#39;, &#39;--epochs=3&#39;, &#39;--lr=0.0003&#39;, &#39;--momentum=0.95&#39;, &#39;--batch-size=16&#39;, &#39;--lr-warm-up-epochs=0.1&#39;, &#39;--lr-decay&#39;, &#39;2.0&#39;, &#39;2.5&#39;, &#39;--lr-decay-epochs=0.1&#39;, &#39;--loader-workers=2&#39;, &#39;--output=cifar10_tutorial.pkl&#39;], &#39;args&#39;: {&#39;output&#39;: &#39;cifar10_tutorial.pkl&#39;, &#39;disable_cuda&#39;: False, &#39;ddp&#39;: False, &#39;local_rank&#39;: None, &#39;sync_batchnorm&#39;: True, &#39;quiet&#39;: False, &#39;debug&#39;: False, &#39;log_stats&#39;: False, &#39;resnet_pretrained&#39;: True, &#39;resnet_pool0_stride&#39;: 0, &#39;resnet_input_conv_stride&#39;: 2, &#39;resnet_input_conv2_stride&#39;: 0, &#39;resnet_block5_dilation&#39;: 1, &#39;resnet_remove_last_block&#39;: False, &#39;shufflenetv2_pretrained&#39;: True, &#39;swin_drop_path_rate&#39;: 0.2, &#39;swin_input_upsample&#39;: False, &#39;swin_use_fpn&#39;: False, &#39;swin_fpn_out_channels&#39;: None, &#39;swin_fpn_level&#39;: 3, &#39;swin_pretrained&#39;: True, &#39;xcit_out_channels&#39;: None, &#39;xcit_out_maxpool&#39;: False, &#39;xcit_pretrained&#39;: True, &#39;shufflenetv2k_input_conv2_stride&#39;: 0, &#39;shufflenetv2k_input_conv2_outchannels&#39;: None, &#39;shufflenetv2k_stage4_dilation&#39;: 1, &#39;shufflenetv2k_kernel&#39;: 5, &#39;shufflenetv2k_conv5_as_stage&#39;: False, &#39;shufflenetv2k_instance_norm&#39;: False, &#39;shufflenetv2k_group_norm&#39;: False, &#39;shufflenetv2k_leaky_relu&#39;: False, &#39;mobilenetv3_pretrained&#39;: True, &#39;mobilenetv2_pretrained&#39;: True, &#39;cf4_dropout&#39;: 0.0, &#39;cf4_inplace_ops&#39;: True, &#39;checkpoint&#39;: None, &#39;basenet&#39;: &#39;cifar10net&#39;, &#39;cross_talk&#39;: 0.0, &#39;download_progress&#39;: True, &#39;head_consolidation&#39;: &#39;filter_and_extend&#39;, &#39;lambdas&#39;: None, &#39;component_lambdas&#39;: None, &#39;auto_tune_mtl&#39;: False, &#39;auto_tune_mtl_variance&#39;: False, &#39;task_sparsity_weight&#39;: 0.0, &#39;soft_clamp&#39;: 5.0, &#39;loss_prescale&#39;: 1.0, &#39;regression_loss&#39;: &#39;laplace&#39;, &#39;bce_total_soft_clamp&#39;: None, &#39;r_smooth&#39;: 0.0, &#39;b_scale&#39;: 1.0, &#39;scale_log&#39;: False, &#39;scale_soft_clamp&#39;: 5.0, &#39;background_weight&#39;: 1.0, &#39;focal_alpha&#39;: 0.5, &#39;focal_gamma&#39;: 1.0, &#39;focal_detach&#39;: False, &#39;focal_clamp&#39;: True, &#39;bce_min&#39;: 0.0, &#39;bce_soft_clamp&#39;: 5.0, &#39;bce_background_clamp&#39;: -15.0, &#39;laplace_soft_clamp&#39;: 5.0, &#39;epochs&#39;: 3, &#39;train_batches&#39;: None, &#39;val_batches&#39;: None, &#39;clip_grad_norm&#39;: 0.0, &#39;clip_grad_value&#39;: 0.0, &#39;log_interval&#39;: 50, &#39;val_interval&#39;: 1, &#39;stride_apply&#39;: 1, &#39;fix_batch_norm&#39;: False, &#39;ema&#39;: 0.01, &#39;profile&#39;: None, &#39;cif_side_length&#39;: 4, &#39;caf_min_size&#39;: 3, &#39;caf_fixed_size&#39;: False, &#39;caf_aspect_ratio&#39;: 0.0, &#39;encoder_suppress_selfhidden&#39;: True, &#39;encoder_suppress_invisible&#39;: False, &#39;encoder_suppress_collision&#39;: False, &#39;momentum&#39;: 0.95, &#39;beta2&#39;: 0.999, &#39;adam_eps&#39;: 1e-06, &#39;nesterov&#39;: True, &#39;weight_decay&#39;: 0.0, &#39;adam&#39;: False, &#39;amsgrad&#39;: False, &#39;lr&#39;: 0.0003, &#39;lr_decay&#39;: [2.0, 2.5], &#39;lr_decay_factor&#39;: 0.1, &#39;lr_decay_epochs&#39;: 0.1, &#39;lr_warm_up_start_epoch&#39;: 0, &#39;lr_warm_up_epochs&#39;: 0.1, &#39;lr_warm_up_factor&#39;: 0.001, &#39;lr_warm_restarts&#39;: [], &#39;lr_warm_restart_duration&#39;: 0.5, &#39;dataset&#39;: &#39;cifar10&#39;, &#39;loader_workers&#39;: 2, &#39;batch_size&#39;: 16, &#39;dataset_weights&#39;: None, &#39;animal_train_annotations&#39;: &#39;data-animalpose/annotations/animal_keypoints_20_train.json&#39;, &#39;animal_val_annotations&#39;: &#39;data-animalpose/annotations/animal_keypoints_20_val.json&#39;, &#39;animal_train_image_dir&#39;: &#39;data-animalpose/images/train/&#39;, &#39;animal_val_image_dir&#39;: &#39;data-animalpose/images/val/&#39;, &#39;animal_square_edge&#39;: 513, &#39;animal_extended_scale&#39;: False, &#39;animal_orientation_invariant&#39;: 0.0, &#39;animal_blur&#39;: 0.0, &#39;animal_augmentation&#39;: True, &#39;animal_rescale_images&#39;: 1.0, &#39;animal_upsample&#39;: 1, &#39;animal_min_kp_anns&#39;: 1, &#39;animal_bmin&#39;: 1, &#39;animal_eval_test2017&#39;: False, &#39;animal_eval_testdev2017&#39;: False, &#39;animal_eval_annotation_filter&#39;: True, &#39;animal_eval_long_edge&#39;: 0, &#39;animal_eval_extended_scale&#39;: False, &#39;animal_eval_orientation_invariant&#39;: 0.0, &#39;apollo_train_annotations&#39;: &#39;data-apollocar3d/annotations/apollo_keypoints_66_train.json&#39;, &#39;apollo_val_annotations&#39;: &#39;data-apollocar3d/annotations/apollo_keypoints_66_val.json&#39;, &#39;apollo_train_image_dir&#39;: &#39;data-apollocar3d/images/train/&#39;, &#39;apollo_val_image_dir&#39;: &#39;data-apollocar3d/images/val/&#39;, &#39;apollo_square_edge&#39;: 513, &#39;apollo_extended_scale&#39;: False, &#39;apollo_orientation_invariant&#39;: 0.0, &#39;apollo_blur&#39;: 0.0, &#39;apollo_augmentation&#39;: True, &#39;apollo_rescale_images&#39;: 1.0, &#39;apollo_upsample&#39;: 1, &#39;apollo_min_kp_anns&#39;: 1, &#39;apollo_bmin&#39;: 1, &#39;apollo_apply_local_centrality&#39;: False, &#39;apollo_eval_annotation_filter&#39;: True, &#39;apollo_eval_long_edge&#39;: 0, &#39;apollo_eval_extended_scale&#39;: False, &#39;apollo_eval_orientation_invariant&#39;: 0.0, &#39;apollo_use_24_kps&#39;: False, &#39;cifar10_root_dir&#39;: &#39;data-cifar10/&#39;, &#39;cifar10_download&#39;: False, &#39;cocodet_train_annotations&#39;: &#39;data-mscoco/annotations/instances_train2017.json&#39;, &#39;cocodet_val_annotations&#39;: &#39;data-mscoco/annotations/instances_val2017.json&#39;, &#39;cocodet_train_image_dir&#39;: &#39;data-mscoco/images/train2017/&#39;, &#39;cocodet_val_image_dir&#39;: &#39;data-mscoco/images/val2017/&#39;, &#39;cocodet_square_edge&#39;: 513, &#39;cocodet_extended_scale&#39;: False, &#39;cocodet_orientation_invariant&#39;: 0.0, &#39;cocodet_blur&#39;: 0.0, &#39;cocodet_augmentation&#39;: True, &#39;cocodet_rescale_images&#39;: 1.0, &#39;cocodet_upsample&#39;: 1, &#39;cocokp_train_annotations&#39;: &#39;data-mscoco/annotations/person_keypoints_train2017.json&#39;, &#39;cocokp_val_annotations&#39;: &#39;data-mscoco/annotations/person_keypoints_val2017.json&#39;, &#39;cocokp_train_image_dir&#39;: &#39;data-mscoco/images/train2017/&#39;, &#39;cocokp_val_image_dir&#39;: &#39;data-mscoco/images/val2017/&#39;, &#39;cocokp_square_edge&#39;: 385, &#39;cocokp_with_dense&#39;: False, &#39;cocokp_extended_scale&#39;: False, &#39;cocokp_orientation_invariant&#39;: 0.0, &#39;cocokp_blur&#39;: 0.0, &#39;cocokp_augmentation&#39;: True, &#39;cocokp_rescale_images&#39;: 1.0, &#39;cocokp_upsample&#39;: 1, &#39;cocokp_min_kp_anns&#39;: 1, &#39;cocokp_bmin&#39;: 0.1, &#39;cocokp_eval_test2017&#39;: False, &#39;cocokp_eval_testdev2017&#39;: False, &#39;coco_eval_annotation_filter&#39;: True, &#39;coco_eval_long_edge&#39;: 641, &#39;coco_eval_extended_scale&#39;: False, &#39;coco_eval_orientation_invariant&#39;: 0.0, &#39;crowdpose_train_annotations&#39;: &#39;data-crowdpose/json/crowdpose_train.json&#39;, &#39;crowdpose_val_annotations&#39;: &#39;data-crowdpose/json/crowdpose_val.json&#39;, &#39;crowdpose_image_dir&#39;: &#39;data-crowdpose/images/&#39;, &#39;crowdpose_square_edge&#39;: 385, &#39;crowdpose_extended_scale&#39;: False, &#39;crowdpose_orientation_invariant&#39;: 0.0, &#39;crowdpose_augmentation&#39;: True, &#39;crowdpose_rescale_images&#39;: 1.0, &#39;crowdpose_upsample&#39;: 1, &#39;crowdpose_min_kp_anns&#39;: 1, &#39;crowdpose_eval_test&#39;: False, &#39;crowdpose_eval_long_edge&#39;: 641, &#39;crowdpose_eval_extended_scale&#39;: False, &#39;crowdpose_eval_orientation_invariant&#39;: 0.0, &#39;crowdpose_index&#39;: None, &#39;nuscenes_train_annotations&#39;: &#39;../../../NuScenes/mscoco_style_annotations/nuimages_v1.0-train.json&#39;, &#39;nuscenes_val_annotations&#39;: &#39;../../../NuScenes/mscoco_style_annotations/nuimages_v1.0-val.json&#39;, &#39;nuscenes_train_image_dir&#39;: &#39;../../../NuScenes/nuimages-v1.0-all-samples&#39;, &#39;nuscenes_val_image_dir&#39;: &#39;../../../NuScenes/nuimages-v1.0-all-samples&#39;, &#39;nuscenes_square_edge&#39;: 513, &#39;nuscenes_extended_scale&#39;: False, &#39;nuscenes_orientation_invariant&#39;: 0.0, &#39;nuscenes_blur&#39;: 0.0, &#39;nuscenes_augmentation&#39;: True, &#39;nuscenes_rescale_images&#39;: 1.0, &#39;nuscenes_upsample&#39;: 1, &#39;posetrack2018_train_annotations&#39;: &#39;data-posetrack2018/annotations/train/*.json&#39;, &#39;posetrack2018_val_annotations&#39;: &#39;data-posetrack2018/annotations/val/*.json&#39;, &#39;posetrack2018_eval_annotations&#39;: &#39;data-posetrack2018/annotations/val/*.json&#39;, &#39;posetrack2018_data_root&#39;: &#39;data-posetrack2018&#39;, &#39;posetrack_square_edge&#39;: 385, &#39;posetrack_with_dense&#39;: False, &#39;posetrack_augmentation&#39;: True, &#39;posetrack_rescale_images&#39;: 1.0, &#39;posetrack_upsample&#39;: 1, &#39;posetrack_min_kp_anns&#39;: 1, &#39;posetrack_bmin&#39;: 0.1, &#39;posetrack_sample_pairing&#39;: 0.0, &#39;posetrack_image_augmentations&#39;: 0.0, &#39;posetrack_max_shift&#39;: 30.0, &#39;posetrack_eval_long_edge&#39;: 801, &#39;posetrack_eval_extended_scale&#39;: False, &#39;posetrack_eval_orientation_invariant&#39;: 0.0, &#39;posetrack_ablation_without_tcaf&#39;: False, &#39;posetrack2017_eval_annotations&#39;: &#39;data-posetrack2017/annotations/val/*.json&#39;, &#39;posetrack2017_data_root&#39;: &#39;data-posetrack2017&#39;, &#39;cocokpst_max_shift&#39;: 30.0, &#39;wholebody_train_annotations&#39;: &#39;data-mscoco/annotations/person_keypoints_train2017_wholebody_pifpaf_style.json&#39;, &#39;wholebody_val_annotations&#39;: &#39;data-mscoco/annotations/coco_wholebody_val_v1.0.json&#39;, &#39;wholebody_train_image_dir&#39;: &#39;data-mscoco/images/train2017/&#39;, &#39;wholebody_val_image_dir&#39;: &#39;data-mscoco/images/val2017&#39;, &#39;wholebody_square_edge&#39;: 385, &#39;wholebody_extended_scale&#39;: False, &#39;wholebody_orientation_invariant&#39;: 0.0, &#39;wholebody_blur&#39;: 0.0, &#39;wholebody_augmentation&#39;: True, &#39;wholebody_rescale_images&#39;: 1.0, &#39;wholebody_upsample&#39;: 1, &#39;wholebody_min_kp_anns&#39;: 1, &#39;wholebody_bmin&#39;: 1.0, &#39;wholebody_apply_local_centrality&#39;: False, &#39;wholebody_eval_test2017&#39;: False, &#39;wholebody_eval_testdev2017&#39;: False, &#39;wholebody_eval_annotation_filter&#39;: True, &#39;wholebody_eval_long_edge&#39;: 641, &#39;wholebody_eval_extended_scale&#39;: False, &#39;wholebody_eval_orientation_invariant&#39;: 0.0, &#39;save_all&#39;: None, &#39;show&#39;: False, &#39;image_width&#39;: None, &#39;image_height&#39;: None, &#39;image_dpi_factor&#39;: 2.0, &#39;image_min_dpi&#39;: 50.0, &#39;show_file_extension&#39;: &#39;jpeg&#39;, &#39;textbox_alpha&#39;: 0.5, &#39;text_color&#39;: &#39;white&#39;, &#39;font_size&#39;: 8, &#39;monocolor_connections&#39;: False, &#39;line_width&#39;: None, &#39;skeleton_solid_threshold&#39;: 0.5, &#39;show_box&#39;: False, &#39;white_overlay&#39;: False, &#39;show_joint_scales&#39;: False, &#39;show_joint_confidences&#39;: False, &#39;show_decoding_order&#39;: False, &#39;show_frontier_order&#39;: False, &#39;show_only_decoded_connections&#39;: False, &#39;video_fps&#39;: 10, &#39;video_dpi&#39;: 100, &#39;debug_indices&#39;: [], &#39;device&#39;: device(type=&#39;cpu&#39;), &#39;pin_memory&#39;: False}, &#39;version&#39;: &#39;0.13.4+4.g297b860&#39;, &#39;plugin_versions&#39;: {&#39;openpifpaf_extras&#39;: &#39;0.0.3&#39;}, &#39;hostname&#39;: &#39;fv-az214-783&#39;}
 INFO:openpifpaf.optimize:SGD optimizer
 INFO:openpifpaf.optimize:training batches per epoch = 3125
 INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;config&#39;, &#39;field_names&#39;: [&#39;cifar10.cifdet.c&#39;, &#39;cifar10.cifdet.vec&#39;, &#39;cifar10.cifdet.scales&#39;]}
 INFO:openpifpaf.network.trainer:model written: cifar10_tutorial.pkl.epoch000
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 0, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.046, &#39;data_time&#39;: 0.211, &#39;lr&#39;: 3e-07, &#39;loss&#39;: 68.443, &#39;head_losses&#39;: [2.088, 66.355, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 50, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.033, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 9.1e-07, &#39;loss&#39;: 68.786, &#39;head_losses&#39;: [2.006, 66.78, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 100, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.03, &#39;data_time&#39;: 0.003, &#39;lr&#39;: 2.74e-06, &#39;loss&#39;: 68.53, &#39;head_losses&#39;: [2.022, 66.508, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 150, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.034, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 8.26e-06, &#39;loss&#39;: 68.351, &#39;head_losses&#39;: [2.033, 66.317, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 200, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.03, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 2.495e-05, &#39;loss&#39;: 67.8, &#39;head_losses&#39;: [2.048, 65.752, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 250, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.027, &#39;data_time&#39;: 0.006, &#39;lr&#39;: 7.536e-05, &#39;loss&#39;: 66.866, &#39;head_losses&#39;: [2.074, 64.792, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 300, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.033, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.00022757, &#39;loss&#39;: 62.887, &#39;head_losses&#39;: [2.59, 60.297, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 350, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.027, &#39;data_time&#39;: 0.004, &#39;lr&#39;: 0.0003, &#39;loss&#39;: 41.003, &#39;head_losses&#39;: [1.38, 39.623, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 400, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.031, &#39;data_time&#39;: 0.003, &#39;lr&#39;: 0.0003, &#39;loss&#39;: 11.928, &#39;head_losses&#39;: [-5.825, 17.754, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 450, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.031, &#39;data_time&#39;: 0.003, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -2.877, &#39;head_losses&#39;: [-7.866, 4.989, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 500, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.031, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -5.66, &#39;head_losses&#39;: [-8.197, 2.537, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 550, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.033, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -7.211, &#39;head_losses&#39;: [-8.466, 1.254, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 600, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.026, &#39;data_time&#39;: 0.006, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -7.624, &#39;head_losses&#39;: [-8.693, 1.069, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 650, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.032, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -3.381, &#39;head_losses&#39;: [-8.939, 5.559, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 700, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.033, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -7.4, &#39;head_losses&#39;: [-9.103, 1.703, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 750, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.03, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -6.288, &#39;head_losses&#39;: [-9.082, 2.794, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 800, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.029, &#39;data_time&#39;: 0.005, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -7.274, &#39;head_losses&#39;: [-9.021, 1.747, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 850, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.033, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -7.114, &#39;head_losses&#39;: [-9.358, 2.243, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 900, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.031, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -7.384, &#39;head_losses&#39;: [-9.176, 1.792, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 950, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.031, &#39;data_time&#39;: 0.003, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -8.694, &#39;head_losses&#39;: [-9.353, 0.659, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 1000, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.031, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.279, &#39;head_losses&#39;: [-9.443, 0.164, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 1050, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.031, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -8.469, &#39;head_losses&#39;: [-9.362, 0.892, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 1100, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.038, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -8.741, &#39;head_losses&#39;: [-9.087, 0.345, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 1150, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.033, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -8.851, &#39;head_losses&#39;: [-9.166, 0.315, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 1200, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.031, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -7.955, &#39;head_losses&#39;: [-9.019, 1.065, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 1250, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.031, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -7.44, &#39;head_losses&#39;: [-9.217, 1.776, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 1300, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.032, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -8.643, &#39;head_losses&#39;: [-9.205, 0.563, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 1350, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.028, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.123, &#39;head_losses&#39;: [-9.095, -0.027, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 1400, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.031, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -8.017, &#39;head_losses&#39;: [-9.403, 1.385, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 1450, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.032, &#39;data_time&#39;: 0.004, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.18, &#39;head_losses&#39;: [-9.407, 0.227, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 1500, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.031, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.154, &#39;head_losses&#39;: [-9.213, 0.059, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 1550, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.031, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.414, &#39;head_losses&#39;: [-9.671, 0.257, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 1600, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.033, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.331, &#39;head_losses&#39;: [-9.473, 0.142, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 1650, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.032, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.068, &#39;head_losses&#39;: [-9.497, 0.43, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 1700, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.03, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.178, &#39;head_losses&#39;: [-9.568, 0.39, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 1750, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.03, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.087, &#39;head_losses&#39;: [-9.456, 0.369, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 1800, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.029, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -7.285, &#39;head_losses&#39;: [-9.481, 2.196, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 1850, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.03, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.366, &#39;head_losses&#39;: [-9.614, 0.248, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 1900, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.031, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -8.736, &#39;head_losses&#39;: [-9.621, 0.885, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 1950, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.031, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.243, &#39;head_losses&#39;: [-9.493, 0.25, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 2000, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.032, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.339, &#39;head_losses&#39;: [-9.795, 0.456, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 2050, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.038, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -8.762, &#39;head_losses&#39;: [-9.622, 0.86, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 2100, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.031, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.606, &#39;head_losses&#39;: [-9.574, -0.032, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 2150, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.039, &#39;data_time&#39;: 0.003, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -8.61, &#39;head_losses&#39;: [-9.837, 1.227, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 2200, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.035, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -8.505, &#39;head_losses&#39;: [-9.677, 1.172, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 2250, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.031, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.667, &#39;head_losses&#39;: [-9.766, 0.099, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 2300, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.033, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.403, &#39;head_losses&#39;: [-9.527, 0.124, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 2350, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.032, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.567, &#39;head_losses&#39;: [-9.762, 0.195, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 2400, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.032, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.469, &#39;head_losses&#39;: [-9.842, 0.373, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 2450, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.031, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.096, &#39;head_losses&#39;: [-9.63, 0.534, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 2500, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.033, &#39;data_time&#39;: 0.003, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.076, &#39;head_losses&#39;: [-9.804, 0.728, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 2550, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.033, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.474, &#39;head_losses&#39;: [-10.059, 0.585, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 2600, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.033, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -8.92, &#39;head_losses&#39;: [-9.262, 0.343, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 2650, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.033, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.59, &#39;head_losses&#39;: [-9.781, 0.191, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 2700, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.032, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.784, &#39;head_losses&#39;: [-9.979, 0.195, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 2750, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.033, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.084, &#39;head_losses&#39;: [-9.321, 0.238, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 2800, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.032, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.687, &#39;head_losses&#39;: [-10.074, 0.387, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 2850, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.032, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.417, &#39;head_losses&#39;: [-9.654, 0.237, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 2900, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.032, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -7.624, &#39;head_losses&#39;: [-9.633, 2.009, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 2950, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.033, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.045, &#39;head_losses&#39;: [-10.048, 0.003, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 3000, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.041, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.336, &#39;head_losses&#39;: [-9.518, 0.183, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 3050, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.032, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.162, &#39;head_losses&#39;: [-10.26, 0.098, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 3100, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.03, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.802, &#39;head_losses&#39;: [-10.109, 0.307, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 0, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.045, &#39;data_time&#39;: 0.071, &#39;lr&#39;: 3e-07, &#39;loss&#39;: 68.644, &#39;head_losses&#39;: [1.829, 66.815, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 50, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.02, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 9.1e-07, &#39;loss&#39;: 68.261, &#39;head_losses&#39;: [1.959, 66.302, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 100, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.018, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 2.74e-06, &#39;loss&#39;: 68.221, &#39;head_losses&#39;: [1.946, 66.275, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 150, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.017, &#39;data_time&#39;: 0.003, &#39;lr&#39;: 8.26e-06, &#39;loss&#39;: 68.218, &#39;head_losses&#39;: [1.94, 66.278, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 200, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 2.495e-05, &#39;loss&#39;: 67.873, &#39;head_losses&#39;: [1.862, 66.011, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 250, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.016, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 7.536e-05, &#39;loss&#39;: 66.705, &#39;head_losses&#39;: [1.88, 64.825, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 300, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.00022757, &#39;loss&#39;: 57.005, &#39;head_losses&#39;: [5.368, 51.638, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 350, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.018, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: 28.09, &#39;head_losses&#39;: [-0.296, 28.386, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 400, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: 9.767, &#39;head_losses&#39;: [-5.338, 15.105, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 450, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.018, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -0.007, &#39;head_losses&#39;: [-7.705, 7.698, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 500, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -1.939, &#39;head_losses&#39;: [-8.634, 6.695, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 550, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.018, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -5.622, &#39;head_losses&#39;: [-8.466, 2.844, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 600, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.02, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -5.955, &#39;head_losses&#39;: [-8.937, 2.981, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 650, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.018, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -8.522, &#39;head_losses&#39;: [-9.065, 0.543, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 700, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.018, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -5.27, &#39;head_losses&#39;: [-9.117, 3.848, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 750, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.018, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -7.862, &#39;head_losses&#39;: [-9.046, 1.184, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 800, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.018, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -8.677, &#39;head_losses&#39;: [-9.247, 0.57, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 850, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -7.8, &#39;head_losses&#39;: [-9.215, 1.415, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 900, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.018, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -8.738, &#39;head_losses&#39;: [-9.381, 0.643, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 950, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.018, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -8.377, &#39;head_losses&#39;: [-9.196, 0.819, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 1000, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.018, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -6.588, &#39;head_losses&#39;: [-9.477, 2.889, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 1050, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.014, &#39;data_time&#39;: 0.007, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -8.589, &#39;head_losses&#39;: [-9.309, 0.719, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 1100, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -5.246, &#39;head_losses&#39;: [-9.31, 4.064, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 1150, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.01, &#39;data_time&#39;: 0.009, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -4.774, &#39;head_losses&#39;: [-9.552, 4.778, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 1200, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.018, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.184, &#39;head_losses&#39;: [-9.269, 0.085, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 1250, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.018, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -8.59, &#39;head_losses&#39;: [-9.362, 0.771, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 1300, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.015, &#39;data_time&#39;: 0.005, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -8.297, &#39;head_losses&#39;: [-9.325, 1.028, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 1350, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.349, &#39;head_losses&#39;: [-9.463, 0.113, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 1400, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -8.819, &#39;head_losses&#39;: [-9.434, 0.614, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 1450, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.003, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.268, &#39;head_losses&#39;: [-9.462, 0.193, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 1500, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.171, &#39;head_losses&#39;: [-9.455, 0.284, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 1550, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -8.713, &#39;head_losses&#39;: [-9.442, 0.729, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 1600, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.015, &#39;data_time&#39;: 0.006, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.15, &#39;head_losses&#39;: [-9.516, 0.365, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 1650, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.265, &#39;head_losses&#39;: [-9.297, 0.031, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 1700, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.018, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -8.559, &#39;head_losses&#39;: [-9.078, 0.519, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 1750, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.018, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.108, &#39;head_losses&#39;: [-9.469, 0.361, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 1800, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.018, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.444, &#39;head_losses&#39;: [-9.339, -0.105, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 1850, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -7.903, &#39;head_losses&#39;: [-9.143, 1.24, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 1900, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.017, &#39;data_time&#39;: 0.003, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.418, &#39;head_losses&#39;: [-9.416, -0.002, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 1950, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.018, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.409, &#39;head_losses&#39;: [-9.339, -0.07, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 2000, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.02, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.61, &#39;head_losses&#39;: [-9.647, 0.036, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 2050, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -8.946, &#39;head_losses&#39;: [-9.502, 0.557, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 2100, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.157, &#39;head_losses&#39;: [-9.604, 0.447, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 2150, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.037, &#39;head_losses&#39;: [-9.573, 0.536, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 2200, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.018, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -7.883, &#39;head_losses&#39;: [-9.705, 1.822, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 2250, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -8.729, &#39;head_losses&#39;: [-9.91, 1.18, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 2300, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.02, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -8.066, &#39;head_losses&#39;: [-9.31, 1.243, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 2350, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.018, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.188, &#39;head_losses&#39;: [-9.499, 0.311, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 2400, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.384, &#39;head_losses&#39;: [-9.754, 0.37, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 2450, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.018, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -8.303, &#39;head_losses&#39;: [-9.622, 1.32, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 2500, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -8.824, &#39;head_losses&#39;: [-9.223, 0.399, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 2550, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.02, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.718, &#39;head_losses&#39;: [-9.818, 0.1, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 2600, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.055, &#39;head_losses&#39;: [-9.521, 0.466, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 2650, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.535, &#39;head_losses&#39;: [-10.002, 0.467, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 2700, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -8.815, &#39;head_losses&#39;: [-9.757, 0.942, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 2750, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -7.841, &#39;head_losses&#39;: [-8.856, 1.015, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 2800, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.778, &#39;head_losses&#39;: [-9.923, 0.145, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 2850, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.016, &#39;data_time&#39;: 0.004, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -7.726, &#39;head_losses&#39;: [-9.437, 1.71, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 2900, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.127, &#39;head_losses&#39;: [-10.311, 0.185, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 2950, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.55, &#39;head_losses&#39;: [-10.024, 0.474, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 3000, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.422, &#39;head_losses&#39;: [-9.77, 0.348, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 3050, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.343, &#39;head_losses&#39;: [-9.612, 0.268, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 0, &#39;batch&#39;: 3100, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.924, &#39;head_losses&#39;: [-10.056, 0.131, 0.0]}
 INFO:openpifpaf.network.trainer:applying ema
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train-epoch&#39;, &#39;epoch&#39;: 1, &#39;loss&#39;: 0.55358, &#39;head_losses&#39;: [-7.98573, 8.53931, 0.0], &#39;time&#39;: 107.3, &#39;n_clipped_grad&#39;: 0, &#39;max_norm&#39;: 0.0}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train-epoch&#39;, &#39;epoch&#39;: 1, &#39;loss&#39;: 0.1938, &#39;head_losses&#39;: [-8.0116, 8.2054, 0.0], &#39;time&#39;: 62.5, &#39;n_clipped_grad&#39;: 0, &#39;max_norm&#39;: 0.0}
 INFO:openpifpaf.network.trainer:model written: cifar10_tutorial.pkl.epoch001
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;val-epoch&#39;, &#39;epoch&#39;: 1, &#39;loss&#39;: -10.09993, &#39;head_losses&#39;: [-9.99362, -0.10632, 0.0], &#39;time&#39;: 12.6}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;val-epoch&#39;, &#39;epoch&#39;: 1, &#39;loss&#39;: -10.03785, &#39;head_losses&#39;: [-9.94797, -0.08988, 0.0], &#39;time&#39;: 10.1}
 INFO:openpifpaf.network.trainer:restoring params from before ema
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 0, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.04, &#39;data_time&#39;: 0.083, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -7.767, &#39;head_losses&#39;: [-10.059, 2.293, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 50, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.033, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.167, &#39;head_losses&#39;: [-10.258, 0.091, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 100, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.033, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.06, &#39;head_losses&#39;: [-10.112, 0.052, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 150, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.029, &#39;data_time&#39;: 0.005, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.722, &#39;head_losses&#39;: [-9.837, 0.115, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 200, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.032, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.087, &#39;head_losses&#39;: [-10.179, 0.091, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 250, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.029, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.164, &#39;head_losses&#39;: [-10.187, 0.023, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 300, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.031, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.133, &#39;head_losses&#39;: [-9.919, 0.786, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 350, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.029, &#39;data_time&#39;: 0.005, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -8.887, &#39;head_losses&#39;: [-9.886, 0.999, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 400, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.032, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.541, &#39;head_losses&#39;: [-9.715, 0.174, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 450, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.073, &#39;data_time&#39;: 0.003, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.656, &#39;head_losses&#39;: [-10.07, 0.414, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 500, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.031, &#39;data_time&#39;: 0.01, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -8.31, &#39;head_losses&#39;: [-10.286, 1.976, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 550, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.031, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.028, &#39;head_losses&#39;: [-10.219, 0.191, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 600, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.032, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.9, &#39;head_losses&#39;: [-9.865, -0.035, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 650, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.035, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.552, &#39;head_losses&#39;: [-10.066, 0.514, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 700, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.034, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.283, &#39;head_losses&#39;: [-10.418, 1.136, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 750, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.035, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.262, &#39;head_losses&#39;: [-10.07, 0.807, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 800, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.032, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.754, &#39;head_losses&#39;: [-10.562, 0.808, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 850, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.032, &#39;data_time&#39;: 0.003, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.677, &#39;head_losses&#39;: [-10.43, 0.753, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 900, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.032, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.014, &#39;head_losses&#39;: [-10.105, 0.091, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 950, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.031, &#39;data_time&#39;: 0.006, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.268, &#39;head_losses&#39;: [-10.412, 1.144, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 1000, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.034, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.357, &#39;head_losses&#39;: [-10.63, 0.273, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 1050, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.034, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.771, &#39;head_losses&#39;: [-10.413, 0.642, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 1100, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.031, &#39;data_time&#39;: 0.005, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.699, &#39;head_losses&#39;: [-10.047, 0.348, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 1150, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.032, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.439, &#39;head_losses&#39;: [-9.598, 0.159, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 1200, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.032, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.192, &#39;head_losses&#39;: [-10.334, 0.142, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 1250, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.033, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.672, &#39;head_losses&#39;: [-10.426, 0.753, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 1300, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.034, &#39;data_time&#39;: 0.003, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.824, &#39;head_losses&#39;: [-10.399, 0.575, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 1350, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.036, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.276, &#39;head_losses&#39;: [-10.487, 0.211, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 1400, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.03, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.699, &#39;head_losses&#39;: [-10.005, 0.306, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 1450, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.032, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.724, &#39;head_losses&#39;: [-9.794, 0.07, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 1500, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.031, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.756, &#39;head_losses&#39;: [-10.065, 0.308, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 1550, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.03, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.123, &#39;head_losses&#39;: [-10.404, 0.281, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 1600, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.03, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -8.939, &#39;head_losses&#39;: [-9.712, 0.773, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 1650, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.031, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.777, &#39;head_losses&#39;: [-10.134, 0.358, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 1700, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.034, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.953, &#39;head_losses&#39;: [-10.09, 0.137, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 1750, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.032, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.273, &#39;head_losses&#39;: [-10.505, 0.233, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 1800, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.032, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.391, &#39;head_losses&#39;: [-9.845, 0.454, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 1850, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.035, &#39;data_time&#39;: 0.003, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.007, &#39;head_losses&#39;: [-10.469, 0.462, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 1900, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.037, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.849, &#39;head_losses&#39;: [-10.132, 0.283, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 1950, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.031, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.989, &#39;head_losses&#39;: [-10.344, 0.356, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 2000, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.028, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.689, &#39;head_losses&#39;: [-10.397, 0.707, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 2050, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.023, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.048, &#39;head_losses&#39;: [-10.251, 0.204, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 2100, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.034, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.125, &#39;head_losses&#39;: [-10.421, 0.296, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 2150, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.046, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.148, &#39;head_losses&#39;: [-10.363, 1.215, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 2200, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.027, &#39;data_time&#39;: 0.006, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.806, &#39;head_losses&#39;: [-9.885, 0.08, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 2250, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.031, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.576, &#39;head_losses&#39;: [-9.891, 0.315, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 2300, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.032, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.876, &#39;head_losses&#39;: [-10.246, 0.371, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 2350, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.031, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.566, &#39;head_losses&#39;: [-10.399, 0.833, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 2400, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.032, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.448, &#39;head_losses&#39;: [-10.49, 0.042, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 2450, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.031, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.533, &#39;head_losses&#39;: [-9.666, 0.132, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 2500, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.032, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.221, &#39;head_losses&#39;: [-10.381, 0.16, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 2550, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.03, &#39;data_time&#39;: 0.003, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.548, &#39;head_losses&#39;: [-9.91, 0.361, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 2600, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.024, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -8.561, &#39;head_losses&#39;: [-9.965, 1.404, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 2650, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.034, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.919, &#39;head_losses&#39;: [-10.227, 0.308, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 2700, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.024, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.279, &#39;head_losses&#39;: [-10.579, 0.3, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 2750, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.031, &#39;data_time&#39;: 0.004, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.486, &#39;head_losses&#39;: [-10.562, 0.076, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 2800, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.028, &#39;data_time&#39;: 0.004, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.523, &#39;head_losses&#39;: [-10.667, 0.143, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 2850, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.03, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -8.812, &#39;head_losses&#39;: [-10.696, 1.883, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 2900, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.033, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.163, &#39;head_losses&#39;: [-10.228, 0.066, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 2950, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.031, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.131, &#39;head_losses&#39;: [-10.345, 0.214, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 3000, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.034, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.247, &#39;head_losses&#39;: [-10.516, 0.269, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 3050, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.032, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.161, &#39;head_losses&#39;: [-10.519, 0.358, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 3100, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.032, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -8.926, &#39;head_losses&#39;: [-9.651, 0.725, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 0, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.028, &#39;data_time&#39;: 0.055, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.666, &#39;head_losses&#39;: [-10.104, 0.438, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 50, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.02, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.672, &#39;head_losses&#39;: [-10.019, 0.347, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 100, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.016, &#39;data_time&#39;: 0.005, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -8.869, &#39;head_losses&#39;: [-9.306, 0.436, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 150, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.02, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.046, &#39;head_losses&#39;: [-10.241, 0.194, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 200, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.016, &#39;data_time&#39;: 0.004, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.624, &#39;head_losses&#39;: [-9.979, 0.355, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 250, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.839, &#39;head_losses&#39;: [-10.091, 0.252, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 300, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -7.839, &#39;head_losses&#39;: [-9.863, 2.024, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 350, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.02, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -8.11, &#39;head_losses&#39;: [-9.964, 1.854, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 400, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.02, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.442, &#39;head_losses&#39;: [-9.707, 0.264, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 450, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -8.23, &#39;head_losses&#39;: [-9.81, 1.58, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 500, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.767, &#39;head_losses&#39;: [-10.174, 0.407, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 550, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.006, &#39;head_losses&#39;: [-10.196, 0.19, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 600, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.912, &#39;head_losses&#39;: [-10.194, 0.282, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 650, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.692, &#39;head_losses&#39;: [-10.086, 0.394, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 700, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.014, &#39;data_time&#39;: 0.006, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.998, &#39;head_losses&#39;: [-10.146, 0.148, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 750, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.018, &#39;data_time&#39;: 0.003, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.809, &#39;head_losses&#39;: [-10.369, 0.56, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 800, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.018, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.799, &#39;head_losses&#39;: [-9.837, 0.038, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 850, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.021, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.696, &#39;head_losses&#39;: [-10.228, 0.532, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 900, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.315, &#39;head_losses&#39;: [-10.101, 0.786, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 950, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.02, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.108, &#39;head_losses&#39;: [-10.247, 0.139, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 1000, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.018, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.077, &#39;head_losses&#39;: [-10.37, 0.293, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 1050, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.622, &#39;head_losses&#39;: [-10.039, 0.418, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 1100, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.294, &#39;head_losses&#39;: [-10.542, 0.248, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 1150, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.018, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.194, &#39;head_losses&#39;: [-10.652, 1.459, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 1200, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.021, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.028, &#39;head_losses&#39;: [-9.814, 0.786, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 1250, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.661, &#39;head_losses&#39;: [-9.691, 0.03, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 1300, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.02, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.139, &#39;head_losses&#39;: [-9.416, 0.277, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 1350, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.533, &#39;head_losses&#39;: [-10.367, 0.834, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 1400, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.264, &#39;head_losses&#39;: [-10.647, 0.383, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 1450, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.073, &#39;head_losses&#39;: [-10.231, 0.158, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 1500, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.018, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.648, &#39;head_losses&#39;: [-10.083, 0.435, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 1550, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.02, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.367, &#39;head_losses&#39;: [-10.413, 1.046, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 1600, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.018, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.276, &#39;head_losses&#39;: [-10.695, 0.419, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 1650, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.017, &#39;data_time&#39;: 0.003, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -8.24, &#39;head_losses&#39;: [-9.597, 1.356, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 1700, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.018, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.298, &#39;head_losses&#39;: [-10.595, 0.297, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 1750, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.021, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.239, &#39;head_losses&#39;: [-10.765, 0.526, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 1800, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.018, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.343, &#39;head_losses&#39;: [-10.513, 0.17, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 1850, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.466, &#39;head_losses&#39;: [-10.293, 0.827, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 1900, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.018, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.843, &#39;head_losses&#39;: [-9.939, 0.096, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 1950, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.018, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.19, &#39;head_losses&#39;: [-10.817, 0.627, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 2000, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.021, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.81, &#39;head_losses&#39;: [-10.173, 0.363, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 2050, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.021, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -8.382, &#39;head_losses&#39;: [-10.767, 2.386, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 2100, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.411, &#39;head_losses&#39;: [-10.566, 0.155, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 2150, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.004, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -8.828, &#39;head_losses&#39;: [-9.945, 1.117, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 2200, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.018, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.064, &#39;head_losses&#39;: [-10.565, 0.501, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 2250, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.02, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.471, &#39;head_losses&#39;: [-10.6, 0.129, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 2300, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.021, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.259, &#39;head_losses&#39;: [-10.507, 0.248, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 2350, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.02, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.297, &#39;head_losses&#39;: [-10.669, 0.372, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 2400, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.798, &#39;head_losses&#39;: [-10.137, 0.339, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 2450, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.851, &#39;head_losses&#39;: [-10.39, 0.539, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 2500, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.018, &#39;data_time&#39;: 0.004, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.915, &#39;head_losses&#39;: [-10.717, 0.802, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 2550, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.003, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.02, &#39;head_losses&#39;: [-10.235, 0.215, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 2600, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.017, &#39;data_time&#39;: 0.004, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.828, &#39;head_losses&#39;: [-9.982, 0.154, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 2650, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.018, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.25, &#39;head_losses&#39;: [-10.742, 0.492, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 2700, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.018, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.07, &#39;head_losses&#39;: [-10.373, 0.302, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 2750, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.018, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.796, &#39;head_losses&#39;: [-11.183, 0.387, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 2800, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.809, &#39;head_losses&#39;: [-9.854, 0.045, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 2850, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.02, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.864, &#39;head_losses&#39;: [-10.377, 0.514, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 2900, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.419, &#39;head_losses&#39;: [-10.487, 0.067, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 2950, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.021, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.752, &#39;head_losses&#39;: [-10.901, 0.149, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 3000, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.022, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.0, &#39;head_losses&#39;: [-10.364, 0.364, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 3050, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.018, &#39;data_time&#39;: 0.003, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -9.956, &#39;head_losses&#39;: [-10.873, 0.917, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 1, &#39;batch&#39;: 3100, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.02, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.313, &#39;head_losses&#39;: [-10.712, 0.399, 0.0]}
 INFO:openpifpaf.network.trainer:applying ema
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train-epoch&#39;, &#39;epoch&#39;: 2, &#39;loss&#39;: -9.73575, &#39;head_losses&#39;: [-10.18797, 0.45222, 0.0], &#39;time&#39;: 108.1, &#39;n_clipped_grad&#39;: 0, &#39;max_norm&#39;: 0.0}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train-epoch&#39;, &#39;epoch&#39;: 2, &#39;loss&#39;: -9.69702, &#39;head_losses&#39;: [-10.22852, 0.5315, 0.0], &#39;time&#39;: 64.8, &#39;n_clipped_grad&#39;: 0, &#39;max_norm&#39;: 0.0}
 INFO:openpifpaf.network.trainer:model written: cifar10_tutorial.pkl.epoch002
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;val-epoch&#39;, &#39;epoch&#39;: 2, &#39;loss&#39;: -10.60735, &#39;head_losses&#39;: [-10.47699, -0.13035, 0.0], &#39;time&#39;: 12.4}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;val-epoch&#39;, &#39;epoch&#39;: 2, &#39;loss&#39;: -10.68883, &#39;head_losses&#39;: [-10.5679, -0.12094, 0.0], &#39;time&#39;: 7.3}
 INFO:openpifpaf.network.trainer:restoring params from before ema
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 0, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.042, &#39;data_time&#39;: 0.084, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.658, &#39;head_losses&#39;: [-10.69, 0.032, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 50, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.03, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.00020755, &#39;loss&#39;: -10.376, &#39;head_losses&#39;: [-10.348, -0.029, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 100, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.031, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 0.00014359, &#39;loss&#39;: -10.913, &#39;head_losses&#39;: [-10.828, -0.084, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 150, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.032, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 9.934e-05, &#39;loss&#39;: -10.619, &#39;head_losses&#39;: [-10.522, -0.097, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 200, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.034, &#39;data_time&#39;: 0.003, &#39;lr&#39;: 6.873e-05, &#39;loss&#39;: -10.121, &#39;head_losses&#39;: [-10.006, -0.115, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 250, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.033, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 4.755e-05, &#39;loss&#39;: -10.91, &#39;head_losses&#39;: [-10.751, -0.16, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 300, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.032, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 3.289e-05, &#39;loss&#39;: -10.736, &#39;head_losses&#39;: [-10.573, -0.163, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 350, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.032, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 3e-05, &#39;loss&#39;: -10.014, &#39;head_losses&#39;: [-9.905, -0.109, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 400, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.033, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 3e-05, &#39;loss&#39;: -11.076, &#39;head_losses&#39;: [-10.911, -0.165, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 450, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.031, &#39;data_time&#39;: 0.004, &#39;lr&#39;: 3e-05, &#39;loss&#39;: -10.532, &#39;head_losses&#39;: [-10.369, -0.163, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 500, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.03, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 3e-05, &#39;loss&#39;: -10.295, &#39;head_losses&#39;: [-10.131, -0.164, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 550, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.029, &#39;data_time&#39;: 0.007, &#39;lr&#39;: 3e-05, &#39;loss&#39;: -9.668, &#39;head_losses&#39;: [-9.554, -0.114, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 600, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.031, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 3e-05, &#39;loss&#39;: -10.323, &#39;head_losses&#39;: [-10.177, -0.146, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 650, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.031, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 3e-05, &#39;loss&#39;: -10.19, &#39;head_losses&#39;: [-10.042, -0.148, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 700, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.032, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 3e-05, &#39;loss&#39;: -10.956, &#39;head_losses&#39;: [-10.801, -0.156, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 750, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.032, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 3e-05, &#39;loss&#39;: -10.912, &#39;head_losses&#39;: [-10.726, -0.186, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 800, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.026, &#39;data_time&#39;: 0.006, &#39;lr&#39;: 3e-05, &#39;loss&#39;: -10.729, &#39;head_losses&#39;: [-10.552, -0.177, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 850, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.029, &#39;data_time&#39;: 0.003, &#39;lr&#39;: 3e-05, &#39;loss&#39;: -10.722, &#39;head_losses&#39;: [-10.556, -0.165, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 900, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.034, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 3e-05, &#39;loss&#39;: -10.47, &#39;head_losses&#39;: [-10.293, -0.177, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 950, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.033, &#39;data_time&#39;: 0.004, &#39;lr&#39;: 3e-05, &#39;loss&#39;: -10.779, &#39;head_losses&#39;: [-10.615, -0.165, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 1000, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.034, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 3e-05, &#39;loss&#39;: -10.334, &#39;head_losses&#39;: [-10.202, -0.132, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 1050, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.032, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 3e-05, &#39;loss&#39;: -10.493, &#39;head_losses&#39;: [-10.362, -0.13, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 1100, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.036, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 3e-05, &#39;loss&#39;: -10.48, &#39;head_losses&#39;: [-10.312, -0.169, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 1150, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.033, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 3e-05, &#39;loss&#39;: -10.599, &#39;head_losses&#39;: [-10.447, -0.152, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 1200, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.034, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 3e-05, &#39;loss&#39;: -10.175, &#39;head_losses&#39;: [-10.022, -0.153, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 1250, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.032, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 3e-05, &#39;loss&#39;: -11.108, &#39;head_losses&#39;: [-10.932, -0.176, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 1300, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.033, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 3e-05, &#39;loss&#39;: -11.19, &#39;head_losses&#39;: [-11.022, -0.168, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 1350, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.031, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 3e-05, &#39;loss&#39;: -10.338, &#39;head_losses&#39;: [-10.176, -0.161, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 1400, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.032, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 3e-05, &#39;loss&#39;: -10.712, &#39;head_losses&#39;: [-10.607, -0.105, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 1450, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.031, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 3e-05, &#39;loss&#39;: -10.559, &#39;head_losses&#39;: [-10.4, -0.159, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 1500, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.03, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 3e-05, &#39;loss&#39;: -11.102, &#39;head_losses&#39;: [-10.944, -0.158, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 1550, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.033, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 3e-05, &#39;loss&#39;: -10.758, &#39;head_losses&#39;: [-10.588, -0.17, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 1600, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.031, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 2.276e-05, &#39;loss&#39;: -10.898, &#39;head_losses&#39;: [-10.717, -0.182, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 1650, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.033, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 1.574e-05, &#39;loss&#39;: -11.121, &#39;head_losses&#39;: [-10.941, -0.18, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 1700, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.033, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 1.089e-05, &#39;loss&#39;: -10.984, &#39;head_losses&#39;: [-10.908, -0.077, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 1750, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.034, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 7.54e-06, &#39;loss&#39;: -10.792, &#39;head_losses&#39;: [-10.605, -0.187, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 1800, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.031, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 5.21e-06, &#39;loss&#39;: -11.092, &#39;head_losses&#39;: [-10.921, -0.171, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 1850, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.026, &#39;data_time&#39;: 0.007, &#39;lr&#39;: 3.61e-06, &#39;loss&#39;: -10.859, &#39;head_losses&#39;: [-10.693, -0.165, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 1900, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.032, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -10.606, &#39;head_losses&#39;: [-10.433, -0.172, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 1950, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.029, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -10.442, &#39;head_losses&#39;: [-10.302, -0.141, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 2000, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.032, &#39;data_time&#39;: 0.005, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -10.335, &#39;head_losses&#39;: [-10.169, -0.167, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 2050, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.028, &#39;data_time&#39;: 0.005, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -10.528, &#39;head_losses&#39;: [-10.345, -0.183, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 2100, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.032, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -10.769, &#39;head_losses&#39;: [-10.76, -0.008, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 2150, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.031, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -11.29, &#39;head_losses&#39;: [-11.122, -0.168, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 2200, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.033, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -10.893, &#39;head_losses&#39;: [-10.71, -0.183, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 2250, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.032, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -11.033, &#39;head_losses&#39;: [-10.879, -0.153, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 2300, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.032, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -10.527, &#39;head_losses&#39;: [-10.358, -0.169, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 2350, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.031, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -10.622, &#39;head_losses&#39;: [-10.451, -0.171, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 2400, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.034, &#39;data_time&#39;: 0.003, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -10.796, &#39;head_losses&#39;: [-10.606, -0.19, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 2450, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.033, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -10.933, &#39;head_losses&#39;: [-10.767, -0.167, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 2500, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.035, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -11.337, &#39;head_losses&#39;: [-11.168, -0.169, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 2550, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.033, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -10.459, &#39;head_losses&#39;: [-10.277, -0.182, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 2600, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.033, &#39;data_time&#39;: 0.003, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -10.924, &#39;head_losses&#39;: [-10.739, -0.185, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 2650, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.033, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -10.807, &#39;head_losses&#39;: [-10.636, -0.171, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 2700, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.034, &#39;data_time&#39;: 0.005, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -10.962, &#39;head_losses&#39;: [-10.813, -0.149, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 2750, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.032, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -10.941, &#39;head_losses&#39;: [-10.776, -0.165, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 2800, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.031, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -11.024, &#39;head_losses&#39;: [-10.851, -0.174, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 2850, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.033, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -10.702, &#39;head_losses&#39;: [-10.508, -0.194, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 2900, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.031, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -11.007, &#39;head_losses&#39;: [-10.823, -0.184, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 2950, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.031, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -10.781, &#39;head_losses&#39;: [-10.614, -0.167, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 3000, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.035, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -10.601, &#39;head_losses&#39;: [-10.444, -0.156, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 3050, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.033, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -11.249, &#39;head_losses&#39;: [-11.082, -0.167, 0.0]}
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 3100, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.033, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -11.007, &#39;head_losses&#39;: [-10.825, -0.182, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 0, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.029, &#39;data_time&#39;: 0.056, &#39;lr&#39;: 0.0003, &#39;loss&#39;: -10.306, &#39;head_losses&#39;: [-10.969, 0.663, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 50, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.018, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.00020755, &#39;loss&#39;: -9.619, &#39;head_losses&#39;: [-9.633, 0.015, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 100, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.02, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 0.00014359, &#39;loss&#39;: -11.278, &#39;head_losses&#39;: [-11.19, -0.089, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 150, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.018, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 9.934e-05, &#39;loss&#39;: -10.82, &#39;head_losses&#39;: [-10.704, -0.116, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 200, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 6.873e-05, &#39;loss&#39;: -10.676, &#39;head_losses&#39;: [-10.562, -0.115, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 250, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 4.755e-05, &#39;loss&#39;: -10.887, &#39;head_losses&#39;: [-10.753, -0.135, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 300, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.017, &#39;data_time&#39;: 0.004, &#39;lr&#39;: 3.289e-05, &#39;loss&#39;: -11.098, &#39;head_losses&#39;: [-10.941, -0.157, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 350, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 3e-05, &#39;loss&#39;: -11.233, &#39;head_losses&#39;: [-11.082, -0.152, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 400, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.02, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 3e-05, &#39;loss&#39;: -10.769, &#39;head_losses&#39;: [-10.61, -0.159, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 450, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.017, &#39;data_time&#39;: 0.004, &#39;lr&#39;: 3e-05, &#39;loss&#39;: -11.044, &#39;head_losses&#39;: [-10.886, -0.158, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 500, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.018, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 3e-05, &#39;loss&#39;: -10.669, &#39;head_losses&#39;: [-10.527, -0.142, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 550, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.02, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 3e-05, &#39;loss&#39;: -11.14, &#39;head_losses&#39;: [-10.986, -0.154, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 600, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 3e-05, &#39;loss&#39;: -11.096, &#39;head_losses&#39;: [-10.939, -0.157, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 650, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.02, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 3e-05, &#39;loss&#39;: -11.054, &#39;head_losses&#39;: [-10.915, -0.139, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 700, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 3e-05, &#39;loss&#39;: -11.116, &#39;head_losses&#39;: [-10.962, -0.153, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 750, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.02, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 3e-05, &#39;loss&#39;: -11.205, &#39;head_losses&#39;: [-11.034, -0.171, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 800, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.02, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 3e-05, &#39;loss&#39;: -10.329, &#39;head_losses&#39;: [-10.168, -0.161, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 850, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 3e-05, &#39;loss&#39;: -10.364, &#39;head_losses&#39;: [-10.219, -0.145, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 900, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 3e-05, &#39;loss&#39;: -10.142, &#39;head_losses&#39;: [-9.973, -0.17, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 950, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 3e-05, &#39;loss&#39;: -10.814, &#39;head_losses&#39;: [-10.647, -0.167, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 1000, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 3e-05, &#39;loss&#39;: -10.603, &#39;head_losses&#39;: [-10.45, -0.153, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 1050, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 3e-05, &#39;loss&#39;: -10.233, &#39;head_losses&#39;: [-10.087, -0.146, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 1100, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.02, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 3e-05, &#39;loss&#39;: -10.651, &#39;head_losses&#39;: [-10.494, -0.157, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 1150, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 3e-05, &#39;loss&#39;: -11.078, &#39;head_losses&#39;: [-10.925, -0.153, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 1200, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.023, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 3e-05, &#39;loss&#39;: -10.715, &#39;head_losses&#39;: [-10.573, -0.142, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 1250, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 3e-05, &#39;loss&#39;: -10.758, &#39;head_losses&#39;: [-10.601, -0.157, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 1300, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 3e-05, &#39;loss&#39;: -11.079, &#39;head_losses&#39;: [-10.955, -0.124, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 1350, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.02, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 3e-05, &#39;loss&#39;: -11.079, &#39;head_losses&#39;: [-10.893, -0.186, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 1400, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 3e-05, &#39;loss&#39;: -10.047, &#39;head_losses&#39;: [-9.897, -0.15, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 1450, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.02, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 3e-05, &#39;loss&#39;: -11.199, &#39;head_losses&#39;: [-11.018, -0.18, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 1500, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 3e-05, &#39;loss&#39;: -10.902, &#39;head_losses&#39;: [-10.755, -0.148, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 1550, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 3e-05, &#39;loss&#39;: -11.058, &#39;head_losses&#39;: [-10.895, -0.163, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 1600, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 2.276e-05, &#39;loss&#39;: -10.889, &#39;head_losses&#39;: [-10.723, -0.166, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 1650, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.015, &#39;data_time&#39;: 0.005, &#39;lr&#39;: 1.574e-05, &#39;loss&#39;: -11.217, &#39;head_losses&#39;: [-11.064, -0.153, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 1700, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 1.089e-05, &#39;loss&#39;: -10.916, &#39;head_losses&#39;: [-10.751, -0.165, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 1750, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.015, &#39;data_time&#39;: 0.005, &#39;lr&#39;: 7.54e-06, &#39;loss&#39;: -10.776, &#39;head_losses&#39;: [-10.59, -0.186, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 1800, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 5.21e-06, &#39;loss&#39;: -11.145, &#39;head_losses&#39;: [-10.981, -0.163, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 1850, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.014, &#39;data_time&#39;: 0.006, &#39;lr&#39;: 3.61e-06, &#39;loss&#39;: -10.839, &#39;head_losses&#39;: [-10.665, -0.174, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 1900, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.02, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -11.111, &#39;head_losses&#39;: [-10.937, -0.174, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 1950, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -11.529, &#39;head_losses&#39;: [-11.346, -0.183, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 2000, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -10.994, &#39;head_losses&#39;: [-10.838, -0.156, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 2050, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.02, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -10.981, &#39;head_losses&#39;: [-10.806, -0.176, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 2100, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.02, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -11.434, &#39;head_losses&#39;: [-11.253, -0.18, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 2150, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -10.494, &#39;head_losses&#39;: [-10.317, -0.177, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 2200, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -10.922, &#39;head_losses&#39;: [-10.744, -0.178, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 2250, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.02, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -10.963, &#39;head_losses&#39;: [-10.784, -0.178, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 2300, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -11.496, &#39;head_losses&#39;: [-11.302, -0.193, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 2350, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -11.543, &#39;head_losses&#39;: [-11.382, -0.161, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 2400, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -10.952, &#39;head_losses&#39;: [-10.801, -0.151, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 2450, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -10.321, &#39;head_losses&#39;: [-10.228, -0.093, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 2500, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.02, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -11.052, &#39;head_losses&#39;: [-10.869, -0.183, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 2550, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -10.962, &#39;head_losses&#39;: [-10.805, -0.157, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 2600, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.02, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -10.744, &#39;head_losses&#39;: [-10.589, -0.154, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 2650, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -10.669, &#39;head_losses&#39;: [-10.501, -0.168, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 2700, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.021, &#39;data_time&#39;: 0.003, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -11.082, &#39;head_losses&#39;: [-10.883, -0.199, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 2750, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.018, &#39;data_time&#39;: 0.004, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -10.948, &#39;head_losses&#39;: [-10.763, -0.185, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 2800, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -10.963, &#39;head_losses&#39;: [-10.789, -0.174, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 2850, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -10.696, &#39;head_losses&#39;: [-10.533, -0.163, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 2900, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -10.143, &#39;head_losses&#39;: [-9.964, -0.179, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 2950, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.018, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -11.141, &#39;head_losses&#39;: [-10.957, -0.184, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 3000, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.02, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -10.898, &#39;head_losses&#39;: [-10.742, -0.156, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 3050, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -11.168, &#39;head_losses&#39;: [-10.983, -0.185, 0.0]}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 3100, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -11.362, &#39;head_losses&#39;: [-11.177, -0.185, 0.0]}
 INFO:openpifpaf.network.trainer:applying ema
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train-epoch&#39;, &#39;epoch&#39;: 3, &#39;loss&#39;: -10.69887, &#39;head_losses&#39;: [-10.54513, -0.15374, 0.0], &#39;time&#39;: 108.4, &#39;n_clipped_grad&#39;: 0, &#39;max_norm&#39;: 0.0}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;train-epoch&#39;, &#39;epoch&#39;: 3, &#39;loss&#39;: -10.78127, &#39;head_losses&#39;: [-10.62735, -0.15392, 0.0], &#39;time&#39;: 64.3, &#39;n_clipped_grad&#39;: 0, &#39;max_norm&#39;: 0.0}
 INFO:openpifpaf.network.trainer:model written: cifar10_tutorial.pkl.epoch003
-INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;val-epoch&#39;, &#39;epoch&#39;: 3, &#39;loss&#39;: -10.74411, &#39;head_losses&#39;: [-10.57576, -0.16835, 0.0], &#39;time&#39;: 13.8}
+INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;val-epoch&#39;, &#39;epoch&#39;: 3, &#39;loss&#39;: -10.8315, &#39;head_losses&#39;: [-10.65896, -0.17254, 0.0], &#39;time&#39;: 9.8}
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="plot-training-logs">
-<h2>Plot Training Logs<a class="headerlink" href="#plot-training-logs" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="plot-training-logs">
+<h2>Plot Training Logs<a class="headerlink" href="#plot-training-logs" title="Permalink to this headline">#</a></h2>
 <p>You can create a set of plots from the command line with <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">openpifpaf.logs</span> <span class="pre">cifar10_tutorial.pkl.log</span></code>. You can also overlay multiple runs. Below we call the plotting code from that command directly to show the output in this notebook.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -761,14 +889,14 @@ INFO:openpifpaf.network.trainer:{&#39;type&#39;: &#39;val-epoch&#39;, &#39;epoch
 <img alt="_images/plugins_cifar10_12_6.png" src="_images/plugins_cifar10_12_6.png" />
 <img alt="_images/plugins_cifar10_12_7.png" src="_images/plugins_cifar10_12_7.png" />
 <img alt="_images/plugins_cifar10_12_8.png" src="_images/plugins_cifar10_12_8.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cifar10_tutorial.pkl.log: {&#39;message&#39;: None, &#39;levelname&#39;: &#39;INFO&#39;, &#39;name&#39;: &#39;openpifpaf.network.trainer&#39;, &#39;asctime&#39;: &#39;2022-06-01 21:47:26,791&#39;, &#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 3100, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.033, &#39;data_time&#39;: 0.002, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -11.007, &#39;head_losses&#39;: [-10.825, -0.182, 0.0]}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cifar10_tutorial.pkl.log: {&#39;message&#39;: None, &#39;levelname&#39;: &#39;INFO&#39;, &#39;name&#39;: &#39;openpifpaf.network.trainer&#39;, &#39;asctime&#39;: &#39;2022-08-30 12:48:34,141&#39;, &#39;type&#39;: &#39;train&#39;, &#39;epoch&#39;: 2, &#39;batch&#39;: 3100, &#39;n_batches&#39;: 3125, &#39;time&#39;: 0.019, &#39;data_time&#39;: 0.001, &#39;lr&#39;: 3e-06, &#39;loss&#39;: -11.362, &#39;head_losses&#39;: [-11.177, -0.185, 0.0]}
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="prediction">
-<h2>Prediction<a class="headerlink" href="#prediction" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="prediction">
+<h2>Prediction<a class="headerlink" href="#prediction" title="Permalink to this headline">#</a></h2>
 <p>First using CLI:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -791,7 +919,7 @@ cat cifar10_*.json
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&quot;category_id&quot;: 1, &quot;category&quot;: &quot;plane&quot;, &quot;score&quot;: 0.398, &quot;bbox&quot;: [4.9, 5.06, 21.0, 20.93]}, {&quot;category_id&quot;: 9, &quot;category&quot;: &quot;ship&quot;, &quot;score&quot;: 0.367, &quot;bbox&quot;: [4.97, 4.94, 20.97, 20.99]}, {&quot;category_id&quot;: 3, &quot;category&quot;: &quot;bird&quot;, &quot;score&quot;: 0.325, &quot;bbox&quot;: [4.97, 5.01, 21.06, 21.0]}, {&quot;category_id&quot;: 5, &quot;category&quot;: &quot;deer&quot;, &quot;score&quot;: 0.266, &quot;bbox&quot;: [4.93, 4.9, 21.02, 21.01]}, {&quot;category_id&quot;: 4, &quot;category&quot;: &quot;cat&quot;, &quot;score&quot;: 0.248, &quot;bbox&quot;: [5.02, 5.04, 21.01, 21.0]}, {&quot;category_id&quot;: 6, &quot;category&quot;: &quot;dog&quot;, &quot;score&quot;: 0.199, &quot;bbox&quot;: [4.99, 5.05, 21.03, 21.03]}, {&quot;category_id&quot;: 10, &quot;category&quot;: &quot;truck&quot;, &quot;score&quot;: 0.175, &quot;bbox&quot;: [5.05, 5.05, 20.92, 20.95]}][{&quot;category_id&quot;: 2, &quot;category&quot;: &quot;car&quot;, &quot;score&quot;: 0.503, &quot;bbox&quot;: [4.47, 4.91, 21.03, 20.91]}, {&quot;category_id&quot;: 10, &quot;category&quot;: &quot;truck&quot;, &quot;score&quot;: 0.45, &quot;bbox&quot;: [4.9, 4.8, 21.05, 21.07]}, {&quot;category_id&quot;: 9, &quot;category&quot;: &quot;ship&quot;, &quot;score&quot;: 0.178, &quot;bbox&quot;: [4.91, 4.97, 20.77, 20.92]}][{&quot;category_id&quot;: 9, &quot;category&quot;: &quot;ship&quot;, &quot;score&quot;: 0.366, &quot;bbox&quot;: [5.16, 5.01, 21.01, 20.99]}, {&quot;category_id&quot;: 1, &quot;category&quot;: &quot;plane&quot;, &quot;score&quot;: 0.355, &quot;bbox&quot;: [5.03, 5.01, 21.03, 20.98]}, {&quot;category_id&quot;: 10, &quot;category&quot;: &quot;truck&quot;, &quot;score&quot;: 0.314, &quot;bbox&quot;: [4.95, 5.11, 20.98, 20.94]}, {&quot;category_id&quot;: 2, &quot;category&quot;: &quot;car&quot;, &quot;score&quot;: 0.29, &quot;bbox&quot;: [5.05, 4.8, 21.02, 21.06]}, {&quot;category_id&quot;: 3, &quot;category&quot;: &quot;bird&quot;, &quot;score&quot;: 0.207, &quot;bbox&quot;: [5.19, 5.27, 21.09, 20.95]}, {&quot;category_id&quot;: 5, &quot;category&quot;: &quot;deer&quot;, &quot;score&quot;: 0.191, &quot;bbox&quot;: [4.92, 4.9, 21.09, 20.99]}, {&quot;category_id&quot;: 8, &quot;category&quot;: &quot;horse&quot;, &quot;score&quot;: 0.18, &quot;bbox&quot;: [4.98, 5.08, 21.03, 21.02]}, {&quot;category_id&quot;: 4, &quot;category&quot;: &quot;cat&quot;, &quot;score&quot;: 0.166, &quot;bbox&quot;: [4.88, 5.03, 21.04, 21.09]}, {&quot;category_id&quot;: 6, &quot;category&quot;: &quot;dog&quot;, &quot;score&quot;: 0.161, &quot;bbox&quot;: [4.99, 5.09, 21.07, 21.03]}][{&quot;category_id&quot;: 10, &quot;category&quot;: &quot;truck&quot;, &quot;score&quot;: 0.359, &quot;bbox&quot;: [4.92, 5.06, 21.01, 21.06]}, {&quot;category_id&quot;: 9, &quot;category&quot;: &quot;ship&quot;, &quot;score&quot;: 0.321, &quot;bbox&quot;: [5.01, 4.86, 20.96, 21.14]}, {&quot;category_id&quot;: 1, &quot;category&quot;: &quot;plane&quot;, &quot;score&quot;: 0.306, &quot;bbox&quot;: [5.02, 5.11, 21.0, 21.0]}, {&quot;category_id&quot;: 2, &quot;category&quot;: &quot;car&quot;, &quot;score&quot;: 0.301, &quot;bbox&quot;: [4.97, 5.13, 20.98, 21.11]}, {&quot;category_id&quot;: 8, &quot;category&quot;: &quot;horse&quot;, &quot;score&quot;: 0.276, &quot;bbox&quot;: [4.89, 4.98, 21.0, 21.03]}, {&quot;category_id&quot;: 3, &quot;category&quot;: &quot;bird&quot;, &quot;score&quot;: 0.253, &quot;bbox&quot;: [4.9, 5.16, 21.14, 20.97]}, {&quot;category_id&quot;: 4, &quot;category&quot;: &quot;cat&quot;, &quot;score&quot;: 0.229, &quot;bbox&quot;: [4.94, 4.94, 21.04, 21.05]}, {&quot;category_id&quot;: 5, &quot;category&quot;: &quot;deer&quot;, &quot;score&quot;: 0.217, &quot;bbox&quot;: [4.85, 5.11, 21.01, 20.99]}, {&quot;category_id&quot;: 6, &quot;category&quot;: &quot;dog&quot;, &quot;score&quot;: 0.186, &quot;bbox&quot;: [4.91, 5.03, 21.03, 21.08]}, {&quot;category_id&quot;: 7, &quot;category&quot;: &quot;frog&quot;, &quot;score&quot;: 0.161, &quot;bbox&quot;: [5.01, 5.07, 20.95, 21.03]}]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&quot;category_id&quot;: 1, &quot;category&quot;: &quot;plane&quot;, &quot;score&quot;: 0.406, &quot;bbox&quot;: [4.89, 4.93, 21.01, 21.0]}, {&quot;category_id&quot;: 9, &quot;category&quot;: &quot;ship&quot;, &quot;score&quot;: 0.361, &quot;bbox&quot;: [4.91, 4.95, 21.04, 20.97]}, {&quot;category_id&quot;: 3, &quot;category&quot;: &quot;bird&quot;, &quot;score&quot;: 0.345, &quot;bbox&quot;: [4.85, 4.93, 21.04, 21.04]}, {&quot;category_id&quot;: 5, &quot;category&quot;: &quot;deer&quot;, &quot;score&quot;: 0.27, &quot;bbox&quot;: [4.99, 4.91, 20.98, 21.03]}, {&quot;category_id&quot;: 4, &quot;category&quot;: &quot;cat&quot;, &quot;score&quot;: 0.248, &quot;bbox&quot;: [5.08, 4.87, 21.01, 21.02]}, {&quot;category_id&quot;: 6, &quot;category&quot;: &quot;dog&quot;, &quot;score&quot;: 0.23, &quot;bbox&quot;: [5.04, 4.91, 20.97, 21.11]}, {&quot;category_id&quot;: 8, &quot;category&quot;: &quot;horse&quot;, &quot;score&quot;: 0.178, &quot;bbox&quot;: [5.02, 4.89, 20.94, 21.04]}, {&quot;category_id&quot;: 10, &quot;category&quot;: &quot;truck&quot;, &quot;score&quot;: 0.158, &quot;bbox&quot;: [5.04, 5.0, 21.03, 21.13]}][{&quot;category_id&quot;: 2, &quot;category&quot;: &quot;car&quot;, &quot;score&quot;: 0.467, &quot;bbox&quot;: [5.14, 4.94, 20.81, 20.94]}, {&quot;category_id&quot;: 10, &quot;category&quot;: &quot;truck&quot;, &quot;score&quot;: 0.449, &quot;bbox&quot;: [5.04, 5.19, 21.09, 21.04]}, {&quot;category_id&quot;: 9, &quot;category&quot;: &quot;ship&quot;, &quot;score&quot;: 0.24, &quot;bbox&quot;: [5.05, 4.94, 21.02, 21.02]}, {&quot;category_id&quot;: 1, &quot;category&quot;: &quot;plane&quot;, &quot;score&quot;: 0.184, &quot;bbox&quot;: [5.11, 5.06, 20.91, 20.97]}][{&quot;category_id&quot;: 9, &quot;category&quot;: &quot;ship&quot;, &quot;score&quot;: 0.339, &quot;bbox&quot;: [5.1, 5.03, 21.0, 20.86]}, {&quot;category_id&quot;: 1, &quot;category&quot;: &quot;plane&quot;, &quot;score&quot;: 0.334, &quot;bbox&quot;: [5.04, 5.09, 20.97, 20.9]}, {&quot;category_id&quot;: 10, &quot;category&quot;: &quot;truck&quot;, &quot;score&quot;: 0.303, &quot;bbox&quot;: [4.96, 5.06, 21.06, 20.97]}, {&quot;category_id&quot;: 3, &quot;category&quot;: &quot;bird&quot;, &quot;score&quot;: 0.281, &quot;bbox&quot;: [5.02, 4.87, 21.05, 20.99]}, {&quot;category_id&quot;: 2, &quot;category&quot;: &quot;car&quot;, &quot;score&quot;: 0.271, &quot;bbox&quot;: [4.98, 4.98, 21.07, 21.05]}, {&quot;category_id&quot;: 8, &quot;category&quot;: &quot;horse&quot;, &quot;score&quot;: 0.231, &quot;bbox&quot;: [4.92, 4.92, 21.0, 21.05]}, {&quot;category_id&quot;: 4, &quot;category&quot;: &quot;cat&quot;, &quot;score&quot;: 0.221, &quot;bbox&quot;: [4.87, 4.94, 21.05, 21.02]}, {&quot;category_id&quot;: 5, &quot;category&quot;: &quot;deer&quot;, &quot;score&quot;: 0.215, &quot;bbox&quot;: [5.02, 4.85, 21.07, 20.95]}, {&quot;category_id&quot;: 6, &quot;category&quot;: &quot;dog&quot;, &quot;score&quot;: 0.184, &quot;bbox&quot;: [4.94, 4.97, 20.97, 21.03]}][{&quot;category_id&quot;: 10, &quot;category&quot;: &quot;truck&quot;, &quot;score&quot;: 0.375, &quot;bbox&quot;: [4.86, 4.9, 21.04, 21.06]}, {&quot;category_id&quot;: 2, &quot;category&quot;: &quot;car&quot;, &quot;score&quot;: 0.33, &quot;bbox&quot;: [4.87, 4.9, 20.96, 21.06]}, {&quot;category_id&quot;: 8, &quot;category&quot;: &quot;horse&quot;, &quot;score&quot;: 0.313, &quot;bbox&quot;: [4.96, 4.8, 20.92, 20.99]}, {&quot;category_id&quot;: 1, &quot;category&quot;: &quot;plane&quot;, &quot;score&quot;: 0.271, &quot;bbox&quot;: [5.08, 5.04, 21.0, 21.0]}, {&quot;category_id&quot;: 9, &quot;category&quot;: &quot;ship&quot;, &quot;score&quot;: 0.27, &quot;bbox&quot;: [4.88, 4.78, 21.03, 21.13]}, {&quot;category_id&quot;: 4, &quot;category&quot;: &quot;cat&quot;, &quot;score&quot;: 0.263, &quot;bbox&quot;: [5.07, 4.97, 21.06, 21.04]}, {&quot;category_id&quot;: 6, &quot;category&quot;: &quot;dog&quot;, &quot;score&quot;: 0.243, &quot;bbox&quot;: [5.07, 5.01, 20.99, 21.04]}, {&quot;category_id&quot;: 3, &quot;category&quot;: &quot;bird&quot;, &quot;score&quot;: 0.208, &quot;bbox&quot;: [4.86, 5.08, 20.99, 21.02]}, {&quot;category_id&quot;: 7, &quot;category&quot;: &quot;frog&quot;, &quot;score&quot;: 0.178, &quot;bbox&quot;: [5.08, 5.0, 21.01, 21.0]}, {&quot;category_id&quot;: 5, &quot;category&quot;: &quot;deer&quot;, &quot;score&quot;: 0.176, &quot;bbox&quot;: [5.03, 4.92, 21.0, 21.06]}]
 </pre></div>
 </div>
 </div>
@@ -823,26 +951,26 @@ cat cifar10_*.json
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/plugins_cifar10_17_0.png" src="_images/plugins_cifar10_17_0.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;plane 40%&#39;, &#39;ship 37%&#39;, &#39;bird 32%&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;plane 41%&#39;, &#39;ship 36%&#39;, &#39;bird 35%&#39;]
 </pre></div>
 </div>
 <img alt="_images/plugins_cifar10_17_2.png" src="_images/plugins_cifar10_17_2.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;car 50%&#39;, &#39;truck 45%&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;car 47%&#39;, &#39;truck 45%&#39;]
 </pre></div>
 </div>
 <img alt="_images/plugins_cifar10_17_4.png" src="_images/plugins_cifar10_17_4.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;ship 37%&#39;, &#39;plane 36%&#39;, &#39;truck 31%&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;ship 34%&#39;, &#39;plane 33%&#39;, &#39;truck 30%&#39;]
 </pre></div>
 </div>
 <img alt="_images/plugins_cifar10_17_6.png" src="_images/plugins_cifar10_17_6.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;truck 36%&#39;, &#39;ship 32%&#39;, &#39;plane 31%&#39;, &#39;car 30%&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;truck 37%&#39;, &#39;car 33%&#39;, &#39;horse 31%&#39;]
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="evaluation">
-<h2>Evaluation<a class="headerlink" href="#evaluation" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="evaluation">
+<h2>Evaluation<a class="headerlink" href="#evaluation" title="Permalink to this headline">#</a></h2>
 <p>I selected the above images, because their category is clear to me. There are images in cifar10 where it is more difficult to tell what the category is and so it is probably also more difficult for a neural network.</p>
 <p>Therefore, we should run a proper quantitative evaluation with <code class="docutils literal notranslate"><span class="pre">openpifpaf.eval</span></code>. It stores its output as a json file, so we print that afterwards.</p>
 <div class="cell docutils container">
@@ -855,11 +983,6 @@ python -m openpifpaf.eval --checkpoint cifar10_tutorial.pkl.epoch003 --dataset=c
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:openpifpaf.decoder.cifcaf:consistency: decreasing keypoint threshold to seed threshold of 0.100000
 [INFO] Register count_convNd() for &lt;class &#39;torch.nn.modules.conv.Conv2d&#39;&gt;.
-[WARN] Cannot find rule for &lt;class &#39;openpifpaf.plugins.cifar10.basenet.Cifar10Net&#39;&gt;. Treat it as zero Macs and zero Params.
-[WARN] Cannot find rule for &lt;class &#39;torch.nn.modules.dropout.Dropout2d&#39;&gt;. Treat it as zero Macs and zero Params.
-[WARN] Cannot find rule for &lt;class &#39;openpifpaf.network.heads.CompositeField4&#39;&gt;. Treat it as zero Macs and zero Params.
-[WARN] Cannot find rule for &lt;class &#39;torch.nn.modules.container.ModuleList&#39;&gt;. Treat it as zero Macs and zero Params.
-[WARN] Cannot find rule for &lt;class &#39;openpifpaf.network.nets.Shell&#39;&gt;. Treat it as zero Macs and zero Params.
 </pre></div>
 </div>
 </div>
@@ -887,20 +1010,20 @@ python -m json.tool cifar10_tutorial.pkl.epoch003.eval-cifar10.stats.json
         &quot;truck&quot;
     ],
     &quot;stats&quot;: [
-        0.3906,
-        0.379,
-        0.587,
-        0.137,
-        0.304,
-        0.372,
-        0.2,
-        0.428,
-        0.474,
-        0.622,
-        0.403
+        0.4223,
+        0.472,
+        0.672,
+        0.181,
+        0.368,
+        0.318,
+        0.287,
+        0.465,
+        0.493,
+        0.525,
+        0.442
     ],
     &quot;args&quot;: [
-        &quot;/opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/openpifpaf/eval.py&quot;,
+        &quot;/opt/hostedtoolcache/Python/3.8.13/x64/lib/python3.8/site-packages/openpifpaf/eval.py&quot;,
         &quot;--checkpoint&quot;,
         &quot;cifar10_tutorial.pkl.epoch003&quot;,
         &quot;--dataset=cifar10&quot;,
@@ -908,26 +1031,26 @@ python -m json.tool cifar10_tutorial.pkl.epoch003.eval-cifar10.stats.json
         &quot;--instance-threshold=0.1&quot;,
         &quot;--quiet&quot;
     ],
-    &quot;version&quot;: &quot;0.13.4+2.gc7b05a2&quot;,
+    &quot;version&quot;: &quot;0.13.4+4.g297b860&quot;,
     &quot;dataset&quot;: &quot;cifar10&quot;,
-    &quot;total_time&quot;: 47.62133035700003,
+    &quot;total_time&quot;: 29.553815481000015,
     &quot;checkpoint&quot;: &quot;cifar10_tutorial.pkl.epoch003&quot;,
     &quot;count_ops&quot;: [
-        424950940.0,
+        421736880.0,
         105180.0
     ],
-    &quot;file_size&quot;: 436551,
+    &quot;file_size&quot;: 436615,
     &quot;n_images&quot;: 10000,
-    &quot;decoder_time&quot;: 9.348865794008816,
-    &quot;nn_time&quot;: 21.922877772998163
+    &quot;decoder_time&quot;: 6.258000784003798,
+    &quot;nn_time&quot;: 13.548925946000168
 }
 </pre></div>
 </div>
 </div>
 </div>
 <p>We see that some categories like “plane”, “car” and “ship” are learned quickly whereas as others are learned poorly (e.g. “bird”). The poor performance is not surprising as we trained our network for a few epochs only.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -951,9 +1074,11 @@ python -m json.tool cifar10_tutorial.pkl.epoch003.eval-cifar10.stats.json
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="tutorial_opencv.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -961,36 +1086,40 @@ python -m json.tool cifar10_tutorial.pkl.epoch003.eval-cifar10.stats.json
             <p class="prev-next-title">OpenCV</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="moduledocs.html" title="next page">
+    <a class='right-next' id="next-link" href="plugins_extras.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Modules</p>
+        <p class="prev-next-title">Extras</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
-    
-      By <a href="https://www.svenkreiss.com">Sven Kreiss</a> and <a href="https://github.com/openpifpaf/openpifpaf/graphs/contributors">contributors</a>.<br/>
-    
-        &copy; Copyright 2020-2022.<br/>
-      <div class="extra_footer">
-        <p>Powered by <a href="https://jupyterbook.org/">Jupyter Book</a>.</p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By <a href="https://www.svenkreiss.com">Sven Kreiss</a> and <a href="https://github.com/openpifpaf/openpifpaf/graphs/contributors">contributors</a>.<br/>
+  
+      &copy; Copyright 2020-2022.<br/>
+    <div class="extra_footer">
+      <p>Powered by <a href="https://jupyterbook.org/">Jupyter Book</a>.</p>
 
-      </div>
-  </p>
-</footer>
-</main>
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

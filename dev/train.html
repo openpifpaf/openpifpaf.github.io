@@ -4,11 +4,13 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Training &#8212; OpenPifPaf Guide DEV</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,21 +20,17 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystyle.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -40,12 +38,13 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -66,7 +65,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -75,9 +88,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -95,14 +109,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="intro.html">
-   Introduction
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Getting Started
  </span>
@@ -212,6 +227,11 @@ const thebe_selector_output = ".output, .cell_output"
    Cifar10
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plugins_extras.html">
+   Extras
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -254,104 +274,212 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  This is the dev version of the Guide. Here is the <a href="https://openpifpaf.github.io">stable version</a>.
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/train.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/openpifpaf/openpifpaf"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/openpifpaf/openpifpaf/issues/new?title=Issue%20on%20page%20%2Ftrain.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/openpifpaf/openpifpaf/edit/main/guide/train.ipynb"><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/openpifpaf/openpifpaf/main?urlpath=tree/guide/train.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> On this page
+            <div class="navbar_extra_footer">
+            This is the dev version of the Guide. Here is the <a href="https://openpifpaf.github.io">stable version</a>.
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/openpifpaf/openpifpaf/main?urlpath=tree/guide/train.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/openpifpaf/openpifpaf"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/openpifpaf/openpifpaf/issues/new?title=Issue%20on%20page%20%2Ftrain.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/openpifpaf/openpifpaf/edit/main/guide/train.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/train.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> On this page
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#composite-loss-function">
    Composite Loss Function
@@ -419,12 +547,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Training</h1>
@@ -508,11 +635,12 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="training">
-<h1>Training<a class="headerlink" href="#training" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="training">
+<h1>Training<a class="headerlink" href="#training" title="Permalink to this headline">#</a></h1>
 <p>This section introduces training to create your own models. You don’t need to do this step
 if you use pre-trained models for <a class="reference internal" href="predict_cli.html"><span class="doc">Prediction</span></a> on your own images.
 For training, you will need a dataset. See <a class="reference internal" href="datasets.html"><span class="doc">Datasets</span></a> for instructions about a few popular datasets.</p>
@@ -521,8 +649,8 @@ For training, you will need a dataset. See <a class="reference internal" href="d
 A quick way to get started is with the training commands of the pre-trained models.
 The exact training command that was used for a model is in the first
 line of the training log file. Below are a few examples for various backbones.</p>
-<div class="section" id="composite-loss-function">
-<h2>Composite Loss Function<a class="headerlink" href="#composite-loss-function" title="Permalink to this headline">¶</a></h2>
+<section id="composite-loss-function">
+<h2>Composite Loss Function<a class="headerlink" href="#composite-loss-function" title="Permalink to this headline">#</a></h2>
 <p>OpenPifPaf uses an off-the-shelf backbone like a ResNet and then adds the smallest
 possible (approx) head networks on top: a single 1x1 convolution.
 The outputs of the head networks are the composite fields. At each location,
@@ -611,25 +739,25 @@ We use a single predicted <span class="math notranslate nohighlight">\(\hat{b}\)
 uncertainties and in that way achieved our goal: only when we have both
 good confidence and good regression predictions will our network reduce its
 predictions of <span class="math notranslate nohighlight">\(\hat{b}\)</span>.</p>
-</div>
-<div class="section" id="training-crop-size">
-<h2>Training Crop Size<a class="headerlink" href="#training-crop-size" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="training-crop-size">
+<h2>Training Crop Size<a class="headerlink" href="#training-crop-size" title="Permalink to this headline">#</a></h2>
 <p>Training and evaluation image sizes are <em>unrelated</em> in fully convolutional architectures like OpenPifPaf. <em>Instance size distribution</em> between training and evaluation needs to be preserved. The size of the image that surrounds the instance to detect has little impact: for humans of height 100px, it does not matter whether that is inside a <span class="math notranslate nohighlight">\(640\times480\)</span> image or inside a 4k or 8k image. Therefore, you can keep the size of your training crops (selected with <code class="docutils literal notranslate"><span class="pre">--square-edge</span></code>) quite small even when evaluating on large images. The default is <code class="docutils literal notranslate"><span class="pre">--square-edge=385</span></code> for <code class="docutils literal notranslate"><span class="pre">cocokp</span></code> and that is reasonable when most of the humans are not larger than 300px during evaluation.
 <img alt="training crop size" src="_images/trainingcrop.png" /></p>
 <p>The training crop size is a major factor for GPU memory consumption and for training time.</p>
-</div>
-<div class="section" id="reproducibility">
-<h2>Reproducibility<a class="headerlink" href="#reproducibility" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="reproducibility">
+<h2>Reproducibility<a class="headerlink" href="#reproducibility" title="Permalink to this headline">#</a></h2>
 <p>Every training log file contains the command that was used to train under the key <code class="docutils literal notranslate"><span class="pre">args</span></code>. There is also a <code class="docutils literal notranslate"><span class="pre">version</span></code> key that specifies the precise version of OpenPifPaf that was used to train, like “0.11.9+204.g987345” (generated by <a class="reference external" href="https://github.com/python-versioneer/python-versioneer">versioneer</a>). This means that the last tag was 0.11.9, that there are 204 additional commits beyond that tag, and that the hash of the current commit is “987345” (without the “g” as that simply stands for <code class="docutils literal notranslate"><span class="pre">git</span></code>). If you had uncommitted changes, there is an additional “dirty” suffix. Try to avoid “dirty” version numbers for training as it is impossible to tell whether you were just correcting a typo in the readme or had a substantial change that influences the training. Your local git command line client but also GitHub can compare to the short git hashes.</p>
-</div>
-<div class="section" id="multiple-datasets">
-<h2>Multiple Datasets<a class="headerlink" href="#multiple-datasets" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="multiple-datasets">
+<h2>Multiple Datasets<a class="headerlink" href="#multiple-datasets" title="Permalink to this headline">#</a></h2>
 <p>OpenPifPaf supports simultaneous training on multiple datasets. You specify multiple datasets by concatenating them with a <code class="docutils literal notranslate"><span class="pre">-</span></code>, e.g. to train on COCO Keypoints <code class="docutils literal notranslate"><span class="pre">cocokp</span></code> and on COCO Detections <code class="docutils literal notranslate"><span class="pre">cocodet</span></code> you specify in your training command <code class="docutils literal notranslate"><span class="pre">--dataset=cocokp-cocodet</span></code>. This also works for custom datasets defined in plugins.</p>
 <p>The samples from each dataset are tracked with weighted counters and the dataset for the next batch is chosen by the lowest counter. You specify the dataset weights (or you can think of it as an importance), for example, as <code class="docutils literal notranslate"><span class="pre">--dataset-weights</span> <span class="pre">1.0</span> <span class="pre">0.5</span></code>. That means that the first dataset (<code class="docutils literal notranslate"><span class="pre">cocokp</span></code> in the above example) is twice as important as the second one (e.g. <code class="docutils literal notranslate"><span class="pre">cocodet</span></code>) and two-thirds of the batches will be from the first dataset and one-third will be from the second.</p>
 <p>An epoch is over once the first of the datasets is out of samples. As the datasets are randomized during training, a different set of samples will be used from epoch to epoch. That means that eventually all data will be utilized of the larger datasets even if not all data is used during a single epoch.</p>
-</div>
-<div class="section" id="overfitting">
-<h2>Overfitting<a class="headerlink" href="#overfitting" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="overfitting">
+<h2>Overfitting<a class="headerlink" href="#overfitting" title="Permalink to this headline">#</a></h2>
 <p>An effective way to validate the pipeline is working, loss functions are implemented correctly, encoders are correct, etc. is to overfit on a single image. You should be able to produce perfect predictions for that image. Some caveats: you need to deactivate augmentations, you must evaluate at the exact trained image size and the image should not contain crowd annotations (i.e. areas that will be ignored during training). Here is an example training command for a <code class="docutils literal notranslate"><span class="pre">cocokp</span></code> overfitting experiment:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">time</span> <span class="nv">CUDA_VISIBLE_DEVICES</span><span class="o">=</span><span class="m">1</span> python3 -m openpifpaf.train <span class="se">\</span>
   --lr<span class="o">=</span><span class="m">0</span>.01 --momentum<span class="o">=</span><span class="m">0</span>.9 --b-scale<span class="o">=</span><span class="m">5</span>.0 <span class="se">\</span>
@@ -650,9 +778,9 @@ Here is the corresponding predict command for the <a class="reference external" 
 </pre></div>
 </div>
 <p>While the field predictions are almost perfect, it will predict two annotations while there is only one ground truth annotation. That is because the standard skeleton has no connection that goes directly from left-ear to nose and the left-eye is not visible and not annotated. You can add <code class="docutils literal notranslate"><span class="pre">--dense-connections</span></code> to include additional connections in the skeleton which will connect the nose keypoint to the rest of the skeleton.</p>
-</div>
-<div class="section" id="shufflenet">
-<h2>ShuffleNet<a class="headerlink" href="#shufflenet" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="shufflenet">
+<h2>ShuffleNet<a class="headerlink" href="#shufflenet" title="Permalink to this headline">#</a></h2>
 <p>ShuffleNet models are trained without ImageNet pretraining:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">time</span> <span class="nv">CUDA_VISIBLE_DEVICES</span><span class="o">=</span><span class="m">0</span>,1 python3 -m openpifpaf.train <span class="se">\</span>
   --lr<span class="o">=</span><span class="m">0</span>.0003 --momentum<span class="o">=</span><span class="m">0</span>.95 --b-scale<span class="o">=</span><span class="m">10</span>.0 --clip-grad-value<span class="o">=</span><span class="m">10</span> <span class="se">\</span>
@@ -667,26 +795,26 @@ Here is the corresponding predict command for the <a class="reference external" 
 We found that for stable training, the learning rate <span class="math notranslate nohighlight">\(\lambda\)</span>,
 the <code class="docutils literal notranslate"><span class="pre">clip-grad-value</span></code> <span class="math notranslate nohighlight">\(c\)</span> and the <span class="math notranslate nohighlight">\(\epsilon\)</span> from the denominator of the
 BatchNorm should obey:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9386149c-5782-4bdd-8187-dce29ce5facd">
-<span class="eqno">(1)<a class="headerlink" href="#equation-9386149c-5782-4bdd-8187-dce29ce5facd" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-07cfa53d-2978-4890-9efd-7e31257dba48">
+<span class="eqno">(1)<a class="headerlink" href="#equation-07cfa53d-2978-4890-9efd-7e31257dba48" title="Permalink to this equation">#</a></span>\[\begin{align}
     \lambda \cdot c &amp;\leq \sqrt{\epsilon}
 \end{align}\]</div>
 <p>where the default <span class="math notranslate nohighlight">\(\epsilon\)</span> is <span class="math notranslate nohighlight">\(10^{-4}\)</span> (different from the PyTorch default).
 To fit large models in your GPU memory, reduce the batch size and learning rate by the same factor.</p>
-</div>
-<div class="section" id="resnet">
-<h2>ResNet<a class="headerlink" href="#resnet" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="resnet">
+<h2>ResNet<a class="headerlink" href="#resnet" title="Permalink to this headline">#</a></h2>
 <p>ResNet models are initialized with weights pre-trained on ImageNet.
 That makes their training characteristics different from ShuffleNet (i.e. they look great at the beginning of training).</p>
-</div>
-<div class="section" id="debug-plots">
-<h2>Debug Plots<a class="headerlink" href="#debug-plots" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="debug-plots">
+<h2>Debug Plots<a class="headerlink" href="#debug-plots" title="Permalink to this headline">#</a></h2>
 <p>As for all commands, you need to decide whether you want to interactively show the plots in matplotlib with <code class="docutils literal notranslate"><span class="pre">--show</span></code> (I use <a class="reference external" href="https://github.com/daleroberts/itermplot">itermplot</a>) or to save image files with <code class="docutils literal notranslate"><span class="pre">--save-all</span></code> (defaults to the <code class="docutils literal notranslate"><span class="pre">all-images/</span></code> directory).</p>
 <p>You can inspect the ground truth fields that are used for training. Add <code class="docutils literal notranslate"><span class="pre">--debug-images</span></code> to activate all types of debug plots and, for example, select to visualize field 5 of CIF and field 5 of CAF with <code class="docutils literal notranslate"><span class="pre">--debug-indices</span> <span class="pre">cif:5</span> <span class="pre">caf:5</span></code>.</p>
 <p>You can run this on your laptop without a GPU. When debug is enabled, the training dataset is not randomized and therefore you only need the first few images in your dataset locally.</p>
-</div>
-<div class="section" id="logs">
-<h2>Logs<a class="headerlink" href="#logs" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="logs">
+<h2>Logs<a class="headerlink" href="#logs" title="Permalink to this headline">#</a></h2>
 <p>For reference, check out the log files of the pretrained models. Models with their log files are shared as release “Assets” in the separate <a class="reference external" href="https://github.com/openpifpaf/torchhub">openpifpaf/torchhub</a> repository: click on “releases” and expand “Assets” on the latest release.</p>
 <p>To visualize log files with <a class="reference internal" href="cli_help.html#cli-help-logs"><span class="std std-ref">openpifpaf.logs</span></a>:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3 -m openpifpaf.logs <span class="se">\</span>
@@ -704,9 +832,9 @@ To produce evaluation metrics every five epochs for every new checkpoint that is
   --dataset<span class="o">=</span>cocokp --force-complete-pose --seed-threshold<span class="o">=</span><span class="m">0</span>.2
 </pre></div>
 </div>
-</div>
-<div class="section" id="testset-submission">
-<h2>Testset Submission<a class="headerlink" href="#testset-submission" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="testset-submission">
+<h2>Testset Submission<a class="headerlink" href="#testset-submission" title="Permalink to this headline">#</a></h2>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nv">CUDA_VISIBLE_DEVICES</span><span class="o">=</span><span class="m">0</span> python3 -m openpifpaf.eval <span class="se">\</span>
   --checkpoint shufflenetv2k30 <span class="se">\</span>
   --loader-workers<span class="o">=</span><span class="m">2</span> <span class="se">\</span>
@@ -716,9 +844,9 @@ To produce evaluation metrics every five epochs for every new checkpoint that is
 </pre></div>
 </div>
 <p>This will produce the file <code class="docutils literal notranslate"><span class="pre">shufflenetv2k30.eval-cocokp.zip</span></code> which you can submit to the competition on codalab.</p>
-</div>
-<div class="section" id="detection-experimental">
-<h2>Detection (experimental)<a class="headerlink" href="#detection-experimental" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="detection-experimental">
+<h2>Detection (experimental)<a class="headerlink" href="#detection-experimental" title="Permalink to this headline">#</a></h2>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">time</span> <span class="nv">CUDA_VISIBLE_DEVICES</span><span class="o">=</span><span class="m">0</span>,1 python3 -m openpifpaf.train <span class="se">\</span>
   --lr<span class="o">=</span><span class="m">0</span>.0003 --momentum<span class="o">=</span><span class="m">0</span>.95 --clip-grad-value<span class="o">=</span><span class="m">10</span> <span class="se">\</span>
   --epochs<span class="o">=</span><span class="m">150</span> <span class="se">\</span>
@@ -738,9 +866,9 @@ To produce evaluation metrics every five epochs for every new checkpoint that is
 </pre></div>
 </div>
 <p>COCO AP=24.3% at epoch 90 (now outdated).</p>
-</div>
-<div class="section" id="cloud-and-hpc">
-<h2>Cloud and HPC<a class="headerlink" href="#cloud-and-hpc" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="cloud-and-hpc">
+<h2>Cloud and HPC<a class="headerlink" href="#cloud-and-hpc" title="Permalink to this headline">#</a></h2>
 <p>OpenPifPaf can be trained on cloud infrastructure and in high performance computing (HPC) environments. We have good experience with the <a class="reference external" href="https://hub.docker.com/r/pytorch/pytorch/tags">pytorch/pytorch docker containers</a>. The <code class="docutils literal notranslate"><span class="pre">latest</span></code> tag does not include any development packages like <code class="docutils literal notranslate"><span class="pre">gcc</span></code>. For that, you need a “devel” package (e.g. <a class="reference external" href="https://hub.docker.com/layers/pytorch/pytorch/1.6.0-cuda10.1-cudnn7-devel/images/sha256-ccebb46f954b1d32a4700aaeae0e24bd68653f92c6f276a608bf592b660b63d7?context=explore">pytorch/1.6.0-cuda10.1-cudnn7-devel</a>).</p>
 <p>This is a development flow that worked well for us:</p>
 <ul class="simple">
@@ -794,9 +922,9 @@ srun singularity <span class="nb">exec</span> --bind &lt;make-host-dir-available
   /bin/bash -c <span class="s2">&quot;source ./venv3/bin/activate &amp;&amp; python3 -m openpifpaf.eval </span><span class="k">$(</span><span class="nb">printf</span> <span class="s1">&#39;%q &#39;</span> <span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="distributeddataparallel">
-<h2>DistributedDataParallel<a class="headerlink" href="#distributeddataparallel" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="distributeddataparallel">
+<h2>DistributedDataParallel<a class="headerlink" href="#distributeddataparallel" title="Permalink to this headline">#</a></h2>
 <p>This mode of parallelization is activated with the <code class="docutils literal notranslate"><span class="pre">--ddp</span></code> argument.
 With <code class="docutils literal notranslate"><span class="pre">torch.distributed.launch</span></code>:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python -m torch.distributed.launch <span class="se">\</span>
@@ -822,8 +950,8 @@ srun --gpu-bind<span class="o">=</span>closest singularity <span class="nb">exec
   /bin/bash -c <span class="s2">&quot;source ./venv3/bin/activate &amp;&amp; MASTER_ADDR=</span><span class="k">$(</span>hostname<span class="k">)</span><span class="s2"> MASTER_PORT=7142 python3 -u -m openpifpaf.train --ddp </span><span class="k">$(</span><span class="nb">printf</span> <span class="s2">&quot;%s &quot;</span> <span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -847,9 +975,11 @@ srun --gpu-bind<span class="o">=</span>closest singularity <span class="nb">exec
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="datasets.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -865,28 +995,32 @@ srun --gpu-bind<span class="o">=</span>closest singularity <span class="nb">exec
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
-    
-      By <a href="https://www.svenkreiss.com">Sven Kreiss</a> and <a href="https://github.com/openpifpaf/openpifpaf/graphs/contributors">contributors</a>.<br/>
-    
-        &copy; Copyright 2020-2022.<br/>
-      <div class="extra_footer">
-        <p>Powered by <a href="https://jupyterbook.org/">Jupyter Book</a>.</p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By <a href="https://www.svenkreiss.com">Sven Kreiss</a> and <a href="https://github.com/openpifpaf/openpifpaf/graphs/contributors">contributors</a>.<br/>
+  
+      &copy; Copyright 2020-2022.<br/>
+    <div class="extra_footer">
+      <p>Powered by <a href="https://jupyterbook.org/">Jupyter Book</a>.</p>
 
-      </div>
-  </p>
-</footer>
-</main>
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>
