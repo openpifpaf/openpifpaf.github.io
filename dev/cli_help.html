@@ -1388,6 +1388,12 @@ Composite Loss:
   --soft-clamp SOFT_CLAMP
                         soft clamp (default: 5.0)
 
+Scale Loss:
+  --b-scale B_SCALE     Laplace width b for scale loss (default: 1.0)
+  --scale-log
+  --scale-soft-clamp SCALE_SOFT_CLAMP
+                        soft clamp for scale (default: 5.0)
+
 Bce Loss:
   --r-smooth R_SMOOTH   r_{smooth} for SmoothL1 regressions (default: 0.0)
 
@@ -1410,12 +1416,6 @@ Bce Loss:
 Laplace Loss:
   --laplace-soft-clamp LAPLACE_SOFT_CLAMP
                         soft clamp for Laplace (default: 5.0)
-
-Scale Loss:
-  --b-scale B_SCALE     Laplace width b for scale loss (default: 1.0)
-  --scale-log
-  --scale-soft-clamp SCALE_SOFT_CLAMP
-                        soft clamp for scale (default: 5.0)
 
 trainer:
   --epochs EPOCHS       number of epochs to train (default: None)
@@ -2425,6 +2425,7 @@ python3 -m openpifpaf.export_onnx --help
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>usage: python3 -m openpifpaf.export_onnx [-h] [--version]
                                          [--mobilenetv3-no-pretrain]
                                          [--shufflenetv2-no-pretrain]
+                                         [--mobilenetv2-no-pretrain]
                                          [--shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE]
                                          [--shufflenetv2k-input-conv2-outchannels SHUFFLENETV2K_INPUT_CONV2_OUTCHANNELS]
                                          [--shufflenetv2k-stage4-dilation SHUFFLENETV2K_STAGE4_DILATION]
@@ -2432,7 +2433,6 @@ python3 -m openpifpaf.export_onnx --help
                                          [--shufflenetv2k-conv5-as-stage]
                                          [--shufflenetv2k-instance-norm | --shufflenetv2k-group-norm]
                                          [--shufflenetv2k-leaky-relu]
-                                         [--mobilenetv2-no-pretrain]
                                          [--resnet-no-pretrain]
                                          [--resnet-pool0-stride RESNET_POOL0_STRIDE]
                                          [--resnet-input-conv-stride RESNET_INPUT_CONV_STRIDE]
@@ -2484,6 +2484,10 @@ ShuffleNetv2:
   --shufflenetv2-no-pretrain
                         use randomly initialized models (default: True)
 
+MobileNetV2:
+  --mobilenetv2-no-pretrain
+                        use randomly initialized models (default: True)
+
 shufflenetv2k:
   --shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE
                         stride of the optional 2nd input convolution (default:
@@ -2499,10 +2503,6 @@ shufflenetv2k:
   --shufflenetv2k-instance-norm
   --shufflenetv2k-group-norm
   --shufflenetv2k-leaky-relu
-
-MobileNetV2:
-  --mobilenetv2-no-pretrain
-                        use randomly initialized models (default: True)
 
 ResNet:
   --resnet-no-pretrain  use randomly initialized models (default: True)
@@ -2612,6 +2612,7 @@ python3 -m openpifpaf.export_coreml --help
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>usage: python3 -m openpifpaf.export_coreml [-h] [--version]
                                            [--mobilenetv3-no-pretrain]
                                            [--shufflenetv2-no-pretrain]
+                                           [--mobilenetv2-no-pretrain]
                                            [--shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE]
                                            [--shufflenetv2k-input-conv2-outchannels SHUFFLENETV2K_INPUT_CONV2_OUTCHANNELS]
                                            [--shufflenetv2k-stage4-dilation SHUFFLENETV2K_STAGE4_DILATION]
@@ -2619,7 +2620,6 @@ python3 -m openpifpaf.export_coreml --help
                                            [--shufflenetv2k-conv5-as-stage]
                                            [--shufflenetv2k-instance-norm | --shufflenetv2k-group-norm]
                                            [--shufflenetv2k-leaky-relu]
-                                           [--mobilenetv2-no-pretrain]
                                            [--resnet-no-pretrain]
                                            [--resnet-pool0-stride RESNET_POOL0_STRIDE]
                                            [--resnet-input-conv-stride RESNET_INPUT_CONV_STRIDE]
@@ -2665,6 +2665,10 @@ ShuffleNetv2:
   --shufflenetv2-no-pretrain
                         use randomly initialized models (default: True)
 
+MobileNetV2:
+  --mobilenetv2-no-pretrain
+                        use randomly initialized models (default: True)
+
 shufflenetv2k:
   --shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE
                         stride of the optional 2nd input convolution (default:
@@ -2680,10 +2684,6 @@ shufflenetv2k:
   --shufflenetv2k-instance-norm
   --shufflenetv2k-group-norm
   --shufflenetv2k-leaky-relu
-
-MobileNetV2:
-  --mobilenetv2-no-pretrain
-                        use randomly initialized models (default: True)
 
 ResNet:
   --resnet-no-pretrain  use randomly initialized models (default: True)
