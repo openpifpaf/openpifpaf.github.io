@@ -5,763 +5,803 @@
 <style type="text/css">
     .func_g:hover { stroke:black; stroke-width:0.5; cursor:pointer; }
 </style>
-<svg class="func_g" x="0.0" y="216" width="47.95806554717491" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/annotation.py:17:__init__ 4.08% (5 5 0.00010689900000000001 0.00043309900000000005)</title>
+<svg class="func_g" x="0.0" y="216" width="49.674336129505136" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/annotation.py:17:__init__ 4.22% (5 5 0.000134606 0.0005223280000000001)</title>
     <rect height="100%" width="100%" fill="rgb(255, 140, 79)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">__init__</text>
 </g></svg>
-<svg class="func_g" x="0.0" y="192" width="9.79544228861116" height="23"><g>
-    <title>&lt;__array_function__ internals&gt;:177:sum 0.90% (5 5 1e-05 9.55e-05)</title>
+<svg class="func_g" x="0.0" y="192" width="10.031530786428776" height="23"><g>
+    <title>&lt;__array_function__ internals&gt;:177:sum 0.92% (5 5 1.0602000000000001e-05 0.000113708)</title>
     <rect height="100%" width="100%" fill="rgb(44, 255, 210)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">sum</text>
 </g></svg>
-<svg class="func_g" x="0.14268497295019322" y="168" width="8.522344510570793" height="23"><g>
-    <title>~:0:&lt;built-in method numpy.core._multiarray_umath.implement_array_function&gt; 0.79% (7 7 7.639860139860139e-06 8.423776223776225e-05)</title>
+<svg class="func_g" x="0.1261089743863671" y="168" width="8.876854873940271" height="23"><g>
+    <title>~:0:&lt;built-in method numpy.core._multiarray_umath.implement_array_function&gt; 0.82% (7 7 7.86834213180455e-06 0.00010180612607160867)</title>
     <rect height="100%" width="100%" fill="rgb(255, 190, 110)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">&lt;built-in method numpy.core._multiarray_umath.implement_array_function&gt;</text>
 </g></svg>
-<svg class="func_g" x="0.14268497295019322" y="144" width="7.658724937451202" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/numpy/core/fromnumeric.py:2162:sum 0.72% (7 7 1.3153846153846156e-05 7.659790209790211e-05)</title>
+<svg class="func_g" x="0.1261089743863671" y="144" width="8.113497340036266" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/numpy/core/fromnumeric.py:2162:sum 0.76% (7 7 1.635378230750856e-05 9.393778393980412e-05)</title>
     <rect height="100%" width="100%" fill="rgb(255, 140, 79)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">sum</text>
 </g></svg>
-<svg class="func_g" x="0.14268497295019322" y="120" width="5.908956584956727" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/numpy/core/fromnumeric.py:69:_wrapreduction 0.58% (7 7 1.561188811188812e-05 6.111888111888114e-05)</title>
+<svg class="func_g" x="0.1261089743863671" y="120" width="6.248146489428656" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/numpy/core/fromnumeric.py:69:_wrapreduction 0.60% (7 7 2.12768837752475e-05 7.47105961063779e-05)</title>
     <rect height="100%" width="100%" fill="rgb(255, 115, 64)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">_wrapreduction</text>
 </g></svg>
-<svg class="func_g" x="0.8110514251905722" y="96" width="3.47580230938501" height="23"><g>
-    <title>~:0:&lt;method 'reduce' of 'numpy.ufunc' objects&gt; 0.37% (7 7 3.95944055944056e-05 3.95944055944056e-05)</title>
+<svg class="func_g" x="0.7500829050212288" y="96" width="3.559967767522206" height="23"><g>
+    <title>~:0:&lt;method 'reduce' of 'numpy.ufunc' objects&gt; 0.38% (7 7 4.700207296228469e-05 4.700207296228469e-05)</title>
     <rect height="100%" width="100%" fill="rgb(255, 190, 110)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">&lt;method 'reduce' of 'numpy.ufunc' objects&gt;</text>
 </g></svg>
-<svg class="func_g" x="11.191086770392719" y="192" width="5.2285745560468575" height="23"><g>
-    <title>~:0:&lt;built-in method numpy.asarray&gt; 0.52% (10 10 5.5100000000000004e-05 5.5100000000000004e-05)</title>
+<svg class="func_g" x="11.303176459574031" y="192" width="5.859441312165021" height="23"><g>
+    <title>~:0:&lt;built-in method numpy.asarray&gt; 0.57% (10 10 7.0704e-05 7.0704e-05)</title>
     <rect height="100%" width="100%" fill="rgb(99, 206, 42)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">&lt;built-in method numpy.asarray&gt;</text>
 </g></svg>
-<svg class="func_g" x="17.419661326439577" y="192" width="1" height="23"><g>
-    <title>~:0:&lt;built-in method numpy.zeros&gt; 0.15% (10 10 1.6100000000000002e-05 1.6100000000000002e-05)</title>
+<svg class="func_g" x="18.162617771739054" y="192" width="1" height="23"><g>
+    <title>~:0:&lt;built-in method numpy.zeros&gt; 0.16% (10 10 1.9701e-05 1.9701e-05)</title>
     <rect height="100%" width="100%" fill="rgb(57, 242, 168)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">&lt;built-in method numpy.zeros&gt;</text>
 </g></svg>
-<svg class="func_g" x="19.23962594263476" y="192" width="16.63443975940671" height="23"><g>
-    <title>~:0:&lt;method 'tolist' of 'numpy.ndarray' objects&gt; 1.47% (5 5 0.000156 0.000156)</title>
+<svg class="func_g" x="20.07393613125143" y="192" width="16.54142232704296" height="23"><g>
+    <title>~:0:&lt;method 'tolist' of 'numpy.ndarray' objects&gt; 1.46% (5 5 0.000180809 0.000180809)</title>
     <rect height="100%" width="100%" fill="rgb(99, 206, 42)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">&lt;method 'tolist' of 'numpy.ndarray' objects&gt;</text>
 </g></svg>
-<svg class="func_g" x="48.95806554717491" y="216" width="1149.9967179406215" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224:__call__ 95.92% (1 1 0.009110893 0.010182092)</title>
+<svg class="func_g" x="50.674336129505136" y="216" width="1148.2965589769435" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224:__call__ 95.77% (1 1 0.010574259 0.011846426)</title>
     <rect height="100%" width="100%" fill="rgb(255, 240, 141)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">__call__</text>
 </g></svg>
-<svg class="func_g" x="48.95806554717491" y="192" width="27.452490304119667" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1424:debug 2.37% (1 1 5.8e-06 0.0002517)</title>
+<svg class="func_g" x="50.674336129505136" y="192" width="17.78332813487596" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1424:debug 1.57% (1 1 6.5000000000000004e-06 0.00019361)</title>
     <rect height="100%" width="100%" fill="rgb(255, 165, 95)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">debug</text>
 </g></svg>
-<svg class="func_g" x="48.95806554717491" y="168" width="22.80649367519906" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1565:_log 1.98% (1 1 4.800000000000001e-06 0.00021060000000000002)</title>
+<svg class="func_g" x="50.674336129505136" y="168" width="15.18319396131669" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1565:_log 1.35% (1 1 4.800000000000001e-06 0.00016680900000000002)</title>
     <rect height="100%" width="100%" fill="rgb(255, 90, 49)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">_log</text>
 </g></svg>
-<svg class="func_g" x="48.95806554717491" y="144" width="1" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1514:findCaller 0.15% (1 1 9.481476806563587e-06 1.6430230356579366e-05)</title>
+<svg class="func_g" x="50.674336129505136" y="144" width="3.3148639417190147" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1514:findCaller 0.36% (1 1 8.152686737212307e-06 4.447565424814612e-05)</title>
     <rect height="100%" width="100%" fill="rgb(44, 255, 210)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">findCaller</text>
 </g></svg>
-<svg class="func_g" x="50.81535982574077" y="144" width="6.062122909013271" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1550:makeRecord 0.59% (1 1 4.286147049542443e-06 6.247384032817924e-05)</title>
+<svg class="func_g" x="50.918728814531185" y="120" width="2.208387169021983" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/posixpath.py:52:normcase 0.27% (1 1 1.9236676570950386e-06 3.30705951221167e-05)</title>
+    <rect height="100%" width="100%" fill="rgb(255, 215, 125)" rx="2" ry="2" />
+    <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">normcase</text>
+</g></svg>
+<svg class="func_g" x="50.918728814531185" y="96" width="2.0217600277293633" height="23"><g>
+    <title>~:0:&lt;built-in method posix.fspath&gt; 0.25% (1 1 3.114692746502166e-05 3.114692746502166e-05)</title>
+    <rect height="100%" width="100%" fill="rgb(255, 140, 79)" rx="2" ry="2" />
+    <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">&lt;built-in method posix.fspath&gt;</text>
+</g></svg>
+<svg class="func_g" x="54.989200071224154" y="144" width="3.523753034865826" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1550:makeRecord 0.38% (1 1 2.656493431226482e-06 4.662878797576607e-05)</title>
     <rect height="100%" width="100%" fill="rgb(99, 206, 42)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">makeRecord</text>
 </g></svg>
-<svg class="func_g" x="50.81535982574077" y="120" width="5.577611358083048" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:288:__init__ 0.55% (1 1 2.7924897443988643e-05 5.818769327863681e-05)</title>
+<svg class="func_g" x="54.989200071224154" y="120" width="3.2660298397474463" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:288:__init__ 0.36% (1 1 2.235301817544435e-05 4.397229454453959e-05)</title>
     <rect height="100%" width="100%" fill="rgb(255, 90, 49)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">__init__</text>
 </g></svg>
-<svg class="func_g" x="57.87748273475405" y="144" width="13.344478341176643" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1591:handle 1.20% (1 1 2.7275481224361004e-06 0.0001268959293152414)</title>
+<svg class="func_g" x="59.51295310608998" y="144" width="5.878898687911409" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1591:handle 0.57% (1 1 2.244278933277545e-06 7.09045577760878e-05)</title>
     <rect height="100%" width="100%" fill="rgb(71, 230, 126)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">handle</text>
 </g></svg>
-<svg class="func_g" x="58.06100983737914" y="120" width="12.852625706141419" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1645:callHandlers 1.15% (1 1 5.065446513095614e-06 0.00012254484064373622)</title>
+<svg class="func_g" x="59.6107101801004" y="120" width="5.563409949059598" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1645:callHandlers 0.55% (1 1 4.718023937079999e-06 6.765264340337952e-05)</title>
     <rect height="100%" width="100%" fill="rgb(255, 240, 141)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">callHandlers</text>
 </g></svg>
-<svg class="func_g" x="58.06100983737914" y="96" width="12.280021145951151" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:941:handle 1.11% (1 1 4.4160302934679716e-06 0.00011747939413064059)</title>
+<svg class="func_g" x="59.6107101801004" y="96" width="5.105684667522627" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:941:handle 0.51% (1 1 7.053448076015142e-06 6.293461946629952e-05)</title>
     <rect height="100%" width="100%" fill="rgb(255, 215, 125)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">handle</text>
 </g></svg>
-<svg class="func_g" x="58.398699706209285" y="72" width="11.443137557980762" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1073:emit 1.04% (1 1 7.403344903755129e-06 0.00011007604922688546)</title>
+<svg class="func_g" x="59.82844184494179" y="72" width="4.203653484608297" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1073:emit 0.43% (1 1 4.580161088321521e-06 5.3636892457006834e-05)</title>
     <rect height="100%" width="100%" fill="rgb(255, 215, 125)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">emit</text>
 </g></svg>
-<svg class="func_g" x="58.398699706209285" y="48" width="2.5897901273466624" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:918:format 0.30% (1 1 2.013190280845693e-06 3.1756453139791734e-05)</title>
+<svg class="func_g" x="59.82844184494179" y="48" width="1.2708079591947739" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:918:format 0.19% (1 1 1.511911175254934e-06 2.3406455225758296e-05)</title>
     <rect height="100%" width="100%" fill="rgb(255, 165, 95)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">format</text>
 </g></svg>
-<svg class="func_g" x="58.398699706209285" y="24" width="2.3622165200915575" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:655:format 0.28% (1 1 4.6757967813190285e-06 2.9743262858946042e-05)</title>
+<svg class="func_g" x="59.82844184494179" y="24" width="1.1241279131455029" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:655:format 0.18% (1 1 3.0687079291754186e-06 2.1894544050503363e-05)</title>
     <rect height="100%" width="100%" fill="rgb(255, 115, 64)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">format</text>
 </g></svg>
-<svg class="func_g" x="58.398699706209285" y="0" width="1" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:364:getMessage 0.13% (1 1 1.3637740612180499e-05 1.3637740612180499e-05)</title>
-    <rect height="100%" width="100%" fill="rgb(255, 240, 141)" rx="2" ry="2" />
-    <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">getMessage</text>
-</g></svg>
-<svg class="func_g" x="61.988489833555946" y="48" width="6.943053001613679" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1062:flush 0.66% (1 1 3.831555695803093e-06 7.026683496371096e-05)</title>
+<svg class="func_g" x="62.099249804136555" y="48" width="1.4529471620896426" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1062:flush 0.20% (1 1 3.0229063182922032e-06 2.528386325586129e-05)</title>
     <rect height="100%" width="100%" fill="rgb(255, 190, 110)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">flush</text>
 </g></svg>
-<svg class="func_g" x="62.3114975341761" y="24" width="6.186921338798328" height="23"><g>
-    <title>~:0:&lt;method 'flush' of '_io.TextIOWrapper' objects&gt; 0.60% (1 1 6.357784790154623e-05 6.357784790154623e-05)</title>
+<svg class="func_g" x="62.2992074555215" y="24" width="1" height="23"><g>
+    <title>~:0:&lt;method 'flush' of '_io.TextIOWrapper' objects&gt; 0.16% (1 1 2.01998844478244e-05 2.01998844478244e-05)</title>
     <rect height="100%" width="100%" fill="rgb(255, 115, 64)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">&lt;method 'flush' of '_io.TextIOWrapper' objects&gt;</text>
 </g></svg>
-<svg class="func_g" x="72.76455922237398" y="168" width="2.990357201968313" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1689:isEnabledFor 0.33% (1 1 2.4500000000000003e-05 3.5300000000000004e-05)</title>
+<svg class="func_g" x="66.85753009082183" y="168" width="1" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1689:isEnabledFor 0.16% (1 1 1.01e-05 2.0301e-05)</title>
     <rect height="100%" width="100%" fill="rgb(255, 90, 49)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">isEnabledFor</text>
 </g></svg>
-<svg class="func_g" x="77.41055585129457" y="192" width="13.729278850324961" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1436:info 1.23% (1 1 3.6000000000000003e-06 0.0001303)</title>
+<svg class="func_g" x="69.4576642643811" y="192" width="19.587928551366986" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1436:info 1.72% (1 1 4.1000000000000006e-06 0.00021221100000000002)</title>
     <rect height="100%" width="100%" fill="rgb(255, 215, 125)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">info</text>
 </g></svg>
-<svg class="func_g" x="77.41055585129457" y="168" width="11.95453074633339" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1565:_log 1.08% (1 1 3.5000000000000004e-06 0.00011460000000000001)</title>
+<svg class="func_g" x="69.4576642643811" y="168" width="17.9870623897349" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1565:_log 1.58% (1 1 4.000000000000001e-06 0.00019571)</title>
     <rect height="100%" width="100%" fill="rgb(255, 90, 49)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">_log</text>
 </g></svg>
-<svg class="func_g" x="78.41320596960686" y="144" width="2.8124482759541998" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1550:makeRecord 0.32% (1 1 2.3138529504575577e-06 3.3726159671820764e-05)</title>
+<svg class="func_g" x="69.4576642643811" y="144" width="4.10590501927024" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1514:findCaller 0.43% (1 1 9.647313262787693e-06 5.2629345751853865e-05)</title>
+    <rect height="100%" width="100%" fill="rgb(44, 255, 210)" rx="2" ry="2" />
+    <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">findCaller</text>
+</g></svg>
+<svg class="func_g" x="69.7468612944618" y="120" width="2.796578610899422" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/posixpath.py:52:normcase 0.32% (1 1 2.2763323429049606e-06 3.913340487788328e-05)</title>
+    <rect height="100%" width="100%" fill="rgb(255, 215, 125)" rx="2" ry="2" />
+    <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">normcase</text>
+</g></svg>
+<svg class="func_g" x="69.7468612944618" y="96" width="2.57573724247416" height="23"><g>
+    <title>~:0:&lt;built-in method posix.fspath&gt; 0.30% (1 1 3.685707253497832e-05 3.685707253497832e-05)</title>
+    <rect height="100%" width="100%" fill="rgb(255, 140, 79)" rx="2" ry="2" />
+    <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">&lt;built-in method posix.fspath&gt;</text>
+</g></svg>
+<svg class="func_g" x="74.56356928365133" y="144" width="4.353089608071944" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1550:makeRecord 0.45% (1 1 3.143506568773518e-06 5.517721202423392e-05)</title>
     <rect height="100%" width="100%" fill="rgb(99, 206, 42)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">makeRecord</text>
 </g></svg>
-<svg class="func_g" x="78.41320596960686" y="120" width="2.55088737552491" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:288:__init__ 0.30% (1 1 1.507510255601136e-05 3.141230672136321e-05)</title>
+<svg class="func_g" x="74.56356928365133" y="120" width="4.048118194532297" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:288:__init__ 0.42% (1 1 2.6450981824555647e-05 5.20337054554604e-05)</title>
     <rect height="100%" width="100%" fill="rgb(255, 90, 49)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">__init__</text>
 </g></svg>
-<svg class="func_g" x="82.22565424556106" y="144" width="6.743787870285351" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1591:handle 0.65% (1 1 1.4724518775639004e-06 6.85040706847586e-05)</title>
+<svg class="func_g" x="79.91665889172327" y="144" width="7.140002515042349" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1591:handle 0.68% (1 1 2.6557210667224545e-06 8.390344222391219e-05)</title>
     <rect height="100%" width="100%" fill="rgb(71, 230, 126)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">handle</text>
 </g></svg>
-<svg class="func_g" x="82.32473034420852" y="120" width="6.47826392591016" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1645:callHandlers 0.62% (1 1 2.7345534869043856e-06 6.61551593562638e-05)</title>
+<svg class="func_g" x="80.03233770375556" y="120" width="6.766675439847264" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1645:callHandlers 0.65% (1 1 5.582976062920001e-06 8.005535659662047e-05)</title>
     <rect height="100%" width="100%" fill="rgb(255, 240, 141)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">callHandlers</text>
 </g></svg>
-<svg class="func_g" x="82.32473034420852" y="96" width="6.169146498130091" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:941:handle 0.60% (1 1 2.3839697065320286e-06 6.342060586935942e-05)</title>
+<svg class="func_g" x="80.03233770375556" y="96" width="6.225035693145212" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:941:handle 0.60% (1 1 8.346551923984857e-06 7.447238053370047e-05)</title>
     <rect height="100%" width="100%" fill="rgb(255, 215, 125)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">handle</text>
 </g></svg>
-<svg class="func_g" x="82.50703036571986" y="72" width="5.717359488297681" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1073:emit 0.56% (1 1 3.996655096244873e-06 5.9423950773114546e-05)</title>
+<svg class="func_g" x="80.28998596691835" y="72" width="5.1576357457564495" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1073:emit 0.51% (1 1 5.419838911678479e-06 6.347010754299316e-05)</title>
     <rect height="100%" width="100%" fill="rgb(255, 215, 125)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">emit</text>
 </g></svg>
-<svg class="func_g" x="82.50703036571986" y="48" width="1" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:918:format 0.16% (1 1 1.0868097191543075e-06 1.714354686020827e-05)</title>
+<svg class="func_g" x="80.28998596691835" y="48" width="1.6871136409534664" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:918:format 0.22% (1 1 1.789088824745066e-06 2.7697544774241698e-05)</title>
     <rect height="100%" width="100%" fill="rgb(255, 165, 95)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">format</text>
 </g></svg>
-<svg class="func_g" x="82.50703036571986" y="24" width="1" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:655:format 0.15% (1 1 2.524203218680972e-06 1.605673714105396e-05)</title>
+<svg class="func_g" x="80.28998596691835" y="24" width="1.5135428416268502" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:655:format 0.21% (1 1 3.6312920708245807e-06 2.5908455949496634e-05)</title>
     <rect height="100%" width="100%" fill="rgb(255, 115, 64)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">format</text>
 </g></svg>
-<svg class="func_g" x="84.44495885526412" y="48" width="3.2880135494620006" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1062:flush 0.36% (1 1 2.068444304196908e-06 3.793316503628905e-05)</title>
+<svg class="func_g" x="80.28998596691835" y="0" width="1" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:364:getMessage 0.10% (1 1 1.2466171480751669e-05 1.2466171480751669e-05)</title>
+    <rect height="100%" width="100%" fill="rgb(255, 240, 141)" rx="2" ry="2" />
+    <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">getMessage</text>
+</g></svg>
+<svg class="func_g" x="82.97709960787184" y="48" width="1.9026443002808824" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1062:flush 0.24% (1 1 3.577093681707796e-06 2.9919136744138707e-05)</title>
     <rect height="100%" width="100%" fill="rgb(255, 190, 110)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">flush</text>
 </g></svg>
-<svg class="func_g" x="84.61933278888365" y="24" width="2.8798200230344713" height="23"><g>
-    <title>~:0:&lt;method 'flush' of '_io.TextIOWrapper' objects&gt; 0.32% (1 1 3.432215209845377e-05 3.432215209845377e-05)</title>
+<svg class="func_g" x="83.21371535975604" y="24" width="1.318992112299834" height="23"><g>
+    <title>~:0:&lt;method 'flush' of '_io.TextIOWrapper' objects&gt; 0.19% (1 1 2.3903115552175594e-05 2.3903115552175594e-05)</title>
     <rect height="100%" width="100%" fill="rgb(255, 115, 64)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">&lt;method 'flush' of '_io.TextIOWrapper' objects&gt;</text>
 </g></svg>
-<svg class="func_g" x="90.36508659762796" y="168" width="1" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1689:isEnabledFor 0.11% (1 1 7.7e-06 1.2100000000000001e-05)</title>
+<svg class="func_g" x="88.444726654116" y="168" width="1" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1689:isEnabledFor 0.10% (1 1 7.8e-06 1.2401e-05)</title>
     <rect height="100%" width="100%" fill="rgb(255, 90, 49)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">isEnabledFor</text>
 </g></svg>
-<svg class="func_g" x="92.13983470161955" y="192" width="47.95806554717491" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/annotation.py:17:__init__ 4.08% (5 5 0.00010689900000000001 0.00043309900000000005)</title>
+<svg class="func_g" x="90.04559281574808" y="192" width="49.674336129505136" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/annotation.py:17:__init__ 4.22% (5 5 0.000134606 0.0005223280000000001)</title>
     <rect height="100%" width="100%" fill="rgb(255, 140, 79)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">__init__</text>
 </g></svg>
-<svg class="func_g" x="92.13983470161955" y="168" width="9.79544228861116" height="23"><g>
-    <title>&lt;__array_function__ internals&gt;:177:sum 0.90% (5 5 1e-05 9.55e-05)</title>
+<svg class="func_g" x="90.04559281574808" y="168" width="10.031530786428776" height="23"><g>
+    <title>&lt;__array_function__ internals&gt;:177:sum 0.92% (5 5 1.0602000000000001e-05 0.000113708)</title>
     <rect height="100%" width="100%" fill="rgb(44, 255, 210)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">sum</text>
 </g></svg>
-<svg class="func_g" x="92.28251967456974" y="144" width="8.522344510570793" height="23"><g>
-    <title>~:0:&lt;built-in method numpy.core._multiarray_umath.implement_array_function&gt; 0.79% (7 7 7.639860139860139e-06 8.423776223776225e-05)</title>
+<svg class="func_g" x="90.17170179013445" y="144" width="8.876854873940271" height="23"><g>
+    <title>~:0:&lt;built-in method numpy.core._multiarray_umath.implement_array_function&gt; 0.82% (7 7 7.86834213180455e-06 0.00010180612607160867)</title>
     <rect height="100%" width="100%" fill="rgb(255, 190, 110)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">&lt;built-in method numpy.core._multiarray_umath.implement_array_function&gt;</text>
 </g></svg>
-<svg class="func_g" x="92.28251967456974" y="120" width="7.658724937451202" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/numpy/core/fromnumeric.py:2162:sum 0.72% (7 7 1.3153846153846156e-05 7.659790209790211e-05)</title>
+<svg class="func_g" x="90.17170179013445" y="120" width="8.113497340036266" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/numpy/core/fromnumeric.py:2162:sum 0.76% (7 7 1.635378230750856e-05 9.393778393980412e-05)</title>
     <rect height="100%" width="100%" fill="rgb(255, 140, 79)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">sum</text>
 </g></svg>
-<svg class="func_g" x="92.28251967456974" y="96" width="5.908956584956727" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/numpy/core/fromnumeric.py:69:_wrapreduction 0.58% (7 7 1.561188811188812e-05 6.111888111888114e-05)</title>
+<svg class="func_g" x="90.17170179013445" y="96" width="6.248146489428656" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/numpy/core/fromnumeric.py:69:_wrapreduction 0.60% (7 7 2.12768837752475e-05 7.47105961063779e-05)</title>
     <rect height="100%" width="100%" fill="rgb(255, 115, 64)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">_wrapreduction</text>
 </g></svg>
-<svg class="func_g" x="92.95088612681012" y="72" width="3.47580230938501" height="23"><g>
-    <title>~:0:&lt;method 'reduce' of 'numpy.ufunc' objects&gt; 0.37% (7 7 3.95944055944056e-05 3.95944055944056e-05)</title>
+<svg class="func_g" x="90.79567572076931" y="72" width="3.559967767522206" height="23"><g>
+    <title>~:0:&lt;method 'reduce' of 'numpy.ufunc' objects&gt; 0.38% (7 7 4.700207296228469e-05 4.700207296228469e-05)</title>
     <rect height="100%" width="100%" fill="rgb(255, 190, 110)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">&lt;method 'reduce' of 'numpy.ufunc' objects&gt;</text>
 </g></svg>
-<svg class="func_g" x="103.33092147201226" y="168" width="5.2285745560468575" height="23"><g>
-    <title>~:0:&lt;built-in method numpy.asarray&gt; 0.52% (10 10 5.5100000000000004e-05 5.5100000000000004e-05)</title>
+<svg class="func_g" x="101.34876927532211" y="168" width="5.859441312165021" height="23"><g>
+    <title>~:0:&lt;built-in method numpy.asarray&gt; 0.57% (10 10 7.0704e-05 7.0704e-05)</title>
     <rect height="100%" width="100%" fill="rgb(99, 206, 42)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">&lt;built-in method numpy.asarray&gt;</text>
 </g></svg>
-<svg class="func_g" x="109.55949602805912" y="168" width="1" height="23"><g>
-    <title>~:0:&lt;built-in method numpy.zeros&gt; 0.15% (10 10 1.6100000000000002e-05 1.6100000000000002e-05)</title>
+<svg class="func_g" x="108.20821058748713" y="168" width="1" height="23"><g>
+    <title>~:0:&lt;built-in method numpy.zeros&gt; 0.16% (10 10 1.9701e-05 1.9701e-05)</title>
     <rect height="100%" width="100%" fill="rgb(57, 242, 168)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">&lt;built-in method numpy.zeros&gt;</text>
 </g></svg>
-<svg class="func_g" x="111.37946064425431" y="168" width="16.63443975940671" height="23"><g>
-    <title>~:0:&lt;method 'tolist' of 'numpy.ndarray' objects&gt; 1.47% (5 5 0.000156 0.000156)</title>
+<svg class="func_g" x="110.1195289469995" y="168" width="16.54142232704296" height="23"><g>
+    <title>~:0:&lt;method 'tolist' of 'numpy.ndarray' objects&gt; 1.46% (5 5 0.000180809 0.000180809)</title>
     <rect height="100%" width="100%" fill="rgb(99, 206, 42)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">&lt;method 'tolist' of 'numpy.ndarray' objects&gt;</text>
 </g></svg>
-<svg class="func_g" x="141.09790024879445" y="192" width="6.811152483173099" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:276:&lt;listcomp&gt; 0.65% (1 1 2.23e-05 6.91e-05)</title>
+<svg class="func_g" x="140.71992894525323" y="192" width="7.363194145647679" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:276:&lt;listcomp&gt; 0.70% (1 1 3.4302000000000005e-05 8.6204e-05)</title>
     <rect height="100%" width="100%" fill="rgb(255, 215, 125)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">&lt;listcomp&gt;</text>
 </g></svg>
-<svg class="func_g" x="141.09790024879445" y="168" width="4.290331927822013" height="23"><g>
-    <title>&lt;__array_function__ internals&gt;:177:sum 0.44% (5 5 3.6000000000000003e-06 4.6800000000000006e-05)</title>
+<svg class="func_g" x="140.71992894525323" y="168" width="4.035340616994639" height="23"><g>
+    <title>&lt;__array_function__ internals&gt;:177:sum 0.42% (5 5 4.3e-06 5.1902000000000006e-05)</title>
     <rect height="100%" width="100%" fill="rgb(255, 240, 141)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">sum</text>
 </g></svg>
-<svg class="func_g" x="141.1699937088114" y="144" width="3.8112898579726115" height="23"><g>
-    <title>~:0:&lt;built-in method numpy.core._multiarray_umath.implement_array_function&gt; 0.40% (3 3 3.86013986013986e-06 4.256223776223777e-05)</title>
+<svg class="func_g" x="140.77815096335826" y="144" width="3.559948457987943" height="23"><g>
+    <title>~:0:&lt;built-in method numpy.core._multiarray_umath.implement_array_function&gt; 0.38% (3 3 3.6326578681954516e-06 4.700187392839134e-05)</title>
     <rect height="100%" width="100%" fill="rgb(57, 242, 168)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">&lt;built-in method numpy.core._multiarray_umath.implement_array_function&gt;</text>
 </g></svg>
-<svg class="func_g" x="141.1699937088114" y="120" width="3.374934705238503" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/numpy/core/fromnumeric.py:2162:sum 0.36% (3 3 6.646153846153846e-06 3.870209790209791e-05)</title>
+<svg class="func_g" x="140.77815096335826" y="120" width="3.207521389447815" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/numpy/core/fromnumeric.py:2162:sum 0.35% (3 3 7.550217692491442e-06 4.336921606019588e-05)</title>
     <rect height="100%" width="100%" fill="rgb(255, 140, 79)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">sum</text>
 </g></svg>
-<svg class="func_g" x="141.1699937088114" y="96" width="2.4908412218728726" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/numpy/core/fromnumeric.py:69:_wrapreduction 0.29% (3 3 7.88811188811189e-06 3.088111888111889e-05)</title>
+<svg class="func_g" x="140.77815096335826" y="96" width="2.3463258121717736" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/numpy/core/fromnumeric.py:69:_wrapreduction 0.28% (3 3 9.823116224752503e-06 3.449240389362211e-05)</title>
     <rect height="100%" width="100%" fill="rgb(255, 115, 64)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">_wrapreduction</text>
 </g></svg>
-<svg class="func_g" x="141.50769465310128" y="72" width="1.261458008952426" height="23"><g>
-    <title>~:0:&lt;method 'reduce' of 'numpy.ufunc' objects&gt; 0.19% (3 3 2.000559440559441e-05 2.000559440559441e-05)</title>
+<svg class="func_g" x="141.0662273803086" y="72" width="1.1052468883439577" height="23"><g>
+    <title>~:0:&lt;method 'reduce' of 'numpy.ufunc' objects&gt; 0.18% (3 3 2.169992703771532e-05 2.169992703771532e-05)</title>
     <rect height="100%" width="100%" fill="rgb(255, 190, 110)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">&lt;method 'reduce' of 'numpy.ufunc' objects&gt;</text>
 </g></svg>
-<svg class="func_g" x="149.1238311649347" y="192" width="2.379934287219619" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/visualizer/caf.py:47:predicted 0.28% (1 1 2.4200000000000002e-05 2.9900000000000002e-05)</title>
+<svg class="func_g" x="149.31596223931112" y="192" width="2.5121845211444627" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/visualizer/caf.py:47:predicted 0.29% (1 1 2.9801e-05 3.6202e-05)</title>
     <rect height="100%" width="100%" fill="rgb(255, 240, 141)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">predicted</text>
 </g></svg>
-<svg class="func_g" x="152.50376545215434" y="192" width="3.7929502935823365" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/visualizer/cif.py:47:predicted 0.40% (1 1 3.0600000000000005e-05 4.24e-05)</title>
+<svg class="func_g" x="152.82814676045558" y="192" width="3.8801145180544934" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/visualizer/cif.py:47:predicted 0.41% (1 1 3.6802000000000004e-05 5.0302e-05)</title>
     <rect height="100%" width="100%" fill="rgb(255, 115, 64)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">predicted</text>
 </g></svg>
-<svg class="func_g" x="158.178437733707" y="192" width="3.0242695861210187" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/torch/_tensor.py:713:__iter__ 0.34% (2 2 8.7e-06 3.5600000000000005e-05)</title>
+<svg class="func_g" x="158.52329531425767" y="192" width="7.508815629715903" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/torch/_tensor.py:713:__iter__ 0.71% (2 2 9.600000000000001e-06 8.7705e-05)</title>
     <rect height="100%" width="100%" fill="rgb(255, 215, 125)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">__iter__</text>
 </g></svg>
-<svg class="func_g" x="158.49495331913224" y="168" width="1.7242948602673187" height="23"><g>
-    <title>~:0:&lt;method 'unbind' of 'torch._C._TensorBase' objects&gt; 0.23% (2 2 2.4100000000000003e-05 2.4100000000000003e-05)</title>
+<svg class="func_g" x="158.88225566805673" y="168" width="6.2184986822759445" height="23"><g>
+    <title>~:0:&lt;method 'unbind' of 'torch._C._TensorBase' objects&gt; 0.60% (2 2 7.4405e-05 7.4405e-05)</title>
     <rect height="100%" width="100%" fill="rgb(255, 240, 141)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">&lt;method 'unbind' of 'torch._C._TensorBase' objects&gt;</text>
 </g></svg>
-<svg class="func_g" x="162.20270731982802" y="192" width="3.306872787393562" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/torch/_tensor.py:753:__array__ 0.36% (15 15 1.8900000000000002e-05 3.8100000000000005e-05)</title>
+<svg class="func_g" x="167.03211094397355" y="192" width="3.3660250816270993" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/torch/_tensor.py:753:__array__ 0.36% (15 15 2.1601000000000002e-05 4.5003e-05)</title>
     <rect height="100%" width="100%" fill="rgb(255, 90, 49)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">__array__</text>
 </g></svg>
-<svg class="func_g" x="163.15225407610376" y="168" width="1" height="23"><g>
-    <title>~:0:&lt;method 'numpy' of 'torch._C._TensorBase' objects&gt; 0.10% (15 15 1.08e-05 1.08e-05)</title>
+<svg class="func_g" x="167.96346753761443" y="168" width="1" height="23"><g>
+    <title>~:0:&lt;method 'numpy' of 'torch._C._TensorBase' objects&gt; 0.11% (15 15 1.3802000000000001e-05 1.3802000000000001e-05)</title>
     <rect height="100%" width="100%" fill="rgb(255, 90, 49)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">&lt;method 'numpy' of 'torch._C._TensorBase' objects&gt;</text>
 </g></svg>
-<svg class="func_g" x="166.50958010722158" y="192" width="2.266893006710602" height="23"><g>
-    <title>~:0:&lt;built-in method builtins.len&gt; 0.27% (2 2 6.4000000000000006e-06 2.89e-05)</title>
+<svg class="func_g" x="171.39813602560068" y="192" width="1.4255048122516079" height="23"><g>
+    <title>~:0:&lt;built-in method builtins.len&gt; 0.20% (2 2 5e-06 2.5001e-05)</title>
     <rect height="100%" width="100%" fill="rgb(255, 140, 79)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">&lt;built-in method builtins.len&gt;</text>
 </g></svg>
-<svg class="func_g" x="166.50958010722158" y="168" width="1.5434288114528911" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/torch/_tensor.py:701:__len__ 0.21% (1 1 1.63e-05 2.25e-05)</title>
+<svg class="func_g" x="171.39813602560068" y="168" width="1" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/torch/_tensor.py:701:__len__ 0.16% (1 1 1.5001000000000001e-05 2.0001e-05)</title>
     <rect height="100%" width="100%" fill="rgb(99, 206, 42)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">__len__</text>
 </g></svg>
-<svg class="func_g" x="2.272129738231249" y="264" width="3.8607750618877468" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:288:__init__ 0.41% (2 2 4.3e-05 8.960000000000001e-05)</title>
+<svg class="func_g" x="1.8918180808330207" y="264" width="3.7347840829217818" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:288:__init__ 0.39% (2 2 4.8804e-05 9.6006e-05)</title>
     <rect height="100%" width="100%" fill="rgb(255, 90, 49)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">__init__</text>
 </g></svg>
-<svg class="func_g" x="2.272129738231249" y="288" width="3.8607750618877468" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1550:makeRecord 0.41% (2 2 4.3e-05 8.960000000000001e-05)</title>
+<svg class="func_g" x="1.8918180808330207" y="288" width="3.7347840829217827" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1550:makeRecord 0.39% (2 2 4.8804e-05 9.6006e-05)</title>
     <rect height="100%" width="100%" fill="rgb(232, 232, 232)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">makeRecord</text>
 </g></svg>
-<svg class="func_g" x="2.272129738231249" y="312" width="3.8607750618877468" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1565:_log 0.06% (2 2 6.6e-06 9.620000000000001e-05)</title>
+<svg class="func_g" x="1.8918180808330207" y="312" width="3.7347840829217827" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1565:_log 0.05% (2 2 5.8e-06 0.00010180600000000001)</title>
     <rect height="100%" width="100%" fill="rgb(232, 232, 232)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">_log</text>
 </g></svg>
-<svg class="func_g" x="2.272129738231249" y="336" width="2.147845104654242" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1424:debug 0.05% (1 1 4.800000000000001e-06 0.00021060000000000002)</title>
+<svg class="func_g" x="1.8918180808330207" y="336" width="1.1786571133874353" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1424:debug 0.04% (1 1 4.800000000000001e-06 0.00016680900000000002)</title>
     <rect height="100%" width="100%" fill="rgb(211, 211, 211)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">debug</text>
 </g></svg>
-<svg class="func_g" x="2.272129738231249" y="360" width="2.147845104654242" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224:__call__ 0.05% (1 1 5.8e-06 0.0002517)</title>
+<svg class="func_g" x="1.8918180808330207" y="360" width="1.1786571133874353" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224:__call__ 0.05% (1 1 6.5000000000000004e-06 0.00019361)</title>
     <rect height="100%" width="100%" fill="rgb(190, 190, 190)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">__call__</text>
 </g></svg>
-<svg class="func_g" x="5.419974842885491" y="336" width="1" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1436:info 0.03% (1 1 3.5000000000000004e-06 0.00011460000000000001)</title>
+<svg class="func_g" x="4.070475194220457" y="336" width="1.556126969534347" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1436:info 0.03% (1 1 4.000000000000001e-06 0.00019571)</title>
     <rect height="100%" width="100%" fill="rgb(197, 197, 197)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">info</text>
 </g></svg>
-<svg class="func_g" x="5.419974842885491" y="360" width="1" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224:__call__ 0.03% (1 1 3.6000000000000003e-06 0.0001303)</title>
+<svg class="func_g" x="4.070475194220457" y="360" width="1.556126969534347" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224:__call__ 0.03% (1 1 4.1000000000000006e-06 0.00021221100000000002)</title>
     <rect height="100%" width="100%" fill="rgb(190, 190, 190)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">__call__</text>
 </g></svg>
-<svg class="func_g" x="7.132904800118997" y="264" width="1.373866890689365" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:364:getMessage 0.20% (2 2 2.1000000000000002e-05 2.1000000000000002e-05)</title>
+<svg class="func_g" x="6.626602163754803" y="264" width="1.2314721885764262" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:364:getMessage 0.19% (2 2 2.3001000000000002e-05 2.3001000000000002e-05)</title>
     <rect height="100%" width="100%" fill="rgb(230, 230, 255)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">getMessage</text>
 </g></svg>
-<svg class="func_g" x="7.132904800118997" y="288" width="1.373866890689365" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:655:format 0.20% (2 2 2.1000000000000002e-05 2.1000000000000002e-05)</title>
+<svg class="func_g" x="6.626602163754803" y="288" width="1.2314721885764262" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:655:format 0.19% (2 2 2.3001000000000002e-05 2.3001000000000002e-05)</title>
     <rect height="100%" width="100%" fill="rgb(225, 225, 225)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">format</text>
 </g></svg>
-<svg class="func_g" x="7.132904800118997" y="312" width="1.373866890689365" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:918:format 0.07% (2 2 7.2000000000000005e-06 4.58e-05)</title>
+<svg class="func_g" x="6.626602163754803" y="312" width="1.2314721885764262" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:918:format 0.05% (2 2 6.7e-06 4.7803e-05)</title>
     <rect height="100%" width="100%" fill="rgb(211, 211, 211)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">format</text>
 </g></svg>
-<svg class="func_g" x="7.132904800118997" y="336" width="1.373866890689365" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1073:emit 0.03% (2 2 3.1000000000000004e-06 4.89e-05)</title>
+<svg class="func_g" x="6.626602163754803" y="336" width="1.2314721885764262" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1073:emit 0.03% (2 2 3.3010000000000002e-06 5.1104000000000004e-05)</title>
     <rect height="100%" width="100%" fill="rgb(197, 197, 197)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">emit</text>
 </g></svg>
-<svg class="func_g" x="7.132904800118997" y="360" width="1.373866890689365" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:941:handle 0.11% (2 2 1.1400000000000001e-05 0.0001695)</title>
+<svg class="func_g" x="6.626602163754803" y="360" width="1.2314721885764262" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:941:handle 0.08% (2 2 1e-05 0.000117107)</title>
     <rect height="100%" width="100%" fill="rgb(197, 197, 197)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">handle</text>
 </g></svg>
-<svg class="func_g" x="7.132904800118997" y="384" width="1.373866890689365" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1645:callHandlers 0.06% (2 2 6.8e-06 0.0001809)</title>
+<svg class="func_g" x="6.626602163754803" y="384" width="1.2314721885764262" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1645:callHandlers 0.12% (2 2 1.54e-05 0.000137407)</title>
     <rect height="100%" width="100%" fill="rgb(190, 190, 190)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">callHandlers</text>
 </g></svg>
-<svg class="func_g" x="7.132904800118997" y="408" width="1.373866890689365" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1591:handle 0.07% (2 2 7.8e-06 0.0001887)</title>
+<svg class="func_g" x="6.626602163754803" y="408" width="1.2314721885764262" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1591:handle 0.08% (2 2 1.0301e-05 0.000147708)</title>
     <rect height="100%" width="100%" fill="rgb(211, 211, 211)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">handle</text>
 </g></svg>
-<svg class="func_g" x="7.132904800118997" y="432" width="1.373866890689365" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1565:_log 0.04% (2 2 4.2000000000000004e-06 0.0001954)</title>
+<svg class="func_g" x="6.626602163754803" y="432" width="1.2314721885764262" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1565:_log 0.04% (2 2 4.9000000000000005e-06 0.000154808)</title>
     <rect height="100%" width="100%" fill="rgb(232, 232, 232)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">_log</text>
 </g></svg>
-<svg class="func_g" x="7.132904800118997" y="456" width="1" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1424:debug 0.05% (1 1 4.800000000000001e-06 0.00021060000000000002)</title>
-    <rect height="100%" width="100%" fill="rgb(211, 211, 211)" rx="2" ry="2" />
-    <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">debug</text>
+<svg class="func_g" x="7.653388744056097" y="456" width="1" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1436:info 0.03% (1 1 4.000000000000001e-06 0.00019571)</title>
+    <rect height="100%" width="100%" fill="rgb(197, 197, 197)" rx="2" ry="2" />
+    <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">info</text>
 </g></svg>
-<svg class="func_g" x="7.132904800118997" y="480" width="1" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224:__call__ 0.05% (1 1 5.8e-06 0.0002517)</title>
+<svg class="func_g" x="7.653388744056097" y="480" width="1" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224:__call__ 0.03% (1 1 4.1000000000000006e-06 0.00021221100000000002)</title>
     <rect height="100%" width="100%" fill="rgb(190, 190, 190)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">__call__</text>
 </g></svg>
-<svg class="func_g" x="14.831016002783077" y="264" width="1" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1073:emit 0.11% (2 2 1.1400000000000001e-05 0.0001695)</title>
+<svg class="func_g" x="12.25393631558242" y="264" width="1" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:941:handle 0.12% (2 2 1.54e-05 0.000137407)</title>
     <rect height="100%" width="100%" fill="rgb(255, 215, 125)" rx="2" ry="2" />
-    <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">emit</text>
-</g></svg>
-<svg class="func_g" x="14.831016002783077" y="288" width="1" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:941:handle 0.11% (2 2 1.1400000000000001e-05 0.0001695)</title>
-    <rect height="100%" width="100%" fill="rgb(197, 197, 197)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">handle</text>
 </g></svg>
-<svg class="func_g" x="14.831016002783077" y="312" width="1" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1645:callHandlers 0.06% (2 2 6.8e-06 0.0001809)</title>
+<svg class="func_g" x="12.25393631558242" y="288" width="1" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1645:callHandlers 0.12% (2 2 1.54e-05 0.000137407)</title>
     <rect height="100%" width="100%" fill="rgb(190, 190, 190)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">callHandlers</text>
 </g></svg>
-<svg class="func_g" x="14.831016002783077" y="336" width="1" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1591:handle 0.07% (2 2 7.8e-06 0.0001887)</title>
+<svg class="func_g" x="12.25393631558242" y="312" width="1" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1591:handle 0.08% (2 2 1.0301e-05 0.000147708)</title>
     <rect height="100%" width="100%" fill="rgb(211, 211, 211)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">handle</text>
 </g></svg>
-<svg class="func_g" x="14.831016002783077" y="360" width="1" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1565:_log 0.04% (2 2 4.2000000000000004e-06 0.0001954)</title>
+<svg class="func_g" x="12.25393631558242" y="336" width="1" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1565:_log 0.04% (2 2 4.9000000000000005e-06 0.000154808)</title>
     <rect height="100%" width="100%" fill="rgb(232, 232, 232)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">_log</text>
 </g></svg>
-<svg class="func_g" x="17.27270766177785" y="264" width="1" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1514:findCaller 0.14% (2 2 1.46e-05 2.5300000000000002e-05)</title>
+<svg class="func_g" x="16.512952405252655" y="264" width="1" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1514:findCaller 0.14% (2 2 1.7800000000000002e-05 9.7105e-05)</title>
     <rect height="100%" width="100%" fill="rgb(255, 240, 141)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">findCaller</text>
 </g></svg>
-<svg class="func_g" x="17.27270766177785" y="288" width="1" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1565:_log 0.14% (2 2 1.46e-05 2.5300000000000002e-05)</title>
+<svg class="func_g" x="16.512952405252655" y="288" width="1" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1565:_log 0.14% (2 2 1.7800000000000002e-05 9.7105e-05)</title>
     <rect height="100%" width="100%" fill="rgb(232, 232, 232)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">_log</text>
 </g></svg>
-<svg class="func_g" x="22.25782813222552" y="264" width="2.639929232390359" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1689:isEnabledFor 0.30% (2 2 3.2200000000000003e-05 4.74e-05)</title>
+<svg class="func_g" x="21.412470185674664" y="264" width="1" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1689:isEnabledFor 0.14% (2 2 1.79e-05 3.2702e-05)</title>
     <rect height="100%" width="100%" fill="rgb(255, 90, 49)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">isEnabledFor</text>
 </g></svg>
-<svg class="func_g" x="22.25782813222552" y="288" width="1.7107489853033684" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1424:debug 0.23% (1 1 2.4500000000000003e-05 3.5300000000000004e-05)</title>
-    <rect height="100%" width="100%" fill="rgb(211, 211, 211)" rx="2" ry="2" />
-    <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">debug</text>
-</g></svg>
-<svg class="func_g" x="22.25782813222552" y="312" width="1.7107489853033684" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224:__call__ 0.05% (1 1 5.8e-06 0.0002517)</title>
-    <rect height="100%" width="100%" fill="rgb(190, 190, 190)" rx="2" ry="2" />
-    <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">__call__</text>
-</g></svg>
-<svg class="func_g" x="28.282928383356143" y="264" width="1.6564700919619084" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/numpy/core/fromnumeric.py:69:_wrapreduction 0.22% (10 10 2.3500000000000002e-05 9.2e-05)</title>
+<svg class="func_g" x="25.31262293785765" y="264" width="2.0172072981490747" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/numpy/core/fromnumeric.py:69:_wrapreduction 0.25% (10 10 3.1100000000000004e-05 0.000109203)</title>
     <rect height="100%" width="100%" fill="rgb(255, 115, 64)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">_wrapreduction</text>
 </g></svg>
-<svg class="func_g" x="28.282928383356143" y="288" width="1.6564700919619084" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/numpy/core/fromnumeric.py:2162:sum 0.22% (10 10 2.3500000000000002e-05 9.2e-05)</title>
+<svg class="func_g" x="25.31262293785765" y="288" width="2.0172072981490747" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/numpy/core/fromnumeric.py:2162:sum 0.25% (10 10 3.1100000000000004e-05 0.000109203)</title>
     <rect height="100%" width="100%" fill="rgb(218, 218, 218)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">sum</text>
 </g></svg>
-<svg class="func_g" x="28.282928383356143" y="312" width="1.6564700919619084" height="23"><g>
-    <title>~:0:&lt;built-in method numpy.core._multiarray_umath.implement_array_function&gt; 0.19% (10 10 1.98e-05 0.00011530000000000001)</title>
+<svg class="func_g" x="25.31262293785765" y="312" width="2.0172072981490747" height="23"><g>
+    <title>~:0:&lt;built-in method numpy.core._multiarray_umath.implement_array_function&gt; 0.19% (10 10 2.3904e-05 0.000137307)</title>
     <rect height="100%" width="100%" fill="rgb(204, 204, 204)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">&lt;built-in method numpy.core._multiarray_umath.implement_array_function&gt;</text>
 </g></svg>
-<svg class="func_g" x="28.282928383356143" y="336" width="1.6564700919619084" height="23"><g>
-    <title>&lt;__array_function__ internals&gt;:177:sum 0.11% (10 10 1.15e-05 0.00012680000000000002)</title>
+<svg class="func_g" x="25.31262293785765" y="336" width="2.0172072981490747" height="23"><g>
+    <title>&lt;__array_function__ internals&gt;:177:sum 0.09% (10 10 1.1501e-05 0.000148808)</title>
     <rect height="100%" width="100%" fill="rgb(190, 190, 190)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">sum</text>
 </g></svg>
-<svg class="func_g" x="28.282928383356143" y="360" width="1" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/annotation.py:17:__init__ 0.09% (5 5 1e-05 9.55e-05)</title>
+<svg class="func_g" x="25.31262293785765" y="360" width="1.0716177009717707" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/annotation.py:17:__init__ 0.09% (5 5 1.0602000000000001e-05 0.000113708)</title>
     <rect height="100%" width="100%" fill="rgb(218, 218, 218)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">__init__</text>
 </g></svg>
-<svg class="func_g" x="28.282928383356143" y="384" width="1" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224:__call__ 1.01% (5 5 0.00010689900000000001 0.00043309900000000005)</title>
+<svg class="func_g" x="25.31262293785765" y="384" width="1.0716177009717707" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224:__call__ 1.09% (5 5 0.000134606 0.0005223280000000001)</title>
     <rect height="100%" width="100%" fill="rgb(190, 190, 190)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">__call__</text>
 </g></svg>
-<svg class="func_g" x="31.9341617437974" y="264" width="1.238217354078544" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/numpy/core/fromnumeric.py:2162:sum 0.19% (10 10 1.98e-05 0.00011530000000000001)</title>
+<svg class="func_g" x="29.193372427673122" y="264" width="1.3190779181657706" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/numpy/core/fromnumeric.py:2162:sum 0.19% (10 10 2.3904e-05 0.000137307)</title>
     <rect height="100%" width="100%" fill="rgb(255, 140, 79)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">sum</text>
 </g></svg>
-<svg class="func_g" x="31.9341617437974" y="288" width="1.238217354078544" height="23"><g>
-    <title>~:0:&lt;built-in method numpy.core._multiarray_umath.implement_array_function&gt; 0.19% (10 10 1.98e-05 0.00011530000000000001)</title>
+<svg class="func_g" x="29.193372427673122" y="288" width="1.319077918165771" height="23"><g>
+    <title>~:0:&lt;built-in method numpy.core._multiarray_umath.implement_array_function&gt; 0.19% (10 10 2.3904e-05 0.000137307)</title>
     <rect height="100%" width="100%" fill="rgb(204, 204, 204)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">&lt;built-in method numpy.core._multiarray_umath.implement_array_function&gt;</text>
 </g></svg>
-<svg class="func_g" x="31.9341617437974" y="312" width="1.238217354078544" height="23"><g>
-    <title>&lt;__array_function__ internals&gt;:177:sum 0.11% (10 10 1.15e-05 0.00012680000000000002)</title>
+<svg class="func_g" x="29.193372427673122" y="312" width="1.319077918165771" height="23"><g>
+    <title>&lt;__array_function__ internals&gt;:177:sum 0.09% (10 10 1.1501e-05 0.000148808)</title>
     <rect height="100%" width="100%" fill="rgb(190, 190, 190)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">sum</text>
 </g></svg>
-<svg class="func_g" x="31.9341617437974" y="336" width="1" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/annotation.py:17:__init__ 0.09% (5 5 1e-05 9.55e-05)</title>
+<svg class="func_g" x="29.193372427673122" y="336" width="1" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/annotation.py:17:__init__ 0.09% (5 5 1.0602000000000001e-05 0.000113708)</title>
     <rect height="100%" width="100%" fill="rgb(218, 218, 218)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">__init__</text>
 </g></svg>
-<svg class="func_g" x="31.9341617437974" y="360" width="1" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224:__call__ 1.01% (5 5 0.00010689900000000001 0.00043309900000000005)</title>
+<svg class="func_g" x="29.193372427673122" y="360" width="1" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224:__call__ 1.09% (5 5 0.000134606 0.0005223280000000001)</title>
     <rect height="100%" width="100%" fill="rgb(190, 190, 190)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">__call__</text>
 </g></svg>
-<svg class="func_g" x="34.17237909787595" y="264" width="11.083999845133446" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/annotation.py:17:__init__ 1.01% (5 5 0.00010689900000000001 0.00043309900000000005)</title>
+<svg class="func_g" x="31.51245034583889" y="264" width="12.05897767121075" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/annotation.py:17:__init__ 1.09% (5 5 0.000134606 0.0005223280000000001)</title>
     <rect height="100%" width="100%" fill="rgb(255, 140, 79)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">__init__</text>
 </g></svg>
-<svg class="func_g" x="34.17237909787595" y="288" width="11.083999845133446" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224:__call__ 1.01% (5 5 0.00010689900000000001 0.00043309900000000005)</title>
+<svg class="func_g" x="31.51245034583889" y="288" width="12.05897767121075" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224:__call__ 1.09% (5 5 0.000134606 0.0005223280000000001)</title>
     <rect height="100%" width="100%" fill="rgb(190, 190, 190)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">__call__</text>
 </g></svg>
-<svg class="func_g" x="46.25637894300939" y="264" width="1028.9070113006428" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224:__call__ 85.83% (1 1 0.009110893 0.010182092)</title>
+<svg class="func_g" x="44.57142801704964" y="264" width="1024.8756085954512" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224:__call__ 85.49% (1 1 0.010574259 0.011846426)</title>
     <rect height="100%" width="100%" fill="rgb(255, 240, 141)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">__call__</text>
 </g></svg>
-<svg class="func_g" x="1076.1633902436522" y="264" width="1.520820555351087" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:276:&lt;listcomp&gt; 0.21% (1 1 2.23e-05 6.91e-05)</title>
+<svg class="func_g" x="1070.4470366125008" y="264" width="2.3278535286530406" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:276:&lt;listcomp&gt; 0.28% (1 1 3.4302000000000005e-05 8.6204e-05)</title>
     <rect height="100%" width="100%" fill="rgb(255, 215, 125)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">&lt;listcomp&gt;</text>
 </g></svg>
-<svg class="func_g" x="1076.1633902436522" y="288" width="1.520820555351087" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224:__call__ 0.21% (1 1 2.23e-05 6.91e-05)</title>
+<svg class="func_g" x="1070.4470366125008" y="288" width="2.3278535286530406" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224:__call__ 0.28% (1 1 3.4302000000000005e-05 8.6204e-05)</title>
     <rect height="100%" width="100%" fill="rgb(190, 190, 190)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">__call__</text>
 </g></svg>
-<svg class="func_g" x="1078.8989892319705" y="264" width="1" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/visualizer/base.py:114:indices 0.13% (5 5 1.3700000000000001e-05 1.67e-05)</title>
+<svg class="func_g" x="1074.007729289564" y="264" width="1" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/visualizer/base.py:114:indices 0.12% (5 5 1.5401e-05 1.8601e-05)</title>
     <rect height="100%" width="100%" fill="rgb(255, 140, 79)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">indices</text>
 </g></svg>
-<svg class="func_g" x="1080.572000183504" y="264" width="1.7355989883182206" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/visualizer/caf.py:47:predicted 0.23% (1 1 2.4200000000000002e-05 2.9900000000000002e-05)</title>
+<svg class="func_g" x="1075.6182970823797" y="264" width="1.8911831090720437" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/visualizer/caf.py:47:predicted 0.24% (1 1 2.9801e-05 3.6202e-05)</title>
     <rect height="100%" width="100%" fill="rgb(255, 240, 141)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">predicted</text>
 </g></svg>
-<svg class="func_g" x="1080.572000183504" y="288" width="1.7355989883182206" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224:__call__ 0.23% (1 1 2.4200000000000002e-05 2.9900000000000002e-05)</title>
+<svg class="func_g" x="1075.6182970823797" y="288" width="1.8911831090720437" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224:__call__ 0.24% (1 1 2.9801e-05 3.6202e-05)</title>
     <rect height="100%" width="100%" fill="rgb(190, 190, 190)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">__call__</text>
 </g></svg>
-<svg class="func_g" x="1083.556289988942" y="264" width="2.4590631835759322" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/visualizer/cif.py:47:predicted 0.29% (1 1 3.0600000000000005e-05 4.24e-05)</title>
+<svg class="func_g" x="1078.7715212497253" y="264" width="2.570394308247017" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/visualizer/cif.py:47:predicted 0.30% (1 1 3.6802000000000004e-05 5.0302e-05)</title>
     <rect height="100%" width="100%" fill="rgb(255, 115, 64)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">predicted</text>
 </g></svg>
-<svg class="func_g" x="1083.556289988942" y="288" width="2.4590631835759322" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224:__call__ 0.29% (1 1 3.0600000000000005e-05 4.24e-05)</title>
+<svg class="func_g" x="1078.7715212497253" y="288" width="2.570394308247017" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224:__call__ 0.30% (1 1 3.6802000000000004e-05 5.0302e-05)</title>
     <rect height="100%" width="100%" fill="rgb(190, 190, 190)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">__call__</text>
 </g></svg>
-<svg class="func_g" x="1087.7388173677755" y="264" width="1" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/torch/_tensor.py:701:__len__ 0.15% (1 1 1.63e-05 2.25e-05)</title>
+<svg class="func_g" x="1083.0210297408355" y="264" width="1" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/torch/_tensor.py:701:__len__ 0.12% (1 1 1.5001000000000001e-05 2.0001e-05)</title>
     <rect height="100%" width="100%" fill="rgb(255, 115, 64)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">__len__</text>
 </g></svg>
-<svg class="func_g" x="1087.7388173677755" y="288" width="1" height="23"><g>
-    <title>~:0:&lt;built-in method builtins.len&gt; 0.15% (1 1 1.63e-05 2.25e-05)</title>
+<svg class="func_g" x="1083.0210297408355" y="288" width="1" height="23"><g>
+    <title>~:0:&lt;built-in method builtins.len&gt; 0.12% (1 1 1.5001000000000001e-05 2.0001e-05)</title>
     <rect height="100%" width="100%" fill="rgb(218, 218, 218)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">&lt;built-in method builtins.len&gt;</text>
 </g></svg>
-<svg class="func_g" x="1087.9579037763717" y="312" width="1" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224:__call__ 0.06% (2 2 6.4000000000000006e-06 2.89e-05)</title>
+<svg class="func_g" x="1083.1861690415838" y="312" width="1" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224:__call__ 0.04% (2 2 5e-06 2.5001e-05)</title>
     <rect height="100%" width="100%" fill="rgb(190, 190, 190)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">__call__</text>
 </g></svg>
-<svg class="func_g" x="1090.564849380501" y="264" width="1.1364802016204285" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/torch/_tensor.py:753:__array__ 0.18% (15 15 1.8900000000000002e-05 3.8100000000000005e-05)</title>
+<svg class="func_g" x="1085.407728028352" y="264" width="1.0956493520037993" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/torch/_tensor.py:753:__array__ 0.17% (15 15 2.1601000000000002e-05 4.5003e-05)</title>
     <rect height="100%" width="100%" fill="rgb(255, 90, 49)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">__array__</text>
 </g></svg>
-<svg class="func_g" x="1090.564849380501" y="288" width="1.1364802016204285" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224:__call__ 0.18% (15 15 1.8900000000000002e-05 3.8100000000000005e-05)</title>
+<svg class="func_g" x="1085.407728028352" y="288" width="1.0956493520037993" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224:__call__ 0.17% (15 15 2.1601000000000002e-05 4.5003e-05)</title>
     <rect height="100%" width="100%" fill="rgb(190, 190, 190)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">__call__</text>
 </g></svg>
-<svg class="func_g" x="1093.1987112163613" y="264" width="1" height="23"><g>
-    <title>&lt;__array_function__ internals&gt;:177:sum 0.13% (10 10 1.36e-05 0.00014230000000000002)</title>
+<svg class="func_g" x="1087.9690556771764" y="264" width="1" height="23"><g>
+    <title>&lt;__array_function__ internals&gt;:177:sum 0.12% (10 10 1.4902e-05 0.00016561)</title>
     <rect height="100%" width="100%" fill="rgb(255, 240, 141)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">sum</text>
 </g></svg>
-<svg class="func_g" x="1097.3134138268897" y="264" width="5.2285745560468575" height="23"><g>
-    <title>~:0:&lt;built-in method numpy.asarray&gt; 0.52% (10 10 5.5100000000000004e-05 5.5100000000000004e-05)</title>
+<svg class="func_g" x="1091.5589502641026" y="264" width="5.859441312165021" height="23"><g>
+    <title>~:0:&lt;built-in method numpy.asarray&gt; 0.57% (10 10 7.0704e-05 7.0704e-05)</title>
     <rect height="100%" width="100%" fill="rgb(166, 166, 255)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">&lt;built-in method numpy.asarray&gt;</text>
 </g></svg>
-<svg class="func_g" x="1097.3134138268897" y="288" width="5.2285745560468575" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/annotation.py:17:__init__ 0.52% (10 10 5.5100000000000004e-05 5.5100000000000004e-05)</title>
+<svg class="func_g" x="1091.5589502641026" y="288" width="5.859441312165021" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/annotation.py:17:__init__ 0.57% (10 10 7.0704e-05 7.0704e-05)</title>
     <rect height="100%" width="100%" fill="rgb(218, 218, 218)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">__init__</text>
 </g></svg>
-<svg class="func_g" x="1097.3134138268897" y="312" width="5.228574556046857" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224:__call__ 1.01% (5 5 0.00010689900000000001 0.00043309900000000005)</title>
+<svg class="func_g" x="1091.5589502641026" y="312" width="5.859441312165021" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224:__call__ 1.09% (5 5 0.000134606 0.0005223280000000001)</title>
     <rect height="100%" width="100%" fill="rgb(190, 190, 190)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">__call__</text>
 </g></svg>
-<svg class="func_g" x="1103.5419883829366" y="264" width="1" height="23"><g>
-    <title>~:0:&lt;built-in method numpy.core._multiarray_umath.implement_array_function&gt; 0.11% (10 10 1.15e-05 0.00012680000000000002)</title>
-    <rect height="100%" width="100%" fill="rgb(255, 190, 110)" rx="2" ry="2" />
-    <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">&lt;built-in method numpy.core._multiarray_umath.implement_array_function&gt;</text>
-</g></svg>
-<svg class="func_g" x="1103.5419883829366" y="288" width="1" height="23"><g>
-    <title>&lt;__array_function__ internals&gt;:177:sum 0.11% (10 10 1.15e-05 0.00012680000000000002)</title>
-    <rect height="100%" width="100%" fill="rgb(190, 190, 190)" rx="2" ry="2" />
-    <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">sum</text>
-</g></svg>
-<svg class="func_g" x="1104.8419631087902" y="264" width="1" height="23"><g>
-    <title>~:0:&lt;built-in method numpy.zeros&gt; 0.15% (10 10 1.6100000000000002e-05 1.6100000000000002e-05)</title>
+<svg class="func_g" x="1099.5341761787117" y="264" width="1" height="23"><g>
+    <title>~:0:&lt;built-in method numpy.zeros&gt; 0.16% (10 10 1.9701e-05 1.9701e-05)</title>
     <rect height="100%" width="100%" fill="rgb(214, 214, 255)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">&lt;built-in method numpy.zeros&gt;</text>
 </g></svg>
-<svg class="func_g" x="1104.8419631087902" y="288" width="1" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/annotation.py:17:__init__ 0.15% (10 10 1.6100000000000002e-05 1.6100000000000002e-05)</title>
+<svg class="func_g" x="1099.5341761787117" y="288" width="1" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/annotation.py:17:__init__ 0.16% (10 10 1.9701e-05 1.9701e-05)</title>
     <rect height="100%" width="100%" fill="rgb(218, 218, 218)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">__init__</text>
 </g></svg>
-<svg class="func_g" x="1104.8419631087902" y="312" width="1" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224:__call__ 1.01% (5 5 0.00010689900000000001 0.00043309900000000005)</title>
+<svg class="func_g" x="1099.5341761787117" y="312" width="1" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224:__call__ 1.09% (5 5 0.000134606 0.0005223280000000001)</title>
     <rect height="100%" width="100%" fill="rgb(190, 190, 190)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">__call__</text>
 </g></svg>
-<svg class="func_g" x="1110.3922899817828" y="264" width="10.0667413618328" height="23"><g>
-    <title>~:0:&lt;method 'flush' of '_io.TextIOWrapper' objects&gt; 0.92% (2 2 9.790000000000001e-05 9.790000000000001e-05)</title>
-    <rect height="100%" width="100%" fill="rgb(166, 166, 255)" rx="2" ry="2" />
-    <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">&lt;method 'flush' of '_io.TextIOWrapper' objects&gt;</text>
+<svg class="func_g" x="1101.4454945382242" y="264" width="5.636303794938562" height="23"><g>
+    <title>~:0:&lt;built-in method posix.fspath&gt; 0.55% (6 6 6.8404e-05 6.8404e-05)</title>
+    <rect height="100%" width="100%" fill="rgb(182, 182, 255)" rx="2" ry="2" />
+    <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">&lt;built-in method posix.fspath&gt;</text>
 </g></svg>
-<svg class="func_g" x="1110.3922899817828" y="288" width="10.0667413618328" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1062:flush 0.92% (2 2 9.790000000000001e-05 9.790000000000001e-05)</title>
-    <rect height="100%" width="100%" fill="rgb(204, 204, 204)" rx="2" ry="2" />
-    <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">flush</text>
-</g></svg>
-<svg class="func_g" x="1110.3922899817828" y="312" width="10.0667413618328" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1073:emit 0.06% (2 2 5.9e-06 0.0001082)</title>
+<svg class="func_g" x="1101.4454945382242" y="288" width="5.597497270203524" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/posixpath.py:52:normcase 0.55% (2 2 6.800400000000001e-05 6.800400000000001e-05)</title>
     <rect height="100%" width="100%" fill="rgb(197, 197, 197)" rx="2" ry="2" />
-    <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">emit</text>
+    <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">normcase</text>
 </g></svg>
-<svg class="func_g" x="1110.3922899817828" y="336" width="10.0667413618328" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:941:handle 0.11% (2 2 1.1400000000000001e-05 0.0001695)</title>
-    <rect height="100%" width="100%" fill="rgb(197, 197, 197)" rx="2" ry="2" />
-    <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">handle</text>
-</g></svg>
-<svg class="func_g" x="1110.3922899817828" y="360" width="10.066741361832799" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1645:callHandlers 0.06% (2 2 6.8e-06 0.0001809)</title>
+<svg class="func_g" x="1101.4454945382242" y="312" width="5.597497270203524" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1514:findCaller 0.03% (2 2 4.2000000000000004e-06 7.2204e-05)</title>
     <rect height="100%" width="100%" fill="rgb(190, 190, 190)" rx="2" ry="2" />
-    <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">callHandlers</text>
+    <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">findCaller</text>
 </g></svg>
-<svg class="func_g" x="1110.3922899817828" y="384" width="10.066741361832799" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1591:handle 0.07% (2 2 7.8e-06 0.0001887)</title>
-    <rect height="100%" width="100%" fill="rgb(211, 211, 211)" rx="2" ry="2" />
-    <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">handle</text>
-</g></svg>
-<svg class="func_g" x="1110.3922899817828" y="408" width="10.0667413618328" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1565:_log 0.04% (2 2 4.2000000000000004e-06 0.0001954)</title>
+<svg class="func_g" x="1101.4454945382242" y="336" width="5.597497270203524" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1565:_log 0.14% (2 2 1.7800000000000002e-05 9.7105e-05)</title>
     <rect height="100%" width="100%" fill="rgb(232, 232, 232)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">_log</text>
 </g></svg>
-<svg class="func_g" x="1110.3922899817828" y="432" width="6.1668380405965175" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1424:debug 0.05% (1 1 4.800000000000001e-06 0.00021060000000000002)</title>
+<svg class="func_g" x="1101.4454945382242" y="360" width="2.035763427973098" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1424:debug 0.04% (1 1 4.800000000000001e-06 0.00016680900000000002)</title>
     <rect height="100%" width="100%" fill="rgb(211, 211, 211)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">debug</text>
 </g></svg>
-<svg class="func_g" x="1110.3922899817828" y="456" width="6.1668380405965175" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224:__call__ 0.05% (1 1 5.8e-06 0.0002517)</title>
+<svg class="func_g" x="1101.4454945382242" y="384" width="2.035763427973098" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224:__call__ 0.05% (1 1 6.5000000000000004e-06 0.00019361)</title>
     <rect height="100%" width="100%" fill="rgb(190, 190, 190)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">__call__</text>
 </g></svg>
-<svg class="func_g" x="1117.5591280223791" y="432" width="2.8999033212362817" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1436:info 0.03% (1 1 3.5000000000000004e-06 0.00011460000000000001)</title>
+<svg class="func_g" x="1104.4812579661973" y="360" width="2.5617338422304257" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1436:info 0.03% (1 1 4.000000000000001e-06 0.00019571)</title>
     <rect height="100%" width="100%" fill="rgb(197, 197, 197)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">info</text>
 </g></svg>
-<svg class="func_g" x="1117.5591280223791" y="456" width="2.8999033212362817" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224:__call__ 0.03% (1 1 3.6000000000000003e-06 0.0001303)</title>
+<svg class="func_g" x="1104.4812579661973" y="384" width="2.5617338422304257" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224:__call__ 0.03% (1 1 4.1000000000000006e-06 0.00021221100000000002)</title>
     <rect height="100%" width="100%" fill="rgb(190, 190, 190)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">__call__</text>
 </g></svg>
-<svg class="func_g" x="1122.0355418742117" y="264" width="1" height="23"><g>
-    <title>~:0:&lt;method 'numpy' of 'torch._C._TensorBase' objects&gt; 0.10% (15 15 1.08e-05 1.08e-05)</title>
+<svg class="func_g" x="1111.3029339187942" y="264" width="3.2787104009732673" height="23"><g>
+    <title>~:0:&lt;method 'flush' of '_io.TextIOWrapper' objects&gt; 0.36% (2 2 4.4103e-05 4.4103e-05)</title>
+    <rect height="100%" width="100%" fill="rgb(166, 166, 255)" rx="2" ry="2" />
+    <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">&lt;method 'flush' of '_io.TextIOWrapper' objects&gt;</text>
+</g></svg>
+<svg class="func_g" x="1111.3029339187942" y="288" width="3.2787104009732673" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1062:flush 0.36% (2 2 4.4103e-05 4.4103e-05)</title>
+    <rect height="100%" width="100%" fill="rgb(204, 204, 204)" rx="2" ry="2" />
+    <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">flush</text>
+</g></svg>
+<svg class="func_g" x="1111.3029339187942" y="312" width="3.2787104009732673" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1073:emit 0.05% (2 2 6.6e-06 5.520300000000001e-05)</title>
+    <rect height="100%" width="100%" fill="rgb(197, 197, 197)" rx="2" ry="2" />
+    <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">emit</text>
+</g></svg>
+<svg class="func_g" x="1111.3029339187942" y="336" width="3.2787104009732673" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:941:handle 0.08% (2 2 1e-05 0.000117107)</title>
+    <rect height="100%" width="100%" fill="rgb(197, 197, 197)" rx="2" ry="2" />
+    <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">handle</text>
+</g></svg>
+<svg class="func_g" x="1111.3029339187942" y="360" width="3.2787104009732673" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1645:callHandlers 0.12% (2 2 1.54e-05 0.000137407)</title>
+    <rect height="100%" width="100%" fill="rgb(190, 190, 190)" rx="2" ry="2" />
+    <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">callHandlers</text>
+</g></svg>
+<svg class="func_g" x="1111.3029339187942" y="384" width="3.2787104009732673" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1591:handle 0.08% (2 2 1.0301e-05 0.000147708)</title>
+    <rect height="100%" width="100%" fill="rgb(211, 211, 211)" rx="2" ry="2" />
+    <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">handle</text>
+</g></svg>
+<svg class="func_g" x="1111.3029339187942" y="408" width="3.2787104009732673" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1565:_log 0.04% (2 2 4.9000000000000005e-06 0.000154808)</title>
+    <rect height="100%" width="100%" fill="rgb(232, 232, 232)" rx="2" ry="2" />
+    <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">_log</text>
+</g></svg>
+<svg class="func_g" x="1111.3029339187942" y="432" width="1" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1424:debug 0.04% (1 1 4.800000000000001e-06 0.00016680900000000002)</title>
+    <rect height="100%" width="100%" fill="rgb(211, 211, 211)" rx="2" ry="2" />
+    <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">debug</text>
+</g></svg>
+<svg class="func_g" x="1111.3029339187942" y="456" width="1" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224:__call__ 0.05% (1 1 6.5000000000000004e-06 0.00019361)</title>
+    <rect height="100%" width="100%" fill="rgb(190, 190, 190)" rx="2" ry="2" />
+    <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">__call__</text>
+</g></svg>
+<svg class="func_g" x="1113.2717339079697" y="432" width="1.309910411797666" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/logging/__init__.py:1436:info 0.03% (1 1 4.000000000000001e-06 0.00019571)</title>
+    <rect height="100%" width="100%" fill="rgb(197, 197, 197)" rx="2" ry="2" />
+    <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">info</text>
+</g></svg>
+<svg class="func_g" x="1113.2717339079697" y="456" width="1.309910411797666" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224:__call__ 0.03% (1 1 4.1000000000000006e-06 0.00021221100000000002)</title>
+    <rect height="100%" width="100%" fill="rgb(190, 190, 190)" rx="2" ry="2" />
+    <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">__call__</text>
+</g></svg>
+<svg class="func_g" x="1116.0279193542203" y="264" width="1" height="23"><g>
+    <title>~:0:&lt;method 'numpy' of 'torch._C._TensorBase' objects&gt; 0.11% (15 15 1.3802000000000001e-05 1.3802000000000001e-05)</title>
     <rect height="100%" width="100%" fill="rgb(166, 166, 255)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">&lt;method 'numpy' of 'torch._C._TensorBase' objects&gt;</text>
 </g></svg>
-<svg class="func_g" x="1122.0355418742117" y="288" width="1" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/torch/_tensor.py:753:__array__ 0.10% (15 15 1.08e-05 1.08e-05)</title>
+<svg class="func_g" x="1116.0279193542203" y="288" width="1" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/torch/_tensor.py:753:__array__ 0.11% (15 15 1.3802000000000001e-05 1.3802000000000001e-05)</title>
     <rect height="100%" width="100%" fill="rgb(232, 232, 232)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">__array__</text>
 </g></svg>
-<svg class="func_g" x="1122.0355418742117" y="312" width="1" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224:__call__ 0.18% (15 15 1.8900000000000002e-05 3.8100000000000005e-05)</title>
+<svg class="func_g" x="1116.0279193542203" y="312" width="1" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224:__call__ 0.17% (15 15 2.1601000000000002e-05 4.5003e-05)</title>
     <rect height="100%" width="100%" fill="rgb(190, 190, 190)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">__call__</text>
 </g></svg>
-<svg class="func_g" x="1123.256387703709" y="264" width="5.737260318337435" height="23"><g>
-    <title>~:0:&lt;method 'reduce' of 'numpy.ufunc' objects&gt; 0.56% (10 10 5.9600000000000005e-05 5.9600000000000005e-05)</title>
+<svg class="func_g" x="1117.366938490203" y="264" width="5.665214655866165" height="23"><g>
+    <title>~:0:&lt;method 'reduce' of 'numpy.ufunc' objects&gt; 0.56% (10 10 6.870200000000001e-05 6.870200000000001e-05)</title>
     <rect height="100%" width="100%" fill="rgb(198, 198, 255)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">&lt;method 'reduce' of 'numpy.ufunc' objects&gt;</text>
 </g></svg>
-<svg class="func_g" x="1123.256387703709" y="288" width="5.737260318337435" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/numpy/core/fromnumeric.py:69:_wrapreduction 0.56% (10 10 5.9600000000000005e-05 5.9600000000000005e-05)</title>
+<svg class="func_g" x="1117.366938490203" y="288" width="5.665214655866165" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/numpy/core/fromnumeric.py:69:_wrapreduction 0.56% (10 10 6.870200000000001e-05 6.870200000000001e-05)</title>
     <rect height="100%" width="100%" fill="rgb(225, 225, 225)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">_wrapreduction</text>
 </g></svg>
-<svg class="func_g" x="1123.256387703709" y="312" width="5.737260318337435" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/numpy/core/fromnumeric.py:2162:sum 0.22% (10 10 2.3500000000000002e-05 9.2e-05)</title>
+<svg class="func_g" x="1117.366938490203" y="312" width="5.665214655866165" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/numpy/core/fromnumeric.py:2162:sum 0.25% (10 10 3.1100000000000004e-05 0.000109203)</title>
     <rect height="100%" width="100%" fill="rgb(218, 218, 218)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">sum</text>
 </g></svg>
-<svg class="func_g" x="1123.256387703709" y="336" width="5.737260318337435" height="23"><g>
-    <title>~:0:&lt;built-in method numpy.core._multiarray_umath.implement_array_function&gt; 0.19% (10 10 1.98e-05 0.00011530000000000001)</title>
+<svg class="func_g" x="1117.366938490203" y="336" width="5.665214655866165" height="23"><g>
+    <title>~:0:&lt;built-in method numpy.core._multiarray_umath.implement_array_function&gt; 0.19% (10 10 2.3904e-05 0.000137307)</title>
     <rect height="100%" width="100%" fill="rgb(204, 204, 204)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">&lt;built-in method numpy.core._multiarray_umath.implement_array_function&gt;</text>
 </g></svg>
-<svg class="func_g" x="1123.256387703709" y="360" width="5.737260318337435" height="23"><g>
-    <title>&lt;__array_function__ internals&gt;:177:sum 0.11% (10 10 1.15e-05 0.00012680000000000002)</title>
+<svg class="func_g" x="1117.366938490203" y="360" width="5.665214655866165" height="23"><g>
+    <title>&lt;__array_function__ internals&gt;:177:sum 0.09% (10 10 1.1501e-05 0.000148808)</title>
     <rect height="100%" width="100%" fill="rgb(190, 190, 190)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">sum</text>
 </g></svg>
-<svg class="func_g" x="1123.256387703709" y="384" width="3.5214923429460647" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/annotation.py:17:__init__ 0.09% (5 5 1e-05 9.55e-05)</title>
+<svg class="func_g" x="1117.366938490203" y="384" width="3.576343385600083" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/annotation.py:17:__init__ 0.09% (5 5 1.0602000000000001e-05 0.000113708)</title>
     <rect height="100%" width="100%" fill="rgb(218, 218, 218)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">__init__</text>
 </g></svg>
-<svg class="func_g" x="1123.256387703709" y="408" width="3.5214923429460647" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224:__call__ 1.01% (5 5 0.00010689900000000001 0.00043309900000000005)</title>
+<svg class="func_g" x="1117.366938490203" y="408" width="3.576343385600083" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224:__call__ 1.09% (5 5 0.000134606 0.0005223280000000001)</title>
     <rect height="100%" width="100%" fill="rgb(190, 190, 190)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">__call__</text>
 </g></svg>
-<svg class="func_g" x="1127.7778800466551" y="384" width="1.21576797539137" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:276:&lt;listcomp&gt; 0.03% (5 5 3.6000000000000003e-06 4.6800000000000006e-05)</title>
+<svg class="func_g" x="1121.943281875803" y="384" width="1.0888712702660812" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:276:&lt;listcomp&gt; 0.03% (5 5 4.3e-06 5.1902000000000006e-05)</title>
     <rect height="100%" width="100%" fill="rgb(197, 197, 197)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">&lt;listcomp&gt;</text>
 </g></svg>
-<svg class="func_g" x="1127.7778800466551" y="408" width="1.21576797539137" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224:__call__ 0.21% (1 1 2.23e-05 6.91e-05)</title>
+<svg class="func_g" x="1121.943281875803" y="408" width="1.0888712702660812" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224:__call__ 0.28% (1 1 3.4302000000000005e-05 8.6204e-05)</title>
     <rect height="100%" width="100%" fill="rgb(190, 190, 190)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">__call__</text>
 </g></svg>
-<svg class="func_g" x="1130.5701585526424" y="264" width="16.63443975940671" height="23"><g>
-    <title>~:0:&lt;method 'tolist' of 'numpy.ndarray' objects&gt; 1.47% (5 5 0.000156 0.000156)</title>
+<svg class="func_g" x="1124.4881298117057" y="264" width="16.54142232704296" height="23"><g>
+    <title>~:0:&lt;method 'tolist' of 'numpy.ndarray' objects&gt; 1.46% (5 5 0.000180809 0.000180809)</title>
     <rect height="100%" width="100%" fill="rgb(166, 166, 255)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">&lt;method 'tolist' of 'numpy.ndarray' objects&gt;</text>
 </g></svg>
-<svg class="func_g" x="1130.5701585526424" y="288" width="16.63443975940671" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/annotation.py:17:__init__ 1.47% (5 5 0.000156 0.000156)</title>
+<svg class="func_g" x="1124.4881298117057" y="288" width="16.54142232704296" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/annotation.py:17:__init__ 1.46% (5 5 0.000180809 0.000180809)</title>
     <rect height="100%" width="100%" fill="rgb(218, 218, 218)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">__init__</text>
 </g></svg>
-<svg class="func_g" x="1130.5701585526424" y="312" width="16.63443975940671" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224:__call__ 1.01% (5 5 0.00010689900000000001 0.00043309900000000005)</title>
+<svg class="func_g" x="1124.4881298117057" y="312" width="16.54142232704296" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224:__call__ 1.09% (5 5 0.000134606 0.0005223280000000001)</title>
     <rect height="100%" width="100%" fill="rgb(190, 190, 190)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">__call__</text>
 </g></svg>
-<svg class="func_g" x="1148.204598312049" y="264" width="1.7242948602673187" height="23"><g>
-    <title>~:0:&lt;method 'unbind' of 'torch._C._TensorBase' objects&gt; 0.23% (2 2 2.4100000000000003e-05 2.4100000000000003e-05)</title>
+<svg class="func_g" x="1142.0295521387488" y="264" width="6.2184986822759445" height="23"><g>
+    <title>~:0:&lt;method 'unbind' of 'torch._C._TensorBase' objects&gt; 0.60% (2 2 7.4405e-05 7.4405e-05)</title>
     <rect height="100%" width="100%" fill="rgb(230, 230, 255)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">&lt;method 'unbind' of 'torch._C._TensorBase' objects&gt;</text>
 </g></svg>
-<svg class="func_g" x="1148.204598312049" y="288" width="1.7242948602673187" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/torch/_tensor.py:713:__iter__ 0.23% (2 2 2.4100000000000003e-05 2.4100000000000003e-05)</title>
+<svg class="func_g" x="1142.0295521387488" y="288" width="6.2184986822759445" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/torch/_tensor.py:713:__iter__ 0.60% (2 2 7.4405e-05 7.4405e-05)</title>
     <rect height="100%" width="100%" fill="rgb(197, 197, 197)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">__iter__</text>
 </g></svg>
-<svg class="func_g" x="1148.204598312049" y="312" width="1.7242948602673192" height="23"><g>
-    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224:__call__ 0.08% (2 2 8.7e-06 3.5600000000000005e-05)</title>
+<svg class="func_g" x="1142.0295521387488" y="312" width="6.2184986822759445" height="23"><g>
+    <title>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224:__call__ 0.08% (2 2 9.600000000000001e-06 8.7705e-05)</title>
     <rect height="100%" width="100%" fill="rgb(190, 190, 190)" rx="2" ry="2" />
     <text alignment-baseline="central" x="4.0" y="12.0" font-size="12px" fill="rgb(0,0,0)">__call__</text>
 </g></svg>
