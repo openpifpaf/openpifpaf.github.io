@@ -578,22 +578,22 @@ for a step-by-step walkthrough.</p>
 <h2>Download COCO data<a class="headerlink" href="#download-coco-data" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="http://cocodataset.org/">COCO</a> is a great datasets containing many types of annotations, including bounding boxes, 2D poses, etc.
 You can also copy this code block into a code cell in Jupyter or Google Colab with the prefix <code class="docutils literal notranslate"><span class="pre">%%bash</span></code>.</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mkdir data-mscoco
-<span class="nb">cd</span> data-mscoco
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>data-mscoco
+<span class="nb">cd</span><span class="w"> </span>data-mscoco
 
-wget -q -nc http://images.cocodataset.org/annotations/annotations_trainval2017.zip
-wget -q -nc http://images.cocodataset.org/annotations/image_info_test2017.zip
-unzip -q -n annotations_trainval2017.zip
-unzip -q -n image_info_test2017.zip
+wget<span class="w"> </span>-q<span class="w"> </span>-nc<span class="w"> </span>http://images.cocodataset.org/annotations/annotations_trainval2017.zip
+wget<span class="w"> </span>-q<span class="w"> </span>-nc<span class="w"> </span>http://images.cocodataset.org/annotations/image_info_test2017.zip
+unzip<span class="w"> </span>-q<span class="w"> </span>-n<span class="w"> </span>annotations_trainval2017.zip
+unzip<span class="w"> </span>-q<span class="w"> </span>-n<span class="w"> </span>image_info_test2017.zip
 
-mkdir images
-<span class="nb">cd</span> images
-wget -q -nc http://images.cocodataset.org/zips/val2017.zip
-wget -q -nc http://images.cocodataset.org/zips/train2017.zip
-wget -q -nc http://images.cocodataset.org/zips/test2017.zip
-unzip -q -n val2017.zip
-unzip -q -n train2017.zip
-unzip -q -n test2017.zip
+mkdir<span class="w"> </span>images
+<span class="nb">cd</span><span class="w"> </span>images
+wget<span class="w"> </span>-q<span class="w"> </span>-nc<span class="w"> </span>http://images.cocodataset.org/zips/val2017.zip
+wget<span class="w"> </span>-q<span class="w"> </span>-nc<span class="w"> </span>http://images.cocodataset.org/zips/train2017.zip
+wget<span class="w"> </span>-q<span class="w"> </span>-nc<span class="w"> </span>http://images.cocodataset.org/zips/test2017.zip
+unzip<span class="w"> </span>-q<span class="w"> </span>-n<span class="w"> </span>val2017.zip
+unzip<span class="w"> </span>-q<span class="w"> </span>-n<span class="w"> </span>train2017.zip
+unzip<span class="w"> </span>-q<span class="w"> </span>-n<span class="w"> </span>test2017.zip
 </pre></div>
 </div>
 </section>
@@ -696,20 +696,20 @@ unzip -q -n test2017.zip
 <section id="download-mpii-data-draft">
 <h2>Download MPII data [draft]<a class="headerlink" href="#download-mpii-data-draft" title="Permalink to this headline">#</a></h2>
 <p>This MPII data is currently not used anywhere.</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mkdir data-mpii
-<span class="nb">cd</span> data-mpii
-wget https://datasets.d2.mpi-inf.mpg.de/andriluka14cvpr/mpii_human_pose_v1.tar.gz
-wget https://datasets.d2.mpi-inf.mpg.de/andriluka14cvpr/mpii_human_pose_v1_u12_2.zip
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>data-mpii
+<span class="nb">cd</span><span class="w"> </span>data-mpii
+wget<span class="w"> </span>https://datasets.d2.mpi-inf.mpg.de/andriluka14cvpr/mpii_human_pose_v1.tar.gz
+wget<span class="w"> </span>https://datasets.d2.mpi-inf.mpg.de/andriluka14cvpr/mpii_human_pose_v1_u12_2.zip
 </pre></div>
 </div>
 </section>
 <section id="download-nightowls-data-draft">
 <h2>Download NightOwls data [draft]<a class="headerlink" href="#download-nightowls-data-draft" title="Permalink to this headline">#</a></h2>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mkdir data-nightowls
-<span class="nb">cd</span> data-nightowls
-wget http://www.robots.ox.ac.uk/<span class="se">\~</span>vgg/data/nightowls/python/nightowls_validation.json
-wget http://www.robots.ox.ac.uk/<span class="se">\~</span>vgg/data/nightowls/python/nightowls_validation.zip
-unzip nightowls_validation.zip
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>data-nightowls
+<span class="nb">cd</span><span class="w"> </span>data-nightowls
+wget<span class="w"> </span>http://www.robots.ox.ac.uk/<span class="se">\~</span>vgg/data/nightowls/python/nightowls_validation.json
+wget<span class="w"> </span>http://www.robots.ox.ac.uk/<span class="se">\~</span>vgg/data/nightowls/python/nightowls_validation.zip
+unzip<span class="w"> </span>nightowls_validation.zip
 </pre></div>
 </div>
 </section>
