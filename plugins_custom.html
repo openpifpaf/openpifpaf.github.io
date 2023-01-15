@@ -748,7 +748,7 @@ what the output of the decoder is expected to be.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">initiate_json</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Initiate json file: one for training phase and another one for validation.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">json_file</span><span class="p">[</span><span class="s2">&quot;info&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://github.com/openpifpaf/openpifpaf&quot;</span><span class="p">,</span>
@@ -764,7 +764,7 @@ what the output of the decoder is expected to be.</p>
 
 
 <span class="k">def</span> <span class="nf">process_image</span><span class="p">(</span><span class="n">json_file</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Update image field in json file</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># ------------------</span>
@@ -781,7 +781,7 @@ what the output of the decoder is expected to be.</p>
 
 
 <span class="k">def</span> <span class="nf">process_annotation</span><span class="p">(</span><span class="n">json_file</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Process and include in the json file a single annotation (instance) from a given image</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># ------------------</span>
@@ -811,19 +811,19 @@ what the output of the decoder is expected to be.</p>
 <li><p>Include the commands we have created in the data module for this specific dataset, for example <code class="docutils literal notranslate"><span class="pre">--apollo-square-edge</span></code> to define the size of the training crops.</p></li>
 </ol>
 <p>A training command may look like this:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3 -m openpifpaf.train --dataset apollo <span class="se">\</span>
---apollo-square-edge<span class="o">=</span><span class="m">769</span> <span class="se">\</span>
---basenet<span class="o">=</span>shufflenetv2k16 --lr<span class="o">=</span><span class="m">0</span>.00002 --momentum<span class="o">=</span><span class="m">0</span>.95  --b-scale<span class="o">=</span><span class="m">5</span>.0 <span class="se">\</span>
---epochs<span class="o">=</span><span class="m">300</span> --lr-decay <span class="m">160</span> <span class="m">260</span> --lr-decay-epochs<span class="o">=</span><span class="m">10</span>  --weight-decay<span class="o">=</span>1e-5 <span class="se">\</span>
---weight-decay<span class="o">=</span>1e-5  --val-interval <span class="m">10</span> --loader-workers <span class="m">16</span> --apollo-upsample <span class="m">2</span> <span class="se">\</span>
---apollo-bmin <span class="m">2</span> --batch-size <span class="m">8</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>openpifpaf.train<span class="w"> </span>--dataset<span class="w"> </span>apollo<span class="w"> </span><span class="se">\</span>
+--apollo-square-edge<span class="o">=</span><span class="m">769</span><span class="w"> </span><span class="se">\</span>
+--basenet<span class="o">=</span>shufflenetv2k16<span class="w"> </span>--lr<span class="o">=</span><span class="m">0</span>.00002<span class="w"> </span>--momentum<span class="o">=</span><span class="m">0</span>.95<span class="w">  </span>--b-scale<span class="o">=</span><span class="m">5</span>.0<span class="w"> </span><span class="se">\</span>
+--epochs<span class="o">=</span><span class="m">300</span><span class="w"> </span>--lr-decay<span class="w"> </span><span class="m">160</span><span class="w"> </span><span class="m">260</span><span class="w"> </span>--lr-decay-epochs<span class="o">=</span><span class="m">10</span><span class="w">  </span>--weight-decay<span class="o">=</span>1e-5<span class="w"> </span><span class="se">\</span>
+--weight-decay<span class="o">=</span>1e-5<span class="w">  </span>--val-interval<span class="w"> </span><span class="m">10</span><span class="w"> </span>--loader-workers<span class="w"> </span><span class="m">16</span><span class="w"> </span>--apollo-upsample<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
+--apollo-bmin<span class="w"> </span><span class="m">2</span><span class="w"> </span>--batch-size<span class="w"> </span><span class="m">8</span>
 </pre></div>
 </div>
 </section>
 <section id="evaluation">
 <h2>Evaluation<a class="headerlink" href="#evaluation" title="Permalink to this headline">#</a></h2>
 <p>Evaluation on the COCO metric is supported by pifpaf and a simple evaluation command may look like this:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3 -m openpifpaf.eval --dataset<span class="o">=</span>apollo --checkpoint &lt;path of the model&gt;
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>openpifpaf.eval<span class="w"> </span>--dataset<span class="o">=</span>apollo<span class="w"> </span>--checkpoint<span class="w"> </span>&lt;path<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>model&gt;
 </pre></div>
 </div>
 <p>To evaluate on custom metrics, we would need to define a new metric and add it in the list of metrics, inside the data module. In our case, we have a a DataModule class called <strong>ApolloKp</strong>, and its function <em><strong>metrics</strong></em> returns the list of metrics to run. Each metric is defined as a class that inherits from openpifpaf.metric.base.Base</p>
@@ -832,11 +832,11 @@ what the output of the decoder is expected to be.</p>
 <section id="prediction">
 <h2>Prediction<a class="headerlink" href="#prediction" title="Permalink to this headline">#</a></h2>
 <p>To run your model trained on a different dataset, you simply need to run the standard OpenPifPaf command specifying your model. A prediction command looks like this:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3 -m openpifpaf.predict --checkpoint &lt;model path&gt;
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>openpifpaf.predict<span class="w"> </span>--checkpoint<span class="w"> </span>&lt;model<span class="w"> </span>path&gt;
 </pre></div>
 </div>
 <p>All the command line options are still valid, check them with:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3 -m openpifpaf.predict --help
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>openpifpaf.predict<span class="w"> </span>--help
 </pre></div>
 </div>
 </section>

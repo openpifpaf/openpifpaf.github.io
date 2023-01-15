@@ -755,22 +755,22 @@ predictions of <span class="math notranslate nohighlight">\(\hat{b}\)</span>.</p
 <section id="overfitting">
 <h2>Overfitting<a class="headerlink" href="#overfitting" title="Permalink to this headline">#</a></h2>
 <p>An effective way to validate the pipeline is working, loss functions are implemented correctly, encoders are correct, etc. is to overfit on a single image. You should be able to produce perfect predictions for that image. Some caveats: you need to deactivate augmentations, you must evaluate at the exact trained image size and the image should not contain crowd annotations (i.e. areas that will be ignored during training). Here is an example training command for a <code class="docutils literal notranslate"><span class="pre">cocokp</span></code> overfitting experiment:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">time</span> <span class="nv">CUDA_VISIBLE_DEVICES</span><span class="o">=</span><span class="m">1</span> python3 -m openpifpaf.train <span class="se">\</span>
-  --lr<span class="o">=</span><span class="m">0</span>.01 --momentum<span class="o">=</span><span class="m">0</span>.9 --b-scale<span class="o">=</span><span class="m">5</span>.0 <span class="se">\</span>
-  --epochs<span class="o">=</span><span class="m">1000</span> --lr-warm-up-epochs<span class="o">=</span><span class="m">100</span> <span class="se">\</span>
-  --batch-size<span class="o">=</span><span class="m">4</span> --train-batches<span class="o">=</span><span class="m">1</span> --val-batches<span class="o">=</span><span class="m">1</span> --val-interval<span class="o">=</span><span class="m">100</span> <span class="se">\</span>
-  --weight-decay<span class="o">=</span>1e-5 <span class="se">\</span>
-  --dataset<span class="o">=</span>cocokp --cocokp-upsample<span class="o">=</span><span class="m">2</span> --cocokp-no-augmentation <span class="se">\</span>
-  --basenet<span class="o">=</span>shufflenetv2k16
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">time</span><span class="w"> </span><span class="nv">CUDA_VISIBLE_DEVICES</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>openpifpaf.train<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--lr<span class="o">=</span><span class="m">0</span>.01<span class="w"> </span>--momentum<span class="o">=</span><span class="m">0</span>.9<span class="w"> </span>--b-scale<span class="o">=</span><span class="m">5</span>.0<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--epochs<span class="o">=</span><span class="m">1000</span><span class="w"> </span>--lr-warm-up-epochs<span class="o">=</span><span class="m">100</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--batch-size<span class="o">=</span><span class="m">4</span><span class="w"> </span>--train-batches<span class="o">=</span><span class="m">1</span><span class="w"> </span>--val-batches<span class="o">=</span><span class="m">1</span><span class="w"> </span>--val-interval<span class="o">=</span><span class="m">100</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--weight-decay<span class="o">=</span>1e-5<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dataset<span class="o">=</span>cocokp<span class="w"> </span>--cocokp-upsample<span class="o">=</span><span class="m">2</span><span class="w"> </span>--cocokp-no-augmentation<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--basenet<span class="o">=</span>shufflenetv2k16
 </pre></div>
 </div>
 <p>The very first image in the training set has a large crowd annotation. Therefore, the above command overfits on four images.
 Here is the corresponding predict command for the <a class="reference external" href="https://www.flickr.com/photos/infiniteworld/5341741494/">second image</a> in the training set:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3 -m openpifpaf.predict <span class="se">\</span>
-  --checkpoint outputs/shufflenetv2k16-201007-153356-cocokp-1de9503b.pkl <span class="se">\</span>
-  --debug-indices cif:5 caf:5 --debug-images --long-edge<span class="o">=</span><span class="m">385</span> --loader-workers<span class="o">=</span><span class="m">0</span> <span class="se">\</span>
-  --save-all --image-output all-images/overfitted.jpeg <span class="se">\</span>
-  data-mscoco/images/train2017/000000262146.jpg
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>openpifpaf.predict<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--checkpoint<span class="w"> </span>outputs/shufflenetv2k16-201007-153356-cocokp-1de9503b.pkl<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--debug-indices<span class="w"> </span>cif:5<span class="w"> </span>caf:5<span class="w"> </span>--debug-images<span class="w"> </span>--long-edge<span class="o">=</span><span class="m">385</span><span class="w"> </span>--loader-workers<span class="o">=</span><span class="m">0</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--save-all<span class="w"> </span>--image-output<span class="w"> </span>all-images/overfitted.jpeg<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>data-mscoco/images/train2017/000000262146.jpg
 </pre></div>
 </div>
 <p>While the field predictions are almost perfect, it will predict two annotations while there is only one ground truth annotation. That is because the standard skeleton has no connection that goes directly from left-ear to nose and the left-eye is not visible and not annotated. You can add <code class="docutils literal notranslate"><span class="pre">--dense-connections</span></code> to include additional connections in the skeleton which will connect the nose keypoint to the rest of the skeleton.</p>
@@ -778,21 +778,21 @@ Here is the corresponding predict command for the <a class="reference external" 
 <section id="shufflenet">
 <h2>ShuffleNet<a class="headerlink" href="#shufflenet" title="Permalink to this headline">#</a></h2>
 <p>ShuffleNet models are trained without ImageNet pretraining:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">time</span> <span class="nv">CUDA_VISIBLE_DEVICES</span><span class="o">=</span><span class="m">0</span>,1 python3 -m openpifpaf.train <span class="se">\</span>
-  --lr<span class="o">=</span><span class="m">0</span>.0003 --momentum<span class="o">=</span><span class="m">0</span>.95 --b-scale<span class="o">=</span><span class="m">10</span>.0 --clip-grad-value<span class="o">=</span><span class="m">10</span> <span class="se">\</span>
-  --epochs<span class="o">=</span><span class="m">250</span> --lr-decay <span class="m">220</span> <span class="m">240</span> --lr-decay-epochs<span class="o">=</span><span class="m">10</span> <span class="se">\</span>
-  --batch-size<span class="o">=</span><span class="m">32</span> <span class="se">\</span>
-  --weight-decay<span class="o">=</span>1e-5 <span class="se">\</span>
-  --dataset<span class="o">=</span>cocokp --cocokp-upsample<span class="o">=</span><span class="m">2</span> --cocokp-extended-scale --cocokp-orientation-invariant<span class="o">=</span><span class="m">0</span>.1 <span class="se">\</span>
-  --basenet<span class="o">=</span>shufflenetv2k16
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">time</span><span class="w"> </span><span class="nv">CUDA_VISIBLE_DEVICES</span><span class="o">=</span><span class="m">0</span>,1<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>openpifpaf.train<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--lr<span class="o">=</span><span class="m">0</span>.0003<span class="w"> </span>--momentum<span class="o">=</span><span class="m">0</span>.95<span class="w"> </span>--b-scale<span class="o">=</span><span class="m">10</span>.0<span class="w"> </span>--clip-grad-value<span class="o">=</span><span class="m">10</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--epochs<span class="o">=</span><span class="m">250</span><span class="w"> </span>--lr-decay<span class="w"> </span><span class="m">220</span><span class="w"> </span><span class="m">240</span><span class="w"> </span>--lr-decay-epochs<span class="o">=</span><span class="m">10</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--batch-size<span class="o">=</span><span class="m">32</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--weight-decay<span class="o">=</span>1e-5<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dataset<span class="o">=</span>cocokp<span class="w"> </span>--cocokp-upsample<span class="o">=</span><span class="m">2</span><span class="w"> </span>--cocokp-extended-scale<span class="w"> </span>--cocokp-orientation-invariant<span class="o">=</span><span class="m">0</span>.1<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--basenet<span class="o">=</span>shufflenetv2k16
 </pre></div>
 </div>
 <p>You can refine an existing model with the <code class="docutils literal notranslate"><span class="pre">--checkpoint</span></code> option.
 We found that for stable training, the learning rate <span class="math notranslate nohighlight">\(\lambda\)</span>,
 the <code class="docutils literal notranslate"><span class="pre">clip-grad-value</span></code> <span class="math notranslate nohighlight">\(c\)</span> and the <span class="math notranslate nohighlight">\(\epsilon\)</span> from the denominator of the
 BatchNorm should obey:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b9f2bd53-4941-4ae1-b55b-65d618f18884">
-<span class="eqno">(1)<a class="headerlink" href="#equation-b9f2bd53-4941-4ae1-b55b-65d618f18884" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-43073828-8bed-46ea-bd2f-abe95d2895aa">
+<span class="eqno">(1)<a class="headerlink" href="#equation-43073828-8bed-46ea-bd2f-abe95d2895aa" title="Permalink to this equation">#</a></span>\[\begin{align}
     \lambda \cdot c &amp;\leq \sqrt{\epsilon}
 \end{align}\]</div>
 <p>where the default <span class="math notranslate nohighlight">\(\epsilon\)</span> is <span class="math notranslate nohighlight">\(10^{-4}\)</span> (different from the PyTorch default).
@@ -813,52 +813,52 @@ That makes their training characteristics different from ShuffleNet (i.e. they l
 <h2>Logs<a class="headerlink" href="#logs" title="Permalink to this headline">#</a></h2>
 <p>For reference, check out the log files of the pretrained models. Models with their log files are shared as release “Assets” in the separate <a class="reference external" href="https://github.com/openpifpaf/torchhub">openpifpaf/torchhub</a> repository: click on “releases” and expand “Assets” on the latest release.</p>
 <p>To visualize log files with <a class="reference internal" href="cli_help.html#cli-help-logs"><span class="std std-ref">openpifpaf.logs</span></a>:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3 -m openpifpaf.logs <span class="se">\</span>
-  outputs/resnet50block5-pif-paf-edge401-190424-122009.pkl.log <span class="se">\</span>
-  outputs/resnet101block5-pif-paf-edge401-190412-151013.pkl.log <span class="se">\</span>
-  outputs/resnet152block5-pif-paf-edge401-190412-121848.pkl.log
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>openpifpaf.logs<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>outputs/resnet50block5-pif-paf-edge401-190424-122009.pkl.log<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>outputs/resnet101block5-pif-paf-edge401-190412-151013.pkl.log<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>outputs/resnet152block5-pif-paf-edge401-190412-121848.pkl.log
 </pre></div>
 </div>
 <p>Evaluation metrics like average precision (AP) are created with the <a class="reference internal" href="cli_help.html#cli-help-eval"><span class="std std-ref">openpifpaf.eval</span></a> tool.
 To produce evaluation metrics every five epochs for every new checkpoint that is created:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nv">CUDA_VISIBLE_DEVICES</span><span class="o">=</span><span class="m">0</span> python3 -m openpifpaf.eval <span class="se">\</span>
-  --watch --checkpoint <span class="s2">&quot;outputs/shufflenetv2k??-*-cocokp*.pkl.epoch??[0,5]&quot;</span> <span class="se">\</span>
-  --loader-workers<span class="o">=</span><span class="m">2</span> <span class="se">\</span>
-  --decoder<span class="o">=</span>cifcaf:0 <span class="se">\</span>
-  --dataset<span class="o">=</span>cocokp --force-complete-pose --seed-threshold<span class="o">=</span><span class="m">0</span>.2
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nv">CUDA_VISIBLE_DEVICES</span><span class="o">=</span><span class="m">0</span><span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>openpifpaf.eval<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--watch<span class="w"> </span>--checkpoint<span class="w"> </span><span class="s2">&quot;outputs/shufflenetv2k??-*-cocokp*.pkl.epoch??[0,5]&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--loader-workers<span class="o">=</span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--decoder<span class="o">=</span>cifcaf:0<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dataset<span class="o">=</span>cocokp<span class="w"> </span>--force-complete-pose<span class="w"> </span>--seed-threshold<span class="o">=</span><span class="m">0</span>.2
 </pre></div>
 </div>
 </section>
 <section id="testset-submission">
 <h2>Testset Submission<a class="headerlink" href="#testset-submission" title="Permalink to this headline">#</a></h2>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nv">CUDA_VISIBLE_DEVICES</span><span class="o">=</span><span class="m">0</span> python3 -m openpifpaf.eval <span class="se">\</span>
-  --checkpoint shufflenetv2k30 <span class="se">\</span>
-  --loader-workers<span class="o">=</span><span class="m">2</span> <span class="se">\</span>
-  --decoder<span class="o">=</span>cifcaf:0 <span class="se">\</span>
-  --dataset<span class="o">=</span>cocokp --force-complete-pose --seed-threshold<span class="o">=</span><span class="m">0</span>.2 <span class="se">\</span>
-  --cocokp-eval-testdev2017 --coco-no-eval-annotation-filter --write-predictions
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nv">CUDA_VISIBLE_DEVICES</span><span class="o">=</span><span class="m">0</span><span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>openpifpaf.eval<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--checkpoint<span class="w"> </span>shufflenetv2k30<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--loader-workers<span class="o">=</span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--decoder<span class="o">=</span>cifcaf:0<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dataset<span class="o">=</span>cocokp<span class="w"> </span>--force-complete-pose<span class="w"> </span>--seed-threshold<span class="o">=</span><span class="m">0</span>.2<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--cocokp-eval-testdev2017<span class="w"> </span>--coco-no-eval-annotation-filter<span class="w"> </span>--write-predictions
 </pre></div>
 </div>
 <p>This will produce the file <code class="docutils literal notranslate"><span class="pre">shufflenetv2k30.eval-cocokp.zip</span></code> which you can submit to the competition on codalab.</p>
 </section>
 <section id="detection-experimental">
 <h2>Detection (experimental)<a class="headerlink" href="#detection-experimental" title="Permalink to this headline">#</a></h2>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">time</span> <span class="nv">CUDA_VISIBLE_DEVICES</span><span class="o">=</span><span class="m">0</span>,1 python3 -m openpifpaf.train <span class="se">\</span>
-  --lr<span class="o">=</span><span class="m">0</span>.0003 --momentum<span class="o">=</span><span class="m">0</span>.95 --clip-grad-value<span class="o">=</span><span class="m">10</span> <span class="se">\</span>
-  --epochs<span class="o">=</span><span class="m">150</span> <span class="se">\</span>
-  --lr-decay <span class="m">130</span> <span class="m">140</span> --lr-decay-epochs<span class="o">=</span><span class="m">10</span> <span class="se">\</span>
-  --batch-size<span class="o">=</span><span class="m">64</span> <span class="se">\</span>
-  --weight-decay<span class="o">=</span>1e-5 <span class="se">\</span>
-  --dataset<span class="o">=</span>cocodet --cocodet-upsample<span class="o">=</span><span class="m">2</span> <span class="se">\</span>
-  --basenet<span class="o">=</span>resnet18 --resnet-input-conv2-stride<span class="o">=</span><span class="m">2</span> --resnet-block5-dilation<span class="o">=</span><span class="m">2</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">time</span><span class="w"> </span><span class="nv">CUDA_VISIBLE_DEVICES</span><span class="o">=</span><span class="m">0</span>,1<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>openpifpaf.train<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--lr<span class="o">=</span><span class="m">0</span>.0003<span class="w"> </span>--momentum<span class="o">=</span><span class="m">0</span>.95<span class="w"> </span>--clip-grad-value<span class="o">=</span><span class="m">10</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--epochs<span class="o">=</span><span class="m">150</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--lr-decay<span class="w"> </span><span class="m">130</span><span class="w"> </span><span class="m">140</span><span class="w"> </span>--lr-decay-epochs<span class="o">=</span><span class="m">10</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--batch-size<span class="o">=</span><span class="m">64</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--weight-decay<span class="o">=</span>1e-5<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dataset<span class="o">=</span>cocodet<span class="w"> </span>--cocodet-upsample<span class="o">=</span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--basenet<span class="o">=</span>resnet18<span class="w"> </span>--resnet-input-conv2-stride<span class="o">=</span><span class="m">2</span><span class="w"> </span>--resnet-block5-dilation<span class="o">=</span><span class="m">2</span>
 </pre></div>
 </div>
 <p>with eval code:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nv">CUDA_VISIBLE_DEVICES</span><span class="o">=</span><span class="m">0</span> python3 -m openpifpaf.eval <span class="se">\</span>
-  --watch --checkpoint <span class="s2">&quot;outputs/resnet??-*-cocodet*.pkl.epoch??[0,5]&quot;</span> <span class="se">\</span>
-  --loader-workers<span class="o">=</span><span class="m">2</span> <span class="se">\</span>
-  --dataset<span class="o">=</span>cocodet --decoder<span class="o">=</span>cifdet:0 <span class="se">\</span>
-  --seed-threshold<span class="o">=</span><span class="m">0</span>.1 --instance-threshold<span class="o">=</span><span class="m">0</span>.1
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nv">CUDA_VISIBLE_DEVICES</span><span class="o">=</span><span class="m">0</span><span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>openpifpaf.eval<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--watch<span class="w"> </span>--checkpoint<span class="w"> </span><span class="s2">&quot;outputs/resnet??-*-cocodet*.pkl.epoch??[0,5]&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--loader-workers<span class="o">=</span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dataset<span class="o">=</span>cocodet<span class="w"> </span>--decoder<span class="o">=</span>cifdet:0<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--seed-threshold<span class="o">=</span><span class="m">0</span>.1<span class="w"> </span>--instance-threshold<span class="o">=</span><span class="m">0</span>.1
 </pre></div>
 </div>
 <p>COCO AP=24.3% at epoch 90 (now outdated).</p>
@@ -875,8 +875,8 @@ To produce evaluation metrics every five epochs for every new checkpoint that is
 </ul>
 <p>After setting up your environment, you can execute the training. You can even use the container without the “devel” tools to submit the job.</p>
 <p><strong>HPC job submission</strong>: Our environment supports <a class="reference external" href="https://slurm.schedmd.com/quickstart.html">Slurm</a> and <a class="reference external" href="https://sylabs.io/guides/3.6/user-guide/">Singularity</a>. Run</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sbatch ./train.sh <span class="se">\</span>
-  --lr<span class="o">=</span><span class="m">0</span>.0003  <span class="c1"># and all the other parameters for training from above</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sbatch<span class="w"> </span>./train.sh<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--lr<span class="o">=</span><span class="m">0</span>.0003<span class="w">  </span><span class="c1"># and all the other parameters for training from above</span>
 </pre></div>
 </div>
 <p>with <code class="docutils literal notranslate"><span class="pre">train.sh</span></code> containing:</p>
@@ -889,16 +889,16 @@ To produce evaluation metrics every five epochs for every new checkpoint that is
 <span class="c1">#SBATCH --account=&lt;your-account-name&gt;</span>
 <span class="c1">#SBATCH --gres gpu:2</span>
 
-srun singularity <span class="nb">exec</span> --bind &lt;make-host-dir-available&gt; --nv pytorch_latest.sif <span class="se">\</span>
-  /bin/bash -c <span class="s2">&quot;source ./venv3/bin/activate &amp;&amp; python3 -u -m openpifpaf.train </span><span class="k">$(</span><span class="nb">printf</span> <span class="s1">&#39;%q &#39;</span> <span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span>
+srun<span class="w"> </span>singularity<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>--bind<span class="w"> </span>&lt;make-host-dir-available&gt;<span class="w"> </span>--nv<span class="w"> </span>pytorch_latest.sif<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>/bin/bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;source ./venv3/bin/activate &amp;&amp; python3 -u -m openpifpaf.train </span><span class="k">$(</span><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;%q &#39;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
 <p>Similarly, an <code class="docutils literal notranslate"><span class="pre">eval.sh</span></code> script might be run with</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sbatch ./eval.sh <span class="se">\</span>
-  --watch --checkpoint <span class="s2">&quot;outputs/shufflenetv2k16-201023-163830-cocokp.pkl.epoch??[0,5]&quot;</span> <span class="se">\</span>
-  --dataset<span class="o">=</span>cocokp <span class="se">\</span>
-  --loader-workers<span class="o">=</span><span class="m">2</span> <span class="se">\</span>
-  --force-complete-pose --seed-threshold<span class="o">=</span><span class="m">0</span>.2
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sbatch<span class="w"> </span>./eval.sh<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--watch<span class="w"> </span>--checkpoint<span class="w"> </span><span class="s2">&quot;outputs/shufflenetv2k16-201023-163830-cocokp.pkl.epoch??[0,5]&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dataset<span class="o">=</span>cocokp<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--loader-workers<span class="o">=</span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--force-complete-pose<span class="w"> </span>--seed-threshold<span class="o">=</span><span class="m">0</span>.2
 </pre></div>
 </div>
 <p>and look like this:</p>
@@ -914,8 +914,8 @@ srun singularity <span class="nb">exec</span> --bind &lt;make-host-dir-available
 <span class="nv">pattern</span><span class="o">=</span><span class="nv">$1</span>
 <span class="nb">shift</span>
 
-srun singularity <span class="nb">exec</span> --bind &lt;make-host-dir-available&gt; --nv pytorch_latest.sif <span class="se">\</span>
-  /bin/bash -c <span class="s2">&quot;source ./venv3/bin/activate &amp;&amp; python3 -m openpifpaf.eval </span><span class="k">$(</span><span class="nb">printf</span> <span class="s1">&#39;%q &#39;</span> <span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span>
+srun<span class="w"> </span>singularity<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>--bind<span class="w"> </span>&lt;make-host-dir-available&gt;<span class="w"> </span>--nv<span class="w"> </span>pytorch_latest.sif<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>/bin/bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;source ./venv3/bin/activate &amp;&amp; python3 -m openpifpaf.eval </span><span class="k">$(</span><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;%q &#39;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
 </section>
@@ -923,9 +923,9 @@ srun singularity <span class="nb">exec</span> --bind &lt;make-host-dir-available
 <h2>DistributedDataParallel<a class="headerlink" href="#distributeddataparallel" title="Permalink to this headline">#</a></h2>
 <p>This mode of parallelization is activated with the <code class="docutils literal notranslate"><span class="pre">--ddp</span></code> argument.
 With <code class="docutils literal notranslate"><span class="pre">torch.distributed.launch</span></code>:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python -m torch.distributed.launch <span class="se">\</span>
-  -m openpifpaf.train --ddp <span class="se">\</span>
-  --all-other-args
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>torch.distributed.launch<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-m<span class="w"> </span>openpifpaf.train<span class="w"> </span>--ddp<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--all-other-args
 </pre></div>
 </div>
 <p>By default, this will replace all BatchNorms in the model with SyncBatchNorms.
@@ -942,8 +942,8 @@ On SLURM, the equivalent sbatch script is:</p>
 <span class="c1">#SBATCH --time 72:00:00</span>
 <span class="c1">#SBATCH --gres gpu:2  # or as many GPUs as you have in a node</span>
 
-srun --gpu-bind<span class="o">=</span>closest singularity <span class="nb">exec</span> --bind /scratch/izar --nv pytorch_latest.sif <span class="se">\</span>
-  /bin/bash -c <span class="s2">&quot;source ./venv3/bin/activate &amp;&amp; MASTER_ADDR=</span><span class="k">$(</span>hostname<span class="k">)</span><span class="s2"> MASTER_PORT=7142 python3 -u -m openpifpaf.train --ddp </span><span class="k">$(</span><span class="nb">printf</span> <span class="s2">&quot;%s &quot;</span> <span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span>
+srun<span class="w"> </span>--gpu-bind<span class="o">=</span>closest<span class="w"> </span>singularity<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>--bind<span class="w"> </span>/scratch/izar<span class="w"> </span>--nv<span class="w"> </span>pytorch_latest.sif<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>/bin/bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;source ./venv3/bin/activate &amp;&amp; MASTER_ADDR=</span><span class="k">$(</span>hostname<span class="k">)</span><span class="s2"> MASTER_PORT=7142 python3 -u -m openpifpaf.train --ddp </span><span class="k">$(</span><span class="nb">printf</span><span class="w"> </span><span class="s2">&quot;%s &quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
 </section>

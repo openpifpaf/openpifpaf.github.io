@@ -627,51 +627,51 @@ src/openpifpaf/csrc/src/occupancy.cpp:53: UserInfo: resizing occupancy buffer
 <h2>Preprocess dataset<a class="headerlink" href="#preprocess-dataset" title="Permalink to this headline">#</a></h2>
 <p>The Animalpose dataset is in a mixed format. Some annotations comes from a collection of keypoints annotations of <a class="reference external" href="http://host.robots.ox.ac.uk/pascal/VOC/">PASCAL Dataset</a> from UC Berkeley, which the authors of the animalpose dataset have extended. Other annotations have been created by the authors of the <a class="reference external" href="https://sites.google.com/view/animal-pose/">dataset</a>. As no datasets split was available, we created a random training/val split with 4000 images for training, and the remaining 600+ for validation.</p>
 <p>The following instructions will help with downloading and preprocessing the Animalpose dataset.</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mkdir data-animalpose
-<span class="nb">cd</span> data-animalpose
-pip install gdown
-gdown https://drive.google.com/uc<span class="se">\?</span>id<span class="se">\=</span>1UkZB-kHg4Eijcb2yRWVN94LuMJtAfjEI
-gdown https://drive.google.com/uc<span class="se">\?</span>id<span class="se">\=</span>1zjYczxVd2i8bl6QAqUlasS5LoZcQQu8b
-gdown https://drive.google.com/uc<span class="se">\?</span>id<span class="se">\=</span>1MDgiGMHEUY0s6w3h9uP9Ovl7KGQEDKhJ
-wget http://host.robots.ox.ac.uk/pascal/VOC/voc2011/VOCtrainval_25-May-2011.tar
-tar -xvf keypoint_image_part2.tar.gz
-tar -xvf keypoint_anno_part2.tar.gz
-tar -xvf keypoint_anno_part1.tar.gz
-tar -xvf VOCtrainval_25-May-2011.tar
-rm keypoint_*.tar.gz
-rm VOCtrainval_25-May-2011.tar
-<span class="nb">cd</span> ..
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>data-animalpose
+<span class="nb">cd</span><span class="w"> </span>data-animalpose
+pip<span class="w"> </span>install<span class="w"> </span>gdown
+gdown<span class="w"> </span>https://drive.google.com/uc<span class="se">\?</span>id<span class="se">\=</span>1UkZB-kHg4Eijcb2yRWVN94LuMJtAfjEI
+gdown<span class="w"> </span>https://drive.google.com/uc<span class="se">\?</span>id<span class="se">\=</span>1zjYczxVd2i8bl6QAqUlasS5LoZcQQu8b
+gdown<span class="w"> </span>https://drive.google.com/uc<span class="se">\?</span>id<span class="se">\=</span>1MDgiGMHEUY0s6w3h9uP9Ovl7KGQEDKhJ
+wget<span class="w"> </span>http://host.robots.ox.ac.uk/pascal/VOC/voc2011/VOCtrainval_25-May-2011.tar
+tar<span class="w"> </span>-xvf<span class="w"> </span>keypoint_image_part2.tar.gz
+tar<span class="w"> </span>-xvf<span class="w"> </span>keypoint_anno_part2.tar.gz
+tar<span class="w"> </span>-xvf<span class="w"> </span>keypoint_anno_part1.tar.gz
+tar<span class="w"> </span>-xvf<span class="w"> </span>VOCtrainval_25-May-2011.tar
+rm<span class="w"> </span>keypoint_*.tar.gz
+rm<span class="w"> </span>VOCtrainval_25-May-2011.tar
+<span class="nb">cd</span><span class="w"> </span>..
 </pre></div>
 </div>
 <p>After downloading the dataset, run:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3 -m openpifpaf.plugins.animalpose.scripts.voc_to_coco
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>openpifpaf.plugins.animalpose.scripts.voc_to_coco
 </pre></div>
 </div>
 </section>
 <section id="training">
 <h2>Training<a class="headerlink" href="#training" title="Permalink to this headline">#</a></h2>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip install pycocotools
-pip install scipy
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>pycocotools
+pip<span class="w"> </span>install<span class="w"> </span>scipy
 </pre></div>
 </div>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3 -m openpifpaf.train <span class="se">\</span>
-  --lr<span class="o">=</span><span class="m">0</span>.0003 --momentum<span class="o">=</span><span class="m">0</span>.95 --clip-grad-value<span class="o">=</span><span class="m">10</span>.0 --b-scale<span class="o">=</span><span class="m">10</span>.0 <span class="se">\</span>
-  --batch-size<span class="o">=</span><span class="m">16</span> --loader-workers<span class="o">=</span><span class="m">12</span> <span class="se">\</span>
-  --epochs<span class="o">=</span><span class="m">400</span> --lr-decay <span class="m">360</span> <span class="m">380</span> --lr-decay-epochs<span class="o">=</span><span class="m">10</span> --val-interval <span class="m">5</span> <span class="se">\</span>
-  --checkpoint<span class="o">=</span>shufflenetv2k30 --lr-warm-up-start-epoch<span class="o">=</span><span class="m">250</span> <span class="se">\</span>
-  --dataset<span class="o">=</span>animal --animal-square-edge<span class="o">=</span><span class="m">385</span> --animal-upsample<span class="o">=</span><span class="m">2</span> <span class="se">\</span>
-  --animal-bmin<span class="o">=</span><span class="m">2</span> --animal-extended-scale <span class="se">\</span>
-  --weight-decay<span class="o">=</span>1e-5
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>openpifpaf.train<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--lr<span class="o">=</span><span class="m">0</span>.0003<span class="w"> </span>--momentum<span class="o">=</span><span class="m">0</span>.95<span class="w"> </span>--clip-grad-value<span class="o">=</span><span class="m">10</span>.0<span class="w"> </span>--b-scale<span class="o">=</span><span class="m">10</span>.0<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--batch-size<span class="o">=</span><span class="m">16</span><span class="w"> </span>--loader-workers<span class="o">=</span><span class="m">12</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--epochs<span class="o">=</span><span class="m">400</span><span class="w"> </span>--lr-decay<span class="w"> </span><span class="m">360</span><span class="w"> </span><span class="m">380</span><span class="w"> </span>--lr-decay-epochs<span class="o">=</span><span class="m">10</span><span class="w"> </span>--val-interval<span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--checkpoint<span class="o">=</span>shufflenetv2k30<span class="w"> </span>--lr-warm-up-start-epoch<span class="o">=</span><span class="m">250</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dataset<span class="o">=</span>animal<span class="w"> </span>--animal-square-edge<span class="o">=</span><span class="m">385</span><span class="w"> </span>--animal-upsample<span class="o">=</span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--animal-bmin<span class="o">=</span><span class="m">2</span><span class="w"> </span>--animal-extended-scale<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--weight-decay<span class="o">=</span>1e-5
 </pre></div>
 </div>
 </section>
 <section id="evaluation">
 <h2>Evaluation<a class="headerlink" href="#evaluation" title="Permalink to this headline">#</a></h2>
 <p>To evaluate our model using the standard COCO metric, we use the following command:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3 -m openpifpaf.eval <span class="se">\</span>
-    --dataset<span class="o">=</span>animal --checkpoint<span class="o">=</span>shufflenetv2k30-animalpose <span class="se">\</span>
-    --batch-size<span class="o">=</span><span class="m">1</span> --skip-existing --loader-workers<span class="o">=</span><span class="m">8</span> --force-complete-pose <span class="se">\</span>
-    --seed-threshold<span class="o">=</span><span class="m">0</span>.01 --instance-threshold<span class="o">=</span><span class="m">0</span>.01
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>openpifpaf.eval<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--dataset<span class="o">=</span>animal<span class="w"> </span>--checkpoint<span class="o">=</span>shufflenetv2k30-animalpose<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--batch-size<span class="o">=</span><span class="m">1</span><span class="w"> </span>--skip-existing<span class="w"> </span>--loader-workers<span class="o">=</span><span class="m">8</span><span class="w"> </span>--force-complete-pose<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--seed-threshold<span class="o">=</span><span class="m">0</span>.01<span class="w"> </span>--instance-threshold<span class="o">=</span><span class="m">0</span>.01
 </pre></div>
 </div>
 </section>
