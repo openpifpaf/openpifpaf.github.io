@@ -789,6 +789,8 @@ DEBUG:openpifpaf.network.factory:Shell(
   )
 )
 DEBUG:openpifpaf.decoder.factory:head names = [&#39;cif&#39;, &#39;caf&#39;]
+DEBUG:openpifpaf.signal:subscribe to eval_reset
+DEBUG:openpifpaf.decoder.pose_similarity:valid keypoints = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
 DEBUG:openpifpaf.visualizer.base:cif: indices = []
 DEBUG:openpifpaf.show.painters:color connections = True, lw = 2, marker = 6
 DEBUG:openpifpaf.show.painters:color connections = False, lw = 6, marker = 3
@@ -796,8 +798,6 @@ DEBUG:openpifpaf.visualizer.base:cif: indices = []
 DEBUG:openpifpaf.visualizer.base:caf: indices = []
 DEBUG:openpifpaf.show.painters:color connections = True, lw = 2, marker = 6
 DEBUG:openpifpaf.show.painters:color connections = False, lw = 6, marker = 3
-DEBUG:openpifpaf.signal:subscribe to eval_reset
-DEBUG:openpifpaf.decoder.pose_similarity:valid keypoints = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
 DEBUG:openpifpaf.visualizer.base:cif: indices = []
 DEBUG:openpifpaf.show.painters:color connections = True, lw = 2, marker = 6
 DEBUG:openpifpaf.show.painters:color connections = False, lw = 6, marker = 3
@@ -814,111 +814,111 @@ INFO:openpifpaf.predictor:neural network device: cpu (CUDA available: False, cou
 DEBUG:openpifpaf.transforms.pad:valid area before pad: [  0.   0. 639. 426.], image size = (640, 427)
 DEBUG:openpifpaf.transforms.pad:pad with [0, 3, 1, 3]
 DEBUG:openpifpaf.transforms.pad:valid area after pad: [  0.   3. 639. 426.], image size = (641, 433)
-DEBUG:openpifpaf.decoder.decoder:nn processing time: 807.8ms
-DEBUG:openpifpaf.decoder.decoder:parallel execution with worker &lt;openpifpaf.decoder.decoder.DummyPool object at 0x7f85f0652b80&gt;
+DEBUG:openpifpaf.decoder.decoder:nn processing time: 458.6ms
+DEBUG:openpifpaf.decoder.decoder:parallel execution with worker &lt;openpifpaf.decoder.decoder.DummyPool object at 0x7f7ef4770b80&gt;
 DEBUG:openpifpaf.decoder.multi:task 0
-DEBUG:openpifpaf.decoder.cifcaf:cpp annotations = 5 (14.9ms)
+DEBUG:openpifpaf.decoder.cifcaf:cpp annotations = 5 (9.7ms)
 INFO:openpifpaf.decoder.cifcaf:annotations 5: [16, 14, 13, 12, 12]
 INFO:openpifpaf.profiler:writing profile file profile_decoder.prof
-         386 function calls in 0.017 seconds
+         386 function calls in 0.011 seconds
 
    Ordered by: internal time
 
    ncalls  tottime  percall  cumtime  percall filename:lineno(function)
-        1    0.015    0.015    0.017    0.017 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224(__call__)
+        1    0.010    0.010    0.011    0.011 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224(__call__)
         5    0.000    0.000    0.000    0.000 {method &#39;tolist&#39; of &#39;numpy.ndarray&#39; objects}
-        5    0.000    0.000    0.001    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/openpifpaf/annotation.py:17(__init__)
-       10    0.000    0.000    0.000    0.000 {built-in method numpy.asarray}
+        2    0.000    0.000    0.000    0.000 {method &#39;flush&#39; of &#39;_io.TextIOWrapper&#39; objects}
+        5    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/openpifpaf/annotation.py:17(__init__)
        15    0.000    0.000    0.000    0.000 {method &#39;numpy&#39; of &#39;torch._C._TensorBase&#39; objects}
+       10    0.000    0.000    0.000    0.000 {built-in method numpy.asarray}
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/logging/__init__.py:288(__init__)
        10    0.000    0.000    0.000    0.000 {method &#39;reduce&#39; of &#39;numpy.ufunc&#39; objects}
         1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/openpifpaf/visualizer/cif.py:47(predicted)
-        2    0.000    0.000    0.000    0.000 {method &#39;flush&#39; of &#39;_io.TextIOWrapper&#39; objects}
-       15    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/torch/_tensor.py:952(__array__)
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/logging/__init__.py:288(__init__)
-        2    0.000    0.000    0.000    0.000 {method &#39;unbind&#39; of &#39;torch._C._TensorBase&#39; objects}
-        5    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/openpifpaf/visualizer/base.py:114(indices)
+        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/openpifpaf/visualizer/caf.py:47(predicted)
         1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:276(&lt;listcomp&gt;)
        10    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/numpy/core/fromnumeric.py:69(_wrapreduction)
-        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/openpifpaf/visualizer/caf.py:47(predicted)
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/logging/__init__.py:364(getMessage)
+       15    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/torch/_tensor.py:952(__array__)
+        2    0.000    0.000    0.000    0.000 {method &#39;unbind&#39; of &#39;torch._C._TensorBase&#39; objects}
        10    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/numpy/core/fromnumeric.py:2188(sum)
         2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/logging/__init__.py:1689(isEnabledFor)
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/logging/__init__.py:364(getMessage)
        10    0.000    0.000    0.000    0.000 {built-in method numpy.zeros}
-        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/torch/_tensor.py:890(__len__)
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/posixpath.py:117(splitext)
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/logging/__init__.py:1550(makeRecord)
-       10    0.000    0.000    0.000    0.000 &lt;__array_function__ internals&gt;:177(sum)
-       10    0.000    0.000    0.000    0.000 {built-in method numpy.core._multiarray_umath.implement_array_function}
+        5    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/openpifpaf/visualizer/base.py:114(indices)
         2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/logging/__init__.py:1514(findCaller)
-       24    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+       10    0.000    0.000    0.000    0.000 &lt;__array_function__ internals&gt;:177(sum)
+        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/torch/_tensor.py:890(__len__)
+       10    0.000    0.000    0.000    0.000 {built-in method numpy.core._multiarray_umath.implement_array_function}
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/logging/__init__.py:1565(_log)
         2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/logging/__init__.py:1073(emit)
         2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/logging/__init__.py:1645(callHandlers)
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/logging/__init__.py:1565(_log)
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/torch/_tensor.py:906(__iter__)
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/posixpath.py:140(basename)
-       19    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
-       15    0.000    0.000    0.000    0.000 {method &#39;astype&#39; of &#39;numpy.ndarray&#39; objects}
        10    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/numpy/core/fromnumeric.py:70(&lt;dictcomp&gt;)
-        3    0.000    0.000    0.000    0.000 {built-in method torch._C._get_tracing_state}
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/logging/__init__.py:655(format)
-        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/logging/__init__.py:1424(debug)
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/logging/__init__.py:941(handle)
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/posixpath.py:140(basename)
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/torch/_tensor.py:906(__iter__)
+       24    0.000    0.000    0.000    0.000 {built-in method builtins.len}
         2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/logging/__init__.py:1062(flush)
-       16    0.000    0.000    0.000    0.000 {built-in method torch._C._has_torch_function_unary}
-        6    0.000    0.000    0.000    0.000 {method &#39;acquire&#39; of &#39;_thread.RLock&#39; objects}
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/logging/__init__.py:435(_format)
-        6    0.000    0.000    0.000    0.000 {method &#39;rfind&#39; of &#39;str&#39; objects}
-        2    0.000    0.000    0.000    0.000 {built-in method posix.getpid}
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/logging/__init__.py:218(_acquireLock)
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/logging/__init__.py:119(getLevelName)
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/logging/__init__.py:1591(handle)
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/logging/__init__.py:160(&lt;lambda&gt;)
+       15    0.000    0.000    0.000    0.000 {method &#39;astype&#39; of &#39;numpy.ndarray&#39; objects}
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/logging/__init__.py:655(format)
+       19    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/logging/__init__.py:941(handle)
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/logging/__init__.py:1550(makeRecord)
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/posixpath.py:117(splitext)
         2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/genericpath.py:121(_splitext)
-        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/openpifpaf/visualizer/cifhr.py:17(predicted)
-        4    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/logging/__init__.py:796(filter)
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/logging/__init__.py:218(_acquireLock)
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/logging/__init__.py:435(_format)
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/logging/__init__.py:119(getLevelName)
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/logging/__init__.py:160(&lt;lambda&gt;)
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/logging/__init__.py:1591(handle)
         1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/logging/__init__.py:1436(info)
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/logging/__init__.py:918(format)
-        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/openpifpaf/visualizer/cif.py:54(_confidences)
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/logging/__init__.py:427(usesTime)
+        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/logging/__init__.py:1424(debug)
         2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/posixpath.py:52(normcase)
-        4    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/logging/__init__.py:898(acquire)
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/logging/__init__.py:1675(getEffectiveLevel)
-       10    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/numpy/core/fromnumeric.py:2183(_sum_dispatcher)
+       16    0.000    0.000    0.000    0.000 {built-in method torch._C._has_torch_function_unary}
+        3    0.000    0.000    0.000    0.000 {built-in method torch._C._get_tracing_state}
+        6    0.000    0.000    0.000    0.000 {method &#39;acquire&#39; of &#39;_thread.RLock&#39; objects}
+        6    0.000    0.000    0.000    0.000 {method &#39;rfind&#39; of &#39;str&#39; objects}
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/logging/__init__.py:427(usesTime)
+        4    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/logging/__init__.py:796(filter)
         6    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
+        2    0.000    0.000    0.000    0.000 {built-in method posix.getpid}
+        4    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/logging/__init__.py:898(acquire)
+        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/openpifpaf/visualizer/cifhr.py:17(predicted)
         2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/threading.py:1306(current_thread)
-        4    0.000    0.000    0.000    0.000 {method &#39;get&#39; of &#39;dict&#39; objects}
-       10    0.000    0.000    0.000    0.000 {method &#39;items&#39; of &#39;dict&#39; objects}
+        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/openpifpaf/visualizer/cif.py:54(_confidences)
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/logging/__init__.py:918(format)
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/logging/__init__.py:1675(getEffectiveLevel)
         2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/openpifpaf/headmeta.py:26(stride)
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/logging/__init__.py:633(usesTime)
-        4    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/logging/__init__.py:905(release)
-        3    0.000    0.000    0.000    0.000 {method &#39;dim&#39; of &#39;torch._C._TensorBase&#39; objects}
         2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/logging/__init__.py:227(_releaseLock)
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/logging/__init__.py:639(formatMessage)
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/posixpath.py:41(_get_sep)
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/logging/__init__.py:633(usesTime)
+        4    0.000    0.000    0.000    0.000 {method &#39;get&#39; of &#39;dict&#39; objects}
         2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/logging/__init__.py:438(format)
-        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/openpifpaf/visualizer/cif.py:63(_regressions)
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/logging/__init__.py:639(formatMessage)
+        4    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/logging/__init__.py:905(release)
+       10    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/numpy/core/fromnumeric.py:2183(_sum_dispatcher)
+       10    0.000    0.000    0.000    0.000 {method &#39;items&#39; of &#39;dict&#39; objects}
         5    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/openpifpaf/visualizer/base.py:118(&lt;listcomp&gt;)
-        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/openpifpaf/visualizer/caf.py:54(_confidences)
-        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/openpifpaf/visualizer/caf.py:65(_regressions)
-        2    0.000    0.000    0.000    0.000 {built-in method time.perf_counter}
-        6    0.000    0.000    0.000    0.000 {method &#39;release&#39; of &#39;_thread.RLock&#39; objects}
         2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/threading.py:1031(name)
-        5    0.000    0.000    0.000    0.000 {method &#39;append&#39; of &#39;list&#39; objects}
-        2    0.000    0.000    0.000    0.000 {method &#39;find&#39; of &#39;str&#39; objects}
-        6    0.000    0.000    0.000    0.000 {built-in method posix.fspath}
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/posixpath.py:41(_get_sep)
         2    0.000    0.000    0.000    0.000 {built-in method sys._getframe}
-        2    0.000    0.000    0.000    0.000 {method &#39;write&#39; of &#39;_io.TextIOWrapper&#39; objects}
+        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/openpifpaf/visualizer/caf.py:54(_confidences)
+        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/openpifpaf/visualizer/cif.py:63(_regressions)
+        3    0.000    0.000    0.000    0.000 {method &#39;dim&#39; of &#39;torch._C._TensorBase&#39; objects}
+        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/openpifpaf/visualizer/caf.py:65(_regressions)
+        6    0.000    0.000    0.000    0.000 {method &#39;release&#39; of &#39;_thread.RLock&#39; objects}
         2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/multiprocessing/process.py:37(current_process)
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/multiprocessing/process.py:189(name)
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/logging/__init__.py:1276(disable)
-        2    0.000    0.000    0.000    0.000 {built-in method time.time}
+        5    0.000    0.000    0.000    0.000 {method &#39;append&#39; of &#39;list&#39; objects}
+        6    0.000    0.000    0.000    0.000 {built-in method posix.fspath}
         4    0.000    0.000    0.000    0.000 {built-in method _thread.get_ident}
+        2    0.000    0.000    0.000    0.000 {method &#39;find&#39; of &#39;str&#39; objects}
+        2    0.000    0.000    0.000    0.000 {method &#39;write&#39; of &#39;_io.TextIOWrapper&#39; objects}
+        2    0.000    0.000    0.000    0.000 {built-in method time.perf_counter}
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/logging/__init__.py:1276(disable)
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/multiprocessing/process.py:189(name)
+        2    0.000    0.000    0.000    0.000 {built-in method time.time}
         2    0.000    0.000    0.000    0.000 {built-in method builtins.iter}
         1    0.000    0.000    0.000    0.000 {method &#39;disable&#39; of &#39;_lsprof.Profiler&#39; objects}
 
 
 
-DEBUG:openpifpaf.decoder.decoder:time: nn = 808.1ms, dec = 19.4ms
+DEBUG:openpifpaf.decoder.decoder:time: nn = 458.9ms, dec = 12.9ms
 INFO:openpifpaf.predictor:batch 0: coco/000000081988.jpg
 src/openpifpaf/csrc/src/cif_hr.cpp:102: UserInfo: resizing cifhr buffer
 src/openpifpaf/csrc/src/occupancy.cpp:53: UserInfo: resizing occupancy buffer
