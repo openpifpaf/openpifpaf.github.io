@@ -655,7 +655,7 @@ python -m openpifpaf.predict --version
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OpenPifPaf 0.13.10+1.g09db3c6
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OpenPifPaf 0.13.11+1.g7955fbd
 </pre></div>
 </div>
 </div>
@@ -672,6 +672,7 @@ pip freeze
 anyio==3.6.2
 argon2-cffi==21.3.0
 argon2-cffi-bindings==21.2.0
+arrow==1.2.3
 astroid==2.6.6
 attrs==21.4.0
 Babel==2.11.0
@@ -685,7 +686,7 @@ click==8.1.3
 colorama==0.4.6
 comm==0.1.2
 contourpy==1.0.7
-coverage==7.1.0
+coverage==7.2.0
 cpplint==1.6.1
 cycler==0.11.0
 debugpy==1.6.6
@@ -698,48 +699,51 @@ exceptiongroup==1.1.0
 fastjsonschema==2.16.2
 flameprof==0.4
 fonttools==4.38.0
+fqdn==1.5.1
 gitdb==4.0.10
-GitPython==3.1.30
+GitPython==3.1.31
 greenlet==2.0.2
 idna==3.4
 imagesize==1.4.1
 importlib-metadata==6.0.0
-importlib-resources==5.10.2
+importlib-resources==5.12.0
 iniconfig==2.0.0
-ipykernel==6.21.1
+ipykernel==6.21.2
 ipython==7.34.0
 ipython-genutils==0.2.0
-ipywidgets==7.7.2
+ipywidgets==7.7.3
+isoduration==20.11.0
 isort==5.12.0
 jedi==0.18.2
 Jinja2==3.1.2
-jsonschema==3.2.0
-jupyter-book==0.13.1
+jsonpointer==2.3
+jsonschema==4.17.3
+jupyter-book==0.13.2
 jupyter-cache==0.4.3
 jupyter-events==0.6.3
 jupyter-server-mathjax==0.2.6
 jupyter-sphinx==0.3.2
-jupyter_client==8.0.2
+jupyter_client==8.0.3
 jupyter_core==5.2.0
-jupyter_server==2.2.1
+jupyter_server==2.3.0
 jupyter_server_terminals==0.4.4
 jupyterlab-pygments==0.2.2
-jupyterlab-widgets==1.1.1
+jupyterlab-widgets==1.1.2
 kiwisolver==1.4.4
 latexcodec==2.0.1
 lazy-object-proxy==1.9.0
-linkify-it-py==1.0.3
+linkify-it-py==2.0.0
 lxml==4.9.2
 markdown-it-py==1.1.0
 MarkupSafe==2.1.2
-matplotlib==3.6.3
+matplotlib==3.7.0
 matplotlib-inline==0.1.6
 mccabe==0.6.1
 mdit-py-plugins==0.2.8
 mistune==0.8.4
 myst-nb==0.13.2
 myst-parser==0.15.2
-nbclassic==0.5.1
+nbclassic==0.5.2
 nbclient==0.5.13
 nbconvert==6.5.4
 nbdime==3.1.1
@@ -749,8 +753,8 @@ nbval==0.10.0
 nest-asyncio==1.5.6
 notebook==6.5.2
 notebook_shim==0.2.2
-numpy==1.24.1
-opencv-python==4.7.0.68
+numpy==1.24.2
+opencv-python==4.7.0.72
 openpifpaf @ file:///home/runner/work/openpifpaf/openpifpaf
 openpifpaf-extras==0.0.3
 packaging==23.0
@@ -759,10 +763,11 @@ parso==0.8.3
 pexpect==4.8.0
 pickleshare==0.7.5
 Pillow==9.4.0
-platformdirs==2.6.2
+pkgutil_resolve_name==1.3.10
+platformdirs==3.0.0
 pluggy==1.0.0
 prometheus-client==0.16.0
-prompt-toolkit==3.0.36
+prompt-toolkit==3.0.37
 psutil==5.9.4
 ptyprocess==0.7.0
 pybtex==0.24.0
@@ -777,30 +782,30 @@ pyrsistent==0.19.3
 pysparkling==0.6.2
 pytest==7.2.1
 python-dateutil==2.8.2
-python-json-logger==2.0.4
+python-json-logger==2.0.7
 pytz==2022.7.1
 PyYAML==6.0
 pyzmq==25.0.0
 requests==2.28.2
 rfc3339-validator==0.1.4
 rfc3986-validator==0.1.1
-scipy==1.10.0
+scipy==1.10.1
 Send2Trash==1.8.0
 six==1.16.0
 smmap==5.0.0
 sniffio==1.3.0
 snowballstemmer==2.2.0
-soupsieve==2.3.2.post1
+soupsieve==2.4
 Sphinx==4.5.0
 sphinx-book-theme==0.3.3
 sphinx-comments==0.0.3
 sphinx-copybutton==0.5.1
-sphinx-external-toc==0.2.4
-sphinx-jupyterbook-latex==0.4.7
+sphinx-jupyterbook-latex==0.5.2
 sphinx-multitoc-numbering==0.1.3
-sphinx-thebe==0.1.2
+sphinx-thebe==0.2.1
 sphinx-togglebutton==0.3.2
 sphinx_design==0.1.0
+sphinx_external_toc==0.3.1
 sphinxcontrib-applehelp==1.0.4
 sphinxcontrib-bibtex==2.5.0
 sphinxcontrib-devhelp==1.0.2
@@ -819,15 +824,17 @@ torch==1.13.1+cpu
 torchvision==0.14.1+cpu
 tornado==6.2
 traitlets==5.9.0
-typing_extensions==4.4.0
+typing_extensions==4.5.0
 uc-micro-py==1.0.1
+uri-template==1.2.0
 urllib3==1.26.14
 wcwidth==0.2.6
+webcolors==1.12
 webencodings==0.5.1
 websocket-client==1.5.1
-widgetsnbextension==3.6.1
+widgetsnbextension==3.6.2
 wrapt==1.12.1
-zipp==3.12.0
+zipp==3.15.0
 </pre></div>
 </div>
 </div>
@@ -860,7 +867,9 @@ Codecs:
  ....L. = Lossy compression
  .....S = Lossless compression
  -------
- D.VI.S 012v                 Uncompressed 4:2:2 10-bit
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> D.VI.S 012v                 Uncompressed 4:2:2 10-bit
  D.V.L. 4xm                  4X Movie
  D.VI.S 8bps                 QuickTime 8BPS video
  .EVIL. a64_multi            Multicolor charset for Commodore 64 (encoders: a64multi )
@@ -1369,7 +1378,7 @@ Codecs:
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true

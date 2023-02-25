@@ -1237,12 +1237,12 @@ INFO:openpifpaf.predictor:neural network device: cpu (CUDA available: False, cou
 DEBUG:openpifpaf.transforms.pad:valid area before pad: [  0.   0. 639. 426.], image size = (640, 427)
 DEBUG:openpifpaf.transforms.pad:pad with [0, 3, 1, 3]
 DEBUG:openpifpaf.transforms.pad:valid area after pad: [  0.   3. 639. 426.], image size = (641, 433)
-DEBUG:openpifpaf.decoder.decoder:nn processing time: 449.8ms
-DEBUG:openpifpaf.decoder.decoder:parallel execution with worker &lt;openpifpaf.decoder.decoder.DummyPool object at 0x7f9c77050df0&gt;
+DEBUG:openpifpaf.decoder.decoder:nn processing time: 520.0ms
+DEBUG:openpifpaf.decoder.decoder:parallel execution with worker &lt;openpifpaf.decoder.decoder.DummyPool object at 0x7f363983abe0&gt;
 DEBUG:openpifpaf.decoder.multi:task 0
-DEBUG:openpifpaf.decoder.cifcaf:cpp annotations = 5 (9.5ms)
+DEBUG:openpifpaf.decoder.cifcaf:cpp annotations = 5 (12.7ms)
 INFO:openpifpaf.decoder.cifcaf:annotations 5: [16, 14, 13, 12, 12]
-DEBUG:openpifpaf.decoder.decoder:time: nn = 450.1ms, dec = 10.8ms
+DEBUG:openpifpaf.decoder.decoder:time: nn = 520.4ms, dec = 14.3ms
 INFO:openpifpaf.predictor:batch 0: coco/000000081988.jpg
 DEBUG:__main__:json output = coco/000000081988.jpg.predictions.json
 DEBUG:__main__:image output = coco/000000081988.jpg.predictions.jpeg
@@ -1271,7 +1271,7 @@ some further <a class="reference internal" href="predict_api.html#predict-fields
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true
