@@ -1,49 +1,60 @@
 
+
 <!DOCTYPE html>
 
-<html lang="en">
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Training &#8212; OpenPifPaf Guide DEV</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystyle.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -53,62 +64,101 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'train';</script>
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Command Line" href="cli_help.html" />
     <link rel="prev" title="Datasets" href="datasets.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
 
-    
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+  <div class="bd-header-announcement container-fluid bd-header-announcement">
+    <div class="bd-header-announcement__content">This is the dev version of the Guide. Here is the <a href="https://openpifpaf.github.io">stable version</a>.
+</div>
+  </div>
+
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">OpenPifPaf Guide DEV</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -117,530 +167,311 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Getting Started
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="predict_cli.html">
-   Prediction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="examples.html">
-   Examples
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="predict_cli.html">Prediction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Chapters
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapters</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="predict_api.html">
-   Prediction API
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="compute.html">
-   Compute
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="models.html">
-   Models
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="datasets.html">
-   Datasets
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Training
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="cli_help.html">
-   Command Line
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="plugins_overview.html">
-   Plugins
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="faq.html">
-   FAQ
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="predict_api.html">Prediction API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compute.html">Compute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models.html">Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datasets.html">Datasets</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli_help.html">Command Line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins_overview.html">Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Tutorials
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="plugins_custom.html">
-   Custom Dataset
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="plugins_animalpose.html">
-   Animal Keypoints
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="plugins_wholebody.html">
-   WholeBody
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="plugins_apollocar3d.html">
-   Car Keypoints
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="plugins_crowdpose.html">
-   CrowdPose
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="plugins_nuscenes.html">
-   NuScenes 2D detection
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="tutorial_opencv.html">
-   OpenCV
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="plugins_cifar10.html">
-   Cifar10
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="plugins_extras.html">
-   Extras
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="plugins_custom.html">Custom Dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins_animalpose.html">Animal Keypoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins_wholebody.html">WholeBody</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins_apollocar3d.html">Car Keypoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins_crowdpose.html">CrowdPose</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins_nuscenes.html">NuScenes 2D detection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_opencv.html">OpenCV</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins_cifar10.html">Cifar10</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins_extras.html">Extras</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Reference
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="moduledocs.html">
-   Modules
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="bibliography.html">
-   Bibliography
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="moduledocs.html">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Development
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Development</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="dev.html">
-   Contribute
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="performance.html">
-   Performance
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://github.com/openpifpaf/openpifpaf">
-   GitHub
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="dev.html">Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/openpifpaf/openpifpaf">GitHub</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            This is the dev version of the Guide. Here is the <a href="https://openpifpaf.github.io">stable version</a>.
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/openpifpaf/openpifpaf/main?urlpath=tree/guide/train.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/openpifpaf/openpifpaf/main?urlpath=tree/guide/train.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="_static/images/logo_binder.svg">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="btn__text-container">Binder</span>
 </a>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/openpifpaf/openpifpaf"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/openpifpaf/openpifpaf" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fab fa-github"></i>
   </span>
-<span class="headerbtn__text-container">repository</span>
+<span class="btn__text-container">Repository</span>
 </a>
-
-      </li>
+</li>
       
-      <li>
-        <a href="https://github.com/openpifpaf/openpifpaf/issues/new?title=Issue%20on%20page%20%2Ftrain.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
+      
+      
+      
+      <li><a href="https://github.com/openpifpaf/openpifpaf/edit/main/guide/train.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/openpifpaf/openpifpaf/edit/main/guide/train.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Edit this page"
->
-  
-
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-pencil-alt"></i>
   </span>
-<span class="headerbtn__text-container">suggest edit</span>
+<span class="btn__text-container">Suggest edit</span>
 </a>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/train.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
+      
+      
+      
+      <li><a href="https://github.com/openpifpaf/openpifpaf/issues/new?title=Issue%20on%20page%20%2Ftrain.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/train.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.ipynb</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
-
-      </li>
+</li>
+      
+      
+      
       
       <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-file-pdf"></i>
   </span>
-<span class="headerbtn__text-container">.pdf</span>
+<span class="btn__text-container">.pdf</span>
 </button>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
   </span>
 
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> On this page
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#composite-loss-function">
-   Composite Loss Function
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#training-crop-size">
-   Training Crop Size
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#reproducibility">
-   Reproducibility
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#multiple-datasets">
-   Multiple Datasets
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#overfitting">
-   Overfitting
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#shufflenet">
-   ShuffleNet
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#resnet">
-   ResNet
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#debug-plots">
-   Debug Plots
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#logs">
-   Logs
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#testset-submission">
-   Testset Submission
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#detection-experimental">
-   Detection (experimental)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cloud-and-hpc">
-   Cloud and HPC
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#distributeddataparallel">
-   DistributedDataParallel
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Training</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> On this page </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#composite-loss-function">
-   Composite Loss Function
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#training-crop-size">
-   Training Crop Size
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#reproducibility">
-   Reproducibility
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#multiple-datasets">
-   Multiple Datasets
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#overfitting">
-   Overfitting
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#shufflenet">
-   ShuffleNet
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#resnet">
-   ResNet
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#debug-plots">
-   Debug Plots
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#logs">
-   Logs
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#testset-submission">
-   Testset Submission
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#detection-experimental">
-   Detection (experimental)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cloud-and-hpc">
-   Cloud and HPC
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#distributeddataparallel">
-   DistributedDataParallel
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Training</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#composite-loss-function">Composite Loss Function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-crop-size">Training Crop Size</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reproducibility">Reproducibility</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-datasets">Multiple Datasets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overfitting">Overfitting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shufflenet">ShuffleNet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resnet">ResNet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debug-plots">Debug Plots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logs">Logs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testset-submission">Testset Submission</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#detection-experimental">Detection (experimental)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cloud-and-hpc">Cloud and HPC</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distributeddataparallel">DistributedDataParallel</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="training">
-<h1>Training<a class="headerlink" href="#training" title="Permalink to this headline">#</a></h1>
+<h1>Training<a class="headerlink" href="#training" title="Permalink to this heading">#</a></h1>
 <p>This section introduces training to create your own models. You don’t need to do this step
 if you use pre-trained models for <a class="reference internal" href="predict_cli.html"><span class="doc">Prediction</span></a> on your own images.
 For training, you will need a dataset. See <a class="reference internal" href="datasets.html"><span class="doc">Datasets</span></a> for instructions about a few popular datasets.</p>
@@ -650,7 +481,7 @@ A quick way to get started is with the training commands of the pre-trained mode
 The exact training command that was used for a model is in the first
 line of the training log file. Below are a few examples for various backbones.</p>
 <section id="composite-loss-function">
-<h2>Composite Loss Function<a class="headerlink" href="#composite-loss-function" title="Permalink to this headline">#</a></h2>
+<h2>Composite Loss Function<a class="headerlink" href="#composite-loss-function" title="Permalink to this heading">#</a></h2>
 <p>OpenPifPaf uses an off-the-shelf backbone like a ResNet and then adds the smallest
 possible (approx) head networks on top: a single 1x1 convolution.
 The outputs of the head networks are the composite fields. At each location,
@@ -741,23 +572,23 @@ good confidence and good regression predictions will our network reduce its
 predictions of <span class="math notranslate nohighlight">\(\hat{b}\)</span>.</p>
 </section>
 <section id="training-crop-size">
-<h2>Training Crop Size<a class="headerlink" href="#training-crop-size" title="Permalink to this headline">#</a></h2>
+<h2>Training Crop Size<a class="headerlink" href="#training-crop-size" title="Permalink to this heading">#</a></h2>
 <p>Training and evaluation image sizes are <em>unrelated</em> in fully convolutional architectures like OpenPifPaf. <em>Instance size distribution</em> between training and evaluation needs to be preserved. The size of the image that surrounds the instance to detect has little impact: for humans of height 100px, it does not matter whether that is inside a <span class="math notranslate nohighlight">\(640\times480\)</span> image or inside a 4k or 8k image. Therefore, you can keep the size of your training crops (selected with <code class="docutils literal notranslate"><span class="pre">--square-edge</span></code>) quite small even when evaluating on large images. The default is <code class="docutils literal notranslate"><span class="pre">--square-edge=385</span></code> for <code class="docutils literal notranslate"><span class="pre">cocokp</span></code> and that is reasonable when most of the humans are not larger than 300px during evaluation.
 <img alt="training crop size" src="_images/trainingcrop.png" /></p>
 <p>The training crop size is a major factor for GPU memory consumption and for training time.</p>
 </section>
 <section id="reproducibility">
-<h2>Reproducibility<a class="headerlink" href="#reproducibility" title="Permalink to this headline">#</a></h2>
+<h2>Reproducibility<a class="headerlink" href="#reproducibility" title="Permalink to this heading">#</a></h2>
 <p>Every training log file contains the command that was used to train under the key <code class="docutils literal notranslate"><span class="pre">args</span></code>. There is also a <code class="docutils literal notranslate"><span class="pre">version</span></code> key that specifies the precise version of OpenPifPaf that was used to train, like “0.11.9+204.g987345” (generated by <a class="reference external" href="https://github.com/python-versioneer/python-versioneer">versioneer</a>). This means that the last tag was 0.11.9, that there are 204 additional commits beyond that tag, and that the hash of the current commit is “987345” (without the “g” as that simply stands for <code class="docutils literal notranslate"><span class="pre">git</span></code>). If you had uncommitted changes, there is an additional “dirty” suffix. Try to avoid “dirty” version numbers for training as it is impossible to tell whether you were just correcting a typo in the readme or had a substantial change that influences the training. Your local git command line client but also GitHub can compare to the short git hashes.</p>
 </section>
 <section id="multiple-datasets">
-<h2>Multiple Datasets<a class="headerlink" href="#multiple-datasets" title="Permalink to this headline">#</a></h2>
+<h2>Multiple Datasets<a class="headerlink" href="#multiple-datasets" title="Permalink to this heading">#</a></h2>
 <p>OpenPifPaf supports simultaneous training on multiple datasets. You specify multiple datasets by concatenating them with a <code class="docutils literal notranslate"><span class="pre">-</span></code>, e.g. to train on COCO Keypoints <code class="docutils literal notranslate"><span class="pre">cocokp</span></code> and on COCO Detections <code class="docutils literal notranslate"><span class="pre">cocodet</span></code> you specify in your training command <code class="docutils literal notranslate"><span class="pre">--dataset=cocokp-cocodet</span></code>. This also works for custom datasets defined in plugins.</p>
 <p>The samples from each dataset are tracked with weighted counters and the dataset for the next batch is chosen by the lowest counter. You specify the dataset weights (or you can think of it as an importance), for example, as <code class="docutils literal notranslate"><span class="pre">--dataset-weights</span> <span class="pre">1.0</span> <span class="pre">0.5</span></code>. That means that the first dataset (<code class="docutils literal notranslate"><span class="pre">cocokp</span></code> in the above example) is twice as important as the second one (e.g. <code class="docutils literal notranslate"><span class="pre">cocodet</span></code>) and two-thirds of the batches will be from the first dataset and one-third will be from the second.</p>
 <p>An epoch is over once the first of the datasets is out of samples. As the datasets are randomized during training, a different set of samples will be used from epoch to epoch. That means that eventually all data will be utilized of the larger datasets even if not all data is used during a single epoch.</p>
 </section>
 <section id="overfitting">
-<h2>Overfitting<a class="headerlink" href="#overfitting" title="Permalink to this headline">#</a></h2>
+<h2>Overfitting<a class="headerlink" href="#overfitting" title="Permalink to this heading">#</a></h2>
 <p>An effective way to validate the pipeline is working, loss functions are implemented correctly, encoders are correct, etc. is to overfit on a single image. You should be able to produce perfect predictions for that image. Some caveats: you need to deactivate augmentations, you must evaluate at the exact trained image size and the image should not contain crowd annotations (i.e. areas that will be ignored during training). Here is an example training command for a <code class="docutils literal notranslate"><span class="pre">cocokp</span></code> overfitting experiment:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">time</span><span class="w"> </span><span class="nv">CUDA_VISIBLE_DEVICES</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>openpifpaf.train<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--lr<span class="o">=</span><span class="m">0</span>.01<span class="w"> </span>--momentum<span class="o">=</span><span class="m">0</span>.9<span class="w"> </span>--b-scale<span class="o">=</span><span class="m">5</span>.0<span class="w"> </span><span class="se">\</span>
@@ -780,7 +611,7 @@ Here is the corresponding predict command for the <a class="reference external" 
 <p>While the field predictions are almost perfect, it will predict two annotations while there is only one ground truth annotation. That is because the standard skeleton has no connection that goes directly from left-ear to nose and the left-eye is not visible and not annotated. You can add <code class="docutils literal notranslate"><span class="pre">--dense-connections</span></code> to include additional connections in the skeleton which will connect the nose keypoint to the rest of the skeleton.</p>
 </section>
 <section id="shufflenet">
-<h2>ShuffleNet<a class="headerlink" href="#shufflenet" title="Permalink to this headline">#</a></h2>
+<h2>ShuffleNet<a class="headerlink" href="#shufflenet" title="Permalink to this heading">#</a></h2>
 <p>ShuffleNet models are trained without ImageNet pretraining:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">time</span><span class="w"> </span><span class="nv">CUDA_VISIBLE_DEVICES</span><span class="o">=</span><span class="m">0</span>,1<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>openpifpaf.train<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--lr<span class="o">=</span><span class="m">0</span>.0003<span class="w"> </span>--momentum<span class="o">=</span><span class="m">0</span>.95<span class="w"> </span>--b-scale<span class="o">=</span><span class="m">10</span>.0<span class="w"> </span>--clip-grad-value<span class="o">=</span><span class="m">10</span><span class="w"> </span><span class="se">\</span>
@@ -795,26 +626,26 @@ Here is the corresponding predict command for the <a class="reference external" 
 We found that for stable training, the learning rate <span class="math notranslate nohighlight">\(\lambda\)</span>,
 the <code class="docutils literal notranslate"><span class="pre">clip-grad-value</span></code> <span class="math notranslate nohighlight">\(c\)</span> and the <span class="math notranslate nohighlight">\(\epsilon\)</span> from the denominator of the
 BatchNorm should obey:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f53cf4ca-63a8-4512-8fdd-f3cc880004bb">
-<span class="eqno">(1)<a class="headerlink" href="#equation-f53cf4ca-63a8-4512-8fdd-f3cc880004bb" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-599d5f05-23d7-4b77-bfa5-8ad431a65ecc">
+<span class="eqno">(1)<a class="headerlink" href="#equation-599d5f05-23d7-4b77-bfa5-8ad431a65ecc" title="Permalink to this equation">#</a></span>\[\begin{align}
     \lambda \cdot c &amp;\leq \sqrt{\epsilon}
 \end{align}\]</div>
 <p>where the default <span class="math notranslate nohighlight">\(\epsilon\)</span> is <span class="math notranslate nohighlight">\(10^{-4}\)</span> (different from the PyTorch default).
 To fit large models in your GPU memory, reduce the batch size and learning rate by the same factor.</p>
 </section>
 <section id="resnet">
-<h2>ResNet<a class="headerlink" href="#resnet" title="Permalink to this headline">#</a></h2>
+<h2>ResNet<a class="headerlink" href="#resnet" title="Permalink to this heading">#</a></h2>
 <p>ResNet models are initialized with weights pre-trained on ImageNet.
 That makes their training characteristics different from ShuffleNet (i.e. they look great at the beginning of training).</p>
 </section>
 <section id="debug-plots">
-<h2>Debug Plots<a class="headerlink" href="#debug-plots" title="Permalink to this headline">#</a></h2>
+<h2>Debug Plots<a class="headerlink" href="#debug-plots" title="Permalink to this heading">#</a></h2>
 <p>As for all commands, you need to decide whether you want to interactively show the plots in matplotlib with <code class="docutils literal notranslate"><span class="pre">--show</span></code> (I use <a class="reference external" href="https://github.com/daleroberts/itermplot">itermplot</a>) or to save image files with <code class="docutils literal notranslate"><span class="pre">--save-all</span></code> (defaults to the <code class="docutils literal notranslate"><span class="pre">all-images/</span></code> directory).</p>
 <p>You can inspect the ground truth fields that are used for training. Add <code class="docutils literal notranslate"><span class="pre">--debug-images</span></code> to activate all types of debug plots and, for example, select to visualize field 5 of CIF and field 5 of CAF with <code class="docutils literal notranslate"><span class="pre">--debug-indices</span> <span class="pre">cif:5</span> <span class="pre">caf:5</span></code>.</p>
 <p>You can run this on your laptop without a GPU. When debug is enabled, the training dataset is not randomized and therefore you only need the first few images in your dataset locally.</p>
 </section>
 <section id="logs">
-<h2>Logs<a class="headerlink" href="#logs" title="Permalink to this headline">#</a></h2>
+<h2>Logs<a class="headerlink" href="#logs" title="Permalink to this heading">#</a></h2>
 <p>For reference, check out the log files of the pretrained models. Models with their log files are shared as release “Assets” in the separate <a class="reference external" href="https://github.com/openpifpaf/torchhub">openpifpaf/torchhub</a> repository: click on “releases” and expand “Assets” on the latest release.</p>
 <p>To visualize log files with <a class="reference internal" href="cli_help.html#cli-help-logs"><span class="std std-ref">openpifpaf.logs</span></a>:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>openpifpaf.logs<span class="w"> </span><span class="se">\</span>
@@ -834,7 +665,7 @@ To produce evaluation metrics every five epochs for every new checkpoint that is
 </div>
 </section>
 <section id="testset-submission">
-<h2>Testset Submission<a class="headerlink" href="#testset-submission" title="Permalink to this headline">#</a></h2>
+<h2>Testset Submission<a class="headerlink" href="#testset-submission" title="Permalink to this heading">#</a></h2>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nv">CUDA_VISIBLE_DEVICES</span><span class="o">=</span><span class="m">0</span><span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>openpifpaf.eval<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--checkpoint<span class="w"> </span>shufflenetv2k30<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--loader-workers<span class="o">=</span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
@@ -846,7 +677,7 @@ To produce evaluation metrics every five epochs for every new checkpoint that is
 <p>This will produce the file <code class="docutils literal notranslate"><span class="pre">shufflenetv2k30.eval-cocokp.zip</span></code> which you can submit to the competition on codalab.</p>
 </section>
 <section id="detection-experimental">
-<h2>Detection (experimental)<a class="headerlink" href="#detection-experimental" title="Permalink to this headline">#</a></h2>
+<h2>Detection (experimental)<a class="headerlink" href="#detection-experimental" title="Permalink to this heading">#</a></h2>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">time</span><span class="w"> </span><span class="nv">CUDA_VISIBLE_DEVICES</span><span class="o">=</span><span class="m">0</span>,1<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>openpifpaf.train<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--lr<span class="o">=</span><span class="m">0</span>.0003<span class="w"> </span>--momentum<span class="o">=</span><span class="m">0</span>.95<span class="w"> </span>--clip-grad-value<span class="o">=</span><span class="m">10</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--epochs<span class="o">=</span><span class="m">150</span><span class="w"> </span><span class="se">\</span>
@@ -868,7 +699,7 @@ To produce evaluation metrics every five epochs for every new checkpoint that is
 <p>COCO AP=24.3% at epoch 90 (now outdated).</p>
 </section>
 <section id="cloud-and-hpc">
-<h2>Cloud and HPC<a class="headerlink" href="#cloud-and-hpc" title="Permalink to this headline">#</a></h2>
+<h2>Cloud and HPC<a class="headerlink" href="#cloud-and-hpc" title="Permalink to this heading">#</a></h2>
 <p>OpenPifPaf can be trained on cloud infrastructure and in high performance computing (HPC) environments. We have good experience with the <a class="reference external" href="https://hub.docker.com/r/pytorch/pytorch/tags">pytorch/pytorch docker containers</a>. The <code class="docutils literal notranslate"><span class="pre">latest</span></code> tag does not include any development packages like <code class="docutils literal notranslate"><span class="pre">gcc</span></code>. For that, you need a “devel” package (e.g. <a class="reference external" href="https://hub.docker.com/layers/pytorch/pytorch/1.6.0-cuda10.1-cudnn7-devel/images/sha256-ccebb46f954b1d32a4700aaeae0e24bd68653f92c6f276a608bf592b660b63d7?context=explore">pytorch/1.6.0-cuda10.1-cudnn7-devel</a>).</p>
 <p>This is a development flow that worked well for us:</p>
 <ul class="simple">
@@ -924,7 +755,7 @@ srun<span class="w"> </span>singularity<span class="w"> </span><span class="nb">
 </div>
 </section>
 <section id="distributeddataparallel">
-<h2>DistributedDataParallel<a class="headerlink" href="#distributeddataparallel" title="Permalink to this headline">#</a></h2>
+<h2>DistributedDataParallel<a class="headerlink" href="#distributeddataparallel" title="Permalink to this heading">#</a></h2>
 <p>This mode of parallelization is activated with the <code class="docutils literal notranslate"><span class="pre">--ddp</span></code> argument.
 With <code class="docutils literal notranslate"><span class="pre">torch.distributed.launch</span></code>:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>torch.distributed.launch<span class="w"> </span><span class="se">\</span>
@@ -973,54 +804,121 @@ srun<span class="w"> </span>--gpu-bind<span class="o">=</span>closest<span class
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="datasets.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Datasets</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="datasets.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Datasets</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="cli_help.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="cli_help.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Command Line</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By <a href="https://www.svenkreiss.com">Sven Kreiss</a> and <a href="https://github.com/openpifpaf/openpifpaf/graphs/contributors">contributors</a>.<br/>
-  
-      &copy; Copyright 2020-2022.<br/>
-    <div class="extra_footer">
-      <p>Powered by <a href="https://jupyterbook.org/">Jupyter Book</a>.</p>
-
-    </div>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
       </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#composite-loss-function">Composite Loss Function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-crop-size">Training Crop Size</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reproducibility">Reproducibility</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-datasets">Multiple Datasets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overfitting">Overfitting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shufflenet">ShuffleNet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resnet">ResNet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debug-plots">Debug Plots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logs">Logs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testset-submission">Testset Submission</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#detection-experimental">Detection (experimental)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cloud-and-hpc">Cloud and HPC</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distributeddataparallel">DistributedDataParallel</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <a href="https://www.svenkreiss.com">Sven Kreiss</a> and <a href="https://github.com/openpifpaf/openpifpaf/graphs/contributors">contributors</a>.
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2020-2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>Powered by <a href="https://jupyterbook.org/">Jupyter Book</a>.</p>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

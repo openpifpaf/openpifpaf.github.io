@@ -1,49 +1,60 @@
 
+
 <!DOCTYPE html>
 
-<html lang="en">
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Modules &#8212; OpenPifPaf Guide DEV</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystyle.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -51,62 +62,101 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'moduledocs';</script>
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Bibliography" href="bibliography.html" />
     <link rel="prev" title="Extras" href="plugins_extras.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
 
-    
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+  <div class="bd-header-announcement container-fluid bd-header-announcement">
+    <div class="bd-header-announcement__content">This is the dev version of the Guide. Here is the <a href="https://openpifpaf.github.io">stable version</a>.
+</div>
+  </div>
+
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">OpenPifPaf Guide DEV</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -115,502 +165,310 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Getting Started
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="predict_cli.html">
-   Prediction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="examples.html">
-   Examples
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="predict_cli.html">Prediction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Chapters
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapters</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="predict_api.html">
-   Prediction API
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="compute.html">
-   Compute
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="models.html">
-   Models
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="datasets.html">
-   Datasets
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="train.html">
-   Training
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="cli_help.html">
-   Command Line
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="plugins_overview.html">
-   Plugins
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="faq.html">
-   FAQ
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="predict_api.html">Prediction API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compute.html">Compute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models.html">Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datasets.html">Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="train.html">Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli_help.html">Command Line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins_overview.html">Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Tutorials
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="plugins_custom.html">
-   Custom Dataset
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="plugins_animalpose.html">
-   Animal Keypoints
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="plugins_wholebody.html">
-   WholeBody
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="plugins_apollocar3d.html">
-   Car Keypoints
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="plugins_crowdpose.html">
-   CrowdPose
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="plugins_nuscenes.html">
-   NuScenes 2D detection
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="tutorial_opencv.html">
-   OpenCV
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="plugins_cifar10.html">
-   Cifar10
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="plugins_extras.html">
-   Extras
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="plugins_custom.html">Custom Dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins_animalpose.html">Animal Keypoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins_wholebody.html">WholeBody</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins_apollocar3d.html">Car Keypoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins_crowdpose.html">CrowdPose</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins_nuscenes.html">NuScenes 2D detection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_opencv.html">OpenCV</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins_cifar10.html">Cifar10</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins_extras.html">Extras</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Reference
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Modules
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="bibliography.html">
-   Bibliography
-  </a>
- </li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Development
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Development</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="dev.html">
-   Contribute
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="performance.html">
-   Performance
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://github.com/openpifpaf/openpifpaf">
-   GitHub
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="dev.html">Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/openpifpaf/openpifpaf">GitHub</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            This is the dev version of the Guide. Here is the <a href="https://openpifpaf.github.io">stable version</a>.
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/openpifpaf/openpifpaf/main?urlpath=tree/guide/moduledocs.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/openpifpaf/openpifpaf/main?urlpath=tree/guide/moduledocs.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="_static/images/logo_binder.svg">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="btn__text-container">Binder</span>
 </a>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/openpifpaf/openpifpaf"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/openpifpaf/openpifpaf" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fab fa-github"></i>
   </span>
-<span class="headerbtn__text-container">repository</span>
+<span class="btn__text-container">Repository</span>
 </a>
-
-      </li>
+</li>
       
-      <li>
-        <a href="https://github.com/openpifpaf/openpifpaf/issues/new?title=Issue%20on%20page%20%2Fmoduledocs.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
+      
+      
+      
+      <li><a href="https://github.com/openpifpaf/openpifpaf/edit/main/guide/moduledocs.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/openpifpaf/openpifpaf/edit/main/guide/moduledocs.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Edit this page"
->
-  
-
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-pencil-alt"></i>
   </span>
-<span class="headerbtn__text-container">suggest edit</span>
+<span class="btn__text-container">Suggest edit</span>
 </a>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/moduledocs.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
+      
+      
+      
+      <li><a href="https://github.com/openpifpaf/openpifpaf/issues/new?title=Issue%20on%20page%20%2Fmoduledocs.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/moduledocs.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.ipynb</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
-
-      </li>
+</li>
+      
+      
+      
       
       <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-file-pdf"></i>
   </span>
-<span class="headerbtn__text-container">.pdf</span>
+<span class="btn__text-container">.pdf</span>
 </button>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
   </span>
 
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> On this page
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-openpifpaf">
-   openpifpaf
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-openpifpaf.datasets">
-   openpifpaf.datasets
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-openpifpaf.decoder">
-   openpifpaf.decoder
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-openpifpaf.encoder">
-   openpifpaf.encoder
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-openpifpaf.headmeta">
-   openpifpaf.headmeta
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#openpifpaf-metric">
-   openpifpaf.metric
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-openpifpaf.network">
-   openpifpaf.network
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-openpifpaf.show">
-   openpifpaf.show
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-openpifpaf.transforms">
-   openpifpaf.transforms
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-openpifpaf.visualizer">
-   openpifpaf.visualizer
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Modules</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> On this page </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-openpifpaf">
-   openpifpaf
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-openpifpaf.datasets">
-   openpifpaf.datasets
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-openpifpaf.decoder">
-   openpifpaf.decoder
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-openpifpaf.encoder">
-   openpifpaf.encoder
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-openpifpaf.headmeta">
-   openpifpaf.headmeta
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#openpifpaf-metric">
-   openpifpaf.metric
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-openpifpaf.network">
-   openpifpaf.network
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-openpifpaf.show">
-   openpifpaf.show
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-openpifpaf.transforms">
-   openpifpaf.transforms
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-openpifpaf.visualizer">
-   openpifpaf.visualizer
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Modules</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-openpifpaf">openpifpaf</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-openpifpaf.datasets">openpifpaf.datasets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-openpifpaf.decoder">openpifpaf.decoder</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-openpifpaf.encoder">openpifpaf.encoder</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-openpifpaf.headmeta">openpifpaf.headmeta</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#openpifpaf-metric">openpifpaf.metric</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-openpifpaf.network">openpifpaf.network</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-openpifpaf.show">openpifpaf.show</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-openpifpaf.transforms">openpifpaf.transforms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-openpifpaf.visualizer">openpifpaf.visualizer</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="modules">
-<h1>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">#</a></h1>
+<h1>Modules<a class="headerlink" href="#modules" title="Permalink to this heading">#</a></h1>
 <section id="module-openpifpaf">
-<span id="openpifpaf"></span><h2>openpifpaf<a class="headerlink" href="#module-openpifpaf" title="Permalink to this headline">#</a></h2>
+<span id="openpifpaf"></span><h2>openpifpaf<a class="headerlink" href="#module-openpifpaf" title="Permalink to this heading">#</a></h2>
 <p>An open implementation of PifPaf.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="openpifpaf.Annotation">
@@ -664,13 +522,13 @@ into the class constructor:</p>
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="openpifpaf.Configurable.cli">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cli</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parser</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">argparse.ArgumentParser</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.Configurable.cli" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cli</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parser</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ArgumentParser</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.Configurable.cli" title="Permalink to this definition">#</a></dt>
 <dd><p>Extend an ArgumentParser with the configurable parameters.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="openpifpaf.Configurable.configure">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">configure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">argparse.Namespace</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.Configurable.configure" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">configure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Namespace</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.Configurable.configure" title="Permalink to this definition">#</a></dt>
 <dd><p>Configure the class from parsed command line arguments.</p>
 </dd></dl>
 
@@ -712,7 +570,7 @@ into the class constructor:</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="openpifpaf.Predictor.cli">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cli</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parser</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">argparse.ArgumentParser</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_loader_workers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.Predictor.cli" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cli</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parser</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ArgumentParser</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_loader_workers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.Predictor.cli" title="Permalink to this definition">#</a></dt>
 <dd><p>Add command line arguments.</p>
 <p>When using this class together with datasets (e.g. in eval),
 skip the cli arguments for batch size and loader workers as those
@@ -721,7 +579,7 @@ will be provided via the datasets module.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="openpifpaf.Predictor.configure">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">configure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">argparse.Namespace</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.Predictor.configure" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">configure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Namespace</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.Predictor.configure" title="Permalink to this definition">#</a></dt>
 <dd><p>Configure from command line parser.</p>
 </dd></dl>
 
@@ -789,7 +647,7 @@ will be provided via the datasets module.</p>
 
 </section>
 <section id="module-openpifpaf.datasets">
-<span id="openpifpaf-datasets"></span><span id="api-datasets"></span><h2>openpifpaf.datasets<a class="headerlink" href="#module-openpifpaf.datasets" title="Permalink to this headline">#</a></h2>
+<span id="openpifpaf-datasets"></span><span id="api-datasets"></span><h2>openpifpaf.datasets<a class="headerlink" href="#module-openpifpaf.datasets" title="Permalink to this heading">#</a></h2>
 <p>Datasets and tools to load data in batches.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="openpifpaf.datasets.DataModule">
@@ -809,7 +667,7 @@ Create a new class that inherits from this to handle a new datasets.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="openpifpaf.datasets.DataModule.head_metas">
-<span class="sig-name descname"><span class="pre">head_metas</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#openpifpaf.headmeta.Base" title="openpifpaf.headmeta.Base"><span class="pre">openpifpaf.headmeta.Base</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#openpifpaf.datasets.DataModule.head_metas" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">head_metas</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#openpifpaf.headmeta.Base" title="openpifpaf.headmeta.Base"><span class="pre">Base</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#openpifpaf.datasets.DataModule.head_metas" title="Permalink to this definition">#</a></dt>
 <dd><p>A list of head metas for this dataset.
 Set as instance variable (not class variable) in derived classes
 so that different instances of head metas are created for different
@@ -821,7 +679,7 @@ name and dataset to entries in the checkpoint and overwritten here.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="openpifpaf.datasets.DataModule.cli">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cli</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parser</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">argparse.ArgumentParser</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.datasets.DataModule.cli" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cli</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parser</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ArgumentParser</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.datasets.DataModule.cli" title="Permalink to this definition">#</a></dt>
 <dd><p>Command line interface (CLI) to extend argument parser for your custom dataset.</p>
 <p>Make sure to use unique CLI arguments for your dataset.
 For clarity, we suggest to start every CLI argument with the name of your new dataset,
@@ -832,19 +690,19 @@ E.g. to load a model, there is no need to implement the command --checkpoint</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="openpifpaf.datasets.DataModule.configure">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">configure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">argparse.Namespace</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.datasets.DataModule.configure" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">configure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Namespace</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.datasets.DataModule.configure" title="Permalink to this definition">#</a></dt>
 <dd><p>Take the parsed argument parser output and configure class variables.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="openpifpaf.datasets.DataModule.metrics">
-<span class="sig-name descname"><span class="pre">metrics</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#openpifpaf.metric.Base" title="openpifpaf.metric.base.Base"><span class="pre">openpifpaf.metric.base.Base</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#openpifpaf.datasets.DataModule.metrics" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">metrics</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#openpifpaf.metric.Base" title="openpifpaf.metric.base.Base"><span class="pre">Base</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#openpifpaf.datasets.DataModule.metrics" title="Permalink to this definition">#</a></dt>
 <dd><p>Define a list of metrics to be used for eval.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="openpifpaf.datasets.DataModule.train_loader">
-<span class="sig-name descname"><span class="pre">train_loader</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">torch.utils.data.dataloader.DataLoader</span></span></span><a class="headerlink" href="#openpifpaf.datasets.DataModule.train_loader" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">train_loader</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataLoader</span></span></span><a class="headerlink" href="#openpifpaf.datasets.DataModule.train_loader" title="Permalink to this definition">#</a></dt>
 <dd><p>Loader of the training dataset.</p>
 <p>A Coco Data loader is already available, or a custom one can be created and called here.
 To modify preprocessing steps of your images (for example scaling image during training):</p>
@@ -856,7 +714,7 @@ To modify preprocessing steps of your images (for example scaling image during t
 
 <dl class="py method">
 <dt class="sig sig-object py" id="openpifpaf.datasets.DataModule.val_loader">
-<span class="sig-name descname"><span class="pre">val_loader</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">torch.utils.data.dataloader.DataLoader</span></span></span><a class="headerlink" href="#openpifpaf.datasets.DataModule.val_loader" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">val_loader</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataLoader</span></span></span><a class="headerlink" href="#openpifpaf.datasets.DataModule.val_loader" title="Permalink to this definition">#</a></dt>
 <dd><p>Loader of the validation dataset.</p>
 <p>The augmentation and preprocessing should be the same as for train_loader.
 The only difference is the set of data. This allows to inspect the
@@ -867,7 +725,7 @@ so that the loss function can be computed.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="openpifpaf.datasets.DataModule.eval_loader">
-<span class="sig-name descname"><span class="pre">eval_loader</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">torch.utils.data.dataloader.DataLoader</span></span></span><a class="headerlink" href="#openpifpaf.datasets.DataModule.eval_loader" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">eval_loader</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataLoader</span></span></span><a class="headerlink" href="#openpifpaf.datasets.DataModule.eval_loader" title="Permalink to this definition">#</a></dt>
 <dd><p>Loader of the evaluation dataset.</p>
 <p>For local runs, it is common that the validation dataset is also the
 evaluation dataset. This is then changed to test datasets (without
@@ -883,7 +741,7 @@ what the output of the decoder is expected to be.</p>
 
 </section>
 <section id="module-openpifpaf.decoder">
-<span id="openpifpaf-decoder"></span><span id="api-decoder"></span><h2>openpifpaf.decoder<a class="headerlink" href="#module-openpifpaf.decoder" title="Permalink to this headline">#</a></h2>
+<span id="openpifpaf-decoder"></span><span id="api-decoder"></span><h2>openpifpaf.decoder<a class="headerlink" href="#module-openpifpaf.decoder" title="Permalink to this heading">#</a></h2>
 <p>Collections of decoders: fields to annotations.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="openpifpaf.decoder.Decoder">
@@ -892,25 +750,25 @@ what the output of the decoder is expected to be.</p>
 <p>When creating a new generator, the main implementation goes into <cite>__call__()</cite>.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="openpifpaf.decoder.Decoder.cli">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cli</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parser</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">argparse.ArgumentParser</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.decoder.Decoder.cli" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cli</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parser</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ArgumentParser</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.decoder.Decoder.cli" title="Permalink to this definition">#</a></dt>
 <dd><p>Command line interface (CLI) to extend argument parser.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="openpifpaf.decoder.Decoder.configure">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">configure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">argparse.Namespace</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.decoder.Decoder.configure" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">configure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Namespace</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.decoder.Decoder.configure" title="Permalink to this definition">#</a></dt>
 <dd><p>Take the parsed argument parser output and configure class variables.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="openpifpaf.decoder.Decoder.factory">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">factory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">head_metas</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#openpifpaf.decoder.Decoder" title="openpifpaf.decoder.decoder.Decoder"><span class="pre">openpifpaf.decoder.decoder.Decoder</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#openpifpaf.decoder.Decoder.factory" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">factory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">head_metas</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#openpifpaf.decoder.Decoder" title="openpifpaf.decoder.decoder.Decoder"><span class="pre">Decoder</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#openpifpaf.decoder.Decoder.factory" title="Permalink to this definition">#</a></dt>
 <dd><p>Create instances of an implementation.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="openpifpaf.decoder.Decoder.__call__">
-<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fields</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_annotations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">openpifpaf.annotation.Base</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#openpifpaf.decoder.Decoder.__call__" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fields</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_annotations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Base</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#openpifpaf.decoder.Decoder.__call__" title="Permalink to this definition">#</a></dt>
 <dd><p>For single image, from fields to annotations.</p>
 </dd></dl>
 
@@ -930,13 +788,13 @@ what the output of the decoder is expected to be.</p>
 
 </section>
 <section id="module-openpifpaf.encoder">
-<span id="openpifpaf-encoder"></span><h2>openpifpaf.encoder<a class="headerlink" href="#module-openpifpaf.encoder" title="Permalink to this headline">#</a></h2>
+<span id="openpifpaf-encoder"></span><h2>openpifpaf.encoder<a class="headerlink" href="#module-openpifpaf.encoder" title="Permalink to this heading">#</a></h2>
 <p>Convert a set of keypoint coordinates into target fields.</p>
 <p>Takes an annotation from a dataset and turns it into the
 ground truth for a field.</p>
 </section>
 <section id="module-openpifpaf.headmeta">
-<span id="openpifpaf-headmeta"></span><span id="api-headmeta"></span><h2>openpifpaf.headmeta<a class="headerlink" href="#module-openpifpaf.headmeta" title="Permalink to this headline">#</a></h2>
+<span id="openpifpaf-headmeta"></span><span id="api-headmeta"></span><h2>openpifpaf.headmeta<a class="headerlink" href="#module-openpifpaf.headmeta" title="Permalink to this heading">#</a></h2>
 <p>Head meta objects contain meta information about head networks.</p>
 <p>This includes the name, the name of the individual fields, the composition, etc.</p>
 <dl class="py class">
@@ -982,7 +840,7 @@ ground truth for a field.</p>
 
 </section>
 <section id="openpifpaf-metric">
-<h2>openpifpaf.metric<a class="headerlink" href="#openpifpaf-metric" title="Permalink to this headline">#</a></h2>
+<h2>openpifpaf.metric<a class="headerlink" href="#openpifpaf-metric" title="Permalink to this heading">#</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="openpifpaf.metric.Base">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">openpifpaf.metric.</span></span><span class="sig-name descname"><span class="pre">Base</span></span><a class="headerlink" href="#openpifpaf.metric.Base" title="Permalink to this definition">#</a></dt>
@@ -991,7 +849,7 @@ ground truth for a field.</p>
 <span class="sig-name descname"><span class="pre">accumulate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">predictions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_meta</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ground_truth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.metric.Base.accumulate" title="Permalink to this definition">#</a></dt>
 <dd><p>For every image, accumulate that image’s predictions into this metric.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>predictions</strong> – List of predictions for one image.</p></li>
 <li><p><strong>image_meta</strong> – Meta dictionary for this image as returned by the data loader.</p></li>
@@ -1025,7 +883,7 @@ an arbitrary number of entries with corresponding labels:</p>
 It is used for test challenge submissions where a remote server
 holds the private test set.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>filename</strong> – Output filename of prediction file.</p></li>
 <li><p><strong>additional_data</strong> – Additional information that might be worth saving
@@ -1039,14 +897,14 @@ along with the predictions.</p></li>
 
 </section>
 <section id="module-openpifpaf.network">
-<span id="openpifpaf-network"></span><span id="api-network"></span><h2>openpifpaf.network<a class="headerlink" href="#module-openpifpaf.network" title="Permalink to this headline">#</a></h2>
+<span id="openpifpaf-network"></span><span id="api-network"></span><h2>openpifpaf.network<a class="headerlink" href="#module-openpifpaf.network" title="Permalink to this heading">#</a></h2>
 <p>Backbone networks, head networks and tools for training.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="openpifpaf.network.BaseNetwork">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">openpifpaf.network.</span></span><span class="sig-name descname"><span class="pre">BaseNetwork</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stride</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_features</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.network.BaseNetwork" title="Permalink to this definition">#</a></dt>
 <dd><p>Common base network.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> – a short name for the base network, e.g. resnet50</p></li>
 <li><p><strong>stride</strong> – total stride from input to output</p></li>
@@ -1056,13 +914,13 @@ along with the predictions.</p></li>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="openpifpaf.network.BaseNetwork.cli">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cli</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parser</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">argparse.ArgumentParser</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.network.BaseNetwork.cli" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cli</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parser</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ArgumentParser</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.network.BaseNetwork.cli" title="Permalink to this definition">#</a></dt>
 <dd><p>Command line interface (CLI) to extend argument parser.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="openpifpaf.network.BaseNetwork.configure">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">configure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">argparse.Namespace</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.network.BaseNetwork.configure" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">configure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Namespace</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.network.BaseNetwork.configure" title="Permalink to this definition">#</a></dt>
 <dd><p>Take the parsed argument parser output and configure class variables.</p>
 </dd></dl>
 
@@ -1070,10 +928,10 @@ along with the predictions.</p></li>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="openpifpaf.network.HeadNetwork">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">openpifpaf.network.</span></span><span class="sig-name descname"><span class="pre">HeadNetwork</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">meta</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#openpifpaf.headmeta.Base" title="openpifpaf.headmeta.Base"><span class="pre">openpifpaf.headmeta.Base</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">in_features</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.network.HeadNetwork" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">openpifpaf.network.</span></span><span class="sig-name descname"><span class="pre">HeadNetwork</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">meta</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#openpifpaf.headmeta.Base" title="openpifpaf.headmeta.Base"><span class="pre">Base</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">in_features</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.network.HeadNetwork" title="Permalink to this definition">#</a></dt>
 <dd><p>Base class for head networks.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>meta</strong> – head meta instance to configure this head network</p></li>
 <li><p><strong>in_features</strong> – number of input features which should be equal to the
@@ -1083,13 +941,13 @@ base network’s output features</p></li>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="openpifpaf.network.HeadNetwork.cli">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cli</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parser</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">argparse.ArgumentParser</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.network.HeadNetwork.cli" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cli</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parser</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ArgumentParser</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.network.HeadNetwork.cli" title="Permalink to this definition">#</a></dt>
 <dd><p>Command line interface (CLI) to extend argument parser.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="openpifpaf.network.HeadNetwork.configure">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">configure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">argparse.Namespace</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.network.HeadNetwork.configure" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">configure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Namespace</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.network.HeadNetwork.configure" title="Permalink to this definition">#</a></dt>
 <dd><p>Take the parsed argument parser output and configure class variables.</p>
 </dd></dl>
 
@@ -1097,7 +955,7 @@ base network’s output features</p></li>
 
 </section>
 <section id="module-openpifpaf.show">
-<span id="openpifpaf-show"></span><h2>openpifpaf.show<a class="headerlink" href="#module-openpifpaf.show" title="Permalink to this headline">#</a></h2>
+<span id="openpifpaf-show"></span><h2>openpifpaf.show<a class="headerlink" href="#module-openpifpaf.show" title="Permalink to this heading">#</a></h2>
 <p>Drawing primitives.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="openpifpaf.show.AnimationFrame">
@@ -1145,7 +1003,7 @@ overwrite the global default for that instance.</p>
 
 </section>
 <section id="module-openpifpaf.transforms">
-<span id="openpifpaf-transforms"></span><h2>openpifpaf.transforms<a class="headerlink" href="#module-openpifpaf.transforms" title="Permalink to this headline">#</a></h2>
+<span id="openpifpaf-transforms"></span><h2>openpifpaf.transforms<a class="headerlink" href="#module-openpifpaf.transforms" title="Permalink to this heading">#</a></h2>
 <p>Transform input data.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="openpifpaf.transforms.Preprocess">
@@ -1161,7 +1019,7 @@ overwrite the global default for that instance.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="openpifpaf.transforms.Compose">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">openpifpaf.transforms.</span></span><span class="sig-name descname"><span class="pre">Compose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">preprocess_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#openpifpaf.transforms.Preprocess" title="openpifpaf.transforms.preprocess.Preprocess"><span class="pre">openpifpaf.transforms.preprocess.Preprocess</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.transforms.Compose" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">openpifpaf.transforms.</span></span><span class="sig-name descname"><span class="pre">Compose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">preprocess_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#openpifpaf.transforms.Preprocess" title="openpifpaf.transforms.preprocess.Preprocess"><span class="pre">Preprocess</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.transforms.Compose" title="Permalink to this definition">#</a></dt>
 <dd><p>Execute given transforms in sequential order.</p>
 </dd></dl>
 
@@ -1221,10 +1079,10 @@ overwrite the global default for that instance.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="openpifpaf.transforms.DeterministicEqualChoice">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">openpifpaf.transforms.</span></span><span class="sig-name descname"><span class="pre">DeterministicEqualChoice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transforms</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#openpifpaf.transforms.Preprocess" title="openpifpaf.transforms.preprocess.Preprocess"><span class="pre">openpifpaf.transforms.preprocess.Preprocess</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">salt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.transforms.DeterministicEqualChoice" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">openpifpaf.transforms.</span></span><span class="sig-name descname"><span class="pre">DeterministicEqualChoice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transforms</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#openpifpaf.transforms.Preprocess" title="openpifpaf.transforms.preprocess.Preprocess"><span class="pre">Preprocess</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">salt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.transforms.DeterministicEqualChoice" title="Permalink to this definition">#</a></dt>
 <dd><p>Deterministically choose one of the transforms.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>transforms</strong> – a list of transforms</p></li>
 <li><p><strong>salt</strong> – integer that combined with meta[‘image_id] determines the choice of the transform</p></li>
@@ -1235,10 +1093,10 @@ overwrite the global default for that instance.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="openpifpaf.transforms.RandomApply">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">openpifpaf.transforms.</span></span><span class="sig-name descname"><span class="pre">RandomApply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transform</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#openpifpaf.transforms.Preprocess" title="openpifpaf.transforms.preprocess.Preprocess"><span class="pre">openpifpaf.transforms.preprocess.Preprocess</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">probability</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.transforms.RandomApply" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">openpifpaf.transforms.</span></span><span class="sig-name descname"><span class="pre">RandomApply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transform</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#openpifpaf.transforms.Preprocess" title="openpifpaf.transforms.preprocess.Preprocess"><span class="pre">Preprocess</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">probability</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.transforms.RandomApply" title="Permalink to this definition">#</a></dt>
 <dd><p>Randomly apply another transformation.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>transform</strong> – another transformation</p></li>
 <li><p><strong>probability</strong> – probability to apply the given transform</p></li>
@@ -1249,7 +1107,7 @@ overwrite the global default for that instance.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="openpifpaf.transforms.RandomChoice">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">openpifpaf.transforms.</span></span><span class="sig-name descname"><span class="pre">RandomChoice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transforms</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#openpifpaf.transforms.Preprocess" title="openpifpaf.transforms.preprocess.Preprocess"><span class="pre">openpifpaf.transforms.preprocess.Preprocess</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">probabilities</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.transforms.RandomChoice" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">openpifpaf.transforms.</span></span><span class="sig-name descname"><span class="pre">RandomChoice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transforms</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#openpifpaf.transforms.Preprocess" title="openpifpaf.transforms.preprocess.Preprocess"><span class="pre">Preprocess</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">probabilities</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.transforms.RandomChoice" title="Permalink to this definition">#</a></dt>
 <dd><p>Choose a single random transform.</p>
 </dd></dl>
 
@@ -1315,23 +1173,23 @@ overwrite the global default for that instance.</p>
 
 </section>
 <section id="module-openpifpaf.visualizer">
-<span id="openpifpaf-visualizer"></span><h2>openpifpaf.visualizer<a class="headerlink" href="#module-openpifpaf.visualizer" title="Permalink to this headline">#</a></h2>
+<span id="openpifpaf-visualizer"></span><h2>openpifpaf.visualizer<a class="headerlink" href="#module-openpifpaf.visualizer" title="Permalink to this heading">#</a></h2>
 <p>Higher level drawing functions.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="openpifpaf.visualizer.Caf">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">openpifpaf.visualizer.</span></span><span class="sig-name descname"><span class="pre">Caf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">meta</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#openpifpaf.headmeta.Caf" title="openpifpaf.headmeta.Caf"><span class="pre">openpifpaf.headmeta.Caf</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.visualizer.Caf" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">openpifpaf.visualizer.</span></span><span class="sig-name descname"><span class="pre">Caf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">meta</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#openpifpaf.headmeta.Caf" title="openpifpaf.headmeta.Caf"><span class="pre">Caf</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.visualizer.Caf" title="Permalink to this definition">#</a></dt>
 <dd><p>Visualize CAF field.</p>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="openpifpaf.visualizer.Cif">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">openpifpaf.visualizer.</span></span><span class="sig-name descname"><span class="pre">Cif</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">meta</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#openpifpaf.headmeta.Cif" title="openpifpaf.headmeta.Cif"><span class="pre">openpifpaf.headmeta.Cif</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.visualizer.Cif" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">openpifpaf.visualizer.</span></span><span class="sig-name descname"><span class="pre">Cif</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">meta</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#openpifpaf.headmeta.Cif" title="openpifpaf.headmeta.Cif"><span class="pre">Cif</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.visualizer.Cif" title="Permalink to this definition">#</a></dt>
 <dd><p>Visualize a CIF field.</p>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="openpifpaf.visualizer.CifDet">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">openpifpaf.visualizer.</span></span><span class="sig-name descname"><span class="pre">CifDet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">meta</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#openpifpaf.headmeta.CifDet" title="openpifpaf.headmeta.CifDet"><span class="pre">openpifpaf.headmeta.CifDet</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.visualizer.CifDet" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">openpifpaf.visualizer.</span></span><span class="sig-name descname"><span class="pre">CifDet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">meta</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#openpifpaf.headmeta.CifDet" title="openpifpaf.headmeta.CifDet"><span class="pre">CifDet</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openpifpaf.visualizer.CifDet" title="Permalink to this definition">#</a></dt>
 <dd><p>Visualize a CifDet field.</p>
 </dd></dl>
 
@@ -1382,54 +1240,118 @@ overwrite the global default for that instance.</p>
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="plugins_extras.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Extras</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="plugins_extras.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Extras</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="bibliography.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="bibliography.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Bibliography</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By <a href="https://www.svenkreiss.com">Sven Kreiss</a> and <a href="https://github.com/openpifpaf/openpifpaf/graphs/contributors">contributors</a>.<br/>
-  
-      &copy; Copyright 2020-2022.<br/>
-    <div class="extra_footer">
-      <p>Powered by <a href="https://jupyterbook.org/">Jupyter Book</a>.</p>
-
-    </div>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
       </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-openpifpaf">openpifpaf</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-openpifpaf.datasets">openpifpaf.datasets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-openpifpaf.decoder">openpifpaf.decoder</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-openpifpaf.encoder">openpifpaf.encoder</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-openpifpaf.headmeta">openpifpaf.headmeta</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#openpifpaf-metric">openpifpaf.metric</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-openpifpaf.network">openpifpaf.network</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-openpifpaf.show">openpifpaf.show</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-openpifpaf.transforms">openpifpaf.transforms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-openpifpaf.visualizer">openpifpaf.visualizer</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <a href="https://www.svenkreiss.com">Sven Kreiss</a> and <a href="https://github.com/openpifpaf/openpifpaf/graphs/contributors">contributors</a>.
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2020-2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>Powered by <a href="https://jupyterbook.org/">Jupyter Book</a>.</p>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
