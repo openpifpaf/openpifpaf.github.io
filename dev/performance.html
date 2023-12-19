@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,8 +39,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -77,6 +78,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -137,9 +147,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="intro.html">
+  
   
   
   
@@ -149,8 +161,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="OpenPifPaf Guide DEV - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="OpenPifPaf Guide DEV - Home"/>`);</script>
   
   
 </a></div>
@@ -403,20 +415,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -719,6 +733,8 @@ DEBUG:openpifpaf.network.factory:Shell(
   )
 )
 DEBUG:openpifpaf.decoder.factory:head names = [&#39;cif&#39;, &#39;caf&#39;]
+DEBUG:openpifpaf.signal:subscribe to eval_reset
+DEBUG:openpifpaf.decoder.pose_similarity:valid keypoints = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
 DEBUG:openpifpaf.visualizer.base:cif: indices = []
 DEBUG:openpifpaf.show.painters:color connections = True, lw = 2, marker = 6
 DEBUG:openpifpaf.show.painters:color connections = False, lw = 6, marker = 3
@@ -726,8 +742,6 @@ DEBUG:openpifpaf.visualizer.base:cif: indices = []
 DEBUG:openpifpaf.visualizer.base:caf: indices = []
 DEBUG:openpifpaf.show.painters:color connections = True, lw = 2, marker = 6
 DEBUG:openpifpaf.show.painters:color connections = False, lw = 6, marker = 3
-DEBUG:openpifpaf.signal:subscribe to eval_reset
-DEBUG:openpifpaf.decoder.pose_similarity:valid keypoints = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
 DEBUG:openpifpaf.visualizer.base:cif: indices = []
 DEBUG:openpifpaf.show.painters:color connections = True, lw = 2, marker = 6
 DEBUG:openpifpaf.show.painters:color connections = False, lw = 6, marker = 3
@@ -744,111 +758,111 @@ INFO:openpifpaf.predictor:neural network device: cpu (CUDA available: False, cou
 DEBUG:openpifpaf.transforms.pad:valid area before pad: [  0.   0. 639. 426.], image size = (640, 427)
 DEBUG:openpifpaf.transforms.pad:pad with [0, 3, 1, 3]
 DEBUG:openpifpaf.transforms.pad:valid area after pad: [  0.   3. 639. 426.], image size = (641, 433)
-DEBUG:openpifpaf.decoder.decoder:nn processing time: 817.2ms
-DEBUG:openpifpaf.decoder.decoder:parallel execution with worker &lt;openpifpaf.decoder.decoder.DummyPool object at 0x7f16c9ed3e50&gt;
+DEBUG:openpifpaf.decoder.decoder:nn processing time: 441.2ms
+DEBUG:openpifpaf.decoder.decoder:parallel execution with worker &lt;openpifpaf.decoder.decoder.DummyPool object at 0x7f1622c42d90&gt;
 DEBUG:openpifpaf.decoder.multi:task 0
-DEBUG:openpifpaf.decoder.cifcaf:cpp annotations = 5 (12.7ms)
+DEBUG:openpifpaf.decoder.cifcaf:cpp annotations = 5 (6.7ms)
 INFO:openpifpaf.decoder.cifcaf:annotations 5: [16, 14, 13, 12, 12]
 INFO:openpifpaf.profiler:writing profile file profile_decoder.prof
-         386 function calls in 0.014 seconds
+         386 function calls in 0.008 seconds
 
    Ordered by: internal time
 
    ncalls  tottime  percall  cumtime  percall filename:lineno(function)
-        1    0.013    0.013    0.014    0.014 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224(__call__)
-        5    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/openpifpaf/annotation.py:17(__init__)
-       10    0.000    0.000    0.000    0.000 {method &#39;reduce&#39; of &#39;numpy.ufunc&#39; objects}
+        1    0.007    0.007    0.008    0.008 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:224(__call__)
+        5    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/openpifpaf/annotation.py:17(__init__)
        15    0.000    0.000    0.000    0.000 {method &#39;numpy&#39; of &#39;torch._C._TensorBase&#39; objects}
+       10    0.000    0.000    0.000    0.000 {method &#39;reduce&#39; of &#39;numpy.ufunc&#39; objects}
        10    0.000    0.000    0.000    0.000 {built-in method numpy.asarray}
-       10    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/numpy/core/fromnumeric.py:69(_wrapreduction)
-        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/openpifpaf/visualizer/cif.py:47(predicted)
-        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:276(&lt;listcomp&gt;)
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/logging/__init__.py:288(__init__)
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/logging/__init__.py:288(__init__)
         2    0.000    0.000    0.000    0.000 {method &#39;flush&#39; of &#39;_io.TextIOWrapper&#39; objects}
-        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/openpifpaf/visualizer/caf.py:47(predicted)
-        2    0.000    0.000    0.000    0.000 {method &#39;unbind&#39; of &#39;torch._C._TensorBase&#39; objects}
+        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/openpifpaf/visualizer/cif.py:47(predicted)
+        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/openpifpaf/decoder/cifcaf.py:276(&lt;listcomp&gt;)
+       10    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/numpy/core/fromnumeric.py:69(_wrapreduction)
+        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/openpifpaf/visualizer/caf.py:47(predicted)
         5    0.000    0.000    0.000    0.000 {method &#39;tolist&#39; of &#39;numpy.ndarray&#39; objects}
-       15    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/torch/_tensor.py:952(__array__)
-       10    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/numpy/core/fromnumeric.py:2188(sum)
-        3    0.000    0.000    0.000    0.000 {built-in method torch._C._get_tracing_state}
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/logging/__init__.py:364(getMessage)
+        2    0.000    0.000    0.000    0.000 {method &#39;unbind&#39; of &#39;torch._C._TensorBase&#39; objects}
+       10    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/numpy/core/fromnumeric.py:2188(sum)
+       15    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/torch/_tensor.py:952(__array__)
        10    0.000    0.000    0.000    0.000 {built-in method numpy.zeros}
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/logging/__init__.py:364(getMessage)
+        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/torch/_tensor.py:890(__len__)
        10    0.000    0.000    0.000    0.000 &lt;__array_function__ internals&gt;:177(sum)
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/logging/__init__.py:1689(isEnabledFor)
-        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/torch/_tensor.py:890(__len__)
-        5    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/openpifpaf/visualizer/base.py:114(indices)
-        5    0.000    0.000    0.000    0.000 {method &#39;append&#39; of &#39;list&#39; objects}
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/logging/__init__.py:1514(findCaller)
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/posixpath.py:52(normcase)
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/logging/__init__.py:1689(isEnabledFor)
+        5    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/openpifpaf/visualizer/base.py:114(indices)
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/logging/__init__.py:1514(findCaller)
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/logging/__init__.py:1073(emit)
        10    0.000    0.000    0.000    0.000 {built-in method numpy.core._multiarray_umath.implement_array_function}
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/logging/__init__.py:160(&lt;lambda&gt;)
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/torch/_tensor.py:906(__iter__)
        24    0.000    0.000    0.000    0.000 {built-in method builtins.len}
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/logging/__init__.py:1073(emit)
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/logging/__init__.py:1565(_log)
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/torch/_tensor.py:906(__iter__)
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/posixpath.py:140(basename)
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/logging/__init__.py:1645(callHandlers)
+       10    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/numpy/core/fromnumeric.py:70(&lt;dictcomp&gt;)
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/logging/__init__.py:1565(_log)
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/posixpath.py:140(basename)
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/logging/__init__.py:1645(callHandlers)
        19    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
-       10    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/numpy/core/fromnumeric.py:70(&lt;dictcomp&gt;)
-       15    0.000    0.000    0.000    0.000 {method &#39;astype&#39; of &#39;numpy.ndarray&#39; objects}
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/logging/__init__.py:1062(flush)
-        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/logging/__init__.py:1424(debug)
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/logging/__init__.py:1550(makeRecord)
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/logging/__init__.py:655(format)
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/logging/__init__.py:941(handle)
        16    0.000    0.000    0.000    0.000 {built-in method torch._C._has_torch_function_unary}
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/logging/__init__.py:1591(handle)
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/posixpath.py:117(splitext)
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/genericpath.py:121(_splitext)
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/logging/__init__.py:435(_format)
-        2    0.000    0.000    0.000    0.000 {built-in method posix.getpid}
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/logging/__init__.py:218(_acquireLock)
-        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/openpifpaf/visualizer/cifhr.py:17(predicted)
-        6    0.000    0.000    0.000    0.000 {method &#39;acquire&#39; of &#39;_thread.RLock&#39; objects}
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/logging/__init__.py:160(&lt;lambda&gt;)
+       15    0.000    0.000    0.000    0.000 {method &#39;astype&#39; of &#39;numpy.ndarray&#39; objects}
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/logging/__init__.py:1062(flush)
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/logging/__init__.py:941(handle)
+        3    0.000    0.000    0.000    0.000 {built-in method torch._C._get_tracing_state}
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/logging/__init__.py:1550(makeRecord)
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/genericpath.py:121(_splitext)
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/logging/__init__.py:655(format)
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/logging/__init__.py:435(_format)
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/logging/__init__.py:218(_acquireLock)
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/posixpath.py:117(splitext)
+        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/logging/__init__.py:1424(debug)
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/logging/__init__.py:119(getLevelName)
         6    0.000    0.000    0.000    0.000 {method &#39;rfind&#39; of &#39;str&#39; objects}
-        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/logging/__init__.py:1436(info)
-        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/openpifpaf/visualizer/cif.py:54(_confidences)
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/logging/__init__.py:427(usesTime)
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/logging/__init__.py:119(getLevelName)
-        4    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/logging/__init__.py:796(filter)
-        4    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/logging/__init__.py:898(acquire)
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/logging/__init__.py:1675(getEffectiveLevel)
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/openpifpaf/headmeta.py:26(stride)
-       10    0.000    0.000    0.000    0.000 {method &#39;items&#39; of &#39;dict&#39; objects}
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/logging/__init__.py:918(format)
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/logging/__init__.py:227(_releaseLock)
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/threading.py:1306(current_thread)
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/logging/__init__.py:1591(handle)
+        6    0.000    0.000    0.000    0.000 {method &#39;acquire&#39; of &#39;_thread.RLock&#39; objects}
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/logging/__init__.py:427(usesTime)
+        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/openpifpaf/visualizer/cifhr.py:17(predicted)
+        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/logging/__init__.py:1436(info)
+        2    0.000    0.000    0.000    0.000 {built-in method posix.getpid}
+        4    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/logging/__init__.py:898(acquire)
+        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/openpifpaf/visualizer/cif.py:54(_confidences)
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/posixpath.py:52(normcase)
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/openpifpaf/headmeta.py:26(stride)
         6    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/logging/__init__.py:438(format)
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/logging/__init__.py:633(usesTime)
-        4    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/logging/__init__.py:905(release)
+        4    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/logging/__init__.py:796(filter)
+       10    0.000    0.000    0.000    0.000 {method &#39;items&#39; of &#39;dict&#39; objects}
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/logging/__init__.py:227(_releaseLock)
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/logging/__init__.py:918(format)
+        4    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/logging/__init__.py:905(release)
+       10    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/numpy/core/fromnumeric.py:2183(_sum_dispatcher)
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/logging/__init__.py:1675(getEffectiveLevel)
+        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/openpifpaf/visualizer/caf.py:54(_confidences)
+        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/openpifpaf/visualizer/caf.py:65(_regressions)
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/threading.py:1306(current_thread)
+        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/openpifpaf/visualizer/cif.py:63(_regressions)
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/logging/__init__.py:633(usesTime)
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/logging/__init__.py:438(format)
+        5    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/openpifpaf/visualizer/base.py:118(&lt;listcomp&gt;)
+        5    0.000    0.000    0.000    0.000 {method &#39;append&#39; of &#39;list&#39; objects}
         4    0.000    0.000    0.000    0.000 {method &#39;get&#39; of &#39;dict&#39; objects}
-        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/openpifpaf/visualizer/caf.py:54(_confidences)
-       10    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/numpy/core/fromnumeric.py:2183(_sum_dispatcher)
-        3    0.000    0.000    0.000    0.000 {method &#39;dim&#39; of &#39;torch._C._TensorBase&#39; objects}
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/logging/__init__.py:639(formatMessage)
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/posixpath.py:41(_get_sep)
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/threading.py:1031(name)
-        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/openpifpaf/visualizer/cif.py:63(_regressions)
-        6    0.000    0.000    0.000    0.000 {built-in method posix.fspath}
-        1    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/openpifpaf/visualizer/caf.py:65(_regressions)
-        5    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/openpifpaf/visualizer/base.py:118(&lt;listcomp&gt;)
-        2    0.000    0.000    0.000    0.000 {method &#39;find&#39; of &#39;str&#39; objects}
-        2    0.000    0.000    0.000    0.000 {built-in method time.perf_counter}
-        2    0.000    0.000    0.000    0.000 {method &#39;write&#39; of &#39;_io.TextIOWrapper&#39; objects}
-        2    0.000    0.000    0.000    0.000 {built-in method sys._getframe}
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/logging/__init__.py:639(formatMessage)
         6    0.000    0.000    0.000    0.000 {method &#39;release&#39; of &#39;_thread.RLock&#39; objects}
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/multiprocessing/process.py:37(current_process)
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/multiprocessing/process.py:189(name)
-        2    0.000    0.000    0.000    0.000 {built-in method time.time}
-        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/logging/__init__.py:1276(disable)
+        3    0.000    0.000    0.000    0.000 {method &#39;dim&#39; of &#39;torch._C._TensorBase&#39; objects}
+        2    0.000    0.000    0.000    0.000 {built-in method time.perf_counter}
+        6    0.000    0.000    0.000    0.000 {built-in method posix.fspath}
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/posixpath.py:41(_get_sep)
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/threading.py:1031(name)
+        2    0.000    0.000    0.000    0.000 {method &#39;find&#39; of &#39;str&#39; objects}
+        2    0.000    0.000    0.000    0.000 {built-in method sys._getframe}
+        2    0.000    0.000    0.000    0.000 {method &#39;write&#39; of &#39;_io.TextIOWrapper&#39; objects}
         4    0.000    0.000    0.000    0.000 {built-in method _thread.get_ident}
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/multiprocessing/process.py:189(name)
         2    0.000    0.000    0.000    0.000 {built-in method builtins.iter}
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/multiprocessing/process.py:37(current_process)
+        2    0.000    0.000    0.000    0.000 {built-in method time.time}
+        2    0.000    0.000    0.000    0.000 /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/logging/__init__.py:1276(disable)
         1    0.000    0.000    0.000    0.000 {method &#39;disable&#39; of &#39;_lsprof.Profiler&#39; objects}
 
 
 
-DEBUG:openpifpaf.decoder.decoder:time: nn = 817.5ms, dec = 16.6ms
+DEBUG:openpifpaf.decoder.decoder:time: nn = 441.5ms, dec = 9.2ms
 INFO:openpifpaf.predictor:batch 0: coco/000000081988.jpg
 src/openpifpaf/csrc/src/cif_hr.cpp:102: UserInfo: resizing cifhr buffer
 src/openpifpaf/csrc/src/occupancy.cpp:53: UserInfo: resizing occupancy buffer
@@ -904,11 +918,10 @@ src/openpifpaf/csrc/src/occupancy.cpp:53: UserInfo: resizing occupancy buffer
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="dev.html"
@@ -919,10 +932,7 @@ src/openpifpaf/csrc/src/occupancy.cpp:53: UserInfo: resizing occupancy buffer
         <p class="prev-next-title">Contribute</p>
       </div>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -960,6 +970,7 @@ By <a href="https://www.svenkreiss.com">Sven Kreiss</a> and <a href="https://git
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2020-2022.
@@ -990,8 +1001,8 @@ By <a href="https://www.svenkreiss.com">Sven Kreiss</a> and <a href="https://git
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>
